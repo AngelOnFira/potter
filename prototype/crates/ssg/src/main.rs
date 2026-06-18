@@ -198,7 +198,12 @@ fn render_page(p: &Page, prefix: &str) -> String {
     let crumbs = format!(
         "<nav class=\"crumbs\"><a href=\"{prefix}/\">Home</a> / <a href=\"{prefix}/{}\">{}</a></nav>",
         p.collection, esc(&p.collection));
-    let chem = p.chemistry.as_ref().map(render_chem).unwrap_or_default();
+    // chemistry hidden on materials for now (pending data review)
+    let chem = if p.collection == "material" {
+        String::new()
+    } else {
+        p.chemistry.as_ref().map(render_chem).unwrap_or_default()
+    };
     // body links/img are root-relative; prefix them for project-site hosting
     let body = if prefix.is_empty() { p.body_html.clone() }
         else { p.body_html.replace("=\"/", &format!("=\"{prefix}/")) };

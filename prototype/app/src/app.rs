@@ -289,7 +289,8 @@ fn PageView() -> impl IntoView {
                     let coll = pg.collection.clone();
                     let coll_title = title_for(&coll);
                     let related = pg.related.clone();
-                    let chem = pg.chemistry.clone();
+                    // chemistry hidden on materials for now (pending data review)
+                    let chem = if coll == "material" { None } else { pg.chemistry.clone() };
                     let src = pg.source_url.clone();
                     let src2 = pg.source_url.clone();
                     view! {
