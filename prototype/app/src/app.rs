@@ -110,7 +110,7 @@ pub fn App() -> impl IntoView {
     provide_meta_context();
     view! {
         <Stylesheet id="leptos" href="/pkg/clay-app.css"/>
-        <Title text="clay-knowledge — ceramics reference"/>
+        <Title text="Potter"/>
         <Router>
             <div class="layout">
                 <Sidebar/>
@@ -199,11 +199,11 @@ fn Topbar() -> impl IntoView {
 fn Home() -> impl IntoView {
     let data = Resource::new(|| (), |_| async { home_data().await });
     view! {
-        <Title text="clay-knowledge — a modern ceramics reference"/>
+        <Title text="Potter"/>
         <div class="home">
             <h1>"A modern, searchable ceramics reference"</h1>
             <p class="lede">
-                "A preservation prototype of the digitalfire glaze-chemistry library — \
+                "A preservation prototype of the digitalfire glaze-chemistry library: \
                  materials, oxides, recipes, and glossary, rebuilt as fast static pages."
             </p>
             <Suspense fallback=move || view! { <p class="muted">"Loading…"</p> }>
@@ -380,7 +380,7 @@ fn PageView() -> impl IntoView {
                                                     <circle cx=cx cy=cy r="5.5" fill="#b5502a" stroke="#fff" stroke-width="1.5"></circle>
                                                 </svg>
                                                 <figcaption class="stull-cap">
-                                                    {label}" — Stull position (approximate zones, ≈cone 10)"
+                                                    "Stull position: "{label}" (approximate zones, ≈cone 10)"
                                                 </figcaption>
                                             </figure>
                                         })}

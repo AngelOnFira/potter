@@ -81,14 +81,13 @@ fn main() -> Result<()> {
     };
 
     // ---- home ----
-    write_page("/", "clay-knowledge — a modern ceramics reference",
-        &render_home(&collections, pages.len()))?;
+    write_page("/", "Potter", &render_home(&collections, pages.len()))?;
 
     // ---- collection list pages ----
     for c in &collections {
         let empty = Vec::new();
         let cards = by_collection.get(c.name.as_str()).unwrap_or(&empty);
-        write_page(&format!("/{}", c.name), &format!("{} — clay-knowledge", c.title),
+        write_page(&format!("/{}", c.name), &format!("{} | Potter", c.title),
             &render_collection(&c.title, cards, &prefix))?;
     }
 
@@ -176,7 +175,7 @@ fn render_home(collections: &[CollectionInfo], total: usize) -> String {
     }
     format!(r#"<div class="home">
 <h1>A modern, searchable ceramics reference</h1>
-<p class="lede">A preservation archive of the digitalfire glaze-chemistry library — materials, oxides, recipes, and glossary, rebuilt as fast static pages.</p>
+<p class="lede">A preservation archive of the digitalfire glaze-chemistry library: materials, oxides, recipes, and glossary, rebuilt as fast static pages.</p>
 <p class="muted">{total} pages · {n} collections</p>
 <div class="grid">{tiles}</div>
 </div>"#, n = collections.len())
@@ -248,7 +247,7 @@ fn render_chem(c: &Chemistry) -> String {
 <text x="150" y="207" class="ax">SiO₂ (UMF)</text><text x="14" y="104" class="ax" transform="rotate(-90 14 104)">Al₂O₃ (UMF)</text>
 <text x="60" y="120" class="zone">crazing</text><text x="196" y="126" class="zone">glossy</text><text x="150" y="44" class="zone">matte</text><text x="236" y="40" class="zone">under-fired</text><text x="96" y="172" class="zone">fluid</text>
 <circle cx="{cx:.1}" cy="{cy:.1}" r="5.5" fill="#b5502a" stroke="#fff" stroke-width="1.5"></circle>
-</svg><figcaption class="stull-cap">SiO₂ {x:.2} · Al₂O₃ {y:.2} — Stull position (approximate zones, ≈cone 10)</figcaption></figure>"##));
+</svg><figcaption class="stull-cap">Stull position: SiO₂ {x:.2} · Al₂O₃ {y:.2} (approximate zones, ≈cone 10)</figcaption></figure>"##));
         }
     }
     if !c.properties.is_empty() {
