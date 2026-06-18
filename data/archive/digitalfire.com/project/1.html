@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg">
+<link rel="mask-icon" href=/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Project: Oxides</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item active" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=project" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td><p style="float:right; font-size:80%; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Projects</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a title="15" href="https://digitalfire.com/project/15">2019 Jiggering-Casting Project of Medalta 66 Mug</a><br /><a title="54" href="https://digitalfire.com/project/54">A cereal bowl jigger mold made using 3D printing</a><br /><a title="33" href="https://digitalfire.com/project/33">Beer Bottle Master Mold via 3D Printing</a><br /><a title="61" href="https://digitalfire.com/project/61">Better Porosity Clay for Brown Sugar Savers</a><br /><a title="48" href="https://digitalfire.com/project/48">Build a kiln monitoring device</a><br /><a title="69" href="https://digitalfire.com/project/69">Celebration Project</a><br /><a title="60" href="https://digitalfire.com/project/60">Coffee Mug Slip Casting Mold via 3D Printing</a><br /><a title="29" href="https://digitalfire.com/project/29">Comparing the Melt Fluidity of 16 Frits</a><br /><a title="52" href="https://digitalfire.com/project/52">Cookie Cutting clay with 3D printed cutters</a><br /><a title="41" href="https://digitalfire.com/project/41">Evaluating a clay's suitability for use in pottery</a><br /><a title="55" href="https://digitalfire.com/project/55">Make a mold for 4-gallon stackable calciners</a><br /><a title="49" href="https://digitalfire.com/project/49">Make Your Own Pyrometric Cones</a><br /><a title="47" href="https://digitalfire.com/project/47">Make your own sieve shaker to process ceramic slurries</a><br /><a title="40" href="https://digitalfire.com/project/40">Making a high quality ceramic tile</a><br /><a title="46" href="https://digitalfire.com/project/46">Making a Plaster Table</a><br /><a title="37" href="https://digitalfire.com/project/37">Making Bricks</a><br /><a title="50" href="https://digitalfire.com/project/50">Making our own kiln posts using a hand extruder</a><br /><a title="59" href="https://digitalfire.com/project/59">Medalta Ball Pitcher Slip Casting Mold via 3D Printing</a><br /><a title="34" href="https://digitalfire.com/project/34">Medalta Jug Master Mold Development</a><br /><a title="63" href="https://digitalfire.com/project/63">Mold Natches</a><br /><a title="32" href="https://digitalfire.com/project/32">Mother Nature's Porcelain - Plainsman 3B</a><br /><a title="66" href="https://digitalfire.com/project/66">Mug Handle Casting</a><br /><a title="39" href="https://digitalfire.com/project/39">Nursery plant pot mold via 3D printing</a><br /><a title="30" href="https://digitalfire.com/project/30">Pie-Crust Mug-Making Method</a><br /><a title="35" href="https://digitalfire.com/project/35">Plainsman 3D, Mother Nature's Porcelain/Stoneware</a><br /><a title="38" href="https://digitalfire.com/project/38">Project to Document a Shimpo Jiggering Attachment</a><br /><a title="36" href="https://digitalfire.com/project/36">Roll, Cut, Pull, Attach Handle-making Method</a><br /><a title="23" href="https://digitalfire.com/project/23">Slurry Mixing and Dewatering Your Own Clay Body</a><br /><a title="24" href="https://digitalfire.com/project/24">Testing a New Load of EP Kaolin</a><br /><a title="44" href="https://digitalfire.com/project/44">Using milk as a glaze</a></div><p style="clear:left"></p><h1>Oxides</h1>
+<p>Formulating and adjusting ceramic glazes can be approached on different levels: The pure oxide, the oxide in the presence of others with which to interact, the mineral, the material, the recipe and the process. To understand what you are doing you first separate the problem into aspects that relate to each of these levels. Working on the right level, or mix of levels, is the the key to understanding and solving many problems.<br />
+<br />
+Some <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> exist as physical powders we can add to a recipe, but oxides in the context of <a  href="https://digitalfire.com/glossary/glaze+chemistry">glaze chemistry</a> is more of a theoretical concept. In this model a fired glaze matrix is viewed as a construct of interacting oxides and the properties it displays are rationalized in terms of the oxide proportions and what we know about what each contributes and how they interact. Materials are viewed as warehouses that supply these oxides to the glaze melt. Oxides within this model are not the same as those outside of it. For example, pure <a  href="https://digitalfire.com/oxide/cao">CaO</a> powder is among the most <a  href="https://digitalfire.com/glossary/refractory">refractory</a> of all physical oxides. Yet within a glaze melt, in the presence of other oxides with which to interact, it really knows how to party: it is a very strong <a  href="https://digitalfire.com/glossary/flux">flux</a>! Sometimes textbooks will provide data on the properties of individual oxides. For example, melting behaviour might be quoted as a reason for firing in a certain way. However, it is important to realize that oxides are "packaged" within materials that we use in <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>, those materials are normally sourcing other oxides along with them. While an individual oxide might melt at a certain temperature, the individual particles of that material may not release the oxide to participate in the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> until a much higher temperature. Or, they might release it even lower. Additionally, interactions between it and particles of other materials will affect the manner of melting and dissolution.<br />
+<br />
+Oxide chemistry is not normally factored into understanding what bodies do when fired, it is difficult to draw relationships between the chemistry of <a  href="https://digitalfire.com/glossary/vitreous">vitreous</a> bodies and their physical fired properties. This is because bodies are not melted during firing as are glazes, normally firing creates conditions of crystal growth in the body. Thus bodies of similar chemistry can develop completely different <a  href="https://digitalfire.com/glossary/glass+vs.+crystalline">crystalline</a> matrixes and therefore different <a  href="https://digitalfire.com/glossary/physical+testing">physical properties</a> (depending on firing and <a  href="https://digitalfire.com/glossary/mineralogy">mineralogy</a> of ingredients).<br />
+<br />
+At the oxide level we study the relationships between the fired properties of glazes and their chemistry (assuming all oxides have gone into solution in <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a>). Understanding what each of the oxides is bringing to the chemistry is one of the most important aspects to controlling the fired properties of glazes (on this level there are complicating factors of <a  href="https://digitalfire.com/glossary/oxide+interaction">oxide interaction</a>, issues relating to the sourcing of the same oxide from different materials, non-linear property changes with changes in proportion). <br />
+<br />
+Chemistry needs to be put in context with the other levels. For example, consider a glaze that is <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a>: If it contains a lot of <a  href="https://digitalfire.com/oxide/na2o">Na<sub>2</sub>O</a>, then it has a high <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a>, that is almost certainly the cause. Glaze chemistry is needed to reduce the amount of sodium and substitute another flux of lower thermal expansion (which of course is also sympathetic to the glaze color, surface character, <a  href="https://digitalfire.com/glossary/melting+temperature">melting temperature</a>, etc.). <a  href="https://digitalfire.com/material/1070">Nepheline syenite</a>, for example, contributes Na<sub>2</sub>O. Glaze chemistry software can be employed to reduce the amount of nepheline (therefore the Na<sub>2</sub>O) and source the other oxides it was contributing from other materials. Doing this actually helps alleviate a mineral level issue also: the mineral nepheline is slightly soluble over time and excessive amounts can flocculate glazes if they are stored (thus they require more water and then begin to settle out in the bucket).<br />
+<br />
+Many ceramic oxides have mineral and even material equivalents, others do not. Some have forms we can buy and touch (like <a  href="https://digitalfire.com/material/1245">silica</a>), others are available but in an impractical form (expensive, soluble, unstable, difficult-to-get). The mineral quartz, for example, is almost pure <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a>. We usually just refer to the oxide SiO<sub>2</sub> as silica (although it is more correctly termed silicon dioxide). The powdered material is the silica that we use in glaze and body recipes is ground quartz, thus it is also SiO<sub>2</sub>. If the silica powder is being put into a glaze and completely dissolves and reacts then it will impose a lowering effect of the thermal expansion. Documentation about this belongs at the oxide area of this website because it is the SiO<sub>2</sub> molecules of which the material is composed that are effecting the change. However, discussion about the use of silica in bodies belongs in the materials area since it is seen, not as an addition of chemistry, but as an aggregate, a filler and a source of glass. Theoretical information about the mineral quartz (e.g. its thermal expansion, hardness) belongs on the mineral level (since there are other pure mineral sources of SiO<sub>2</sub>). Then, of course, there are issues related to particle size (which determines how well the quartz grains can dissolve in a glaze melt), cost and supply, these belong on the material level. This site has a flexible linking system between all areas and records (which we regard as the most value aspect of the database) and we are constantly working on improving the links.<p style="clear:left"></p></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Ceramic Oxide Periodic Table</h3>
+<a href="https://digitalfire.com/picture/sonlonifed"><img class="flexleft50" alt="Periodic table of ceramic oxides"  src="https://digitalfire.com/4sight/images/pictures/er5fytcakh.svg" /></a>
+<p>Pretty well all common traditional ceramic <a  href="https://digitalfire.com/glossary/base+glaze">base glazes</a> are made from less than a dozen elements (plus oxygen). Go to the full picture of this table and click or tap each of the <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> to learn more (on its page at <a  href="https://digitalfire.com/glossary/digitalfire+reference+library">digitalfire</a>.com). When materials melt, they <a  href="https://digitalfire.com/glossary/decomposition">decompose</a>, sourcing these elements in oxide form. The kiln builds the glaze from them, it does not care what material sources what oxide (assuming, of course, that all materials do melt or dissolve completely into <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> to release those oxides). Each of these oxides contributes specific properties to the glass. So, you can look at a formula and make a good prediction of the properties of the fired glaze. And know what specific oxide to increase or decrease to move a property in a given direction (e.g. melting behavior, hardness, <a  href="https://digitalfire.com/glossary/glaze+durability">durability</a>, <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a>, color, gloss, <a  href="https://digitalfire.com/glossary/crystallization">crystallization</a>). And know about how they interact (affecting each other). This is powerful. A lot of ceramic materials are available, hundreds - that is complicated when individual materials source multiple oxides. Viewing a glaze as a simple <a  href="https://digitalfire.com/glossary/unity+formula">unity formula</a> of ceramic oxides is just simpler.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/the+four+levels+on+which+to+view+ceramic+glazes">The Four Levels on Which to View Ceramic Glazes</a>
+<br /><i>By knowing which level to view a glaze from you are much better equipped to understand and control it. The levels are process, recipe, material, oxide.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/glaze+chemistry+basics+-+formula%2c+analysis%2c+mole%25%2c+unity+">Glaze Chemistry Basics - Formula, Analysis, Mole%, Unity </a>
+<br /><i>Part of changing your viewpoint of glazes, from a collection of materials to a collection of <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a>, is learning what a formula and analysis are, how conversion between the two is done and how unity and <a  href="https://digitalfire.com/glossary/loi">LOI</a> impact this.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/understanding+ceramic+oxides">Understanding Ceramic Oxides</a>
+<br /><i>Fired glazes are composed of oxide building blocks. Each of the <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> contributes different properties to the fired glaze and interacts with others in different ways. Understanding these gives you control.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/changing+our+view+of+glazes">Changing Our View of Glazes</a>
+<br /><i>A big secret to getting control of glazes is to begin looking at them as formulas of <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> rather than recipes of materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/chemistry+vs.+matrix+blending+to+create+glazes+from+native+materials">Chemistry vs. Matrix Blending to Create Glazes from Native Materials</a>
+<br /><i>Is it better to do trial and error line and matrix blending of materials to formulate glazes or is it better to use <a  href="https://digitalfire.com/glossary/glaze+chemistry">glaze chemistry</a> right from the start?</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/where+do+i+start+in+understanding+glazes%3f">Where do I start in understanding glazes?</a>
+<br /><i>Break your addiction to online recipes that don't work or bottled expensive glazes that you could <a  href="https://digitalfire.com/glossary/do-it-yourself">DIY</a>. Learn why glazes fire as they do. Why each material is used. How to create perfect dipping and brushing properties. Even some <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/ceramic+oxide">Ceramic Oxide</a>
+<br /><i>In <a  href="https://digitalfire.com/glossary/glaze+chemistry">glaze chemistry</a>, the oxide is the basic unit of formulas and analyses. Knowledge of what materials supply an oxide and of how it affects the fired glass or glaze is a key to control.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/glaze+chemistry">Glaze Chemistry</a>
+<br /><i><a  href="https://digitalfire.com/glossary/glaze+chemistry">Glaze chemistry</a> is the study of how the oxide <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> of glazes relate to the way they fire. It accounts for color, surface, hardness, texture, <a  href="https://digitalfire.com/glossary/melting+temperature">melting temperature</a>, <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a>, etc.</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

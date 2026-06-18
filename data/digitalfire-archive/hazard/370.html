@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Overview of Material Safety by Gavin Stairs</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="Toxicology and ceramic materials is a complex subject, what materials and methods pose the greatest dangers, which are the safest?" name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item"><a class="nav-link" href="../material/list.html">Materials</a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item active" href="list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=hazard" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container"><p><a aria-controls="collapse1" aria-expanded="false" class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button">All Hazards</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a href="341.html" title="341">Alumina Toxicology</a> |</nobr> <nobr><a href="333.html" title="333">Ammonia and Latex Toxicity</a> |</nobr> <nobr><a href="16.html" title="16">Antimony Oxide</a> |</nobr> <nobr><a href="412.html" title="412">Are colored porcelains hazardous?</a> |</nobr> <nobr><a href="18.html" title="18">Arsenic Oxide</a> |</nobr> <nobr><a href="19.html" title="19">Asbestos Toxicity</a> |</nobr> <nobr><a href="22.html" title="22">Ball Clay</a> |</nobr> <nobr><a href="321.html" title="321">BARIUM and COMPOUNDS Toxicology</a> |</nobr> <nobr><a href="367.html" title="367">Barium Carbonate in Clay Bodies</a> |</nobr> <nobr><a href="26.html" title="26">Barium Carbonate in Glazes</a> |</nobr> <nobr><a href="31.html" title="31">Bentonite Toxicity</a> |</nobr> <nobr><a href="33.html" title="33">Beryllium Monoxide Toxicology</a> |</nobr> <nobr><a href="352.html" title="352">Bismuth Trioxide Toxicology</a> |</nobr> <nobr><a href="326.html" title="326">Boron Compounds and Their Toxicity</a> |</nobr> <nobr><a href="1.html" title="1">Brown Stain</a> |</nobr> <nobr><a href="335.html" title="335">Cadmium Toxicity</a> |</nobr> <nobr><a href="343.html" title="343">Calcium Carbonate Toxicology</a> |</nobr> <nobr><a href="334.html" title="334">Carbon Monoxide Toxicity</a> |</nobr> <nobr><a href="353.html" title="353">Cesium Toxicology</a> |</nobr> <nobr><a href="330.html" title="330">Chromium Compounds Toxicology</a> |</nobr> <nobr><a href="146.html" title="146">Clay Toxicity</a> |</nobr> <nobr><a href="73.html" title="73">Cobalt Oxide and Carbonate</a> |</nobr> <nobr><a href="331.html" title="331">Cobalt Toxicology</a> |</nobr> <nobr><a href="329.html" title="329">Copper Compounds Toxicology</a> |</nobr> <nobr><a href="78.html" title="78">Copper Oxide and Carbonate</a> |</nobr> <nobr><a href="84.html" title="84">Cristobalite Toxicity</a> |</nobr> <nobr><a href="337.html" title="337">Cryolite and Ceramics</a> |</nobr> <nobr><a href="372.html" title="372">Dealing With Dust in Ceramics</a> |</nobr> <nobr><a href="351.html" title="351">Diatomaceous Earth Toxicology</a> |</nobr> <nobr><a href="323.html" title="323">Dioxins in Clays</a> |</nobr> <nobr><a href="95.html" title="95">Epsom Salts</a> |</nobr> <nobr><a href="348.html" title="348">Eye Injuries Due to Radiation</a> |</nobr> <nobr><a href="222.html" title="222">Feldspar</a> |</nobr> <nobr><a href="320.html" title="320">Fighting Micro-Organisms in Ceramics</a> |</nobr> <nobr><a href="108.html" title="108">Fluorine Gas</a> |</nobr> <nobr><a href="413.html" title="413">Fumes from gas kilns</a> |</nobr> <nobr><a href="354.html" title="354">Gallium Oxide Toxicology</a> |</nobr> <nobr><a href="342.html" title="342">Hafnium Oxide Toxicty</a> |</nobr> <nobr><a href="345.html" title="345">Hydrofluoric Acid Toxicity</a> |</nobr> <nobr><a href="350.html" title="350">Iron oxide and Hematite</a> |</nobr> <nobr><a href="169.html" title="169">Lead Chromate</a> |</nobr> <nobr><a href="368.html" title="368">Lead in Ceramic Glazes</a> |</nobr> <nobr><a href="328.html" title="328">Lead Toxicology</a> |</nobr> <nobr><a href="174.html" title="174">Lithium Carbonate Toxicity</a> |</nobr> <nobr><a href="349.html" title="349">Lithium Toxicology</a> |</nobr> <nobr><a href="322.html" title="322">Man-Made Vitreous Fibers (MMVF) Toxicology</a> |</nobr> <nobr><a href="410.html" title="410">Man-Made Vitreous Fibers Safety Update</a> |</nobr> <nobr><a href="406.html" title="406">Manganese and Parkinsons by Jane Watkins</a> |</nobr> <nobr><a href="187.html" title="187">Manganese in Clay Bodies</a> |</nobr> <nobr><a href="317.html" title="317">Manganese Inorganic Compounds Toxicology</a> |</nobr> <nobr><a href="409.html" title="409">Manganese Toxicity by Elke Blodgett</a> |</nobr> <nobr><a href="407.html" title="407">Manganese: Creativity and Illness by Dierdre O'Reilly</a> |</nobr> <nobr><a href="332.html" title="332">Molybdenum Compounds Toxicology</a> |</nobr> <nobr><a href="327.html" title="327">Nickel Compounds Toxicity</a> |</nobr> <nobr><a href="314.html" title="314">Niobium Oxide Toxicity</a> |</nobr> <nobr><a href="318.html" title="318">Occupational Dermatoses</a> |</nobr> <nobr><a href="370.html" title="370"><button class="btn btn-dark" type="button">Overview of Material Safety by Gavin Stairs</button></a> |</nobr> <nobr><a href="364.html" title="364">Paraffin Toxicology</a> |</nobr> <nobr><a href="216.html" title="216">Perlite Toxicity</a> |</nobr> <nobr><a href="238.html" title="238">Plant Ash Toxicity</a> |</nobr> <nobr><a href="346.html" title="346">Potassium Carbonate Toxicity</a> |</nobr> <nobr><a href="365.html" title="365">Pregnancy and Ceramics</a> |</nobr> <nobr><a href="355.html" title="355">Propane Toxicology</a> |</nobr> <nobr><a href="251.html" title="251">Quartz Toxicity</a> |</nobr> <nobr><a href="369.html" title="369">Quartz Toxicity on Clayart</a> |</nobr> <nobr><a href="336.html" title="336">Rare Earth Compounds Toxicity</a> |</nobr> <nobr><a href="366.html" title="366">Rubidium and Cesium Toxicology</a> |</nobr> <nobr><a href="356.html" title="356">Rutile Toxicology</a> |</nobr> <nobr><a href="324.html" title="324">Silicosis and Screening</a> |</nobr> <nobr><a href="357.html" title="357">Silver Compounds Toxicology</a> |</nobr> <nobr><a href="358.html" title="358">Sodium Azide Toxicology</a> |</nobr> <nobr><a href="359.html" title="359">Sodium Carbonate Toxicology</a> |</nobr> <nobr><a href="360.html" title="360">Sodium Silicate Powder Toxicology</a> |</nobr> <nobr><a href="315.html" title="315">Stannous Chloride Toxicity</a> |</nobr> <nobr><a href="316.html" title="316">Strontium Carbonate Toxicity Note</a> |</nobr> <nobr><a href="347.html" title="347">Sulfur Dioxide Toxicity</a> |</nobr> <nobr><a href="3.html" title="3">Talc Hazards Overview</a> |</nobr> <nobr><a href="361.html" title="361">Talc Toxicology</a> |</nobr> <nobr><a href="362.html" title="362">Thallium Oxide Toxicology</a> |</nobr> <nobr><a href="344.html" title="344">Thorium Dioxide Toxicity</a> |</nobr> <nobr><a href="338.html" title="338">Tin Inorganic Compounds</a> |</nobr> <nobr><a href="339.html" title="339">Titanium Dioxide Toxicology</a> |</nobr> <nobr><a href="313.html" title="313">Toxicological Assessment of Zeolites</a> |</nobr> <nobr><a href="363.html" title="363">Tungsten Compounds Toxicology</a> |</nobr> <nobr><a href="371.html" title="371">Understanding Acronyms on MSDS's</a> |</nobr> <nobr><a href="325.html" title="325">Uranium and Ceramics</a> |</nobr> <nobr><a href="319.html" title="319">Vanadium and Compounds Toxicology</a> |</nobr> <nobr><a href="411.html" title="411">Vermiculite</a> |</nobr> <nobr><a href="340.html" title="340">Zinc Compounds Toxicology</a> |</nobr> <nobr><a href="373.html" title="373">Zirconium Compounds Toxicity</a> |</nobr> <nobr><a href="234.html" title="234">Zirconium Encapsulated Stains Toxicity</a></nobr></div><h1>Overview of Material Safety by Gavin Stairs</h1>
+<p><em>Gavin Stairs <a href="mailto:stairs@lglobal.com">stairs@lglobal.com</a></em></p>
+<p>Toxicology is a moving target, and a sensitive one at that. So there is no once and for all answer to what's bad and what's good. At the same time, I detect a note of hysteria in general discussions. It is well to remember that <a href="../glossary/ceramics.html">ceramics</a>, pottery and glazes are old, very old, in the experience of humankind, and we haven't been killed off by it yet. When we discuss risks and toxins, we tend to do so with emphasis on the dire consequences, without regard for the fact that most of what we are discussing has been in common use for a long time. There is an experiment which has been proceeding all the while, called life, and the general outcome is not wholly bad. Life expectancy is up, on the whole. We should not get mesmerized by the problems, but try to incorporate them into the whole picture. </p>
+<p>Toxicology as it is now practiced is complex. Most of the easy problems were solved back in the 19th century and before. We know that strychnine and cyanide are generally bad for you, although the former is used as a helpful drug. The purest water, completely deionized, is not good to drink in large quantities, because it upsets the salt balance and tends to do bad things to the gut. Oxygen, a necessity for life, like water, is best taken with nitrogen, because pure it can lead to excessive tissue oxidation, even combustion. So toxicology is generally relative. Most of the metals we are concerned about are required by the body in trace amounts. Barium, for example, seems to have a place in nerve <a href="../glossary/glaze+chemistry.html">chemistry</a>. Sodium and potassium are ubiquitous and highly tolerated, although I tend to rip the roof off my mouth with excess salt when I eat corn on the cob. Potassium is a key synapse carrier. Iron, of course, is used as an oxygen carrier in the blood haemoglobin. It seems that we grew up in this soup of elements, and our bodies have evolved the means to keep most of them in proper balance, according to the concentrations normally encountered in our ecosystem. It is when the balance gets disturbed that things happen, and we get problems. </p>
+<p>Our glazes and <a href="../glossary/clay+body.html">clay bodies</a> are concentrated substances. This is the primary source of danger. They are out of balance. So, as Monona Rossol says, even iron can be an acute danger to a child. This is by no means to say that iron glazes are dangerous. What it does say is that nothing is completely without risk, contrary to what lawyers and litigants may believe. Almost everything we handle in real life is similarly out of balance. The iron, nickel and chromium in our knives and forks is highly out of balance, and will eventually disintegrate into <a href="../glossary/ceramic+oxide.html">oxides</a> and end up contaminating some future potter's <a href="../glossary/porcelain.html">porcelain</a>. The unbalance is what powers change and action. When it flows through us, it can change us. This is all part of the natural flow of matter and energy. </p>
+<p>Those at first and greatest risk of poisoning from glaze substances are those who process them at extraction and manufacture of our raw materials. Next are those who handle them and use them in readily absorbed forms, like potters. Last and least are those who use the ware. In order to absorb the toxin from the ware you must first extract it from its largely inert state in the glaze. This tells you that the insides of liquid storage and cooking vessels are the highest risks to users. It is highly difficult and improbable to get poisoned from the outside, or bottom of any ceramic vessel. </p>
+<p>We aren't discussing the manufacturers at the moment, so we'll ignore them, although historically this is where most of the damage has been done. </p>
+<p>The potter is at higher risk than the user, in general. Preadolescents are somewhat more sensitive to poisons in general than late teens and adults, because whatever they are exposed to becomes a part of them very rapidly and directly. They become what they eat, breathe, etc. Generally, concentrated substances of all but the most inert kind should be kept away from young children. </p>
+<p>Clay is a concentrated substance, but it is largely inert. Its dust is a respiratory irritant and risk for future <a href="372.html">silicosis</a> and respiratory disease. Clay is a common contaminant in our everyday environments. It is just a form of soil. However, it is a particularly dusty soil, so our concern is to keep the dust levels tolerable. This means mainly good cleanliness, both of the room and the students. Most schools are built to accommodate this. Ordinary school clay of the ball clay/talc variety is normally chemically <a href="https://digitalfire.com/url/3517">non-toxic</a>. Check to make sure: don't buy clay without an analysis that shows the heavy metals, in particular. </p>
+<p>Young children may try to eat some of whatever they handle. Probably they should be given only certified non-toxic, oil based clay. Not that you really want them to eat large quantities of this guck, but...at least there are no dust problems, and what sticks to them is mainly oil. </p>
+<p>The adolescent crowd is somewhat more able to avoid ingestion and breathing of dusts. However, they are generally inattentive to matters of safety, the risks of which are not readily apparent to them. They may not take seriously warnings about the relative <a href="../glossary/toxicity.html">toxicity</a> of glazes. Most clays, including school clay, are safe for them, provided dust is controlled. Of glazes, commercial or not, only the most non-toxic ones are truly safe, and only after they understand that glazes are not to be<br/>ingested or soaked in. Safety equipment must be provided when appropriate. Personal hygiene is important, as is good supervision. This may be the time to instill good work habits that will remain with them when they begin to handle more toxic materials. </p>
+<p>Post-adolescents are more able to control their own behaviors, to comprehend rational and graded discussions of relative risk, and to apply the knowledge to their own benefit. To the extent that they can absorb the information, more materials can be entrusted to their handling. If they are taking chemistry (which, God grant) then they may have been taught the basics of lab safety. They should be taught that glazes, and glaze materials in particular, are concentrated chemicals of the sort that they use in the chem lab, and that they must understand the appropriate precautions in order to handle any given material with safety. The specific precautions for each material available to them must be provided positively and overtly, not just after waiting for it to come up. This is part of what the teacher is there to teach. </p>
+<p>This makes it incumbent on the teacher to study and comprehend the risks and benefits of every material in use in the studio classroom. I would recommend as an exercise to teachers that they (mentally) remove from the scene everything, all materials. Then, one by one, consider each one to see if it is worthy to be admitted. As a preliminary guide, here is a list (originally from Ron Roy): 
+</p><ul>
+<li>All clays except Barnard (Black Bird) which has a fair bit of <a href="../oxide/mno2.html">MnO2</a>
+</li><li>Bentonite 
+</li><li>All <a href="../material/310.html">feldspars</a> including <a href="../material/240.html">Cornwall Stone</a> and Neph Sy. 
+</li><li>Silica 
+</li><li>Whiting 
+</li><li>Tin oxide 
+</li><li>Zinc Oxide? 
+</li><li>Frits 3110, 3124, 3134, 3195, 3278, 3269. (there are many more but these are the ones I use - all have some <a href="../glossary/borate.html">boron</a>.) (sic) 
+</li><li>Iron oxide, <a href="../material/1204.html">Rutile</a> and <a href="../material/1644.html">Titanium Dioxide</a>
+</li><li>Dolomite 
+</li><li>Gerstley <a href="../glossary/borate.html">Borate</a>
+</li><li>Talc 
+</li><li>Wollastonite 
+</li><li>Zircopax 
+</li><li>Strontium Carbonate (has a small amount of Barium 1 to 2%) 
+</li><li>Magnesium Carbonate 
+</li><li>Bone Ash 
+</li><li>Soda Ash (soluble) 
+</li><li>Encapsulated <a href="../glossary/ceramic+stain.html">stains</a>? </li></ul>
+<p>After that, there will likely remain a collection of stains and colors, and a few mixed pots of gunk. This is where it gets more tricky. If the contents are unknown, it should be removed from the classroom. If you can't justify letting students use it, use it yourself or safely dispose of it. If it's still undecided, put it safely away until you have learned enough to judge. For each unknown, do a research project: You are dependent on other peoples' work, but don't depend on only one voice. Learn all you can, then decide. Remember, the first criterion is safe handling in raw form by students or in the presence of students, not the end user safety: that comes later. </p>
+<p>Finally, keep up to date. That means staying informed, and carefully and rationally evaluating all new information. If you have done what I suggested above, you will already have done this once. You need only decide if the new information warrants reevaluation. </p>
+<p>Now we get to the end user. The first thing is to recognize what I said above, namely that poisoning risk comes almost exclusively from prolonged food contact during cooking or storage. This means that making safe, non-toxic ware is easy: do whatever you like (see caveat about transport of toxins in kiln vapors) on the outside, and apply a safe, smooth, well fitting glaze to the food contact area. If you are unsure about how to formulate such a glaze for your body, see the many posts on this subject by Ron Roy, <a href="../glossary/tony+hansen.html">Tony Hansen</a>, Tom Buck and many others on this list. Or study some of the many good texts. And do your own trials using the methods you will find there. If you need to use a <a href="../glossary/colorant.html">colorant</a> glaze whose susceptibility to toxic <a href="../glossary/leaching.html">leaching</a> you don't know, have a test done. See Monona's many posts to find out what and how to do it. All of the experts have said over and over that good fit and safety do not come from trusting others and received recipes. They come from checking and rechecking, and matching glaze to body. <a href="../glossary/commercial+hobby+brushing+glazes.html">Commercial glazes</a> are expensive, and they are matched to an ideal body. Who has one of those? For that reason, if for no other, take Tony Hansen's advice, and stick to a basic glaze for each body, and keep up with changes in each batch. Then you will know. </p>
+<p>Caveat: Some glaze toxins can be transported in the kiln by diffusion and by fumes. Lead and other low temperature melting point materials are the highest risks, but there are other rare and fascinating circumstances, no doubt. They can also be spread by dusts, errors and pot contamination while mixing. These are good reasons to totally exclude high risk materials like lead. </p>
+<p>The issue of crackles, mattes and <a href="../trouble/glaze+crazing.html">crazed</a> glazes is often broached in respect of unsanitary surface flaws. I do not know if this is sound or not. I have certainly eaten out of and off of many cracked plates, bowls and mugs, and have not suffered from it, to my knowledge. Even so, I incline to the use of smooth, glassy, durable, well fitting glazes on the insides of pots. It gives me a better feeling, if nothing else. </p>
+<p>The final issue is regarding mechanical failure risks. In student ware, it is almost inevitable that they will initially experience a fairly high failure rate. The main thing is to give students to understand what to expect of their ware. If they have made untrustworthy ware, they should be told. Better, teach them to test their pieces by one of the methods like hot/cold to stress unsound pieces to fracture, if the students intend to use the ware for food, or to give it away to unsuspecting friends and relatives. Best, learn how to make and teach the making of sound, safe ware.</p>
+<h2>Trace Elements</h2>
+<p>The thing about toxicology is that everything is toxic at some level. Hardly any exceptions. The question is what level? That is, how much? Toxicologists try to establish the 50% mortality level. With something like water, it is inconceivably high (i.e., drowning). With arsenic, small. With cyanide or strychnine, very small. Most of the elements and vitamins have moderately small levels, but some, like vitamin C, are quite large. It's rather hard to poison yourself with vitamin C. Not so hard with iron and vitamin B complex. Monona Rossol wrote about the overlap of the toxic dose and the therapeutic dose of Lithium in Ceramics Monthly. I am oversimplifying, of course. There are synergistic effects which make it highly variable in some cases.</p>
+<p>The issue with trace elements is that we need some, but not too much. The dose in a multivitamin capsule is calculated to be enough for a daily requirement for a healthy adult, but not enough to be toxic, even if the person taking it has several times the ordinary daily intake from other sources.</p>
+<p>The issue with pottery leaching is that we are not in the business of mineral supplements, and we cannot give a carefully controlled dose of what leaches from our pots. With some things, like <a href="../material/1245.html">silica</a>, this is not a problem. With others, like cobalt and iron, it is rarely a problem. With things like chrome, vanadium, molybdenum, lithium, barium, perhaps aluminum, and so forth, it may be a problem. With lead and cadmium it definitely is a problem in certain cases. In some of these cases, we don't<br/>know if it is a problem or not. The safe situation is to have durable glazes which do not leach significant amounts of anything.</p>
+<p>These issues are not simple to quantify, and not simple to interpret. The conservative stance is to make only durable, well fitted glazes out of safe materials for food contact liners. The margin is wide: in a previous post to Clayart, I offered the personal case of the possibly lead-cobalt glazed bowl as an example of actual use with little risk to health. On the other hand, we have heard testimony [on Clayart] about poisoning with molybdenum, lead, and even iron. These cases were all due to chronic exposure in high risk situations: children drinking acidic juices out of a favorite, poorly glazed cup every day, and constant use of high-molybdenum clays by a potter. If we offer ware for sale, or give it away, we must be aware that people may use our pots in this way, and may be poisoned if we have not taken care to prevent it. And for our own safety, we must control our own exposure to all risky substances.</p>
+<hr/><p>By Edouard Bastarache </p>
+<h2 style="font-style:italic; margin-top:40px;">Related Information</h2>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/are+your+glazes+food+safe+or+are+they+leachable%3f.html">Are Your Glazes Food Safe or are They Leachable?</a>
+<br/><i>Many potters do not think about <a href="../glossary/leaching.html">leaching</a>, but times are changing. What is the <a href="../glossary/glaze+chemistry.html">chemistry</a> of stability? There are simple ways to check for leaching, and fix <a href="../trouble/glaze+crazing.html">crazing</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="../project/materials.html">Materials</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/toxicity.html">Toxicity</a>
+<br/><i>Common sense can be applied to the safe use of ceramic materials. The obvious dangers are breathing the dust and inhaling the fumes they produce during firing. Here is a round-up of various materials and their obvious hazards.
+</i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></div></body>
+</html>

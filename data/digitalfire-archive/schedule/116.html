@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>PLC6CR Firing Schedule</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item"><a class="nav-link" href="../material/list.html">Materials</a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item active" href="list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=schedule" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container"><p><a aria-controls="collapse1" aria-expanded="false" class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button">All Firing Schedules</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a href="03dsff.html" title="119">03DSFF - Cone 03 Fast Fire</a><br/><a href="04dsdh.html" title="118">04DSDH - Low Temperature Drop-and-Hold</a><br/><a href="bq1000.html" title="113">BQ1000 - Plainsman Electric Bisque Firing Schedule</a><br/><a href="brtf05.html" title="125">BRTF05 - Bartlett Fast Glaze Cone 05</a><br/><a href="brtf6.html" title="126">BRTF6 - Bartlett Fast Glaze Cone 6</a><br/><a href="brts6.html" title="127">BRTS6 - Bartlett Slow Glaze Cone 6</a><br/><a href="btfb04.html" title="121">BTFB04 - Bartlett Fast Bisque Cone 04</a><br/><a href="btsb04.html" title="128">BTSB04 - Bartlett Slow Bisque Cone 04</a><br/><a href="btsg05.html" title="120">BTSG05 - Bartlett Slow Glaze Cone 05</a><br/><a href="c04pltp.html" title="94">C04PLTP - Plainsman Low Temperature Drop-and-hold</a><br/><a href="c10rpl.html" title="93">C10RPL - Plainsman Cone 10R Firing</a><br/><a href="c5dhsc.html" title="122">C5DHSC - Plainsman Cone 5 Drop-and-Hold Slow-Cool</a><br/><a href="c6dhsc.html" title="115">C6DHSC - Plainsman Cone 6 Drop-and-hold, Slow Cool</a><br/><a href="c6ired.html" title="124">C6IRED - Cone 6 Iron Reds</a><br/><a href="c6msgl1.html" title="83">C6MSGL1 - Mastering Glazes Cone 6</a><br/><a href="c6plst.html" title="114">C6PLST - Plainsman Cone 6 Electric Standard</a><br/><a href="fscg1.html" title="98">FSCG1 - Shimbo Crystal Schedule 1</a><br/><a href="fscgb1.html" title="99">FSCGB1 - Shimbo Crystal Holding Pattern 2</a><br/><a href="fscgcl.html" title="95">FSCGCL - Shimbo Crystal Celestite Schedule</a><br/><a href="fscgwm.html" title="97">FSCGWM - Wollast-O-Matte Fara Shimbo Crystalline Glaze</a><br/><a href="fscrgl.html" title="101">FSCRGL - GC106 Base for Crystalline Glazes</a><br/><a href="fshp1.html" title="110">FSHP1 - Shimbo Crystal Holding Pattern 1</a><br/><a href="fshp3.html" title="112">FSHP3 - Shimbo Crystal Holding Pattern 3</a><br/><a href="fsnm5.html" title="96">FSNM5 - Fa's Number Five</a><br/><a href="mddcl.html" title="123">MDDCL - Medalta Decal Firing</a><br/><a href="plc6cr.html" title="116">PLC6CR - Cone 6 Crystal Glaze Plainsman</a><br/><a href="plc6ds.html" title="117">PLC6DS - Cone 6 Drop-and-Soak Firing Schedule</a><br/><a href="qica.html" title="129">QICA - Quartz Inversion Cracking Avoider</a></div><h1>"PLC6CR" Firing Schedule</h1><h2>Cone 6 Crystal Glaze Plainsman</h2>
+<p>With the advent of computer controlled kilns, producing crystal glazes at medium and high temperatures is quite easy, just use a really fluid zinc glaze and fire a schedule that gives them opportunity to grow.<br/>
+<br/>
+Adjust the final temperature on step 3 to match the temperature your kiln reads when it reaches <a href="../glossary/cone+6.html">cone 6</a>.<br/>
+<br/>
+Note that almost everyone who uses <a href="../glossary/crystalline+glazes.html">crystalline glazes</a> either does not notice or has accepted the <a href="../trouble/glaze+crazing.html">crazing</a> that these naturally produce on typical <a href="../glossary/porcelain.html">porcelain</a> <a href="../glossary/clay+body.html">clay bodies</a> at middle at high temperatures. This is not necessary, a <a href="../glossary/co-efficient+of+thermal+expansion.html">high expansion</a> <a href="../glossary/clay+body.html">clay body</a> can be employed to prevent this.</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<th class="text-left" scope="col">Step</th>
+<th class="text-center" scope="col">°C</th>
+<th class="text-center" scope="col">°F</th>
+<th class="text-left" scope="col">Hold</th>
+<th class="text-right" scope="col">Time</th>
+<th></th>
+</thead><tbody>
+<tr>
+<td class="text-left">1</td>
+<td class="text-left">176°C/hr to 372C </td>
+<td class="text-left">316°F/hr to 701F </td>
+<td class="text-left"> </td>
+<td class="text-right">2:08</td>
+<td class="text-left"> </td>
+</tr>
+<tr>
+<td class="text-left">2</td>
+<td class="text-left">398°C/hr to 1093C </td>
+<td class="text-left">716°F/hr to 1999F </td>
+<td class="text-left"> </td>
+<td class="text-right">3:57</td>
+<td class="text-left"> </td>
+</tr>
+<tr>
+<td class="text-left">3</td>
+<td class="text-left">65°C/hr to 1210C </td>
+<td class="text-left">117°F/hr to 2210F </td>
+<td class="text-left"> </td>
+<td class="text-right">5:45</td>
+<td class="text-left"> </td>
+</tr>
+<tr>
+<td class="text-left">4</td>
+<td class="text-left">398°C/hr to 1093C </td>
+<td class="text-left">716°F/hr to 1999F </td>
+<td class="text-left"> </td>
+<td class="text-right">6:03</td>
+<td class="text-left"> </td>
+</tr>
+<tr>
+<td class="text-left">5</td>
+<td class="text-left">398°C/hr to 1037C </td>
+<td class="text-left">716°F/hr to 1898F </td>
+<td class="text-left"> </td>
+<td class="text-right">6:11</td>
+<td class="text-left"> </td>
+</tr>
+</tbody></table>
+<div style="margin:0px 0px 20px 0px; font-style:italic; font-size:80%;">Start temperature assumed: 25°C or 75°F<br/>
+			"Fahrenheit degrees" is not the same as "degrees Fahrenheit". 
+			A 100° reading on a Fahrenheit thermometer is equal to a 37° reading on a Celcius thermometer. 
+			But "100 Fahrenheit degrees of temperature change" is equivalent "55 Celsius degrees of change". 
+			That is an important distinction to understand the above temperature conversions.</div>
+<h2 style="font-style:italic;">Related Information</h2>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Recipes</td>
+<td>
+<a href="../recipe/g2902b.html">G2902B - Cone 6 Crystal Glaze</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/crystalline+glazes.html">Crystalline glazes</a>
+<br/><i>A type of ceramic glaze made by potters. Giant multicolored crystals grown on a super gloss low alumina glaze by controlling multiple holds and soaks during cooling</i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></div></body>
+</html>

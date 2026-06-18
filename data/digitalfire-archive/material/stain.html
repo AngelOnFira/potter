@@ -1,0 +1,2619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Stain</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="Alternate names: Ceramic Stains - Digitalfire Reference Library (no ads)" name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item active"><a class="nav-link" href="list.html">Materials <span class="sr-only">(current)</span></a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=material" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container">
+<ul class="nav nav-tabs pt-1" id="myTab" role="tablist">
+<li class="nav-item">
+<a aria-controls="material" aria-selected="true" class="nav-link active" data-toggle="tab" href="#material" id="material-tab" role="tab">Materials for Ceramics</a>
+</li>
+</ul>
+<div class="tab-content mb-3" id="myTabContent" style="border-right:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #ddd; padding:10px;">
+<div aria-labelledby="material-tab" class="tab-pane fade show active" id="material" role="tabpanel">
+<a href="list_1-9.html">1-9</a> | <a href="list_A.html">A</a> | <a href="list_B.html">B</a> | <a href="list_C.html">C</a> | <a href="list_D.html">D</a> | <a href="list_E.html">E</a> | <a href="list_F.html">F</a> | <a href="list_Frits.html">Frits</a> | <a href="list_G.html">G</a> | <a href="list_H.html">H</a> | <a href="list_I.html">I</a> | <a href="list_J.html">J</a> | <a href="list_K.html">K</a> | <a href="list_L.html">L</a> | <a href="list_M.html">M</a> | <a href="list_N.html">N</a> | <a href="list_O.html">O</a> | <a href="list_P.html">P</a> | <a href="list_Q.html">Q</a> | <a href="list_R.html">R</a> | <a href="list_S.html">S</a> | <a href="list_T.html">T</a> | <a href="list_U.html">U</a> | <a href="list_V.html">V</a> | <a href="list_W.html">W</a> | <a href="list_X.html">X</a> | <a href="list_Y.html">Y</a> | <a href="list_Z.html">Z</a><br/>
+<nobr></nobr>
+</div>
+</div><h1>Stain</h1>
+<p><b>Alternate Names</b>: Ceramic Stains</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/oxide.html">Oxide</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/analysis.html">Analysis</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Formula</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Tolerance</a></th>
+</tr></thead><tbody>
+<h4>Notes</h4><p>Thousands of body and glaze <a href="../glossary/ceramic+stain.html">stains</a> are available from dozens of stains companies around the world. Some companies have been in business for a hundred years or more, many specialize in creating products for a particular manufacturing sector. Some companies have multinational distribution networks, others will deal directly with small companies. Most companies have technical staff and research facilities to handle a wide range of color problems.</p>
+<p>Stains are fired blends of metal and ceramic <a href="../glossary/ceramic+oxide.html">oxides</a> that have been reground
+into a fine powder. Stains containing otherwise toxic oxides can be employed
+without significant dangers. This is the first aspect of something that stains
+have that coloring oxides don't: stability. A second aspect of stability is that
+stains produce much more consistent and repeatable color than using raw oxide
+colors.</p>
+<p>Stains are most popular at lower temperatures where colors tend to be
+brighter. However most stains can be used right up to high fire. Premixed low
+fire glazes are typically made by blending stains and commercial <a href="../glossary/frit.html">frits</a> and other
+than following firing instructions, users of these products give little thought
+to the technical challenges that were overcome to produce them. This is a third
+key advantage of stains: the ability to target a specific color. Many ceramic
+color shades (i.e. reds) are difficult to achieve and beyond the abilities of
+end users.</p>
+<p>While many stains are 'standard' and their composition is well known across
+the industry, others are proprietary. Stain companies don't release the exact
+makeup of stains but they do tell us the 'system'. For example, a green stain
+might contain chrome, cobalt and <a href="1245.html">silica</a> and be labeled 'CrCoSi'. Although silica
+is not a <a href="../glossary/colorant.html">colorant</a> itself, it is included to create a stable silicate crystal
+structure with the other two.</p>
+<p>Stain companies often supply multiple products to produce a given color using
+different oxide systems (i.e. chrome-tin pink, manganese-alumina pink). Various
+factors like the base <a href="../glossary/glaze+chemistry.html">glaze chemistry</a>, color shade, temperature, and end use
+determine the system you should choose. Knowing how to calculate the oxide
+makeup of a glaze or dealing with a stain company that provides good service are
+key factor to being able to troubleshoot color problems with stains.</p>
+<p>Thus stains do not come with a 'unconditional color guarantee'. The shade
+produced depends on many of factors including the host glaze <a href="../glossary/glaze+chemistry.html">chemistry</a>, on/over/underglaze
+use, <a href="../glossary/glaze+thickness.html">glaze thickness</a>, amount of <a href="../glossary/opacifier.html">opacifier</a>, firing temperature, etc. Achieving
+colors with stains is certainly easier, but it is not a 'no-brainer'. Certain
+systems are quite flexible and produce color in many kinds of glazes (ie. cobalt
+silicate). Other systems either require that certain oxides be present in the
+host glaze in minimum amounts or others not be present at all. The symbiosis of
+host glaze chemistry and stain, for example, can be demonstrated with chrome-tin
+stains. They will not develop color if zinc is present or if there is inadequate
+calcia. It is common to hear people say that their pink stain 'burned out', but
+generally the stain is being used in an incompatible glaze base. Another
+interesting demonstration of these factors is the color chart of a typical stain
+company. These charts show the stain used in one or more <a href="../glossary/frit.html">fritted</a> <a href="../glossary/base+glaze.html">base glazes</a>
+that are selected to be compatible with as many of the colors as possible.
+Certain samples will also have added opacifier and zinc, for example.</p>
+<p>Admittedly, stains can produce homogeneous color which can be less
+interesting than the variegated and speckled color effects that can be achieved
+with raw <a href="../glossary/metal+oxides.html">metal oxides</a> like iron, cobalt, copper, etc. But for manufacturing, it
+cannot be ignored that stains are far more consistent and reliable to use.</p>
+<p>Potters love to paint stains over and under glazes to decorate ware. <a href="../glossary/majolica.html">Majolica</a>
+ware is a good example. However, keep in mind that stains vary in their
+willingness to allow the <a href="../glossary/underglaze.html">underglaze</a> to envelope the color particles. Some tend
+to crystallize the surface if used <a href="../glossary/overglaze.html">overglaze</a>. Likewise, if stains are used
+underglaze they vary in their willingness to allow the overglaze to penetrate
+through to form and <a href="../glossary/body+glaze+interface.html">interface</a> with the body. Stains don't suspend well in water
+to create a paintable material either so it is necessary to mix them with a
+compatible and paintable glaze medium for doing brushwork.</p>
+<p>Stains exist either in the context of the huge industrial ceramic industry or
+in the hobby, pottery, and <a href="../glossary/ceramics.html">ceramics</a> markets. Large industries either have
+in-house technical people or contract consultants. Small users do not have this
+luxury. They should know that certain stain companies, (i.e. Mason) have
+developed excellent reputations for dealing with smaller volumes and providing
+support.</p>
+<p>A fired glaze can leach heavy metals whether these metals are sourced from a
+stain or from raw metal oxides. Thus you should have your glazes tested for
+<a href="../glossary/leaching.html">leaching</a> if you are making <a href="../glossary/functional.html">functional</a> ware having stained food surfaces. There
+are many factors that determine if a glaze is leachable (for more information
+see links).</p>
+<p>Stains can be slightly soluble in water. This will be noted in the <a href="../glossary/slurry.html">slurry</a> and at times as a cloudiness on the surface of the fired glaze surface.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/an+overview+of+ceramic+stains.html">An Overview of Ceramic Stains</a>
+<br/><i>Understanding the advantages of disadvantages of <a href="../glossary/ceramic+stain.html">stains</a> vs. oxide colors is the key to choosing the best approach</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/formulating+a+clear+glaze+compatible+with+chrome-tin+stains.html">Formulating a Clear Glaze Compatible with Chrome-Tin Stains</a>
+<br/><i>In <a href="../glossary/ceramics.html">ceramics</a> color is often a matter of <a href="../glossary/glaze+chemistry.html">chemistry</a>, that is, the host glaze must be compatible and have a sympathetic chemistry for the stain being added. Chrome-tin <a href="../glossary/ceramic+stain.html">stains</a> are a classic example.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/getting+the+glaze+color+you+want%3a+working+with+stains.html">Getting the Glaze Color You Want: Working With Stains</a>
+<br/><i>There are many things to know about to make the best use of <a href="../glossary/ceramic+stain.html">stains</a>, but one often ignored aspect is the relationship between glaze color and <a href="../glossary/glaze+chemistry.html">chemistry</a>. If you want to control color you need to know about stains and chemistry.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/glaze+and+body+pigments+and+stains+in+the+ceramic+tile+industry.html">Glaze and Body Pigments and Stains in the Ceramic Tile Industry</a>
+<br/><i>A complete discussion of how ceramic pigments and <a href="../glossary/ceramic+stain.html">stains</a> are manufactured and used in the tile industry. It includes theory, types, colors, <a href="../glossary/opacifier.html">opacification</a>, processing, particles size, testing information.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="14r969+brown+stain.html">14R969 Brown Stain</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="red+stains.html">Red Stains</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="red+stains.html">Red Stains</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+%28blacks%29.html">Stain (blacks)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6339.html">Stain 6339</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+%28green%29.html">Stain (green)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+%28blue%29.html">Stain (blue)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+%28blue%2fgreen%29.html">Stain (blue/green)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+%28blue%29.html">Stain (blue)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+%28brown%29.html">Stain (brown)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+%28flux%29.html">Stain (flux)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+%28green%2fblue-green%29.html">Stain (green/blue-green)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+%28grey%29.html">Stain (grey)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+%28grey%29.html">Stain (grey)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+%28grey%29.html">Stain (grey)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+%28inclusion%29.html">Stain (inclusion)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+%28orange%29.html">Stain (orange)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+%28pink%29.html">Stain (pink)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+%28pink%2fcoral%29.html">Stain (pink/coral)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+%28pink%2fcrimson%29.html">Stain (pink/crimson)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+%28pinks%29.html">Stain (pinks)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+%28white%29.html">Stain (white)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+%28yellow%29.html">Stain (yellow)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+%28yellow%29.html">Stain (yellow)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+%28yellow%29.html">Stain (yellow)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+%28yellow%29.html">Stain (yellow)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+%28yellow%2forange%29.html">Stain (yellow/orange)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1051.html">Stain 1051</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1089.html">Stain 1089</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1094-k.html">Stain 1094-K</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1094-s.html">Stain 1094-S</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1094-v.html">Stain 1094-V</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1099.html">Stain 1099</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1207.html">Stain 1207</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1208.html">Stain 1208</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1208-f.html">Stain 1208-F</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1218.html">Stain 1218</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1221.html">Stain 1221</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1226.html">Stain 1226</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1228.html">Stain 1228</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1243.html">Stain 1243</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1243-a.html">Stain 1243-A</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1289.html">Stain 1289</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1359-c.html">Stain 1359-C</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1377.html">Stain 1377</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1377-u.html">Stain 1377-U</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1378-m-3.html">Stain 1378-M-3</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1378-y.html">Stain 1378-Y</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1383.html">Stain 1383</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1385.html">Stain 1385</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1387.html">Stain 1387</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1390.html">Stain 1390</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+e+35.html">Stain 14 E 35</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+e+44.html">Stain 14 E 44</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+e+87.html">Stain 14 E 87</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+h+113.html">Stain 14 H 113</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+h+200.html">Stain 14 H 200</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+h+201.html">Stain 14 H 201</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+h+235.html">Stain 14 H 235</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+h+236.html">Stain 14 H 236</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+h+362.html">Stain 14 H 362</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+h+365.html">Stain 14 H 365</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+h+386.html">Stain 14 H 386</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+h+548.html">Stain 14 H 548</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+h+674.html">Stain 14 H 674</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+h+704.html">Stain 14 H 704</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+h+708.html">Stain 14 H 708</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+k+139.html">Stain 14 K 139</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+k+191.html">Stain 14 K 191</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+k+193.html">Stain 14 K 193</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+k+266.html">Stain 14 K 266</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+k+648.html">Stain 14 K 648</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+l+114.html">Stain 14 L 114</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+l+232.html">Stain 14 L 232</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+l+305.html">Stain 14 L 305</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+l+98.html">Stain 14 L 98</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+m+124.html">Stain 14 M 124</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+m+192.html">Stain 14 M 192</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+m+200.html">Stain 14 M 200</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+m+204.html">Stain 14 M 204</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+m+222.html">Stain 14 M 222</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+m+265.html">Stain 14 M 265</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+m+387.html">Stain 14 M 387</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+m+432.html">Stain 14 M 432</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+m+58.html">Stain 14 M 58</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+n+110.html">Stain 14 N 110</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+n+144.html">Stain 14 N 144</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+r+191.html">Stain 14 R 191</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+r+221.html">Stain 14 R 221</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+r+297.html">Stain 14 R 297</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+r+32.html">Stain 14 R 32</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+r+34.html">Stain 14 R 34</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+r+452.html">Stain 14 R 452</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+r+56.html">Stain 14 R 56</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+t+158.html">Stain 14 T 158</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+t+192.html">Stain 14 T 192</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+t+390.html">Stain 14 T 390</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+14+t+391.html">Stain 14 T 391</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1437-f.html">Stain 1437-F</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1440-w.html">Stain 1440-W</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1454-t.html">Stain 1454-T</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1458.html">Stain 1458</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1465.html">Stain 1465</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1476.html">Stain 1476</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1477.html">Stain 1477</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1490-e.html">Stain 1490-E</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1496.html">Stain 1496</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1499-b.html">Stain 1499-B</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1513.html">Stain 1513</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1515.html">Stain 1515</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1516.html">Stain 1516</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1523.html">Stain 1523</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1529.html">Stain 1529</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1555.html">Stain 1555</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1556-a.html">Stain 1556-A</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1582.html">Stain 1582</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1606.html">Stain 1606</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1611.html">Stain 1611</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1617-d.html">Stain 1617-D</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1630-g.html">Stain 1630-G</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1632.html">Stain 1632</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1819-k.html">Stain 1819-K</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1821-b.html">Stain 1821-B</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1821-d.html">Stain 1821-D</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+1821-e.html">Stain 1821-E</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+202.html">Stain 202</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+2270.html">Stain 2270</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+3708.html">Stain 3708</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+3772.html">Stain 3772</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+3775.html">Stain 3775</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+3776.html">Stain 3776</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+3777.html">Stain 3777</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+3778.html">Stain 3778</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+3778-a.html">Stain 3778-A</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+3794.html">Stain 3794</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6000.html">Stain 6000</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="mason+stain+6001.html">Mason Stain 6001</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="mason+stain+6002.html">Mason Stain 6002</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="mason+stain+6003.html">Mason Stain 6003</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6004.html">Stain 6004</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6005.html">Stain 6005</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6006.html">Stain 6006</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6007.html">Stain 6007</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6008.html">Stain 6008</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6009.html">Stain 6009</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6020.html">Stain 6020</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6023.html">Stain 6023</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6029.html">Stain 6029</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6031.html">Stain 6031</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6032.html">Stain 6032</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6052.html">Stain 6052</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6065.html">Stain 6065</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6067.html">Stain 6067</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6090.html">Stain 6090</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6098.html">Stain 6098</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6100.html">Stain 6100</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6101.html">Stain 6101</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6103.html">Stain 6103</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6104.html">Stain 6104</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6107.html">Stain 6107</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6108.html">Stain 6108</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6109.html">Stain 6109</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6111.html">Stain 6111</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6113.html">Stain 6113</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6119.html">Stain 6119</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6121.html">Stain 6121</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6122.html">Stain 6122</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6123.html">Stain 6123</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6124.html">Stain 6124</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6125.html">Stain 6125</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6126.html">Stain 6126</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6129.html">Stain 6129</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6131.html">Stain 6131</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6133.html">Stain 6133</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6134.html">Stain 6134</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6149.html">Stain 6149</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6153.html">Stain 6153</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6160.html">Stain 6160</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6163.html">Stain 6163</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6166.html">Stain 6166</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6190.html">Stain 6190</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6194.html">Stain 6194</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6200.html">Stain 6200</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6201.html">Stain 6201</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6202.html">Stain 6202</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6204.html">Stain 6204</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6206.html">Stain 6206</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6207.html">Stain 6207</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6209.html">Stain 6209</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6211.html">Stain 6211</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6219.html">Stain 6219</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6221.html">Stain 6221</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6223.html">Stain 6223</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6224.html">Stain 6224</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6226.html">Stain 6226</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6234.html">Stain 6234</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6236.html">Stain 6236</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6242.html">Stain 6242</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6244.html">Stain 6244</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6246.html">Stain 6246</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6254.html">Stain 6254</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="mason+6255+stain.html">Mason 6255 Stain</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6263.html">Stain 6263</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6264.html">Stain 6264</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6265.html">Stain 6265</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="mason+6266+stain.html">Mason 6266 Stain</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6267.html">Stain 6267</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6268.html">Stain 6268</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6271.html">Stain 6271</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6274.html">Stain 6274</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6280.html">Stain 6280</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6288.html">Stain 6288</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6296.html">Stain 6296</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6300.html">Stain 6300</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6302.html">Stain 6302</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="mason+6303+stain.html">Mason 6303 Stain</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="mason+6305+blue+stain.html">Mason 6305 Blue Stain</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="mason+6306+stain.html">Mason 6306 Stain</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6307.html">Stain 6307</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="mason+6308+stain.html">Mason 6308 Stain</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6310.html">Stain 6310</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6313.html">Stain 6313</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6317.html">Stain 6317</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6318.html">Stain 6318</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6319.html">Stain 6319</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6320.html">Stain 6320</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6330.html">Stain 6330</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6331.html">Stain 6331</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6332.html">Stain 6332</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6333.html">Stain 6333</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6336.html">Stain 6336</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6338.html">Stain 6338</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6339.html">Stain 6339</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6343.html">Stain 6343</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6360.html">Stain 6360</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="mason+6363+stain.html">Mason 6363 Stain</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6364.html">Stain 6364</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="mason+6368+copen+blue+stain.html">Mason 6368 Copen Blue Stain</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6371.html">Stain 6371</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6373.html">Stain 6373</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6376.html">Stain 6376</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6379.html">Stain 6379</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="mason+6381+stain.html">Mason 6381 Stain</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="mason+6383+stain.html">Mason 6383 Stain</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6385.html">Stain 6385</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="mason+6386+blue+stain.html">Mason 6386 Blue Stain</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6387.html">Stain 6387</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6388.html">Stain 6388</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6389.html">Stain 6389</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6390.html">Stain 6390</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6392.html">Stain 6392</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6393.html">Stain 6393</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6396.html">Stain 6396</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6398.html">Stain 6398</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6404.html">Stain 6404</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6405.html">Stain 6405</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6406.html">Stain 6406</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6407.html">Stain 6407</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6408.html">Stain 6408</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="mason+6433+yellow+stain.html">Mason 6433 Yellow Stain</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6440.html">Stain 6440</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6450.html">Stain 6450</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="mason+6464+yellow+stain.html">Mason 6464 Yellow Stain</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6471.html">Stain 6471</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="mason+6485+yellow+stain.html">Mason 6485 Yellow Stain</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6500.html">Stain 6500</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6503.html">Stain 6503</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6506.html">Stain 6506</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6515.html">Stain 6515</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6523.html">Stain 6523</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6527.html">Stain 6527</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6528.html">Stain 6528</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6530.html">Stain 6530</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6531.html">Stain 6531</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="mason+6537+grey+stain.html">Mason 6537 Grey Stain</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6540.html">Stain 6540</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6572.html">Stain 6572</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6573.html">Stain 6573</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6591.html">Stain 6591</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="mason+6600+black+stain.html">Mason 6600 Black Stain</a>
+<br/><i>A cobalt-containing stain useful in bodies, <a href="../glossary/engobe.html">engobes</a> and glazes at a wide range of temperatures.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6601.html">Stain 6601</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6609.html">Stain 6609</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6616.html">Stain 6616</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6650.html">Stain 6650</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6657.html">Stain 6657</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6666.html">Stain 6666</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6700.html">Stain 6700</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6768.html">Stain 6768</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6790.html">Stain 6790</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6908.html">Stain 6908</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+6910.html">Stain 6910</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+c+415.html">Stain C 415</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+c+440.html">Stain C 440</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+cf+1862.html">Stain CF 1862</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+cf+1875.html">Stain CF 1875</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+cf+2184.html">Stain CF 2184</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+cf+600.html">Stain CF 600</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+cf+6140.html">Stain CF 6140</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+cf+804.html">Stain CF 804</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+fcp+30.html">Stain FCP 30</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+fcp+48.html">Stain FCP 48</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+fcp-55.html">Stain FCP-55</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stains+%28inclusion%29.html">Stains (inclusion)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stains+encapsulated.html">Stains Encapsulated</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stains+mason.html">Stains Mason</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+c-181.html">Stain C-181</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+c-182.html">Stain C-182</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+c-183.html">Stain C-183</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+c-184.html">Stain C-184</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+c-202.html">Stain C-202</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+c-2222.html">Stain C-2222</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+c-287ez.html">Stain C-287EZ</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+c-292.html">Stain C-292</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+c-416.html">Stain C-416</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+c-464.html">Stain C-464</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+c-620.html">Stain C-620</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+c-768.html">Stain C-768</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+c-790.html">Stain C-790</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+c-810.html">Stain C-810</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+c-1865.html">Stain C-1865</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+c-892.html">Stain C-892</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+c-896.html">Stain C-896</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+c-1942.html">Stain C-1942</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="stain+f-3786.html">Stain F-3786</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+239416+yellow+stain.html">Ferro 239416 Yellow Stain</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/clt">Colorant</a>
+<br/><i>Metallic based materials that impart fired color to glazes and bodies.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/gnm">Generic Material</a>
+<br/><i>Generic materials are those with no brand name. Normally they are theoretical, the <a href="../glossary/glaze+chemistry.html">chemistry</a> portrays what a specimen would be if it had no contamination. Generic materials are helpful in educational situations where students need to study material theory (later they graduate to dealing with real world materials). They are also helpful where the chemistry of an actual material is not known. Often the accuracy of calculations is sufficient using generic materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/v2o5.html">V2O5 - Vanadium Pentoxide</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/nio.html">NiO - Nickel Oxide</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/cuo.html">CuO - Cupric Oxide</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/mno2.html">MnO2 - Manganese Dioxide</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/pro2.html">PrO2 - Praseodymium Oxide</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/se.html">Se - Selenium</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Properties</td>
+<td>
+<a href="../property/glaze+color.html">Glaze Color</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/colorant.html">Colorant</a>
+<br/><i>In <a href="../glossary/ceramics.html">ceramics</a> and pottery, <a href="../glossary/colorant.html">colorants</a> are added to glazes as <a href="../glossary/metal+oxides.html">metal oxides</a>, metal-oxide-containing raw materials or as manufactured <a href="../glossary/ceramic+stain.html">stains</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/encapsulated+stain.html">Encapsulated Stain</a>
+<br/><i>This is a type of stain manufacture that enables the use of <a href="../glossary/metal+oxides.html">metal oxides</a> (like cadmium) under temperature conditions in which they would normally fail.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/ceramic+stain.html">Ceramic Stain</a>
+<br/><i>Ceramic <a href="../glossary/ceramic+stain.html">stains</a> are manufactured powders. They are used as an alternative to employing metal oxide powders and have many advantages.</i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></tbody></table></div></body>
+</html>

@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Uranium and Ceramics</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Digitalfire Reference Library: Practical material hazards information in the traditional ceramic industry">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item active" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=hazard" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:center; vertical-align:top;">Feb 14-15, 2026 - <b>Major Server <a href="https://digitalfire.com">Upgrade</a> Done</b></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Hazards</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a title="341" href="https://digitalfire.com/hazard/341">Alumina Toxicology</a> |</nobr> <nobr><a title="333" href="https://digitalfire.com/hazard/333">Ammonia and Latex Toxicity</a> |</nobr> <nobr><a title="16" href="https://digitalfire.com/hazard/16">Antimony Oxide</a> |</nobr> <nobr><a title="412" href="https://digitalfire.com/hazard/412">Are colored porcelains hazardous?</a> |</nobr> <nobr><a title="18" href="https://digitalfire.com/hazard/18">Arsenic Oxide</a> |</nobr> <nobr><a title="19" href="https://digitalfire.com/hazard/19">Asbestos Toxicity</a> |</nobr> <nobr><a title="22" href="https://digitalfire.com/hazard/22">Ball Clay</a> |</nobr> <nobr><a title="321" href="https://digitalfire.com/hazard/321">BARIUM and COMPOUNDS Toxicology</a> |</nobr> <nobr><a title="367" href="https://digitalfire.com/hazard/367">Barium Carbonate in Clay Bodies</a> |</nobr> <nobr><a title="26" href="https://digitalfire.com/hazard/26">Barium Carbonate in Glazes</a> |</nobr> <nobr><a title="31" href="https://digitalfire.com/hazard/31">Bentonite Toxicity</a> |</nobr> <nobr><a title="33" href="https://digitalfire.com/hazard/33">Beryllium Monoxide Toxicology</a> |</nobr> <nobr><a title="352" href="https://digitalfire.com/hazard/352">Bismuth Trioxide Toxicology</a> |</nobr> <nobr><a title="326" href="https://digitalfire.com/hazard/326">Boron Compounds and Their Toxicity</a> |</nobr> <nobr><a title="1" href="https://digitalfire.com/hazard/1">Brown Stain</a> |</nobr> <nobr><a title="335" href="https://digitalfire.com/hazard/335">Cadmium Toxicity</a> |</nobr> <nobr><a title="343" href="https://digitalfire.com/hazard/343">Calcium Carbonate Toxicology</a> |</nobr> <nobr><a title="334" href="https://digitalfire.com/hazard/334">Carbon Monoxide Toxicity</a> |</nobr> <nobr><a title="353" href="https://digitalfire.com/hazard/353">Cesium Toxicology</a> |</nobr> <nobr><a title="330" href="https://digitalfire.com/hazard/330">Chromium Compounds Toxicology</a> |</nobr> <nobr><a title="146" href="https://digitalfire.com/hazard/146">Clay Toxicity</a> |</nobr> <nobr><a title="73" href="https://digitalfire.com/hazard/73">Cobalt Oxide and Carbonate</a> |</nobr> <nobr><a title="331" href="https://digitalfire.com/hazard/331">Cobalt Toxicology</a> |</nobr> <nobr><a title="329" href="https://digitalfire.com/hazard/329">Copper Compounds Toxicology</a> |</nobr> <nobr><a title="78" href="https://digitalfire.com/hazard/78">Copper Oxide and Carbonate</a> |</nobr> <nobr><a title="84" href="https://digitalfire.com/hazard/84">Cristobalite Toxicity</a> |</nobr> <nobr><a title="337" href="https://digitalfire.com/hazard/337">Cryolite and Ceramics</a> |</nobr> <nobr><a title="372" href="https://digitalfire.com/hazard/372">Dealing With Dust in Ceramics</a> |</nobr> <nobr><a title="351" href="https://digitalfire.com/hazard/351">Diatomaceous Earth Toxicology</a> |</nobr> <nobr><a title="323" href="https://digitalfire.com/hazard/323">Dioxins in Clays</a> |</nobr> <nobr><a title="95" href="https://digitalfire.com/hazard/95">Epsom Salts</a> |</nobr> <nobr><a title="348" href="https://digitalfire.com/hazard/348">Eye Injuries Due to Radiation</a> |</nobr> <nobr><a title="222" href="https://digitalfire.com/hazard/222">Feldspar</a> |</nobr> <nobr><a title="320" href="https://digitalfire.com/hazard/320">Fighting Micro-Organisms in Ceramics</a> |</nobr> <nobr><a title="108" href="https://digitalfire.com/hazard/108">Fluorine Gas</a> |</nobr> <nobr><a title="413" href="https://digitalfire.com/hazard/413">Fumes from gas kilns</a> |</nobr> <nobr><a title="354" href="https://digitalfire.com/hazard/354">Gallium Oxide Toxicology</a> |</nobr> <nobr><a title="342" href="https://digitalfire.com/hazard/342">Hafnium Oxide Toxicty</a> |</nobr> <nobr><a title="345" href="https://digitalfire.com/hazard/345">Hydrofluoric Acid Toxicity</a> |</nobr> <nobr><a title="350" href="https://digitalfire.com/hazard/350">Iron oxide and Hematite</a> |</nobr> <nobr><a title="169" href="https://digitalfire.com/hazard/169">Lead Chromate</a> |</nobr> <nobr><a title="368" href="https://digitalfire.com/hazard/368">Lead in Ceramic Glazes</a> |</nobr> <nobr><a title="328" href="https://digitalfire.com/hazard/328">Lead Toxicology</a> |</nobr> <nobr><a title="174" href="https://digitalfire.com/hazard/174">Lithium Carbonate Toxicity</a> |</nobr> <nobr><a title="349" href="https://digitalfire.com/hazard/349">Lithium Toxicology</a> |</nobr> <nobr><a title="322" href="https://digitalfire.com/hazard/322">Man-Made Vitreous Fibers (MMVF) Toxicology</a> |</nobr> <nobr><a title="410" href="https://digitalfire.com/hazard/410">Man-Made Vitreous Fibers Safety Update</a> |</nobr> <nobr><a title="406" href="https://digitalfire.com/hazard/406">Manganese and Parkinsons by Jane Watkins</a> |</nobr> <nobr><a title="187" href="https://digitalfire.com/hazard/187">Manganese in Clay Bodies</a> |</nobr> <nobr><a title="317" href="https://digitalfire.com/hazard/317">Manganese Inorganic Compounds Toxicology</a> |</nobr> <nobr><a title="409" href="https://digitalfire.com/hazard/409">Manganese Toxicity by Elke Blodgett</a> |</nobr> <nobr><a title="407" href="https://digitalfire.com/hazard/407">Manganese: Creativity and Illness by Dierdre O'Reilly</a> |</nobr> <nobr><a title="332" href="https://digitalfire.com/hazard/332">Molybdenum Compounds Toxicology</a> |</nobr> <nobr><a title="327" href="https://digitalfire.com/hazard/327">Nickel Compounds Toxicity</a> |</nobr> <nobr><a title="314" href="https://digitalfire.com/hazard/314">Niobium Oxide Toxicity</a> |</nobr> <nobr><a title="318" href="https://digitalfire.com/hazard/318">Occupational Dermatoses</a> |</nobr> <nobr><a title="370" href="https://digitalfire.com/hazard/370">Overview of Material Safety by Gavin Stairs</a> |</nobr> <nobr><a title="364" href="https://digitalfire.com/hazard/364">Paraffin Toxicology</a> |</nobr> <nobr><a title="216" href="https://digitalfire.com/hazard/216">Perlite Toxicity</a> |</nobr> <nobr><a title="238" href="https://digitalfire.com/hazard/238">Plant Ash Toxicity</a> |</nobr> <nobr><a title="346" href="https://digitalfire.com/hazard/346">Potassium Carbonate Toxicity</a> |</nobr> <nobr><a title="365" href="https://digitalfire.com/hazard/365">Pregnancy and Ceramics</a> |</nobr> <nobr><a title="355" href="https://digitalfire.com/hazard/355">Propane Toxicology</a> |</nobr> <nobr><a title="251" href="https://digitalfire.com/hazard/251">Quartz Toxicity</a> |</nobr> <nobr><a title="369" href="https://digitalfire.com/hazard/369">Quartz Toxicity on Clayart</a> |</nobr> <nobr><a title="336" href="https://digitalfire.com/hazard/336">Rare Earth Compounds Toxicity</a> |</nobr> <nobr><a title="366" href="https://digitalfire.com/hazard/366">Rubidium and Cesium Toxicology</a> |</nobr> <nobr><a title="356" href="https://digitalfire.com/hazard/356">Rutile Toxicology</a> |</nobr> <nobr><a title="324" href="https://digitalfire.com/hazard/324">Silicosis and Screening</a> |</nobr> <nobr><a title="357" href="https://digitalfire.com/hazard/357">Silver Compounds Toxicology</a> |</nobr> <nobr><a title="358" href="https://digitalfire.com/hazard/358">Sodium Azide Toxicology</a> |</nobr> <nobr><a title="359" href="https://digitalfire.com/hazard/359">Sodium Carbonate Toxicology</a> |</nobr> <nobr><a title="360" href="https://digitalfire.com/hazard/360">Sodium Silicate Powder Toxicology</a> |</nobr> <nobr><a title="315" href="https://digitalfire.com/hazard/315">Stannous Chloride Toxicity</a> |</nobr> <nobr><a title="316" href="https://digitalfire.com/hazard/316">Strontium Carbonate Toxicity Note</a> |</nobr> <nobr><a title="347" href="https://digitalfire.com/hazard/347">Sulfur Dioxide Toxicity</a> |</nobr> <nobr><a title="3" href="https://digitalfire.com/hazard/3">Talc Hazards Overview</a> |</nobr> <nobr><a title="361" href="https://digitalfire.com/hazard/361">Talc Toxicology</a> |</nobr> <nobr><a title="362" href="https://digitalfire.com/hazard/362">Thallium Oxide Toxicology</a> |</nobr> <nobr><a title="344" href="https://digitalfire.com/hazard/344">Thorium Dioxide Toxicity</a> |</nobr> <nobr><a title="338" href="https://digitalfire.com/hazard/338">Tin Inorganic Compounds</a> |</nobr> <nobr><a title="339" href="https://digitalfire.com/hazard/339">Titanium Dioxide Toxicology</a> |</nobr> <nobr><a title="313" href="https://digitalfire.com/hazard/313">Toxicological Assessment of Zeolites</a> |</nobr> <nobr><a title="363" href="https://digitalfire.com/hazard/363">Tungsten Compounds Toxicology</a> |</nobr> <nobr><a title="371" href="https://digitalfire.com/hazard/371">Understanding Acronyms on MSDS's</a> |</nobr> <nobr><a title="325" href="https://digitalfire.com/hazard/325"><button type="button" class="btn btn-dark">Uranium and Ceramics</button></a> |</nobr> <nobr><a title="319" href="https://digitalfire.com/hazard/319">Vanadium and Compounds Toxicology</a> |</nobr> <nobr><a title="411" href="https://digitalfire.com/hazard/411">Vermiculite</a> |</nobr> <nobr><a title="340" href="https://digitalfire.com/hazard/340">Zinc Compounds Toxicology</a> |</nobr> <nobr><a title="373" href="https://digitalfire.com/hazard/373">Zirconium Compounds Toxicity</a> |</nobr> <nobr><a title="234" href="https://digitalfire.com/hazard/234">Zirconium Encapsulated Stains Toxicity</a></nobr></div><h1>Uranium and Ceramics</h1>
+<DL> 
+   <DT><br><B><FONT FACE="Times New Roman" COLOR="#004080">Translated by 
+   Edouard Bastarache</FONT></B> 
+    
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">Here is through 
+   some excerpts of articles by authors having published works on 
+   <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a> (of which some became very rare) during the 19th. and 
+   20th. century, an outline of what was the primarily use of uranium 
+   and compounds in ceramic products, essentially devoted to the 
+   manufacture of vitrifiable colors, colouring materials for 
+   enamels, lustres and glazes.</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">Nowadays, these 
+   products are part of the history of ceramics and are not used 
+   anymore in the current manufacture of ceramic wares in the Western 
+   world. The <a  href="https://digitalfire.com/glossary/toxicity">toxicity</a> of uranium and compounds and their 
+   radioactivity have placed these materials under close scrutiny 
+   with a formal ban on their trade and use. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT SIZE="+1" FACE="Times New Roman" 
+   COLOR="#004080">Excerpts on the use of uranium and compounds in 
+   ceramics :</FONT></U></B> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT FACE="Times New Roman" COLOR="#004080">1) In the 
+   book "Trait&eacute; des Arts C&eacute;ramiques ou des poteries", 
+   Alex. Brongniart, January 1854 :</FONT></U></B><FONT 
+   FACE="Times New Roman" COLOR="#004080"> </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">Uranium oxide, 
+   suitably prepared, can give a yellow-orange color of a great 
+   vividness which one obtains only with difficulty using potash 
+   antimoniate.</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">One obtains 
+   yellows by means of potash antimoniate and lead oxide. It is close 
+   to the " Yellow of Naples ", more or less darkened by the addition 
+   of varying amounts of <a  href="https://digitalfire.com/material/1718">zinc oxide</a>, <a  href="https://digitalfire.com/material/874">iron oxide</a> and sometimes tin 
+   oxide. One can still add uranium oxide in order to obtain a darker 
+   yellow. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><U><FONT FACE="Times New Roman" COLOR="#004080">Vitrifiable 
+   color for <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> :</FONT></U> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">(Uranium oxide 
+   yellow-orange which is used for backgrounds) </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><CENTER><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=10 
+   WIDTH="80%" bgcolor="#ffffff"> 
+      <TR> 
+         <TD> 
+            <P><FONT COLOR="#004080">Components</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">Yellow-Orange n&#176; 45</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">" 
+            Rocaille " <a  href="https://digitalfire.com/glossary/flux">flux</a> (75% minium, 25% <a  href="https://digitalfire.com/material/1245">silica</a>)</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">75</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">Pure 
+            uranium oxide</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">25</FONT> 
+         </TD></TR> 
+   </TABLE></CENTER> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">The preparation 
+   of the oxide is carried out by treating pitchblende with acidic 
+   solutions. </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT FACE="Times New Roman" COLOR="#004080">2) In the 
+   book "Le&ccedil;ons de C&eacute;ramique", volume 1, Alphonse 
+   Salv&eacute;tat - 1857 : </FONT></U></B> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">Uranium oxide 
+   (U3O8 or saline oxide) is used in glassmaking to produce varied 
+   tones of yellow with green glints named " dichroic ". Their use in 
+   arts to decorate porcelain is rather important.</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><U><FONT FACE="Times New Roman" COLOR="#004080">Vitrifiable 
+   uranium oxide yellow for decorating on hard porcelain at 
+   950&#176;C : </FONT></U> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><CENTER><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=10 
+   WIDTH="80%" bgcolor="#ffffff"> 
+      <TR> 
+         <TD> 
+            <P><FONT COLOR="#004080">Components</FONT> 
+         </TD><TD> 
+            <P><FONT FACE="Times New Roman" 
+            COLOR="#004080">Vitrifiable uranium yellow</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">Flux 
+            n&#176;6</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">75</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">Uranium 
+            oxide yellow (Sodium Uranate)</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">25</FONT> 
+         </TD></TR> 
+   </TABLE></CENTER> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><U><FONT FACE="Times New Roman" COLOR="#004080">Composition of 
+   the flux : </FONT></U> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><CENTER><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=10 
+   WIDTH="80%" bgcolor="#ffffff"> 
+      <TR> 
+         <TD> 
+            <P><FONT COLOR="#004080">Components</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">Flux n&#176;6</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">Minium 
+            Pb3O<sub>4</sub></FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">60</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD> 
+            <P><FONT FACE="Times New Roman" 
+            COLOR="#004080">Crystallized Boric Oxide</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">30</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">Crushed 
+            Quartz</FONT> 
+         </TD><TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">10</FONT> 
+          
+         </TD></TR> 
+   </TABLE></CENTER> 
+    
+   <DD><CENTER><FONT FACE="Times New Roman" 
+   COLOR="#004080">&nbsp;</FONT></CENTER> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT FACE="Times New Roman" COLOR="#004080">3) In the 
+   book " Fabrication industrielle des Porcelaines " volume II by 
+   Marc Larchev&ecirc;que - 1929 : </FONT></U></B> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">Uranium oxide and 
+   various compounds make up part of the artificial colouring 
+   materials that can be used at 1400&#176;C (cone 14) just as 
+   metals, <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> and compounds of the following elements: chromium, 
+   cobalt, iron, manganese, nickel, vanadium, tungsten, <a  href="https://digitalfire.com/material/1644">titanium</a>, 
+   gold, platinium, iridium.</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">The main uranium 
+   ore is pitchblende which contains between 40 and 90% of the 
+   uranium oxide U3O8, the remainder being made up of sulphur, 
+   arsenic, iron, lead and a negligible quantity of radium and other 
+   radioactive elements. </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">Sodium uranate 
+   (<a  href="https://digitalfire.com/oxide/na2o">Na<sub>2</sub>O</a> (UO<sub>3</sub>)2.6H<sub>2</sub>O) is designated by the unsuitable name "Yellow 
+   uranium oxide ". </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">Uranyl nitrate (a 
+   salt with light yellow-green crystals), is used in the preparation 
+   of various liquid colours (lustres). </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">Other compounds 
+   used : ammonium uranate, potassium uranate, uranium oxides, 
+   calcium uranate, magnesium uranate, iron uranate, manganese 
+   uranate, lead uranate, etc... </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><U><FONT FACE="Times New Roman" COLOR="#004080">Recipe for the 
+   uranium oxide yellow-orange for vitrifiable color (between 
+   900&#176;C and 950&#176;C) : </FONT></U> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><CENTER><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=10 
+   WIDTH="80%" bgcolor="#ffffff"> 
+      <TR> 
+         <TD> 
+            <P><FONT COLOR="#004080">Components</FONT> 
+         </TD><TD> 
+            <P><FONT FACE="Times New Roman" 
+            COLOR="#004080">Vitrifiable uranium yellow-orange</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">Flux 
+            n&#176;1 (also named "rocaille" flux)</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">75</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">Ammonium 
+            uranate</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">25</FONT> 
+         </TD></TR> 
+   </TABLE></CENTER> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">To mix, melt, 
+   crush and dry. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><U><FONT FACE="Times New Roman" COLOR="#004080">Flux n&#176;1 
+   :</FONT></U><FONT FACE="Times New Roman" COLOR="#004080"> </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><CENTER><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=10 
+   WIDTH="80%" bgcolor="#ffffff"> 
+      <TR> 
+         <TD> 
+            <P><FONT COLOR="#004080">Components</FONT> 
+         </TD><TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">Flux 
+            n&#176;1</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">Litharge 
+            (<a  href="https://digitalfire.com/oxide/pbo">PbO</a>)</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">75 </FONT><FONT 
+            FACE="Times New Roman" COLOR="#004080">(or minium Pb3O<sub>4</sub>, 
+            76.8) </FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">Crushed 
+            quartz</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">25</FONT> 
+         </TD></TR> 
+   </TABLE></CENTER> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT FACE="Times New Roman" COLOR="#004080">4) In the 
+   book "La Bible du C&eacute;ramiste" Anonymous - about 1965 : 
+   </FONT></U></B> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">There are three 
+   significant uranium oxides : </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">a) Uranium 
+   dioxide or uranous oxide UO2, black, molecular weight 270.14. 
+   </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">b) Uranium 
+   uranate U3O8, green olive, molecular weight 842.42. </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">c) Uranium 
+   trioxide or uranyl oxide UO<sub>3</sub>, red, molecular weight 238.14. 
+   </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">All of these 
+   oxides are insoluble in water, soluble in hydrochloric and 
+   sulphuric acids and are toxic. </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">At high 
+   temperature, the uranium dioxide changes into uranium uranate. 
+   </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">Uranium oxides 
+   are used mainly as colouring materials for enamels, glass and 
+   porcelain, though the relative instability of the colours 
+   restricts their use. </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">a) Uranium 
+   dioxide colours glazes in black, jet black or gray in reducing 
+   atmosphere and yellow in oxidizing atmosphere. It is also used to 
+   prepare black and brown colouring materials for porcelain. </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">b) Uranium 
+   uranate behaves in a similar way, by giving blacks, browns and 
+   grays in reducing atmosphere and yellows or reds according to 
+   circumstances, in oxidizing atmosphere. </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">c) Uranium 
+   trioxide gives greens or blacks in reducing atmosphere and yellows 
+   in oxidation. </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">This oxide is 
+   used to colour under-glazes and porcelains, but its used is 
+   limited, because of its high price, to lead glass to which it 
+   gives a vivid orange yellow colour. </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">Uranium trioxide 
+   is sometimes used as an agent of <a  href="https://digitalfire.com/glossary/crystallization">crystallization</a> in <a  href="https://digitalfire.com/glossary/glass+vs.+crystalline">crystalline</a> 
+   coloured glazes. </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">One uses it in 
+   glassmaking, only or with cadmium sulphide, for the production of 
+   glass intensely coloured in yellow and orange. </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><U><FONT FACE="Times New Roman" COLOR="#004080">Exemples of 
+   recipes for red orange glazes, to be fired at low temperature 
+   between cone 08 and <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 06</a> :</FONT></U><FONT 
+   FACE="Times New Roman" COLOR="#004080"> </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><CENTER><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=10 
+   WIDTH="80%" bgcolor="#ffffff"> 
+      <TR> 
+         <TD> 
+            <P><FONT COLOR="#004080">Components</FONT> 
+         </TD><TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">Possible 
+            amounts</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">Lead 
+            carbonate</FONT> 
+         </TD><TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">64 
+            &agrave; 66 %</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">Crushed 
+            silex</FONT> 
+         </TD><TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">18 
+            &agrave; 13 %</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">Zinc 
+            oxide</FONT> 
+         </TD><TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">4 
+            &agrave; 3 %</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">Black 
+            uranium oxide (dioxide)</FONT> 
+         </TD><TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">14 
+            &agrave; 15 %</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD> 
+            <P><FONT FACE="Times New Roman" 
+            COLOR="#004080">Kaolin</FONT> 
+         </TD><TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">0 
+            &agrave; 3 %</FONT> 
+         </TD></TR> 
+   </TABLE></CENTER> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><U><FONT FACE="Times New Roman" COLOR="#004080">Another 
+   uranium compound : Uranium nitrate</FONT></U> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">This lemon-yellow 
+   salt is used in the composition of lustres, of which one of these 
+   is prepared with 2 parts of resin soap, 4 parts of hot water, and 
+   1 part of an uranium nitrate solution. The uranium soap obtained 
+   is mixed with an essential oil. </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT FACE="Times New Roman" COLOR="#004080">5) In the 
+   book "La c&eacute;ramique de A &agrave; Z" par J. Rigaud - vers 
+   1975 :</FONT></U></B> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">There are three 
+   current forms of uranium oxides : </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">1)Uranous oxide 
+   or uranium dioxide (" reducing " UO2) : </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">Uranous oxide is 
+   extracted from pitchblende or carnotite by a process based on 
+   nitric acid. </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">2) Uranic oxide 
+   or uranium trioxide ("oxidizing" UO<sub>3</sub>) :</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">Uranium trioxide 
+   UO<sub>3</sub>, or uranic oxide, is obtained by oxidation at high temperature 
+   of "saline" oxide U3O8. It takes up a yellow color and can take up 
+   the hydrated form UO<sub>3</sub>.H<sub>2</sub>O or UO2 (OH)2, uranyl hydroxide. </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">It can form 
+   uranates and diuranates with bases. These products intervene in 
+   glassmaking and ceramics in the colouring of the <a  href="https://digitalfire.com/glossary/vitreous">vitreous</a> phases 
+   and the preparation of pigments for high temperature 
+   firing.</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">Thus the 
+   introduction of alkaline diuranates into glasses leads to yellow 
+   by transmission, green by reflection; moreover these glasses 
+   become dichroic and fluorescent under ultraviolet rays. </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">In ceramics, the 
+   uranates of heavy metals (Mn, Fe, Pb...) are at the base of colors 
+   used under glazes, called yellows of uranium oxide, obtained in 
+   <a  href="https://digitalfire.com/glossary/oxidation+firing">oxidation firing</a>.</FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">3) "Saline" 
+   uranium oxide U3O8, the most stable : </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">Saline oxide U3O8 
+   or uranium oxide is found naturally in pitchblende, which can 
+   contain some up to 80%. U3O8 is used in ceramics and glassmaking 
+   to make uranates. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT FACE="Times New Roman" COLOR="#004080">6) In the 
+   book "Keramic-Glasuren" by Stefanov et Batschwarov - 1988 : 
+   </FONT></U></B> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><U><FONT FACE="Times New Roman" COLOR="#004080">Yellow 
+   coloring materials : </FONT></U> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">The oxide of 
+   uramium in the presence of silica or alumina makes it possible to 
+   obtain yellow hues, but it is not used any more taking 
+   radioactivity into account.</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><U><FONT FACE="Times New Roman" COLOR="#004080">Yellow glazes 
+   : </FONT></U> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">Lead/calcium or 
+   lead/zinc glazes develop a yellow hue by the addition of uranium 
+   oxide. Just as not very alkaline lead/boron glazes become yellow 
+   by the addition of 5% of sodium uranate. </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><U><FONT FACE="Times New Roman" COLOR="#004080">Red glazes : 
+   </FONT></U> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">Lead/zinc glazes 
+   containung calcium or <a  href="https://digitalfire.com/glossary/borate">boron</a> produce an intensive red hue by 
+   addition of 10% of uranium oxide.</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DD>&nbsp; 
+    
+   <DT><CENTER><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=10 
+   WIDTH="80%" bgcolor="#ffffff"> 
+      <TR> 
+         <TD> 
+            <P><FONT COLOR="#004080">Components :</FONT> 
+         </TD><TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">Red 
+            Glaze</FONT> 
+         </TD><TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">Red 
+            Orange Glaze</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD> 
+            <P><FONT COLOR="#004080">Minium (Pb</FONT><SUB><FONT 
+            COLOR="#004080">3</FONT></SUB><FONT 
+            COLOR="#004080">O</FONT><SUB><FONT 
+            COLOR="#004080">4</FONT></SUB><FONT 
+            COLOR="#004080">)</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">55,5</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">63,0</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">Potassium 
+            feldspar</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">9,8</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">0,0</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">Crushed 
+            silica</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">18,7</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">4,0</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">Sodium 
+            uranate</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">18,0</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">0,0</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">Uranium 
+            oxide</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">0,0</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">17,0</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD> 
+            <P><FONT FACE="Times New Roman" COLOR="#004080">Zinc 
+            oxide</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">0,0</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">2,0</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD> 
+            <P><FONT COLOR="#004080">Kaolin</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">0,0</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">4,0</FONT> 
+         </TD></TR> 
+   </TABLE></CENTER> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><U><FONT FACE="Times New Roman" COLOR="#004080">Uranium 
+   lustre: </FONT></U> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <P><FONT FACE="Times New Roman" COLOR="#004080">Uranium lustre is 
+   obtained by the fusion of rosin (colophony), on a sand bed, added 
+   with 30g. of uranyl acetate, then dissolved in 300 ml of hot 
+   spirit of turpentine. After cooling the mixture is allowed to 
+   settle (and decant) and preserved two to three days before the 
+   first use. </FONT></P> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT SIZE="+1" FACE="Times New Roman" 
+   COLOR="#008000">Smart.Conseil / April 2002</FONT></B> 
+    
+   <DT><FONT SIZE="-1" FACE="Arial" 
+   COLOR="#004080"><A HREF="mailto:smart2000@wanadoo.fr">smart2000@wanadoo.fr</A></FONT> 
+    
+   <P><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT></P> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><I><FONT FACE="Times New Roman" COLOR="#004080">References : 
+   </FONT></I> 
+    
+   <DT><I><FONT FACE="Times New Roman" COLOR="#004080">"Trait&eacute; 
+   des Arts C&eacute;ramiques ou des poteries", Alex. Brongniart, 
+   Janvier 1854 </FONT></I> 
+    
+   <DT><I><FONT FACE="Times New Roman" COLOR="#004080">"Le&ccedil;ons 
+   de C&eacute;ramique", tome 1, Alphonse Salv&eacute;tat - 1857 
+   </FONT></I> 
+    
+   <DT><I><FONT FACE="Times New Roman" COLOR="#004080">"Fabrication 
+   industrielle des Porcelaines" tome II par Marc Larchev&ecirc;que - 
+   1929 </FONT></I> 
+    
+   <DT><I><FONT FACE="Times New Roman" COLOR="#004080">"La Bible du 
+   C&eacute;ramiste" Anonyme - Origines de publication inconnues - 
+   vers 1965 </FONT></I> 
+    
+   <DT><I><FONT FACE="Times New Roman" COLOR="#004080">"La 
+   c&eacute;ramique de A &agrave; Z" par J. Rigaud - vers 1975 
+   </FONT></I> 
+    
+   <DT><I><FONT FACE="Times New Roman" 
+   COLOR="#004080">"Keramic-Glasuren" de Stefanov et Batschwarov - 
+   1988 </FONT></I> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT SIZE="-2" FACE="Arial" 
+   COLOR="#004080">&nbsp;<A NAME="depleted uranium"></A></FONT> 
+    
+   <DD><FONT SIZE="-2" FACE="Arial" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT SIZE="-2" FACE="Arial" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT SIZE="-1" FACE="arial">&nbsp;</FONT> 
+    
+   <DT><FONT SIZE="-1" FACE="arial">&nbsp;</FONT> 
+    
+   <DT><FONT SIZE="-1" FACE="arial">On this page : </FONT><FONT 
+   SIZE="-1" FACE="arial"><A HREF="#english">Uranimum and 
+   ceramics</A></FONT><FONT SIZE="-1" FACE="arial">, Toxicology : 
+   Depleted uranium, Articles : </FONT><FONT SIZE="-1" 
+   FACE="arial"><A HREF="#contamination ceramic wares">Contamination 
+   by uranium-containing ceramic wares</A></FONT> 
+    
+   <DD><FONT SIZE="-2" FACE="Arial" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT SIZE="-2" FACE="Arial" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=10 WIDTH="100%" 
+   bgcolor="#ffffff"> 
+      <TR> 
+         <TD HEIGHT=50> 
+            <P><CENTER><B><FONT SIZE="+3" FACE="Times New Roman" 
+            COLOR="#FF0000">DEPLETED URANIUM</FONT></B></CENTER> 
+         </TD></TR> 
+   </TABLE> 
+    
+   <DT><FONT SIZE="-2" FACE="Arial" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT SIZE="-2" FACE="Arial" 
+   COLOR="#004080">&nbsp;</FONT><FONT FACE="Times New Roman" 
+   COLOR="#004080">Since uranium acts on body organs and tissues in 
+   the same way as Depleted Uranium (DU) the results and conclusions 
+   from uranium studies are considered to be broadly applicable to 
+   DU.</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">However, in the 
+   case of effects due to ionizing radiation DU is less radioactive 
+   than uranium.</FONT> 
+    
+   <DT><FONT SIZE="+1" FACE="Times New Roman" 
+   COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT SIZE="+1" FACE="Times New Roman" 
+   COLOR="#004080">Uranium :</FONT></U></B> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">1-Uranium is a 
+   silver-white, lustrous, dense, natural, weakly radioactive 
+   element. It is ubiquitous throughout the natural environment, and 
+   is found in varying but small amounts in rocks, soils, water, air, 
+   plants, animals and in all human beings. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">2-On average, 
+   approximately 90 &#181;g (micrograms) of uranium exist in the 
+   human body from normal intakes of water, food and air. About 66% 
+   is found in the skeleton, 16% in the liver, 8% in the kidneys and 
+   10% in other tissues. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">3-Natural uranium 
+   consists of a mixture of three radioactive isotopes which are 
+   identified by the mass numbers 238U(99.27% by mass), 235U(0.72%) 
+   and 234U(0.0054%). </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">4-Uranium is used 
+   primarily in nuclear power plants. However, most reactors require 
+   uranium in which the 235U content is enriched from 0.72% to about 
+   3%. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT SIZE="+1" FACE="Times New Roman" 
+   COLOR="#004080">Depleted uranium :</FONT></U></B> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">1-The uranium 
+   remaining after removal of the enriched fraction contains about 
+   99.8% 238U, 0.25% of 235U and 0.001% 234U by mass; this is 
+   referred to as depleted uranium or DU.</FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">2-DU is weakly 
+   radioactive and a radiation dose from it would be about 60% of 
+   that from purified natural uranium with the same mass. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">3-The behaviour 
+   of uranium and DU in the body is identical radiologically and 
+   chemically. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">4-Spent uranium 
+   fuel from nuclear reactors is sometimes reprocessed in plants used 
+   for natural uranium enrichment. Some reactor-created 
+   radio-isotopes can consequently contaminate the reprocessing 
+   equipment and the DU. Under these conditions another uranium 
+   isotope, 236U, may be present in the DU together with very small 
+   amounts of the transuranic elements plutonium, americium and 
+   neptunium and the fission product technetium-99. However, on the 
+   basis of the concentrations of these radio-isotopes found in DU, 
+   the increase in radiation dose from uptake by the human body would 
+   be less than 1%. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT FACE="Times New Roman" 
+   COLOR="#004080">Applications of depleted uranium :</FONT></U></B> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">1-The main 
+   civilian uses of DU include counterweights in aircraft, radiation 
+   shields in medical radiation therapy machines and containers for 
+   the transport of radioactive materials.</FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">2-Due to its high 
+   density, about twice that of lead, and other properties, DU is 
+   used in munitions designed to penetrate armour plate and for 
+   protection of military vehicles such as tanks. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT FACE="Times New Roman" COLOR="#004080">Exposure to 
+   uranium and depleted uranium :</FONT></U></B> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">1-The average 
+   annual intakes of uranium by adults are estimated to be 460 
+   &#181;g from ingestion and 0.59 &#181;g from inhalation.</FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">2-Under most 
+   circumstances, use of DU will make a negligible contribution to 
+   the overall natural background levels of uranium in the 
+   environment. The greatest potential for DU exposure will follow a 
+   conflict where DU munitions are used.</FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">3-A recent United 
+   Nations Environment Programme (UNEP) report giving field 
+   measurements taken around selected impact sites in Kosovo (Federal 
+   Republic of Yugoslavia) indicates that contamination by DU in the 
+   environment was localized to a few tens of metres around impact 
+   sites. Contamination by DU dusts to local vegetation and water 
+   supplies was found to be extremely low. Thus, the possibility of 
+   significant exposure to the local populations was found to be very 
+   low. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">4-However, levels 
+   of DU may be significantly raised over background levels in close 
+   proximity to DU contaminating events. Over the days and years 
+   following such an event, the contamination will become dispersed 
+   into the wider natural environment. People living or working in 
+   affected areas can inhale dusts and can consume contaminated food 
+   and drinking water. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">5-There is a 
+   possibility that people near an aircraft crash may be exposed to 
+   DU dusts if counterweights were to combust on impact. Significant 
+   exposure to people from this situation would be rare. Exposures to 
+   clean-up and emergency workers following aircraft accidents are 
+   possible, but normal occupational protection measures would 
+   prevent any significant exposure occurring. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT FACE="Times New Roman" COLOR="#004080">DU exposure 
+   pathways :</FONT></U></B> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">1-Individuals can 
+   be exposed to DU in the same way they are routinely exposed to 
+   natural uranium, i.e. through inhalation, ingestion, dermal 
+   contact or injury (e.g. embedded fragments). </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">2-Each of these 
+   exposure situations needs to be assessed to determine any 
+   potential health consequence. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">3-The relative 
+   contribution from each of these pathways to the total DU uptake 
+   into the body depends on the physical and chemical nature of the 
+   DU, as well as the level and duration of exposure. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT FACE="Times New Roman" COLOR="#004080">Intake of 
+   depleted uranium :</FONT></U></B> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">1-Intake by 
+   ingestion can occur if drinking water or food is contaminated by 
+   DU. In addition, the ingestion of soil by children via geophagia 
+   (the practice of eating earth, clay, chalk, etc.) or hand-to-mouth 
+   activities is also an important pathway. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">2-Intake by 
+   inhalation can occur following the use of DU munitions during or 
+   when DU deposits in the environment are re-suspended in the 
+   atmosphere by wind or other forms of disturbance. Accidental 
+   inhalation may also occur as a consequence of a fire in a DU 
+   storage facility, an aircraft crash, or the decontamination of 
+   vehicles from within or close to conflict areas. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">3-Intake by 
+   contact exposure of DU through the skin is very low and relatively 
+   unimportant. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">4-Intake from 
+   wound contamination or embedded fragments in skin tissues allows 
+   DU to enter the systemic circulation. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT FACE="Times New Roman" COLOR="#004080">Absorption 
+   of depleted uranium :</FONT></U></B> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">1-Most (&gt;95%) 
+   uranium entering the body via inhalation or ingestion is not 
+   absorbed, but is eliminated via the faeces. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">2-Of the uranium 
+   that is absorbed into the blood, approximately 67% will be 
+   filtered by the kidney and excreted in the urine within 24 hours; 
+   this amount increases to 90% within a few days. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">3-Typical gut 
+   absorption rates for uranium in food and water are about 2% for 
+   soluble uranium compounds and down to 0.2% for insoluble uranium 
+   compounds. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT FACE="Times New Roman" COLOR="#004080">Health 
+   effects of exposure to depleted uranium :</FONT></U></B> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">DU has both 
+   chemical and radiological toxicity with the two important target 
+   organs being the kidneys and the lungs.</FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">1-In the kidneys, 
+   the proximal tubules are considered to be the main site of 
+   potential damage. Long-term studies of workers chronically exposed 
+   to uranium have reported impairment of the kidneys that depended 
+   on the level of exposure. There is also some evidence that this 
+   impairment may return to normal once the source of excessive 
+   uranium exposure has been removed. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">2-In a number of 
+   studies on uranium miners, an increased risk of lung cancer has 
+   been demonstrated, but this has been attributed to exposure from 
+   radon decay products. There is a possibility of lung tissue damage 
+   leading to a risk of lung cancer if a high enough radiation dose 
+   results from insoluble DU compounds remaining in the lungs over a 
+   prolonged period (many years). </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">3-Erythema 
+   (superficial inflammation of the skin) or other effects on the 
+   skin should not occur even if DU is held against the skin for 
+   prolonged periods (weeks). There is no established data to suggest 
+   that skin cancer results from skin contact with uranium dusts. 
+   </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">4-No consistent 
+   or confirmed adverse effects have been reported for the skeleton 
+   or liver. However, few studies have been conducted. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">5-No reproductive 
+   or developmental effects have been reported in humans, but studies 
+   are limited. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">6-Although 
+   uranium released from embedded fragments may accumulate in the 
+   central nervous system (CNS) tissue and some animal and human 
+   studies are suggestive of effects on CNS function, it is difficult 
+   to draw firm conclusions from the studies. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT FACE="Times New Roman" COLOR="#004080">Maximum 
+   radiation exposure limits :</FONT></U></B> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">The following 
+   doses, from the International Basic Safety Standards agreed by WHO 
+   in 1996, are in addition to those from normal background 
+   exposures.</FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">1-The general 
+   public should not receive a dose of more than 1 millisievert (mSv) 
+   in a year. In special circumstances, an effective dose of up to 5 
+   mSv in a single year is permitted provided that the average dose 
+   over five consecutive years does not exceed 1 mSv per year. An 
+   equivalent dose to the skin should not exceed 50 mSv in a year. 
+   </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">2-Occupational 
+   exposure should not exceed an effective dose of 20 mSv per year 
+   averaged over five consecutive years or an effective dose of 50 
+   mSv in any single year. An equivalent dose to the extremities 
+   (hands and feet) or the skin should not surpass 500 mSv in a year. 
+   </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT FACE="Times New Roman" COLOR="#004080">Guidance on 
+   exposure based on chemical and radiological toxicity 
+   :</FONT></U></B> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">The World Health 
+   Organization (WHO) has guidelines for determining the values of 
+   health-based exposure limits or tolerable intakes (TIs) for 
+   chemical substances. The TIs given below are applicable to 
+   long-term exposure in the general public (as opposed to workers). 
+   In single and short-term exposures, higher exposure levels may be 
+
+
+   tolerated without adverse effects.</FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">1-The general 
+   public's intake via inhalation or ingestion of soluble DU 
+   compounds should be based on a tolerable intake value of 0.5 
+   &#181;g per kg of body weight per day. This leads to an air 
+   concentration of 1 &#181;g/m3. For ingestion, this would be about 
+   11 mg/y for an average adult. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">2-It would be 
+   appropriate to reduce the TI for intake of insoluble DU compounds 
+   to 0.5 &#181;g per kg of body weight per day so that compatibility 
+   is achieved with the public radiation dose limit. When the 
+   solubility characteristics of the uranium species are not known, 
+   which is often the case in exposure to depleted uranium, it would 
+   be prudent to apply the more stringent tolerable intakes, i.e., 
+   0.5 &#181;g per kg of body weight per day for oral exposure. 
+   </FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">Uranium compounds 
+   with low absorption are markedly less nephrotoxic, and a tolerable 
+   intake via ingestion of 5 &#181;g per kg of body weight per day is 
+   applicable. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT FACE="Times New Roman" COLOR="#004080">Monitoring 
+   and treatment of exposed individuals :</FONT></U></B> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">1-For the general 
+   population, neither civilian nor military use of DU is likely to 
+   produce exposures to DU much above normal background levels 
+   produced by uranium. Therefore, an exposure assessment for DU will 
+   normally not be required. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">2-When an 
+   individual is suspected of being exposed to DU at a level 
+   significantly above the normal background level, an assessment of 
+   DU exposure may be required. This is best achieved by analysis of 
+   daily urine excretion. The amount of DU in the urine is determined 
+   from the 235U:238U ratio, obtained using sensitive mass 
+   spectrometric techniques. Faecal measurement can give useful 
+   information on intake if samples are collected soon after exposure 
+   (a few days). </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">3-External 
+   radiation measurements over the chest, using a whole-body 
+   radiation monitor for determining the amount of DU in the lungs, 
+   have limited application since they require specialist facilities 
+   and can only assess relatively large amounts of DU in the lungs. 
+   </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">4-There are no 
+   specific means to decrease the absorption of uranium from the 
+   gastrointestinal tract or lungs, or increase its excretion. Thus, 
+   general methods appropriate to heavy metal poisoning could be 
+   applied. Similarly, there is no specific treatment for uranium 
+   poisoning and the patient should be treated based on the symptoms 
+   observed. Dialysis may be helpful in extreme cases of kidney 
+   damage. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT FACE="Times New Roman" 
+   COLOR="#004080">Recommendations :</FONT></U></B> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">1-Levels of 
+   contamination in food and drinking water could rise in affected 
+   areas after some years and should be monitored where it is 
+   considered that there is a reasonable possibility of significant 
+   quantities of DU entering the ground water or food chain. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">2-Where possible, 
+   clean-up operations in impact zones should be undertaken where 
+   there are substantial numbers of radioactive projectiles remaining 
+   and where qualified experts deem contamination levels to be 
+   unacceptable. If very high concentrations of DU dust or metal 
+   fragments are present, then areas may need to be cordoned off 
+   until removal can be accomplished. Disposal of DU should come 
+   under appropriate national or international</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">recommendations 
+   for use of radioactive materials. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">3-Young children 
+   could receive greater exposure to DU when playing in or near DU 
+   impact sites. Typical hand-to-mouth activity could lead to high DU 
+   ingestion from contaminated soil. Necessary preventative measures 
+   should be taken. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT FACE="Times New Roman" COLOR="#004080">4-Individuals who 
+   believe they have had excessive intakes of DU should consult their 
+   medical practitioner for an examination and treatment of any 
+   symptoms. General screening or monitoring for possible DU related 
+   health effects in populations living in conflict areas where DU 
+   was used is not called for. </FONT> 
+    
+   <DD><FONT FACE="Times New Roman" COLOR="#004080">&nbsp;</FONT> 
+    
+    
+   <DT><I><FONT FACE="Times New Roman" COLOR="#004080">Reference 
+   :</FONT></I> 
+    
+   <DT><I><FONT FACE="Times New Roman" COLOR="#004080">The WHO, 
+   Depleted Uranium, Fact Sheet N&#176; 257, Revised April 
+   2001</FONT></I> 
+    
+   <DT><FONT FACE="Times New Roman" 
+   COLOR="#004080">&nbsp;<A NAME="contamination ceramic wares"></A></FONT> 
+    
+   <DD><FONT SIZE="-2" FACE="Arial" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT SIZE="-2" FACE="Arial" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT SIZE="-1" FACE="arial">&nbsp;</FONT> 
+    
+   <DT><FONT SIZE="-1" FACE="arial">&nbsp;</FONT> 
+    
+   <DT><FONT SIZE="-1" FACE="arial">On this page : </FONT><FONT 
+   SIZE="-1" FACE="arial"><A HREF="#english">Uranimum and 
+   ceramics</A></FONT><FONT SIZE="-1" FACE="arial">, </FONT><FONT 
+   SIZE="-1" FACE="arial"><A HREF="#depleted uranium">Toxicology : 
+   Depleted uranium</A></FONT><FONT SIZE="-1" FACE="arial">, Articles 
+   : Contamination by uranium-containing ceramic wares</FONT> 
+    
+   <DD>&nbsp; 
+    
+   <DT><FONT SIZE="-2" FACE="Arial" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=10 WIDTH="100%" 
+   bgcolor="#ffffff"> 
+      <TR> 
+         <TD HEIGHT=50> 
+            <P><CENTER><B><FONT SIZE="+3" FACE="Times New Roman" 
+            COLOR="#FF0000">CONTAMINATION by URANIUM-CONTAINING 
+            CERAMIC WARES</FONT></B></CENTER> 
+         </TD></TR> 
+   </TABLE> 
+    
+   <DD>&nbsp; 
+    
+   <DT><B><FONT COLOR="#004080">1) Accidental contamination from 
+   uranium compounds through contact with ceramic dinnerware, by 
+   Ralph W. Sheets, Clifton C. Thompson </FONT></B> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">ABSTRACT: Examination of orange-colored 
+   dinnerware samples purchased in antique stores and flea markets 
+   has revealed the occasional presence of surface uranium compounds 
+   that are readily transferred to the hands and</FONT> 
+    
+   <DT><FONT COLOR="#004080">clothing. We have further been able to 
+   produce soluble uranium compounds on the surfaces of clean dishes 
+   by exposing them to household vinegar or bleach. We estimate that 
+   handling of a contaminated dish can transfer up to</FONT> 
+    
+   <DT><FONT COLOR="#004080">1-2 becquerels or more or uranium 
+   compounds to the hands. Uranium contamination is of concern 
+   because the element is not only an alpha emitter but also a 
+   chemical nephrotoxin. Although the amount of uranium likely 
+   to</FONT> 
+    
+   <DT><FONT COLOR="#004080">be ingested as a result of casual 
+   handling may be small, it could still exceed by several times the 
+   amount occurring in the average diet (about 40 mBq/day). 
+   Furthermore, since fresh surface compounds are readily formed, it 
+   is possible that a person who regularly handles or eats from 
+   uranium-glazed dinnerware can accidently ingest significant 
+   amounts of uranium.</FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">2) Release of uranium and emission of 
+   radiation from uranium-glazed dinnerware, by Ralph W. Sheets, 
+   Sandra L. Turpen </FONT></B> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">ABSTRACT: Samples of orange, yellow, 
+   beige, ivory and blue-green ceramic dinnerware glazed with uranium 
+   compounds have been examined. Measurements at glaze surfaces 
+   yielded exposure rates of 3.8-16 mR/h (1-4 uC/kgh) for orange 
+   glazes and rates of 0.04-1.3 mR/h (0.01-0.3 uC/kgh) for ivory, 
+   beige, and yellow glazes. Whole body exposure from a shelf display 
+   of 40 orange dishes was estimated to be 0.1-0.5 mR/h(0.03-0.13 
+   uC/kgh), or up to 50 times the room background radiation level, at 
+   a distance of 1 meter. Twenty-four hour <a  href="https://digitalfire.com/glossary/leaching">leaching</a> tests of orange, 
+   yellow, and ivory dishes were carried out with various 
+   concentrations of acetic and citric acids. Uranium concentration 
+   in leachates of some orange dishes exceeded 450 mg/L. Uranium is a 
+   chemical</FONT> 
+    
+   <DT><FONT COLOR="#004080">nephrotoxin and the United States 
+   Environmental Protection Agency has proposed a maximum contaminant 
+   level for drinking water of 0.020 mg/L. Based on this value a 
+   person consuming 2.2 L of drinking water per day would ingest 0.31 
+   mg of uranium per week. A person eating once a week from an orange 
+   glazed dish could easily ingest 10 or more times this 
+   amount.</FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT SIZE="-2" FACE="Arial" COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><CENTER><FONT SIZE="-2" FACE="Arial" COLOR="#004080"> 
+   <HR WIDTH="25%"> 
+   </FONT></CENTER> 
+</DL>
+<hr><p>By Edouard Bastarache </p>
+<h2 style="font-style:italic; margin-top:40px;">Related Information</h2>
+
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/eba">Article by Edouard Bastarache</a>
+<br /><i>Edouard Bastarache is a well known doctor that has written many articles on the subject of <a  href="https://digitalfire.com/glossary/toxicity">toxicity</a> of ceramic materials and books on technical aspects of <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>. He writes in both English and French.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/uranium+oxide">Uranium Oxide</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/uranyl+nitrate">Uranyl Nitrate</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Hazards</td>
+<td>
+<a href="https://digitalfire.com/hazard/uranium+in+ceramic+glazes">Uranium in Ceramic Glazes</a>
+<br /><i>Extracts from a discussion (between technicians knowledgeable on the subject) about the safety of using uranium in ceramic glazes.</i>
+</td>
+</tr>
+</tbody></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

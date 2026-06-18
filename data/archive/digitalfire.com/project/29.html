@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Project: Comparing the Melt Fluidity of 16 Frits</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+March 2026: We are doing major upgrades to code here, please be patient regarding any issues. If any page is not working for a period of hours, please contact us. Thank you.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item active" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=project" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:center; vertical-align:top;">Feb 14-15, 2026 - <b>Major Server <a href="https://digitalfire.com">Upgrade</a> Done</b></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Projects</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a title="15" href="https://digitalfire.com/project/15">2019 Jiggering-Casting Project of Medalta 66 Mug</a><br /><a title="54" href="https://digitalfire.com/project/54">A cereal bowl jigger mold made using 3D printing</a><br /><a title="33" href="https://digitalfire.com/project/33">Beer Bottle Master Mold via 3D Printing</a><br /><a title="61" href="https://digitalfire.com/project/61">Better porosity for Brown Sugar Savers</a><br /><a title="48" href="https://digitalfire.com/project/48">Build a kiln monitoring device</a><br /><a title="69" href="https://digitalfire.com/project/69">Celebration Project</a><br /><a title="60" href="https://digitalfire.com/project/60">Coffee Mug Slip Casting Mold via 3D Printing</a><br /><button type="button" class="btn btn-dark">Comparing the Melt Fluidity of 16 Frits</button><br /><a title="52" href="https://digitalfire.com/project/52">Cookie Cutting clay with 3D printed cutters</a><br /><a title="41" href="https://digitalfire.com/project/41">Evaluating a clay's suitability for use in pottery</a><br /><a title="55" href="https://digitalfire.com/project/55">Make a mold for 4-gallon stackable calciners</a><br /><a title="49" href="https://digitalfire.com/project/49">Make Your Own Pyrometric Cones</a><br /><a title="47" href="https://digitalfire.com/project/47">Make your own sieve shaker to process ceramic slurries</a><br /><a title="40" href="https://digitalfire.com/project/40">Making a high quality ceramic tile</a><br /><a title="46" href="https://digitalfire.com/project/46">Making a Plaster Table</a><br /><a title="37" href="https://digitalfire.com/project/37">Making Bricks</a><br /><a title="50" href="https://digitalfire.com/project/50">Making our own kiln posts using a hand extruder</a><br /><a title="59" href="https://digitalfire.com/project/59">Medalta Ball Pitcher Slip Casting Mold via 3D Printing</a><br /><a title="34" href="https://digitalfire.com/project/34">Medalta Jug Master Mold Development</a><br /><a title="63" href="https://digitalfire.com/project/63">Mold Natches</a><br /><a title="32" href="https://digitalfire.com/project/32">Mother Nature's Porcelain - Plainsman 3B</a><br /><a title="66" href="https://digitalfire.com/project/66">Mug Handle Casting</a><br /><a title="39" href="https://digitalfire.com/project/39">Nursery plant pot mold via 3D printing</a><br /><a title="30" href="https://digitalfire.com/project/30">Pie-Crust Mug-Making Method</a><br /><a title="35" href="https://digitalfire.com/project/35">Plainsman 3D, Mother Nature's Porcelain/Stoneware</a><br /><a title="38" href="https://digitalfire.com/project/38">Project to Document a Shimpo Jiggering Attachment</a><br /><a title="36" href="https://digitalfire.com/project/36">Roll, Cut, Pull, Attach Handle-making Method</a><br /><a title="23" href="https://digitalfire.com/project/23">Slurry Mixing and Dewatering Your Own Clay Body</a><br /><a title="24" href="https://digitalfire.com/project/24">Testing a New Load of EP Kaolin</a><br /><a title="44" href="https://digitalfire.com/project/44">Using milk as a glaze</a></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Comparing the Melt Fluidity of 16 Frits</h1>
+<p>This project is hopefully going to teach me something about how <a  href="https://digitalfire.com/glossary/frit">frits</a> melt over ranges of temperatures, how they compare in melting, how that relates to their chemistries and which ones melt in a way that makes them better candidates as body frits, balanced glazes on their own or as a special-purpose additives to glazes.<br />
+<br />
+I mixed 100g of each of the frits with 3.25g of Veegum to make them plastic. I shook the powders in a bag and then I stirred it into 35 grams of water in a cup. When they got to dry mud consistency I hand-kneaded them to a smooth consistency. I divided the batches into 12 gram pieces and rolled each into a ball for drying. That produced dried balls about 9 grams each.<br />
+<br />
+In the tests done so far (up until early January 2020) it is evident that most fruits have completely done their thing before the kiln even reaches <a  href="https://digitalfire.com/glossary/bisque">bisque</a> temperature.<p style="clear:left"></p></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">About to start a melt-flow comparison of 16 different frits</h3>
+<br /><a href="https://digitalfire.com/picture/2472"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/rpzmodrhdq.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2472">click here</a> to see it.</p>
+<p>I am going to fire them at about 10 temperatures starting at cone 022. These will be a great to determine whether they suddenly melt or slowly soften over a range of temperatures. I will be able to see how wide that range is and how they behave as they go beyond it. I also included <a  href="https://digitalfire.com/material/806">Gerstley Borate</a>, mother nature's nature <a  href="https://digitalfire.com/glossary/borate">boron</a> source. They way it melts should clear contrast with the <a  href="https://digitalfire.com/glossary/frit">frits</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">VeeGum and CMC gum can plastify non-plastic powders for making melt-flow test balls</h3>
+<br /><a alt="Frit and veegum powder ready to mix with water" title="How to make melt flow test balls of frits" href="https://digitalfire.com/picture/2497"><img class="flexleft50" title="How to make melt flow test balls of frits"  alt="Frit and veegum powder ready to mix with water"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/zsgejdngba.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2497">click here</a> to see it.</p>
+<p>Fluxes used in <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a> are almost always non-plastic, they cannot be formed like clay - <a  href="https://digitalfire.com/glossary/frit">frits</a> and <a  href="https://digitalfire.com/material/310">feldspars</a> are good examples. And they don't dry hard. To make balls for use in the <a  href="https://digitalfire.com/test/gbmf">GBMF test</a> for <a  href="https://digitalfire.com/glossary/melt+fluidity">melt flow</a> a binder needs to be added. Traditionally we have used Veegum, however, it interacts with materials enough to affect melting - <a  href="https://digitalfire.com/material/228">CMC gum</a> does not. That being said, Veegum dries better (these balls can dry very slowly). When simply comparing <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> of two materials either is fine.<br />
+<br />
+Each ceramic powder responds differently to being water-mixed with a gum or <a  href="https://digitalfire.com/glossary/plasticity">plasticizer</a>. Some material-gum mixes uptake water so well that it can be worked in drops at a time until a plastic material is produced. Others require vigorous mixing into a <a  href="https://digitalfire.com/glossary/slurry">slurry</a> and then dewatering on a <a  href="https://digitalfire.com/material/1124">plaster</a> surface. We target 9g balls, they fit into the reservoir of the <a  href="https://digitalfire.com/picture/2350">melt flow tester</a>. To make one ball we start with 11 or 12g of powder (to allow for waste) and then form them into 12g (wet) balls - these dry them down to the 9g weight. We are almost always comparing the flow of two materials, in these cases it is only important that the two balls be the same weight - so we trim the heavier one down to the weight of the lighter one. Does cornstarch work? No, the mix is not plastic. Psyllium? Yes, but it has a flakey texture and demands more water.<br />
+<br />
+If you are testing a plastic material then a binder is not needed.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Frit melt fluidity comparison - 1300F</h3>
+<br /><a href="https://digitalfire.com/picture/2478"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/hwo24lrgqf.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2478">click here</a> to see it.</p>
+<p>Fired at 350F/hr to 1300F and held for 15 minutes. Some are still burning off carbon (which seems strange). There are two early leaders: Ferro <a  href="https://digitalfire.com/material/349">frit 3110</a> and Fusion <a  href="https://digitalfire.com/glossary/frit">frit</a> F75 are starting to deform (they have almost the same <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a>). Amazingly, these two <a  href="https://digitalfire.com/glossary/frit">frits</a> have low <a  href="https://digitalfire.com/glossary/borate">boron</a>, they rely on high soda as the <a  href="https://digitalfire.com/glossary/flux">flux</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Melt fluidity comparison of frits - 1350F</h3>
+<br /><a href="https://digitalfire.com/picture/2480"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/ecp9ugo82w.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2480">click here</a> to see it.</p>
+<p>Fired at 350F/hr to 1350F and held for 15 minutes. Some are still burning off carbon (which seems strange). The two FZ16s are starting to move. <a  href="https://digitalfire.com/material/351">Frit 3134</a> is expanding. 3602 is also starting to melt.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Melt fluidity comparison of frits - 1400F</h3>
+<br /><a href="https://digitalfire.com/picture/2481"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/iwdpummirq.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2481">click here</a> to see it.</p>
+<p>Fired at 350F/hr to 1400F and held for 15 minutes. <a  href="https://digitalfire.com/material/351">Frit 3134</a> is still expanding. 3602 is also starting to flow. A number of them are shrinking and densifying like a <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> would.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Melt fluidity comparison of frits - 1450F</h3>
+<br /><a href="https://digitalfire.com/picture/2482"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/nivs38wgft.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2482">click here</a> to see it.</p>
+<p>Fired at 350F/hr to 1450F and held for 15 minutes. <a  href="https://digitalfire.com/material/351">Frit 3134</a> is still expanding. 3602 is blasting out of the gate, taking the lead. F75 is starting to flow.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Melt fluidity comparison of frits - 1500F</h3>
+<br /><a href="https://digitalfire.com/picture/2483"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/jabyryzfkg.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2483">click here</a> to see it.</p>
+<p>Fired at 350F/hr to 1500F and held for 15 minutes. <a  href="https://digitalfire.com/material/351">Frit 3134</a> is still expanding. 3602 and FZ16 are really starting to move. 3195, F38 and F15 are softening.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Melt fluidity comparison of frits - 1550F</h3>
+<br /><a href="https://digitalfire.com/picture/2484"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/ugctqymmbj.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2484">click here</a> to see it.</p>
+<p>Fired at 350F/hr to 1550F and held for 15 minutes. <a  href="https://digitalfire.com/material/351">Frit 3134</a> is still expanding. 3602 and FZ16 are going to be off-ramp by next firing.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Melt fluidity comparison - 1600F</h3>
+<br /><a href="https://digitalfire.com/picture/2485"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/stsc2dwne5.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2485">click here</a> to see it.</p>
+<p>Fired at 350F/hr to 1600F and held for 15 minutes. <a  href="https://digitalfire.com/material/351">Frit 3134</a> is still expanding. 3602 and FZ16 are off-ramp. F-75 is starting to flow. <a  href="https://digitalfire.com/material/806">Gerstley Borate</a> has suddenly shrunk. <a  href="https://digitalfire.com/material/349">Frit 3110</a> is demonstrating its wide range, slowly softening more at each temperature.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Melt fluidity comparison of frits - 1650F</h3>
+<br /><a href="https://digitalfire.com/picture/2486"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/lbajideoqz.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2486">click here</a> to see it.</p>
+<p>Fired at 350F/hr to 1650F and held for 15 minutes. FZ16 has turned crystal clear and spread out across the runway (has low <a  href="https://digitalfire.com/glossary/surface+tension">surface tension</a>). <a  href="https://digitalfire.com/material/349">Frit 3110</a> has so much surface tension that the flow can be lifted off the tester. Since 1600F <a  href="https://digitalfire.com/material/806">Gerstley Borate</a> has gone from unmelted to passing all the rest! </p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Melt fluidity comparison of frits - 1700F</h3>
+<br /><a href="https://digitalfire.com/picture/2487"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/h41dykeanq.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2487">click here</a> to see it.</p>
+<p>Fired at 350F/hr to 1700F and held for 15 minutes. 3110 is finally starting to move. 3134 also (being full of bubbles). <a  href="https://digitalfire.com/material/806">Gerstley Borate</a> has turned almost transparent (because the Colemanite portion of it is now melting). 3195 is looking very well behaved compared to most others, forming a bubble free glass of high <a  href="https://digitalfire.com/glossary/surface+tension">surface tension</a> (F15 and F524 are starting to do the same).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Melt fluidity comparison - 1750F</h3>
+<br /><a href="https://digitalfire.com/picture/2488"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/ra7ynffnx9.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2488">click here</a> to see it.</p>
+<p>Fired at 350F/hr to 1750F and held for 15 minutes. <a  href="https://digitalfire.com/material/349">Frit 3110</a> has taken off. And F75, 3195 and 3134 (the latter two having big differences in <a  href="https://digitalfire.com/glossary/surface+tension">surface tension</a>).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Frit Melt Fluidity Comparison - 1800F</h3>
+<br /><a href="https://digitalfire.com/picture/2489"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/wz2aata3s5.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2489">click here</a> to see it.</p>
+<p>Fired at 350F/hr to 1800F and held for 15 minutes (I already did firings from 1300F-1750F in 50 degree increments, all of them are visible in the parent project). <a  href="https://digitalfire.com/material/349">Frit 3110</a>, 3134, 3195, F75 have run all the way down. All of the <a  href="https://digitalfire.com/glossary/frit">frits</a> have softened and melted slowly over a range of temperatures (hundreds of degrees). By contrast, <a  href="https://digitalfire.com/material/806">Gerstley Borate</a>, the only raw material here, suddenly melted and flowed right over the cliff (between 1600 and1650)! But not before <a  href="https://digitalfire.com/picture/2545">Frit 3602</a> and FZ16 had done so earlier. <a  href="https://digitalfire.com/material/369">Frit 3249</a> is just starting to soften but F69 (the Fusion Frits equivalent) is a little ahead of it. LA300 and <a  href="https://digitalfire.com/material/350">Frit 3124</a> are starting also. F524, F38, F15 will all be over the end by the next firing. <a  href="https://digitalfire.com/glossary/melt+fluidity">The melt</a> <a  href="https://digitalfire.com/glossary/surface+tension">surface tension</a> is evident by the way in which the melts spread out or hold together.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Frit Melt Fluidity Comparison - 1850F</h3>
+<br /><a alt="Frits melting side-by-side at 1850F" href="https://digitalfire.com/picture/2815"><img class="flexleft50" alt="Frits melting side-by-side at 1850F"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/6rtqznzhvo.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2815">click here</a> to see it.</p>
+<p>These <a  href="https://digitalfire.com/glossary/melt+fluidity">melt flow</a> tests were fired at 350F/hr to 1850F and held for 15 minutes (I did firings at 50-degree increments across a wide range). It is amazing how active some <a  href="https://digitalfire.com/glossary/frit">frits</a> are, even well below normal <a  href="https://digitalfire.com/glossary/bisque">bisque</a> temperatures! <a  href="https://digitalfire.com/material/349">Frit 3110</a>, <a  href="https://digitalfire.com/material/351">Frit 3134</a>, <a  href="https://digitalfire.com/material/356">Frit 3195</a>, <a  href="https://digitalfire.com/material/550">Frit F-75</a> have all flowed all the way down for many previous temperatures. LA300 and <a  href="https://digitalfire.com/material/350">Frit 3124</a> were just starting at 1800F, look at them now! <a  href="https://digitalfire.com/material/2402">Frit F-524</a> and <a  href="https://digitalfire.com/material/530">Frit F-38</a> have gone from half-way at 1800F to water-falling over the end. <a  href="https://digitalfire.com/material/369">Frit 3249</a> is still not out-of-the-gate but <a  href="https://digitalfire.com/material/547">Frit F-69</a> (the Fusion Frits equivalent of 3249) is half-way. Note how <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> <a  href="https://digitalfire.com/glossary/surface+tension">surface tension</a> is evident by the way in which the melts spread out or hold together. By contrast, <a  href="https://digitalfire.com/material/806">Gerstley Borate</a> (labelled "GB"), the only raw material here, suddenly melted and flowed right over-the-cliff between 1600 and 1650!  The best melter of all of them is high-boron high-zinc <a  href="https://digitalfire.com/material/556">Frit FZ-16</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Fusion Frit FZ-16 melt flow over many temperatures</h3>
+<br /><a alt="A ten-gram frit ball melting at 11 temperatures" href="https://digitalfire.com/picture/2548"><img class="flexleft50" alt="A ten-gram frit ball melting at 11 temperatures"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/cbcg6j77so.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2548">click here</a> to see it.</p>
+<p>This <a  href="https://digitalfire.com/picture/2350">melt flow tester</a> demonstrates the beautiful crystal-clear glass this zinc <a  href="https://digitalfire.com/glossary/frit">frit</a> creates by 1700F. It fits this <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> without <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a>, even though it is very thick and high in sodium (the high zinc and <a  href="https://digitalfire.com/glossary/borate">boron</a> are countering it to keep the <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> down). It runs off the end of the runway around 1600F on this <a  href="https://digitalfire.com/test/glfl">GLFL test</a>, rivalling <a  href="https://digitalfire.com/material/645">lead bisilicate</a>. This is a more concentrated boron source than even <a  href="https://digitalfire.com/material/806">Gerstley Borate</a>. Everything about this material screams “ultra gloss”. What a material to build a <a  href="https://digitalfire.com/glossary/fluid+melt+glazes">fluid-melt</a> reactive super-glaze on!</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Ferro Frit 3602 melt flow over many temperatures</h3>
+<br /><a alt="A 9 gram ball of frit melts and flows downward more and more as temperature increases." href="https://digitalfire.com/picture/2545"><img class="flexleft50" alt="A 9 gram ball of frit melts and flows downward more and more as temperature increases."  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/f7ycbsfkrh.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2545">click here</a> to see it.</p>
+<p>This demonstrates the amazing melt behaviour of lead-as-a-flux for ceramic glazes. Not only does it melt early, but it softens slowly over a 300F range of temperatures before it goes off the end of the runway on this <a  href="https://digitalfire.com/test/glfl">GLFL test</a>. Then, when fired 200F hotter than that, it remains a stable, clear and uncrazed glass. Beginning around 1750F, this becomes a transparent glaze, by itself.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Frit melt runoff winner</h3>
+<br /><a href="https://digitalfire.com/picture/2555"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/6ogfb8hwar.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2555">click here</a> to see it.</p>
+<p>By 1700F the Fusion zinc <a  href="https://digitalfire.com/material/556">frit FZ-16</a> has already established itself as a better melter than <a  href="https://digitalfire.com/material/645">lead bisilicate</a>.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/frit">Frit</a>
+<br /><i><a  href="https://digitalfire.com/glossary/frit">Frits</a> are made by melting mixes of raw materials, quenching <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> in water, grinding the pebbles into a powder. Frits have chemistries raw materials cannot.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/frit">Frit</a>
+<br /><i><a  href="https://digitalfire.com/glossary/frit">Frits</a> are used in ceramic glazes for a wide range of reasons. They are man-made glass powders of controlled <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> with many advantages over raw materials.</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

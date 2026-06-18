@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Manganese and Parkinsons by Jane Watkins</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="A story of one person and manganese poisoning.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item active" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=hazard" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Hazards</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a title="341" href="https://digitalfire.com/hazard/341">Alumina Toxicology</a> |</nobr> <nobr><a title="333" href="https://digitalfire.com/hazard/333">Ammonia and Latex Toxicity</a> |</nobr> <nobr><a title="16" href="https://digitalfire.com/hazard/16">Antimony Oxide</a> |</nobr> <nobr><a title="412" href="https://digitalfire.com/hazard/412">Are colored porcelains hazardous?</a> |</nobr> <nobr><a title="18" href="https://digitalfire.com/hazard/18">Arsenic Oxide</a> |</nobr> <nobr><a title="19" href="https://digitalfire.com/hazard/19">Asbestos Toxicity</a> |</nobr> <nobr><a title="22" href="https://digitalfire.com/hazard/22">Ball Clay</a> |</nobr> <nobr><a title="321" href="https://digitalfire.com/hazard/321">BARIUM and COMPOUNDS Toxicology</a> |</nobr> <nobr><a title="367" href="https://digitalfire.com/hazard/367">Barium Carbonate in Clay Bodies</a> |</nobr> <nobr><a title="26" href="https://digitalfire.com/hazard/26">Barium Carbonate in Glazes</a> |</nobr> <nobr><a title="31" href="https://digitalfire.com/hazard/31">Bentonite Toxicity</a> |</nobr> <nobr><a title="33" href="https://digitalfire.com/hazard/33">Beryllium Monoxide Toxicology</a> |</nobr> <nobr><a title="352" href="https://digitalfire.com/hazard/352">Bismuth Trioxide Toxicology</a> |</nobr> <nobr><a title="326" href="https://digitalfire.com/hazard/326">Boron Compounds and Their Toxicity</a> |</nobr> <nobr><a title="1" href="https://digitalfire.com/hazard/1">Brown Stain</a> |</nobr> <nobr><a title="335" href="https://digitalfire.com/hazard/335">Cadmium Toxicity</a> |</nobr> <nobr><a title="343" href="https://digitalfire.com/hazard/343">Calcium Carbonate Toxicology</a> |</nobr> <nobr><a title="334" href="https://digitalfire.com/hazard/334">Carbon Monoxide Toxicity</a> |</nobr> <nobr><a title="353" href="https://digitalfire.com/hazard/353">Cesium Toxicology</a> |</nobr> <nobr><a title="330" href="https://digitalfire.com/hazard/330">Chromium Compounds Toxicology</a> |</nobr> <nobr><a title="146" href="https://digitalfire.com/hazard/146">Clay Toxicity</a> |</nobr> <nobr><a title="73" href="https://digitalfire.com/hazard/73">Cobalt Oxide and Carbonate</a> |</nobr> <nobr><a title="331" href="https://digitalfire.com/hazard/331">Cobalt Toxicology</a> |</nobr> <nobr><a title="329" href="https://digitalfire.com/hazard/329">Copper Compounds Toxicology</a> |</nobr> <nobr><a title="78" href="https://digitalfire.com/hazard/78">Copper Oxide and Carbonate</a> |</nobr> <nobr><a title="84" href="https://digitalfire.com/hazard/84">Cristobalite Toxicity</a> |</nobr> <nobr><a title="337" href="https://digitalfire.com/hazard/337">Cryolite and Ceramics</a> |</nobr> <nobr><a title="372" href="https://digitalfire.com/hazard/372">Dealing With Dust in Ceramics</a> |</nobr> <nobr><a title="351" href="https://digitalfire.com/hazard/351">Diatomaceous Earth Toxicology</a> |</nobr> <nobr><a title="323" href="https://digitalfire.com/hazard/323">Dioxins in Clays</a> |</nobr> <nobr><a title="95" href="https://digitalfire.com/hazard/95">Epsom Salts</a> |</nobr> <nobr><a title="348" href="https://digitalfire.com/hazard/348">Eye Injuries Due to Radiation</a> |</nobr> <nobr><a title="222" href="https://digitalfire.com/hazard/222">Feldspar</a> |</nobr> <nobr><a title="320" href="https://digitalfire.com/hazard/320">Fighting Micro-Organisms in Ceramics</a> |</nobr> <nobr><a title="108" href="https://digitalfire.com/hazard/108">Fluorine Gas</a> |</nobr> <nobr><a title="413" href="https://digitalfire.com/hazard/413">Fumes from gas kilns</a> |</nobr> <nobr><a title="354" href="https://digitalfire.com/hazard/354">Gallium Oxide Toxicology</a> |</nobr> <nobr><a title="342" href="https://digitalfire.com/hazard/342">Hafnium Oxide Toxicty</a> |</nobr> <nobr><a title="345" href="https://digitalfire.com/hazard/345">Hydrofluoric Acid Toxicity</a> |</nobr> <nobr><a title="350" href="https://digitalfire.com/hazard/350">Iron oxide and Hematite</a> |</nobr> <nobr><a title="169" href="https://digitalfire.com/hazard/169">Lead Chromate</a> |</nobr> <nobr><a title="368" href="https://digitalfire.com/hazard/368">Lead in Ceramic Glazes</a> |</nobr> <nobr><a title="328" href="https://digitalfire.com/hazard/328">Lead Toxicology</a> |</nobr> <nobr><a title="174" href="https://digitalfire.com/hazard/174">Lithium Carbonate Toxicity</a> |</nobr> <nobr><a title="349" href="https://digitalfire.com/hazard/349">Lithium Toxicology</a> |</nobr> <nobr><a title="322" href="https://digitalfire.com/hazard/322">Man-Made Vitreous Fibers (MMVF) Toxicology</a> |</nobr> <nobr><a title="410" href="https://digitalfire.com/hazard/410">Man-Made Vitreous Fibers Safety Update</a> |</nobr> <nobr><a title="406" href="https://digitalfire.com/hazard/406"><button type="button" class="btn btn-dark">Manganese and Parkinsons by Jane Watkins</button></a> |</nobr> <nobr><a title="187" href="https://digitalfire.com/hazard/187">Manganese in Clay Bodies</a> |</nobr> <nobr><a title="317" href="https://digitalfire.com/hazard/317">Manganese Inorganic Compounds Toxicology</a> |</nobr> <nobr><a title="409" href="https://digitalfire.com/hazard/409">Manganese Toxicity by Elke Blodgett</a> |</nobr> <nobr><a title="407" href="https://digitalfire.com/hazard/407">Manganese: Creativity and Illness by Dierdre O'Reilly</a> |</nobr> <nobr><a title="332" href="https://digitalfire.com/hazard/332">Molybdenum Compounds Toxicology</a> |</nobr> <nobr><a title="327" href="https://digitalfire.com/hazard/327">Nickel Compounds Toxicity</a> |</nobr> <nobr><a title="314" href="https://digitalfire.com/hazard/314">Niobium Oxide Toxicity</a> |</nobr> <nobr><a title="318" href="https://digitalfire.com/hazard/318">Occupational Dermatoses</a> |</nobr> <nobr><a title="370" href="https://digitalfire.com/hazard/370">Overview of Material Safety by Gavin Stairs</a> |</nobr> <nobr><a title="364" href="https://digitalfire.com/hazard/364">Paraffin Toxicology</a> |</nobr> <nobr><a title="216" href="https://digitalfire.com/hazard/216">Perlite Toxicity</a> |</nobr> <nobr><a title="238" href="https://digitalfire.com/hazard/238">Plant Ash Toxicity</a> |</nobr> <nobr><a title="346" href="https://digitalfire.com/hazard/346">Potassium Carbonate Toxicity</a> |</nobr> <nobr><a title="365" href="https://digitalfire.com/hazard/365">Pregnancy and Ceramics</a> |</nobr> <nobr><a title="355" href="https://digitalfire.com/hazard/355">Propane Toxicology</a> |</nobr> <nobr><a title="251" href="https://digitalfire.com/hazard/251">Quartz Toxicity</a> |</nobr> <nobr><a title="369" href="https://digitalfire.com/hazard/369">Quartz Toxicity on Clayart</a> |</nobr> <nobr><a title="336" href="https://digitalfire.com/hazard/336">Rare Earth Compounds Toxicity</a> |</nobr> <nobr><a title="366" href="https://digitalfire.com/hazard/366">Rubidium and Cesium Toxicology</a> |</nobr> <nobr><a title="356" href="https://digitalfire.com/hazard/356">Rutile Toxicology</a> |</nobr> <nobr><a title="324" href="https://digitalfire.com/hazard/324">Silicosis and Screening</a> |</nobr> <nobr><a title="357" href="https://digitalfire.com/hazard/357">Silver Compounds Toxicology</a> |</nobr> <nobr><a title="358" href="https://digitalfire.com/hazard/358">Sodium Azide Toxicology</a> |</nobr> <nobr><a title="359" href="https://digitalfire.com/hazard/359">Sodium Carbonate Toxicology</a> |</nobr> <nobr><a title="360" href="https://digitalfire.com/hazard/360">Sodium Silicate Powder Toxicology</a> |</nobr> <nobr><a title="315" href="https://digitalfire.com/hazard/315">Stannous Chloride Toxicity</a> |</nobr> <nobr><a title="316" href="https://digitalfire.com/hazard/316">Strontium Carbonate Toxicity Note</a> |</nobr> <nobr><a title="347" href="https://digitalfire.com/hazard/347">Sulfur Dioxide Toxicity</a> |</nobr> <nobr><a title="3" href="https://digitalfire.com/hazard/3">Talc Hazards Overview</a> |</nobr> <nobr><a title="361" href="https://digitalfire.com/hazard/361">Talc Toxicology</a> |</nobr> <nobr><a title="362" href="https://digitalfire.com/hazard/362">Thallium Oxide Toxicology</a> |</nobr> <nobr><a title="344" href="https://digitalfire.com/hazard/344">Thorium Dioxide Toxicity</a> |</nobr> <nobr><a title="338" href="https://digitalfire.com/hazard/338">Tin Inorganic Compounds</a> |</nobr> <nobr><a title="339" href="https://digitalfire.com/hazard/339">Titanium Dioxide Toxicology</a> |</nobr> <nobr><a title="313" href="https://digitalfire.com/hazard/313">Toxicological Assessment of Zeolites</a> |</nobr> <nobr><a title="363" href="https://digitalfire.com/hazard/363">Tungsten Compounds Toxicology</a> |</nobr> <nobr><a title="371" href="https://digitalfire.com/hazard/371">Understanding Acronyms on MSDS's</a> |</nobr> <nobr><a title="325" href="https://digitalfire.com/hazard/325">Uranium and Ceramics</a> |</nobr> <nobr><a title="319" href="https://digitalfire.com/hazard/319">Vanadium and Compounds Toxicology</a> |</nobr> <nobr><a title="411" href="https://digitalfire.com/hazard/411">Vermiculite</a> |</nobr> <nobr><a title="340" href="https://digitalfire.com/hazard/340">Zinc Compounds Toxicology</a> |</nobr> <nobr><a title="373" href="https://digitalfire.com/hazard/373">Zirconium Compounds Toxicity</a> |</nobr> <nobr><a title="234" href="https://digitalfire.com/hazard/234">Zirconium Encapsulated Stains Toxicity</a></nobr></div><h1>Manganese and Parkinsons by Jane Watkins</h1>
+<P align=left><B><U>PARKINSON'S DISEASE: My Story</U></B></P>
+<P>JANE WATKINS (LANYON) - (Age 47 years)</P>
+<P>In December 1992 I was diagnosed with Parkinson's Disease possibly related to manganese Poisoning, this was due to the fact that I am a potter of 17 years who has worked with manganese and also lived in areas where manganese is mined.</P>
+<P>After the initial shock of diagnosis, I decided to research all I could about manganese poisoning and it's similarities to Parkinson's Disease.</P>
+<P>My symptoms being slowness of movement on my left side with no swing in my left arm, slight cog-wheel effect and loss of coordination but no tremor. Unscrewing bottle tops, drying my hair, using a fork, typing and <a  href="https://digitalfire.com/glossary/throwing">throwing</a> clay pots on the wheel became awkward and frustrating, to say the least.</P>
+<P>On the basis of my use of 2% manganese in a clay slip and other uses over many years, I decided to steer clear of the pottery for a while to see if my symptoms would subside. Instead, I took up painting and have held several exhibitions, one of miniature Landsat Images being held in the U.K.. during February/March 1996 and a solo to be held in Perth in September, together with pottery from my private collection.</P>
+<P>Now three and a half years since diagnosis, my reaction and response time has slowed down, with loss of coordination and short-term memory, painful muscle cramps, weakness and slight cogwheel rigidity but still no swing in my left arm and the left leg is oddly clumsy. Together with visual convergence and diplopia (double vision). I am learning to cope with these inadequacies and am lucky to still be able to lead a relatively normal life. Pottery has taken a back seat whilst I concentrate on my painting as therapy.</P>
+<P align=left><B><U>EXPOSURE TO MANGANESE & MANGANESE POISONING</U></B></P>
+<P>Manganese Poisoning refers to the chronic neurological disorder caused by manganese, also as a chronic disorder of the CNS resembling Parkinsonism. </P>
+<P>Parkinsonism may be a form of chronic manganism that may have an environmental etiology, however, this is disputed in some areas.</P>
+<P>I was born in St. Ives, Cornwall, where manganese was mined. In 1971 I was married and moved to Port Hedland, W.A. where I worked for several years near a stockpile of manganese ore.</P>
+<P>Manganese ores are mined by both open pit and underground mining. The ores are washed, separated from rocks, crushed and in some cases, <a  href="https://digitalfire.com/glossary/calcination">roasted</a>, <a  href="https://digitalfire.com/glossary/sintering">sintered</a> and nodulized before shipment. After shipment, manganese ores are crushed to a smaller size ground and bagged for further industrial uses. This grinding process has also been responsible for a great number of cases of manganese poisoning. Manganese metal dust readily becomes airborne as a cloud, if dropped and must be handled carefully.</P>
+<P>Chronic inhalation of dust or fumes or ingestion can cause MANGANESE POISONING - a serious CUMULATIVE disease affecting the Central Nervous System similar to Lead Poisoning.</P>
+<P>The onset of the disease is insidious and appears after months or years of exposure to manganese. There are reports that patients have developed major symptoms several years after exposure to manganese had ceased.</P>
+<P>Early symptoms are: fatigue, apathy, weakness in the legs, tremors of the hands, muscular spasms and leg cramps, loss of co-ordination, with symptoms resembling Parkinson's Disease.</P>
+<P>Once established manganism is an intractable and permanently disabling disease for which there is no cure (yet) although it is treatable with drugs.</P>
+<P>Iron deficiency appears to increase manganese absorption. My own long family history of iron deficiency anemia was treated with iron and tonics which I now find have added manganese compounds.</P>
+<P>Iron deficiency anemia has been advanced as an important factor in worker susceptibility to manganism. Since there are atomic similarities between iron and manganese, an iron deficient body may absorb manganese more readily than one with an adequate iron supply. Anemic patients and infants lack the normal protection from intestinal and blood brain barriers.</P>
+<P>Manganese tricarbonyl compounds are used as a smoke-inhibitor additive to fuel oil and as an anti-knock agent in gasoline. The Government has recently announced that manganese will now replace lead in fuel. (Jan. 1996)</P>
+<P>Chemicals containing manganese are used I the <a  href="https://digitalfire.com/glossary/ceramics">Ceramics</a> Industry and potteries. Manganese sulphate is added to fertilizers to provide this trace element to soil. The average soil contains 0.02 to 0.15% manganese. Manganese is added to animal and poultry feed. The common dry cell battery uses manganese dioxide as a depolarizer.</P>
+<P>Metal fumes can be released during firing from the glazes with metal compounds such as zinc, copper, magnesium, aluminum, lead, antimony, cadmium, manganese, nickel, selenium, silver and tin. These can cause metal fume fever and manganese poisoning from manganese <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a>.</P>
+<P>Commercially prepared glazes should always be fired as instructed, especially those containing lead and toxic metals. The danger occurs when these glazes are applied too heavily. Any of the above can cause metal release during or after firing.</P>
+<P>Fuming to produce glaze effects by introducing metallic salts during cooling presents obvious hazards. Toxic fumes from the metallic colours applied to the surface of glazes to produce lustres are also given off during firing. Toxic fumes emitted during firing mix readily with condensation in the surrounding air.</P>
+<P>Inhalation is the major route of entry of manganese into the body although excessive gastrointestinal absorption directly via the mouth and also ingestion via tear ducts may also occur. Tricarbonyls of manganese can be absorbed through the skin and also through open cuts and dermatitis.</P>
+<P>People should be properly informed of the hazards of manganese exposure, (it's cumulative effect over many years and subsequent Parkinson's disease) and should be educated concerning proper methods of handling toxic materials, using personal protective equipment and recognizing and reporting abnormal symptoms.</P>
+<P>Ignorance of these fundamentals has resulted in many irreversible disabilities.</P>
+<P>There is the need for proper labeling of chemical materials containing manganese and all other toxic substances.</P>
+<P>Tests for manganese poisoning are as yet inconclusive, however, excessive manganese in the body does manifest as manganese compounds in the hair for up to twelve months. Tests for manganese in scalp hair and also tests on chest hair, which is more than three times the concentration of scalp hair, can be effective in detecting excessive levels of manganese.</P>
+
+<P><B><U>REFERENCES</U></B></P>
+<P>"POTTERS BEWARE" Rosemary E. Perry N.Z.</P>
+<P>MONONA ROSSOL M.S. M.F.A. Industrial Hygienist <BR>A.C.T.S. New York.</P>
+<P>MANGANESE AND ITS COMPOUNDS, SHIRO TANAKA M.D. M.S.</P>
+<P>ENCYCLOPAEDIA OF OCCUPATIONAL MEDICINE (Zenz-Second Edition)</P>
+<P>PARKINSON DISEASE SOCIETY - New York. Stanley Fahn M.D.</P>
+<P>PARKINSON DISEASE SOCIETY - Perth, W.A.</P>
+<P>PARKINSON DISEASE SOCIETY - U.K.</P>
+<P>CORNWALL & ISLES OF SCILLY HEALTH AUTHORITY.</P>
+<P>METALLIC POISONS - Manganese.<BR>OCCUPATIONAL HAZARDS IN INDUSTRY<BR>D.O.S.H.W.A. Perth, W.A.</P>
+<P>Industrial Medicine and Surgery. Vol. 24, pages 1-7.</P>
+<P>Neurotoxicology and Teratology, Vol. 10 No. 5 pages 475-478</P>
+<P>Scandinavian Journal of Work, Environment & Health, Vol. 17. No. 4 pages 255-262.</P>
+<P>Annals of Clinical and Laboratory Science. Vol. 4 No. 6 pages 487-491.</P>
+<P>Archives of Biochemistry & Biophysics. Vol. 256. No. 2 pages 638-650.</P>
+<P>Medical Research Centre, Brookhaven Nat. Lab. University of the State of New York at Stony Brook, Upton, New York. (12 pages).</P>
+<P>Brain Research. Vol. 473 No. 2 pages 236-240.</P>
+<P>Journal of the American Medical Association. Vol. 217. No. 10 pages 1354-1358. and Vol. 210. No. 7 pages 1255-1262.</P>
+<H2><B><U>CHEMICAL HAZARDS AND MANGANESE TOXICITY</U></B></H2>
+<P>The problems of art hazards has several aspects to it , including the presence of extremely toxic chemicals in many art/craft materials - inadequate labeling and the lack of adequate training of students about art hazards in schools and improper diagnosis of illnesses caused by exposure to toxic art materials.</P>
+<P>Teaching about the hazards of chemicals and how to work safely should occur when students first learn art/craft techniques. If included in the curriculums in our schools and colleges this would ensure the next generation of artists and potters know about the hazards of their materials and how to work safely with them.</P>
+<P> High-risk groups - children, smokers, heavy drinkers, asthmatics, chronic heart, liver, lung patients, pregnant women and the elderly.</P>
+<H2>THREE WAYS FOR TOXIC CHEMICALS TO ENTER THE BODY -</H2>
+<H3>SKIN - INHALATION - INGESTION</H3>
+<P>"Most of the chemicals used in the ceramic field are potentially dangerous. We must become aware of these dangerous materials and take every precaution to avoid damaging our health. It is a serious mistake to conclude that the risk of using these materials is too great for the goal. Working in ceramics will always be a viable profession if common sense is used in dealing with the problem. We can remove the risk factor by using surrogate materials instead of toxic ones, using proper ventilation and by cleaning up our act in the studio. It is up to us to make ourselves well informed about the dangers so that we, in turn, can inform others. It should become mandatory that every student studying in ceramics is educated about the potential hazards of working with these materials so that the use of a respirator will come as second nature when mixing glazes and working with dry clays.</P>
+<P>"We can no longer afford the luxury of sheltering ignorance. We must learn to teach others how to use materials properly. We know what our materials can do FOR us; it is time we learnt what they can do TO us. More importantly, we know that it is the inappropriate use of chemicals that renders them potentially toxic."</P>
+<P>"We must become aware of the dangers. It is our only hope of continuing our work as artists - our only hope of being able to retire due to old age and not self destruction."</P>
+<P>"In order to improve the quality of an artist's/potter's life, health and safety must be given as much respect as the work being created."</P>
+<P>At home, we are not only endangering ourselves but our children by exposing them to these chemicals. We need to convince potters that they must look very carefully at HOW they achieve that end result - a little more thought and time could save years of agony later on. It is a matter of reassessing how we work and what we use. By making a few necessary adjustments, you maybe saving your health from being at risk. The time to start changing is now. DO NOT wait for something to happen before doing so. If you risk your health for your art, it may result that in years to come you are no longer able to do one of the things that you love.</P>
+<P>"Be aware of the materials you use and avoid those that threaten you life."</P>
+<P>"Ignorance can cost us our lives or - just as tragic - the quality of our lives. What I mean by quality is the chronic illness that can plague and slowly destroy lungs, limbs, eyes and brain - illnesses that could be avoided if the artist had even elementary knowledge of the effects of what he or she is using."</P>
+<P>"We need to know how to use these chemicals properly, how to ventilate studios and how to determine life-threatening allergies to certain materials. If we don't learn, we are putting our health at an unnecessary risk."</P>
+<H2>THE KEY TO SAVING LIVES IS EDUCATION.</H2>
+<P>"No two artists work the same way, even when using the same materials. Furthermore, as any toxicologist knows, an individual ingredient may be hazardous in one form but not the other."</P>
+<P>Toxicity is something which is related to the amounts involved. Many materials essential to life in small quantities are indeed poisonous in larger amounts. Different people have different metabolisms and this results in individual standards of susceptibility, effects can be acute or chronic but it is likely that the greatest danger from most chemicals used in ceramics is not from acute poisoning but from persistent and accumulative effects.</P>
+<P>During firing, certain organic compounds in prepared slips and glazes <a  href="https://digitalfire.com/glossary/decomposition">decompose</a> to produce formaldehyde. There is no shortage of organic compounds in kilns, these include colouring agents, thickeners (gum arabic), lustre glaze oils, resins, waxes and natural organic impurities found in most clays which are vaporized and <a  href="https://digitalfire.com/glossary/decomposition">decomposed</a> by heating.</P>
+<P>"With so many sources of organic compounds in clays and glazes and the range of kiln temperature, a vast number of chemicals could be created. this adds to the number of dangerous airborne materials in the workplace and continues to put the people working in the area at risk. Carbon monoxide enters the bloodstream through the lungs and destroys the oxygen carrying hemoglobin in the blood. These metal fumes are formed when the metal evaporates during the firing. The evaporation takes place well below boiling point. The metal fumes emitted by the kiln are extremely fine particles of <a  href="https://digitalfire.com/glossary/metal+oxides">metal oxides</a> which escape and settle on the floor as part of the dust. These metal fumes accumulate where kilns are fired regularly. Here they can affect the people working in the area by ingestion, skin contact or by being simply stirred up on air currents and made circulate for inhalation."</P>
+<P>"Unpredictable kiln emissions occur where highly toxic chemicals can be produced, for this reason kiln ventilation plays a large part in reducing health risks in the studio. It is vitally important to have adequate extraction to prevent these fine particles of metal oxides accumulating and leaving yourself open to disease which may develop into a terminal illness."</P>
+<P>"Above 1090 C manganese is an active <a  href="https://digitalfire.com/glossary/flux">flux</a>. Many minerals, including carbonates, oxides, silicates and borates contain manganese."</P>
+<P>"Chronic inhalation or ingestion of manganese dust or fumes can cause manganese poisoning, a serious cumulative disease affecting the central nervous system. Many aboriginal from Groote Eylkandt, where manganese is mined suffer from manganism."</P>
+<P>"Once established manganism is an intractable and permanently disabling condition for which there is no cure although, like Parkinson's Disease it is treatable with drugs."</P>
+<P>"Iron deficiency anemia has been advanced as an important factor in worker susceptibility to manganism, since there are atomic similarities between iron and manganese, an iron-deficient body may absorb manganese more readily than one with an adequate iron supply."</P>
+<P>"An article in the November/December 1991 issue of EQUINOX by Alec Ross on Toxic Metal Threats including manganese and its suspected connection with Parkinson's Disease. Ross quotes John Donaldson, former Associate Professor of pharmacology at the University of Manitoba and an authority of manganese poisoning, as saying that manganese sets off a destructive chain reaction in the brain that is "like and atomic bomb going off in the cells."</P>
+<P>"Donaldson eventually found that manganese and dopamine react and release small quantities of hydrogen peroxide. This reaction released a free radical that could destroy tissues "as surely as if they'd been irradiated. Moreover, the destructive particle could also break down a key part of the brain cell's defense system. In other words, the presence of manganese could evidently trigger a complex sequence of neurochemical reactions that attacked not only the structure of the nerve cell but also the system by which it could defend itself. Recalls Donaldson: "We got a double whammy from manganese."</P>
+<HR>
+
+<H2>REFERENCES:</H2>
+<P>MONONA ROSSOL M.S., M.F.A. Industrial Hygienist<BR>A.C.T.S. New York.</P>
+<P>MONONA ROSSOL M.S., M.F.A. "The Artist's Complete Health and Safety Guide."</P>
+<P>MONONA ROSSOL M.S., M.F.A. "Keeping Claywork Safe and Legal."</P>
+<P>DEIDRE O'REILLY "Creativity & Illness<BR>(Niki de saint Phalle Jane Lanyon & Diana Hobson)<BR>Thesis - Bachelor of Design 1994. Dublin, Ireland.</P>
+<P>ELKE BLODGETT "Potters Manganese <a  href="https://digitalfire.com/glossary/toxicity">Toxicity</a>" Contact - 1995 Edmonton, Alberta. CA.</P>
+<P>ALEC ROSS M.D. EQUINOX - 60, Nov./Dec.<BR>1991. "Toxic Metal Threats."</P>
+<P>JOHN DONALDSON Associate Professor of Pharmacology. University of Manitoba</P>
+<P>SHIRO TANAKA M.D., M.S. "Manganese & it's Compounds."</P>
+<P>PARKINSON'S SOCIETY Perth, West Australia</P>
+<hr><p>By Jane Watkins </p>
+<h2 style="font-style:italic; margin-top:40px;">Related Information</h2>
+
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/manganese+oxide">Manganese Oxide</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/manganese+dioxide">Manganese Dioxide</a>
+<br /><i>A source of <a  href="https://digitalfire.com/oxide/mno">MnO</a> used in ceramic glazes and the production of ceramic <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a>. Commonly made by grinding pyrolusite rock.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Hazards</td>
+<td>
+<a href="https://digitalfire.com/hazard/manganese+in+clay+bodies">Manganese in Clay Bodies</a>
+<br /><i>Manganese is used to stain clays (using black) and to impart fired speckling (as a decorative effect). It is dangerous?</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Hazards</td>
+<td>
+<a href="https://digitalfire.com/hazard/manganese%3a+creativity+and+illness+by+dierdre+o%27reilly">Manganese: Creativity and Illness by Dierdre O'Reilly</a>
+<br /><i>A story of one persons struggle with manganese toxicity</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Hazards</td>
+<td>
+<a href="https://digitalfire.com/hazard/manganese+toxicity+by+elke+blodgett">Manganese Toxicity by Elke Blodgett</a>
+<br /><i>A story of the struggle of one person to identify and deal with manganese toxicity</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/metallic+glazes">Metallic Glazes</a>
+<br /><i>Non-functional ceramic glazes having very high percentages of metallic oxides/carbonates (manganese, copper, cobalt, chrome).</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Temperatures</td>
+<td>
+<a href="https://digitalfire.com/temperature/87">Manganese compounds may begin to fume (932-)</a>
+</td>
+</tr>
+</tbody></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

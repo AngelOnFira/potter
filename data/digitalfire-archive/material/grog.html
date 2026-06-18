@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Grog</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="Digitalfire Reference Library (no ads)" name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item active"><a class="nav-link" href="list.html">Materials <span class="sr-only">(current)</span></a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=material" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container">
+<ul class="nav nav-tabs pt-1" id="myTab" role="tablist">
+<li class="nav-item">
+<a aria-controls="material" aria-selected="true" class="nav-link active" data-toggle="tab" href="#material" id="material-tab" role="tab">Materials for Ceramics</a>
+</li>
+</ul>
+<div class="tab-content mb-3" id="myTabContent" style="border-right:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #ddd; padding:10px;">
+<div aria-labelledby="material-tab" class="tab-pane fade show active" id="material" role="tabpanel">
+<a href="list_1-9.html">1-9</a> | <a href="list_A.html">A</a> | <a href="list_B.html">B</a> | <a href="list_C.html">C</a> | <a href="list_D.html">D</a> | <a href="list_E.html">E</a> | <a href="list_F.html">F</a> | <a href="list_Frits.html">Frits</a> | <a href="list_G.html">G</a> | <a href="list_H.html">H</a> | <a href="list_I.html">I</a> | <a href="list_J.html">J</a> | <a href="list_K.html">K</a> | <a href="list_L.html">L</a> | <a href="list_M.html">M</a> | <a href="list_N.html">N</a> | <a href="list_O.html">O</a> | <a href="list_P.html">P</a> | <a href="list_Q.html">Q</a> | <a href="list_R.html">R</a> | <a href="list_S.html">S</a> | <a href="list_T.html">T</a> | <a href="list_U.html">U</a> | <a href="list_V.html">V</a> | <a href="list_W.html">W</a> | <a href="list_X.html">X</a> | <a href="list_Y.html">Y</a> | <a href="list_Z.html">Z</a><br/>
+<nobr></nobr>
+</div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Grog</h1>
+<p><b>Description</b>: Crushed Brick, Body Agregate</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/oxide.html">Oxide</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/analysis.html">Analysis</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Formula</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Tolerance</a></th>
+</tr></thead><tbody>
+<h4>Notes</h4><p><a href="../glossary/grog.html">Grog</a> is a generic term referring to granular material made by grinding brick or other fired ceramic (although it can also be made by crushing certain natural minerals or artificially by calcining mineral and grinding it). Grogs are added to bodies to improve <a href="../glossary/drying+performance.html">drying performance</a>, reduce <a href="../glossary/drying+shrinkage.html">drying shrinkage</a>, improve fired abrasion resistance, reduce <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a>, reduce <a href="../glossary/firing+shrinkage.html">fired shrinkage</a>, reduce density, impart visual character, etc. <a href="../glossary/refractory.html">Refractory</a> grogs are available as well as ones with low thermal expansion.<br/>
+<br/>
+Grog is marketed in designations that refer to the size range of the particles. 20-40 mesh grog means that all material under 40 and over 20 has been graded out to provide a material whose particle size range is between these sizes. A -40 grog (minus 40 mesh) is one that has particles that range all the way from 40 mesh down to fine power sizes. Companies are not always successful in maintaining their materials within the range they specify. In addition, two materials from different companies with the same designation, 20-40 for example, can be quite different since one may have the majority of sizes at the coarse end of the range and the other at the finer end. Companies manufacturing grogs face technical challenges to maximize the amount of usable material (since the grinding process produces alot of particles that are too fine to be used). Coarser grogs are thus more difficult to manufacture. Thus, as you might expect, grogs can be expensive.<br/>
+<br/>
+Simplistically, grog additions improve drying properties simply because the clay shrinks less and because the individual grog particles terminate micro cracks before they become big cracks. But the <a href="../glossary/clay+body+porosity.html">porosity</a> of a grog's particles, their surface texture and their shapes are also important in the dynamics of how it affects <a href="../glossary/clay+body.html">clay body</a> working and drying properties. The more grog that is added to a body more its <a href="../glossary/plasticity.html">plasticity</a> will be impacted (finer grogs have a larger impact). While it might seem that adding a grog with a wide range of sizes to a clay body will produce the maximum benefit, this is not normally the case. Generally, the highest percentage of the largest particles that can be tolerated should be employed, this has the greatest reducing effect on the shrinkage and the least reducing effect on the plasticity. Amazingly, plastic modelling and pottery <a href="../glossary/throwing.html">throwing</a> bodies can still feel quite smooth when they have 20-40 mesh grog particles as long as the body is very plastic. Often <a href="1246.html">silica sand</a> is incorporated with a grog addition to supply another specific range of <a href="../glossary/particle+sizes.html">particle sizes</a>. <br/>
+<br/>
+It is possible to achieve a pressing or non-plastic forming body with almost zero shrinkage by mixing a body with 90% or more grog. The heavy refractories industry commonly uses a 50% 4-16 mesh, 10% 20-36 mesh, 40% 40-60 mesh mix of grog and a <a href="../glossary/deflocculation.html">deflocculated</a> slip to bind them together for drying. This principle can be extended to almost any <a href="../glossary/grog.html">grogged</a> clay body.<br/>
+<br/>
+Grog is also used to increase pore space in the matrix to enable quicker venting of water vapor during drying and gases of <a href="../glossary/decomposition.html">decomposition</a> during firing. A <a href="../glossary/sculpture.html">sculpture</a> clay body, for example, typically has 15-25% grog (but can have much more). <br/>
+<br/>
+Since grog is typically prefired, its does not normally undergo a <a href="../glossary/firing+shrinkage.html">firing shrinkage</a> (unless the body in which it is a part is fired to a temperature higher than the grog was initially fired at). This means that the more that is put into a recipe, the less the clay shrinks during firing. The effect can be quite dramatic. For example, <a href="../glossary/plainsman+clays.html">Plainsman</a> Clays makes a clay body that normally has a fired shrinkage of 5.5%, but with an addition of 15% 20-48 grog and 15% 70 mesh <a href="1245.html">silica</a> sand the fired shrinkage drops to 2.5% while maintaining the same degree of <a href="../glossary/vitrification.html">vitrification</a>. Fired properties of grog-containing bodies are also affected by the hardness, color, porosity and impurity content of the grog particles.<br/>
+<br/>
+It can be tricky to select a commercial grog since their designations can be confusing and they can contain much more fine material than expected. Generally it is best to get samples so that the right material can be selected by comparison testing.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Various grogs available in North America</h3>
+<br/><a href="../picture/576.html"><img class="flexleft50" loading="lazy" src="../media/images/locpinegop.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/576.html">click here</a> to see it.</p>
+<p>Examples of various sized grogs from CE Minerals, Christy Minerals, <a href="../glossary/plainsman+clays.html">Plainsman</a> Clays. Grogs are added to clays, especially those used for <a href="../glossary/sculpture.html">sculpture</a>, hand building and industrial products like brick and pipe (to improve drying properties). The <a href="../glossary/grog.html">grog</a> reduces the <a href="../glossary/drying+shrinkage.html">drying shrinkage</a> and individual particles terminate micro-cracks as they develop (larger grogs are more effective at the latter, smaller at the former). Grogs having a narrower range of <a href="../glossary/particle+sizes.html">particle sizes</a> (vs. ones with a wide range of sizes) are often the most effective additions. Grogs having a <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> close to that of the fired body, a low <a href="../glossary/clay+body+porosity.html">porosity</a>, lighter color and minimal iron contamination are the most sought after (and the most expensive).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Wow, what a surface. How?</h3>
+<br/><a href="../picture/852.html"><img class="flexleft50" loading="lazy" src="../media/images/buhsyvefib.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/852.html">click here</a> to see it.</p>
+<p>A <a href="../glossary/reduction+firing.html">cone 10R</a> <a href="../glossary/sculpture.html">sculpture</a> clay containing 40% <a href="80.html">ball clay</a>, 10% <a href="925.html">kaolin</a>, 10% <a href="../glossary/earthenware.html">low fire</a> <a href="1191.html">redart</a> (for color and <a href="../glossary/maturity.html">maturity</a>), some quartz and 25% 20x48 <a href="../glossary/grog.html">grog</a>. This fine grained base produces a body that feels smoother than it really is and is very plastic. It is even throwable on the wheel.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Cone 10R heavily grogged vitreous body that actually throws</h3>
+<br/><a href="../picture/949.html"><img class="flexleft50" loading="lazy" src="../media/images/hopgukunos.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/949.html">click here</a> to see it.</p>
+<p>This is a <a href="../glossary/grog.html">grog</a> clay with 25% Christy Minerals STKO22S grog (20 mesh one size). This piece is about 8 inches tall fired at <a href="../glossary/reduction+firing.html">cone 10R</a>. This body is a <a href="1191.html">Redart</a>, <a href="80.html">Ball clay</a> base that totally vitrifies to a chocolate brown. But with the added <a href="../glossary/refractory.html">refractory</a> grog it is fairly stable in the kiln and is much more <a href="../glossary/vitreous.html">vitreous</a> than other grog bodies. Because it is such a plastic smooth base and because the grog is only one size, this is actually throwable. And it is very resistant to <a href="../glossary/splitting.html">splitting</a> during hand building.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Grog does not always have the intended effect</h3>
+<br/><a href="../picture/952.html"><img class="flexleft50" loading="lazy" src="../media/images/bagwekunaw.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/952.html">click here</a> to see it.</p>
+<p>These <a href="../test/dfac.html">DFAC test</a> disks (<a href="../glossary/drying+performance.html">drying performance</a>) show that minor additions of <a href="../glossary/grog.html">grog</a> do not reduce the <a href="../glossary/firing+shrinkage.html">fired shrinkage</a> of this medium fire <a href="../glossary/stoneware.html">stoneware</a> much. Nor do they improve its drying performance. Even at 20% grog, although the addition has reduced <a href="../glossary/drying+shrinkage.html">drying shrinkage</a> and narrowed the crack somewhat, it is still there and even resembles the zero-grog version. A possible reason is that this body is coarse-particled, having a relatively small total particle <a href="../glossary/surface+area.html">surface area</a>. The addition of the grog has significantly increased the total area.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">The texture of 33% 20-48 mesh grog in a flameware body</h3>
+<br/><a href="../picture/1812.html"><img class="flexleft50" loading="lazy" src="../media/images/xez7mqp9vq.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1812.html">click here</a> to see it.</p>
+<p>The body is a 50:50 <a href="1620.html">talc</a>:ball clay mix, it is very smooth and slick so the only particulate is from the <a href="../glossary/grog.html">grog</a>. In this case the grog addition is being used to make the body resistant to <a href="../glossary/thermal+shock.html">thermal shock</a> failure (for use as a <a href="../glossary/flameware.html">flameware</a>). The body itself is not <a href="../glossary/co-efficient+of+thermal+expansion.html">low expansion</a> nor are the <a href="../glossary/grog.html">grogged</a> particles. But the sheer quantity of aggregate particles and their size creates an open porous matrix that makes it difficult for cracks to propagate. Of course lots of burnishing, an <a href="../glossary/engobe.html">engobe</a> or a thick glaze layer will be needed to make this surface <a href="../glossary/functional.html">functional</a>. We could call this the "crow-bar" approach to flameware.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">A sculpture body fired from cone 1 (bottom) to 11 and 10R (top)</h3>
+<br/><a href="../picture/1941.html"><img class="flexleft50" loading="lazy" src="../media/images/9aaydrrjee.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1941.html">click here</a> to see it.</p>
+<p>Color, density, size and hardness all change as the firing temperature progresses. The color, for example, persists in zones, then changes suddenly.  Notice that the colour of the <a href="../glossary/grog.html">grog</a> particles contrasts more as the temperature increases.  This body is completely <a href="../glossary/vitrification.html">vitrified</a> at cone 10 and the grog is important for fired stability. </p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/agt">Aggregate</a>
+<br/><i>Granular materials intended to impart raw and fired structural strength or <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> properties to bodies or deliver special speckling effects in glazes.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/gnm">Generic Material</a>
+<br/><i>Generic materials are those with no brand name. Normally they are theoretical, the <a href="../glossary/glaze+chemistry.html">chemistry</a> portrays what a specimen would be if it had no contamination. Generic materials are helpful in educational situations where students need to study material theory (later they graduate to dealing with real world materials). They are also helpful where the chemistry of an actual material is not known. Often the accuracy of calculations is sufficient using generic materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="molochite.html">Molochite</a>
+<br/><i>Powdered and granular forms are produced by calcining <a href="925.html">kaolin</a> so high that it converts completely to <a href="../glossary/glass+vs.+crystalline.html">crystalline</a> <a href="1054.html">mullite</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="silica+sand.html">Silica Sand</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="mulcoa+47+calcine+grog.html">Mulcoa 47 Calcine Grog</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="mulcoa+60+calcine+grog.html">Mulcoa 60 Calcine Grog</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="../test/dfac.html">Drying Factor</a>
+<br/><i>The DFAC Drying Factor test visually displays a plastic clay's response to very uneven drying. It is beneficial to show the relative <a href="../glossary/drying+performance.html">drying performance</a> of different clays.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/co-efficient+of+thermal+expansion.html">Co-efficient of Thermal Expansion</a>
+<br/><i>The <a href="../glossary/co-efficient+of+thermal+expansion.html">co-efficient of thermal expansion</a> of ceramic bodies and glazes determines how well they fit each other and their ability to survive sudden heating and cooling without cracking.</i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></tbody></table></div></body>
+</html>

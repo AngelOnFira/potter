@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Titanium Dioxide</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="A super white powder used in ceramic glazes to variegate, opacify and moderate color.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item active"><a class="nav-link" href="/material/list">Materials <span class="sr-only">(current)</span></a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=material" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table>
+<ul class="nav nav-tabs pt-1" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="material-tab" data-toggle="tab" href="#material" role="tab" aria-controls="material" aria-selected="true">Materials for Ceramics</a>
+  </li>
+</ul>
+<div class="tab-content mb-3" id="myTabContent" style="border-right:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #ddd; padding:10px;">
+  <div class="tab-pane fade show active" id="material" role="tabpanel" aria-labelledby="material-tab">
+<a href="/material/list/1-9">1-9</a> | <a href="/material/list/A">A</a> | <a href="/material/list/B">B</a> | <a href="/material/list/C">C</a> | <a href="/material/list/D">D</a> | <a href="/material/list/E">E</a> | <a href="/material/list/F">F</a> | <a href="/material/list/Frits">Frits</a> | <a href="/material/list/G">G</a> | <a href="/material/list/H">H</a> | <a href="/material/list/I">I</a> | <a href="/material/list/J">J</a> | <a href="/material/list/K">K</a> | <a href="/material/list/L">L</a> | <a href="/material/list/M">M</a> | <a href="/material/list/N">N</a> | <a href="/material/list/O">O</a> | <a href="/material/list/P">P</a> | <a href="/material/list/Q">Q</a> | <a href="/material/list/R">R</a> | <a href="/material/list/S">S</a> | <a href="/material/list/T">T</a> | <a href="/material/list/U">U</a> | <a href="/material/list/V">V</a> | <a href="/material/list/W">W</a> | <a href="/material/list/X">X</a> | <a href="/material/list/Y">Y</a> | <a href="/material/list/Z">Z</a><br />
+<nobr></nobr>
+</div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Titanium Dioxide</h1>
+<p><b>Alternate Names</b>: TiO2</p>
+<p><b>Description</b>: Anatase, Brookite</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/oxide">Oxide</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/analysis">Analysis</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/formula">Formula</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/formula">Tolerance</a></th>
+</tr></thead><tbody>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/tio2">TiO2</a></td>
+<td class="text-right"">100.00%</td>
+<td class="text-right">
+1.00
+</td><td class="text-right">
+
+</td></tr>
+<tr><td colspan="2">Oxide Weight</td><td colspan="2" class="text-right">
+79.90
+</td></tr>
+<tr><td colspan="2" class="text-right"><a href="https://digitalfire.com/glossary/formula+weight">Formula Weight</a></td><td colspan="2" style="text-align:right">
+79.90
+</td></tr>
+</tbody></table>
+<h4>Notes</h4><p><a  href="https://digitalfire.com/oxide/tio2">TiO2</a> occurs in many silicates in nature, accounting for over 1% of the earth's crust. Thus it is manufactured using a variety of materials and processes. <a  href="https://digitalfire.com/material/1644">Titanium dioxide</a> power is very fine-grained and it <a  href="https://digitalfire.com/glossary/agglomeration">agglomerates</a>, so glazes containing it need to be sieved to break down the small lumps (even a high-speed <a  href="https://digitalfire.com/glossary/propeller+mixer">propeller mixer</a> often won't do it).<br />
+<br />
+Although <a  href="https://digitalfire.com/material/1644">titanium</a> is the strongest white pigment known for many uses, in <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a> the whiteness (and <a  href="https://digitalfire.com/glossary/opacity">opacity</a>) it imparts to glazes is due to its tendency to crystallize during cooling. While titanium dioxide is used in glazes as an <a  href="https://digitalfire.com/glossary/opacifier">opacifier</a>, it is not as effective and easy to use as <a  href="https://digitalfire.com/material/1642">tin oxide</a> or <a  href="https://digitalfire.com/material/1722">zircon</a>. It can be used as an additive to enliven (<a  href="https://digitalfire.com/glossary/variegation">variegate</a>, crystallize) the color and texture of glazes by introducing <a  href="https://digitalfire.com/glossary/crystallization">crystallization</a>. <a  href="https://digitalfire.com/material/1204">Rutile</a> works in a similar manner, typically both become saturated in <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> beyond about 5-6%, producing a dry and unstable glaze surface. In moderate amounts, it encourages strong melts, durable surfaces and rich visual textures.<br />
+<br />
+Titanium is available both as raw and surface-treated products. Non-pigmentary grades flow more freely in the dry state. Self-opacified enamels are made by adding titanium during smelting to supersaturation. Upon firing the enamel, the titanium crystallizes or precipitates to produce the opacity. Titania is also used in dry process enameling on cast iron appliances for its effect on acid resistance, color and texture. In glass, non-pigmentary titanium dioxide increases the refractive index and intensifies color.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Original Container Bag of Titanium Dioxide</h3>
+<br /><a href="https://digitalfire.com/picture/1978"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/jdvkct75k4.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1978">click here</a> to see it.</p>
+<p></p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Variegating effect of sprayed-on layer of titanium dioxide</h3>
+<br /><a alt="Pure titanium as a varieagant" href="https://digitalfire.com/picture/631"><img class="flexleft50" alt="Pure titanium as a varieagant"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/dimsolisem.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/631">click here</a> to see it.</p>
+<p>The <a  href="https://digitalfire.com/glossary/base+glaze">base glaze</a> (inside and out) is <a  href="https://digitalfire.com/recipe/ga6-d">GA6-D</a> <a  href="https://digitalfire.com/material/32">Alberta Slip</a> glaze fired at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> on a buff <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a>. However, on the outside, the dried-on glaze was over-sprayed with a very thin layer of <a  href="https://digitalfire.com/material/1644">titanium</a> and water (VeeGum can be used to help gel the sprayable titanium <a  href="https://digitalfire.com/glossary/slurry">slurry</a> and suspend it). The dramatic effect is a real testament to the <a  href="https://digitalfire.com/glossary/variegation">variegating</a> power of <a  href="https://digitalfire.com/oxide/tio2">TiO2</a>. An advantage of this technique is the source: <a  href="https://digitalfire.com/material/1644">Titanium dioxide</a>. It is a more consistent source of TiO2 than the often-troublesome <a  href="https://digitalfire.com/material/1204">rutile</a>. Another advantage is that the <a  href="https://digitalfire.com/glossary/reactive+glazes">variegation</a> can be selectively applied in specific areas or as a design. This effect should work on most glossy glazes having adequate <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Thin titanium band sprayed over cone 6 glazes demonstrates crystallization</h3>
+<br /><a href="https://digitalfire.com/picture/729"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/materials/cohrokobyw.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/729">click here</a> to see it.</p>
+<p>The first is on <a  href="https://digitalfire.com/recipe/ga6-a">GA6-A</a>, the rest are on <a  href="https://digitalfire.com/recipe/ga6-c">GA6-C</a> (<a  href="https://digitalfire.com/material/32">Alberta slip</a> glazes). The last has been applied too thickly, the brown band is dry and blistered.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Titanium as an opacifier</h3>
+<br /><a href="https://digitalfire.com/picture/2354"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/uprqhwixff.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2354">click here</a> to see it.</p>
+<p>This is a lithium glaze fired at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>. It has 6% <a  href="https://digitalfire.com/material/1644">titanium</a>. This effect will also work in other types of transparent recipes. There should be more blue with slower cooling. Mixing some <a  href="https://digitalfire.com/material/1204">rutile</a> in (e.g. 4 titanium, 2 rutile) should enhance also. 6% is pushing the edge of how much titanium should be in a recipe. Any more, or cooling too slow, could transform the surface into a mass of white crystals (which would be rough and non-functional). It is best to <a  href="https://digitalfire.com/picture/2222">manually program</a> firings, the up and down schedules? That would make the result consistent no matter how heavily or lightly loaded a kiln is.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Titanium Dioxide in a cone 6 calcia matte glaze</h3>
+<br /><a alt="Titainium glaze sample tile" href="https://digitalfire.com/picture/2355"><img class="flexleft50" alt="Titainium glaze sample tile"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/qziyvxkbcq.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2355">click here</a> to see it.</p>
+<p>The glaze is <a  href="https://digitalfire.com/recipe/g1214z1">G1214Z1</a> <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> base <a  href="https://digitalfire.com/glossary/calcia+matte">calcia matte</a> on <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12876">M390</a> fired at cone 6 using the <a  href="https://digitalfire.com/schedule/plc6ds">PLC6DS</a> schedule. 5% <a  href="https://digitalfire.com/material/1644">titanium dioxide</a> has been added. <a  href="https://digitalfire.com/material/1644">Titanium</a> can create <a  href="https://digitalfire.com/glossary/reactive+glazes">reactive glazes</a>, like <a  href="https://digitalfire.com/material/1204">rutile</a>, with no other <a  href="https://digitalfire.com/glossary/colorant">colorants</a> added. This effect also works well on matte surfaces, but the glaze needs good <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> (that is good because <a  href="https://digitalfire.com/glossary/functional">functional</a> mattes melt well). <a  href="https://digitalfire.com/glossary/calcia+matte">Calcia mattes</a> host <a  href="https://digitalfire.com/glossary/crystallization">crystallization</a> and work particularly well. Because titanium dioxide does not contain <a  href="https://digitalfire.com/material/874">iron oxide</a> lighter colors and better blues are possible compared to rutile (iron is still needed by it is coming from the body here). Like rutile, the effects are dependent on the <a  href="https://digitalfire.com/picture/761">cooling rate</a> of the firing, slower cools produce more reactivity. Even application without drips is important (mixing as a <a  href="https://digitalfire.com/glossary/thixotropy">thixotropic</a> <a  href="https://digitalfire.com/glossary/dipping+glaze">dipping glaze</a> is best). This appearance also depends on using dark burning body or <a  href="https://digitalfire.com/glossary/engobe">engobe</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">The titanium/stain mechanism at cone 10R</h3>
+<br /><a alt="An eye-popping red variegated cone 10R mug" href="https://digitalfire.com/picture/2664"><img class="flexleft50" alt="An eye-popping red variegated cone 10R mug"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/z2fcydwa1n.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2664">click here</a> to see it.</p>
+<p>These are <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> and <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> mugs. The glaze is <a  href="https://insight-live.com/insight/share.php?z=erKwjtZ9tq">G2571D</a> (based on the <a  href="https://digitalfire.com/glossary/frit">fritted</a> <a  href="https://insight-live.com/insight/share.php?z=2GHe1LpXzK">G2571B</a> version of <a  href="https://digitalfire.com/recipe/g2571a">G2571A</a>). This project started with calculations to source <a  href="https://digitalfire.com/glossary/borate">boron</a> from a <a  href="https://digitalfire.com/glossary/frit">frit</a> (instead of <a  href="https://digitalfire.com/material/806">Gerstley Borate</a>), <a  href="https://digitalfire.com/oxide/mgo">MgO</a> from <a  href="https://digitalfire.com/material/1620">talc</a> and a frit (instead of <a  href="https://digitalfire.com/material/273">dolomite</a>). These moves enabled eliminating raw <a  href="https://digitalfire.com/material/1245">silica</a> from the recipe. This produced a finer silky texture and better <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> (for hosting colors). Adding <a  href="https://digitalfire.com/material/1204">rutile</a> and <a  href="https://digitalfire.com/material/1724">zircopax</a> produced a great bamboo. But what about <a  href="https://digitalfire.com/glossary/variegation">variegating</a> using <a  href="https://digitalfire.com/material/1644">titanium</a> instead of rutile (it contains no iron so colors should be brighter)? Jackpot with this red stain! The titanium has done it's job even a little too well. Cobalt and titanium also worked.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A titanium/colorant addition to a cone 10 magnesia matte glaze</h3>
+<br /><a alt="Two marbled bright red coffee mugs" href="https://digitalfire.com/picture/2855"><img class="flexleft50" alt="Two marbled bright red coffee mugs"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/3rohrdkvpd.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2855">click here</a> to see it.</p>
+<p>These <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> mugs have the same glaze, the one on the left was fired at <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10R</a> (gas), the other at cone 10 oxidation (electric). This is our standard cone 10R <a  href="https://digitalfire.com/glossary/magnesia+matte">magnesia matte</a>, <a  href="https://insight-live.com/insight/share.php?z=2GHe1LpXzK">G2571B</a>. We have added a 5% Mason 6021 encapsulated red stain and 4% <a  href="https://digitalfire.com/material/1644">titanium dioxide</a> (producing recipe <a  href="https://digitalfire.com/glossary/code+numbering">code number</a> <a  href="https://insight-live.com/insight/share.php?z=erKwjtZ9tq">G2571D</a>). While the reduction version looked good the oxidation one turned out much more vibrant. And it feels much better, being very pleasant to touch. The <a  href="https://digitalfire.com/glossary/marbling">marbling</a> is a bit excessive so in <a  href="https://insight-live.com/insight/share.php?z=d7ue6XiZjJ">G2571D1</a> we reduced the <a  href="https://digitalfire.com/material/1644">titanium</a> by 1% (and increased the stain by 1%). Magnesia matte <a  href="https://digitalfire.com/glossary/base+glaze">base recipes</a> are very receptive to this type of adjustment and they work across a wide range (from low to high temperatures). Titanium is much better for <a  href="https://digitalfire.com/glossary/variegation">variegating</a> bright colored glazes than <a  href="https://digitalfire.com/material/1204">rutile</a>, because the latter contains lots of iron that muddies the color.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A titanium/colorant addition to a cone 6 magnesia matte glaze</h3>
+<br /><a alt="Two bight red glaze test tiles" href="https://digitalfire.com/picture/2936"><img class="flexleft50" alt="Two bight red glaze test tiles"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/feqgyngwmj.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2936">click here</a> to see it.</p>
+<p>This is the <a  href="https://insight-live.com/insight/share.php?z=d7ue6XiZjJ">G3939A</a> recipe (a 90:10 mix of <a  href="https://digitalfire.com/recipe/g2934">G2934</a> and <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a>), it normally produces a silky matte if not cooled too quickly. Shown on the left is our original addition of 8% Mason 6021 red stain and 4.5% <a  href="https://digitalfire.com/material/1644">titanium dioxide</a>. This not only did not produce the desired marbled effect, it actually made it more glossy! A 1.5% <a  href="https://digitalfire.com/material/1644">titanium</a> addition completely transforms it to what you see on the right. <a  href="https://digitalfire.com/material/1204">Rutile</a>, as a source of <a  href="https://digitalfire.com/oxide/tio2">TiO2</a>, is often used for this, but it is high in iron and would completely muddy the red color. Pure titanium dioxide, by contrast, is iron free.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Titanium instead of rutile for floating blue</h3>
+<br /><a alt="Floating blue using titanium dioxide" href="https://digitalfire.com/picture/3264"><img class="flexleft50" alt="Floating blue using titanium dioxide"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/mbjhjqrd4e.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3264">click here</a> to see it.</p>
+<p><a  href="https://digitalfire.com/glossary/rutile+blue+glazes">Rutile blue glazes</a> are actually <a  href="https://digitalfire.com/material/1644">titanium</a> blues (because <a  href="https://digitalfire.com/material/1204">rutile</a> mineral is an impure source of <a  href="https://digitalfire.com/oxide/tio2">TiO2</a> and <a  href="https://digitalfire.com/oxide/fe2o3">Fe<sub>2</sub>O<sub>3</sub></a>). The iron and titanium in the rutile react to form the <a  href="https://digitalfire.com/picture/2776">floating blue</a> effect. The <a  href="https://digitalfire.com/recipe/ga6-c">GA6-C</a> recipe has always relied on a 4% rutile addition. Its <a  href="https://digitalfire.com/recipe/ga6-a">GA6-A</a> <a  href="https://digitalfire.com/glossary/base+glaze">base recipe</a> contains significant iron (because of the 80% <a  href="https://digitalfire.com/material/32">Alberta Slip</a>), so could titanium oxide deliver the same floating blue effect? Yes.<br />
+<br />
+These mugs are <a  href="https://plainsmanclays.ca/data/index.php?product=12876">M390</a> clay. The top left one is the standard GA6-C (with rutile) fired using the <a  href="https://digitalfire.com/schedule/c6dhsc">C6DHSC</a> slow-cool <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a> (the bottom left normal cool <a  href="https://digitalfire.com/schedule/plc6ds">PLC6DS</a> schedule produces little color). But the ones on the right switch the 4% rutile for <a  href="https://digitalfire.com/material/1644">titanium dioxide</a> (the <a  href="https://insight-live.com/insight/share.php?z=oLZXQTy9TR">L4655</a> recipe). The top right was fired using the slow cool, the bottom right was the normal cool schedule.<br />
+<br />
+Titanium thus seems more consistent and reliable material than rutile. An excellent blue color is produced even without a slow cool (lower right).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Same glaze, same firing - titanium accounts for the difference</h3>
+<br /><a alt="Titanium makes for color sensitivity iron" href="https://digitalfire.com/picture/3293"><img class="flexleft50" alt="Titanium makes for color sensitivity iron"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/lhenrhnoro.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3293">click here</a> to see it.</p>
+<p>The glaze is <a  href="https://insight-live.com/insight/share.php?z=oLZXQTy9TR">L4655</a> fired at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> using the <a  href="https://digitalfire.com/schedule/c6dhsc">C6DHSC</a> <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a> (the glaze is <a  href="https://digitalfire.com/material/32">Alberta Slip</a> with a <a  href="https://digitalfire.com/glossary/frit">frit</a> addition and 4% <a  href="https://digitalfire.com/material/1644">titanium dioxide</a>). These mugs were in the same firing. On the <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> (left) the glaze fires the expected <a  href="https://digitalfire.com/picture/2776">floating blue</a>. The degree of difference on the right has two contributing apparent factors. While other <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a> of similar color do not affect this glaze as much, the body used in the mug on the right contains <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://digitalfire.com/material/1144">3B</a>, at cone 6 it vitrifies (releasing iron compounds) and it releases iron in <a  href="https://digitalfire.com/glossary/soluble+salts">soluble salts</a> that are interacting with the glaze. <a  href="https://digitalfire.com/material/1644">Titanium</a> is very sensitive to the presence of iron and this body is making it available in an effective form. The difference would be much less if <a  href="https://digitalfire.com/material/1204">rutile</a> had been used, since it already contains significant iron.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Zircopax, tin oxide, titanium as opacifiers in four base glazes</h3>
+<br /><a alt="A grid of fired glaze test samples showing opacifiers perform in four glazes" href="https://digitalfire.com/picture/2588"><img class="flexleft50" alt="A grid of fired glaze test samples showing opacifiers perform in four glazes"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/yd6lm1rk8s.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2588">click here</a> to see it.</p>
+<p>The body is <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12876">M390</a>. Firing is the <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> <a  href="https://digitalfire.com/schedule/plc6ds">PLC6DS</a> schedule. Each horizontal row is a commonly-used <a  href="https://digitalfire.com/glossary/base+glaze">base glaze</a>. The top one is a <a  href="https://digitalfire.com/glossary/magnesia+matte">magnesia matte</a>, the next one down is a <a  href="https://digitalfire.com/glossary/calcia+matte">calcia matte</a>, row 3 is <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a> glossy and row 4 is <a  href="https://digitalfire.com/material/1178">Ravenscrag</a> Slip+frit. The two mattes behave very differently from each other with the additions of <a  href="https://digitalfire.com/glossary/opacifier">opacifier</a>. Thickly applying an opacified glaze will obviously affect visual character (column 4). <a  href="https://digitalfire.com/material/1642">Tin oxide</a> fires whiter than <a  href="https://digitalfire.com/material/1722">zircon</a> (e.g. <a  href="https://digitalfire.com/material/1724">Zircopax</a>). If you like the <a  href="https://digitalfire.com/recipe/g2934">G2934</a> recipe, consider the <a  href="https://digitalfire.com/recipe/g2934y">G2934Y</a> variant for better melting.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A hazard of using titanium opacifier in a glaze</h3>
+<br /><a alt="A titanium opacified glaze on a mug" href="https://digitalfire.com/picture/2590"><img class="flexleft50" alt="A titanium opacified glaze on a mug"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/p2fsce7bry.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2590">click here</a> to see it.</p>
+<p>On a clay test tile this <a  href="https://digitalfire.com/material/1644">titanium</a> opacified <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> oxidation glaze, <a  href="https://digitalfire.com/recipe/g1214z1">G1214Z1</a>, looks great. But it is important to recognize that its variegated fired appearance is a combination multiple factors: The <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> of the glaze, the titanium, quality <a  href="https://digitalfire.com/glossary/glaze+laydown">laydown</a>, the <a  href="https://digitalfire.com/schedule/plc6ds">PLC6DS</a> <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a>, the red <a  href="https://plainsmanclays.ca/data/index.php?product=12876">M390</a> <a  href="https://digitalfire.com/glossary/clay+body">clay body</a> and variations in the thickness-of-application. However, the last four of those factors changed with the mug on the right! It is made from buff-burning <a  href="https://plainsmanclays.ca/data/index.php?product=12875">M340</a>! There are drips from uneven drainage during glazing. The slow cool <a  href="https://digitalfire.com/schedule/c6dhsc">C6DHSC</a> firing schedule. Notice how it is actually going transparent where very thick. An even laydown was not achieved since the <a  href="https://digitalfire.com/glossary/slurry">slurry</a> was not properly mixed, it contains <a  href="https://digitalfire.com/glossary/calcination">calcined</a> <a  href="https://digitalfire.com/material/925">kaolin</a> and requires special attention to achieve a <a  href="https://digitalfire.com/glossary/thixotropy">thixotropy</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">G2571C rutile blue on P700 at cone 10R</h3>
+<br /><a alt="G2571C rutile blue glaze" href="https://digitalfire.com/picture/3245"><img class="flexleft50" alt="G2571C rutile blue glaze"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/4omkgqz8ay.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3245">click here</a> to see it.</p>
+<p>The <a  href="https://digitalfire.com/glossary/clay+body">clay body</a> is <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12893">P700</a>. This was fired in <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10R</a> using the <a  href="https://digitalfire.com/schedule/c10rpl">C10RPL</a> <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a>. The outside glaze is <a  href="https://insight-live.com/insight/share.php?z=erKwjtZ9tq">G2571C</a>. The inside glaze is <a  href="https://digitalfire.com/recipe/g1947u">G1947U</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">The surprising results of titanium/talc additions to Ravenscrag slip at cone 10R</h3>
+<br /><a href="https://digitalfire.com/picture/3302"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/qwhhoqqnw9.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3302">click here</a> to see it.</p>
+<p><a  href="https://digitalfire.com/material/1620">Talc</a> additions to RCS produce variegated silky matte surfaces (in 10-15% amounts) at <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10R</a>. What if <a  href="https://digitalfire.com/material/1644">titanium</a> is also added? This triaxial blend shows what works.<br />
+Top tile #1: Pure <a  href="https://digitalfire.com/material/1178">Ravenscrag</a> Slip (RCS) <br />
+Bottom left tile #7: 85% RCS, 15% Talc. <br />
+Bottom right tile #10: 95% RCS, 5% <a  href="https://digitalfire.com/material/1644">Titanium Dioxide</a>.  The addition of a little titanium further improves the effect as shown on #8 (88% RCS, 10% Talc, 2% Titanium) and #6 (90% RCS, 10% Talc, 3.5% Titanium). But too much titanium loses it (tile #9) and adding only titanium goes glossy brown. This shows that some <a  href="https://digitalfire.com/oxide/tio2">TiO2</a> is good, too much and the effect is lost.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/195">http://www.inminex.com/</a>
+<br /><i>Interesting deposit in South America</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/430">http://en.wikipedia.org/wiki/Titanium_Dioxide</a>
+<br /><i><a  href="https://digitalfire.com/material/1644">Titanium dioxide</a> at Wikipedia</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Hazards</td>
+<td>
+<a href="https://digitalfire.com/hazard/titanium+dioxide+toxicology">Titanium Dioxide Toxicology</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/gnm">Generic Material</a>
+<br /><i>Generic materials are those with no brand name. Normally they are theoretical, the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> portrays what a specimen would be if it had no contamination. Generic materials are helpful in educational situations where students need to study material theory (later they graduate to dealing with real world materials). They are also helpful where the chemistry of an actual material is not known. Often the accuracy of calculations is sufficient using generic materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/opa">Opacifier</a>
+<br /><i><a  href="https://digitalfire.com/glossary/opacifier">Opacifiers</a> are powders that turn <a  href="https://digitalfire.com/glossary/transparent+glazes">transparent glazes</a> opaque by various chemical and physical <a  href="https://digitalfire.com/glossary/mechanism">mechanisms</a> (and combinations of mechanisms).</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/rutile">Rutile</a>
+<br /><i>A raw TiO2-containing mineral used in <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a> to color and <a  href="https://digitalfire.com/glossary/variegation">variegate</a> glaze surfaces.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/opacifier">Opacifier</a>
+<br /><i>Glaze <a  href="https://digitalfire.com/glossary/opacity">opacity</a> refers to the degree to which it is opaque. <a  href="https://digitalfire.com/glossary/opacifier">Opacifiers</a> are powders added to transparent ceramic glazes to make them opaque.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="https://digitalfire.com/oxide/tio2">TiO2 - Titanium Dioxide, Titania</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="https://digitalfire.com/mineral/anatase">Anatase</a>
+<br /><i>A mineral form of <a  href="https://digitalfire.com/material/1644">titanium dioxide</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="https://digitalfire.com/mineral/brookite">Brookite</a>
+<br /><i>A mineral form on <a  href="https://digitalfire.com/material/1644">titanium dioxide</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="https://digitalfire.com/mineral/rutile">Rutile</a>
+<br /><i><a  href="https://digitalfire.com/material/1204">Rutile</a> is the mineral name for natural crystals of <a  href="https://digitalfire.com/material/1644">titanium dioxide</a>. It is a very hard (6-6.5 Moh) a</i>
+</td>
+</tr>
+</tbody></table>
+<h3>Data</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<th scope="row">Hardness (Moh)</th>
+<td>6.5</td>
+</tr>
+<tr>
+<th scope="row"><a href="https://digitalfire.com/test/14">Frit Softening Point</a></th>
+<td>1830C</td>
+</tr>
+<tr>
+<th scope="row">Density (Specific Gravity)</th>
+<td>4.26</td>
+</tr>
+</tbody></table>
+<h3>Mechanisms</h3><table>
+<table class="table table-bordered"><tbody>
+<tr><th scope="row">Glaze Crystallization</th><td>TiO2 dissolves into the melt during firing but normally re-crystallizes (or acts as a crystallization catalyst) during cooling (with rutile structure).</td></tr>
+<tr><th scope="row">Glaze Matteness</th><td>Titanium can be used in glazes to produce a matte surface with increasing amounts of crystallization in amounts up to 25%. The effect works in most stoneware glazes and is better when the glaze is slow cooled.</td></tr>
+<tr><th scope="row">Glaze Opacifier</th><td>Titanium is a crystalline mineral and encourages crystal development during cooling and freezing of the glaze melt. This generally produces opacity. However, titanium opacified glazes have a much different character than zircon or tin types. The latter produces a much more even and bright white coloration. When used as an opacifier the batch amount can range to 10% or more of the recipe.</td></tr>
+<tr><th scope="row">Glaze Variegation</th><td>Smaller amounts of titanium dioxide (i.e. 5%) added to colored or opacified recipes can variegate the surface and make it more interesting (e.g. it alters the shape of crystals, shade of colors).</td></tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

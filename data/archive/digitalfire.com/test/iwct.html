@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>300F:Ice Water Crazing Test - IWCT</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Ceramic glazes that do not fit the body often do not craze until later. This progressively stresses the fit until failure point, thus giving it a score">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item active" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=test" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">Test Code-numbers</a> <a class="btn btn-primary"href="https://digitalfire.com/test/list" role="button" aria-expanded="false">All Tests</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a title="94 - +44 and +63 Micron Residue" href="https://digitalfire.com/test/44mr">44MR</a> |</nobr> <nobr><a title="38 - Apparent Porosity" href="https://digitalfire.com/test/appo">APPO</a> |</nobr> <nobr><a title="85 - Average Particle Size (Microns)" href="https://digitalfire.com/test/avps">AVPS</a> |</nobr> <nobr><a title="42 - Apparent Viscosity (cps)" href="https://digitalfire.com/test/avsc">AVSC</a> |</nobr> <nobr><a title="36 - Bulk Density g/cc (Packed)" href="https://digitalfire.com/test/bdgc">BDGC</a> |</nobr> <nobr><a title="23 - Bulk Density lbs/cu. ft. (Packed)" href="https://digitalfire.com/test/bdlb">BDLB</a> |</nobr> <nobr><a title="73 - Borate LOI" href="https://digitalfire.com/test/bloi">BLOI</a> |</nobr> <nobr><a title="89 - Boiling Water:Ice Water Glaze Fit Test" href="https://digitalfire.com/test/bwiw">BWIW</a> |</nobr> <nobr><a title="90 - Carbon content" href="https://digitalfire.com/test/ccon">CCON</a> |</nobr> <nobr><a title="62 - Drying Factor/Water Content/Solubles" href="https://digitalfire.com/test/cdry">CDRY</a> |</nobr> <nobr><a title="25 - CEC (meq/100g)" href="https://digitalfire.com/test/cec">CEC</a> |</nobr> <nobr><a title="47 - Clay Water Content - Powder, Plastic" href="https://digitalfire.com/test/clwc">CLWC</a> |</nobr> <nobr><a title="99 - Compressive Strength" href="https://digitalfire.com/test/cmst">CMST</a> |</nobr> <nobr><a title="10 - Co-efficient of Linear Expansion" href="https://digitalfire.com/test/cole">COLE</a> |</nobr> <nobr><a title="64 - Cold Over Boiled Porosity" href="https://digitalfire.com/test/covb">COVB</a> |</nobr> <nobr><a title="63 - Clay, Silt, Sand Sedimentation Test" href="https://digitalfire.com/test/csss">CSSS</a> |</nobr> <nobr><a title="1 - Density (Specific Gravity)" href="https://digitalfire.com/test/dens">DENS</a> |</nobr> <nobr><a title="46 - Drying Factor" href="https://digitalfire.com/test/dfac">DFAC</a> |</nobr> <nobr><a title="77 - Deflocculation Demand" href="https://digitalfire.com/test/dfdm">DFDM</a> |</nobr> <nobr><a title="105 - Dielectric Strength" href="https://digitalfire.com/test/diel">DIEL</a> |</nobr> <nobr><a title="8 - Density, loose packed (lbs/cu fut)" href="https://digitalfire.com/test/dnlp">DNLP</a> |</nobr> <nobr><a title="19 - Dry Strength (kgf/cm2)" href="https://digitalfire.com/test/ds">DS</a> |</nobr> <nobr><a title="51 - Drying Shrinkage" href="https://digitalfire.com/test/dshr">DSHR</a> |</nobr> <nobr><a title="59 - Dry Strenth (Round Bars)" href="https://digitalfire.com/test/dsrn">DSRN</a> |</nobr> <nobr><a title="60 - Dry Strength (Square Bars)" href="https://digitalfire.com/test/dstr">DSTR</a> |</nobr> <nobr><a title="13 - Decomposition Temperature" href="https://digitalfire.com/test/dtmp">DTMP</a> |</nobr> <nobr><a title="112 - Engobe Body Compatibility Test" href="https://digitalfire.com/test/ebct">EBCT</a> |</nobr> <nobr><a title="97 - Elastic Modulus, 20 degrees C" href="https://digitalfire.com/test/em20">EM20</a> |</nobr> <nobr><a title="96 - Frit Fusibility Test" href="https://digitalfire.com/test/frfu">FRFU</a> |</nobr> <nobr><a title="65 - Fired Strength Round Bars" href="https://digitalfire.com/test/frrd">FRRD</a> |</nobr> <nobr><a title="102 - Fracture Toughness" href="https://digitalfire.com/test/frtg">FRTG</a> |</nobr> <nobr><a title="21 - Firing Shrinkage" href="https://digitalfire.com/test/fshr">FSHR</a> |</nobr> <nobr><a title="66 - Fired Strength Square Bars" href="https://digitalfire.com/test/fstr">FSTR</a> |</nobr> <nobr><a title="113 - Glaze Body Bond Test" href="https://digitalfire.com/test/gbbt">GBBT</a> |</nobr> <nobr><a title="110 - Glaze Melt Fluidity - Ball Test" href="https://digitalfire.com/test/gbmf">GBMF</a> |</nobr> <nobr><a title="27 - GE Brightness" href="https://digitalfire.com/test/gebr">GEBR</a> |</nobr> <nobr><a title="68 - Glaze Observations" href="https://digitalfire.com/test/glaz">GLAZ</a> |</nobr> <nobr><a title="58 - Glaze Melt Flow - Runway Test" href="https://digitalfire.com/test/glfl">GLFL</a> |</nobr> <nobr><a title="69 - Glaze Hardness" href="https://digitalfire.com/test/glhd">GLHD</a> |</nobr> <nobr><a title="70 - Glaze Leaching Test" href="https://digitalfire.com/test/glle">GLLE</a> |</nobr> <nobr><a title="14 - Frit Softening Point" href="https://digitalfire.com/test/gspt">GSPT</a> |</nobr> <nobr><a title="92 - Glass Transition Temperature" href="https://digitalfire.com/test/gttm">GTTM</a> |</nobr> <nobr><a title="100 - Hardness (Microindentation) Test" href="https://digitalfire.com/test/hdmi">HDMI</a> |</nobr> <nobr><a title="28 - Hegman Fineness" href="https://digitalfire.com/test/hegf">HEGF</a> |</nobr> <nobr><a title="91 - Heating Microscope Analysis for Frits" href="https://digitalfire.com/test/hma">HMA</a> |</nobr> <nobr><a title="95 - Heating Microscope Analysis" href="https://digitalfire.com/test/hman">HMAN</a> |</nobr> <nobr><a title="7 - Hardness (Moh)" href="https://digitalfire.com/test/hmoh">HMOH</a> |</nobr> <nobr><a title="88 - I.F.P. (celsius)" href="https://digitalfire.com/test/ifp">IFP</a> |</nobr> <nobr><a title="108 - 300F:Ice Water Crazing Test" href="https://digitalfire.com/test/108"><button type="button" class="btn btn-dark">IWCT</button></a> |</nobr> <nobr><a title="79 - % < 10 microns" href="https://digitalfire.com/test/l10m">L10M</a> |</nobr> <nobr><a title="81 - % < 1 micron" href="https://digitalfire.com/test/l1m">L1M</a> |</nobr> <nobr><a title="78 - % < 20 microns" href="https://digitalfire.com/test/l20m">L20M</a> |</nobr> <nobr><a title="80 - % < 2 microns" href="https://digitalfire.com/test/l2m">L2M</a> |</nobr> <nobr><a title="93 - % < 30 microns" href="https://digitalfire.com/test/l30m">L30M</a> |</nobr> <nobr><a title="17 - % < 5 microns" href="https://digitalfire.com/test/l5">L5</a> |</nobr> <nobr><a title="18 - % < 0.5 microns" href="https://digitalfire.com/test/l5m">L5M</a> |</nobr> <nobr><a title="49 - LOI/Density/Water Content" href="https://digitalfire.com/test/ldw">LDW</a> |</nobr> <nobr><a title="15 - LOI (100-1000C)" href="https://digitalfire.com/test/loi">LOI</a> |</nobr> <nobr><a title="30 - Liquid Limit" href="https://digitalfire.com/test/lqlm">LQLM</a> |</nobr> <nobr><a title="76 - Median Particle Size (Microns)" href="https://digitalfire.com/test/mdps">MDPS</a> |</nobr> <nobr><a title="57 - Frit Melting Range (C)" href="https://digitalfire.com/test/mlrg">MLRG</a> |</nobr> <nobr><a title="75 - Moisture Content - Powder" href="https://digitalfire.com/test/moip">MOIP</a> |</nobr> <nobr><a title="61 - Modulus of Rupture - Fired" href="https://digitalfire.com/test/mor">MOR</a> |</nobr> <nobr><a title="74 - Dry M.O.R. (50% Silica)" href="https://digitalfire.com/test/mor5">MOR5</a> |</nobr> <nobr><a title="12 - Modulus of Rupture - Dry" href="https://digitalfire.com/test/mord">MORD</a> |</nobr> <nobr><a title="5 - Oil Adsorption (Spatula)" href="https://digitalfire.com/test/olad">OLAD</a> |</nobr> <nobr><a title="107 - % Passing 200 Mesh Wet" href="https://digitalfire.com/test/p200">P200</a> |</nobr> <nobr><a title="32 - % Passing 325 Mesh Wet" href="https://digitalfire.com/test/p325">P325</a> |</nobr> <nobr><a title="71 - Pugged Body Properties Overview" href="https://digitalfire.com/test/pbpo">PBPO</a> |</nobr> <nobr><a title="11 - Pyrometric Cone Equivalent" href="https://digitalfire.com/test/pce">PCE</a> |</nobr> <nobr><a title="4 - pH (pugged clay)" href="https://digitalfire.com/test/phpg">pHPG</a> |</nobr> <nobr><a title="87 - pH for dry powder" href="https://digitalfire.com/test/phpw">pHPW</a> |</nobr> <nobr><a title="72 - Pyroplastic Deformation" href="https://digitalfire.com/test/ppd">PPD</a> |</nobr> <nobr><a title="98 - Poisson's Ratio" href="https://digitalfire.com/test/prsm">PRSM</a> |</nobr> <nobr><a title="6 - Particle Shape (1-7 microns)" href="https://digitalfire.com/test/pshp">PSHP</a> |</nobr> <nobr><a title="37 - Reheat Change" href="https://digitalfire.com/test/rc">RC</a> |</nobr> <nobr><a title="34 - Rheology of a Ceramic Slurry" href="https://digitalfire.com/test/rheo">RHEO</a> |</nobr> <nobr><a title="9 - Sieve Analysis Dry" href="https://digitalfire.com/test/sadr">SADR</a> |</nobr> <nobr><a title="16 - Surface Area (m2/gm)" href="https://digitalfire.com/test/samg">SAMG</a> |</nobr> <nobr><a title="84 - Simple Clay Evaluation" href="https://digitalfire.com/test/scle">SCLE</a> |</nobr> <nobr><a title="41 - Shrinkage/Absorption Test" href="https://digitalfire.com/test/shab">SHAB</a> |</nobr> <nobr><a title="48 - Sieve Analysis 35-325 Wet" href="https://digitalfire.com/test/siev">SIEV</a> |</nobr> <nobr><a title="35 - Solubility" href="https://digitalfire.com/test/slby">SLBY</a> |</nobr> <nobr><a title="45 - Soluble Salts" href="https://digitalfire.com/test/solu">SOLU</a> |</nobr> <nobr><a title="104 - Specific Heat Capacity" href="https://digitalfire.com/test/sphc">SPHC</a> |</nobr> <nobr><a title="83 - Simple Shrinkage/Absorption" href="https://digitalfire.com/test/ssab">SSAB</a> |</nobr> <nobr><a title="24 - Sieve Analysis Wet" href="https://digitalfire.com/test/svwt">SVWT</a> |</nobr> <nobr><a title="82 - TGA" href="https://digitalfire.com/test/tga">TGA</a> |</nobr> <nobr><a title="103 - Thermal Conductivity, 20 degrees C" href="https://digitalfire.com/test/thco">THCO</a> |</nobr> <nobr><a title="101 - Tensile Strength, 25 degrees C" href="https://digitalfire.com/test/tnst">TNST</a> |</nobr> <nobr><a title="26 - Trace Elements (ppm)" href="https://digitalfire.com/test/trel">TREL</a> |</nobr> <nobr><a title="33 - Trace Minerals" href="https://digitalfire.com/test/trmn">TRMN</a> |</nobr> <nobr><a title="111 - Thermal Shock Failure" href="https://digitalfire.com/test/tsfl">TSFL</a> |</nobr> <nobr><a title="40 - Ultimate Particle Size Distribution" href="https://digitalfire.com/test/upsd">UPSD</a> |</nobr> <nobr><a title="20 - Water absorption" href="https://digitalfire.com/test/wabs">WABS</a> |</nobr> <nobr><a title="43 - Water of Plasticity" href="https://digitalfire.com/test/wopl">WOPL</a> |</nobr> <nobr><a title="50 - Whole Rock Analysis" href="https://digitalfire.com/test/wra">WRA</a> |</nobr> <nobr><a title="86 - Wet Sieve Residue" href="https://digitalfire.com/test/wsr">WSR</a> |</nobr> <nobr><a title="3 - Index of Refraction" href="https://digitalfire.com/test/xref">XREF</a></nobr></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>IWCT - 300F:Ice Water Crazing Test</h1>
+<p>Most people do not have a dilatometer so they must test the susceptibility of their glazes to <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a> by simple observation. Such methods may actually have more value since it can be difficult to link numeric dilatometric results to what will happen in practice.<br />
+<br />
+This procedure is an alternative to the <a  href="https://digitalfire.com/test/bwiw">BWIW test</a> (Boiling Water:Ice Water) for crazing (but not <a  href="https://digitalfire.com/glossary/glaze+shivering">shivering</a>), it stresses the glaze-body fit more by heating the sample to 300F before plunging it into ice water. Here are some details:<br />
+<br />
+-Do not subject the same specimen to successive shock cycles, use a different one each time.<br />
+-Tiles of 3/8" thickness will stress the fit more than 1/4".<br />
+-The more accurate the temperature of your oven the more repeatable the test will be.<br />
+-Heat the specimens vertically standing in the kiln. Make setters if needed. Hold the temperature for half an hour to make sure the heat penetrates.<br />
+-Make sure the ice water vessel is large enough and has lots of ice, the hot tiles can melt the ice faster than you think.<br />
+-Agitate the water vigorously and continually as samples are dropped in, this assures that all specimens are equally subjected to close-to-freezing-temperature water on all sides.<br />
+-Consider testing your clay-glaze at a cone above and below your production firing temperature.<br />
+<br />
+Water expansion can be an important factor in crazing, for a truer test consider enhancing its penetration into body pores by multi-hours in an autoclave, subjecting it to more heat and pressure (5-6 bars). See the book "Glasuren und ihre Farben".<br />
+<br />
+We adjusted this procedure in 2021. Previously it recommended doing separate tests at progressively higher temperatures until a crazing threshold was reached (and recording that temperature). In practice, we have found it more practical to simply test at this one temperature and judge a body-glaze combination as "pass" or "fail". We also added the step of waiting until the next day before doing the final assessment.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">No crazing out of the kiln. But an ice-water test did this.</h3>
+<br /><a alt="Crazing mug" href="https://digitalfire.com/picture/1206"><img class="flexleft50" alt="Crazing mug"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/wyhlolufal.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1206">click here</a> to see it.</p>
+<p>The side of this white <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> test mug is glazed with varying thicknesses of V.C. 71 (a popular silky matte used by potters), then fired to <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>. Out of the kiln, there was no <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a>, and it felt silky and wonderful. But after a 300F/icewater IWCT this happened (it was felt-pen marked and cleaned with acetone). The glaze was apparently elastic enough to handle the gradual cooling in the kiln. However, the recipe has 40% <a  href="https://digitalfire.com/material/310">feldspar</a> and low <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> and <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a>, in a cone 6 glaze these are red flags for crazing.<br />
+<br />
+No matter what anyone tells you, <a  href="https://digitalfire.com/glossary/glaze+fit">glaze fit</a> can rarely be fixed by firing differently (that just delays it). If someone needs to cool their kiln slowly to prevent crazing it simply means the glaze does not fit - its needs to be adjusted to reduce its <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">co-efficient of thermal expansion</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A Redart cone 03 body shines when it come to ease of glaze fit</h3>
+<br /><a href="https://digitalfire.com/picture/1331"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/zilcalocyt.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1331">click here</a> to see it.</p>
+<p>These bowls are fired at cone 03. They are made from 80 <a  href="https://digitalfire.com/material/1191">Redart</a>, 20 <a  href="https://digitalfire.com/material/80">Ball clay</a>. The glazes are (left to right) G1916J (<a  href="https://digitalfire.com/material/356">Frit 3195</a> 85, <a  href="https://digitalfire.com/material/291">EPK</a> 15), G191Q (<a  href="https://digitalfire.com/glossary/frit">Frit</a> 3195 65, <a  href="https://digitalfire.com/material/349">Frit 3110</a> 20, EPK 15) and G1916T (Frit 3195 65, <a  href="https://digitalfire.com/material/369">Frit 3249</a> 20, EPK 15). The latter is the most transparent and brilliant, even though that frit has high <a  href="https://digitalfire.com/oxide/mgo">MgO</a>. The center one has a higher expansion (because of the Frit 3110) and the right one a lower expansion (because of the Frit 3249). Yet all of them survived a 300F to icewater <a  href="https://digitalfire.com/test/iwct">IWCT test</a> without <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a>. This is a testament to the utility of Redart at low temperatures. A white body done at the same time <a  href="https://digitalfire.com/trouble/glaze+crazing">crazed</a> the left two.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Turning delayed crazing into immediate crazing</h3>
+<br /><a href="https://digitalfire.com/picture/1339"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/pigdejatag.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1339">click here</a> to see it.</p>
+<p>This is a <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 04</a> clay (<a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12869">Buffstone</a>) with a transparent glaze (<a  href="https://digitalfire.com/recipe/g1916q">G1916Q</a> which is 65% <a  href="https://digitalfire.com/material/356">Frit 3195</a>, 20% <a  href="https://digitalfire.com/material/349">Frit 3110</a>, 15% <a  href="https://digitalfire.com/material/291">EPK</a>). On coming out of the kiln, the glaze looked fine, crystal clear, no <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a>. However, when heated to 300F and then immersed into ice water this happens. This is the <a  href="https://digitalfire.com/test/iwct">IWCT test</a>. At lower temperatures, where bodies are porous, water immediately penetrates the cracks and begins to waterlog the body below. Fixing the problem was easy: Substitute the <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">low expansion</a> <a  href="https://digitalfire.com/material/369">Frit 3249</a> for <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">high expansion</a> <a  href="https://digitalfire.com/glossary/frit">Frit</a> 3110.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Match calculated COE to dilatometer-measured body COE? No!</h3>
+<br /><a href="https://digitalfire.com/picture/2095"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/wurs5pvfwn.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2095">click here</a> to see it.</p>
+<p>Why? Firing temperature, schedule and atmosphere affect the result. Dilatometers are only useful when manufacturers monitor bodies AND glazes over time and in the same firing conditions. Calculated values for glazes are only relative (not absolute). The best way to fit glazes to your <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a> is by testing, evaluation, adjustment and retesting. For example, if a glaze crazes, adjust its recipe to bring the expansion down (your account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a> has the tools and guides to do this). Then fire a glazed piece and thermal stress it (300F-to-ice-water <a  href="https://digitalfire.com/test/iwct">IWCT test</a>). If it still crazes, move it further. If you have a base <a  href="https://digitalfire.com/glossary/glossy+glaze">glossy glaze</a> that fits (and made of the same materials), try comparing its calculated expansion as a guide. Can you calculate body expansion from oxide <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a>? Definitely not, because bodies do not melt.</p>
+<p style="clear:left"></p>
+<h2>Variables</h2>
+<b>Temp - Temperature (V)</b><p style="margin-left:10px;">
+<p>The temperature at which crazing appears. The higher the temperature the more craze resistant the glaze is.</p>
+</p>
+<b>Dist - Craze lines per inch (V)</b><p style="margin-left:10px;">
+<p>Approximate. The higher the number the worse the problem.</p>
+</p>
+
+<h2>Procedure</h2>
+<p>100. <b>Apparatus</b></p>
+<p>-An oven or kiln capable of heating ware accurately to 300F.<br />
+-Ice and ice water container (holding enough water so that an adequate thermal mass exists to maintain near freezing temperatures for all items being tested)<br />
+-Tongs or pliers.</p>
+</p>
+<p>200. <b>Procedure</b></p>
+<p>-Roll eight 3/8 inch thick specimens 2x3 inches in size (for each glaze to be tested). Dry them as flat as possible. Bisque fire them (to your standard production bisquing temperature).<br />
+-Make a mix of the glaze recipe, mix with water and gel to the standard production viscosity.<br />
+-Dip the first specimen of each recipe (leaving 1/2 inch at one end unglazed). Using a glaze thickness measuring device (or a pin tool and observation), compare the thicknesses. Dip specimen 2, adjusting dip-time as needed according to thickness assessment done on the first. Repeat the process to glaze the rest.<br />
+-Fire the specimens to the target production temperature (verify using cones).<br />
+<br />
+-Heat the specimens to 300F and hold 30 minutes so heat thoroughly penetrates all samples.<br />
+-Prepare the ice water in a container big enough to hold all the specimens and with enough water and ice to have the needed thermal mass.<br />
+-Remove them from the oven (using dipping tongs) and quickly force them down into the cold water. Keep stirring the water vigorously as each new hot specimen is immersed.<br />
+-Continue to stir the water and add ice if needed to keep it cold. Allow it to stand for five minutes.<br />
+-Remove the specimens from the water and examine them closely.<br />
+-If needed, use a dye, ink or a black marker (followed by cleaning with an appropriate solvent) to highlight crack lines.<br />
+-Allow the specimens to sit until the next day, then reexamine them. If there is not crazing judge them as "passed".<br />
+<br />
+For extra stressing, consider heating to 325 or 350F.</p>
+</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<h3>Videos</h3><table>
+<table class="table table-bordered"><tbody>
+</tbody></table>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/cole">Co-efficient of Linear Expansion</a>
+<br /><i>In <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>, glazes expand with increasing temperature. Being brittle materials, they must be expansion-compatible with the body they are on.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/bwiw">Boiling Water:Ice Water Glaze Fit Test</a>
+<br /><i>Ceramic glazes that <a  href="https://digitalfire.com/glossary/glaze+fit">do not fit</a> the body often do not <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a> until later. This test stresses the fit, thus revealing if it is likely to craze later.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/understanding+thermal+expansion+in+ceramic+glazes">Understanding Thermal Expansion in Ceramic Glazes</a>
+<br /><i>Understanding <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> is the key to dealing with <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a> or <a  href="https://digitalfire.com/glossary/glaze+shivering">shivering</a>. There is a rich mans and poor mans way to fit glazes, the latter might be better.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/the+effect+of+glaze+fit+on+fired+ware+strength">The Effect of Glaze Fit on Fired Ware Strength</a>
+<br /><i>The fit between body and glaze is like a marriage, if is is strong the marriage can survive problems. Likewise ceramic ware with well fitting glaze is much stronger than you think it might be, and vice versa.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/crazing+and+bacteria%3a+is+there+a+hazard%3f">Crazing and Bacteria: Is There a Hazard?</a>
+<br /><i>A post to a discussion on the clayart group by Gavin Stairs regarding the <a  href="https://digitalfire.com/glossary/food+safe">food safety</a> of <a  href="https://digitalfire.com/trouble/glaze+crazing">crazed</a> ware.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/is+your+fired+ware+safe%3f">Is Your Fired Ware Safe?</a>
+<br /><i>Glazed ware can be a safety hazard to end users because it may leach metals into food and drink, it could harbor bacteria and it could flake of in knife-edged pieces.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/bringing+out+the+big+guns+in+craze+control%3a+mgo+%28g1215u%29">Bringing Out the Big Guns in Craze Control: MgO (G1215U)</a>
+<br /><i><a  href="https://digitalfire.com/oxide/mgo">MgO</a> is the secret weapon of <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a> control. If your application can tolerate it you can create a <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> glaze of very low <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> that is very resistant to <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/formulating+a+porcelain">Formulating a Porcelain</a>
+<br /><i>The principles behind formulating a <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> are quite simple. You just need to know the purpose of each material, a starting recipe and a testing regimen.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">Co-efficient of Thermal Expansion</a>
+<br /><i>The <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">co-efficient of thermal expansion</a> of ceramic bodies and glazes determines how well they fit each other and their ability to survive sudden heating and cooling without cracking.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/glaze+shivering">Glaze shivering</a>
+<br /><i><a  href="https://digitalfire.com/glossary/glaze+shivering">Shivering</a> is a ceramic glaze defect that results in tiny flakes of glaze <a  href="https://digitalfire.com/picture/3594">peeling</a> off edges of ceramic ware. It happens because the <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> of the body is too much higher than the glaze.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/glaze+fit">Glaze fit</a>
+<br /><i>In <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>, <a  href="https://digitalfire.com/glossary/glaze+fit">glaze fit</a> refers to the <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> compatibility between glaze and <a  href="https://digitalfire.com/glossary/clay+body">clay body</a>. When the fit is not good the glaze forms a crack pattern or flakes off on contours.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/thermal+shock">Thermal shock</a>
+<br /><i>When sudden changes in temperature cause dimensional changes <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a> often fail because of their brittle nature. Yet some ceramics are highly resistant.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/food+safe">Food Safe</a>
+<br /><i>Be skeptical of claims of <a  href="https://digitalfire.com/glossary/food+safe">food safety</a> from potters who cannot explain or demonstrate why. Investigate the basis of manufacturer claims and labelling and the actual use to which their products are put.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/liner+glaze">Liner Glaze</a>
+<br /><i>Liner-glazing is a way to assure that your ware has a durable and leach resistant surface. It also signals to customers that you care about this.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/dinnerware+safe">Dinnerware Safe</a>
+<br /><i>In pottery, the terms <a  href="https://digitalfire.com/glossary/dinnerware+safe">dinnerware safe</a> and <a  href="https://digitalfire.com/glossary/food+safe">food safe</a>, are not the same. Perhaps the best way to understand the former is to consider what the opposite might be.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/glt">Glaze Tests</a>
+<br /><i>Tests conducted on glaze batches used in production (as opposed to tests conducted on the materials used to make those glazes).</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Troubles</td>
+<td>
+<a href="https://digitalfire.com/trouble/glaze+crazing">Glaze Crazing</a>
+<br /><i>Ask the right questions to analyse the real cause of <a  href="https://digitalfire.com/glossary/glaze+crazing">glaze crazing</a>. Do not just treat the symptoms, the real cause is <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> mismatch with the body.</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

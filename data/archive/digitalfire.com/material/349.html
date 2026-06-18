@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Ferro Frit 3110</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="High sodium, high thermal expansion low boron frit. A super-feldspar in clay bodies. Melts a very low temperatures.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item active"><a class="nav-link" href="/material/list">Materials <span class="sr-only">(current)</span></a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=material" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table>
+<ul class="nav nav-tabs pt-1" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="material-tab" data-toggle="tab" href="#material" role="tab" aria-controls="material" aria-selected="true">Materials for Ceramics</a>
+  </li>
+</ul>
+<div class="tab-content mb-3" id="myTabContent" style="border-right:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #ddd; padding:10px;">
+  <div class="tab-pane fade show active" id="material" role="tabpanel" aria-labelledby="material-tab">
+<a href="/material/list/1-9">1-9</a> | <a href="/material/list/A">A</a> | <a href="/material/list/B">B</a> | <a href="/material/list/C">C</a> | <a href="/material/list/D">D</a> | <a href="/material/list/E">E</a> | <a href="/material/list/F">F</a> | <a href="/material/list/Frits">Frits</a> | <a href="/material/list/G">G</a> | <a href="/material/list/H">H</a> | <a href="/material/list/I">I</a> | <a href="/material/list/J">J</a> | <a href="/material/list/K">K</a> | <a href="/material/list/L">L</a> | <a href="/material/list/M">M</a> | <a href="/material/list/N">N</a> | <a href="/material/list/O">O</a> | <a href="/material/list/P">P</a> | <a href="/material/list/Q">Q</a> | <a href="/material/list/R">R</a> | <a href="/material/list/S">S</a> | <a href="/material/list/T">T</a> | <a href="/material/list/U">U</a> | <a href="/material/list/V">V</a> | <a href="/material/list/W">W</a> | <a href="/material/list/X">X</a> | <a href="/material/list/Y">Y</a> | <a href="/material/list/Z">Z</a><br />
+<nobr></nobr>
+</div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Ferro Frit 3110</h1>
+<p><b>Alternate Names</b>: F3110, Frit KFG 4110, Ferro Crystal Frit, Ferro Frit 3110-2</p>
+<p><b>Description</b>: High alkali, low alumina and boron leadless high expansion frit</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/oxide">Oxide</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/analysis">Analysis</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/formula">Formula</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/formula">Tolerance</a></th>
+</tr></thead><tbody>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/cao">CaO</a></td>
+<td class="text-right"">6.29%</td>
+<td class="text-right">
+0.29
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/k2o">K2O</a></td>
+<td class="text-right"">2.36%</td>
+<td class="text-right">
+0.07
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/na2o">Na2O</a></td>
+<td class="text-right"">15.24%</td>
+<td class="text-right">
+0.64
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/b2o3">B2O3</a></td>
+<td class="text-right"">2.64%</td>
+<td class="text-right">
+0.10
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/al2o3">Al2O3</a></td>
+<td class="text-right"">3.70%</td>
+<td class="text-right">
+0.09
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/sio2">SiO2</a></td>
+<td class="text-right"">69.77%</td>
+<td class="text-right">
+3.03
+</td><td class="text-right">
+
+</td></tr>
+<tr><td colspan="2">Oxide Weight</td><td colspan="2" class="text-right">
+261.11
+</td></tr>
+<tr><td colspan="2" class="text-right"><a href="https://digitalfire.com/glossary/formula+weight">Formula Weight</a></td><td colspan="2" style="text-align:right">
+261.11
+</td></tr>
+</tbody></table>
+<h4>Notes</h4><p>This is a USA pottery <a  href="https://digitalfire.com/glossary/frit">frit</a>, Ferro now calls it Frit 3110-2.<br />
+Soft sodium <a  href="https://digitalfire.com/glossary/borosilicate">borosilicate</a> frit for glazes. Since it is a good source of <a  href="https://digitalfire.com/oxide/na2o">Na<sub>2</sub>O</a> it is very commonly found in <a  href="https://digitalfire.com/glossary/glaze+recipes">glaze recipes</a> all temperatures. It has a high <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a>, therefore useful for substitution into glazes that are <a  href="https://digitalfire.com/glossary/glaze+shivering">shivering</a> (e.g. the <a  href="https://digitalfire.com/recipe/g1916q">G1916Q</a> recipe trades it for <a  href="https://digitalfire.com/material/356">frit 3195</a> to increase expansion). Often used in crystal glazes. <br />
+<br />
+Since it is somewhat soluble some <a  href="https://digitalfire.com/glossary/precipitation">precipitation</a> can occur in glazes stored for lengthy periods.<br />
+<br />
+This frit can be very useful to reduce the <a  href="https://digitalfire.com/material/310">feldspar</a> content in glazes (since many <a  href="https://digitalfire.com/picture/1960">high feldspar glazes</a> have low clay content and therefore poor <a  href="https://digitalfire.com/glossary/slurry">slurry</a> <a  href="https://digitalfire.com/glossary/suspension">suspension</a> properties and dried hardness). The <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> of this frit is similar to a feldspar (but with low alumina and <a  href="https://digitalfire.com/oxide/cao">CaO</a> in addition to the <a  href="https://digitalfire.com/glossary/alkali">alkali</a> fluxes). That means if least part of the feldspar can be substituted for <a  href="https://digitalfire.com/material/349">Frit 3110</a> you can increase the <a  href="https://digitalfire.com/material/925">kaolin</a> (to supply the alumina) and thereby improve slurry properties (we have done this with excellent success up to <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10R</a>). In addition, you will be able to reduce the amount of troublesome <a  href="https://digitalfire.com/material/173">calcium carbonate</a>. Of course, <a  href="https://digitalfire.com/glossary/glaze+chemistry">glaze chemistry</a> is needed to calculate how to do this, there are videos at <a  href="https://digitalfire.com/glossary/digitalfire+reference+library">digitalfire</a>.com on how to do this.<br />
+<br />
+It can be used with 3403 for bright and semi-matte wall tile glazes.<br />
+<br />
+This frit is also good for use as a body <a  href="https://digitalfire.com/glossary/flux">flux</a> to substitute for feldspar, much lower vitrifying ranges are possible. However, it is somewhat soluble, so bodies should be used soon after making them. Adding only a small amount, e.g. 5%, to a <a  href="https://digitalfire.com/glossary/terra+cotta">terra cotta</a> body not only greatly improves the <a  href="https://digitalfire.com/glossary/maturity">maturity</a>, but can potentially reduce <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a> and make glazes easier to fit.<br />
+<br />
+Cone Range: 08-8<br />
+Fusion temperature: 1400F<br />
+Flow temperature: 1700F<br />
+This frit has a very low melting point like 3124, 3134, 3185.<br />
+Formerly Frit 1078</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">These common Ferro frits have distinct uses in traditional ceramics</h3>
+<br /><a alt="Five melt frit balls" href="https://digitalfire.com/picture/1108"><img class="flexleft50" alt="Five melt frit balls"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/kutrupopak.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1108">click here</a> to see it.</p>
+<p>I used Veegum to form 10 gram <a  href="https://digitalfire.com/test/gbmf">GBMF test</a> balls and fired them at cone 08 (1700F). <a  href="https://digitalfire.com/glossary/frit">Frits</a> melt really well, they do have an <a  href="https://digitalfire.com/glossary/loi">LOI</a>  like raw materials. These contain <a  href="https://digitalfire.com/glossary/borate">boron</a> (<a  href="https://digitalfire.com/oxide/b2o3">B<sub>2</sub>O<sub>3</sub></a>), it is a <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">low expansion</a> super-melter that raw materials don’t have. <a  href="https://digitalfire.com/material/350">Frit 3124</a> (glossy) and 3195 (silky matte) are balanced-chemistry bases (just add 10-15% <a  href="https://digitalfire.com/material/925">kaolin</a> for a <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 04</a> glaze, or more silica+kaolin to go higher). Consider <a  href="https://digitalfire.com/material/349">Frit 3110</a> a man-made low-Al<sub>2</sub>O<sub>3</sub> super <a  href="https://digitalfire.com/material/310">feldspar</a>. Its high-sodium makes it high <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a>. It works really well in bodies and is great to make glazes that <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a>. The high-MgO <a  href="https://digitalfire.com/material/369">Frit 3249</a> (made for the abrasives industry) has a very-low expansion, it is great for fixing <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a> glazes. <a  href="https://digitalfire.com/material/351">Frit 3134</a> is similar to 3124 but without <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a>. Use it where the glaze does not need more Al<sub>2</sub>O<sub>3</sub> (e.g. already has enough clay). It is no accident that these are used by potters in North America, they complement each other well (equivalents are made around the world by others). The <a  href="https://digitalfire.com/material/806">Gerstley Borate</a> is a natural source of boron (with issues frits do not have).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Frits melt so much better than raw materials</h3>
+<br /><a alt="Frits, talc, feldspar melting" href="https://digitalfire.com/picture/1115"><img class="flexleft50" alt="Frits, talc, feldspar melting"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/fuxrucugaz.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1115">click here</a> to see it.</p>
+<p><a  href="https://digitalfire.com/material/310">Feldspar</a> and <a  href="https://digitalfire.com/material/1620">talc</a> are both <a  href="https://digitalfire.com/glossary/flux">flux</a> sources (glaze melters), they are common in all types of <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> glazes. But their fluxing <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a>, <a  href="https://digitalfire.com/oxide/na2o">Na<sub>2</sub>O</a> and <a  href="https://digitalfire.com/oxide/mgo">MgO</a>, are locked in crystal structures that neither melt early or supply other oxides with which they like to interact. The pure feldspar is only beginning to soften at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>. Yet the soda <a  href="https://digitalfire.com/glossary/frit">frit</a> is already very active at <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 06</a>! As high as cone 6, talc (the best source of MgO) shows no signs of melting activity at all. But a high-MgO frit is melting beautifully at cone 06! The <a  href="https://digitalfire.com/glossary/frit">frits</a> progressively soften, starting from low temperatures, both because they have been premelted and have significant <a  href="https://digitalfire.com/glossary/borate">boron</a> content. In both, the Na<sub>2</sub>O and MgO are free to impose themselves as fluxes, actively participating in the softening process.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Five frits. One kiln at 1850F. Big chemistry drama.</h3>
+<br /><a href="https://digitalfire.com/picture/1178"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/rtqpsdnxxn.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1178">click here</a> to see it.</p>
+<p>Five common North American Ferro <a  href="https://digitalfire.com/glossary/frit">Frits</a> fired at 1850F on alumina tiles (each started as a 10-gram <a  href="https://digitalfire.com/test/gbmf">GBMF test</a> ball and flattened during the firing). At this temperature, the differences are more evident than at 1950F. The degree of melting corresponds mainly, but not only, to the percentage of <a  href="https://digitalfire.com/oxide/b2o3">B<sub>2</sub>O<sub>3</sub></a> present. <a  href="https://digitalfire.com/material/351">Frit 3134</a> is the runaway leader because it couples that with almost no <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> to stabilize <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a>. Notice also the crack pattern, it is also very high in <a  href="https://digitalfire.com/oxide/na2o">Na<sub>2</sub>O</a> and thus has a high <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">COE</a>. However, why does <a  href="https://digitalfire.com/material/349">Frit 3110</a> melt so well even though it contains almost no B<sub>2</sub>O<sub>3</sub>? Even higher Na<sub>2</sub>O, it is a powerful <a  href="https://digitalfire.com/glossary/flux">flux</a>. Its COE is even higher than <a  href="https://digitalfire.com/glossary/frit">Frit</a> 3134, but it is thick enough to have resisted cracking far (but it will in time).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Melting glaze balls at various temperatures to see when all carbon has been expelled</h3>
+<br /><a href="https://digitalfire.com/picture/1259"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/hyhcigaduw.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1259">click here</a> to see it.</p>
+<p><a  href="https://digitalfire.com/recipe/g1916q">G1916Q</a> and J <a  href="https://digitalfire.com/glossary/earthenware">low fire</a> ultra-clear glazes (contain Ferro <a  href="https://digitalfire.com/material/356">Frit 3195</a>, 3110 and clay) fired across the range of 1650 to 2000F (these were 10 gram <a  href="https://digitalfire.com/test/gbmf">GBMF test</a> balls that melted and flattened as they fired). Notice how they soften over a wide range, starting below cone 010 (1700F)! At the early stages carbon material is still visible (even though the glaze has lost 2% of its weight to this point), it is likely the source of the micro-bubbles that completely <a  href="https://digitalfire.com/glossary/opacifier">opacify</a> the matrix even at 1950F (<a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 04</a>). This is an 85% <a  href="https://digitalfire.com/glossary/frit">fritted</a> glaze, yet it still has carbon - think of what a raw glaze might have! Of course, these specimens test a very thick layer, so the bubbles are expected. But they still can be an issue, even in a thin glaze layer on a piece of ware. So to get the most transparent possible result it is wise to fire tests to find the point where the glaze starts to soften (in this case 1450F), then soak the kiln just below that (on the way up) to fire away as much of the carbon as possible. Of course, the glaze must have a low enough <a  href="https://digitalfire.com/glossary/surface+tension">surface tension</a> to release the bubbles, that is a separate issue.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Frit melt fluidity comparison - 1300F</h3>
+<br /><a href="https://digitalfire.com/picture/2478"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/hwo24lrgqf.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2478">click here</a> to see it.</p>
+<p>Fired at 350F/hr to 1300F and held for 15 minutes. Some are still burning off carbon (which seems strange). There are two early leaders: Ferro <a  href="https://digitalfire.com/material/349">frit 3110</a> and Fusion <a  href="https://digitalfire.com/glossary/frit">frit</a> F75 are starting to deform (they have almost the same <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a>). Amazingly, these two <a  href="https://digitalfire.com/glossary/frit">frits</a> have low <a  href="https://digitalfire.com/glossary/borate">boron</a>, they rely on high soda as the <a  href="https://digitalfire.com/glossary/flux">flux</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Melt fluidity comparison - 1750F</h3>
+<br /><a href="https://digitalfire.com/picture/2488"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/ra7ynffnx9.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2488">click here</a> to see it.</p>
+<p>Fired at 350F/hr to 1750F and held for 15 minutes. <a  href="https://digitalfire.com/material/349">Frit 3110</a> has taken off. And F75, 3195 and 3134 (the latter two having big differences in <a  href="https://digitalfire.com/glossary/surface+tension">surface tension</a>).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Melt fluidity comparison of frits - 1350F</h3>
+<br /><a href="https://digitalfire.com/picture/2480"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/ecp9ugo82w.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2480">click here</a> to see it.</p>
+<p>Fired at 350F/hr to 1350F and held for 15 minutes. Some are still burning off carbon (which seems strange). The two FZ16s are starting to move. <a  href="https://digitalfire.com/material/351">Frit 3134</a> is expanding. 3602 is also starting to melt.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Melt fluidity comparison of frits - 1400F</h3>
+<br /><a href="https://digitalfire.com/picture/2481"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/iwdpummirq.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2481">click here</a> to see it.</p>
+<p>Fired at 350F/hr to 1400F and held for 15 minutes. <a  href="https://digitalfire.com/material/351">Frit 3134</a> is still expanding. 3602 is also starting to flow. A number of them are shrinking and densifying like a <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> would.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A Redart cone 03 body shines when it come to ease of glaze fit</h3>
+<br /><a href="https://digitalfire.com/picture/1331"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/zilcalocyt.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1331">click here</a> to see it.</p>
+<p>These bowls are fired at cone 03. They are made from 80 <a  href="https://digitalfire.com/material/1191">Redart</a>, 20 <a  href="https://digitalfire.com/material/80">Ball clay</a>. The glazes are (left to right) G1916J (<a  href="https://digitalfire.com/material/356">Frit 3195</a> 85, <a  href="https://digitalfire.com/material/291">EPK</a> 15), G191Q (<a  href="https://digitalfire.com/glossary/frit">Frit</a> 3195 65, <a  href="https://digitalfire.com/material/349">Frit 3110</a> 20, EPK 15) and G1916T (Frit 3195 65, <a  href="https://digitalfire.com/material/369">Frit 3249</a> 20, EPK 15). The latter is the most transparent and brilliant, even though that frit has high <a  href="https://digitalfire.com/oxide/mgo">MgO</a>. The center one has a higher expansion (because of the Frit 3110) and the right one a lower expansion (because of the Frit 3249). Yet all of them survived a 300F to icewater <a  href="https://digitalfire.com/test/iwct">IWCT test</a> without <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a>. This is a testament to the utility of Redart at low temperatures. A white body done at the same time <a  href="https://digitalfire.com/trouble/glaze+crazing">crazed</a> the left two.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A high feldspar glaze is settling, running and crazing. What to do?</h3>
+<br /><a alt="Blue glaze with chemistry calculations" href="https://digitalfire.com/picture/1960"><img class="flexleft50" alt="Blue glaze with chemistry calculations"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/jxf9asors4.55.42 am.png" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1960">click here</a> to see it.</p>
+<p>The original <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> recipe, WCB, fires to a beautiful brilliant deep blue green (shown in column 2 of this <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a> screen-shot). But it is <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a> and <a  href="https://digitalfire.com/glossary/suspension">settling</a> badly in the bucket. The crazing is because of high <a  href="https://digitalfire.com/picture/1775">KNaO</a> (potassium and sodium from the high <a  href="https://digitalfire.com/material/310">feldspar</a>). The settling is because there is almost no clay in the recipe. Adjustment 1 (column 3 in the picture) eliminates the feldspar and sources <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> from <a  href="https://digitalfire.com/material/925">kaolin</a> and KNaO from <a  href="https://digitalfire.com/material/349">Frit 3110</a> (preserving the glaze's <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a>). To make that happen the amounts of other materials had to be juggled. But the fired test revealed that this one, although very similar, is melting more (because the <a  href="https://digitalfire.com/glossary/frit">frit</a> releases its <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> more readily than feldspar). Adjustment 2 (column 4) proposes a 10-part <a  href="https://digitalfire.com/material/1245">silica</a> addition. <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> is the glass former, the more a glaze will accept without losing the intended visual character, the better. The result is less running and more <a  href="https://digitalfire.com/glossary/glaze+durability">durability</a> and resistance to <a  href="https://digitalfire.com/glossary/leaching">leaching</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">1700F Frit Melt-Off: Who is the winner? Not the lead bisilicate!</h3>
+<br /><a alt="Melted balls of 15 frits on a ceramic tile" href="https://digitalfire.com/picture/2556"><img class="flexleft50" alt="Melted balls of 15 frits on a ceramic tile"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/dd4bhzw2px.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2556">click here</a> to see it.</p>
+<p>These were 10g balls melted using our <a  href="https://digitalfire.com/test/gbmf">GBMF test</a>. We fired at a temperature far lower than typical <a  href="https://digitalfire.com/glossary/bisque">bisque</a>, notice how many of them are already melting well! <a  href="https://digitalfire.com/picture/2545">Frit 3602</a> is <a  href="https://digitalfire.com/material/645">lead bisilicate</a>. But it got "smoked" by the Fusion FZ-16 high-zinc, high-boron zero-alumina! Maybe you always thought lead was the best melter. That it produced the most transparent, crystal-clear glass. But that is not what we see here. That being said, notice the lead is not <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a> but the FZ-16 is crazing badly, that is a problem for many applications using this <a  href="https://digitalfire.com/glossary/frit">frit</a>, it relies on a high percentage of <a  href="https://digitalfire.com/picture/1775">KNaO</a>. Notice something else: Each frit has a distinctive melt fingerprint that makes it recognizable in tests like this. Want to get some of this frit for pottery? You can't, Fusion <a  href="https://digitalfire.com/glossary/ceramics">Ceramics</a> doesn't want to handle retail sales of smaller quantities.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">The first of 15 "Fool-Proof Recipes" wrecked my kiln shelf!</h3>
+<br /><a alt="A melt flow tester showing how a normal glazes runs when melting compared to this one" href="https://digitalfire.com/picture/2613"><img class="flexleft50" alt="A melt flow tester showing how a normal glazes runs when melting compared to this one"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/lkjpzpkg2f.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2613">click here</a> to see it.</p>
+<p>This is recommended in the booklet "15 Tried and True <a  href="https://digitalfire.com/glossary/cone+6">Cone 6</a> <a  href="https://digitalfire.com/glossary/glaze+recipes">Glaze Recipes</a>". This <a  href="https://digitalfire.com/picture/2350">melt flow tester</a> compares it with a typical cone 6 glossy, <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a>. This recipe is 90% <a  href="https://digitalfire.com/material/349">Frit 3110</a> and 10% <a  href="https://digitalfire.com/material/925">kaolin</a> and their booklet recommends adding <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a> to it. But anyone knowing a little about this <a  href="https://digitalfire.com/glossary/frit">frit</a> knows it would run off this flow tester even before <a  href="https://digitalfire.com/glossary/bisque">bisque</a> temperatures. It is crazy to recommend this. Even as a crackle. For cone 6 it needs to be diluted much more, not just with kaolin but also <a  href="https://digitalfire.com/material/1245">silica</a>. I knew this would run but I underestimated its <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a>. I put a large tile below the tester to catch overrun, yet <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> ran off that and a big blob melted through the <a  href="https://digitalfire.com/glossary/kiln+wash">kiln wash</a> and so far into the <a  href="https://digitalfire.com/material/1722">zircon</a> shelf I could not chip it off! I cannot imagine how many people have tried this on vertical surfaces and had the same thing happen. The lesson: Use common sense when looking at recipes, then you don't even need to waste time testing them. Even if their authors did not! </p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Melt fluidity comparison of frits - 1450F</h3>
+<br /><a href="https://digitalfire.com/picture/2482"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/nivs38wgft.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2482">click here</a> to see it.</p>
+<p>Fired at 350F/hr to 1450F and held for 15 minutes. <a  href="https://digitalfire.com/material/351">Frit 3134</a> is still expanding. 3602 is blasting out of the gate, taking the lead. F75 is starting to flow.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Melt fluidity comparison of frits - 1500F</h3>
+<br /><a href="https://digitalfire.com/picture/2483"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/jabyryzfkg.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2483">click here</a> to see it.</p>
+<p>Fired at 350F/hr to 1500F and held for 15 minutes. <a  href="https://digitalfire.com/material/351">Frit 3134</a> is still expanding. 3602 and FZ16 are really starting to move. 3195, F38 and F15 are softening.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Melt fluidity comparison of frits - 1550F</h3>
+<br /><a href="https://digitalfire.com/picture/2484"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/ugctqymmbj.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2484">click here</a> to see it.</p>
+<p>Fired at 350F/hr to 1550F and held for 15 minutes. <a  href="https://digitalfire.com/material/351">Frit 3134</a> is still expanding. 3602 and FZ16 are going to be off-ramp by next firing.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Melt fluidity comparison of frits - 1650F</h3>
+<br /><a href="https://digitalfire.com/picture/2486"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/lbajideoqz.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2486">click here</a> to see it.</p>
+<p>Fired at 350F/hr to 1650F and held for 15 minutes. FZ16 has turned crystal clear and spread out across the runway (has low <a  href="https://digitalfire.com/glossary/surface+tension">surface tension</a>). <a  href="https://digitalfire.com/material/349">Frit 3110</a> has so much surface tension that the flow can be lifted off the tester. Since 1600F <a  href="https://digitalfire.com/material/806">Gerstley Borate</a> has gone from unmelted to passing all the rest! </p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Melt fluidity comparison of frits - 1700F</h3>
+<br /><a href="https://digitalfire.com/picture/2487"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/h41dykeanq.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2487">click here</a> to see it.</p>
+<p>Fired at 350F/hr to 1700F and held for 15 minutes. 3110 is finally starting to move. 3134 also (being full of bubbles). <a  href="https://digitalfire.com/material/806">Gerstley Borate</a> has turned almost transparent (because the Colemanite portion of it is now melting). 3195 is looking very well behaved compared to most others, forming a bubble free glass of high <a  href="https://digitalfire.com/glossary/surface+tension">surface tension</a> (F15 and F524 are starting to do the same).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Frit Melt Fluidity Comparison - 1800F</h3>
+<br /><a href="https://digitalfire.com/picture/2489"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/wz2aata3s5.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2489">click here</a> to see it.</p>
+<p>Fired at 350F/hr to 1800F and held for 15 minutes (I already did firings from 1300F-1750F in 50 degree increments, all of them are visible in the parent project). <a  href="https://digitalfire.com/material/349">Frit 3110</a>, 3134, 3195, F75 have run all the way down. All of the <a  href="https://digitalfire.com/glossary/frit">frits</a> have softened and melted slowly over a range of temperatures (hundreds of degrees). By contrast, <a  href="https://digitalfire.com/material/806">Gerstley Borate</a>, the only raw material here, suddenly melted and flowed right over the cliff (between 1600 and1650)! But not before <a  href="https://digitalfire.com/picture/2545">Frit 3602</a> and FZ16 had done so earlier. <a  href="https://digitalfire.com/material/369">Frit 3249</a> is just starting to soften but F69 (the Fusion Frits equivalent) is a little ahead of it. LA300 and <a  href="https://digitalfire.com/material/350">Frit 3124</a> are starting also. F524, F38, F15 will all be over the end by the next firing. <a  href="https://digitalfire.com/glossary/melt+fluidity">The melt</a> <a  href="https://digitalfire.com/glossary/surface+tension">surface tension</a> is evident by the way in which the melts spread out or hold together.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Frits vs. raw materials in glazes: It is not just about the chemistry</h3>
+<br /><a href="https://digitalfire.com/picture/2422"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/jatuw4qbfm.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2422">click here</a> to see it.</p>
+<p>The difference between sourcing fluxing <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> from <a  href="https://digitalfire.com/glossary/frit">frits</a> vs. raw materials is significant to say the least. The oxides <a  href="https://digitalfire.com/oxide/mgo">MgO</a> and <a  href="https://digitalfire.com/oxide/cao">CaO</a> normally come from natural mineral that melt high. But common frits that source them soften low. The <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> in the two <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> glazes (compared on this <a  href="https://digitalfire.com/picture/2350">melt flow tester</a>) are the same. But <a  href="https://insight-live.com/insight/share.php?z=y9rvvqsPy4">G2934Y4</a> sources the <a  href="https://digitalfire.com/picture/1775">KNaO</a> from Ferro <a  href="https://digitalfire.com/material/349">Frit 3110</a> instead of <a  href="https://digitalfire.com/material/310">feldspar</a> and alot of the MgO from Ferro <a  href="https://digitalfire.com/material/369">Frit 3249</a> instead of <a  href="https://digitalfire.com/material/1620">talc</a>. Even though Y4 has 10% <a  href="https://digitalfire.com/material/41">calcined alumina</a> it still flows much better! Alumina, as a source of <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a>, is a super <a  href="https://digitalfire.com/glossary/refractory">refractory</a> material (compared to <a  href="https://digitalfire.com/material/925">kaolin</a>, the normal source), the glaze should flow less - but the frits overcome even that to create this amazing fluidity in a <a  href="https://digitalfire.com/glossary/matte+glaze">matte glaze</a>. The lesson: All glazes have a chemistry, but that cannot be taken in isolation from the materials that source it. <a  href="https://digitalfire.com/glossary/glaze+chemistry">Glaze chemistry</a> is a relative, not absolute science.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Ferro Frit 3110 vs Fusion F-75 at cone 04</h3>
+<br /><a alt="Melt flow test of Frit 3110 vs F-75" href="https://digitalfire.com/picture/2731"><img class="flexleft50" alt="Melt flow test of Frit 3110 vs F-75"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/os1dk2ycf2.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2731">click here</a> to see it.</p>
+<p>On paper, Fusion <a  href="https://digitalfire.com/material/550">frit F-75</a> has a very similar <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> to Ferro <a  href="https://digitalfire.com/material/349">frit 3110</a>. However, as can be seen here in this <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> test, it is flowing a little more and appears to have a lower <a  href="https://digitalfire.com/glossary/surface+tension">surface tension</a>. The <a  href="https://digitalfire.com/glossary/glaze+bubbles">bubbling</a> character is also a little different. The differences could be partly to Fusion using a different set of raw materials to source the chemistry. Or differences in their smelting process. This <a  href="https://digitalfire.com/glossary/frit">frit</a> is commonly used in pottery to create crackle glazes or to help increase the <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> of <a  href="https://digitalfire.com/glossary/glaze+shivering">shivering</a> glaze (both of these are cracking and <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a> badly). Frit 3110 is also a major ingredient in <a  href="https://digitalfire.com/glossary/crystalline+glazes">crystalline glazes</a>, the better clarity of the F-75 is going to help with that also. It is also used as a concentrated source of <a  href="https://digitalfire.com/oxide/na2o">Na<sub>2</sub>O</a> (instead of <a  href="https://digitalfire.com/material/310">feldspar</a>), also a task that this will certainly fulfill.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Frit Melt Fluidity Comparison - 1850F</h3>
+<br /><a alt="Frits melting side-by-side at 1850F" href="https://digitalfire.com/picture/2815"><img class="flexleft50" alt="Frits melting side-by-side at 1850F"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/6rtqznzhvo.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2815">click here</a> to see it.</p>
+<p>These <a  href="https://digitalfire.com/glossary/melt+fluidity">melt flow</a> tests were fired at 350F/hr to 1850F and held for 15 minutes (I did firings at 50-degree increments across a wide range). It is amazing how active some <a  href="https://digitalfire.com/glossary/frit">frits</a> are, even well below normal <a  href="https://digitalfire.com/glossary/bisque">bisque</a> temperatures! <a  href="https://digitalfire.com/material/349">Frit 3110</a>, <a  href="https://digitalfire.com/material/351">Frit 3134</a>, <a  href="https://digitalfire.com/material/356">Frit 3195</a>, <a  href="https://digitalfire.com/material/550">Frit F-75</a> have all flowed all the way down for many previous temperatures. LA300 and <a  href="https://digitalfire.com/material/350">Frit 3124</a> were just starting at 1800F, look at them now! <a  href="https://digitalfire.com/material/2402">Frit F-524</a> and <a  href="https://digitalfire.com/material/530">Frit F-38</a> have gone from half-way at 1800F to water-falling over the end. <a  href="https://digitalfire.com/material/369">Frit 3249</a> is still not out-of-the-gate but <a  href="https://digitalfire.com/material/547">Frit F-69</a> (the Fusion Frits equivalent of 3249) is half-way. Note how <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> <a  href="https://digitalfire.com/glossary/surface+tension">surface tension</a> is evident by the way in which the melts spread out or hold together. By contrast, <a  href="https://digitalfire.com/material/806">Gerstley Borate</a> (labelled "GB"), the only raw material here, suddenly melted and flowed right over-the-cliff between 1600 and 1650!  The best melter of all of them is high-boron high-zinc <a  href="https://digitalfire.com/material/556">Frit FZ-16</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Two frits with Custer Feldspar</h3>
+<br /><a href="https://digitalfire.com/picture/3479"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/jkr37hapnd.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3479">click here</a> to see it.</p>
+<p>The <a  href="https://digitalfire.com/test/gbmf">GBMF test</a> compares <a  href="https://digitalfire.com/material/253">Custer Feldspar</a> with 15% <a  href="https://digitalfire.com/material/349">Frit 3110</a> and 15% Ferro <a  href="https://digitalfire.com/material/351">Frit 3134</a>. It is fired at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/general+frit+gf-134">General Frit GF-134</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/fusion+frit+f-75">Fusion Frit F-75</a>
+<br /><i>High sodium, high <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> low <a  href="https://digitalfire.com/glossary/boron+frit">boron frit</a>. An equivalent of Ferro <a  href="https://digitalfire.com/material/349">Frit 3110</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/pemco+frit+p-1v04">Pemco Frit P-1V04</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/frit">Frit</a>
+<br /><i><a  href="https://digitalfire.com/glossary/frit">Frits</a> are made by melting mixes of raw materials, quenching <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> in water, grinding the pebbles into a powder. Frits have chemistries raw materials cannot.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/hommel+frit+529">Hommel Frit 529</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/potclays+frit+2266">Potclays Frit 2266</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ferro+frit+4110">Ferro Frit 4110</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/potterycrafts+frit+p3110">PotteryCrafts Frit P3110</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/frit+1078">Frit 1078</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/feldspar">Feldspar</a>
+<br /><i>In <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>, <a  href="https://digitalfire.com/material/310">feldspars</a> are used in glazes and <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a>. They vitrify stonewares and porcelains. They supply <a  href="https://digitalfire.com/picture/1775">KNaO</a> <a  href="https://digitalfire.com/glossary/flux">flux</a> to glazes to help them melt.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ceradel+frit+3110">Ceradel Frit 3110</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/fusion+frit+f644">Fusion Frit F644</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/keramikos+fritte+31.10">Keramikos Fritte 31.10</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/potclays+frit+2275">Potclays Frit 2275</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/degussa+frit+90208">Degussa Frit 90208</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/frt">Frit</a>
+<br /><i>A <a  href="https://digitalfire.com/glossary/frit">frit</a> is the powdered form a man-made glass. <a  href="https://digitalfire.com/glossary/frit">Frits</a> are premelted, then ground to a glass. They have tightly controlled chemistries, they are available for glazes of all types.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/feldspar+glazes">Feldspar Glazes</a>
+<br /><i><a  href="https://digitalfire.com/material/310">Feldspar</a> is a natural mineral that, by itself, is the most similar to a high temperature <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> glaze. Thus it is common to see alot of it in <a  href="https://digitalfire.com/glossary/glaze+recipes">glaze recipes</a>. Actually, too much.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/crackle+glaze">Crackle glaze</a>
+<br /><i>Crackle glazes have a crack pattern that is a product of <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> mismatch between body and glaze. They are not suitable on <a  href="https://digitalfire.com/glossary/functional">functional</a> ware.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/fritware">Fritware</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1421">https://digitalfire.com/4sight/datasheets/ferropotteryfrits2008.pdf</a>
+<br /><i>Ferro Pottery <a  href="https://digitalfire.com/glossary/frit">Frits</a> 2008</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/formulating+a+porcelain">Formulating a Porcelain</a>
+<br /><i>The principles behind formulating a <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> are quite simple. You just need to know the purpose of each material, a starting recipe and a testing regimen.</i>
+</td>
+</tr>
+</tbody></table>
+<h3>Data</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<th scope="row"><a href="https://digitalfire.com/glossary/18">Co-efficient of Linear Expansion</a></th>
+<td>10.08</td>
+</tr>
+<tr>
+<th scope="row">Frit Melting Range (C)</th>
+<td>1400-1700F</td>
+</tr>
+</tbody></table>
+<h3>Mechanisms</h3><table>
+<table class="table table-bordered"><tbody>
+<tr><th scope="row">Body Maturity</th><td>This frit is an excellent body flux, 15% can move a cone 10 body down to cone 6.</td></tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

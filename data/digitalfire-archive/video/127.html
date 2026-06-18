@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Design a Triangular Pottery Plate Block Mold in Fusion 360</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="Lilly will take you step-by-step through the process of parametrically drawing a triangular plate with curved sides and rounded corners, for 3D printing to pour a plaster working mold." name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item"><a class="nav-link" href="../material/list.html">Materials</a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item active" href="list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=video" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container"><p><a aria-controls="collapse1" aria-expanded="false" class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button">All Media</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a href="124.html" title="124">3D Print a Test of the Beer Bottle Neck</a><br/><a href="120.html" title="120">3D Printing a Clay Cookie Cutter-Stamper</a><br/><a href="105.html" title="105">A 3-minute Mug with Plainsman Polar Ice</a><br/><a href="55.html" title="55">A Broken Glaze Meets Insight-Live and a Magic Material</a><br/><a href="65.html" title="65">Accessing Recipes from "Mid-Fire Glazes" book in Insight-Live</a><br/><a href="113.html" title="113">Adjusting the Thixotropy of an Engobe for Pottery</a><br/><a href="114.html" title="114">Analysing a Crazing, Cutlery-marking Glaze Using Insight-Live</a><br/><a href="115.html" title="115">Compare the Chemistry of Recipes Using Insight-Live</a><br/><a href="110.html" title="110">Connecting an External Image to Insight-Live Pictures</a><br/><a href="137.html" title="137">Converting G1214M Cone 6 transparent glaze to G1214Z matte</a><br/><a href="119.html" title="119">Create a Synthetic Feldspar in Insight-Live</a><br/><a href="117.html" title="117">Creating a Cone 6 Oil-Spot Overglaze Effect</a><br/><a href="127.html" title="127">Design a Triangular Pottery Plate Block Mold in Fusion 360</a><br/><a href="130.html" title="130">Designing a Jigger Mold for a Bowl Using Fusion 360 CAD</a><br/><a href="131.html" title="131">Downloading and 3D-Printing a 3MF file</a><br/><a href="128.html" title="128">Draw a propeller in Fusion 360 for use on an overhead propeller mixer</a><br/><a href="129.html" title="129">Drawing a Mug Handle Mold in Fusion 360</a><br/><a href="135.html" title="135">Drawing a Mug Mold Using OnShape CAD</a><br/><a href="102.html" title="102">Enter a Recipe Into Insight-live</a><br/><a href="72.html" title="72">Entering TestData Into Insight-Live</a><br/><a href="139.html" title="139">Fine tune the thixotropy of a glaze or engobe slurry</a><br/><a href="97.html" title="97">Getting Frustrated With a 55% Gerstley Borate Glaze</a><br/><a href="70.html" title="70">How I Developed the G2926B Cone 6 Transparent Base Glaze</a><br/><a href="69.html" title="69">How I Formulated G2934 Cone 6 Silky MgO Matte Glaze Using Insight-Live</a><br/><a href="104.html" title="104">How to Apply a White Slip to Terra Cotta Ware</a><br/><a href="101.html" title="101">How to Paste a Recipe Into Insight-live</a><br/><a href="74.html" title="74">Importing Data into Insight-live</a><br/><a href="107.html" title="107">Importing Desktop Insight Recipes to Insight-live</a><br/><a href="62.html" title="62">Importing Generic CSV Recipe Data into Insight-Live</a><br/><a href="94.html" title="94">Insight-Live Meets a Silica Deprived Glaze Recipe</a><br/><a href="106.html" title="106">Insight-Live Quick Tour</a><br/><a href="103.html" title="103">Liner Glazing a Stoneware Mug</a><br/><a href="123.html" title="123">Make a precision plaster mold for slip casting using Fusion 360 and 3D Printing</a><br/><a href="93.html" title="93">Making ceramic glaze flow test balls</a><br/><a href="132.html" title="132">Making test bars for the SHAB, LDW and DFAC tests</a><br/><a href="98.html" title="98">Manually program your kiln or suffer glaze defects!</a><br/><a href="37.html" title="37">Mica and Feldspar Mine of MGK Minerals</a><br/><a href="68.html" title="68">Predicting Glaze Durability by Chemistry in Insight-Live</a><br/><a href="71.html" title="71">Preparing Pictures for Insight-live</a><br/><a href="57.html" title="57">Replace Lithium Carbonate With Lithium Frit Using Insight-Live</a><br/><a href="121.html" title="121">Replacing 10% Gerstley Borate in a clear glaze</a><br/><a href="134.html" title="134">Same Beer Bottle Mold Using Fusion 360 and OnShape CAD</a><br/><a href="108.html" title="108">Signing Up at Insight-live.com</a><br/><a href="109.html" title="109">Signing-In at Insight-live.com</a><br/><a href="126.html" title="126">Slip cast a stoneware beer bottle</a><br/><a href="118.html" title="118">Substitute Ferro Frit 3134 For Another Frit</a><br/><a href="125.html" title="125">Substituting Custer Feldspar for Another in a Cone 10R Glaze Recipe</a><br/><a href="73.html" title="73">Thixotropy and How to Gel a Ceramic Glaze</a><br/><a href="116.html" title="116">Use Insight-live to substitute materials in a recipe</a><br/><a href="133.html" title="133">Watch Thixotropy Happen With a 20kg Batch of Dipping Glaze</a></div><p style="clear:left"></p><h1>Design a Triangular Pottery Plate Block Mold in Fusion 360</h1>
+<p style="margin:0px 5px 3px 10px; font-style:italic; color:#888888;">Lilly will take you step-by-step through the process of parametrically drawing a triangular plate with curved sides and rounded corners, for 3D printing to pour a plaster working mold.</p>
+<iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/aZILj7ivpg8" width="560"></iframe>
+<br/><a href="https://www.youtube.com/watch?v=aZILj7ivpg8" target="_blank">Click here</a> to watch this at youtube.com
+ or <a href="https://www.youtube.com/user/tonywilliamhansen" target="_blank">click here</a> to go to our Youtube channel
+<br/>
+<h3>Transcript/Notes</h3>
+<p style="color:#888888;">Welcome to this project to make a press mold for a triangular-shaped pottery dish. I will draw a <a href="../picture/3728.html">case mold</a> that can be <a href="../glossary/3d-printing.html">3D printed</a> and filled with <a href="../material/1124.html">plaster</a> to make a working mold.<br/>
+I already have <a href="../picture/2453.html">Fusion 360</a> open in the <a href="../glossary/3d+design.html">solid modelling</a> environment so let’s start the process with a sketch of a triangle on the x-y plane. I will complete this triangle in four steps.<br/>
+1. Dimension the top side length to the “outer” parameter which I have already defined in the Parameters dialog.<br/>
+2. I’ll set the other two sides equal to the top one using the Equal constraint.<br/>
+3. Make the left side vertical.<br/></p>
+<details style="color:#888888;"><summary><b>more..</b></summary>
+4. Set the right-hand corner to be coincident with the origin.<br/>
+2<br/>
+Next, I will draw a center point arc from each corner, setting the radius to a parameter I have already defined. I will pull each one near, but not over the triangle boundary.<br/>
+Then I will use the "coincident constraint" to join the pairs of arc endpoints to create a triangle with rounded sides.<br/>
+Next, I will dimension the inner triangle to enable watching its size. Notice that Fusion 360 creates it as a "driven dimension". In the next step, I will adjust the triangle and arc dimensions to get this close to the target of 230mm.<br/>
+Finally, I will move the arc dimensions out of the way.<br/>
+3<br/>
+Now, I want the triangle to be 230mm in size and the sides to have the desired degree of curvature.<br/>
+I can do that by adjusting the arc and outer parameters.<br/>
+I will open the parameters dialog.<br/>
+Notice the arc is defined as a percentage of the outer. The lower this ratio the smaller the inner triangle is compared to the outer. And the straighter the curve is. By playing with these two numbers I can create the exact size and curvature needed. It is already close, I will change the arc percentage to 69.2 to get close to the 230mm size.<br/>
+4<br/>
+The next step is to offset the edge inward for the lip, 6mm. <br/>
+To make the base I will offset it again by 55mm. <br/>
+Then I am going to convert the outside triangle and the base lines to construction lines.<br/>
+Finally, I will finish the sketch and then go home.<br/>
+5<br/>
+Next, I will make an offset plane on which to project the base. It needs to be below the x-y plane by the depth parameter.<br/>
+Now I can create a sketch on it and then project the inner triangle from the first sketch down on to it.<br/>
+Finally, I'll finish the sketch.<br/>
+6<br/>
+Now we are ready to start creating the solid body.<br/>
+First, let's extrude the whole thing down 40mm, that will be the thickness of the mold.<br/>
+Next, I'll create a loft from the bottom triangle to the inner upper one using the cut operation. Notice that I need to hide the body to be able to select the bottom triangle and I need to show the sketch in the browser to be able to select the top one.<br/>
+We now have the beginnings of our 3D object.<br/>
+7<br/>
+Now, let's fillet the inside join lines by 40mm to convert the angle to a smooth line.<br/>
+I'll do the same with top inside edge by 30mm.<br/>
+And the outer corners by 20mm.<br/>
+8<br/>
+Next, let’s turn it over and hollow it out. <br/>
+Use the shell tool, and specify an inside thickness of 1.2mm - that is three passes by the <a href="../glossary/0.8mm+thickness.html">0.4mm</a> nozzle on our <a href="../glossary/3d+printer.html">3D printer</a>.<br/>
+9<br/>
+Finally, I send this to <a href="../glossary/3d+slicer.html">the slicer</a> to prepare for <a href="../glossary/3d-printing.html">3D-printing</a>.<br/>
+Notice it is too big. So in the slicer I’ll set it up on edge and cut it in half near the base and then turn the smaller part over and set it aside. I'll position the larger one diagonally and preview the slicing. Noitce I have supports turned on. The overhand threshold is set to 40 degrees to minimize support and it is set to generate a brim to help hold it down on the plate during printing.<br/>
+10<br/>
+The slicer is warning me that parts of the object are outside the print area so I will turn this piece 45 degrees. Both parts should print precisely enough that I will be able to simply tape them together on the outside and pour plaster on the inside.
+</details><br/><br/>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="../project/beer+bottle+master+mold+via+3d+printing.html">Beer Bottle Master Mold via 3D Printing</a>
+<br/><i>A project that took several years of failures and blind allies and is finally coming together - so much simpler than expected!</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="../project/cookie+cutting+clay+with+3d+printed+cutters.html">Cookie Cutting clay with 3D printed cutters</a>
+<br/><i>We are finding more and more applications for this simple process of cookie-cutting shapes in <a href="../glossary/ceramics.html">ceramics</a>. You won't believe whats possible and how easy it is to get started.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="../project/a+cereal+bowl+jigger+mold+made+using+3d+printing.html">A cereal bowl jigger mold made using 3D printing</a>
+<br/><i>A new way to <a href="../glossary/3d-printing.html">3D-print</a> your way to making <a href="../glossary/jiggering.html">jigger</a> molds and templates. The molds are encased in a <a href="../glossary/3d-printing.html">3D printed</a> shell that makes them fit perfectly into the cuphead. And the template is precise and very effectivwe.</i>
+</td>
+</tr>
+</tbody></table>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Draw a triangular plate press mold in Fusion 360</h3>
+<p style="margin-top:0px;"><b>Available</b> on the <a href="https://digitalfire.com/downloads/index.php?picture=3549" target="_blank">Downloads</a> page</p>
+<br/><a alt="3d design and print a plate" href="../picture/3549.html"><img alt="3d design and print a plate" class="flexleft50" loading="lazy" src="../media/images/gmd3hpw7se.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3549.html">click here</a> to see it.</p>
+<p>In the linked video Lilly will take you step-by-step through the <a href="../glossary/3d+design.html">3D design</a> process of drawing a triangular plate with curved sides and rounded corners. We tried many methods of doing this to finally arrive at a simple procedure that produces a flexible <a href="../picture/2550.html">parametric</a> design. Follow the full transcript as you watch. You will be able to use the same process to create a plate with any number of sides and control the bevelling, corner radius, curvature of the sides, lip width, depth, total size and thickness of the <a href="../material/1124.html">plaster</a> mold. You will also be able to make it convex or concave. And <a href="../glossary/3d-printing.html">3D print</a> it, in pieces if needed, for filling with plaster to make a ready-to-use mold.</p>
+<p style="clear:left"></p><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></div></body>
+</html>

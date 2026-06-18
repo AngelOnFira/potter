@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Warping</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="There are multiple reasons why pottery and porcelain pieces can warp during firing, both vitreous and non-vitreous ware. Here is what to do about it." name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item"><a class="nav-link" href="../material/list.html">Materials</a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item active" href="list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=trouble" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container"><p><a aria-controls="collapse1" aria-expanded="false" class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button">All Troubles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a href="black+coring.html" title="29">Black Coring</a></nobr><br/><nobr><a href="bleeding+colors.html" title="30">Bleeding Colors</a></nobr><br/><nobr><a href="bloating.html" title="11">Bloating</a></nobr><br/><nobr><a href="casting+slip+problems.html" title="13">Casting Slip Problems</a></nobr><br/><nobr><a href="chrome+flashing+in+ceramic+glazes.html" title="7">Chrome Flashing in Ceramic Glazes</a></nobr><br/><nobr><a href="clouding+in+ceramic+glazes.html" title="23">Clouding in Ceramic Glazes</a></nobr><br/><nobr><a href="cracking+of+clays+during+drying.html" title="10">Cracking of Clays During Drying</a></nobr><br/><nobr><a href="crawling.html" title="1">Crawling</a></nobr><br/><nobr><a href="dunting+and+cracking+of+clay+bodies+during+firing.html" title="9">Dunting and Cracking of Clay Bodies During Firing</a></nobr><br/><nobr><a href="foaming+of+ceramicd+glaze+slurries.html" title="19">Foaming of Ceramicd Glaze Slurries</a></nobr><br/><nobr><a href="glaze+blisters.html" title="3">Glaze Blisters</a></nobr><br/><nobr><a href="glaze+crazing.html" title="2">Glaze Crazing</a></nobr><br/><nobr><a href="glaze+is+off-color.html" title="6">Glaze is Off-Color</a></nobr><br/><nobr><a href="glaze+marks+or+scratches.html" title="8">Glaze Marks or Scratches</a></nobr><br/><nobr><a href="glaze+peeling+on+drying.html" title="22">Glaze peeling on drying</a></nobr><br/><nobr><a href="glaze+pinholes%2C+pitting.html" title="5">Glaze Pinholes, Pitting</a></nobr><br/><nobr><a href="glaze+shivering.html" title="18">Glaze Shivering</a></nobr><br/><nobr><a href="glaze+slurry+is+difficult+to+use+or+settling.html" title="14">Glaze Slurry is Difficult to Use or Settling</a></nobr><br/><nobr><a href="leaking+of+fired+ceramics.html" title="26">Leaking of Fired Ceramics</a></nobr><br/><nobr><a href="lime+popping.html" title="28">Lime Popping</a></nobr><br/><nobr><a href="orange+peel+surface.html" title="27">Orange Peel Surface</a></nobr><br/><nobr><a href="over+firing+of+ceramic+glazes+and+bodies.html" title="21">Over Firing of Ceramic Glazes and Bodies</a></nobr><br/><nobr><a href="powdering%2C+cracking+and+settling+glazes.html" title="4">Powdering, Cracking and Settling Glazes</a></nobr><br/><nobr><a href="runny+ceramic+glazes.html" title="25">Runny Ceramic Glazes</a></nobr><br/><nobr><a href="specking+on+ceramic+ware.html" title="17">Specking on Ceramic Ware</a></nobr><br/><nobr><a href="splitting+at+the+plastic+stage.html" title="15">Splitting at the Plastic Stage</a></nobr><br/><nobr><a href="staining+of+fired+ceramic+glazes.html" title="24">Staining of Fired Ceramic Glazes</a></nobr><br/><nobr><a href="uneven+glaze+coverage.html" title="20">Uneven Glaze Coverage</a></nobr><br/><nobr><a href="warping.html" title="12">Warping</a></nobr></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Warping</h1>
+<p class="text-muted" style="margin-left:20px">There are multiple reasons why pottery and porcelain pieces can warp during firing, both vitreous and non-vitreous ware. Here is what to do about it.
+</p><h2>Details</h2>
+<p>This normally refers to a body firing problem where vessels warp out-of-shape during firing. Warping often exhibits as out-of-round vessel rims or as sagging on overhung shapes (slumping). Any clay that is being fired to a <a href="../glossary/vitreous.html">vitreous</a> condition is subject to warping (especially for pieces having unstable profiles). Clays that are being overfired can warp, often because a <a href="../glossary/kiln+controller.html">kiln controller</a> takes the body higher than assumed. <a href="../glossary/clay+body.html">Clay bodies</a> soften as they approach their melting point during firing. Porcelains are the most susceptible since they, by design, contain more <a href="../material/310.html">feldspar</a>. Thus for vitreous bodies, a balancing act must be done, firing as high as possible to get the densest and strongest possible body while employing ware shapes and wall thicknesses that are resistant to warping. When using a body or process subject to this problem, it is important to have kilns that can fire evenly and consistently and use a body having repeatable firing properties.<br/>
+<br/>
+Even <a href="../glossary/earthenware.html">earthenware</a>, although not fired anywhere near <a href="../glossary/vitrification.html">vitrification</a>, can warp if ware is extremely overhung or ware is very thin. In industry, highly vitreous ware (e.g. <a href="../glossary/bone+china.html">bone china</a>) is fired in setters that hold its shape during firing (the glaze firing is done later at a much lower temperature).<br/>
+<br/>
+Some Google searches will turn up articles listing a variety of factors that determine susceptibility to warping. But such lists can be misleading. All other factors combined are not nearly as important as one: The percentage of feldspar. It is the melter, its percentage is a balance between the degree of <a href="../glossary/maturity.html">maturity</a> desired and the resistance to warping needed during firing. Different <a href="../material/310.html">feldspars</a> have different melting powers, but as different as you might assume. It is also worth mentioning that some kaolins contain feldspar (e.g. British kaolins). These can require considerably less feldspar yet produce a body having the same degree of vitrification (e.g. only 25% feldspar may be needed with <a href="../material/831.html">Grolleg</a> <a href="../material/925.html">kaolin</a> compared to 35% for New Zealand or an American kaolin). You may see some recipes with up to 50% feldspar, but these are impractical. Why? If 25% <a href="../material/1245.html">silica</a> is needed, that leaves only 25% clay. Nobody with 25% clay will be plastic enough for even casting. These recipes might feature some added white <a href="../material/106.html">bentonite</a>, but even with 4% (which would still be incredibly expensive), they will have terrible <a href="../glossary/plasticity.html">plasticity</a>. 35% feldspar (with an extra "kick" from 1-2% <a href="../material/1620.html">talc</a>) will work just as well as 50%, that permits 40% kaolin. If glazes fit with 20% silica, then you have 45% kaolin. If you can drop <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> of glazes and get away with 15% silica, you have 50% kaolin in the recipe. Adding bentonite to a 50:15:35 kaolin:silica:feldspar body can produce a superplastic body that you can throw two-foot-high vases from! Higher kaolin bodies convert more needle-shaped <a href="../material/1054.html">mullite</a> crystals during firing, giving extra stability against warping.<br/>
+<br/>
+Many <a href="../glossary/stoneware.html">stoneware</a> and earthenware clays, that are mined and processed for industry and hobby, contain enough natural feldspar that they can be blended into bodies requiring zero feldspar mineral in the recipe. In fact, some natural clays actually over-fire at typical stoneware temperatures (e.g. cone 4-8), so they must be combined with more <a href="../glossary/refractory.html">refractory</a> materials (e.g. kaolin, silica) to produce a body that does not warp too much.<br/>
+<br/>
+<a href="../glossary/translucency.html">Translucency</a> and warping go together. <a href="../glossary/translucency.html">Translucent</a> bodies must be highly vitreous, which means they will warp. Feldspar is the melter that makes that happen. More melting makes more translucence. In industry, it is common to take measures to support ware during firing (much more extreme than what a potter would do). Refractory bone china plate setters, for example, can take more manufacturing expertise than the plates themselves. Of course, where possible, ware shapes are designed to resist <a href="warping.html">fired warping</a>. So resistance-to-warping is a matter of balancing feldspar content, ware shape, cross section and method of kiln setting.<br/>
+<br/>
+Again, be careful with articles you find online about <a href="../glossary/porcelain.html">porcelain</a> formulation. They can be riddled with inaccuracies, exaggerations and blanket statements (from sources that should know better!). Porcelains do not warp more (or shrink more) on firing because they are white, they do because, in addition to employing white kaolins and bentonites, they have higher feldspar content. The base porcelain recipe is not 50% feldspar, 50% kaolin, 50% silica. It is 25 feldspar, 25 silica, 25 kaolin, 25 <a href="../material/80.html">ball clay</a>. Porcelains do not slump easier in the firing because they are less plastic, they slump because they have more feldspar (that higher feldspar makes less room for clay so they could be less plastic for that reason). More silica in a <a href="../glossary/clay+body.html">clay body</a> “will” improve the <a href="../glossary/glaze+fit.html">glaze fit</a>, not "may" improve the glaze fit (20-25% is a necessity). Fiddling with silica particle size might affect warping or slumping, but that is only to fine-tune, the feldspar content is the key (typically one trades feldspar for clay, leaving the silica at 20-25%). It is true that various silica grades are available at <a href="https://digitalfire.com/url/1709">ceramic suppliers</a>, but the particle size distributions of these do not vary nearly enough to make that an important factor. Again, the way to control slump is with the type and amount of feldspar. And, there are no "low-firing feldspars", the only way to do that would be to incorporate a <a href="../glossary/frit.html">frit</a> for part of the feldspar. As noted, they can have somewhat different fluxing power (e.g. nepheline and soda feldspar vitrify better than potash), but the differences are not great. It takes 35-40% feldspar to vitrify an American kaolin at cone 5-6, it is not practical to go much lower since there is not enough room in the recipe for the needed clay and silica. A myth is that nepheline contains solubles that flocculate plastic bodies and make them unworkable, we have made thousands of tons of nepheline porcelains over 40 years, many kinds, it is the best feldspar.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Why does this bowl shape always warp in the glaze firing?</h3>
+<br/><a alt="Porcelain bowl warping during firing" href="../picture/1010.html"><img alt="Porcelain bowl warping during firing" class="flexleft50" loading="lazy" src="../media/images/suzpomusod.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1010.html">click here</a> to see it.</p>
+<p>Here is an example of how a cast <a href="../glossary/porcelain.html">porcelain</a> piece, <a href="https://insight-live.com/insight/share.php?z=tgsPMxNsAP">L3778G</a>, warps during the glaze firing. Several factors contribute to this failure: <br/>
+-It is cast and the walls are very thin.<br/>
+-This porcelain is highly <a href="../glossary/vitreous.html">vitreous</a>.<br/>
+-This shape has no inherent strength to resist rim warping.<br/>
+The following would help: <br/>
+-Switching to machine forming (which orients particles concentrically).<br/>
+-Reduce the <a href="../material/310.html">feldspar</a> in the recipe (to reduce fired <a href="../glossary/maturity.html">maturity</a>).<br/>
+-Fire lower.<br/>
+-Cast thicker walls.<br/>
+-Change to a more flared shape.<br/>
+-One other option (borrowed from <a href="../glossary/bone+china.html">bone china</a>): Fire the piece upside down on a custom alumina setter fitted to the final rim diameter - then clear glaze it at a lower temperature.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Fired deformation comparison between two porcelains</h3>
+<br/><a href="../picture/1592.html"><img class="flexleft50" loading="lazy" src="../media/images/hylcadyzef.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1592.html">click here</a> to see it.</p>
+<p>These bars were fired at cone 10, they were straight when dry. The back one is a cone 10 <a href="../material/831.html">Grolleg</a> body, the front one is a <a href="../glossary/cone+6.html">cone 6</a> Grolleg body. This simple test is valuable to determine susceptibility to warping in porcelains. If the pyro-plastic deformation is too much, for example, the weight of a handle will pull the round rim of a mug into an oval shape, for example.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Why the base of this bowl shape flattens on firing</h3>
+<br/><a href="../picture/3526.html"><img class="flexleft50" loading="lazy" src="../media/images/t8pcbjbkoh.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3526.html">click here</a> to see it.</p>
+<p>The problem is a combination of the shape and the degree of <a href="../glossary/vitrification.html">vitrification</a> this body reaches. <a href="https://plainsmanclays.ca/data/index.php?product=12881">Polar Ice</a> <a href="../glossary/porcelain.html">porcelain</a> has to vitrify enough to achieve <a href="../glossary/translucency.html">translucency</a>, that means it literally softens - not enough to fall down but enough to warp out of shape given the opportunity. A sagging kiln shelf, for example, will produce a "rocking chair bowl". A non-stable shape will do the same thing. This piece was likely made by rolling a plastic clay slab and draping it down over a bowl-form, adding a <a href="../glossary/foot+ring.html">foot ring</a>, allowing it to stiffen and then uprighting it to dry. In this case the foot ring was too small creating an extreme overhang. Had the foot ring been wider and deeper it would have enabled the rounded inside contour, provided support for the outer section and minimized the overhang. If a small foot is really needed then pieces would have to be supported by donut-shaped setters sized and positioned correctly (and the outside would have to be unglazed). Or, it would have to be <a href="../glossary/bisque.html">bisque fired</a>, and supported, at <a href="../glossary/cone+6.html">cone 6</a> and then glazed at low temperature.<br/>
+<br/>
+</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">The shapes of some pottery make them prone to fired warping</h3>
+<br/><a href="../picture/1107.html"><img class="flexleft50" loading="lazy" src="../media/images/wunxujonux.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1107.html">click here</a> to see it.</p>
+<p>The goblet on the left is bending, not just because the clay is somewhat unstable at the temperature being fired, but because this shape is also inherently unstable. Where extreme shapes are prone to warping, ware must be made from clays that do not vitrify (that introduces issues of strength and functionality). In this case, the clay recipe is based on a <a href="../glossary/terra+cotta.html">terra cotta</a> material that matures at a very low temperature. The problem was dealt with by employing a recipe of 60:40 clay:200# <a href="../material/951.html">kyanite</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Severe fired warping when a low temperature clay goes to cone 6</h3>
+<br/><a href="../picture/2319.html"><img class="flexleft50" loading="lazy" src="../media/images/mxm8c9b8nw.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2319.html">click here</a> to see it.</p>
+<p>This is a <a href="../glossary/earthenware.html">low fire</a> <a href="../glossary/artware.html">talc body</a>. Many such bodies can survive to <a href="../glossary/cone+6.html">cone 6</a> and even higher, but not this one. The weight of the handle has pulled the lip completely oval.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Fire organic ceramic shapes with this warping body for cone 6</h3>
+<br/><a alt="Two warped small square planter shapes" href="../picture/2787.html"><img alt="Two warped small square planter shapes" class="flexleft50" loading="lazy" src="../media/images/ygfz8xcab8.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2787.html">click here</a> to see it.</p>
+<p>Left is L4410K, right is <a href="https://insight-live.com/insight/share.php?z=P8uThTnFoY">L4410L</a>. Very similar, but L has 5% more <a href="../material/273.html">dolomite</a>. And these <a href="../glossary/cone+6.html">cone 6</a> glazes work well, <a href="../recipe/g2934y.html">G2934Y</a> left and G2936A right. These are <a href="../glossary/slip+casting.html">slip-cast</a> pieces, the walls are not super thin, but the straight-sided shape makes them more susceptible to warping and buckling. This effect can also be achieved using <a href="../material/1620.html">talc</a> bodies, but they have the issue of being brittle, volatile, <a href="bloating.html">bloating</a> and not fitting glazes. But both of these pieces have excellent <a href="../glossary/fired+strength.html">fired strength</a> at cone 6, they have a porcelain-like surface. Of course you will need to test shapes, adjust dolomite content and control firing temperature carefully to be able to do this with consistency. If you are near a <a href="../glossary/plainsman+clays.html">Plainsman</a> Clays distributor, they made a test run of <a href="https://insight-live.com/insight/share.php?z=P8uThTnFoY">L4410L</a> (as the new L213), boxes are available for order. If not, you can mix your own.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">What happens when a terra cotta body is fired to cone 6</h3>
+<br/><a href="../picture/1993.html"><img class="flexleft50" loading="lazy" src="../media/images/j27bkmvglc.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1993.html">click here</a> to see it.</p>
+<p>It may not melt, but will certainly warp and blister/bloat (as show here). If there is inadequate <a href="../glossary/kiln+wash.html">kiln wash</a> or <a href="../material/1246.html">silica sand</a> it will also stick to the kiln shelf.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">If you over fire a translucent porcelain like Polar Ice, what happens?</h3>
+<br/><a href="../picture/1299.html"><img class="flexleft50" loading="lazy" src="../media/images/fohzazigiv.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1299.html">click here</a> to see it.</p>
+<p>Overfired <a href="https://plainsmanclays.ca/data/index.php?product=12881">Polar Ice</a> <a href="../glossary/porcelain.html">porcelain</a>. This bowl fired with an oval-shaped rim and was sticking to the shelf.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">How much porcelain flux is too much?</h3>
+<br/><a href="../picture/1250.html"><img class="flexleft50" loading="lazy" src="../media/images/humzufifok.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1250.html">click here</a> to see it.</p>
+<p>A <a href="../glossary/porcelain.html">porcelain</a> mug has pulled slightly oval because of the weight of the handle. This happens in highly <a href="../glossary/vitrification.html">vitrified</a> porcelains (e.g. <a href="../glossary/translucency.html">translucent</a> ones). The amount of <a href="../material/310.html">feldspar</a> or <a href="../glossary/frit.html">frit</a> in the body determines the degree of <a href="../glossary/maturity.html">maturity</a>, the correct percentage is a balance between enough to get the maximum <a href="../glossary/translucency.html">translucency</a> and hardness but not so much that ware is deforming excessively during firing. This is <a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12881">Polar Ice</a> at <a href="../glossary/cone+6.html">cone 6</a>, this degree of warp is acceptable and can be compensated for.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">A porcelain mug warps under the weight of its own handle</h3>
+<br/><a href="../picture/1332.html"><img class="flexleft50" loading="lazy" src="../media/images/mygxacerak.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1332.html">click here</a> to see it.</p>
+<p>An example of a cone 10 <a href="../glossary/porcelain.html">porcelain</a> that is over <a href="../glossary/maturity.html">mature</a>. It contains too much <a href="../material/310.html">feldspar</a> and is vitrifying so much that it is beginning to melt. The weight of the handle is pulling the lip into a oval shape, even though the hourglass shape of the piece should offer stability. For <a href="../glossary/translucency.html">translucent</a> porcelains one must endure this issue, using more stable shapes or firing with support.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Two bars ready for pyro-plastic comparison test</h3>
+<br/><a href="../picture/1593.html"><img class="flexleft50" loading="lazy" src="../media/images/ripcagyliw.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1593.html">click here</a> to see it.</p>
+<p>When porcelains <a href="../glossary/maturity.html">mature</a> in the kiln they progress toward <a href="../glossary/vitrification.html">vitrification</a>, getting softer. This simple test enables anyone to quantify the degree to which a <a href="../glossary/porcelain.html">porcelain</a> is likely to warp. Bars of plastic clay almost never dry straight, so the measurement (in mm) to which they deviate from straight is recorded and the bar is mounted with the hump upwards. After firing the mm of firing deviation-from-straight are added to the dry value to derive a total pyro-plastic deformation measurement. This can be recorded as an absolute value for comparison with other clays or temperatures.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Here is what can happen when a stoneware clay is overfired</h3>
+<br/><a href="../picture/3544.html"><img class="flexleft50" loading="lazy" src="../media/images/51kk5dkxgx.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3544.html">click here</a> to see it.</p>
+<p>This is a <a href="../glossary/reduction+firing.html">cone 10R</a> <a href="../glossary/stoneware.html">stoneware</a>, <a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12887">H550</a>. Made by Donna Ratlege at Spirits of the Creek Pottery in Cranbrook, British Columbia. She titles these: "Honest! I just had it". Her new super-powered gas kiln, built by Bruno Sperling, went over temperature on the first firing. These were in different parts of the kiln, each bearing witness to the degree to which it went past cone 10. This <a href="../glossary/clay+body.html">clay body</a> should not be fired to lower than 1.5% <a href="../glossary/clay+body+porosity.html">porosity</a> or <a href="bloating.html">bloating</a> can occur. These are a testament to Bruno's kiln-building and firing ability, these pieces have even gone beyond that - far enough to seriously warp.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Preventing plates from warping is more difficult than you think</h3>
+<br/><a alt="Plates have warped in the firing" href="../picture/3642.html"><img alt="Plates have warped in the firing" class="flexleft50" loading="lazy" src="../media/images/vtlesby2ht.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3642.html">click here</a> to see it.</p>
+<p><a href="../glossary/stoneware.html">Stoneware</a> and <a href="../glossary/porcelain.html">porcelain</a> plates having overhung rims and wide flat bases are extremely difficult to keep flat (as this potter discovered). In industry they are fired in setters, or even rim down, to temperature, then glazed and fired lower. As a potter, the best you can likely do is pay attention to the cross section shape (not too flared, inherently strong), fire on flat shelves, minimize changing shape on handling when soft or <a href="../glossary/leather+hard.html">leather hard</a>, dry evenly, avoid a sharp concave outer contour between foot and wall (bevel it well) and keep the center portion thick enough so it does not pull upward as the rims slump (especially if rims are thick). Working at low temperature can be a solution, but <a href="../glossary/terra+cotta.html">terra cotta</a> clays are generally not stable for this shape if fired past <a href="../glossary/low+temperature+glaze.html">cone 04</a>. White burning <a href="../glossary/earthenware.html">low fire</a> bodies are better but also more porous, so glazes must fit well to avoid <a href="glaze+crazing.html">crazing</a>.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/body+warping.html">Body Warping</a>
+<br/><i>Warping happens during the firing of ceramic ware when there is a high degree of <a href="../glossary/vitrification.html">vitrification</a> and inadequate measures are taken during forming and firing to prevent it. Unexpected warping often happens with unstable shapes and over firing.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/bleeding+of+colors.html">Bleeding of colors</a>
+<br/><i>In <a href="../glossary/ceramics.html">ceramics</a>, the edges of <a href="../glossary/overglaze.html">overglaze</a> and <a href="../glossary/underglaze.html">underglaze</a> color decoration often bleeds into the over or <a href="../glossary/underglaze.html">under glaze</a>. How can this be avoided.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Troubles</td>
+<td>
+<a href="bloating.html">Bloating</a>
+<br/><i><a href="bloating.html">Bloating</a> occurs when the off-gassing of decomposing particles in a body has not completed by the onset of density and impermeability associated with the <a href="../glossary/vitrification.html">vitrification</a> process.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/firing%3a+what+happens+to+ceramic+ware+in+a+firing+kiln.html">Firing: What Happens to Ceramic Ware in a Firing Kiln</a>
+<br/><i>Understanding more about changes taking place in the ware at each stage of a firing helps tune the curve and atmosphere to produce better ware</i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></div></body>
+</html>

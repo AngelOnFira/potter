@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Carbon Monoxide Toxicity</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Although not a material used in ceramics and pottery, every technician and potter firing fuel kilns needs to know about the hazards are this.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item active" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=hazard" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Hazards</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a title="341" href="https://digitalfire.com/hazard/341">Alumina Toxicology</a> |</nobr> <nobr><a title="333" href="https://digitalfire.com/hazard/333">Ammonia and Latex Toxicity</a> |</nobr> <nobr><a title="16" href="https://digitalfire.com/hazard/16">Antimony Oxide</a> |</nobr> <nobr><a title="412" href="https://digitalfire.com/hazard/412">Are colored porcelains hazardous?</a> |</nobr> <nobr><a title="18" href="https://digitalfire.com/hazard/18">Arsenic Oxide</a> |</nobr> <nobr><a title="19" href="https://digitalfire.com/hazard/19">Asbestos Toxicity</a> |</nobr> <nobr><a title="22" href="https://digitalfire.com/hazard/22">Ball Clay</a> |</nobr> <nobr><a title="321" href="https://digitalfire.com/hazard/321">BARIUM and COMPOUNDS Toxicology</a> |</nobr> <nobr><a title="367" href="https://digitalfire.com/hazard/367">Barium Carbonate in Clay Bodies</a> |</nobr> <nobr><a title="26" href="https://digitalfire.com/hazard/26">Barium Carbonate in Glazes</a> |</nobr> <nobr><a title="31" href="https://digitalfire.com/hazard/31">Bentonite Toxicity</a> |</nobr> <nobr><a title="33" href="https://digitalfire.com/hazard/33">Beryllium Monoxide Toxicology</a> |</nobr> <nobr><a title="352" href="https://digitalfire.com/hazard/352">Bismuth Trioxide Toxicology</a> |</nobr> <nobr><a title="326" href="https://digitalfire.com/hazard/326">Boron Compounds and Their Toxicity</a> |</nobr> <nobr><a title="1" href="https://digitalfire.com/hazard/1">Brown Stain</a> |</nobr> <nobr><a title="335" href="https://digitalfire.com/hazard/335">Cadmium Toxicity</a> |</nobr> <nobr><a title="343" href="https://digitalfire.com/hazard/343">Calcium Carbonate Toxicology</a> |</nobr> <nobr><a title="334" href="https://digitalfire.com/hazard/334"><button type="button" class="btn btn-dark">Carbon Monoxide Toxicity</button></a> |</nobr> <nobr><a title="353" href="https://digitalfire.com/hazard/353">Cesium Toxicology</a> |</nobr> <nobr><a title="330" href="https://digitalfire.com/hazard/330">Chromium Compounds Toxicology</a> |</nobr> <nobr><a title="146" href="https://digitalfire.com/hazard/146">Clay Toxicity</a> |</nobr> <nobr><a title="73" href="https://digitalfire.com/hazard/73">Cobalt Oxide and Carbonate</a> |</nobr> <nobr><a title="331" href="https://digitalfire.com/hazard/331">Cobalt Toxicology</a> |</nobr> <nobr><a title="329" href="https://digitalfire.com/hazard/329">Copper Compounds Toxicology</a> |</nobr> <nobr><a title="78" href="https://digitalfire.com/hazard/78">Copper Oxide and Carbonate</a> |</nobr> <nobr><a title="84" href="https://digitalfire.com/hazard/84">Cristobalite Toxicity</a> |</nobr> <nobr><a title="337" href="https://digitalfire.com/hazard/337">Cryolite and Ceramics</a> |</nobr> <nobr><a title="372" href="https://digitalfire.com/hazard/372">Dealing With Dust in Ceramics</a> |</nobr> <nobr><a title="351" href="https://digitalfire.com/hazard/351">Diatomaceous Earth Toxicology</a> |</nobr> <nobr><a title="323" href="https://digitalfire.com/hazard/323">Dioxins in Clays</a> |</nobr> <nobr><a title="95" href="https://digitalfire.com/hazard/95">Epsom Salts</a> |</nobr> <nobr><a title="348" href="https://digitalfire.com/hazard/348">Eye Injuries Due to Radiation</a> |</nobr> <nobr><a title="222" href="https://digitalfire.com/hazard/222">Feldspar</a> |</nobr> <nobr><a title="320" href="https://digitalfire.com/hazard/320">Fighting Micro-Organisms in Ceramics</a> |</nobr> <nobr><a title="108" href="https://digitalfire.com/hazard/108">Fluorine Gas</a> |</nobr> <nobr><a title="413" href="https://digitalfire.com/hazard/413">Fumes from gas kilns</a> |</nobr> <nobr><a title="354" href="https://digitalfire.com/hazard/354">Gallium Oxide Toxicology</a> |</nobr> <nobr><a title="342" href="https://digitalfire.com/hazard/342">Hafnium Oxide Toxicty</a> |</nobr> <nobr><a title="345" href="https://digitalfire.com/hazard/345">Hydrofluoric Acid Toxicity</a> |</nobr> <nobr><a title="350" href="https://digitalfire.com/hazard/350">Iron oxide and Hematite</a> |</nobr> <nobr><a title="169" href="https://digitalfire.com/hazard/169">Lead Chromate</a> |</nobr> <nobr><a title="368" href="https://digitalfire.com/hazard/368">Lead in Ceramic Glazes</a> |</nobr> <nobr><a title="328" href="https://digitalfire.com/hazard/328">Lead Toxicology</a> |</nobr> <nobr><a title="174" href="https://digitalfire.com/hazard/174">Lithium Carbonate Toxicity</a> |</nobr> <nobr><a title="349" href="https://digitalfire.com/hazard/349">Lithium Toxicology</a> |</nobr> <nobr><a title="322" href="https://digitalfire.com/hazard/322">Man-Made Vitreous Fibers (MMVF) Toxicology</a> |</nobr> <nobr><a title="410" href="https://digitalfire.com/hazard/410">Man-Made Vitreous Fibers Safety Update</a> |</nobr> <nobr><a title="406" href="https://digitalfire.com/hazard/406">Manganese and Parkinsons by Jane Watkins</a> |</nobr> <nobr><a title="187" href="https://digitalfire.com/hazard/187">Manganese in Clay Bodies</a> |</nobr> <nobr><a title="317" href="https://digitalfire.com/hazard/317">Manganese Inorganic Compounds Toxicology</a> |</nobr> <nobr><a title="409" href="https://digitalfire.com/hazard/409">Manganese Toxicity by Elke Blodgett</a> |</nobr> <nobr><a title="407" href="https://digitalfire.com/hazard/407">Manganese: Creativity and Illness by Dierdre O'Reilly</a> |</nobr> <nobr><a title="332" href="https://digitalfire.com/hazard/332">Molybdenum Compounds Toxicology</a> |</nobr> <nobr><a title="327" href="https://digitalfire.com/hazard/327">Nickel Compounds Toxicity</a> |</nobr> <nobr><a title="314" href="https://digitalfire.com/hazard/314">Niobium Oxide Toxicity</a> |</nobr> <nobr><a title="318" href="https://digitalfire.com/hazard/318">Occupational Dermatoses</a> |</nobr> <nobr><a title="370" href="https://digitalfire.com/hazard/370">Overview of Material Safety by Gavin Stairs</a> |</nobr> <nobr><a title="364" href="https://digitalfire.com/hazard/364">Paraffin Toxicology</a> |</nobr> <nobr><a title="216" href="https://digitalfire.com/hazard/216">Perlite Toxicity</a> |</nobr> <nobr><a title="238" href="https://digitalfire.com/hazard/238">Plant Ash Toxicity</a> |</nobr> <nobr><a title="346" href="https://digitalfire.com/hazard/346">Potassium Carbonate Toxicity</a> |</nobr> <nobr><a title="365" href="https://digitalfire.com/hazard/365">Pregnancy and Ceramics</a> |</nobr> <nobr><a title="355" href="https://digitalfire.com/hazard/355">Propane Toxicology</a> |</nobr> <nobr><a title="251" href="https://digitalfire.com/hazard/251">Quartz Toxicity</a> |</nobr> <nobr><a title="369" href="https://digitalfire.com/hazard/369">Quartz Toxicity on Clayart</a> |</nobr> <nobr><a title="336" href="https://digitalfire.com/hazard/336">Rare Earth Compounds Toxicity</a> |</nobr> <nobr><a title="366" href="https://digitalfire.com/hazard/366">Rubidium and Cesium Toxicology</a> |</nobr> <nobr><a title="356" href="https://digitalfire.com/hazard/356">Rutile Toxicology</a> |</nobr> <nobr><a title="324" href="https://digitalfire.com/hazard/324">Silicosis and Screening</a> |</nobr> <nobr><a title="357" href="https://digitalfire.com/hazard/357">Silver Compounds Toxicology</a> |</nobr> <nobr><a title="358" href="https://digitalfire.com/hazard/358">Sodium Azide Toxicology</a> |</nobr> <nobr><a title="359" href="https://digitalfire.com/hazard/359">Sodium Carbonate Toxicology</a> |</nobr> <nobr><a title="360" href="https://digitalfire.com/hazard/360">Sodium Silicate Powder Toxicology</a> |</nobr> <nobr><a title="315" href="https://digitalfire.com/hazard/315">Stannous Chloride Toxicity</a> |</nobr> <nobr><a title="316" href="https://digitalfire.com/hazard/316">Strontium Carbonate Toxicity Note</a> |</nobr> <nobr><a title="347" href="https://digitalfire.com/hazard/347">Sulfur Dioxide Toxicity</a> |</nobr> <nobr><a title="3" href="https://digitalfire.com/hazard/3">Talc Hazards Overview</a> |</nobr> <nobr><a title="361" href="https://digitalfire.com/hazard/361">Talc Toxicology</a> |</nobr> <nobr><a title="362" href="https://digitalfire.com/hazard/362">Thallium Oxide Toxicology</a> |</nobr> <nobr><a title="344" href="https://digitalfire.com/hazard/344">Thorium Dioxide Toxicity</a> |</nobr> <nobr><a title="338" href="https://digitalfire.com/hazard/338">Tin Inorganic Compounds</a> |</nobr> <nobr><a title="339" href="https://digitalfire.com/hazard/339">Titanium Dioxide Toxicology</a> |</nobr> <nobr><a title="313" href="https://digitalfire.com/hazard/313">Toxicological Assessment of Zeolites</a> |</nobr> <nobr><a title="363" href="https://digitalfire.com/hazard/363">Tungsten Compounds Toxicology</a> |</nobr> <nobr><a title="371" href="https://digitalfire.com/hazard/371">Understanding Acronyms on MSDS's</a> |</nobr> <nobr><a title="325" href="https://digitalfire.com/hazard/325">Uranium and Ceramics</a> |</nobr> <nobr><a title="319" href="https://digitalfire.com/hazard/319">Vanadium and Compounds Toxicology</a> |</nobr> <nobr><a title="411" href="https://digitalfire.com/hazard/411">Vermiculite</a> |</nobr> <nobr><a title="340" href="https://digitalfire.com/hazard/340">Zinc Compounds Toxicology</a> |</nobr> <nobr><a title="373" href="https://digitalfire.com/hazard/373">Zirconium Compounds Toxicity</a> |</nobr> <nobr><a title="234" href="https://digitalfire.com/hazard/234">Zirconium Encapsulated Stains Toxicity</a></nobr></div><h1>Carbon Monoxide Toxicity</h1>
+<DL> 
+   <DT><FONT SIZE="-1" FACE="arial">On this page : Carbon Monoxide by 
+   Edouard Bastarache, </FONT><FONT SIZE="-1" 
+   FACE="arial"><A HREF="#English">Introduction</A></FONT><FONT 
+   SIZE="-1" FACE="arial">, </FONT><FONT SIZE="-1" 
+   FACE="arial"><A HREF="#sources of exposure">Sources of 
+   exposure</A></FONT><FONT SIZE="-1" FACE="arial">, </FONT><FONT 
+   SIZE="-1" 
+   FACE="arial"><A HREF="#Toxicological properties">Toxicological 
+   properties</A></FONT><FONT SIZE="-1" FACE="arial">, </FONT><FONT 
+   SIZE="-1" FACE="arial"><A HREF="#biological parameter">Biological 
+   parameter</A></FONT><FONT SIZE="-1" FACE="arial">, </FONT><FONT 
+   SIZE="-1" FACE="arial"><A HREF="#hygiene & safety">Hygiene &amp; 
+   Safety</A></FONT><FONT SIZE="-1" FACE="arial">, </FONT><FONT 
+   SIZE="-1" 
+   FACE="arial"><A HREF="#prevention_eng">Prevention</A></FONT><FONT 
+   SIZE="-1" FACE="arial">, </FONT><FONT SIZE="-1" 
+   FACE="arial"><A HREF="#protection measures">Protection 
+   measures</A></FONT><FONT SIZE="-1" FACE="arial">, </FONT><FONT 
+   SIZE="-1" FACE="arial"><A HREF="#exposure standards">Exposure 
+   Standards</A></FONT><FONT SIZE="-1" FACE="arial">, </FONT><FONT 
+   SIZE="-1" FACE="arial"><A HREF="#first aid">First 
+   Aid</A></FONT><FONT SIZE="-1" FACE="arial">, </FONT><FONT 
+   SIZE="-1" FACE="arial"><A HREF="#author ED">The Author</A></FONT> 
+    
+   <DT><CENTER>&nbsp;</CENTER> 
+    
+   <DT><B><U><FONT SIZE="+1" COLOR="#004080">Introduction 
+   :</FONT></U><FONT SIZE="+1" COLOR="#004080"> </FONT></B> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">Carbon monoxide (CO) is a colourless, 
+   odourless gas that can be poisonous to humans. It is a product of 
+   the incomplete combustion of carbon-containing fuels and is also 
+   produced by natural processes or by biotransformation of 
+   halomethanes within the human body. With external exposure to 
+   additional carbon monoxide, subtle effects can begin to occur, and 
+   exposure to higher levels can result in death. The health effects 
+   of carbon monoxide are largely the result of the formation of 
+   carboxyhemoglobin (COHb), which impairs the oxygen carrying 
+   capacity of the blood.</FONT> 
+    
+   <DT><FONT COLOR="#004080">Carbon monoxide (CO) is an odourless gas 
+   without irritating properties, which allows the inhalation of 
+   significant and potentially lethal concentrations without warning 
+   symptoms for the victim. CO intoxication is each year one of the 
+   main causes of mortality by intoxication in industrialized 
+   countries; 1000 to 2000 deaths per year are linked to carbon 
+   monoxide in the United States. </FONT> 
+    
+   <DT><FONT COLOR="#004080">The frequency of non-lethal 
+   intoxications by CO is probably much more significant, but 
+   difficult to evaluate with precision because of the nonspecific 
+   nature of the symptoms and clinical signs of the intoxication. It 
+   is thus estimated that each year in the United States, more than 
+   42 000 visits to emergency departments are due to intoxications by 
+   CO with an annual rate of visits to the emergency for this of 16,5 
+   by 100 000 inhabitants</FONT> 
+    
+   <DT><FONT COLOR="#004080">Given the universal use of fossil energy 
+   sources in our modern society, all of the individuals are 
+   potentially at risk of being exposed. The intoxication risk seems 
+   higher in countries of northern latitude with a higher frequency 
+   during the winter months, but many cases of intoxication to CO 
+   occur each year in all of the industrialized countries </FONT> 
+    
+   <DD><FONT 
+   COLOR="#004080"><A NAME="sources of exposure"></A></FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT SIZE="+1" COLOR="#004080">Sources of exposure 
+   :</FONT></U></B><FONT COLOR="#004080"> </FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">Carbon monoxide can be released in many 
+   industrial, environmental and domestic situations. </FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">The main source of exposure to carbon 
+   monoxide, without any doubt, is caused by its presence in the 
+   exhaust fumes of internal combustion engines and in emission gases 
+   during the incomplete combustion of combustible materials. </FONT> 
+    
+   <DT><FONT COLOR="#004080">Exposures to CO in confined places are 
+   responsible for the very large majority of the potentially 
+   dangerous exposures. The inappropriate use of heating systems also 
+   represents one of the principal causes of exposure to carbon 
+   monoxide. </FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">A-Uses and mission sources in the 
+   workplace : </FONT></B> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">- the metallurgy of iron and various 
+   other metals, their refining by their carbonyls (ex.:nickel 
+   carbonyl), works by cutting and flamecutting; </FONT> 
+    
+   <DT><FONT COLOR="#004080">- chemical syntheses: the manufacture of 
+   calcium carbide and metal carbonyls;</FONT> 
+    
+   <DT><FONT COLOR="#004080">- the use of explosives in mines and on 
+   hydroelectric building sites;</FONT> 
+    
+   <DT><FONT COLOR="#004080">- in garbage incineration, cement 
+   factories;</FONT> 
+    
+   <DT><FONT COLOR="#004080">- the use of lifting trucks</FONT> 
+    
+   <DT><FONT COLOR="#004080">- the use of heating appliances 
+   operating on coal, gas or other hydrocarbons (stove, furnace, 
+   defective gas appliances);</FONT> 
+    
+   <DT><FONT COLOR="#004080">- the endogenous metabolism of certain 
+   xenobiotics can also lead to the production of CO as a metabolite: 
+   methylene chloride, dibromomethane, diiodomethane and 
+   bromochloromethane. </FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">B-Main uses :</FONT></B> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">- as a fuel; </FONT> 
+    
+   <DT><FONT COLOR="#004080">- as a reducing agent in metallurgy; 
+   </FONT> 
+    
+   <DT><FONT COLOR="#004080">- in the chemical industry for the 
+   synthesis of many compounds: methanol, acetic acid, formic acid, 
+   acrylic acid, phosgene, etc. </FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">C-Sources and concentrations of 
+   carbon monoxide in the environment : </FONT></B> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">Carbon monoxide is present in the 
+   troposphere as traces which find their origin in natural processes 
+   and certain human activities. Given that plants are able to 
+   metabolize carbon monoxide and to produce some, it is considered 
+   that as traces, this gas is a normal constituent of the natural 
+   environment. </FONT> 
+    
+   <DT><FONT COLOR="#004080">The carbon monoxide concentration in the 
+   air near urban agglomerations and industrial parks can be 
+   appreciably higher than the normal natural concentration, but we 
+   have yet to see a report of harmful effects on plants or 
+   <a  href="https://digitalfire.com/glossary/micro+organisms">micro-organisms</a> which would be attributable to the concentrations 
+   measured in these conditions. </FONT> 
+    
+   <DT><FONT COLOR="#004080">It does remain that the presence of 
+   carbon monoxide at these concentrations can be detrimental to 
+   human health, according to the values reached in workplaces or in 
+   residential zones, and in accordiance with the receptivity of the 
+   subjects exposed to the potential harmful effects. </FONT> 
+    
+   <DT><FONT COLOR="#004080">Upon examining air quality data provided 
+   by fixed control stations, one notes a tendency to the decline of 
+   the concentration of carbon monoxide which translates the 
+   effectiveness of antipollution systems with which recent vehicles 
+   are equipped. In the United States, the emissions due to motor 
+   vehicles which run on highways represent approximately 50 % of the 
+   total amount of carbon monoxide emitted, while 13% is due to 
+   vehicles not running on highways. Among the other sources of 
+   emission one can quote the use of other fuels than automobile 
+   fuels, for example in boilers (12 %), various industrial processes 
+   (8 %), solid waste disposal (3 %) and various other sources (14 
+   %). </FONT> 
+    
+   <DT><FONT COLOR="#004080">The concentrations to which the general 
+   population is exposed for more or less long periods frequently 
+   range from 29 to 57 mg of carbon monoxide per m3 (25-50 ppm); 
+   under these circumstances, physical activity is generally reduced 
+   and the resulting rate of carboxyhemoglobin does not exceed 1-2 % 
+   among nonsmokers. </FONT> 
+    
+   <DT><FONT COLOR="#004080">Inside buildings, the carbon monoxide 
+   concentration depends on the concentration of the surrounding air, 
+   on the presence of internal sources, the ventilation and air 
+   mixing in each room, and from one room to the next. In dwellings 
+   where there are no other sources, the carbon monoxide 
+   concentration in the air is about the same as the average external 
+   concentration. The highest concentrations occur in the presence of 
+   interior sources of combustion, in particular in closed garages, 
+   service stations and restaurants, for instance. </FONT> 
+    
+   <DT><FONT COLOR="#004080">It is in the air of the dwelling houses, 
+   churches and health care establishments that the carbon monoxide 
+   concentration is the lowest. Lastly, cigarette smoking represents 
+   a significant source of exposure to CO in the general population. 
+   The amount of absobed CO following the use of cigarette depends on 
+   certain factors, such as for example the frequency and the 
+   intensity of inhalations. </FONT> 
+    
+   <DT><FONT COLOR="#004080">The CO concentration is about 4,5 % (45 
+   000 ppm) in cigarette smoke and will result among smokers in a 
+   carboxyhaemoglobine varying from 3 to 8 %, although levels of up 
+   to 15 % have already been reported. </FONT> 
+    
+   <DT><FONT COLOR="#004080">It has been shown that passive 
+   nicotinism resulting from the exposure to cigarette smoke on 
+   average increases the exposure of non-smokers to approximately 1,7 
+   mg/m3 (1,5 ppm) and that the use of a gas stove increases the CO 
+   content of the air to approximately 2,9 mg/m3 (2,5 ppm). Among 
+   other sources of carbon monoxide in the intenal air of dwellings 
+   one can mention chimneys, water-heaters as well as coal or wood 
+   stoves. </FONT> 
+    
+   <DD><FONT 
+   COLOR="#004080"><A NAME="Toxicological properties"></A></FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT SIZE="+1" COLOR="#004080">Toxicological properties 
+   :</FONT></U></B> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT COLOR="#004080">A-Toxicokinetics :</FONT></U><FONT 
+   COLOR="#004080"> </FONT></B> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">1-Absorption :</FONT></B> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">Carbon monoxide is absorbed exclusively 
+   by the respiratory tract. It diffuses through the 
+   alveolo-capillary membrane in way similar to oxygen. In the 
+   presence of a constant concentration during several hours, the 
+   rate of absorbtion decreases regularly until the partial pressures 
+   of carbon monoxide in the blood of the pulmonary capillaries and 
+   the alveolar air reach a state of equilibrium.</FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">2-Distribution :</FONT></B> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">Most of the absorbed carbon monoxide 
+   sets in a reversible way on the heme pigments of the body. At 
+   least 80% bind to hemoglobin of the &eacute;rythrocytes to form 
+   carboxyhemoglobin. The affinity of hemoglobin for carbon monoxide 
+   is approximately 240 to 250 times higher than that for oxygen. 
+   </FONT> 
+    
+   <DT><FONT COLOR="#004080">10 to 15% reacts with the myoglobin of 
+   the muscular cells. Myoglobin has a constant of affinity for 
+   carbon monoxide approximately eight times weaker than that of 
+   hemoglobin. The myocardial muscular cells retain more carbon 
+   monoxide than the skeletal muscular cells (ratio 3:1). </FONT> 
+    
+   <DT><FONT COLOR="#004080">5% can also react with other 
+   heme-containing compounds (ex: cytochromes, metalloenzymes). 
+   Carbon monoxide crosses the hematoencephalic and placental 
+   barriers. </FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">3-M&eacute;tabolism :</FONT></B> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">Carbon monoxide is practically not 
+   metabolized, less than 1% of the absorbed amount is oxidized to 
+   carbon dioxide. </FONT> 
+    
+   <DT><FONT COLOR="#004080">It is also produced in an endogenous way 
+   by the body at the time of the catabolism of heme pigments.</FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">The blood level of human endogenous 
+   carboxyhemoglobin varies from 0,1 &agrave; 1,2%.</FONT></B> 
+    
+   <DD><I><FONT COLOR="#004080">&nbsp;</FONT></I> 
+    
+   <DT><I><FONT COLOR="#004080">Principal <a  href="https://digitalfire.com/glossary/mechanism">mechanism</a> of the toxic 
+   action: </FONT></I> 
+    
+   <DT><FONT COLOR="#004080">the link between carbon monoxide and 
+   hemoglobin producing carboxyhemoglobin causes a decrease of the 
+   capacity of oxygen blood transportation and interferes with the 
+   release of oxygen at the tissular level.. </FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">4-Excretion :</FONT></B> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">Carbon monoxide is excreted almost 
+   entirely in the expired air. </FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">Elimination is done quickly at the 
+   beginning, then becomes slower with time and when the 
+   concentration of carboxyhemoglobin drops. </FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">5-Half-life :</FONT></B> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">At rest, the elimination half-life of 
+   blood carbon monoxide is approximately 3 to 4 hours for a subject 
+   inhaling air and approximately 20 to 60 minutes for subjects 
+   inhaling oxygen. With the administration of hyperbaric oxygen, the 
+   elimination half-life of CO decreases but the numerical values 
+   vary according to authors: </FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">23 minutes at 3 atm.</FONT> 
+    
+   <DT><FONT COLOR="#004080">27 minutes at 1.58 atm.</FONT> 
+    
+   <DT><FONT COLOR="#004080">22 minutes at 2.5 atm.</FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">It may increase with age and decrease 
+   with physical activity. </FONT> 
+    
+   <DT><FONT COLOR="#004080">The half-life of carbon monoxide in 
+   </FONT><U><FONT COLOR="#004080">foetal blood</FONT></U><FONT 
+   COLOR="#004080"> is approximately 7 hours. </FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">Immediately Dangerous to Life or 
+   Health : 1200 ppm.</FONT></B> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT COLOR="#004080">B- Physiopathology 
+   :</FONT></U></B> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">Carbon monoxide intoxication causes 
+   lesions mainly to cardiovascular and neurological systems and its 
+   physiopathology is relatively complex. </FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">1-Cellular hypoxia :</FONT></B> 
+    
+   <DT><FONT COLOR="#004080">Carbon monoxide intoxication is 
+   characterized initially by tissue hypoxia. It is a well-known fact 
+   that carbon monoxide binds in a competitive way to hemoglobin to 
+   form carboxyhemoglobin, an abnormal hemoglobin which cannot be 
+   used to carry oxygen. The affinity of carbon monoxide for 
+   hemoglobin is 240 to 250 times more significant than that of 
+   oxygen and the ratio carboxyhemoglobin/oxyhemoglobin will be 
+   proportional to the ratio of the partial pressures of carbon 
+   monoxide and oxygen. </FONT> 
+    
+   <DT><FONT COLOR="#004080">Carbon monoxide also involves a 
+   displacement towards the left and a modification of the shape of 
+   the intra-tissular dissociation curve of oxyhemoglobin, which 
+   contributes even more to limit the release of oxygen at the 
+   tissular level. Cellular hypoxia resulting from the formation of 
+   carboxyhemoglobin will have as a harmful effect, a reflex increase 
+   of ventilation, which will increase pulmonary absorbtion of carbon 
+   monoxide in the context of a persistent exposure. </FONT> 
+    
+   <DT><FONT COLOR="#004080">The link of carbon monoxide to 
+   hemoglobin with secondary tissue hypoxia does not constitute 
+   however the only physiopathological mechanism implied in CO 
+   intoxication, and hypoxic stress cannot by itself explains the 
+   development of neurological effects.. </FONT> 
+    
+   <DT><FONT COLOR="#004080">It does not seem to exist a direct 
+   correlation between the degree of neurological effect and the 
+   level of carboxyhemoglobin measured when the patient is admitted 
+   at the emergency ward. Moreover, the transfusion to animals of 
+   blood saturated with carboxyhemoglobin does not allow, in the 
+   absence of free CO, to reproduce clinical symptomatology </FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">2-Intracellular <a  href="https://digitalfire.com/glossary/toxicity">toxicity</a> :</FONT></B> 
+    
+   <DT><FONT COLOR="#004080">It seems that carbon monoxide can also 
+   act as an intracellular toxin. It is estimated that about 15 % of 
+   absorbed carbon monoxide will be bound to extravascular proteins. 
+   Carbon monoxide binds to cardiac and musculoskeletal myoglobin 
+   starting from levels of carboxyhemoglobin of the order of 2 %. and 
+   could alter oxygen uptake to thus reduce the effectiveness of 
+   oxydative phosphorylation at the myocardial level. Carbon monoxide 
+   can also bind to cytochrome oxydase (cytochrome <a  href="https://plainsmanclays.ca/data/index.php?product=12900">a3</a>) which is the 
+   final enzyme of the electron transport chain at the mitochondrial 
+   level. </FONT> 
+    
+   <DT><FONT COLOR="#004080">This link will have as a consequence a 
+   deterioration in the ATP production and intracellular acidosis. 
+   Persistent alteration of intracellular metabolism after cessation 
+   of exposure could be explained by the bond of carbon monoxide to 
+   cytochrome oxydase. A persistent inhibition of mitochondrial 
+   cytochrome oxydase during several days was shown in human beings 
+   following exposure to carbon monoxide producing levels of 
+   carboxyhemoglobin varying from 11 to 22 %. </FONT> 
+    
+   <DT><FONT COLOR="#004080">Exposure to carbon monoxide can lead to 
+   the formation of reactive oxidizing molecules being able to induce 
+   a lipidic peroxidation and a variety of lesions in the central 
+   nervous system. Several physiopathological <a  href="https://digitalfire.com/glossary/mechanism">mechanisms</a> encountered 
+   during CO intoxication are similar to post-ischaemic lesions of 
+   reperfusion. Among patients poisoned with CO, there is a positive 
+   correlation which can be shown in an experimental way between 
+   mitochondrial dysfonction induced by CO exposure and of lipidic 
+   peroxidation. </FONT> 
+    
+   <DT><FONT COLOR="#004080">Exposure to carbon monoxide causes a 
+   nitric oxide release (NO) from blood platelets and endothelial 
+   vascular cells with a significant increase of NO in perivascular 
+   and vascular tissues. NO is a major physiological mediator and a 
+   free radical of very short lifespan and has a cytotoxic potential. 
+   The cytotoxic effect of NO can be partly associated with the 
+   production of peroxynitrite, a major oxidant generated by the 
+   reaction between NO and the superoxyde ion.</FONT> 
+    
+   <DT><FONT COLOR="#004080">It seems that oxygenated free radicals 
+   of the superoxyde type are produced in the context of a carbon 
+   monoxide exposure by mitochondrial dysfonction induced by hypoxic 
+   stress. </FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">3-Neurological toxicity :</FONT></B> 
+    
+   <DT><FONT COLOR="#004080">The produced peroxynitrite will be able 
+   to bind to tissular proteins to produce the typical vascular and 
+   perivascular neuro-histological lesions associated with CO 
+   intoxication. The oxydative stress will thus have as a consequence 
+   an increase in capillary <a  href="https://digitalfire.com/glossary/permeability">permeability</a> at the neurological level as 
+   well as an increase in adhesion of the polymorphonuclear 
+   leucocytes at the level of the altered endothelium. The adhesion 
+   of the leucocytes to the cerebro-vascular endothelium will 
+   contribute to a reduction in the cerebral perfusion and to the 
+   initiation of the process of lipidic peroxidation. </FONT> 
+    
+   <DT><FONT COLOR="#004080">It has been shown in experiments that 
+   hyperbaric oxygen therapy can prevent the adhesion of leucocytes 
+   to the endothelium in an animal model of exposure to carbon 
+   monoxide. It thus seems probable that the neurological tissue 
+   lesions associated with carbon monoxide intoxication are of 
+   vascular origin. It seems also plausible that the cardiovascular 
+   response to carbon monoxide intoxication is determining in the 
+   importance of future neurological lesions. </FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">4-Cardio-vascular toxicity 
+   :</FONT></B> 
+    
+   <DT><FONT COLOR="#004080">Carbon monoxide is associated with 
+   myocardial depression explainable partly by hypoxic stress, by the 
+   mitochondrial bond of CO with cytochrome <a  href="https://plainsmanclays.ca/data/index.php?product=12900">a3</a>, and by a link with 
+   myocardial myoglobin. The link to myoglobin could play a major 
+   role in myocardial depression associated with an intoxication by 
+   CO given the significant role that myoglobin has on the 
+   intracellular diffusion of oxygen. </FONT> 
+    
+   <DT><FONT COLOR="#004080">The blocking of the function of 
+   myoglobin is associated with a reduction in the uptake of oxygen 
+   and a reduction in the production of ATP by the cardiac muscle. 
+   Myocardial depression combined with peripheral vasodilatation 
+   secondary to an increase in the concentrations of NO in the 
+   vascular endothelium will have as a consequence arterial 
+   hypotension with a reduction of the cerebral perfusion being able 
+   to lead to a loss of consciousness and subsequently to ischaemic 
+   lesions of reperfusion in the brain.</FONT> 
+    
+   <DT><FONT COLOR="#004080">A transitory loss of consciousness is 
+   generally regarded as a factor of bad prognosis in a carbon 
+   monoxide intoxication. The possible cardiac toxic effects of CO 
+   include: </FONT> 
+    
+   <DT><FONT COLOR="#004080">- flutter, </FONT> 
+    
+   <DT><FONT COLOR="#004080">- auricular fibrillation, </FONT> 
+    
+   <DT><FONT COLOR="#004080">- ventricular tachycardia, </FONT> 
+    
+   <DT><FONT COLOR="#004080">- ventricular fibrillation, </FONT> 
+    
+   <DT><FONT COLOR="#004080">- myocardial ischemia. </FONT> 
+    
+   <DT><FONT COLOR="#004080">It has been showed without ambiguity 
+   that at the level of 5.0% carboxyhemoglobin, there was reduction 
+   of oxygen binding and consecutive reduction in the physical 
+   capacity under conditions of maximum exertion in young adults in 
+   good health. </FONT> 
+    
+   <DT><FONT COLOR="#004080">However, certain cardiovascular effects 
+   are to feared more in the event of exposure to more characteristic 
+   ambient carbon monoxide concentrations (in particular, the 
+   aggravation of angina during physical activity) among a smaller 
+   proportion but nevertheless considerable of the population. 
+   Individuals suffering from chronic angina pectoris are currently 
+   considered as the most receptive group to the effects of an 
+   exposure to carbon monoxide, according to the signs of aggravation 
+   of the angor noted among patients having a level of 
+   carboxyhemoglobin from 2,9 to 4,5 %. </FONT> 
+    
+   <DT><FONT COLOR="#004080">The lowest observed adverse effect level 
+   (LOAEL) among patients suffering from exertional ischemia varies 
+   between 3 and 4 % carboxyhemoglobin, i.e. a level higher than the 
+   basic value by 1,5 to 2,2 %. One did not study the effects of 
+   carbon monoxide on asymptomatic episodes of ischemia, which 
+   represent in fact the majority of cases among these patients. 
+   </FONT> 
+    
+   <DT><FONT COLOR="#004080">It was shown that a sufficient exposure 
+   to produce a carboxyhemoglobin level of 6 % at least, appreciably 
+   increased the number and the complexity of exertional arrhythmias 
+   in the event of coronaropathy and ectopia. Exposure to carbon 
+   monoxide can involve an increased risk of sudden death among 
+   patients suffering from coronaropathy. </FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT COLOR="#004080">C-Acute clinical effects : 
+   </FONT></U></B> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">Carbon monoxide is a </FONT><B><FONT 
+   COLOR="#004080">chemical poisonous gas</FONT></B><FONT 
+   COLOR="#004080">. </FONT> 
+    
+   <DT><FONT COLOR="#004080">The clinical manifestations of exposure 
+   to carbon monoxide are multiple and nonspecific. The presence of 
+   more than one affected person in the same physical place, of 
+   nonspecific symptoms should make one suspect a CO intoxication. 
+   Symptomatology may occur following an exposure to a low level over 
+   a prolonged period of time or following a significant exposure 
+   over a short period. In both cases, neurological after-effects may 
+   occur. It thus seems that the severity of the intoxication to 
+   carbon monoxide will depend on several factors: </FONT> 
+    
+   <DT><FONT COLOR="#004080">- ambient carbon monoxide concentration, 
+   </FONT> 
+    
+   <DT><FONT COLOR="#004080">- duration of exposure, </FONT> 
+    
+   <DT><FONT COLOR="#004080">- individual susceptibility to CO 
+   effects, </FONT> 
+    
+   <DT><FONT COLOR="#004080">- general health status of the exposed 
+   individual. </FONT> 
+    
+   <DT><FONT COLOR="#004080">There is no reliable correlation between 
+   the severity of the intoxication and the blood carboxyhemoglobin 
+   (COHb) level measured at the time the patient is admitted in the 
+   emergency department.</FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">1- Acute general effects : 
+   </FONT></B> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">Symptoms of general order are frequent : 
+   </FONT> 
+    
+   <DT><FONT COLOR="#004080">- headache, </FONT> 
+    
+   <DT><FONT COLOR="#004080">- nausea, </FONT> 
+    
+   <DT><FONT COLOR="#004080">- vomiting, </FONT> 
+    
+   <DT><FONT COLOR="#004080">- generalized weakness. </FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">Since CO intoxication frequently occurs 
+   during winter, it is very frequent that the initial diagnosis is, 
+   in an erroneous way, that of a viral infection. It was observed CO 
+   exposure could be the unspecified cause of 5 to 19 % of the cases 
+   of headaches in emergy departments. </FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">2-Acute cardiovascular effects : 
+   </FONT></B> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">The clinical manifestations of 
+   cardiovascular nature are also significant: </FONT> 
+    
+   <DT><FONT COLOR="#004080">- thoracic pain, </FONT> 
+    
+   <DT><FONT COLOR="#004080">- tachypnea, </FONT> 
+    
+   <DT><FONT COLOR="#004080">- tachycardia, </FONT> 
+    
+   <DT><FONT COLOR="#004080">- hypotension with syncope, </FONT> 
+    
+   <DT><FONT COLOR="#004080">- convulsions, </FONT> 
+    
+   <DT><FONT COLOR="#004080">- pulmonary oedema, </FONT> 
+    
+   <DT><FONT COLOR="#004080">- cardiac arrhythmia and heart failure. 
+   </FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">3-Acute neurological effects : 
+   </FONT></B> 
+    
+
+
+
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">The possible neurological clinical 
+   manifestations are multiple :</FONT> 
+    
+   <DT><FONT COLOR="#004080">- ataxia,</FONT> 
+    
+   <DT><FONT COLOR="#004080">- dizzy spells,</FONT> 
+    
+   <DT><FONT COLOR="#004080">- disorders of memory,</FONT> 
+    
+   <DT><FONT COLOR="#004080">- concentration reduction,</FONT> 
+    
+   <DT><FONT COLOR="#004080">- convulsions,</FONT> 
+    
+   <DT><FONT COLOR="#004080">- coma. </FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">4-Other acute clinical effects : 
+   </FONT></B> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">The other significant clinical 
+   manifestations are: </FONT> 
+    
+   <DT><FONT COLOR="#004080">- metabolic acidosis, </FONT> 
+    
+   <DT><FONT COLOR="#004080">- retinal hemorrhages. </FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">Even if it does not constitute a 
+   reliable marker of the severity of exposure, a significant rise in 
+   COHb in a nonsmoker is useful for confirming the clinical 
+   suspicion of an exposure.</FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">5-Differential diagnosis : 
+   </FONT></B> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">Often times, clinical symptomatology 
+   could be confused with certain current clinical conditions: 
+   </FONT> 
+    
+   <DT><FONT COLOR="#004080">- infection of the higher respiratory 
+   tract, </FONT> 
+    
+   <DT><FONT COLOR="#004080">- food poisoning, </FONT> 
+    
+   <DT><FONT COLOR="#004080">- cerebrovascular accident, </FONT> 
+    
+   <DT><FONT COLOR="#004080">- psychiatric disorders, </FONT> 
+    
+   <DT><FONT COLOR="#004080">- migraine, </FONT> 
+    
+   <DT><FONT COLOR="#004080">- myocardial ischemia. </FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">6-After-effects </FONT></B> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">A serious intoxication can leave cardiac 
+   after-effects (modifications of the electrocardiogram) and 
+   neurological ones (reduction in the intellectual capacity, 
+   personality disorders and behavior). </FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">7-Dose-effects relationship 
+   :</FONT></B> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><CENTER><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=5 
+   WIDTH="80%" bgcolor="#ffffff"> 
+      <TR> 
+         <TD WIDTH="30%"> 
+            <P><B><FONT COLOR="#004080">Concentration (% 
+            carboxyhemoglobin) </FONT></B> 
+         </TD><TD> 
+            <P><B><FONT COLOR="#004080">Probable effects following 
+            acute exposure</FONT></B> 
+         </TD></TR> 
+      <TR> 
+         <TD WIDTH="30%"> 
+            <P><FONT COLOR="#004080">3.5%</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">Biological exposure index. 
+            </FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD WIDTH="30%"> 
+            <P><FONT COLOR="#004080">10-20%</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">Light headache, dyspnea at the 
+            time of intense muscular exertion, reduction of mental 
+            acuity. </FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD WIDTH="30%"> 
+            <P><FONT COLOR="#004080">20-30%</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">Severe headache, dyspnea at the 
+            time of moderated muscular exertion, nausea, 
+            giddiness.</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD WIDTH="30%"> 
+            <P><FONT COLOR="#004080">30-40%</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">Severe headache, nausea, 
+            vomiting, muscular weakness, confusion, eye and judgement 
+            troubles. </FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD WIDTH="30%"> 
+            <P><FONT COLOR="#004080">40-50%</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">Convulsions, loss of 
+            consciousness. </FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD WIDTH="30%"> 
+            <P><FONT COLOR="#004080">50-70%</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">Coma, sometimes fatal cardiac 
+            and respiratory depression. </FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD WIDTH="30%"> 
+            <P><FONT COLOR="#004080">plus de 66%</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">Death</FONT> 
+         </TD></TR> 
+   </TABLE></CENTER> 
+    
+   <DD><CENTER><FONT COLOR="#004080">&nbsp;</FONT></CENTER> 
+    
+   <DT><CENTER><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=5 
+   WIDTH="80%" bgcolor="#ffffff"> 
+      <TR> 
+         <TD WIDTH="30%"> 
+            <P><B><FONT COLOR="#004080">Concentration</FONT></B> 
+         </TD><TD> 
+            <P><B><FONT COLOR="#004080">Probable effects following an 
+            acute exposure (ppm CO) in a person in good 
+            health</FONT></B> 
+         </TD></TR> 
+      <TR> 
+         <TD WIDTH="30%"> 
+            <P><FONT COLOR="#004080">35 ppm</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">Valeur d'exposition moyenne 
+            pond&eacute;r&eacute;e (VEMP)</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD WIDTH="30%"> 
+            <P><FONT COLOR="#004080">200 ppm</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">Valeur d'exposition de courte 
+            dur&eacute;e (VECD) Headache 2 to 3 hours after 
+            exposure.</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD WIDTH="30%"> 
+            <P><FONT COLOR="#004080">400 ppm</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">Headache and nausea 1 to 3 hours 
+            after exposure</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD WIDTH="30%"> 
+            <P><FONT COLOR="#004080">600-700 ppm</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">Headache and nausea 1 hour after 
+            exposure</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD WIDTH="30%"> 
+            <P><FONT COLOR="#004080">1 200 ppm</FONT> 
+         </TD><TD> 
+            <P><B><FONT COLOR="#004080">Immediately dangerous to life 
+            or health (IDLH)</FONT></B> 
+         </TD></TR> 
+      <TR> 
+         <TD WIDTH="30%"> 
+            <P><FONT COLOR="#004080">1 600 ppm</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">Headache, nausea, giddiness in 
+            20 minutes, loss of consciousness, coma and death 2 hours 
+            after exposure</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD WIDTH="30%"> 
+            <P><FONT COLOR="#004080">3 200 ppm</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">Headache, giddiness in 5 
+            minutes, coma and risk of death in 30 minutes</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD WIDTH="30%"> 
+            <P><FONT COLOR="#004080">6 400 ppm</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">Headache, giddinesss in 1 to 2 
+            minutes, coma and risk of death in15 minutes</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD WIDTH="30%"> 
+            <P><FONT COLOR="#004080">20 000 ppm</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">Coma and death in 4 
+            minutes</FONT> 
+         </TD></TR> 
+   </TABLE></CENTER> 
+    
+   <DD><CENTER><FONT COLOR="#004080">&nbsp;</FONT></CENTER> 
+    
+   <DT><B><FONT COLOR="#004080">Effects of the increase in 
+   carboxyhemoglobin (COHb) in the severely impaired cardiac patient 
+   : </FONT></B> 
+    
+   <DT><CENTER><FONT COLOR="#004080">&nbsp;</FONT></CENTER> 
+    
+   <DD><CENTER><FONT COLOR="#004080">&nbsp;</FONT></CENTER> 
+    
+   <DT><CENTER><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=5 
+   WIDTH="90%" bgcolor="#ffffff"> 
+      <TR> 
+         <TD WIDTH="25%"> 
+            <P><B><FONT COLOR="#004080">Concentration (% 
+            carboxyhemoglobin) </FONT></B> 
+         </TD><TD> 
+            <P><B><FONT COLOR="#004080">Normal individual</FONT></B> 
+         </TD><TD> 
+            <P><B><FONT COLOR="#004080">Individual suffering from a 
+            severe cardiac condition </FONT></B> 
+         </TD></TR> 
+      <TR> 
+         <TD WIDTH="25%"> 
+            <P><FONT COLOR="#004080">&lt; 1%</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">Engogenous production</FONT> 
+         </TD><TD> 
+            <P><CENTER><FONT COLOR="#004080">-</FONT></CENTER> 
+         </TD></TR> 
+      <TR> 
+         <TD WIDTH="25%"> 
+            <P><FONT COLOR="#004080">1-5%</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">Increase of the arterial flow in 
+            certain organs to compensate for the reduction in oxygen 
+            (O2). transportion. </FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">If the cardiac condition is 
+            severe, the patient can decompensate. </FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD WIDTH="25%"> 
+            <P><FONT COLOR="#004080">5-9%</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">Lowering of the luminous visual 
+            perception threshold. </FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">Lowering of the required 
+            exertion to cause angina.</FONT> 
+         </TD></TR> 
+      <TR> 
+         <TD WIDTH="25%"> 
+            <P><FONT COLOR="#004080">16-20%</FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">Headache, abnormal evoked visual 
+            reaction. </FONT> 
+         </TD><TD> 
+            <P><FONT COLOR="#004080">Can cause death if the cardiac 
+            function is very compromised. </FONT> 
+         </TD></TR> 
+   </TABLE></CENTER> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">8-Clinical evaluation : </FONT></B> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">Given the nonspecific nature of the 
+   symptoms and signs of CO intoxication, it is of primary importance 
+   for the clinician to maintain a high level of suspicion when 
+   confronted by a clinical picture compatible with this poison, even 
+   if a history of exposure is lacking.</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">The measurement of COHb remains of 
+   very great utility to confirm the exposure: a level higher than 
+   2-3 % in a nonsmoker or 10 % in a smoker should be considered 
+   abnormal.</FONT></B> 
+    
+   <DT><FONT COLOR="#004080">As mentioned previously, there is no 
+   reliable correlation with the initial level of COHb and the future 
+   evolution of the inoxication. </FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><U><FONT COLOR="#004080">a-Clinical examination :</FONT></U> 
+    
+   <DT><FONT COLOR="#004080">The following will have to be included 
+   :</FONT> 
+    
+   <DT><FONT COLOR="#004080">- examination of the higher mental 
+   functions. </FONT> 
+    
+   <DT><FONT COLOR="#004080">- certain specific psychometric tests 
+   can be used, such as "CO Neuropsychological Screening Battery" 
+   (CONSB). </FONT> 
+    
+   <DT><FONT COLOR="#004080">Thus, the patient presenting, following 
+   an exposure to CO, abnormal psychometric test results, </FONT> 
+    
+   <DT><FONT COLOR="#004080">can be at risk to develop persistent or 
+   delayed neurological abnormalities. Lastly, the usefulnessl of 
+   psychometric tests to predict the need for a hyperbaric oxygen 
+   therapy remains a discussed issue. </FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><U><FONT COLOR="#004080">b-Paraclinical examinations 
+   :</FONT></U> 
+    
+   <DT><FONT COLOR="#004080">The following examinations could be 
+   useful: </FONT> 
+    
+   <DT><FONT COLOR="#004080">- arterial gases,</FONT> 
+    
+   <DT><FONT COLOR="#004080">- electrocardiogram, </FONT> 
+    
+   <DT><FONT COLOR="#004080">- cardiac enzymes,</FONT> 
+    
+   <DT><FONT COLOR="#004080">- carboxyhemoglobin which must be 
+   measured directly by a cooxymeter</FONT> 
+    
+   <DT><FONT COLOR="#004080">using the wavelength adapted for this 
+   abnormal hemoglobin. </FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">9-Treatment </FONT></B> 
+    
+   <DT><FONT COLOR="#004080">Following the confirmation of a CO 
+   intoxication, it is important to identify as soon as possible the 
+   exposure source in order to correct the problem and to prevent 
+   later exposures among other individuals. </FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><U><FONT COLOR="#004080">a-Normobaric oxygen therapy 
+   :</FONT></U> 
+    
+   <DT><FONT COLOR="#004080">The therapeutic method of choice for the 
+   treatment of CO intoxication remains the delivery 100 % oxygen and 
+   the suggested duration of treatment is 4 to 6 hours for the 
+   majority of intoxications but certain sources suggest up to 48 
+   hours of treatment. </FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><U><FONT COLOR="#004080">b-Hyperbaric oxygen therapy 
+   :</FONT></U> 
+    
+   <DT><FONT COLOR="#004080">Since 1960, hyperbaric oxygen therapy is 
+   used on a regular basis for the treatment of CO intoxication. In 
+   theory, it comprises potential advantages for the treatment of CO 
+   intoxication.These advantages include:</FONT> 
+    
+   <DT><FONT COLOR="#004080">- faster elimination of CO</FONT> 
+    
+   <DT><FONT COLOR="#004080">- improvement of tissue 
+   oxygenation</FONT> 
+    
+   <DT><FONT COLOR="#004080">- faster dissociation of CO on its site 
+   of intracellular binding at the cytochrome oxydase level</FONT> 
+    
+   <DT><FONT COLOR="#004080">- inhibition of leucocytic adhesion at 
+   the vascular endothelium level</FONT> 
+    
+   <DT><FONT COLOR="#004080">- prevention of the process of lipidic 
+   peroxidation at the central nervous system level (possibility) 
+   </FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">It is possible to obtain complete 
+   recovery without after-effects following an intoxication to CO 
+   without hyperbaric oxygen treatment and it is also possible to 
+   find significant neurological anomalies after a hyperbaric oxygen 
+   treatment.</FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">The classical indications for hyperbaric 
+   oxygen therapy are: </FONT> 
+    
+   <DT><FONT COLOR="#004080">- coma or a history of loss of 
+   consciousness,</FONT> 
+    
+   <DT><FONT COLOR="#004080">- neuropsychological anomalies at 
+   physical examination,</FONT> 
+    
+   <DT><FONT COLOR="#004080">- cardiovascular instability,</FONT> 
+    
+   <DT><FONT COLOR="#004080">- severe metabolic acidosis,</FONT> 
+    
+   <DT><FONT COLOR="#004080">- carboxyhemoglobin greater than 40 %. 
+   </FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">These indications are usually used in 
+   clinical situations and represent a consensus among experts 
+   without however having been validated in a rigorous scientific 
+   way. </FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">10-Irritation et corrosion 
+   :</FONT></B> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">Carbon monoxide is not an irritating gas 
+   for the respiratory tract and the eyes but contact with the liquid 
+   gas can cause frostbites of the exposed tissues. </FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT COLOR="#004080">D-Chronic effects :</FONT></U></B> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">The presence of toxic effects associated 
+   with a prolonged exposure to carbon monoxide is not yet clearly 
+   elucidated in the consulted documentary sources. </FONT> 
+    
+   <DT><FONT COLOR="#004080">Some authors report effects such 
+   as:</FONT> 
+    
+   <DT><FONT COLOR="#004080">- headache,</FONT> 
+    
+   <DT><FONT COLOR="#004080">- asthenia,</FONT> 
+    
+   <DT><FONT COLOR="#004080">- giddiness,</FONT> 
+    
+   <DT><FONT COLOR="#004080">- insomnia,</FONT> 
+
+    
+   <DT><FONT COLOR="#004080">- irritability,</FONT> 
+    
+   <DT><FONT COLOR="#004080">- anorexia,</FONT> 
+    
+   <DT><FONT COLOR="#004080">- subtle neuropsychological disorders 
+   such as memory disturbances, etc. </FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">Generally, there hardly exists data 
+   indicating that atherogenic effects may occur in the population 
+   due to exposure to carbon monoxide at the concentrations usually 
+   met in ambient air</FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT COLOR="#004080">E-Sensitization 
+   :</FONT></U></B><FONT COLOR="#004080"> </FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">No data concerning respiratory and 
+   cutaneous sensitizing was found in the consulted documentary 
+   sources</FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT COLOR="#004080">F-Pregnancy :</FONT></U></B> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">1-Carbon monoxide intoxication and 
+   pregnancy :</FONT></B> 
+    
+   <DT><FONT COLOR="#004080">Carbon monoxide intoxication during 
+   pregnancy poses particular problems. It seems that a significant 
+   risk of foetal death and neurological anomalies exist following 
+   exposure to CO for the mother, with a risk of foetal death varying 
+   from 36 to 67 %. Ventilation being increased during pregnancy, it 
+   is possible that CO pulmonary absorbtion is greater in the 
+   pregnant woman. The affinity of foetal hemoglobin for CO is 
+   greater than that of maternal hemoglobin. </FONT> 
+    
+   <DT><FONT COLOR="#004080">An equilibrium state will be reached in 
+   the foetus and the elimination of CO is slower for the foetal 
+   circulation. The maximum level of carboxyhemoglobin reached during 
+   the intoxication could be greater in the foetus than in the 
+   mother. </FONT> 
+    
+   <DT><FONT COLOR="#004080">On the basis of retrospective data, it 
+   seems that oxygen therapy is safe for the foetus and the mother. 
+   Precise information on hyperbaric is not established in a final 
+   manner but a carboxyhemoglobin of 15 % is often used by several 
+   experts as a critical value because of the greatest 
+   physiopathological sensitivity of the foetal circulation. </FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">2-Data on the mother's milk: 
+   </FONT></B> 
+    
+   <DT><FONT COLOR="#004080">There is no data concerning its 
+   excretion or detection in mother's milk. </FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT COLOR="#004080">G-Carcinogenic effects: 
+   </FONT></U></B> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">No data concerning a carcinogenic effect 
+   was found in the consulted documentary sources. </FONT> 
+    
+   <DD><FONT 
+   COLOR="#004080"><A NAME="biological parameter"></A></FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT SIZE="+1" COLOR="#004080">Biological parameter, 
+   biological exposure index and time of sampling: </FONT></U></B> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT COLOR="#004080">A-Main exposure index 
+   :</FONT></U></B> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">Carboxyhemoglobin: 3.5% ( end of break) 
+   </FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT COLOR="#004080">B-Other exposure index 
+   :</FONT></U></B> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">Carbon monoxide in the expired 
+   air:</FONT></B><FONT COLOR="#004080"> </FONT> 
+    
+   <DT><FONT COLOR="#004080">ACGIH proposes a biological exposure 
+   index of 20 ppm for a sample taken at the end of the workshift 
+   This biological exposure index corresponds to a concentration 
+   expected following an exposure to 25 ppm for </FONT> 
+    
+   <DT><FONT COLOR="#004080">8 hours. </FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT COLOR="#004080">C-Factors to consider in the 
+   interpretation :</FONT></U></B> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">- carboxyhemoglobin is not a specific 
+   indicator of exposure to carbon monoxide;</FONT> 
+    
+   <DT><FONT COLOR="#004080">- the biological exposure index does not 
+   apply to smokers or to the people exposed to methylene 
+   chloride;</FONT> 
+    
+   <DT><FONT COLOR="#004080">- this biological index of exposure 
+   corresponds to an exposure of 25 ppm. carbon monoxide.</FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT COLOR="#004080">D-Comments :</FONT></U></B> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><I><U><FONT COLOR="#004080">a-Biological values of 
+   carboxyhemoglobin for a non- professionally exposed population 
+   :</FONT></U></I> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">- Endogenous formation : less than 1%. 
+   </FONT> 
+    
+   <DT><FONT COLOR="#004080">- Pregnant woman : 0,4 to 2,6 %.</FONT> 
+    
+   <DT><FONT COLOR="#004080">- Patient suffering from hemolytic 
+   anaemia : 4 to 6%. </FONT> 
+    
+   <DT><FONT COLOR="#004080">- Urban population : 1 to 2%. </FONT> 
+    
+   <DT><FONT COLOR="#004080">- Travellers on congested motorways : 5% 
+   and more. </FONT> 
+    
+   <DT><FONT COLOR="#004080">- Smokers : 1 package per day 5 to 6%, 2 
+   to 3 packages per day 7 to 9%, cigar up to 20%. </FONT> 
+    
+   <DT><FONT COLOR="#004080">- Exposure to 50 ppm of methylene 
+   chloride during 8 hours: 1,5 to 2,5%. </FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><I><U><FONT COLOR="#004080">b-Sensitive population : 
+   </FONT></U></I> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">Any individual who has an impaired 
+   pulmonary function or a disease capable of affecting the blood 
+   transportion capacity of oxygen or its availability :</FONT> 
+    
+   <DT><FONT COLOR="#004080">- workers having respiratory diseases 
+   (ex: emphysema, fibrosis).</FONT> 
+    
+   <DT><FONT COLOR="#004080">- those who suffer from other diseases 
+   (ex: a cardiopathy, arteriosclerosis, anemia).</FONT> 
+    
+   <DT><FONT COLOR="#004080">- individuals having a particular 
+   physiological state:</FONT> 
+</DL> 
+ 
+<UL> 
+   <LI><FONT COLOR="#004080">the pregnant woman,</FONT> 
+    
+   <LI><FONT COLOR="#004080">the embryo or the foetus.</FONT> 
+</UL> 
+ 
+<DL> 
+   <DT><FONT COLOR="#004080">-individuals working under particular 
+   conditions:</FONT> 
+</DL> 
+ 
+<UL> 
+   <LI><FONT COLOR="#004080">heavy work,</FONT> 
+    
+   <LI><FONT COLOR="#004080">high temperature</FONT> 
+    
+   <LI><FONT COLOR="#004080">high altitude (5 000 feet above the sea 
+   level). </FONT> 
+</UL> 
+ 
+<DL> 
+   <DT><FONT COLOR="#004080"><A NAME="hygiene & safety"></A></FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT SIZE="+1" COLOR="#004080">Hygiene and safety 
+   :</FONT></U></B> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT COLOR="#004080">A-Appearance : </FONT></U></B> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">At normal temperature and pressure, 
+   carbon monoxide is a colourless and odourless gas. </FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT COLOR="#004080">B-Exposure characteristics : 
+   </FONT></U></B> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">The exposure to carbon monoxide in the 
+   work environment, is done mainly by the gas. The exposure to 
+   liquid gas generates an important carbon monoxide concentration 
+   because of its very low boiling point and its high volatility. The 
+   exposure to liquid gas is less frequent because of its less 
+   widespread use. </FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT COLOR="#004080">C-Exposure to the gas 
+   :</FONT></U></B> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">The absence of odor on the part of 
+   carbon monoxide makes it so that it is impossible to identify its 
+   presence before or after the VEMP (35 ppm or 40 mg/m&#179;), or 
+   the VECD (200 ppm or 230 mg/m&#179;) are reached. The odor cannot 
+   thus be an adequate sign of warning of a dangerous exposure. 
+   Because of its density close to that of air, it mixes easily with 
+   air and quickly can, in the event of leakage or of incomplete 
+   organic matter combustion, reach dangerous concentrations. </FONT> 
+    
+   <DT><FONT COLOR="#004080">The value of IDLH (Immediately Dangerous 
+   to Life or Health, 1 200 ppm or 1 375 mg/m&#179;) being 
+   sufficiently low compared to the LLE (Lower Limit of Explosivity, 
+   12, 5 % or 125 000 ppm), the risk of intoxication will occur well 
+   before the risk of explosion. </FONT> 
+    
+   <DT><B><FONT COLOR="#004080">Detectors are thus recommended where 
+   exists the possibility of exposure to carbon monoxide</FONT></B> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT COLOR="#004080">D-Exposure to the liquified gas : 
+   </FONT></U></B> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">Carbon monoxide in the liquid state, is 
+   a cryogenic liquid at -191,5&#176;C, it is thus necessary to hold 
+   account of all the aspects which comprise the exposure to a liquid 
+   at very low temperature. </FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT COLOR="#004080">E-Inflammability and explosiveness 
+   : </FONT></U></B> 
+    
+   <DD><B><FONT COLOR="#004080">&nbsp;</FONT></B> 
+    
+   <DT><B><FONT COLOR="#004080">1-Inflammability : </FONT></B> 
+    
+   <DT><FONT COLOR="#004080">Carbon monoxide is a flammable gas; the 
+   fire hazard is very high with strong concentrations and in the 
+   presence of a source of ignition. </FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">2-Explosiveness :</FONT></B> 
+    
+   <DT><FONT COLOR="#004080">Carbon monoxide may form explosive 
+   mixtures with air.</FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT COLOR="#004080">F-Combustion products 
+   :</FONT></U></B> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">Carbon dioxide.</FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT COLOR="#004080">G-Reactivity :</FONT></U></B> 
+    
+   <DD><B><FONT COLOR="#004080">&nbsp;</FONT></B> 
+    
+   <DT><B><FONT COLOR="#004080">1-Stability : </FONT></B> 
+    
+   <DT><FONT COLOR="#004080">Stable at normal pressure and 
+   temperature, carbon monoxide becomes reactive at high temperature 
+   and can act as a powerful reducing agent. </FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">2-Incompatibility : </FONT></B> 
+    
+   <DT><FONT COLOR="#004080">Carbon monoxide is a strong reducing 
+   agent which violently reacts with strong oxidants such as 
+   halogens. It is incompatible with oxygen</FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">3-Decomposition products :</FONT></B> 
+    
+   <DT><FONT COLOR="#004080">It does not <a  href="https://digitalfire.com/glossary/decomposition">decompose</a> under normal 
+   conditions</FONT><B><FONT COLOR="#004080"> </FONT></B> 
+    
+   <DD><B><FONT 
+   COLOR="#004080"><A NAME="prevention_eng"></A></FONT></B> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT SIZE="+1" COLOR="#004080">Prevention : 
+   </FONT></U></B> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">Information campaigns should be 
+   undertaken in a periodic way at the beginning of winter to inform 
+   the public on the dangers of the potential sources of CO. </FONT> 
+    
+   <DT><FONT COLOR="#004080">Several simple means to prevent CO 
+   intoxications can be easily applied:</FONT> 
+    
+   <DT><FONT COLOR="#004080">- the routine inspection and maintenance 
+   of combustion devices and chimneys;</FONT> 
+    
+   <DT><FONT COLOR="#004080">- the banning of letting car engines run 
+   in closed garages at idle even when the door is open;</FONT> 
+    
+   <DT><FONT COLOR="#004080">- the banning of the use of 
+   non-ventilated cooking devices inside dwellings;</FONT> 
+    
+   <DT><FONT COLOR="#004080">- the generalized use of CO detectors 
+   </FONT> 
+    
+   <DT><FONT COLOR="#004080">Many CO intoxications can be explained 
+   by the public's ignorance about its harmful effects</FONT> 
+    
+   <DD><FONT 
+   COLOR="#004080"><A NAME="protection measures"></A></FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT SIZE="+1" COLOR="#004080">Protection measures : 
+   </FONT></U></B> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">Laws on Occupational health and Safety 
+   aim at the elimination of hazaerds at the source. When engineering 
+   measures and modifications of the working methods are not 
+   sufficient enough to reduce the exposure to this substance, the 
+   wearing of individual protection equipment may prove to be 
+   necessary. The protection gears must be in conformity with 
+   regulation</FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT COLOR="#004080">A-Respiratory tract : 
+   </FONT></U></B> 
+    
+   <DT><FONT COLOR="#004080">Wear a suitable apparatus of respiratory 
+   protection if the concentration in the work environment is greater 
+   than the VEMP (35 ppm or 40 mg/m&#179;) or than the VECD (200 ppm 
+   or 230 mg/m&#179;). </FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT COLOR="#004080">B-Skin :</FONT></U></B> 
+    
+   <DT><FONT COLOR="#004080">Wear a suitable device of skin 
+   protection if there is a hazard of splashes with the liquid gas. 
+   The selection of protection equipement for the skin depends on the 
+   nature of the work to carry out. </FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT COLOR="#004080">C-Eyes :</FONT></U></B> 
+    
+   <DT><FONT COLOR="#004080">Wear a suitable protection device for 
+   the eyes if there is a hazard of splashes with liquid gas. The 
+   selection of an ocular protection gear depends on the nature of 
+   work to carry out and, if it is necessary, on the type of device 
+   of respiratory protection used. </FONT> 
+    
+   <DD><FONT COLOR="#004080"><A NAME="exposure standards"></A></FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT SIZE="+1" COLOR="#004080">Exposure standards 
+   :</FONT></U></B> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT COLOR="#004080">A-Workplace :</FONT></U></B> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">1-Quebec's exposure limits 
+   :</FONT></B> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">a-Valeur d'exposition moyenne 
+   pond&eacute;r&eacute;e (VEMP)</FONT></B> 
+    
+   <DT><FONT COLOR="#004080">35 ppm 40 mg/m&#179; &nbsp;</FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">b-Valeur d'exposition de courte 
+   dur&eacute;e (VECD)</FONT></B> 
+    
+   <DT><FONT COLOR="#004080">200 ppm 230 mg/m&#179;</FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT COLOR="#004080">B-Environment :</FONT></U></B> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">1-WHO : </FONT></B> 
+    
+   <DT><FONT COLOR="#004080">-25 ppm/1 h </FONT> 
+    
+   <DT><FONT COLOR="#004080">-9 ppm/8 h</FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">2-EPA United Kingdom :</FONT></B> 
+    
+   <DT><FONT COLOR="#004080">10 ppm/8 h</FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">3-EPA USA :</FONT></B> 
+    
+   <DT><FONT COLOR="#004080">35 ppm/1 h</FONT> 
+    
+   <DT><FONT COLOR="#004080">9 ppm/8h</FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">4-Japan : </FONT></B> 
+    
+   <DT><FONT COLOR="#004080">-20 ppm/2 h</FONT> 
+    
+   <DT><FONT COLOR="#004080">-10 ppm/8 h</FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">5-Finland :</FONT></B><FONT 
+   COLOR="#004080"> </FONT> 
+    
+   <DT><FONT COLOR="#004080">-25 ppm/1 h</FONT> 
+    
+   <DT><FONT COLOR="#004080">-9 ppm/8 h</FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT COLOR="#004080">C-Dwellings air quality 
+   :</FONT></U></B> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><FONT COLOR="#004080">Health Canada : </FONT></B> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">- &lt; 11 ppm for 8 heures, </FONT> 
+    
+   <DT><FONT COLOR="#004080">- &lt; 25 ppm for 1 heure.</FONT> 
+    
+   <DD><FONT COLOR="#004080"><A NAME="first aid"></A></FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT SIZE="+1" COLOR="#004080">First Aid 
+   :</FONT></U></B> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT COLOR="#004080">A-Inhalation :</FONT></U></B> 
+    
+   <DT><FONT COLOR="#004080">In the event of inhalation of the gas, 
+   bring the person into a ventilated place. If she/he does not 
+   breathe any- more, artificial respiration should be given. Give 
+   oxygen, maintain the victim warm and tranfer she/he to the nearest 
+   medical emergency department. </FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><B><U><FONT COLOR="#004080">B-Frostbite :</FONT></U></B> 
+    
+   <DT><FONT COLOR="#004080">In the case of frostbite, apply lukewarm 
+   water and see a physician. </FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DD><FONT COLOR="#004080">&nbsp;</FONT> 
+    
+   <DT><I><FONT COLOR="#004080">References :</FONT></I> 
+    
+   <DT><I><FONT COLOR="#004080">&nbsp;</FONT></I> 
+    
+   <DT><I><FONT COLOR="#004080">1-CSST-Qu&eacute;bec, 
+   R&eacute;pertoire Toxicologique, 2003</FONT></I> 
+    
+   <DT><I><FONT COLOR="#004080">2-Toxicologie Industrielle et 
+   Intoxications Professionnelles, Lauwerys R. derni&egrave;re 
+   &eacute;dition.</FONT></I> 
+    
+   <DT><I><FONT COLOR="#004080">3-Bulletin d'Information 
+   Toxicologique du Qu&eacute;bec, Vol 17, No.3.</FONT></I> 
+    
+   <DT><I><FONT COLOR="#004080">4-IPCS No.213, Carbon Monoxide (2nd 
+   edition), OMS, 1999.</FONT></I> 
+    
+   <DT><I><FONT COLOR="#004080">5-R&egrave;glement sur la 
+   qualit&eacute; et la s&eacute;curit&eacute; du travail, 
+   Gouvernement du Qu&eacute;bec, 2001.</FONT></I> 
+    
+   <DD><FONT COLOR="#004080"><A NAME="author ED"></A>&nbsp;</FONT>    
+       
+</DL>
+<hr><p>By Edouard Bastarache </p>
+<h2 style="font-style:italic; margin-top:40px;">Related Information</h2>
+
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/eba">Article by Edouard Bastarache</a>
+<br /><i>Edouard Bastarache is a well known doctor that has written many articles on the subject of <a  href="https://digitalfire.com/glossary/toxicity">toxicity</a> of ceramic materials and books on technical aspects of <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>. He writes in both English and French.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="https://digitalfire.com/oxide/co">CO - Carbon Monoxide</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Hazards</td>
+<td>
+<a href="https://digitalfire.com/hazard/fumes+from+gas+kilns">Fumes from gas kilns</a>
+<br /><i></i>
+</td>
+</tr>
+</tbody></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

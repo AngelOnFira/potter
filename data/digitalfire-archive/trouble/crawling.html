@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Crawling</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="Ask yourself the right questions to figure out the real cause of a glaze crawling issue. Deal with the problem, not the symptoms." name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item"><a class="nav-link" href="../material/list.html">Materials</a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item active" href="list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=trouble" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container"><p><a aria-controls="collapse1" aria-expanded="false" class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button">All Troubles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a href="black+coring.html" title="29">Black Coring</a></nobr><br/><nobr><a href="bleeding+colors.html" title="30">Bleeding Colors</a></nobr><br/><nobr><a href="bloating.html" title="11">Bloating</a></nobr><br/><nobr><a href="casting+slip+problems.html" title="13">Casting Slip Problems</a></nobr><br/><nobr><a href="chrome+flashing+in+ceramic+glazes.html" title="7">Chrome Flashing in Ceramic Glazes</a></nobr><br/><nobr><a href="clouding+in+ceramic+glazes.html" title="23">Clouding in Ceramic Glazes</a></nobr><br/><nobr><a href="cracking+of+clays+during+drying.html" title="10">Cracking of Clays During Drying</a></nobr><br/><nobr><a href="1.html" title="1"><button class="btn btn-dark" type="button">Crawling</button></a></nobr><br/><nobr><a href="dunting+and+cracking+of+clay+bodies+during+firing.html" title="9">Dunting and Cracking of Clay Bodies During Firing</a></nobr><br/><nobr><a href="foaming+of+ceramicd+glaze+slurries.html" title="19">Foaming of Ceramicd Glaze Slurries</a></nobr><br/><nobr><a href="glaze+blisters.html" title="3">Glaze Blisters</a></nobr><br/><nobr><a href="glaze+crazing.html" title="2">Glaze Crazing</a></nobr><br/><nobr><a href="glaze+is+off-color.html" title="6">Glaze is Off-Color</a></nobr><br/><nobr><a href="glaze+marks+or+scratches.html" title="8">Glaze Marks or Scratches</a></nobr><br/><nobr><a href="glaze+peeling+on+drying.html" title="22">Glaze peeling on drying</a></nobr><br/><nobr><a href="glaze+pinholes%2C+pitting.html" title="5">Glaze Pinholes, Pitting</a></nobr><br/><nobr><a href="glaze+shivering.html" title="18">Glaze Shivering</a></nobr><br/><nobr><a href="glaze+slurry+is+difficult+to+use+or+settling.html" title="14">Glaze Slurry is Difficult to Use or Settling</a></nobr><br/><nobr><a href="leaking+of+fired+ceramics.html" title="26">Leaking of Fired Ceramics</a></nobr><br/><nobr><a href="lime+popping.html" title="28">Lime Popping</a></nobr><br/><nobr><a href="orange+peel+surface.html" title="27">Orange Peel Surface</a></nobr><br/><nobr><a href="over+firing+of+ceramic+glazes+and+bodies.html" title="21">Over Firing of Ceramic Glazes and Bodies</a></nobr><br/><nobr><a href="powdering%2C+cracking+and+settling+glazes.html" title="4">Powdering, Cracking and Settling Glazes</a></nobr><br/><nobr><a href="runny+ceramic+glazes.html" title="25">Runny Ceramic Glazes</a></nobr><br/><nobr><a href="specking+on+ceramic+ware.html" title="17">Specking on Ceramic Ware</a></nobr><br/><nobr><a href="splitting+at+the+plastic+stage.html" title="15">Splitting at the Plastic Stage</a></nobr><br/><nobr><a href="staining+of+fired+ceramic+glazes.html" title="24">Staining of Fired Ceramic Glazes</a></nobr><br/><nobr><a href="uneven+glaze+coverage.html" title="20">Uneven Glaze Coverage</a></nobr><br/><nobr><a href="warping.html" title="12">Warping</a></nobr></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Crawling</h1>
+<p class="text-muted" style="margin-left:20px">Ask yourself the right questions to figure out the real cause of a glaze crawling issue. Deal with the problem, not the symptoms.
+</p><h2>Details</h2>
+<p>Crawling is where the molten glaze withdraws into 'islands' leaving bare clay patches. The edges of the islands are thickened and smoothly rounded. This is among the most costly problems in ceramic production, ware requires refiring and is often lost anyway. In moderate cases there are only a few bare patches, in severe cases the glaze forms beads and even drips off onto the shelf. The problem is prevalent where <a href="../glossary/dipping+glaze.html">dipping glazes</a> are applied to <a href="../glossary/bisque.html">bisque</a>, shrink on drying and form cracks. This is usually because the glaze has excessive plastic clay content or is applied too thickly.</p>
+<p>It is common to see this issue misdiagnosed on social media - someone submits a picture and among the dozens of comments no one asks about the recipe or mentions the factors noted below.</p>
+<h2>Is the glaze shrinking too much during drying?</h2>
+<blockquote>
+<p>If the dried glaze forms a network of cracks it is a sign that the glaze is shrinking too much or its bond with the body is poor. The fault lines provide places for the <a href="crawling.html">crawling</a> to start (especially where the island cracks delineate raised edges that are no longer in contact with the body).
+There are a number of possible contributors:</p>
+<ul>
+<li>It is normal to see 20% clays (<a href="../material/80.html">ball clay</a>, <a href="../material/925.html">kaolin</a>). If significantly more is present try using a less plastic clay (i.e. kaolin instead of ball clay, low <a href="../glossary/plasticity.html">plasticity</a> kaolin instead of high plasticity kaolin, or a mix of <a href="../glossary/calcination.html">calcined</a> and raw kaolin). Ultimately you must tune the glaze recipe's clay content to achieve a compromise of good hardness and minimal shrinkage while maintaining the <a href="../glossary/glaze+chemistry.html">chemistry</a> (Want to learn how? Please email).</li>
+<li>If a <a href="../glossary/slurry.html">slurry</a> has flocculated (due to changes in water, dry material additions like <a href="../material/874.html">iron oxide</a>, or addition of an acid, <a href="../material/292.html">epsom salts</a>, calcium chloride, etc) it will require more water to achieve the same flow and will therefore shrink more during drying and require a longer period to dry. Try using distilled water. Always measure the <a href="../glossary/specific+gravity.html">specific gravity</a> to maintain solids content and use deflocculants/flocculants if necessary to thin/thicken the slurry (remove water from an existing glaze slurry by pouring some on a <a href="../material/1124.html">plaster</a> batt, then mixing the water-reduced mass back in). </li>
+<li>Gerstley <a href="../glossary/borate.html">Borate</a> is plastic and therefore contributes to <a href="../glossary/glaze+shrinkage.html">glaze shrinkage</a>, especially if the recipe also contains kaolin or ball clay. It also tends to gel glazes so they need excessive water. Use <a href="../glossary/borate.html">boron</a> <a href="../glossary/frit.html">frits</a> instead. Try a <a href="../glossary/boron+frit.html">boron frit</a> (do calculations to make these adjustments, there is no <a href="../glossary/frit.html">frit</a> that has the same chemistry). </li>
+<li>Many potters add <a href="../material/106.html">bentonite</a> to every glaze they make, thinking that it will help suspend. But when glazes already have sufficient, or even excessive clay content, the extra bentonite may increase the shrinkage enough to cause <a href="../glossary/drying+crack.html">drying cracks</a>.</li>
+<li>If very fine-particled materials are present (i.e. zinc, bone ash, light magnesium carbonate) these will contribute to higher shrinkage during drying. Try using calcined zinc, synthetic bone ash or another source of calcia, <a href="../material/1620.html">talc</a> or <a href="../material/273.html">dolomite</a> to source magnesia instead of magnesium carbonate. If a glaze has been <a href="../glossary/ball+milling.html">ball milled</a> for too long it may shrink excessively (for example, <a href="../material/1722.html">zircon</a> opacified glazes can be ground more finely than tin ones). Highly ground glazes may produce a fluffy lay down.</li>
+<li>Again, be "recipe flexible", tune the raw clay content. Use enough clay in the glaze mix to both suspend the slurry and toughen the dried layer, more than that risks excessive shrinkage. Less and the glaze does not harden and forms a powdery surface. A fool-proof way to reduce shrinkage is to <a href="../glossary/calcination.html">calcine</a> (see the link below) part of the clay. If there is 35% kaolin in the mix, then try using 15% calcined kaolin and 20% raw kaolin (calcine the clay yourself if needed, it is easy). If there is 70% <a href="../material/32.html">Alberta Slip</a>, try using 35% raw and 35% calcined. Adjust the proportion as you get experience in working with the glaze. One detail: If there is significant clay content, adjust for the <a href="../glossary/loi.html">LOI</a> (weight lost during firing) when calcining. Kaolin, for example, loses 12% weight on firing, so use 12% less calcined). <a href="https://plainsmanclays.ca/data/index.php?product=12910">Alberta Slip</a> and <a href="../material/1178.html">Ravenscrag</a> Slip have 9% <a href="../oxide/loi.html">LOI</a>.</li>
+</ul>
+<p>It is possible to create glaze slurries that gel and flow extremely well, dry hard and do not crack by using the right kaolin (i.e. <a href="../material/291.html">EPK</a>) or ball clay (i.e. Old Hickory #5, No. 5 Glaze) in adequate amounts. It is very important to realize that many ball clays and kaolins to not produce glazes of good slurry properties (without additives), a simple substitution can make a remarkable difference. It may not seem that <a href="../glossary/glaze+chemistry.html">glaze chemistry</a> is related to this subject of getting the right type and right amount of clay in a recipe. But it very much is. Why? Because <b>the ability to juggle a recipe to source <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a> from a clay or a feldspar/frit, as needed, enables controlling the amount of clay in the recipe while maintaining its fired character</b>. Chemistry also gives you the ability to switch between different types of clay (that have different oxide makeups).</p>
+</blockquote>
+<h2>Is the glaze's dry-bond with the ware surface inadequate?</h2>
+<p>The <a href="../glossary/mechanism.html">mechanism</a> of the bond between dry glaze and body is simply one of physical contact, the roughness of the ware surface copmbined with the ability of the liquid glaze to flow into all the tiny surface pores and irregularities and the degree to which it is able to dry hard without shrinking too much, these determine its ability to 'hang on'.</p>
+<ul>
+<li>Some surfaces can seem very smooth (e.g. <a href="../glossary/slip+casting.html">slip cast</a> surfaces), but microscopically they are not. Still, the glaze needs enough fluidity to flow onto and wet the surface well.</li>
+<li>If the dried glaze surface is excessively powdery incorporate more plastic clay (chemistry will be needed to juggle the recipe). Or add a little bentonite. If there is 10% kaolin, for example, consider changing that to 7% kaolin and 3% bentonite (there is a chemistry impact here, but not significant).</li>
+<li>Adding gum to a glaze will harden it and bond it better to bisque, this often solves crawling problems. Beware that excessive gum can increase drying time and <a href="../picture/1875.html">dripping</a> considerably, so do test to achieve a compromise.</li>
+<li>If a glaze is flocculated it may lack the necessary fluidity to run into tiny surface irregularities in the bisque and establish a firm foothold. However, some degree of <a href="../glossary/flocculation.html">flocculation</a> is valuable, it enables the glaze to set and gel quickly after dipping, this can really accelerate production.</li>
+<li>Wetting agents are available and can be added to the slurry to improve bond. But again, do not substitute these for the basics, the right amount of clay and degree of fluidity.</li>
+</ul>
+<h2>Does application technique or handling compromise the fragile glaze-body bond?</h2>
+<ul>
+<li>If ware is heavily dusted consider blowing it off. But a little dust is not an issue (remember glaze itself is 100% dust).</li>
+<li>If glaze is applied too thickly the forces imposed by its shrinkage will overcome its ability to maintain a bond with the ware surface (especially inside corners or at sudden discontinuities). If a glaze can be applied more thinly, do so.</li>
+<li>Use a fountain glazing machine to do the insides of bowls and containers to achieve a thinner layer.</li>
+<li>If glaze needs to be applied in a thick layer, you can achieve a lower <a href="../glossary/water+content.html">water content</a> by deflocculating the glaze (i.e. with some <a href="../material/1275.html">sodium silicate</a> or <a href="../material/260.html">Darvan</a>). Use caution with this, it may then tend to dry very slowly or form drips that crack and peel and instigate crawling. It is better to just have the right clay content.</li>
+<li>When applying the glaze in the normal layer thickness be careful to prevent drips that form thicker sections that can crack away during drying. It is practical to 'gel' the glaze slightly (i.e. with vinegar, Epsom salts) so that it 'stays put' after dipping or pouring.</li>
+<li>If a double-layer of glaze needs to be applied be careful that the second does not shrink excessively and pull at the first, compromising its bond with the body. If possible, the upper layer should have less clay, lower shrinkage, should be applied thinner and dry quickly. It may be necessary to bisque each layer on before applying the next. Double-layering typical raw art and pottery glazes is difficult, special consideration must be given. Have you successfully done this in the past without any special attention? You may have simply been very lucky.</li>
+<li>When doing double-layer glazing be careful that the second layer is not flocculated (with an associated high water content). This will rewet the first layer and loosen it from the body. Adding iron oxide, for example, to a glaze will often flocculate it and require the addition of much more water to restore the same fluidity.</li>
+<li>Spraying glaze on in such a way that the glaze-body bond is repeatedly dried and rewetted could a produce shrinkage-expansion cycle that compromises a glaze-bisque bond that could otherwise withstand one drying-shrink cycle.</li>
+<li>Force-drying of the ware can make the glaze visibly crack when it otherwise would not (slower shrinkage associated with slower drying gives it the glaze time to ease body <a href="../glossary/body+glaze+interface.html">interface</a> tension by micro cracking). Preheating the bisque too much may cause escaping steam to rupture the bond with the ware.</li>
+<li>Rough handling of ware can compromise sections of the glaze body bond.</li>
+<li>For the inside of slip cast ware, consider pouring a thin glaze slurry into the mold of a just-drained piece (perhaps a minute or two after the mold has been drained) and immediately pouring it out again. This base layer can be fired on in the bisque.</li>
+</ul>
+<h2>Is the glaze drying too slow?</h2>
+<ul>
+<li>This often occurs where ware is very thin (e.g. slipcasting or fine <a href="../glossary/porcelain.html">porcelain</a>), the bisque is fired to higher density, glaze has a high water content or ware is already wet from a previous glazing (or a combination of these factors). If the glaze dries too slowly the most fragile stages of the adhesion mechanism are extended and cracks or bubbles develop. These low-bond areas instigate crawling during melting. To fix this problem speed up drying. You can do this by preheating the bisque (in a kiln to 150C or more if necessary) before dipping, doing separate interior and exterior glazing (with a drying period in between), applying glaze in a thinner layer, reducing glaze water content, bisquing lower to increase <a href="../glossary/clay+body+porosity.html">porosity</a> or increasing wall thickness in the ware.</li>
+</ul>
+<h2>Is the ware <a href="../glossary/once+fire+glazing.html">once-fire</a>?</h2>
+<ul>
+<li>Once-fired ware is prone to crawling because the mechanical glaze-body bond is more difficult to achieve and maintain. If glaze is applied to <a href="../glossary/leather+hard.html">leather hard</a> ware it must shrink with the body. During the early stages of firing the ware also goes through volume changes and chemical changes that generate gases, these affect the ability of the glaze to hang on. </li>
+<li>When glaze is applied to leather hard ware you must be able to tune its shrinkage by adjusting the amounts and nature of the clays in the recipe while maintaining the overall chemistry (calculations may be needed).</li>
+<li>In damp conditions the powdery layer may reabsorb water from the air causing slight expansion of the glaze layer, thereby affecting the adhesion.</li>
+</ul>
+<h2>Is the problem happening during firing?</h2>
+<ul>
+<li>If glaze is applied over <a href="../glossary/ceramic+stain.html">stains</a> or <a href="../glossary/ceramic+oxide.html">oxides</a> that lack <a href="../glossary/flux.html">flux</a> (e.g. chrome pinks, manganese types, greens, cobalt aluminate) it can be prevented from bonding well with the underlying body. Mix under-glaze stains with a flux medium so that over lying glazes can 'wet' them and form a glassy bond.</li>
+<li>If the glazed ware is put into the kiln wet and therefore dried quickly during the early stages of firing, the glaze layer will tend to crack and curl and crawling can occur.</li>
+<li>If glazed ware is put into a kiln containing heavy damp ware such that early stages of firing occur in very high humidity conditions the glaze could be rewetted and forced through an expansion-shrinkage cycle (that could affect its bond with the body).</li>
+<li>If a glaze contains significant organic materials (i.e. gums, binders) that gas off excessively during firing the bond may be affected. <a href="../glossary/decomposition.html">Decomposition</a> of materials like whiting can also generate significant amounts of gas within the glaze layer (try switching to wollastonite, it has no LOI and supplies <a href="../oxide/sio2.html">SiO<sub>2</sub></a> and will permit reducing the <a href="../material/1245.html">silica</a> content accordingly).</li>
+<li>Raw <a href="../material/1718.html">zinc oxide</a> is very fine and tends to pull a glaze together during firing, use calcined zinc instead (most zincs sold to potters are calcined).</li>
+<li>If the glaze contains significant zircon <a href="../glossary/opacifier.html">opacifier</a>, alumina, some stains, magnesium carbonate, <a href="../glossary/melt+fluidity.html">the melt</a> may be much 'stiffer' and flow less. This can affect its ability to resist crawling. </li>
+<li>Watch out for glazes with slightly soluble materials like <a href="../material/806.html">Gerstley Borate</a> or wood ash. With the former the soluble portion tends to be the borate, which will be absorbed into the bisque during application. Then, during firing, it creates a highly fluid layer between the body and the less developed over glaze, it thereby prevents adhesion of the glaze to the body. Use frit to source boron instead. In addition soluble materials tend to flocculate (thicken) the slurry and attempts to thin them result in higher water content and therefore increased shrinkage.</li>
+<li>If the <a href="../glossary/bisque.html">bisque firing</a> is reduced or not adequately oxidized and excessive gases are generated during certain stages of the glaze firing, these can affect the glaze-body bond.</li>
+<li>The chemistry of glaze may be such that the <a href="../glossary/surface+tension.html">surface tension</a> of the melt encourages crawling (e.g. high alumina, high tin, significant chrome/manganese <a href="../glossary/colorant.html">colorants</a>, lack of fluxes of low surface tension). </li>
+</ul>
+<h2>Is there a problem with the body?</h2>
+<ul>
+<li>If the <a href="../glossary/clay+body.html">clay body</a> contains <a href="../glossary/soluble+salts.html">soluble salts</a> that come to the surface during drying, these can affect the fired melt's ability to form a glassy bond with the body. Precipitate these salts with a small body addition of <a href="../material/86.html">barium carbonate</a> (for information on how this works search for Barium Carbonate 	in the materials section).</li>
+<li>As noted above, if the body surface is too smooth, the glaze may not be able to adhere properly.</li>
+</ul>
+<h2>Is this problem inherent in the type of glaze being used?</h2>
+<p>Matte glazes are more prone to crawling. Why? Because they usually have high Al<sub>2</sub>O<sub>3</sub>. The major contributor of that oxide is clay, especially kaolin. Matte glazes commonly have 35% kaolin in the recipe. Use part calcined material, part raw kaolin to deal with this problem.</p>
+<p>Many pottery glazes have high <a href="../material/310.html">feldspar</a> and low clay contents, simply because they were improperly formulated. Using chemistry, you can shift the recipe to supply part of the Al<sub>2</sub>O<sub>3</sub> from kaolin instead of the feldspar, reducing the feldspar percentage (this involves corrections in the amount of silica and other materials also).
+</p><p>Slip glazes can have 70, 80 or even 90% of a slip clay in them. <a href="https://plainsmanclays.ca/data/index.php?product=12910">Alberta Slip</a> and <a href="https://plainsmanclays.ca/data/index.php?product=12911">Ravenscrag slip</a> are examples. These materials melt by themselves to make glazes. But they are clays, they shrink. Follow the instructions from the manufacturer on how to use them properly.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Crawling glazes withdraw into islands during melting 
+</h3>
+<h4 style="color:#888888; margin-top:0px;">The cause is almost always obvious upon seeing the recipe</h4>
+<br/><a alt="A glaze is crawling during firing" href="../picture/2066.html"><img alt="A glaze is crawling during firing" class="flexleft50" loading="lazy" src="../media/images/jmeqecpbzk.29.09.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2066.html">click here</a> to see it.</p>
+<p>This problem is almost always caused by glazes shrinking too much during drying and then cracking. Those cracks become the <a href="crawling.html">crawl</a> points during firing. Excessive shrinkage is normally a product of too much raw clay in a glaze. Even glazes a marginally high clay can crack if applied too thickly. It is likewise with multi-layer application done without consideration for the specific needs of that process (e.g. failure to use a <a href="../glossary/base-coat+dipping+glaze.html">base coat</a> glaze for the first layer). <a href="../glossary/glaze+layering.html">Multi-layering</a> of glazes rewets the first layer, stressing its bond with the body and pulling it away from the body as it shrinks. Base coat glazes have better adherence. <a href="crawling.html">Crawling</a> is quite prevalent in once-fired ware since glaze bonding is more tenuous.<br/>
+<br/>
+To state again: Glazes contain clay to suspend their slurries. Clay shrinks when it dries. Some shrinkage can be tolerated but when it is excessive, something has to give. As glaze layer thickness increases, it is afforded more and more power to impose its shrinkage on the bond with the body. At some point, that bond will be compromised in places where cracks occur to release the tension. Even if these do not appear on dry ware, bond compromise can still exist.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">ChatGPT is surprisingly wrong about the causes of glaze crawling.</h3>
+<br/><a alt="A glaze crawling inside a mug" href="../picture/3182.html"><img alt="A glaze crawling inside a mug" class="flexleft50" loading="lazy" src="../media/images/yscgyvfowm.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3182.html">click here</a> to see it.</p>
+<p><a href="https://digitalfire.com/url/3403">ChatGPT</a> trained on the entire internet and yet gave 100% wrong answers and neglected the key thing that causes 90% of <a href="crawling.html">crawling</a>! How can the internet be so wrong? Consider the suggestions it gave:<br/>
+<br/>
+<i>-Dust or oil on the <a href="../glossary/bisque.html">bisque</a>:</i> This almost never happens. Besides, glaze is a mix of dust and water!<br/>
+<i>-Too much <a href="../material/310.html">feldspar</a> in a glaze can cause it to shrink excessively during firing:</i> No, high feldspar causes thermal expansion/contraction of the fired glass, not physical shrinkage of <a href="../glossary/melt+fluidity.html">the melt</a>.<br/>
+<i>-If the <a href="../glossary/clay+body.html">clay body</a> surface is not roughened, the glaze may not adhere properly:</i> No, glazes don’t <a href="crawling.html">crawl</a> any more on porcelains than other bodies.<br/>
+<i>-If the glaze is too thick in some areas and too thin in others, it can crawl in the thin areas:</i> No, it crawls where thick because that’s where it cracks during drying.<br/>
+<i>-Over-firing or under-firing:</i> No. Glazes fired to the ideal temperature crawl just as much.<br/>
+<i>-If the pottery is dried evenly or the drying process is too rapid:</i> No, rapid drying of glaze on bisque is important to prevent cracking.<br/>
+<br/>
+This crawling happened because the glaze cracked along the inside of that corner during drying. Such cracking is by far the number one cause of crawling, the melt pulls back from either side of the crack. The <a href="../glossary/specific+gravity.html">specific gravity</a> of the <a href="../glossary/slurry.html">slurry</a> was too high, the resulting greater thickness right at the corner gave the shrinking glaze power to pull a crack. Adding water to bring the SG back down to 1.4 and then <a href="../material/292.html">Epsom salts</a> to gel it to <a href="../glossary/thixotropy.html">thixotropic</a> gave the slurry much better dipping and drying properties and totally solved this issue.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Clay in a glaze recipe: Why is it there? 
+</h3>
+<h4 style="color:#888888; margin-top:0px;">What happens when there is too much?</h4>
+<br/><a alt="Glaze cracking during drying" href="../picture/1442.html"><img alt="Glaze cracking during drying" class="flexleft50" loading="lazy" src="../media/images/hosgajelaz.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1442.html">click here</a> to see it.</p>
+<p>If I put this on social, I might get 100 comments on the cause. Most would say it's applied too thick. That is not correct. At the top, it is too thick, but not at the bottom (where it is still cracking). <a href="crawling.html">Crawling</a> during firing is almost certain.<br/>
+<br/>
+Before offering any opinion, one needs to <a href="../glossary/limit+recipe.html">sanity check</a> the recipe. This one, <a href="../recipe/ga6-b.html">GA6-B</a>, contains a lot of clay. Why do <a href="../glossary/dipping+glaze.html">dipping glazes</a> contain clay, usually <a href="../material/925.html">kaolin</a>, <a href="../material/80.html">ball clay</a>? To suspend the <a href="../glossary/slurry.html">slurry</a>, slow down drying, gel the slurry to make it <a href="../glossary/thixotropy.html">thixotropic</a> and harden the layer on drying. But their <a href="../glossary/glaze+chemistry.html">chemistry</a> is also important, clays supply the all-important <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a> and <a href="../oxide/sio2.html">SiO<sub>2</sub></a> to <a href="../glossary/melt+fluidity.html">the melt</a> (which would otherwise have to come from <a href="../material/310.html">feldspar</a>). Certain clays excel at <a href="../glossary/suspension.html">suspending</a>. 15-20% <a href="../material/291.html">EP kaolin</a>, for example, is all that is needed. It’s not that plastic, but sticky and thixotropic (<a href="../material/831.html">Grolleg</a> and New Zealand kaolins are similar or even better). 10% of a gelling ball clay might be enough. However, 50% of a silty non-plastic clay might be needed. When the clay has too much influence, glazes shrink too much as they dry and then crack like this. Ones lacking clay (or employing one that is not suitable) have poor application properties (for dipping) and are powdery. This glaze has 80% pure raw <a href="../material/32.html">Alberta Slip</a>. That is a plastic clay, no wonder this is happening! 50% of it needs to be <a href="../glossary/calcination.html">roasted</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Crawling on a thickly applied glaze (cone 6)</h3>
+<br/><a href="../picture/682.html"><img class="flexleft50" loading="lazy" src="../media/images/jefdukufom.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/682.html">click here</a> to see it.</p>
+<p>Example of <a href="../glossary/glaze+crawling.html">glaze crawling</a> on the inside of a <a href="../glossary/stoneware.html">stoneware</a> mug. Notice how thick it is. Thickly applied glazes have more ability to assert their shrinkage during drying and thus compromise their bond with the body below. The cracks that appear become bare patches after firing.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Two glazes. One crawls, the other does not. Why?</h3>
+<br/><a href="../picture/703.html"><img class="flexleft50" loading="lazy" src="../media/images/givdulemyj.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/703.html">click here</a> to see it.</p>
+<p>The glaze on the right is <a href="crawling.html">crawling</a> at the inside corner. Why? Multiple factors contribute. The angle between the wall and base is sharper. A thicker layer of glaze has collected there (the thicker it is the more power it has to impose a crack as it shrinks during drying). It also shrinks more during drying because it has a higher <a href="../glossary/water+content.html">water content</a>. But the leading cause: Its high raw clay content increases <a href="../glossary/drying+shrinkage.html">drying shrinkage</a>. Calcining part of the raw clay destroys its affinity for water (which is what makes it plastic), this is an effective way to deal with this. Or doing a little <a href="../glossary/glaze+chemistry.html">chemistry</a> to source some of the <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a> from materials other than clay (e.g. a <a href="../glossary/frit.html">frit</a> having a higher Al<sub>2</sub>O<sub>3</sub> content).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Majolica glaze crawling on this slip-cast terra cotta</h3>
+<br/><a href="../picture/2786.html"><img class="flexleft50" loading="lazy" src="../media/images/hpk22fcpon.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2786.html">click here</a> to see it.</p>
+<p>Mitigating factors are poor adherence of the glaze to the smooth-surfaced <a href="https://insight-live.com/insight/share.php?z=No2m98AEhJ">L4170B</a> <a href="../glossary/terra+cotta.html">terra cotta</a> <a href="../glossary/bisque.html">bisque</a>, high <a href="../material/1722.html">zircon</a> content in the glaze (it reduces <a href="../glossary/melt+fluidity.html">melt fluidity</a>) and the very thick application (this is a variation on <a href="../recipe/g1916q.html">G1916Q</a> as a <a href="../glossary/majolica.html">majolica</a> glaze). Which is the most important of those factors? The adherence to the bisque. An addition of <a href="../material/1672.html">Veegum CER</a> solved the problem (50g of the solution to 0.75 litres of glaze <a href="../glossary/slurry.html">slurry</a>, with added water to thin it out). Unlike with <a href="../material/228.html">CMC gum</a>, this slurry still goes on thick and evenly.  Although the piece on the left is darker red, that is a photo issue, these were both the same body and fired at <a href="../glossary/low+temperature+glaze.html">cone 04</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Crawling can happen when paint-on glazes are layered over dipping glazes</h3>
+<br/><a alt="The inner glaze has curtained off downward from the rim on buff stoneware bowl" href="../picture/2543.html"><img alt="The inner glaze has curtained off downward from the rim on buff stoneware bowl" class="flexleft50" loading="lazy" src="../media/images/1s4s3zvje8.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2543.html">click here</a> to see it.</p>
+<p>This bowl was dipped in a non-gummed clear <a href="../glossary/dipping+glaze.html">dipping glaze</a>. Such glazes are optimized for fast drying and even coverage. However their bond with the <a href="../glossary/bisque.html">bisque</a> is fragile. The blue over-glaze was applied thickly on the rim (so it would run downward during firing). But during drying, it shrunk and pulled the <a href="../glossary/base-coat+dipping+glaze.html">base coat</a> away at the rim (likely forming many tiny cracks at the <a href="../glossary/body+glaze+interface.html">interface</a> between the clear and the bisque. That initiated the cascade of <a href="crawling.html">crawling</a>. When gummed <a href="../glossary/dipping+glaze.html">dipping glazes</a> are going to be painted over, a <a href="../glossary/base-coat+dipping+glaze.html">base-coat dipping glaze</a> should be used. What is that? It is simply a regular fast-dry dipping glaze with some <a href="../material/228.html">CMC gum</a> added (perhaps half the amount as what would be used for painting). There is a cost to this: Longer drying times after dipping and less even coverage. And gum destroys the ability to gel the glaze and make the <a href="../glossary/slurry.html">slurry</a> <a href="../glossary/thixotropy.html">thixotropic</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Crawling in G2934Y Zircopax white glaze: Here are some fixes.</h3>
+<br/><a alt="A matte glazed G2934Y mug where the glaze has crawled on the upper handle join" href="../picture/2441.html"><img alt="A matte glazed G2934Y mug where the glaze has crawled on the upper handle join" class="flexleft50" loading="lazy" src="../media/images/e3yx1qaqbd.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2441.html">click here</a> to see it.</p>
+<p><a href="../recipe/g2934y.html">G2934Y</a>, a variation of the <a href="../recipe/g2934.html">G2934</a> base, is a good stain matte <a href="../glossary/base+glaze.html">base glaze</a> but it is not without issues. It has significant clay content in the recipe and high levels of <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a> in the <a href="../glossary/glaze+chemistry.html">chemistry</a>, these make it susceptible to <a href="crawling.html">crawling</a>. This base is normally fine as is but when opacified or certain <a href="../glossary/ceramic+stain.html">stains</a> are added (especially at significant percentages) it can <a href="crawling.html">crawl</a>. This has 10% <a href="../material/1724.html">Zircopax</a>. Even though the glaze layer thickens at the recess of the handle join it is still crawling. We also get this on the insides of mugs where wall and foot meet at a sharp angle. This was initiated because the glaze cracked here during drying. Normally it would heal but the <a href="../material/1722.html">zircon</a> stiffens <a href="../glossary/melt+fluidity.html">the melt</a>, making it less mobile. The easiest solution is to adjust the <a href="../glossary/specific+gravity.html">specific gravity</a> of the glaze to 1.44 and flocculate it to <a href="../glossary/thixotropy.html">thixotropic</a>, this assures that the application is not too thick. Another measure is to add a little <a href="../material/228.html">CMC gum</a> (by replacing some of the water with gum solution). Lastly, use a blend of <a href="../material/1642.html">tin oxide</a> and Zircopax, as in the <a href="https://insight-live.com/insight/share.php?z=xoZBarAsJC">G3926C</a> version of the recipe, to <a href="../glossary/opacifier.html">opacify</a> it.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">This serious glaze crawling problem was solved with a simple addition</h3>
+<br/><a href="../picture/2788.html" title="Glaze crawling on one piece but not another"><img class="flexleft50" loading="lazy" src="../media/images/lsbgx3bjkw.jpg" title="Glaze crawling on one piece but not another"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2788.html">click here</a> to see it.</p>
+<p>This is <a href="../recipe/g2934y.html">G2934Y</a> white (with 10% <a href="../material/1724.html">Zircopax</a>). I initially blamed the <a href="../material/1722.html">zircon</a> for the <a href="crawling.html">crawling</a>. But, since the <a href="../glossary/slurry.html">slurry</a> had <a href="../glossary/suspension.html">settled</a> somewhat I was able to remove about 15% of the water and replace it with <a href="../material/228.html">CMC gum</a> solution. The gum addition was not enough to slow down the drying much but it really improved reduced the problem! This likely means that adherence of the dried layer to the smooth <a href="../glossary/bisque.html">bisque</a> was the issue. This being said, there were still a couple of small spots where it <a href="crawling.html">crawled</a>. The ultimate solution thus appears to be discovering the percentage of CMC gum and water needed to get the least loss of drying speed and while achieving integrity of glaze coverage. It is best to add the CMC gum as a powder at mixing time and <a href="../glossary/blender+mixing.html">blender mix</a> the slurry thoroughly to be sure that it fully dissolves (watch for a <a href="../glossary/rheology.html">rheology</a> change on aging, that will demonstrate if mixing was thorough enough).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Alberta Slip crawling because it shrinks too much on drying</h3>
+<br/><a href="../picture/751.html"><img class="flexleft50" loading="lazy" src="../media/images/fazdimykut.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/751.html">click here</a> to see it.</p>
+<p>Example of <a href="../material/32.html">Alberta Slip</a> which has been sprayed on dry ware and single fired. This happened because the slip shrunk during drying creating a network of cracks. These cracks become the crawl-points during firing.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Badly crawled glaze fired at cone 5 reduction</h3>
+<br/><a href="../picture/754.html"><img class="flexleft50" loading="lazy" src="../media/images/postapunek.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/754.html">click here</a> to see it.</p>
+<p>It was spray applied on the dried bowl (no <a href="../glossary/bisque.html">bisque</a> fire) an was too thick (not to mention under fired). But the main problem was a glaze recipe having too high a clay content. If a glaze has more than about 25% clay, consider a mix of the raw clay and <a href="../glossary/calcination.html">calcined</a>. For example, you can buy calcined <a href="../material/925.html">kaolin</a> to mix with raw kaolin. Or you can <a href="../glossary/calcination.html">calcine</a> the clay in bowls in your kiln by firing it to about 1200F.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Fixing a crawling problem with Ravenscrag Tenmoku</h3>
+<br/><a href="../picture/1337.html"><img class="flexleft50" loading="lazy" src="../media/images/zungubudog.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1337.html">click here</a> to see it.</p>
+<p><a href="crawling.html">Crawling</a> of a <a href="../glossary/reduction+firing.html">cone 10R</a> <a href="../material/1178.html">Ravenscrag</a> Slip iron crystal glaze. The added <a href="../material/874.html">iron oxide</a> flocculates the <a href="../glossary/slurry.html">slurry</a> raising the <a href="../glossary/water+content.html">water content</a>, increasing the <a href="../glossary/drying+shrinkage.html">drying shrinkage</a>. To solve this problem you can <a href="../glossary/calcination.html">calcine</a> part of the <a href="https://plainsmanclays.ca/data/index.php?product=12911">Ravenscrag Slip</a>, that reduces the shrinkage.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Crawling glaze on slip cast ware is common</h3>
+<br/><a href="../picture/564.html"><img class="flexleft50" loading="lazy" src="../media/images/gogvitakic.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/564.html">click here</a> to see it.</p>
+<p>This <a href="../glossary/cone+6.html">cone 6</a> white glaze is <a href="crawling.html">crawling</a> on the inside and outside of a thin-walled cast piece. This happened because the thick glaze application took a long time to dry, this extended period, coupled with the ability of the thicker glaze layer to assert its shrinkage, compromised the fragile bond between dried glaze and fairly smooth body. There are several measures that can be taken to solve this problem. The ware could be heated before glazing, the glaze applied thinner, or glazing the inside and outside could be done as separate operations (with a drying period between).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Same body, same glaze, same firing. Why did one crawl?</h3>
+<br/><a alt="Crawling glaze on cast ware" href="../picture/2442.html"><img alt="Crawling glaze on cast ware" class="flexleft50" loading="lazy" src="../media/images/rtdmnqaaqd.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2442.html">click here</a> to see it.</p>
+<p>The body: <a href="https://plainsmanclays.ca/data/index.php?product=12880">M370</a>. Glaze: <a href="../recipe/g2934y.html">G2934Y</a> (with added green stain). Firing: <a href="../glossary/cone+6.html">Cone 6</a> <a href="../glossary/drop-and-soak+firing.html">drop-and-hold</a>. Glazing method: dipping (using tongs). Thickness: The same. Surface: Clean on both. The difference: Clay wall thickness. The one on the right was cast much thinner so the glaze took a lot longer to dry. Common pottery glazes contain clays which need to shrink somewhat during drying. The bond with the <a href="../glossary/bisque.html">bisque</a>, although fragile, is normally enough to prevent cracking during drying. But drying needs to occur quickly with glazes containing no gum hardener - that is only possible when the body has enough <a href="../glossary/clay+body+porosity.html">porosity</a> to absorb all the water quickly. Otherwise, cracks appear - and they become crawls during firing. A complicating factor is that stain and/or <a href="../material/1722.html">zircon</a> additions make an already crawl-susceptible glaze even worse. One or a combination of the following can be done to minimize <a href="crawling.html">crawling</a> on even very thin-walled pieces:<br/>
+-Apply a thinner glaze layer.<br/>
+-Heat the bisque before dipping. <br/>
+-Glaze the inside and outside separately (with drying between). <br/>
+-Deflocculate the glaze to reduce <a href="../glossary/water+content.html">water content</a>.<br/>
+-Brush or spray on a CMC gummed version in multiple coats.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Crawling sanitary ware glaze sourcing Al2O3 from only feldspar</h3>
+<br/><a href="../picture/1614.html"><img class="flexleft50" loading="lazy" src="../media/images/gebfygizuw.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1614.html">click here</a> to see it.</p>
+<p>The original recipe had a very low clay content, sourcing almost all of its <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a> from <a href="../material/310.html">feldspar</a> instead. Although the glaze <a href="../glossary/slurry.html">slurry</a> was maintained at 1.78 <a href="../glossary/specific+gravity.html">specific gravity</a> (an incredibly high value) and thus would have had very low shrinkage, it did not stick and harden well enough to the ware. Why? Lack of clay content in the glaze. The fix was to source much more of the Al<sub>2</sub>O<sub>3</sub> from <a href="../material/925.html">kaolin</a> instead of feldspar. The reduction in feldspar shorted the glaze on <a href="../picture/1775.html">KNaO</a> and <a href="../oxide/sio2.html">SiO<sub>2</sub></a> so these were sourced from a <a href="../glossary/frit.html">frit</a> and pure <a href="../material/1245.html">silica</a> instead (the calculations to do this were done in <a href="../glossary/digitalfire+insight-live.html">Insight-live</a>.com). The change also provided opportunity to substitute some of the KNaO with lower expansion <a href="../oxide/cao.html">CaO</a>. This reduced the <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> and reduced <a href="glaze+crazing.html">crazing</a> issues.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Zircon glazes cover well but they have a problem</h3>
+<br/><a href="../picture/1770.html"><img class="flexleft50" loading="lazy" src="../media/images/ridxudufyh.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1770.html">click here</a> to see it.</p>
+<p>This <a href="../glossary/sanitary+ware.html">sanitary ware</a> tank lid was made in China. Notice how thick the white glaze is being applied to cover the iron containing body below. This is a testament to how opaque a <a href="../material/1722.html">zircon</a> opacified glaze can be. Zircon often causes <a href="crawling.html">crawling</a> (likely due to a combination of the effects of its fine particle size on drying properties and its tendency to stiffen <a href="../glossary/melt+fluidity.html">the melt</a>). Extra measures and constant attention to detail (e.g. <a href="../glossary/glaze+thickness.html">glaze thickness</a>, <a href="../glossary/slurry.html">slurry</a> <a href="../glossary/rheology.html">rheology</a>, avoidance of sharp contours on ware) are needed with such glazes. </p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Crawling glaze on the convex edges of sanitaryware</h3>
+<br/><a alt="crawling glaze on sanitaryware" href="../picture/3126.html"><img alt="crawling glaze on sanitaryware" class="flexleft50" loading="lazy" src="../media/images/nspkj4x7jg.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3126.html">click here</a> to see it.</p>
+<p><a href="../glossary/sanitary+ware.html">Sanitaryware</a> glazes are high in <a href="../material/1722.html">zircon</a>, thus a stiff glaze melt is a part of their very nature. That means <a href="../glossary/glaze+crawling.html">glaze crawling</a> is a part of their nature! And, preventing it is a major effort by producers. <a href="crawling.html">Crawling</a> most commonly happens inside acute contour changes (that thicken the layer), but <a href="crawling.html">crawl</a> points can even occur on relatively flat surfaces. However, this time it appears on the outside of an abrupt curve. Factors that can cause crawling can compound on corners. During drying, <a href="../glossary/soluble+salts.html">soluble salts</a> and binders in the clay tend to concentrate at edges and corners - these can affect <a href="../glossary/glaze+laydown.html">glaze laydown</a> (especially its thickness and adhesion). The <a href="../glossary/slip+casting.html">slip casting</a> process favours the concentration of the finest clay particles at the mold face, but corners see the most surface disruption during cleaning and tooling at the <a href="../glossary/leather+hard.html">leather hard</a> stage (which can expose coarser particles below the surface). Glazes containing clay must shrink somewhat during drying, a corner like this will be the first place a crack appears (and thus a crawl), especially if adhesion is not as good.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Mag carb causes crawling in higher amounts</h3>
+<br/><a href="../picture/690.html"><img class="flexleft50" loading="lazy" src="../media/images/nurrahycex.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/690.html">click here</a> to see it.</p>
+<p>Example of two <a href="crawling.html">crawling</a> glazes. Both have magnesium carbonate added to make this happen (around 10%). On the left at <a href="../glossary/low+temperature+glaze.html">cone 04</a> on a <a href="../glossary/terra+cotta.html">terra cotta</a> body, on the right at <a href="../glossary/cone+6.html">cone 6</a> on a <a href="../glossary/porcelain.html">porcelain</a>. Magnesium carbonate also mattes glazes.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Why does the glaze on the right crawl?</h3>
+<br/><a href="../picture/933.html"><img class="flexleft50" loading="lazy" src="../media/images/purvywices.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/933.html">click here</a> to see it.</p>
+<p>This is <a href="https://insight-live.com/insight/share.php?z=gzHKA1kiaE">G2415J</a> <a href="../material/32.html">Alberta Slip</a> glaze on <a href="../glossary/porcelain.html">porcelain</a> at <a href="../glossary/cone+6.html">cone 6</a>. Why did the one on the right <a href="crawling.html">crawl</a>? Left: thinnest application. Middle: thicker. Right thicker yet and <a href="crawling.html">crawling</a>. All of these use a 50:50 <a href="../glossary/calcination.html">calcine</a>:raw mix of <a href="https://plainsmanclays.ca/data/index.php?product=12910">Alberta Slip</a> in the recipe. While that appears fine for the two on the left, more calcine is needed to reduce shrinkage for the glaze on the right (perhaps 60:40 calcine:raw). This is a good demonstration of the need to adjust raw clay content for any glaze that tends to crack on drying. The <a href="https://plainsmanclays.ca/data/index.php?product=12910">Alberta Slip</a> and <a href="../material/1178.html">Ravenscrag</a> Slip page have information about how to calcine and calculate how much to use to tune the recipe to be perfect.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Here is what happens when a glaze has too much raw clay</h3>
+<br/><a alt="A high clay glaze is cracking" href="../picture/812.html"><img alt="A high clay glaze is cracking" class="flexleft50" loading="lazy" src="../media/images/mivmozixit.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/812.html">click here</a> to see it.</p>
+<p>This is an example of how a glaze that contains too much plastic clay has been applied too thick. It shrinks and cracks during drying and is guaranteed to <a href="crawling.html">crawl</a>. This is raw <a href="../material/32.html">Alberta Slip</a>. To solve this problem you need to tune a mix of raw and <a href="../glossary/calcination.html">roasted</a> clay. Enough raw clay is needed to suspend the <a href="../glossary/slurry.html">slurry</a> and dry it to a hard surface, but enough <a href="../glossary/calcination.html">calcine</a> is needed to keep the shrinkage low enough that this cracking does not happen. Perhaps you have been using a glaze having a high percentage of clay and this does not happen - the reason is likely that the clay is not highly plastic.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Fixing a crawling problem with a measured CMC addition</h3>
+<br/><a alt="A pail of glaze needs CMC gum" href="../picture/2836.html"><img alt="A pail of glaze needs CMC gum" class="flexleft50" loading="lazy" src="../media/images/phycxy9mqn.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2836.html">click here</a> to see it.</p>
+<p>The problem: This <a href="../glossary/dipping+glaze.html">dipping glaze</a> is <a href="crawling.html">crawling</a> (as shown on the glazed tile). Let's assume I have already checked to make sure the <a href="../glossary/specific+gravity.html">specific gravity</a> is right and the <a href="../glossary/slurry.html">slurry</a> is <a href="../glossary/thixotropy.html">thixotropic</a>. Because it has <a href="../glossary/suspension.html">settled</a> a little there is an opportunity for plan B: Remove some of the water and replace it with gum solution. Shown here is a precise calculation of the exact <a href="../glossary/water+content.html">water content</a> of the slurry to replace 10% of the water with gum solution. But it is better to take a more conservative and easier approach: Replace one-twentieth of the water with gum solution (too much gum and the glaze will drip excessively and dry too slowly). Rather than be overly precise let's just guess: I have 5000g of slurry that is about 50% water, so that is 2500g of powder, so I need to remove 125g of water and replace it with 125g of <a href="../picture/2178.html">Laguna gum solution</a>. A good way is to use a sponge: Wet and wring it out first and then repeat touching it to the water surface and wringing it out into a container to get 125g. A <a href="../glossary/propeller+mixer.html">propeller mixer</a> is needed to mix in the added gum solution (it won't just stir in).</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Faux majolica next level: Stoneware! 
+</h3>
+<h4 style="color:#888888; margin-top:0px;">But the glaze is crawling under the colors.</h4>
+<br/><a href="../picture/3515.html"><img class="flexleft50" loading="lazy" src="../media/images/5sada2ila9.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3515.html">click here</a> to see it.</p>
+<p>The original Italian <a href="../glossary/majolica.html">majolica</a> ware was red <a href="../glossary/earthenware.html">earthenware</a> with a thick layer of tin-opacified glaze vibrantly brush-decorated using single-strokes of watery <a href="../glossary/metal+oxides.html">metal oxides</a>. The water-color of <a href="../glossary/ceramics.html">ceramics</a>. But <a href="../material/1642.html">tin oxide</a> is no longer affordable. And ceramic <a href="../glossary/ceramic+stain.html">stains</a> are better. And no one uses <a href="../glossary/lead+in+ceramic+glazes.html">lead glazes</a>. So all majolica-like ware made today is actually “faux (false) majolica”. These test samples take the “faux” to the next level: <a href="../glossary/stoneware.html">Stoneware</a> with a zircon-opacified white glaze. But almost all are <a href="crawling.html">crawling</a>. If this happens for you ask these questions:<br/>
+<br/>
+Is the glaze re-wetable? <a href="../glossary/dipping+glaze.html">Dipping glaze</a> recipes often are not, especially if they fail <a href="../glossary/limit+recipe.html">sanity check</a> (e.g. are over-clayed or under-clayed).<br/>
+<a href="../glossary/base-coat+dipping+glaze.html">Base coat</a> dipping glaze better survive the rewetting of a second layer?<br/>
+Mixing them as a <a href="../glossary/brushing+glaze.html">brushing glaze</a> give maximum insurance.<br/>
+<br/>
+What did they look like when the overcolor dried? Cracks are sure indicator or crawling.<br/>
+Were you painting pure stain or metal oxide (mixing with water only)? Don’t do that. Water color paint uses gum Arabic, pottery colors need to be in a <a href="../glossary/stain+medium.html">stain medium</a> (which often has <a href="../material/228.html">CMC gum</a>).</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Here is why Albany Slip was hard to use: 
+</h3>
+<h4 style="color:#888888; margin-top:0px;">Cracking during drying, crawling during firing</h4>
+<br/><a href="../picture/3382.html"><img class="flexleft50" loading="lazy" src="../media/images/hjngxcrcwx.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3382.html">click here</a> to see it.</p>
+<p>This glaze is 85% <a href="../material/31.html">Albany Slip</a> and 20% Ferro <a href="../material/356.html">Frit 3195</a>. These <a href="../glossary/bisque.html">bisque</a> tiles were dipped in a <a href="../glossary/brushing+glaze.html">brushing glaze</a> version of it (just water and powder). The glaze is applied quite thin on the front tile and thicker on the back one. The material gelled slurries and required a lot of water to make them thin enough to use. For assured success, this or any glaze that had a high percentage required mixing the raw Albany Slip with a <a href="../glossary/calcination.html">calcined</a> Albany Slip (which people had to make on their own).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Multilayer crawling</h3>
+<br/><a href="../picture/3808.html"><img class="flexleft50" loading="lazy" src="../media/images/r8pmatzspm.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3808.html">click here</a> to see it.</p>
+<p><a href="../glossary/oil-spot+glaze.html">Oil-spot</a> effects depend on being able to layer glazes. Normally, a black underneath and matte white over top. Using <a href="../glossary/dipping+glaze.html">dipping glazes</a> is obviously advantageous for this type of piece; the second dip covers the other half and creates the double layer needed. But dipping glazes contain clay in the recipe (almost always <a href="../material/925.html">kaolin</a> or <a href="../material/80.html">ball clay</a>), it satisfies multiple needs: It suspends the <a href="../glossary/slurry.html">slurry</a>, hardens the drying glaze, and supplies critical <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a> to the <a href="../glossary/glaze+chemistry.html">chemistry</a>. The upper glaze here is a matte; so it needs extra Al<sub>2</sub>O<sub>3</sub>, which means it likely has extra clay. 20% kaolin (non-plastic like <a href="../material/291.html">EPK</a>, <a href="../material/831.html">Grolleg</a>, NZ) is about the maximum or the glaze will shrink too much when drying. If extra <a href="../material/806.html">Gerstley Borate</a> is added, then it will be worse. <a href="../glossary/drying+crack.html">Drying cracks</a> are the result when the fragile body-bond of the lower one fails to withstand the stresses of being rewetted and tugged upon by the upper layer being applied and drying. When the cracked double-layer begins to melt, it pulls itself into islands, leaving bare body between. That is called "<a href="crawling.html">crawling</a>".<br/>
+<br/>
+How to prevent this. Be smart about <a href="../glossary/glaze+layering.html">glaze layering</a> and use <a href="../glossary/limit+recipe.html">recipe logic</a>. The lower black can likely be adjusted to be a <a href="../glossary/base-coat+dipping+glaze.html">first coat</a> <a href="../glossary/dipping+glaze.html">dipping glaze</a>. The clay content in the upper white one can be adjusted to reduce <a href="../glossary/drying+shrinkage.html">drying shrinkage</a> (by <a href="../glossary/splitting.html">splitting</a> it between raw and roasted/calcined powder, or by using a clay having lower <a href="../glossary/plasticity.html">plasticity</a>).</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Does bisque ware need washing for glazing?
+</h3>
+<h4 style="color:#888888; margin-top:0px;">No. These pieces demonstrate why.</h4>
+<br/><a href="../picture/1578.html"><img class="flexleft50" loading="lazy" src="../media/images/gymgireryd.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1578.html">click here</a> to see it.</p>
+<p>A light coating of ordinary ceramic dust is made of the same minerals as the ware and glaze itself. During dipping, the incoming water instantly penetrates and incorporates surface dust. Glaze are dust mixed with water! However, washing trades a tiny and often harmless surface contaminant for a more serious problem: partially saturated pores. Bisqueware is a porous ceramic sponge. Its job during <a href="../glossary/dip+glazing.html">dip glazing</a> is to suck water out of the <a href="../glossary/slurry.html">slurry</a> quickly and evenly, leaving behind a stable layer of particles on the surface. If the <a href="../glossary/bisque.html">bisque</a> is damp from washing, the suction is weakened. Of course, there are common-sense exceptions, but compressed air, a soft brush, or a barely damp sponge used sparingly are better cleaning solutions to preserve the essential dryness.<br/>
+<br/>
+These thin-walled mugs demonstrate: Just pour-glazing the inside has waterlogged them, they must be dried before applying the outside glaze. Imagine if they had been washed also!</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Glaze cracking during drying? Wash it off and then do this.</h3>
+<br/><a alt="Glaze spider web cracking on drying" href="../picture/1763.html"><img alt="Glaze spider web cracking on drying" class="flexleft50" loading="lazy" src="../media/images/pedwaviwop.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1763.html">click here</a> to see it.</p>
+<p>If your pottery glaze is doing on drying then it will <a href="crawling.html">crawl</a> during firing. Wash it off, dry the ware. Then check the <a href="../glossary/water+content.html">water content</a>. If the glaze has worked fine in the past then it is likely going on too thick because the <a href="../glossary/specific+gravity.html">specific gravity</a> is too high - just repeat cycles of adding a little water and dip testing (make it <a href="../glossary/thixotropy.html">thixotropic</a> if needed). But that was not the issue here. Glazes need clay to suspend and harden them, but too much clay means trouble. This was <a href="../material/1178.html">Ravenscrag</a> Slip, a clay, being used pure as a <a href="../glossary/reduction+firing.html">cone 10R</a> glaze. The glaze appeared to go in perfectly and it dried to the touch in ~20 seconds. But shrinkage continues after that, revealing after a couple of minutes. Fixing the issue was a matter of adding some <a href="../glossary/calcination.html">roasted</a> Ravencrag Slip to the bucket. That reduced the shrinkage and therefore the cracking. Any glaze containing excessive <a href="../material/925.html">kaolin</a> can be fixed the same way (trade some of the raw kaolin for <a href="../glossary/calcination.html">calcined</a> kaolin). Some glazes that contain plenty of clay also have <a href="../material/106.html">bentonite</a> - a simple fix for these is to simply remove the bentonite.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">CMC Gum is magic for multi-layering, even for raw Alberta Slip</h3>
+<br/><a alt="A glaze that cracks on drying was fixed" href="../picture/2261.html"><img alt="A glaze that cracks on drying was fixed" class="flexleft50" loading="lazy" src="../media/images/naeeyct1se.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2261.html">click here</a> to see it.</p>
+<p>The glaze on the left is 85% of a <a href="../glossary/calcination.html">calcine</a>:raw <a href="../material/32.html">Alberta Slip</a> mix (40:60). It was on too thick so it cracked on drying (even if not too thick, if others are layered over it everything will flake off). The center piece has the same recipe but uses 85% pure raw <a href="https://plainsmanclays.ca/data/index.php?product=12910">Alberta Slip</a>, yet it sports no cracks. It should be cracked much worse than #1. How is this possible? 1% added <a href="../material/228.html">CMC Gum</a> (via a gum solution) was added! This is magic, but there is more. It is double-layered! Plus very thick strokes of a commercial <a href="../glossary/brushing+glaze.html">brushing glaze</a> have been applied over that. Yet no cracks. CMC is the secret of dipping-glazes for <a href="../glossary/glaze+layering.html">multi-layering</a>. The downside: More patience during dipping, they drip a lot and take much longer to dry.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/understanding+glaze+slurry+properties.html">Understanding Glaze Slurry Properties</a>
+<br/><i>It is possible to have a glaze <a href="../glossary/slurry.html">slurry</a> that is a joy to use, but only if you understand the <a href="../glossary/physical+testing.html">physics</a> of the materials in the glaze recipe.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/creating+a+non-glaze+ceramic+slip+or+engobe.html">Creating a Non-Glaze Ceramic Slip or Engobe</a>
+<br/><i>It can be difficult to find an <a href="../glossary/engobe.html">engobe</a> that is drying and firing compatible with your body. It is better to understand, formulate and tune your own slip to your own body, glaze and process.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/surface+tension.html">Surface Tension</a>
+<br/><i>In <a href="../glossary/ceramics.html">ceramics</a>, <a href="../glossary/surface+tension.html">surface tension</a> is discussed in two contexts: The glaze melt and the glaze <a href="../glossary/suspension.html">suspension</a>. In both, the quality of the glaze surface is impacted.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/glaze+crawling.html">Glaze Crawling</a>
+<br/><i>A ceramic glaze fault that occurs during firing of the ware, the molten glaze pulls itself into islands leaving bare patches of body between.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/suspension.html">Suspension</a>
+<br/><i>In <a href="../glossary/ceramics.html">ceramics</a>, glazes are slurries. They consist of water and undissolved powders kept in <a href="../glossary/suspension.html">suspension</a> by clay particles. You have much more control over the properties than you might think.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/calcination.html">Calcination</a>
+<br/><i>Calcining is simply firing a <a href="../glossary/ceramic+material.html">ceramic material</a> to create a powder of new <a href="../glossary/physical+testing.html">physical properties</a>. Often it is done to kill the <a href="../glossary/plasticity.html">plasticity</a> or burn away the hydrates, carbonates, <a href="../glossary/sulfates.html">sulfates</a> of a clay or <a href="../glossary/refractory.html">refractory</a> material.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/ceramic+glaze+defects.html">Ceramic Glaze Defects</a>
+<br/><i><a href="../glossary/ceramic+glaze+defects.html">Ceramic glaze defects</a> include things like <a href="../glossary/pinholing.html">pinholes</a>, <a href="glaze+blisters.html">blisters</a>, <a href="glaze+crazing.html">crazing</a>, <a href="../glossary/glaze+shivering.html">shivering</a>, <a href="../glossary/leaching.html">leaching</a>, <a href="crawling.html">crawling</a>, <a href="../glossary/cutlery+marking.html">cutlery marking</a>, <a href="../glossary/glaze+bubbles.html">clouding</a> and color problems.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/glaze+layering.html">Glaze Layering</a>
+<br/><i>In hobby <a href="../glossary/ceramics.html">ceramics</a> and pottery it is common to layer glazes for visual effects. Using brush-on glazes it is easy. But how to do it with <a href="../glossary/dipping+glaze.html">dipping glazes</a>? Or apply brush-ons on to dipped base coats?</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Troubles</td>
+<td>
+<a href="glaze+pinholes%2c+pitting.html">Glaze Pinholes, Pitting</a>
+<br/><i>Analyze the causes of ceramic glaze <a href="../glossary/pinholing.html">pinholing</a> and pitting so your fix is dealing with the real issues, not a symptom.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Troubles</td>
+<td>
+<a href="glaze+peeling+on+drying.html">Glaze peeling on drying</a>
+<br/><i>Happens as clay-containing glazes shrink during drying on the <a href="../glossary/bisque.html">bisque</a> ware, first cracking then pulling away.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/alberta+slip.html">Alberta Slip</a>
+<br/><i><a href="../material/31.html">Albany Slip</a> successor - a plastic clay that melts to dark brown glossy at <a href="../glossary/reduction+firing.html">cone 10R</a>, with a <a href="../glossary/frit.html">frit</a> addition it can also host a wide range of glazes at <a href="../glossary/cone+6.html">cone 6</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/ravenscrag+slip.html">Ravenscrag Slip</a>
+<br/><i>A light-colored silty clay that melts to a clear glaze at <a href="../glossary/reduction+firing.html">cone 10R</a>, with a <a href="../glossary/frit.html">frit</a> addition it creates a good base for a wide range of <a href="../glossary/cone+6.html">cone 6</a> glazes.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/alberta+slip+1900f+calcined.html">Alberta Slip 1900F Calcined</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/calcined+kaolin.html">Calcined Kaolin</a>
+<br/><i>This is <a href="../material/925.html">kaolin</a> powder that has been fired in a furnace to remove the 12% crystal water and render it non-plastic.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/light+magnesium+carbonate.html">Light Magnesium Carbonate</a>
+<br/><i>A <a href="../glossary/refractory.html">refractory</a> feather-light white powder used as a source of <a href="../oxide/mgo.html">MgO</a> and matting agent in ceramic glazes</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/alberta+slip+1000f+roasted.html">Alberta Slip 1000F Roasted</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/sm2o3.html">Sm2O3 - </a>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></div></body>
+</html>

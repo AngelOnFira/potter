@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Glaze Melt Flow - Runway Test - GLFL</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="A method of comparing the melt fluidity of two ceramic materials or glazes by racing them down an inclined runway." name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item"><a class="nav-link" href="../material/list.html">Materials</a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item active" href="list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=test" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container"><p><a aria-controls="collapse1" aria-expanded="false" class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button">Test Code-numbers</a> <a aria-expanded="false" class="btn btn-primary" href="list.html" role="button">All Tests</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a href="44mr.html" title="94 - +44 and +63 Micron Residue">44MR</a> |</nobr> <nobr><a href="appo.html" title="38 - Apparent Porosity">APPO</a> |</nobr> <nobr><a href="avps.html" title="85 - Average Particle Size (Microns)">AVPS</a> |</nobr> <nobr><a href="avsc.html" title="42 - Apparent Viscosity (cps)">AVSC</a> |</nobr> <nobr><a href="bdgc.html" title="36 - Bulk Density g/cc (Packed)">BDGC</a> |</nobr> <nobr><a href="bdlb.html" title="23 - Bulk Density lbs/cu. ft. (Packed)">BDLB</a> |</nobr> <nobr><a href="bloi.html" title="73 - Borate LOI">BLOI</a> |</nobr> <nobr><a href="bwiw.html" title="89 - Boiling Water:Ice Water Glaze Fit Test">BWIW</a> |</nobr> <nobr><a href="ccon.html" title="90 - Carbon content">CCON</a> |</nobr> <nobr><a href="cdry.html" title="62 - Drying Factor/Water Content/Solubles">CDRY</a> |</nobr> <nobr><a href="cec.html" title="25 - CEC (meq/100g)">CEC</a> |</nobr> <nobr><a href="clwc.html" title="47 - Clay Water Content - Powder, Plastic">CLWC</a> |</nobr> <nobr><a href="cmst.html" title="99 - Compressive Strength">CMST</a> |</nobr> <nobr><a href="cole.html" title="10 - Co-efficient of Linear Expansion">COLE</a> |</nobr> <nobr><a href="covb.html" title="64 - Cold Over Boiled Porosity">COVB</a> |</nobr> <nobr><a href="csss.html" title="63 - Clay, Silt, Sand Sedimentation Test">CSSS</a> |</nobr> <nobr><a href="dens.html" title="1 - Density (Specific Gravity)">DENS</a> |</nobr> <nobr><a href="dfac.html" title="46 - Drying Factor">DFAC</a> |</nobr> <nobr><a href="dfdm.html" title="77 - Deflocculation Demand">DFDM</a> |</nobr> <nobr><a href="diel.html" title="105 - Dielectric Strength">DIEL</a> |</nobr> <nobr><a href="dnlp.html" title="8 - Density, loose packed (lbs/cu fut)">DNLP</a> |</nobr> <nobr><a href="ds.html" title="19 - Dry Strength (kgf/cm2)">DS</a> |</nobr> <nobr><a href="dshr.html" title="51 - Drying Shrinkage">DSHR</a> |</nobr> <nobr><a href="dsrn.html" title="59 - Dry Strenth (Round Bars)">DSRN</a> |</nobr> <nobr><a href="dstr.html" title="60 - Dry Strength (Square Bars)">DSTR</a> |</nobr> <nobr><a href="dtmp.html" title="13 - Decomposition Temperature">DTMP</a> |</nobr> <nobr><a href="ebct.html" title="112 - Engobe Body Compatibility Test">EBCT</a> |</nobr> <nobr><a href="em20.html" title="97 - Elastic Modulus, 20 degrees C">EM20</a> |</nobr> <nobr><a href="frfu.html" title="96 - Frit Fusibility Test">FRFU</a> |</nobr> <nobr><a href="frrd.html" title="65 - Fired Strength Round Bars">FRRD</a> |</nobr> <nobr><a href="frtg.html" title="102 - Fracture Toughness">FRTG</a> |</nobr> <nobr><a href="fshr.html" title="21 - Firing Shrinkage">FSHR</a> |</nobr> <nobr><a href="fstr.html" title="66 - Fired Strength Square Bars">FSTR</a> |</nobr> <nobr><a href="gbbt.html" title="113 - Glaze Body Bond Test">GBBT</a> |</nobr> <nobr><a href="gbmf.html" title="110 - Glaze Melt Fluidity - Ball Test">GBMF</a> |</nobr> <nobr><a href="gebr.html" title="27 - GE Brightness">GEBR</a> |</nobr> <nobr><a href="glaz.html" title="68 - Glaze Observations">GLAZ</a> |</nobr> <nobr><a href="glfl.html" title="58 - Glaze Melt Flow - Runway Test">GLFL</a> |</nobr> <nobr><a href="glhd.html" title="69 - Glaze Hardness">GLHD</a> |</nobr> <nobr><a href="glle.html" title="70 - Glaze Leaching Test">GLLE</a> |</nobr> <nobr><a href="gspt.html" title="14 - Frit Softening Point">GSPT</a> |</nobr> <nobr><a href="gttm.html" title="92 - Glass Transition Temperature">GTTM</a> |</nobr> <nobr><a href="hdmi.html" title="100 - Hardness (Microindentation) Test">HDMI</a> |</nobr> <nobr><a href="hegf.html" title="28 - Hegman Fineness">HEGF</a> |</nobr> <nobr><a href="hma.html" title="91 - Heating Microscope Analysis for Frits">HMA</a> |</nobr> <nobr><a href="hman.html" title="95 - Heating Microscope Analysis">HMAN</a> |</nobr> <nobr><a href="hmoh.html" title="7 - Hardness (Moh)">HMOH</a> |</nobr> <nobr><a href="ifp.html" title="88 - I.F.P. (celsius)">IFP</a> |</nobr> <nobr><a href="iwct.html" title="108 - 300F:Ice Water Crazing Test">IWCT</a> |</nobr> <nobr><a href="l10m.html" title="79 - % &lt; 10 microns">L10M</a> |</nobr> <nobr><a href="l1m.html" title="81 - % &lt; 1 micron">L1M</a> |</nobr> <nobr><a href="l20m.html" title="78 - % &lt; 20 microns">L20M</a> |</nobr> <nobr><a href="l2m.html" title="80 - % &lt; 2 microns">L2M</a> |</nobr> <nobr><a href="l30m.html" title="93 - % &lt; 30 microns">L30M</a> |</nobr> <nobr><a href="l5.html" title="17 - % &lt; 5 microns">L5</a> |</nobr> <nobr><a href="l5m.html" title="18 - % &lt; 0.5 microns">L5M</a> |</nobr> <nobr><a href="ldw.html" title="49 - LOI/Density/Water Content">LDW</a> |</nobr> <nobr><a href="loi.html" title="15 - LOI (100-1000C)">LOI</a> |</nobr> <nobr><a href="lqlm.html" title="30 - Liquid Limit">LQLM</a> |</nobr> <nobr><a href="mdps.html" title="76 - Median Particle Size (Microns)">MDPS</a> |</nobr> <nobr><a href="mlrg.html" title="57 - Frit Melting Range (C)">MLRG</a> |</nobr> <nobr><a href="moip.html" title="75 - Moisture Content - Powder">MOIP</a> |</nobr> <nobr><a href="mor.html" title="61 - Modulus of Rupture - Fired">MOR</a> |</nobr> <nobr><a href="mor5.html" title="74 - Dry M.O.R. (50% Silica)">MOR5</a> |</nobr> <nobr><a href="mord.html" title="12 - Modulus of Rupture - Dry">MORD</a> |</nobr> <nobr><a href="olad.html" title="5 - Oil Adsorption (Spatula)">OLAD</a> |</nobr> <nobr><a href="p200.html" title="107 - % Passing 200 Mesh Wet">P200</a> |</nobr> <nobr><a href="p325.html" title="32 - % Passing 325 Mesh Wet">P325</a> |</nobr> <nobr><a href="pbpo.html" title="71 - Pugged Body Properties Overview">PBPO</a> |</nobr> <nobr><a href="pce.html" title="11 - Pyrometric Cone Equivalent">PCE</a> |</nobr> <nobr><a href="phpg.html" title="4 - pH (pugged clay)">pHPG</a> |</nobr> <nobr><a href="phpw.html" title="87 - pH for dry powder">pHPW</a> |</nobr> <nobr><a href="ppd.html" title="72 - Pyroplastic Deformation">PPD</a> |</nobr> <nobr><a href="prsm.html" title="98 - Poisson's Ratio">PRSM</a> |</nobr> <nobr><a href="pshp.html" title="6 - Particle Shape (1-7 microns)">PSHP</a> |</nobr> <nobr><a href="rc.html" title="37 - Reheat Change">RC</a> |</nobr> <nobr><a href="rheo.html" title="34 - Rheology of a Ceramic Slurry">RHEO</a> |</nobr> <nobr><a href="sadr.html" title="9 - Sieve Analysis Dry">SADR</a> |</nobr> <nobr><a href="samg.html" title="16 - Surface Area (m2/gm)">SAMG</a> |</nobr> <nobr><a href="scle.html" title="84 - Simple Clay Evaluation">SCLE</a> |</nobr> <nobr><a href="shab.html" title="41 - Shrinkage/Absorption Test">SHAB</a> |</nobr> <nobr><a href="siev.html" title="48 - Sieve Analysis 35-325 Wet">SIEV</a> |</nobr> <nobr><a href="slby.html" title="35 - Solubility">SLBY</a> |</nobr> <nobr><a href="solu.html" title="45 - Soluble Salts">SOLU</a> |</nobr> <nobr><a href="sphc.html" title="104 - Specific Heat Capacity">SPHC</a> |</nobr> <nobr><a href="ssab.html" title="83 - Simple Shrinkage/Absorption">SSAB</a> |</nobr> <nobr><a href="svwt.html" title="24 - Sieve Analysis Wet">SVWT</a> |</nobr> <nobr><a href="tga.html" title="82 - TGA">TGA</a> |</nobr> <nobr><a href="thco.html" title="103 - Thermal Conductivity, 20 degrees C">THCO</a> |</nobr> <nobr><a href="tnst.html" title="101 - Tensile Strength, 25 degrees C">TNST</a> |</nobr> <nobr><a href="trel.html" title="26 - Trace Elements (ppm)">TREL</a> |</nobr> <nobr><a href="trmn.html" title="33 - Trace Minerals">TRMN</a> |</nobr> <nobr><a href="tsfl.html" title="111 - Thermal Shock Failure">TSFL</a> |</nobr> <nobr><a href="upsd.html" title="40 - Ultimate Particle Size Distribution">UPSD</a> |</nobr> <nobr><a href="wabs.html" title="20 - Water absorption">WABS</a> |</nobr> <nobr><a href="wopl.html" title="43 - Water of Plasticity">WOPL</a> |</nobr> <nobr><a href="wra.html" title="50 - Whole Rock Analysis">WRA</a> |</nobr> <nobr><a href="wsr.html" title="86 - Wet Sieve Residue">WSR</a> |</nobr> <nobr><a href="xref.html" title="3 - Index of Refraction">XREF</a></nobr></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>GLFL - Glaze Melt Flow - Runway Test</h1>
+<p><a href="../glossary/melt+fluidity.html">Melt fluidity</a> is very difficult to judge from simple observations on glazed ware or samples. Knowing <a href="../glossary/melt+fluidity.html">the melt</a> fluidity of a glaze is very important in maintaining consistency, duplicating and understanding it. Information on how a material melts is important to know how to use it in your process. This test requires a special mold to cast the flow testers.<br/>
+<br/>
+This test is done to COMPARE the melt fluidity of glazes (or materials), not to establish an absolute value. It compares the degree and character of two melting materials, showing many subtle and obvious differences.<br/>
+<br/>
+Mix the powdered glaze or raw material with the right amount of water to enable forming a small ball (dewater it on a <a href="../material/1124.html">plaster</a> batt if needed). Gummed glazes can be very difficult to dewater, if it is not possible to get a plastic mass just dry them till crumbly and add enough water back in so that fragments will hold together. Form balls and dry them to get a 9-10g weight (usually about 12g wet). The <a href="gbmf.html">GBMF test</a> has more information on forming balls from non-plastic materials (glazes containing clays almost always have enough <a href="../glossary/plasticity.html">plasticity</a>). <br/>
+<br/>
+Some materials, such as <a href="../material/310.html">feldspars</a>, will not melt enough to flow so they need a <a href="../glossary/flux.html">flux</a> (e.g. we add 15% Ferro <a href="../material/356.html">Frit 3195</a> when comparing feldspars at cone 6-10).<br/>
+<br/>
+Place the balls from the two materials to be compared in the flow testing device (be sure they are close the same weight). Write the identity (using a ceramic pencil) above the reservoirs of each. Fire the device in the lean-back position to the desired temperature (with a tile below to catch overrun). Take a picture and upload it to your account at <a href="../glossary/digitalfire+insight-live.html">insight-live</a>.com.<br/>
+<br/>
+Flow testing devices: Make your own or buy one from <a href="https://digitalfire.com/url/221">PlainsmanClays.com</a>.<br/>
+Use a white burning not-too-refractory <a href="../glossary/casting+slip.html">casting body</a> to make the testers. 50% <a href="../material/80.html">ball clay</a>, 25 <a href="../material/1245.html">silica</a>, 25 <a href="../material/310.html">feldspar</a> is a good starting point.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Preparing balls for a melt fluidity test using Veegum</h3>
+<br/><a alt="Melt fluidity balls using Veegum" href="../picture/2822.html"><img alt="Melt fluidity balls using Veegum" class="flexleft50" loading="lazy" src="../media/images/qapomqhffp.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2822.html">click here</a> to see it.</p>
+<p>This method uses 3% Veegum. A <a href="../picture/3480.html">0.01g scale</a> is required (the amount of Veegum needs to be precise since it affects melting). Weigh 11g of the <a href="../glossary/frit.html">frit</a> and 0.33 of Veegum. Put them in a small ziplock bag, zip it to entrap air and roll the zipper down to inflate it. Shake well to mix. Stir the powder into water (~5-8g) in a small bowl. Pour it onto a <a href="../material/1124.html">plaster</a> slab - it dewaters very quickly (e.g. as little as 10 seconds) - just as the water sheen is gone, peel it up with a rubber rib. Smear it back down and peel it up every few seconds until it is plastic and formable (but not sticky). Roll it into a ball, label it and dry it under a heat lamp (this could take an hour, the Veegum really holds on to the water). When dry we use a sharp knife to cut off enough to bring it down to 9 grams. One caveat: The Veegum is a melting catalyst, balls will flow noticeably more, this is not an issue if you are comparing the melts of two materials (but it is for tests meant to be absolute).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Downloadable 3D model for melt flow tester block mold</h3>
+<p style="margin-top:0px;"><b>Available</b> on the <a href="https://digitalfire.com/downloads/index.php?picture=2350" target="_blank">Downloads</a> page</p>
+<br/><a alt="3D rendering of Fusion 360 drawing of glaze melt fluidity tester" href="../picture/2350.html"><img alt="3D rendering of Fusion 360 drawing of glaze melt fluidity tester" class="flexleft50" loading="lazy" src="../media/images/hi95rsjwow.04.20 pm.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2350.html">click here</a> to see it.</p>
+<p>This is a 3D rendering of our <a href="../picture/2350.html">melt fluidity tester</a>. We have promoted this device for many years as an effective way to compare fired glaze properties (e.g. <a href="../glossary/melt+fluidity.html">melt fluidity</a>, <a href="../glossary/surface+tension.html">surface tension</a>, bubble retention, crystal growth, transparency, melting range, etc). Open the <a href="../picture/3598.html">3MF</a> file in your slicer, move all pieces off the print bed and unselect them all. Then, print each part by moving it onto the bed and using place-on-face to orient it right. Print the funnel wide-side down with brim. Insert the <a href="../picture/3483.html">natch clips</a> and <a href="../picture/3483.html">embeds</a> into the holes, pour in the <a href="../material/1124.html">plaster</a>, let it set and finally remove the <a href="../picture/3701.html">PLA</a> with a <a href="../picture/3729.html">heat gun</a>. You now have a working mold to make <a href="../glossary/slip+casting.html">slip cast</a> testers. Glue the <a href="../glossary/mold+natches.html">natches</a> and spacers into the embeds, strap the mold together, glue in the <a href="../glossary/pour+spout.html">pour spout</a> with slip and finish by filling the mold with slip. If the mold is dry, 10-15 minutes should be enough to get adequate thickness (don't make them too heavy). With <a href="../glossary/0.8mm+thickness.html">0.8mm</a> thick walls, this drawing 3D prints quickly and is easy to remove when the plaster has set (using a heat gun). The halves interlock using natches (requiring our embeds and related parts). The mold halves can also be lined up by the outer edges before clamping them together (thus not requiring natches).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">G1215U vs. G1215W glaze flow test</h3>
+<br/><a href="../picture/483.html"><img class="flexleft50" loading="lazy" src="../media/images/zilwuwucec.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/483.html">click here</a> to see it.</p>
+<p>These recipes have the same <a href="../glossary/glaze+chemistry.html">chemistry</a> but the 1215U uses <a href="../glossary/frit.html">frit</a> to source the <a href="../oxide/mgo.html">MgO</a> and <a href="../oxide/cao.html">CaO</a>. This demonstrates that it is not just chemistry that determines <a href="../glossary/melt+fluidity.html">melt flow</a>. Raw materials are <a href="../glossary/glass+vs.+crystalline.html">crystalline</a> and have different melting patterns than <a href="../glossary/frit.html">frits</a> (which have already been melted and reground).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Melt fluidity of Albany Slip vs. Alberta Slip at cone 10R</h3>
+<br/><a alt="Albany vs Alberta Slip melt" href="../picture/526.html"><img alt="Albany vs Alberta Slip melt" class="flexleft50" loading="lazy" src="../media/images/vmj7kunfqa.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/526.html">click here</a> to see it.</p>
+<p>This is a <a href="glfl.html">GLFL test</a>, it employs a slipcast <a href="../picture/2350.html">melt flow tester</a> to show the flow patterns of two glazes (or materials), side-by-side. <a href="../material/31.html">Albany Slip</a> was a pure mined silty clay that, by itself, melted to a glossy dark brown glaze at <a href="../glossary/reduction+firing.html">cone 10R</a>. By itself it was a <a href="../glossary/tenmoku.html">Tenmoku</a> glaze at high temperatures. <a href="../material/32.html">Alberta Slip</a> is a recipe of mined clays with added refined minerals that give it a similar <a href="../glossary/glaze+chemistry.html">chemistry</a>, firing behavior and raw physical appearance. As you can see, the <a href="../glossary/melt+fluidity.html">melt fluidity</a> is very similar.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Testing a new brand of dolomite</h3>
+<br/><a alt="Melt fluidity of high dolomite glaze" href="../picture/1118.html"><img alt="Melt fluidity of high dolomite glaze" class="flexleft50" loading="lazy" src="../media/images/podhupacax.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1118.html">click here</a> to see it.</p>
+<p><a href="../material/273.html">Dolomite</a> is a key material for glazes, especially mattes. We were forced to adopt a new brand and needed confidence it was equivalent. Three tests were done to compare the old long-time-use material (IMASCO Sirdar) with a new one (LHoist Dolowhite). The first <a href="../picture/2350.html">melt flow tester</a> compares them in a very high dolomite <a href="../glossary/cone+6.html">cone 6</a> recipe formulated for this purpose; the new material runs just slightly more. The second tester is uses the <a href="../recipe/g2934.html">G2934</a> cone 6 <a href="../glossary/magnesia+matte.html">magnesia matte</a> recipe with 5% black stain; the new material runs a little less here. The third test is the high dolomite glaze on a dark burning clay to see the <a href="../glossary/translucency.html">translucency</a> and compare the surface character. They are very close. These three gave us the confidence to proceed.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Glaze melt fluidity comparison: 
+</h3>
+<h4 style="color:#888888; margin-top:0px;">Same chemistries, different recipes</h4>
+<br/><a href="../picture/1926.html"><img class="flexleft50" loading="lazy" src="../media/images/wzhfon9hdj.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1926.html">click here</a> to see it.</p>
+<p>At low temperatures, potters want transparents with good clarity to support brilliant colors. Especially on <a href="../glossary/terra+cotta.html">terra cotta</a> bodies. A <a href="../glossary/melt+fluidity.html">melt flow</a> test like this enables a comparison one cannot do on using glazed test tiles.<br/>
+<br/>
+These are two low temperature glazes I use at cone 03, <a href="https://insight-live.com/insight/share.php?z=C1R5LciBu4">G2931F</a> and <a href="../recipe/g2931k.html">G2931K</a>. They have the same <a href="../glossary/glaze+chemistry.html">chemistry</a>. But F gets its <a href="../glossary/borate.html">boron</a> from <a href="../material/1660.html">Ulexite</a>, a material with a high <a href="../glossary/loi.html">LOI</a> (notice how the escaping gases have disrupted the downward flow). The frit-sourced boron version on the right flows cleanly and contains almost no obvious bubbles.<br/>
+<br/>
+So obviously, one would use the K, right? Not exactly. I used the K version successfully on many pieces. In a thin layer, the ulexite seems to act as its own <a href="../picture/2702.html">fining agent</a>, like <a href="../material/806.html">Gerstley Borate</a>, and the bubbles do merge clear well enough.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Our G2934Y matte yellow vs. Amaco SM-63 yellow</h3>
+<br/><a alt="Amaco SM-63 matte yellow" href="../picture/3406.html"><img alt="Amaco SM-63 matte yellow" class="flexleft50" loading="lazy" src="../media/images/m6pqaghgvd.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3406.html">click here</a> to see it.</p>
+<p>Left: Our <a href="../recipe/g2934y.html">G2934Y</a> recipe with 12% Cerdec 239416 yellow stain. Right: Amaco SM-63 matte yellow. This <a href="glfl.html">GLFL test</a> compares the <a href="../glossary/melt+fluidity.html">melt flow</a> of these two in a <a href="../glossary/cone+6.html">cone 6</a> <a href="../schedule/c6dhsc.html">C6DHSC</a> schedule firing. The SM-63 is melting very well and yet is more matte. Its color and character indicate the presence of <a href="../material/1204.html">rutile</a>. Notice its flow has many <a href="../glossary/pinholing.html">pinholes</a>, this indicates the presence of materials having significant <a href="../glossary/loi.html">LOI</a> (these holes are also evident where layer thickness is greater on the tile). The high <a href="../glossary/melt+fluidity.html">melt fluidity</a> (indicated by this <a href="../picture/2350.html">melt flow tester</a>) is the <a href="../glossary/mechanism.html">mechanism</a> behind the way its color intensity varies with the thickness (note the tile on the lower right). The SM-63 also performs well in a <a href="../glossary/cutlery+marking.html">cutlery marking</a> test.</p>
+<p style="clear:left"></p>
+<h2>Variables</h2>
+<b>LEN - Length (V)</b><p style="margin-left:10px;">
+</p><p>Suggested units are cm</p>
+<b>NOTE - Note (V)</b><p style="margin-left:10px;">
+</p><p>Characterize the flow noting bubbling, blistering, matting, crawling, etc.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<h3>Videos</h3><table>
+<table class="table table-bordered"><tbody>
+</tbody></table>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/a+low+cost+tester+of+glaze+melt+fluidity.html">A Low Cost Tester of Glaze Melt Fluidity</a>
+<br/><i>Use this novel device to compare the <a href="../glossary/melt+fluidity.html">melt fluidity</a> of glazes and materials. Simple physical observations of the results provide a better understanding of the fired properties of your glaze (and problems you did not see before).</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="glaz.html">Glaze Observations</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="glhd.html">Glaze Hardness</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="glle.html">Glaze Leaching Test</a>
+<br/><i>Simple tests to evaluate the stability of a ceramic or pottery glaze against <a href="../glossary/leaching.html">leaching</a> metals in food or drink.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="gspt.html">Frit Softening Point</a>
+<br/><i>In <a href="../glossary/ceramics.html">ceramics</a>, this is the temperature at which a glaze or glass begins to flow, ceasing to exhibit the properties of a solid.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="bwiw.html">Boiling Water:Ice Water Glaze Fit Test</a>
+<br/><i>Ceramic glazes that <a href="../glossary/glaze+fit.html">do not fit</a> the body often do not <a href="../trouble/glaze+crazing.html">craze</a> until later. This test stresses the fit, thus revealing if it is likely to craze later.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="gbmf.html">Glaze Melt Fluidity - Ball Test</a>
+<br/><i>A test where a 10-gram ball of dried glaze is fired on a <a href="../glossary/porcelain.html">porcelain</a> tile to study its <a href="../glossary/melt+fluidity.html">melt flow</a>, surface character, bubble retention and <a href="../glossary/surface+tension.html">surface tension</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/glt">Glaze Tests</a>
+<br/><i>Tests conducted on glaze batches used in production (as opposed to tests conducted on the materials used to make those glazes).</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/melt+fluidity.html">Melt Fluidity</a>
+<br/><i>Ceramic glazes melt and flow according to their <a href="../glossary/glaze+chemistry.html">chemistry</a>, particle size and <a href="../glossary/mineralogy.html">mineralogy</a>. Observing and measuring the nature and amount of flow is important in understanding them.</i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></table></div></body>
+</html>

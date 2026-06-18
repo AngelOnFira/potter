@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Super-Refined Terra Sigillata</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="Vince Pitelka describes his method of preparing a Terra Sigillata slip." name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item"><a class="nav-link" href="../material/list.html">Materials</a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item active" href="list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=article" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container"><p><a aria-controls="collapse1" aria-expanded="false" class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button">All Articles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a href="388.html" title="388">A ChatBot gives jaw-dropping glaze recipe advice - Jan 2025</a><br/><a href="244.html" title="244">A Low Cost Tester of Glaze Melt Fluidity</a><br/><a href="361.html" title="361">A One-speed Lab or Studio Slurry Mixer</a><br/><a href="353.html" title="353">A Textbook Cone 6 Matte Glaze With Problems</a><br/><a href="199.html" title="199">Adjusting Glaze Expansion by Calculation to Solve Shivering</a><br/><a href="251.html" title="251">Alberta Slip, 20 Years of Substitution for Albany Slip</a><br/><a href="273.html" title="273">An Overview of Ceramic Stains</a><br/><a href="37.html" title="37">Are You in Control of Your Production Process?</a><br/><a href="12.html" title="12">Are Your Glazes Food Safe or are They Leachable?</a><br/><a href="143.html" title="143">Attack on Glass: Corrosion Attack Mechanisms</a><br/><a href="204.html" title="204">Ball Milling Glazes, Bodies, Engobes</a><br/><a href="345.html" title="345">Binders for Ceramic Bodies</a><br/><a href="4.html" title="4">Bringing Out the Big Guns in Craze Control: MgO (G1215U)</a><br/><a href="381.html" title="381">Can We Help You Fix a Specific Problem?</a><br/><a href="124.html" title="124">Ceramic Glazes Today</a><br/><a href="208.html" title="208">Ceramic Material Nomenclature</a><br/><a href="336.html" title="336">Ceramic Tile Clay Body Formulation</a><br/><a href="217.html" title="217">Changing Our View of Glazes</a><br/><a href="22.html" title="22">Chemistry vs. Matrix Blending to Create Glazes from Native Materials</a><br/><a href="209.html" title="209">Concentrate on One Good Glaze</a><br/><a href="115.html" title="115">Copper Red Glazes</a><br/><a href="271.html" title="271">Crazing and Bacteria: Is There a Hazard?</a><br/><a href="190.html" title="190">Crazing in Stoneware Glazes: Treating the Causes, Not the Symptoms</a><br/><a href="97.html" title="97">Creating a Non-Glaze Ceramic Slip or Engobe</a><br/><a href="195.html" title="195">Creating Your Own Budget Glaze</a><br/><a href="36.html" title="36">Crystal Glazes: Understanding the Process and Materials</a><br/><a href="324.html" title="324">Deflocculants: A Detailed Overview</a><br/><a href="32.html" title="32">Demonstrating Glaze Fit Issues to Students</a><br/><a href="334.html" title="334">Diagnosing a Casting Problem at a Sanitaryware Plant</a><br/><a href="196.html" title="196">Drying Ceramics Without Cracks</a><br/><a href="187.html" title="187">Duplicating Albany Slip</a><br/><a href="45.html" title="45">Duplicating AP Green Fireclay</a><br/><a href="197.html" title="197">Electric Hobby Kilns: What You Need to Know</a><br/><a href="39.html" title="39">Fighting the Glaze Dragon</a><br/><a href="214.html" title="214">Firing Clay Test Bars</a><br/><a href="200.html" title="200">Firing: What Happens to Ceramic Ware in a Firing Kiln</a><br/><a href="113.html" title="113">First You See It Then You Don't: Raku Glaze Stability</a><br/><a href="316.html" title="316">Fixing a glaze that does not stay in suspension</a><br/><a href="338.html" title="338">Formulating a body using clays native to your area</a><br/><a href="191.html" title="191">Formulating a Clear Glaze Compatible with Chrome-Tin Stains</a><br/><a href="282.html" title="282">Formulating a Porcelain</a><br/><a href="188.html" title="188">Formulating Ash and Native-Material Glazes</a><br/><a href="114.html" title="114">G1214M Cone 5-7 20x5 glossy transparent glaze</a><br/><a href="121.html" title="121">G1214W Cone 6 transparent glaze</a><br/><a href="122.html" title="122">G1214Z Cone 6 matte glaze</a><br/><a href="226.html" title="226">G1916M Cone 06-04 transparent glaze</a><br/><a href="203.html" title="203">Getting the Glaze Color You Want: Working With Stains</a><br/><a href="342.html" title="342">Glaze and Body Pigments and Stains in the Ceramic Tile Industry</a><br/><a href="189.html" title="189">Glaze Chemistry Basics - Formula, Analysis, Mole%, Unity </a><br/><a href="358.html" title="358">Glaze chemistry using a frit of approximate analysis</a><br/><a href="123.html" title="123">Glaze Recipes: Formulate and Make Your Own Instead</a><br/><a href="343.html" title="343">Glaze Types, Formulation and Application in the Tile Industry</a><br/><a href="181.html" title="181">Having Your Glaze Tested for Toxic Metal Release</a><br/><a href="364.html" title="364">High Gloss Glazes</a><br/><a href="384.html" title="384">Hire Us for a 3D Printing Project</a><br/><a href="136.html" title="136">How a Material Chemical Analysis is Done</a><br/><a href="235.html" title="235">How desktop INSIGHT Deals With Unity, LOI and Formula Weight</a><br/><a href="331.html" title="331">How to Find and Test Your Own Native Clays</a><br/><a href="26.html" title="26">I have always done it this way!</a><br/><a href="344.html" title="344">Inkjet Decoration of Ceramic Tiles</a><br/><a href="279.html" title="279">Is Your Fired Ware Safe?</a><br/><a href="311.html" title="311">Leaching Cone 6 Glaze Case Study</a><br/><a href="206.html" title="206">Limit Formulas and Target Formulas</a><br/><a href="133.html" title="133">Low Budget Testing of Ceramic Glazes</a><br/><a href="333.html" title="333">Make Your Own Ball Mill Stand</a><br/><a href="347.html" title="347">Making Glaze Testing Cones</a><br/><a href="341.html" title="341">Monoporosa or Single Fired Wall Tiles</a><br/><a href="325.html" title="325">Organic Matter in Clays: Detailed Overview</a><br/><a href="105.html" title="105">Outdoor Weather Resistant Ceramics</a><br/><a href="27.html" title="27">Painting Glazes Rather Than Dipping or Spraying</a><br/><a href="212.html" title="212">Particle Size Distribution of Ceramic Powders</a><br/><a href="339.html" title="339">Porcelain Tile, Vitrified Tile</a><br/><a href="20.html" title="20">Rationalizing Conflicting Opinions About Plasticity</a><br/><a href="332.html" title="332">Ravenscrag Slip is Born</a><br/><a href="247.html" title="247">Recylcing Scrap Clay</a><br/><a href="101.html" title="101">Reducing the Firing Temperature of a Glaze From Cone 10 to 6</a><br/><a href="329.html" title="329">Setting up a Clay Testing Program in Your Company or Studio</a><br/><a href="211.html" title="211">Simple Physical Testing of Clays</a><br/><a href="350.html" title="350">Single Fire Glazing</a><br/><a href="326.html" title="326">Soluble Salts in Minerals: Detailed Overview</a><br/><a href="28.html" title="28">Some Keys to Dealing With Firing Cracks</a><br/><a href="249.html" title="249">Stoneware Casting Body Recipes</a><br/><a href="194.html" title="194">Substituting Cornwall Stone</a><br/><a href="274.html" title="274">Super-Refined Terra Sigillata</a><br/><a href="340.html" title="340">The Chemistry, Physics and Manufacturing of Glaze Frits</a><br/><a href="202.html" title="202">The Effect of Glaze Fit on Fired Ware Strength</a><br/><a href="125.html" title="125">The Four Levels on Which to View Ceramic Glazes</a><br/><a href="207.html" title="207">The Majolica Earthenware Process</a><br/><a href="43.html" title="43">The Potter's Prayer</a><br/><a href="359.html" title="359">The Right Chemistry for a Cone 6 Magnesia Matte</a><br/><a href="33.html" title="33">The Trials of Being the Only Technical Person in the Club</a><br/><a href="107.html" title="107">The Whining Stops Here: A Realistic Look at Clay Bodies</a><br/><a href="134.html" title="134">Those Unlabelled Bags and Buckets</a><br/><a href="16.html" title="16">Tiles and Mosaics for Potters</a><br/><a href="308.html" title="308">Toxicity of Firebricks Used in Ovens</a><br/><a href="379.html" title="379">Trafficking in Glaze Recipes</a><br/><a href="216.html" title="216">Understanding Ceramic Materials</a><br/><a href="210.html" title="210">Understanding Ceramic Oxides</a><br/><a href="130.html" title="130">Understanding Glaze Slurry Properties</a><br/><a href="213.html" title="213">Understanding the Deflocculation Process in Slip Casting</a><br/><a href="132.html" title="132">Understanding the Terra Cotta Slip Casting Recipes In North America</a><br/><a href="198.html" title="198">Understanding Thermal Expansion in Ceramic Glazes</a><br/><a href="313.html" title="313">Unwanted Crystallization in a Cone 6 Glaze</a><br/><a href="389.html" title="389">Using Dextrin, Glycerine and CMC Gum together</a><br/><a href="135.html" title="135">Volcanic Ash</a><br/><a href="201.html" title="201">What Determines a Glaze's Firing Temperature?</a><br/><a href="111.html" title="111">What is a Mole, Checking Out the Mole</a><br/><a href="38.html" title="38">What is the Glaze Dragon?</a><br/><a href="98.html" title="98">Where do I start in understanding glazes?</a><br/><a href="215.html" title="215">Why Textbook Glazes Are So Difficult</a><br/><a href="239.html" title="239">Working with children</a></div><h1>Super-Refined Terra Sigillata</h1>
+<h4 class="text-muted">Description</h4><p class="text-muted font-italic">Vince Pitelka describes his method of preparing a Terra Sigillata slip.</p><h4>Article</h4>
+<p>Traditionally, the primary objective of <a href="../glossary/terra+sigilatta.html">terra sigillata</a> 
+coatings is to get a high satin gloss without a glaze, using simple, 
+time-effective polishing methods. Most of the popular published terra sigillata 
+recipes do not separate the large particles adequately, and the product is not a 
+true terra sig. About 18 years ago, I started researching terra sigillatas in 
+conjunction with my "Ancient Clay" classes and workshops at U-Mass-Amherst. 
+First experiments were derived from standard recipes in <a href="../glossary/ceramics.html">ceramics</a> books and 
+magazines, and the results were unsatisfactory. I wanted to achieve what I had 
+seen on ancient Roman pottery. </p>
+<p>Super-refined polishing slips were first used in the Middle 
+East at least 1000 BC, and reached a pinnacle of aesthetics and technical 
+accomplishment with the terra sigillatas used on Greek and Roman pottery. Like 
+so many innovations of the Romans, the technology was lost in the early medieval 
+era. 1400 years later, 19<sup>th</sup> century German ceramic chemist Henrich 
+Schumann was seeking for low-cost coatings for sanitary sewer pipe. That 
+doesn't sound very romantic, but it drove him to make the critical rediscovery. 
+Schumann was fascinated by the surfaces on Roman pottery, and conducted cross 
+section analysis of the shards. He determined that terra sig is a very thin 
+coating of refined slip composed of only the very finest clay platelets. 
+Through subsequent experimentation, he was able to reproduced high quality terra 
+sig surfaces. Schumann's findings guided me, and experiments conducted with 
+students Heather Shadron and Rob Williamson at University of 
+Massachusetts-Amherst helped to refine the specific techniques outlined below.</p>
+<p><b><i>Get an Appropriate Hydrometer</i></b></p>
+<p>An appropriate hydrometer that measures <b><i>specific 
+gravity</i></b> is required for this technique. A winemaker's hydrometer will 
+not work, because it measures fluids lighter than water. Glaze hydrometers that 
+measures <a href="../glossary/specific+gravity.html">specific gravity</a> will work, but they generally have a scale reading 
+from 1.00 (the weight of water) to 2.00, which does not offer much precision in 
+the range needed for terra sig. Online laboratory supply sites offer 
+appropriate hydrometers that measure specific gravity from 1.00 to 1.20, which 
+is the ideal range for terra sig. Go to
+<a href="http://www.sargentwelch.com/" style="color: blue; text-decoration: underline; text-underline: single">
+www.sargentwelch.com</a> and enter WLS-42035-A in the search box to find a good 
+hydrometer for this application. Note that hydrometers are extremely fragile. 
+Get at least two. </p>
+<p><b><i>Selecting the Clay</i></b></p>
+<p>You can make terra sig from almost any raw clay or mixed 
+claybody, but the yield will depend on the average particle size. Finely 
+divided air-floated clays such as <a href="../material/1191.html">Redart</a> or Goldart and most ball clays will 
+give a high yield of sig. Coarser clays like <a href="../material/925.html">kaolin</a> and <a href="../glossary/fireclay.html">fireclay</a> give less sig 
+and a greater amount of <a href="../glossary/suspension.html">settled</a> coarse residue. Don't bother trying to make a 
+sig from <a href="../material/106.html">bentonite</a> - it is too fine already, and doesn't yield a good sig. 
+Selection of the clay will usually depend on the desired color and firing 
+temperature. See the section on "Firing Ranges and Natural Clay Colors Achieved 
+with Terra Sig" for more information. </p>
+<p>Some clays are so coarse as to give a very low yield of 
+sig. If you choose a particular clay for compelling reasons, and the yield of 
+terra sig is especially low, the raw clay can be <a href="../glossary/ball+milling.html">ball-milled</a> before 
+incorporating in to the initial mixture. See the section on "Adding Coloring 
+<a href="../glossary/ceramic+oxide.html">Oxides</a> and Ceramic <a href="../glossary/ceramic+stain.html">Stains</a>" for more information on ball-milling. </p>
+<p><b><i>Preparing the Deflocculant</i></b></p>
+<p>The secret of refining a proper terra sigillata is to 
+settle out all but the very finest particles. A <b><i>deflocculant</i></b> is a 
+chemical additive that causes particles in aqueous <a href="../glossary/suspension.html">suspension</a> to repel one 
+another, and it is a critical part of the terra sig process. Only a tiny amount 
+of deflocculant is needed, and adding additional is counterproductive, so be 
+very careful with your math and your measuring. <b><i>Soda ash</i></b> (sodium 
+carbonate) and <b><i>sodium silicate</i></b> both work as deflocculants, but for 
+reasons that no one seems to understand, a combination of the two work best in 
+terra sig. </p>
+<p>The amount of deflocculant is figured as a percentage of 
+the dry weight of clay to be used. To a small amount of hot water, add 0.25% 
+(1/4 of 1%) soda ash (sodium carbonate) <b><i>and</i></b> 0.25% sodium 
+silicate. A hand blender will make short work of dissolving the chemicals. The 
+<a href="../material/1275.html">sodium silicate</a> comes as a liquid, but just measure the weight as if it were a 
+solid. </p>
+<p><b><i>Measuring Specific Gravity with a Hydrometer</i></b></p>
+<p>To measure specific gravity with a hydrometer, the liquid 
+must be in a container tall enough to float the hydrometer. If your mixing 
+container is not tall enough, pour some of the liquid into a tall thin 
+container. The most practical container for this application is a laboratory 
+graduated cylinder. Go to an online laboratory supply site and purchase a 
+plastic 250 ml. graduated cylinder. Lower the heavy end of the hydrometer 
+carefully into the liquid until it floats on its own, and read the scale exactly 
+where the hydrometer tube meets the surface of the liquid. </p>
+<p>Immediately before measuring the specific gravity with a 
+hydrometer, always be sure to mix your terra sigillata thoroughly with a hand 
+blender or drill-mounted impeller mixer. The sig will settle, especially in the 
+initial mixture, and you must make sure that all particles are in suspension in 
+order to get an accurate hydrometer reading. </p>
+<p><b><i>Determining the Initial Mixture</i></b></p>
+<p>For the time and trouble involved, and considering the low 
+cost of raw clay, it is best to make a quantity of sig all at once. I never 
+make less than five gallons of initial mixture. After <a href="../glossary/suspension.html">settling</a>, siphoning, and 
+concentrating, that will yield about a half gallon of super-refined terra sig. 
+A near-full five-gallon bucket of initial mixture will take about 14 lbs. of 
+Redart, Goldart, kaolin, fire clay, or any dry claybody, or about 11 lbs. of 
+<a href="../material/80.html">ball clay</a>. </p>
+<p>Add the dissolved deflocculant mix to cold water, starting 
+with a quart of cold water for every two pounds of dry clay to be used. Add the 
+dry clay, blending with a drill-mounted impeller mixer. When all the dry clay 
+is mixed in, add more cold water, mixing well, and check frequently with the 
+hydrometer until the specific gravity reading is 1.20 for any clays except ball 
+clays, or 1.15 for ball clays. If you are mixing in a full five-gallon bucket, 
+float the hydrometer right in the bucket. If mixing smaller quantities, you 
+will need a graduated cylinder or other appropriate container as mentioned 
+above. </p>
+<p><b><i>Settling the Initial Mixture</i></b></p>
+<p>As soon as you have finished blending the initial mixture, 
+note the time, and <i>place the container on a raised table or shelf and leave 
+it undisturbed for 20 hours</i>. It must be in a location where you can siphon 
+from it, and it will be a great advantage to have the bottom of the container at 
+least two to three feet above the floor. </p>
+<p>Don't be careless about this. Do not move or agitate the 
+container in any way during the 20-hour settling time, or during the siphoning 
+process outlined below. If you agitate the mix, you ruin the terra sig. 
+Consistency in method and timing is critically important in making good terra 
+sig. If you accidentally agitate the mixture, or if you let the mixture stand 
+for longer than 20 hours, thoroughly mix it again with a drill-mounted impeller 
+mixer, note the time, and start the 20 hours settling period again. </p>
+<p><b><i>Why 20 Hours?</i></b></p>
+<p>The 20-hour settling time may seem arbitrary, but it's not. 
+I am grateful to student Rob Williamson at U-Mass for helping to determine the 
+ideal settling time. There are several forces at work in this <a href="../glossary/deflocculation.html">deflocculated</a> 
+mix. The deflocculant introduces same electrical charges to particles in aqueous 
+suspension, causing them to repel one another and stay in suspension longer. 
+Also, there is ever-present atomic vibration which causes particles in liquids 
+to naturally disperse. Working against these forces is gravity, causing 
+particles to settle out. At 20 hours, in a deflocculated slip of the correct 
+specific gravity, gravity has caused all the heavier particles to settle out, 
+while atomic vibration and the repelling forces caused by <a href="../glossary/deflocculation.html">deflocculation</a> keep 
+the finest particles (generally those less than one micron - 1/1000 of a mm) in 
+suspension. </p>
+<p><b><i>Decanting the Terra Sig: Get a Proper Racking Tube</i></b></p>
+<p>The essential tool for decanting the dilute terra sig is a 
+winemaker's siphon, referred to in the winemaking industry as a <b><i>racking 
+tube</i></b> or <b><i>racking cane</i></b>. You can get one from any supplier 
+of winemaking equipment, including many online sources. Note that in some cases 
+the racking tube comes with attached flexible tubing, while in other cases the 
+tubing must be ordered separately. </p>
+<p>An appropriate racking tube features a "J"-shaped rigid 
+plastic tube attached to a length of flexible plastic tubing. An important 
+feature of a good racking tube is the <b><i>diversion cap</i></b> on the suction 
+end of the rigid tube. This allows fluid to enter above the cap rather than 
+below, and offers real advantages in siphoning terra sig. As you gently probe 
+downwards with the rigid tube, the objective is to sense the increased density 
+of heavier sediments before the siphon starts to pick up those sediments, thus 
+avoiding contaminating the terra sig. The diversion cap makes this much more 
+feasible. </p>
+<p><b><i>Siphoning off the Dilute Terra Sig</i></b></p>
+<p>The upper part of the mix is now a very dilute terra 
+sigillata, and must be carefully siphoned off, avoiding the heavier sediments 
+lower down in the container. This is a touchy process and must be done properly 
+with the right equipment. While siphoning, do not discard any liquid at the 
+top. Some clays will give a seemingly transparent layer of water at the top, 
+but this layer contains some of the very finest particles. Siphon off the 
+transparent layer (if any) and keep siphoning until you come to heaver sediments 
+in the lower portion of the container. </p>
+<p>Start the siphon with the diversion cap just barely 
+immersed in the settled mix. <i>As mentioned above, do not agitate this 
+container or the settled mix at all.</i> Once the siphoning is started, gently 
+lower the tip of the siphon tube into the mixture as the thin liquid is siphoned 
+off, keeping the diversion tip just below the surface. The diversion cap will 
+occasionally suck a bit of air, but that hurts nothing, and tells you that the 
+tip is close to the surface. If it sucks too much air the siphoning action will 
+cease, and you'll have to restart it. You will quickly get a feeling for this. 
+</p>
+<p>With some clays such as Redart, the heavier sediments will 
+form a distinct layer with a fairly hard surface, and you will feel that layer 
+with the tip of the diversion cap. As soon as this happens, lift the siphon 
+tube and stop siphoning immediately. Don't risk picking up any of the heavier 
+sediments. </p>
+<p>With some clays, you will never feel a distinctly heavier 
+layer. In that case, let the suction tube suck a little air every few seconds, 
+and note the change when the siphon naturally begins to suck more air, 
+indicating that the mixture is getting thicker. Once again, as soon as this 
+happens, lift the siphon tube and stop siphoning immediately. </p>
+<p>With most ball clays, the particle size is so consistent 
+that you never will sense a heavier layer of sediment at all. In that case, 
+just siphon off the top two thirds of the mixture and discard the rest, and you 
+will get a good terra sig. That may seem inexact, but there doesn't seem to be 
+any other choice, and that bottom third seems to accommodate the heavier 
+particles. As instructed above, in making ball clay terra sig you should start 
+with a thinner 1.15 specific gravity initial mixture, and that helps to allow 
+the coarsest fraction of particles to settle out, so even if you are not able to 
+identify thicker sediments in the lower portion of the vessel, you can be sure 
+they are there. Don't try to siphon off more than two thirds. It just isn't 
+worth risking contaminating the sig. </p>
+<p>With most clays, the residue of heavier sediment left in 
+the bottom of the container represents most of the weight of what you started 
+out with, but I have never tried to do anything with that residue. Raw clay is 
+cheap, while terra sig is very valuable based on your time invested. The 
+residue already has the finest particles removed, and thus is relatively 
+non-plastic. I just discard it, but you may find a good use for it. </p>
+<p><b><i>Concentrating the Thin Sig by Evaporation</i></b></p>
+<p>Since the initial mixture is either 1.20 or 1.15 specific 
+gravity, and most of the heavy particles are settled out and discarded, the 
+siphoned mixture will be extremely thin and relatively unusable. The next 
+challenge is to concentrate the sig by evaporating water. This can be done by 
+natural evaporation in any wide, low container will work, such as one of those 
+broad dish-shaped plastic <a href="https://plainsmanclays.ca/data/index.php?product=12955">snow</a> sleds, an automotive oil-change pan, or a very 
+large round or rectangular cake pan. Protect the concentrating sig from 
+contamination by large particles, but don't put a cloth over it, because that 
+will severely retard evaporation. Don't worry about bugs or the very fine 
+particles of dust that float in the air. Those particles won't hurt the sig, 
+and the bugs can be skimmed off. </p>
+<p><b><i>Concentrating the Thin Sig by Heat</i></b></p>
+<p>You can concentrate terra sig with heat, but don't do it on 
+direct heat, like a stove burner or hotplate. The sig will solidify directly on 
+the bottom of the pot, and the metal will burn. I concentrate terra sig in a 
+large metal mixing bowl, placed carefully-centered on the bottom shelf of a 
+toploader kiln, and I leave the bottom element on low overnight. It may be 
+easier to place the empty bowl on the bottom shelf and then carefully fill it 
+with a measuring cup, being very cautious to avoid splattering sig on the 
+heating elements. In either case, turn off the circuit breaker feeding the kiln 
+while you place or remove the metal container. </p>
+<p>As another option, use a crock pot set on medium heat with 
+the lid off. In either case, the rate of drying will depend on the atmospheric 
+humidity and the mount of heat applied. It will take some experimentation to 
+learn the ideal conditions. </p>
+<p><b><i>Using the Sig As Soon As It Has Concentrated</i></b></p>
+<p>If you are in a rush to use the sig, watch it carefully, 
+and when it has thickened considerably, scrape the thick accumulation loose and 
+mix back into suspension with a whisk. Add water to adjust the specific gravity 
+as indicated below. </p>
+<p><b><i>Storing the Sig in Dry Form</i></b></p>
+<p>If you don't need the sig right away, let it dry 
+completely, scrape it loose from the container, and store it until needed. 
+Drying doesn't hurt the sig in any way. 24 hours before you need to use the 
+sig, place an appropriate amount in a container, cover with water one inch above 
+the sig, let it sit overnight, and then add more water, checking the consistency 
+with the hydrometer to get the desired specific gravity. If you are mixing a 
+small quantity, a hand blender helps. For larger amounts use a drill-mounted 
+impeller mixer to blend the sig. </p>
+<p><b><i>Determining the Specific Gravity for Application</i></b></p>
+<p>A terra sig must be mixed very thinly to work properly, but 
+beyond that there are no hard and fast rules for the ideal consistency of sig 
+for application. The thicker the sig, the less water introduced into the 
+claybody, but the greater chance that the sig layer will crack and peel. The 
+thinner the sig, the less chance it will crack and peel, but the more coats you 
+will need, and thus the more water introduced into the claybody, risking cracks 
+in the ware. For most sigs and most application methods, I have had best luck 
+with a specific gravity of 1.15, and would not recommend using sig mixed thicker 
+than that. This material simply does not respond well to thicker applications, 
+and it will encourage cracking and <a href="../picture/3594.html">peeling</a>, either during drying, firing, or 
+subsequent use. Instead, you will get the best results with multiple thin 
+layers of terra sig. </p>
+<p><b><i>When and How to Apply the Terra Sig</i></b></p>
+<p>Some people recommend applying sig to <a href="../glossary/leather+hard.html">leather-hard</a> clay, 
+but in my experience that is a waste of time unless you just want only the 
+natural soft satin sheen sig can give without polishing or burnishing. The sig 
+layer is pretty dense, more so if it has been polished. It doesn't have much 
+capacity for shrinkage, and none at all if it has been burnished. Even 
+hard-leather-hard clay will shrink as it dries, and the sig coating will crinkle 
+on a microscopic level, diminishing or ruining any shine that is present. </p>
+<p>I apply terra sig to bone dry clay, and get the best 
+adhesion when the clay has been sanded. Since most of my terra sig use is in 
+conjunction with the Ancient Clay workshops I teach, the pieces are usually 
+sanded, as is the tradition among Southwestern Native Americans and many other 
+cultures past and present that polish or burnish their wares. I sand with 
+120-grit drywall sanding mesh, available from any good building materials 
+center. </p>
+<p>If you sand the wares, be sure to thoroughly wipe down all 
+surfaces with a soft cloth such as tee-shirt material in order to remove all 
+dust. If you neglect to do this, the paintbrush will carry the dust back to 
+your sig container, contaminating the sig.</p>
+<p>I apply terra sig with a wide, thick soft brush heavily 
+loaded with sig, laying on flowing strokes, carefully avoiding drips. If the 
+sig does drip down the surface, chase the drips with your brush. Don't let the 
+drips harden on the surface, and don't let the piece sit in sig pooled at the 
+base. I work my way around the piece, building up thin coats until I get an 
+opaque surface that begins to conceal the sanded texture. That's still a very 
+thin coat overall, but if you accumulate much more thickness, you are risking 
+subsequent cracking and peeling of the sig coat. </p>
+<p>If you wish to preserve some of the color and the surface 
+texture of the base surface, you can get a good shine with an almost transparent 
+coat, because the shine results from the ultra-fine clay platelets laying flat 
+on the surface. Ultimately, it's a matter of experience with your particular 
+terra sig and base claybody. Experiment with the thinnest buildup possible, and 
+see if it meets your needs. Build up from there to see what you can get away 
+with. </p>
+<p><b><i>Polishing and/or Burnishing the Sig Surface</i></b></p>
+<p>As soon as I achieve the desired sig buildup, and the 
+wetness has soaked in, I polish the surface with a piece of grocery bag plastic 
+stretched over my fingertips. The first time you do this, you won't believe 
+what happens. It is magical. Grocery bag plastic is harder and denser than 
+other plastic bag material, and gives a better shine. Some people prefer to 
+polish with soft flannel or tee-shirt material or a soft brush, but I have had 
+best success with the grocery bag plastic. I get a glassy shine in one polish. 
+</p>
+<p>There's no reason to polish between coats. When you do 
+polish, if you are not satisfied with the shine, you can simply paint on more 
+terra sig. The new coat disrupts the previous shine, achieving a good bond.
+</p>
+<p>It is important to clarify the terminology of polishing and 
+burnishing. <b><i>Polishing</i></b> refers to any means of achieving a shine. 
+In this case, <b><i>burnishing</i></b> is a kind of polishing, but specifically 
+refers to rubbing the surface with a hard, unyielding object, like a shiny stone 
+or the back of a metal spoon. The potters in one Central American village 
+burnish with the curved plastic cap from a particular brand of shoe polish. </p>
+<p>It is possible to burnish any re-moistened bone-dry clay 
+surface, but usually some sort of refined slip is applied to the base clay. A 
+properly prepared terra sig makes an excellent burnishing slip, but if you rely 
+entirely on the moisture introduced by the sig, burnishing must be completed in 
+one sitting while the coating is still damp. Otherwise the surface will begin 
+to flake and crack. To prevent this, especially with larger forms, many potters 
+apply the sig, allow the water to absorb, apply a thin smear-coat of lard or 
+glycerin, and let that absorb before burnishing. The grease retards drying, 
+giving you time to finish burnishing the piece. </p>
+<p>Even though terra sig makes a good burnishing slip, it is 
+not the ideal use of this medium. The whole point of this elaborate preparation 
+process is to produce a thin slip medium that polishes beautifully and gives the 
+unique terra sig shine, but doesn't involve the labor-intensity of burnishing. 
+After proper application of terra sigillata, the actual polishing process on a 
+medium-sized pot using grocery bag plastic takes ten or fifteen minutes. A 
+thorough burnishing job on the same pot takes at least two or three hours. </p>
+<p><b><i>Firing Ranges and Natural Clay Colors Achieved with 
+Terra Sig</i></b></p>
+<p>A true burnished surface cannot be fired above cone 012. 
+Beyond that, as described earlier, the compressed surface crinkles on a 
+microscopic level, and you loose your shine. On the other hand, highly polished 
+(not burnished) terra sig surfaces can be fired as high as cone 02 with the 
+polish intact. At higher temperatures, terra sigs will give an appealing satin 
+finish, but the high shine will disappear. </p>
+<p>I have applied very thin coats of terra sig to bisqueware 
+with adequate results, but it never produces the level of shine or <a href="../glossary/glaze+durability.html">durability</a> of 
+surface achieved with a sig applied to bone dry clay. Terra sig applied too 
+thickly on bisqueware will almost always crack and peel. </p>
+<p>At cone 012, Redart sig gives a bright brick-red-orange 
+color. At cone 08 it gives a classic brick red, and cone 02 it gives a red 
+brown. At midrange and highfire temperatures, a Redart (or other <a href="../glossary/earthenware.html">earthenware</a> 
+clay) terra sig will fuse and become a glaze. </p>
+<p>At lowfire temperatures Goldart and other <a href="../glossary/stoneware.html">stoneware</a> clays 
+and most fire clays give an off-white color at low temperatures, and at 
+high-fire will produce a tan in oxidation and gray in reduction. Ball clays 
+generally give white at lowfire temperatures, and an off-white or gray at 
+high-fire. Most kaolins produce white at all temperatures. Red stoneware clays 
+like Carbondale, Lizella, or Neuman red often tend to be quite coarse, but can 
+still give a good brick-red terra sig that will survive to high-fire 
+temperatures without fusing into a glaze. Some red stoneware clays may need to 
+be ball-milled before incorporation into the initial mixture. </p>
+<p>A properly-made Redart sig produces a very dense coating, 
+and in a blackware bonfiring gives a range of colors from brick red to 
+jet-black, and any re-oxidized spots will go back to brick red. Ball clay terra 
+sig is slightly more porous, and in a blackware bonfiring can give intense 
+jet-black, and any re-oxidized spots will go to gray or white. </p>
+<p><b><i>Using Terra Sig to Coat Feet and Lid Seats</i></b></p>
+<p>From a philosophical point of view, I like to see and feel 
+the unglazed clay on the foot of a vessel, and I like the feel of a snug-fitting 
+clay-to-clay lid seat. I find no advantage in a glazed foot, especially on 
+midrange and high-fired ware. I do not care for the brittle, fragile feel and 
+fit of a glazed lid seat, and again, I see no advantage in it. However, some 
+claybodies high in <a href="../glossary/grog.html">grog</a> can give unpleasantly rough surfaces on the exposed clay 
+of a foot or lid seat, and you would certainly be justified in wanting a 
+smoother surface. A good solution is to coat those parts with terra sig made 
+from the base claybody. That way, you still have the visual and tactile 
+contrast of unglazed clay on the foot or lid seat, but it will be relatively 
+smooth to the touch. </p>
+<p>Slake down scrap claybody clay overnight in ample water and 
+mix with a drill-mounted impeller mixer, adding more water to achieve the 1.2 
+specific gravity initial mixture. Don't worry about sand or grog, because those 
+will be the first components to settle out in the initial mix. </p>
+<p>If you do not use the base claybody, select a clay 
+appropriate to the base claybody and the intended firing temperature. Remember, 
+an earthenware clay slip will become a glaze at midrange and high-fire 
+temperatures. Terra sigs made from stoneware clays like Goldart or from a ball 
+clay or kaolin will work fine up to high-fire temperatures, and even then will 
+still give a silky smooth surface. </p>
+<p><b><i>Adding Coloring Oxides or Ceramic Stains</i></b></p>
+<p>I always work with pure clay terra sigs, because they give 
+the best shine. Colored sigs are an appealing option, but some oxides and all 
+commercial ceramic stains are coarsely ground, and will diminish the potential 
+for polishing the sig. Very finely divided oxides like <a href="../material/236.html">copper carbonate</a> or 
+cobalt carbonate can be added in small quantities without significant loss of 
+shine. To use other oxides, or to use ceramic stains, you will need to 
+ball-mill the mix. A commercially-made <a href="../glossary/ball+milling.html">ball mill</a> is a very expensive piece of 
+equipment, but you can make do with a large rock tumbler. Fill the reservoir 
+one third with quartz pebbles or glass marbles, and one third with 
+thick-creamy-consistency terra sig with the oxides or stains added, leaving one 
+third air space. Do not overfill the reservoir or the materials will not tumble 
+properly. Ball mill for at least 24 hours, thin to desired consistency, and 
+test it. If the <a href="../glossary/colorant.html">colorants</a> settle out, or if it does not develop a good shine, 
+it needs to be <a href="../glossary/ball+milling.html">ball milled</a> longer. This will require experimentation on your 
+part, because it is outside my own area of experience. </p>
+<p>A well-prepared terra sigillata is truly a remarkable 
+medium. It has become a popular option in contemporary ceramics throughout the 
+US, Canada, Europe, Australia, and New Zealand. Polished terra sig finishes 
+have become especially popular in pit-firing, bonfiring, sagger, 
+sawdust-smoking, <a href="../glossary/raku.html">raku</a>, and horsehair effects. Whatever you do with terra sig, 
+you are part of a 4000-year tradition that continues to evolve. If you 
+discovery interesting new effects or uses in your experiments, I'd love to hear 
+about them. You can email me at my home page at http://iweb.tntech.edu/wpitelka.</p><p style="clear:left"></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/282">http://iweb.tntech.edu/wpitelka</a>
+<br/><i>Home Page</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><p>By Vince PITELKA </p><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></div></body>
+</html>

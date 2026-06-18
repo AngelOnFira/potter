@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>04DSDH Firing Schedule</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item active" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=schedule" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"></td><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Firing Schedules</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a title="119" title="119" href="https://digitalfire.com/schedule/03dsff">03DSFF - Cone 03 Fast Fire</a><br /><a title="118" title="118" href="https://digitalfire.com/schedule/118"><button type="button" class="btn btn-dark">04DSDH - Low Temperature Drop-and-Hold</button></a><br /><a title="113" title="113" href="https://digitalfire.com/schedule/bq1000">BQ1000 - Plainsman Electric Bisque Firing Schedule</a><br /><a title="125" title="125" href="https://digitalfire.com/schedule/brtf05">BRTF05 - Bartlett Fast Glaze Cone 05</a><br /><a title="126" title="126" href="https://digitalfire.com/schedule/brtf6">BRTF6 - Bartlett Fast Glaze Cone 6</a><br /><a title="127" title="127" href="https://digitalfire.com/schedule/brts6">BRTS6 - Bartlett Slow Glaze Cone 6</a><br /><a title="121" title="121" href="https://digitalfire.com/schedule/btfb04">BTFB04 - Bartlett Fast Bisque Cone 04</a><br /><a title="128" title="128" href="https://digitalfire.com/schedule/btsb04">BTSB04 - Bartlett Slow Bisque Cone 04</a><br /><a title="120" title="120" href="https://digitalfire.com/schedule/btsg05">BTSG05 - Bartlett Slow Glaze Cone 05</a><br /><a title="94" title="94" href="https://digitalfire.com/schedule/c04pltp">C04PLTP - Plainsman Low Temperature Drop-and-hold</a><br /><a title="93" title="93" href="https://digitalfire.com/schedule/c10rpl">C10RPL - Plainsman Cone 10R Firing</a><br /><a title="122" title="122" href="https://digitalfire.com/schedule/c5dhsc">C5DHSC - Plainsman Cone 5 Drop-and-Hold Slow-Cool</a><br /><a title="115" title="115" href="https://digitalfire.com/schedule/c6dhsc">C6DHSC - Plainsman Cone 6 Drop-and-hold, Slow Cool</a><br /><a title="124" title="124" href="https://digitalfire.com/schedule/c6ired">C6IRED - Cone 6 Iron Reds</a><br /><a title="83" title="83" href="https://digitalfire.com/schedule/c6msgl1">C6MSGL1 - Mastering Glazes Cone 6</a><br /><a title="114" title="114" href="https://digitalfire.com/schedule/c6plst">C6PLST - Plainsman Cone 6 Electric Standard</a><br /><a title="98" title="98" href="https://digitalfire.com/schedule/fscg1">FSCG1 - Shimbo Crystal Schedule 1</a><br /><a title="99" title="99" href="https://digitalfire.com/schedule/fscgb1">FSCGB1 - Shimbo Crystal Holding Pattern 2</a><br /><a title="95" title="95" href="https://digitalfire.com/schedule/fscgcl">FSCGCL - Shimbo Crystal Celestite Schedule</a><br /><a title="97" title="97" href="https://digitalfire.com/schedule/fscgwm">FSCGWM - Wollast-O-Matte Fara Shimbo Crystalline Glaze</a><br /><a title="101" title="101" href="https://digitalfire.com/schedule/fscrgl">FSCRGL - GC106 Base for Crystalline Glazes</a><br /><a title="110" title="110" href="https://digitalfire.com/schedule/fshp1">FSHP1 - Shimbo Crystal Holding Pattern 1</a><br /><a title="112" title="112" href="https://digitalfire.com/schedule/fshp3">FSHP3 - Shimbo Crystal Holding Pattern 3</a><br /><a title="96" title="96" href="https://digitalfire.com/schedule/fsnm5">FSNM5 - Fa's Number Five</a><br /><a title="123" title="123" href="https://digitalfire.com/schedule/mddcl">MDDCL - Medalta Decal Firing</a><br /><a title="116" title="116" href="https://digitalfire.com/schedule/plc6cr">PLC6CR - Cone 6 Crystal Glaze Plainsman</a><br /><a title="117" title="117" href="https://digitalfire.com/schedule/plc6ds">PLC6DS - Cone 6 Drop-and-Soak Firing Schedule</a><br /><a title="129" title="129" href="https://digitalfire.com/schedule/qica">QICA - Quartz Inversion Cracking Avoider</a></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>"04DSDH" Firing Schedule</h1><h2>Low Temperature Drop-and-Hold</h2>
+<p>The advent of <a  href="https://digitalfire.com/glossary/kiln+controller">kiln controllers</a> has made soak-and-rise and <a  href="https://digitalfire.com/glossary/drop-and-soak+firing">drop-and-soak</a> schedules like this possible for even hobbyists, enabling defect-free surfaces on even coarse-grained bodies. <br />
+<br />
+This is configured for <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 04</a>, but of course, you can adjust steps 2, 3, and 4 to others.<br />
+<br />
+The idea of this schedule is to heal bubbles and defects they cause. These often just percolate during soaks at top temperature. This schedule also adds an optional step 2 to reduce <a  href="https://digitalfire.com/glossary/glaze+bubbles">clouding</a> caused by high populations of microbubbles. <br />
+<br />
+You have to program this manually. See the link below on how.<br />
+<br />
+-Step 1. Drying needs to be complete because the next step proceeds rapidly. Extend the soaking time if your ware is thick or heavy or the kiln is densely loaded. 240F, although above boiling point, is not enough to fracture ware, but needed to completely dry it.<br />
+<br />
+-Step 2 climbs quickly to 100F below top temperature (your kiln may or may not be able to maintain the rate). The optional soak is to even out the heat distribution in the ware for the final approach to top temperatures. The hold enables micro-bubble clouds (gases of <a  href="https://digitalfire.com/glossary/decomposition">decomposition</a>) to <a  href="https://digitalfire.com/glossary/agglomeration">agglomerate</a> and escape before last stage.<br />
+<br />
+-Step 3: The push to the final temperature. Include a <a  href="https://digitalfire.com/picture/2223">self-supporting cone</a> frequently in firings to monitor the accuracy of your pyrometer and adjust the program accordingly. Slow the rate of rise if kiln is densely packed.<br />
+<br />
+- Step 4: Use this step to heal <a  href="https://digitalfire.com/trouble/glaze+blisters">blisters</a>. Free-fall 100F and hold. The reason: The lower temperature increases <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> <a  href="https://digitalfire.com/glossary/viscosity">viscosity</a> sufficiently to overcome melt <a  href="https://digitalfire.com/glossary/surface+tension">surface tension</a> and burst the bubbles (but still affords enough fluidity to heal them). You may need to customize the temperature for your kiln, ware and glazes. 50F higher if glazes are crystallizing, lower if they are still <a  href="https://digitalfire.com/trouble/glaze+blisters">blistering</a>.<br />
+<br />
+- Step 5: Slowly cool down to 1400F. This will improve <a  href="https://digitalfire.com/glossary/glossy+glaze">glossy glaze</a> surfaces, removing remaining surface defects. With this slow cool glazes can crystallize, so this step will need to be removed if you don't want that.</p>
+
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<th class="text-left" scope="col">Step</th>
+<th class="text-center" scope="col">&deg;C</th>
+<th class="text-center" scope="col">&deg;F</th>
+<th class="text-left" scope="col">Hold</th>
+<th class="text-right" scope="col">Time</th>
+<th></th>
+</tr></thead><tbody>
+<tr>
+
+ <td class="text-left">1</td>
+
+ <td class="text-left">60&deg;C/hr to 115C&nbsp;</td>
+
+ <td class="text-left">108&deg;F/hr to 240F&nbsp;</td>
+
+ <td class="text-left">60min</td>
+
+ <td class="text-right">2:31</td>
+
+ <td class="text-left">Drive out any remaining mechanical water</td>
+</tr>
+<tr>
+
+ <td class="text-left">2</td>
+
+ <td class="text-left">250&deg;C/hr to 982C&nbsp;</td>
+
+ <td class="text-left">450&deg;F/hr to 1800F&nbsp;</td>
+
+ <td class="text-left">15min</td>
+
+ <td class="text-right">6:14</td>
+
+ <td class="text-left">Adjust this to top-temp minus 100</td>
+</tr>
+<tr>
+
+ <td class="text-left">3</td>
+
+ <td class="text-left">60&deg;C/hr to 1037C&nbsp;</td>
+
+ <td class="text-left">108&deg;F/hr to 1900F&nbsp;</td>
+
+ <td class="text-left">15min</td>
+
+ <td class="text-right">7:25</td>
+
+ <td class="text-left">Adjust this to your top firing temp</td>
+</tr>
+<tr>
+
+ <td class="text-left">4</td>
+
+ <td class="text-left">555&deg;C/hr to 982C&nbsp;</td>
+
+ <td class="text-left">999&deg;F/hr to 1800F&nbsp;</td>
+
+ <td class="text-left">30min</td>
+
+ <td class="text-right">8:01</td>
+
+ <td class="text-left">Rapid fall and hold</td>
+</tr>
+<tr>
+
+ <td class="text-left">5</td>
+
+ <td class="text-left">83&deg;C/hr to 760C&nbsp;</td>
+
+ <td class="text-left">150&deg;F/hr to 1400F&nbsp;</td>
+
+ <td class="text-left">&nbsp;</td>
+
+ <td class="text-right">10:41</td>
+
+ <td class="text-left">Optional to reduce glaze defects</td>
+</tr>
+
+</tbody></table>
+<div style="margin:0px 0px 20px 0px; font-style:italic; font-size:80%;">Start temperature assumed: 25&deg;C or 75&deg;F<br />
+			"Fahrenheit degrees" is not the same as "degrees Fahrenheit". 
+			A 100&deg; reading on a Fahrenheit thermometer is equal to a 37&deg; reading on a Celcius thermometer. 
+			But "100 Fahrenheit degrees of temperature change" is equivalent "55 Celsius degrees of change". 
+			That is an important distinction to understand the above temperature conversions.</div>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Manually programming a Bartlett V6-CF hobby kiln controller</h3>
+<br /><a href="https://digitalfire.com/picture/1554"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/jykmyzuvav.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1554">click here</a> to see it.</p>
+<p>I document programs in my account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">insight-live</a>.com, then print them out and enter them into the controller. This controller can hold six, it calls them Users. The one I last edited is the one that runs when I press "Start". When I press the "Enter Program" button it asks which User: I key in "2" (for my <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> lab tests). It asks how many segments: I press Enter to accept the 3 (remember, I am editing the program). After that it asks questions about each step (rows 2, 3, 4): the Ramp "rA" (degrees F/hr), the Temperature to go to (°F) to and the Hold time in minutes (HLdx). In this program I am heating at 300F/hr to 240F  and holding 60 minutes, then 400/hr to 2095 and holding zero minutes, then at 108/hr to 2195 and holding 10 minutes. The last step is to set a temperature where an alarm should start sounding (I set 9999 so it will never sound). When complete it reads "Idle". Then I press the "Start" button to begin. If I want to change it I press the "Stop" button. Those ten other buttons? Don't use them, automatic firing is not accurate. One more thing: If it is not responding to "Enter Program" press the Stop button first.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Program your firings manually, calibrate the final temperature using cones</h3>
+<br /><a href="https://digitalfire.com/picture/2222"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/ka89ngvbse.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2222">click here</a> to see it.</p>
+<p>Here is an example of our lab <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a> for cone 10 oxidation (which the cone-fire mode does not do correctly). To actually go to cone 10 we need to manually create a program that fires higher than the built in cone-fire one. Determining how high to go is a matter repeated firings verified using a <a  href="https://digitalfire.com/picture/2223">self-supporting cone</a> (regular cones are not accurate). In our lab we keep notes in the schedule record in our account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">insight-live</a>.com. And we have a chart on the wall showing the latest temperature for each of the cones we fire to. What about <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>? Controllers fire it to 2235, we put down a cone at 2200!</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">How many degrees between these cone positions?</h3>
+<br /><a alt="Two orton cones, one bent to 6 oclock, the other 4 oclock." title="One of these orton cones is bent the right amount, the other is not." href="https://digitalfire.com/picture/2399"><img class="flexleft50" title="One of these orton cones is bent the right amount, the other is not."  alt="Two orton cones, one bent to 6 oclock, the other 4 oclock."  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/ex629d6s81.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2399">click here</a> to see it.</p>
+<p>I was consistently getting the cone on the left when using a custom-programmed <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a> to 2204F (for <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> with ten minute hold). However Orton recommends that the tip of the self supporting cone should be even with the top of the base (they consider the indicating part of the cone to be the part above the base). So I adjusted the program to finish at <a  href="https://digitalfire.com/glossary/cone+6">2200F</a> and got the cone on the right. But note: This applies to that kiln at that point in time (with that pyrometer and that firing schedule). Our other <a  href="https://digitalfire.com/picture/1293">test kiln</a> bends the cone to 5 o'clock at 2195F. Since <a  href="https://digitalfire.com/glossary/kiln+controller">kiln controllers</a> fire cone 6 at 2230 (for the built-in one-button firings) your kiln is almost certainly over firing!</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">The difference that caused blistering: Firing schedule!</h3>
+<br /><a href="https://digitalfire.com/picture/1685"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/dispozahas.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1685">click here</a> to see it.</p>
+<p>These are the same glaze, same thickness, Ulexite-based G2931B glaze, fired to cone 03 on a <a  href="https://digitalfire.com/glossary/terra+cotta">terra cotta</a> body. The one on the right was fired from 1850F to 1950F at 100F/hr, then soaked 15 minutes and shut off. The problem is <a  href="https://digitalfire.com/glossary/surface+tension">surface tension</a>. Like soapy water, when this glaze reaches cone 03 <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> is quite fluid. Since there is <a  href="https://digitalfire.com/glossary/decomposition">decomposition</a> happening within the body, gases being generated vent out through surface pores and blow bubbles. I could soak at cone 03 as long as I wanted and the bubbles would just sit there. The one on the left was fired to 100F below cone 03, soaked half an hour (to clear micro-bubble clouds), then at 108F/hr to cone 03 and soaked 30 minutes, then control-cooled at 108F/hr to 1500F. During this cool, at some point well below cone 03, the increasing <a  href="https://digitalfire.com/glossary/viscosity">viscosity</a> of the melt becomes sufficient to overcome the surface tension and break the bubbles. If that point is not traversed too quickly, the glaze has a chance to smooth out (using whatever remaining fluidity the melt has). Ideally I should identify exactly where that is and soak there for a while.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">The glaze with less stain + 2% Zircopax is brighter than the one with more stain!</h3>
+<br /><a href="https://digitalfire.com/picture/2057"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/lqqfermk8t.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2057">click here</a> to see it.</p>
+<p>These are cone 03 porcelains with <a  href="https://digitalfire.com/recipe/g2931k">G2931K</a> clear glaze base plus Mason 6021 <a  href="https://digitalfire.com/glossary/encapsulated+stain">encapsulated stain</a> (which is very expensive). The one on the left has 15% stain added. The one on the right is slightly less dense red but has only 10% stain plus 2% <a  href="https://digitalfire.com/material/1722">zircon</a> (<a  href="https://digitalfire.com/material/1724">zircopax</a>). Notice the zircon has smoothed the surface also, this is a known benefit of using it with encapsulated <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a>. The 2% addition is not enough to <a  href="https://digitalfire.com/glossary/opacifier">opacify</a>, the color remains deep and <a  href="https://digitalfire.com/glossary/translucency">translucent</a>. But the surface is still not completely smooth and glassy as is the <a  href="https://digitalfire.com/glossary/base+glaze">base transparent</a> glaze on its own. This can be improved using a <a  href="https://digitalfire.com/glossary/drop-and-soak+firing">drop-and-hold</a> <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Three low fire bodies need three different clear glazes. Why?</h3>
+<br /><a href="https://digitalfire.com/picture/2085"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/2bcprhmju1.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2085">click here</a> to see it.</p>
+<p><a  href="https://digitalfire.com/glossary/glaze+fit">Glaze fit</a>. The left-most clay mug contains no <a  href="https://digitalfire.com/material/1620">talc</a> (<a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12869">Buffstone</a>), the centre one about 25% talc (<a  href="https://plainsmanclays.ca/data/index.php?product=12870">L212</a>) and the right one is about 45% talc (L213). Talc raises <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a>. The centre glaze is <a  href="https://digitalfire.com/recipe/g2931k">G2931K</a>, it is middle-of-the-road thermal expansion (<a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a> reports it as 7.4) and fits the low-talc bodies (and <a  href="https://digitalfire.com/glossary/zero3">Zero3</a> <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> and <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a>). But it crazes on <a  href="https://plainsmanclays.ca/data/index.php?product=12869">Buffstone</a> and shivers on L213. The lesson is: Forget about expecting one clear or <a  href="https://digitalfire.com/glossary/base+glaze">base glaze</a> to fit all <a  href="https://digitalfire.com/glossary/earthenware">low fire</a> bodies. But there is a solution. I adjusted it to reduce its expansion to work on zero-talc porous bodies and raise it to work on high talc bodies. How? By decreasing and increasing the <a  href="https://digitalfire.com/picture/1775">KNaO</a> (in relation to other fluxes). The three fire crystal clear and work the best in a <a  href="https://digitalfire.com/glossary/drop-and-soak+firing">drop-and-hold</a> firing.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Firing Schedules</td>
+<td>
+<a href="https://digitalfire.com/schedule/03dsff">Cone 03 Fast Fire</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/drop-and-soak+firing">Drop-and-Soak Firing</a>
+<br /><i>A kiln <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a> where temperature is eased to the top, then dropped quickly and held at a temperature 100-200F lower.</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

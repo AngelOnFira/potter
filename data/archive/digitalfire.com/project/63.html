@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Project: Mold Natches</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Natches are an interlocking mechanism using in plaster molds for ceramics. They enable quick and accurate registry when assembling multiple pieces of a mold.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+March 2026: We are doing major upgrades to code here, please be patient regarding any issues. If any page is not working for a period of hours, please contact us. Thank you.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item active" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=project" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:center; vertical-align:top;">Feb 14-15, 2026 - <b>Major Server <a href="https://digitalfire.com">Upgrade</a> Done</b></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Projects</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a title="15" href="https://digitalfire.com/project/15">2019 Jiggering-Casting Project of Medalta 66 Mug</a><br /><a title="54" href="https://digitalfire.com/project/54">A cereal bowl jigger mold made using 3D printing</a><br /><a title="33" href="https://digitalfire.com/project/33">Beer Bottle Master Mold via 3D Printing</a><br /><a title="61" href="https://digitalfire.com/project/61">Better porosity for Brown Sugar Savers</a><br /><a title="48" href="https://digitalfire.com/project/48">Build a kiln monitoring device</a><br /><a title="69" href="https://digitalfire.com/project/69">Celebration Project</a><br /><a title="60" href="https://digitalfire.com/project/60">Coffee Mug Slip Casting Mold via 3D Printing</a><br /><a title="29" href="https://digitalfire.com/project/29">Comparing the Melt Fluidity of 16 Frits</a><br /><a title="52" href="https://digitalfire.com/project/52">Cookie Cutting clay with 3D printed cutters</a><br /><a title="41" href="https://digitalfire.com/project/41">Evaluating a clay's suitability for use in pottery</a><br /><a title="55" href="https://digitalfire.com/project/55">Make a mold for 4-gallon stackable calciners</a><br /><a title="49" href="https://digitalfire.com/project/49">Make Your Own Pyrometric Cones</a><br /><a title="47" href="https://digitalfire.com/project/47">Make your own sieve shaker to process ceramic slurries</a><br /><a title="40" href="https://digitalfire.com/project/40">Making a high quality ceramic tile</a><br /><a title="46" href="https://digitalfire.com/project/46">Making a Plaster Table</a><br /><a title="37" href="https://digitalfire.com/project/37">Making Bricks</a><br /><a title="50" href="https://digitalfire.com/project/50">Making our own kiln posts using a hand extruder</a><br /><a title="59" href="https://digitalfire.com/project/59">Medalta Ball Pitcher Slip Casting Mold via 3D Printing</a><br /><a title="34" href="https://digitalfire.com/project/34">Medalta Jug Master Mold Development</a><br /><button type="button" class="btn btn-dark">Mold Natches</button><br /><a title="32" href="https://digitalfire.com/project/32">Mother Nature's Porcelain - Plainsman 3B</a><br /><a title="66" href="https://digitalfire.com/project/66">Mug Handle Casting</a><br /><a title="39" href="https://digitalfire.com/project/39">Nursery plant pot mold via 3D printing</a><br /><a title="30" href="https://digitalfire.com/project/30">Pie-Crust Mug-Making Method</a><br /><a title="35" href="https://digitalfire.com/project/35">Plainsman 3D, Mother Nature's Porcelain/Stoneware</a><br /><a title="38" href="https://digitalfire.com/project/38">Project to Document a Shimpo Jiggering Attachment</a><br /><a title="36" href="https://digitalfire.com/project/36">Roll, Cut, Pull, Attach Handle-making Method</a><br /><a title="23" href="https://digitalfire.com/project/23">Slurry Mixing and Dewatering Your Own Clay Body</a><br /><a title="24" href="https://digitalfire.com/project/24">Testing a New Load of EP Kaolin</a><br /><a title="44" href="https://digitalfire.com/project/44">Using milk as a glaze</a></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Mold Natches</h1>
+<p><a  href="https://digitalfire.com/glossary/3d+design">3D design</a> and <a  href="https://digitalfire.com/glossary/3d-printing">3D printing</a> are enabling a rethinking of <a  href="https://digitalfire.com/glossary/mold+natches">mold natches</a>. The precision of the process is such that now <a  href="https://digitalfire.com/glossary/mold+natches">natches</a> are not even needed in some multi-piece molds. When they are there is now so much flexibility regarding how they can be incorporated into working molds.<br />
+<br />
+-Provisioning holes in the <a  href="https://digitalfire.com/glossary/3d-printing">3D-printed</a> parts permits inserting <a  href="https://digitalfire.com/glossary/3d-printing">3D printed</a> fittings for propagating natches, <a  href="https://digitalfire.com/picture/3483">embeds</a> and retainers into whatever is being cast.<br />
+-Provisioning cutouts permits rooting of platforms onto which<br />
+This method of printing in a hole also enables the use of commercial natches. By adjusting the size of my own the same block mold can be used to deploy either my own or the commercial natches.<p style="clear:left"></p></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">DIY natches, spacers and embeds in a plaster handle mold</h3>
+<br /><a alt="Natches, spacers, embeds in a plaster handle mold" href="https://digitalfire.com/picture/3481"><img class="flexleft50" alt="Natches, spacers, embeds in a plaster handle mold"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/eywkbxftjm.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3481">click here</a> to see it.</p>
+<p>This is our third-generation alternative to the use of traditional <a  href="https://digitalfire.com/glossary/mold+natches">mold natches</a> (like the red ones in the photo). Here is what you are seeing:<br />
+<br />
+Right: A <a  href="https://digitalfire.com/glossary/3d-printing">3D-printed</a> <a  href="https://digitalfire.com/picture/3728">case mold</a> for a mug handle. Clips (retainers) have been inserted from the bottom side. An embed has been pushed down over the one in the rear.<br />
+<br />
+Center: The <a  href="https://digitalfire.com/material/1124">plaster</a> mold created from it. The embed at the rear is ready for inserting a spacer (the nipple of the other half will it into that). A <a  href="https://digitalfire.com/glossary/mold+natches">natch</a> has also been inserted into the embed in the front. These fit tight enough in the hole that glue was not needed here.<br />
+<br />
+Left: Spacers have been inserted into both <a  href="https://digitalfire.com/picture/3483">embeds</a>. A standard natch fits into the one in the rear and one of our <a  href="https://digitalfire.com/glossary/mold+natches">natches</a> fits into the one in the front.<br />
+<br />
+Soon the <a  href="https://digitalfire.com/glossary/3d+design">CAD</a> drawing for these (natches, spacers, embeds, clips) will be available on <a  href="https://digitalfire.com/glossary/digitalfire+reference+library">digitalfire</a>.com.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">v1 DIY Four-Part Mold Natch System</h3>
+<h4 style="color:#888888; margin-top:0px;">Essential for 3D mold-making in ceramics</h4>
+<p style="margin-top:0px;"><b>Available</b> on the <a target="_blank" href="https://digitalfire.com/downloads/index.php?picture=3483">Downloads</a> page</p>
+<br /><a alt="3D printed mold natches" href="https://digitalfire.com/picture/3483"><img class="flexleft50" alt="3D printed mold natches"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/qel9nhnv9q.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3483">click here</a> to see it.</p>
+<p>Plastic <a  href="https://digitalfire.com/glossary/mold+natches">natches</a> are used in traditional mold making for <a  href="https://digitalfire.com/glossary/slip+casting">slip-cast</a> <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a> (instead of registration keys). They are cast into <a  href="https://digitalfire.com/material/1124">plaster</a> molds to provide durable and good-fitting interlocks between pieces. They are self-interlocking, a popular size is the 3/8" or 9.5 mm (nipple diameter) <a  href="https://digitalfire.com/glossary/mold+natches">natch</a>. However, these have not proven suitable for the mold making process described on this site. The <a  href="https://digitalfire.com/glossary/digitalfire+reference+library">Digitalfire</a> four-part system accommodates <a  href="https://digitalfire.com/glossary/3d-printing">3D printing</a> (usually using <a  href="https://digitalfire.com/picture/3701">PLA</a> filament) case molds for pouring plaster, block molds for pouring rubber case molds and even hybrid solutions. Here are some features of our system:<br />
+-13.5mm holes in <a  href="https://digitalfire.com/glossary/3d-printing">3D printed</a> case molds are all that is needed to adapt to these.<br />
+-3D printing case and block molds necessitate pouring plaster and rubber into shells with planar mating surfaces downward that must sit flat on the work table (traditional natches don’t work in this setting).<br />
+-Casting an embed into a mold enables gluing (or friction fitting) a natch or a spacer inside.<br />
+-The use of <a  href="https://digitalfire.com/picture/3483">embeds</a> permits flat mating surfaces,  these can be sanded (for better flatness and fit). They also allow replacing natches if they get broken.<br />
+-A set of four interlocks (4 embeds, 4 clips, 2 spacers, 2 natches) weighs 8.7g.<br />
+Consider starting with a 0.1mm allowance (e.g. 4.8mm nipple inside a 4.9mm space). Print all four to check for fit. Then do cycles of adjusting the allowances and printing again until they fit.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Version 4 Ball Pitcher 3D printed block mold</h3>
+<br /><a alt="3D-printing v4 of Medalta ball pitcher mold" href="https://digitalfire.com/picture/3491"><img class="flexleft50" alt="3D-printing v4 of Medalta ball pitcher mold"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/yen5owqq38.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3491">click here</a> to see it.</p>
+<p>This project continues to demonstrate that multiple redesign, test cycles are a fact of life when making a new shape. <a  href="https://digitalfire.com/glossary/3d-printing">3D printing</a> makes this so much easier. Here are the changes from v3:<br />
+-This time I am not going to back fill with <a  href="https://digitalfire.com/material/1124">plaster</a>. I have heftier <a  href="https://digitalfire.com/glossary/side+rails">side rails</a> that should hold things firmly in place.<br />
+-The rim is now cast in into final shape.<br />
+-The includes a distinct footring, this will enable easier cleanup of glaze on the foot and a cleaner edge line.<br />
+-The handle is thicker and looks a little further from the body (to enable getting my fingers in there).<br />
+-I am using <a  href="https://digitalfire.com/glossary/mold+natches">natches</a> this time, the two 9mm holes will mount <a  href="https://digitalfire.com/picture/3483">embeds</a> (the retainer and embed are shown beside the holes) - they will position flush in the <a  href="https://digitalfire.com/picture/3728">case mold</a> (I will propagate the embeds into the working mold also).<br />
+-I am casting it upside down, positioning the spout between the lower handle join and the <a  href="https://digitalfire.com/glossary/foot+ring">foot ring</a>. We will drain for ten seconds then plug the hole using a plaster insert made to fit snug. Remaining slip inside will refill the hole and even build the wall a little thicker there (increasing wall strength by the lower handle join).<br />
+</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Ball pitcher v.4 case molds cast</h3>
+<br /><a alt="3D printed PLA mold to plaster case mold" href="https://digitalfire.com/picture/3493"><img class="flexleft50" alt="3D printed PLA mold to plaster case mold"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/project/n8glf5kokj.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3493">click here</a> to see it.</p>
+<p>We are just using pottery <a  href="https://digitalfire.com/material/1124">plaster</a> for now. Notice the <a  href="https://digitalfire.com/picture/3483">embeds</a> for the <a  href="https://digitalfire.com/glossary/mold+natches">natches</a>. This time I did not backfill the 3D prints, that is better - because they are flexible they were much easier to remove from the set plaster. The <a  href="https://digitalfire.com/glossary/side+rails">side rails</a> help keep them firmly in place and scotch tape on the backs was sufficient to keep them lined up at the join. These prints have a wall thickness of only <a  href="https://digitalfire.com/glossary/0.8mm+thickness">0.8mm</a>. I did not need to use a parting agent nor did I do any smoothing on the 3D prints (although some cleanup on the plaster <a  href="https://digitalfire.com/picture/3728">case mold</a> will be done). Next step: A working mold, version 4.</p>
+<p style="clear:left"></p><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

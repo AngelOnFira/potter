@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>L3954B</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Drying and firing shrinkage fitted to Plainsman M390, M340">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+		function scrollToID(idName, idNote) { 
+			var elmnt = document.getElementById(idName);
+			var elmnt1 = document.getElementById(idNote); 
+			elmnt.innerHTML = '<img style=\"height:55px; float:left; margin:0px 5px 0px 0px;\" src=\"https://plainsmanclays.com/images/skulllogo.svg\"> Tell me about your use of Plainsman Clays'; 
+			elmnt1.innerHTML = 'What clay do you use? Why? Did you switch recently? Why?<br />What problems have you had?'; 
+			elmnt.scrollIntoView(); 
+		}
+		function copyXml() {
+			const xmlText = document.getElementById("xmlContent").innerText;
+			const btn = document.getElementById("copyBtn");
+
+			navigator.clipboard.writeText(xmlText).then(() => {
+				btn.innerText = "Copied!";
+				btn.style.backgroundColor = "green";
+				btn.style.color = "white";
+				setTimeout(() => {
+					btn.innerText = "Copy XML";
+					btn.style.backgroundColor = "";
+					btn.style.color = "";
+				}, 2000);
+			}).catch(err => {
+				console.error("Failed to copy: ", err);
+				alert("Failed to copy text.");
+			});
+		}
+		</script>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+April 2026: We are continuing a major code rewrite, please be patient regarding any issues. If any page is not working for a period of hours, please contact us. Thank you.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item active"><a class="nav-link" href="/recipe/list">Recipes <span class="sr-only">(current)</span></a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=recipe" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>! <b>No paywall</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Recipe Codes</a>  <a class="btn btn-primary"href="https://digitalfire.com/recipe/list" role="button" aria-expanded="false">All Recipes</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a title="72" href="https://digitalfire.com/recipe/bory1">BORY1</a> - Bory 1 Crystalline Glaze<br /><a title="64" href="https://digitalfire.com/recipe/celecg">CELECG</a> - Celestite Crystalline Glaze<br /><a title="69" href="https://digitalfire.com/recipe/faao">FAAO</a> - Fa's All-Opaque Crystalline Glaze<br /><a title="66" href="https://digitalfire.com/recipe/fac5">FAC5</a> - Crystal Number Five Glaze<br /><a title="67" href="https://digitalfire.com/recipe/fo">FO</a> - Octal Crystalline Glaze<br /><a title="37" href="https://digitalfire.com/recipe/g1214m">G1214M</a> - 20x5 Cone 6 Base Glossy Glaze<br /><a title="4" href="https://digitalfire.com/recipe/g1214w">G1214W</a> - Cone 6 Transparent Base<br /><a title="3" href="https://digitalfire.com/recipe/g1214z1">G1214Z1</a> - Cone 6 Silky CaO matte base glaze<br /><a title="45" href="https://digitalfire.com/recipe/g1215u">G1215U</a> - Low Expansion Glossy Clear Cone 6<br /><a title="117" href="https://digitalfire.com/recipe/g1216l">G1216L</a> - Transparent for Cone 6 Porcelains<br /><a title="106" href="https://digitalfire.com/recipe/g1216m">G1216M</a> - Cone 6 Ultraclear Glaze for Porcelains<br /><a title="122" href="https://digitalfire.com/recipe/g1916q">G1916Q</a> - Low Fire Highly-Expansion-Adjustable Transparent<br /><a title="40" href="https://digitalfire.com/recipe/g1947u">G1947U</a> - Cone 10 Glossy transparent glaze<br /><a title="120" href="https://digitalfire.com/recipe/g2000">G2000</a> - LA Matte Cone 6 Matte White<br /><a title="61" href="https://digitalfire.com/recipe/g2240">G2240</a> - Cone 10R Classic Spodumene Matte<br /><a title="39" href="https://digitalfire.com/recipe/g2571a">G2571A</a> - Cone 10 Silky Dolomite Matte glaze<br /><a title="62" href="https://digitalfire.com/recipe/g2826r">G2826R</a> - Floating Blue Cone 5-6 Original Glaze Recipe<br /><a title="63" href="https://digitalfire.com/recipe/g2826x">G2826X</a> - Randy's Red Cone 5<br /><a title="55" href="https://digitalfire.com/recipe/g2851h">g2851H</a> - Ravenscrag Cone 6 High Calcium Matte Blue<br /><a title="59" href="https://digitalfire.com/recipe/g2853b">G2853B</a> - Cone 04 Clear Ravenscrag School Glaze<br /><a title="102" href="https://digitalfire.com/recipe/g2896">G2896</a> - Ravenscrag Plum Red Cone 6<br /><a title="104" href="https://digitalfire.com/recipe/g2902b">G2902B</a> - Cone 6 Crystal Glaze<br /><a title="105" href="https://digitalfire.com/recipe/g2902d">G2902D</a> - Cone 6 Crystalline Development Project<br /><a title="115" href="https://digitalfire.com/recipe/g2916f">G2916F</a> - Cone 6 Stoneware/Whiteware transparent glaze<br /><a title="118" href="https://digitalfire.com/recipe/g2926b">G2926B</a> - Cone 6 Whiteware/Porcelain transparent glaze<br /><a title="126" href="https://digitalfire.com/recipe/g2926j">G2926J</a> - Low Expansion G2926B<br /><a title="119" href="https://digitalfire.com/recipe/g2928c">G2928C</a> - Ravenscrag Silky Matte for Cone 6<br /><a title="131" href="https://digitalfire.com/recipe/g2931h">G2931H</a> - Ulexite High Expansion Zero3 Clear Glaze<br /><a title="132" href="https://digitalfire.com/recipe/g2931k">G2931K</a> - Low Fire Fritted Zero3 Transparent Glaze<br /><a title="127" href="https://digitalfire.com/recipe/g2931l">G2931L</a> - Low Expansion Low-Fire Clear<br /><a title="121" href="https://digitalfire.com/recipe/g2934">G2934</a> - Matte Glaze Base for Cone 6<br /><a title="135" href="https://digitalfire.com/recipe/g2934y">G2934Y</a> - Cone 6 Magnesia Matte Low LOI Version<br /><a title="125" href="https://digitalfire.com/recipe/g3806c">G3806C</a> - Cone 6 Clear Fluid-Melt transparent glaze<br /><a title="130" href="https://digitalfire.com/recipe/g3838a">G3838A</a> - Low Expansion Transparent for P300 Porcelain<br /><a title="141" href="https://digitalfire.com/recipe/g3879">G3879</a> - Cone 04 Transparent Low-Expansion transparent glaze<br /><a title="93" href="https://digitalfire.com/recipe/ga10-a">GA10-A</a> - Alberta Slip Base Cone 10R<br /><a title="32" href="https://digitalfire.com/recipe/ga10-b">GA10-B</a> - Alberta Slip Tenmoku Cone 10R<br /><a title="33" href="https://digitalfire.com/recipe/ga10-d">GA10-D</a> - Alberta Slip Black Cone 10R<br /><a title="94" href="https://digitalfire.com/recipe/ga10x-a">GA10x-A</a> - Alberta Slip Base for cone 10 oxidation<br /><a title="30" href="https://digitalfire.com/recipe/ga6-a">GA6-A</a> - Alberta Slip Cone 6 transparent honey glaze<br /><a title="139" href="https://digitalfire.com/recipe/ga6-b">GA6-B</a> - Alberta Slip Cone 6 transparent honey glaze<br /><a title="31" href="https://digitalfire.com/recipe/ga6-c">GA6-C</a> - Alberta Slip Floating Blue Cone 6<br /><a title="88" href="https://digitalfire.com/recipe/ga6-d">GA6-D</a> - Alberta Slip Glossy Brown Cone 6<br /><a title="97" href="https://digitalfire.com/recipe/ga6-f">GA6-F</a> - Alberta Slip Cone 6 Oatmeal<br /><a title="35" href="https://digitalfire.com/recipe/ga6-g">GA6-G</a> - Alberta Slip Lithium Brown Cone 6<br /><a title="107" href="https://digitalfire.com/recipe/ga6-g1">GA6-G1</a> - Alberta Slip Lithium Brown Cone 6 Low Expansion<br /><a title="36" href="https://digitalfire.com/recipe/ga6-h">GA6-H</a> - Alberta Slip Cone 6 Black<br /><a title="83" href="https://digitalfire.com/recipe/gbcg">GBCG</a> - Generic Base Crystalline Glaze<br /><a title="75" href="https://digitalfire.com/recipe/gc106">GC106</a> - GC106 Base Crystalline Glaze<br /><a title="58" href="https://digitalfire.com/recipe/gr10-a">GR10-A</a> - Pure Ravenscrag Slip<br /><a title="80" href="https://digitalfire.com/recipe/gr10-b">GR10-B</a> - Ravenscrag Cone 10R Gloss Base<br /><a title="95" href="https://digitalfire.com/recipe/gr10-c">GR10-C</a> - Ravenscrag Cone 10R Silky Talc Matte<br /><a title="92" href="https://digitalfire.com/recipe/gr10-e">GR10-E</a> - Alberta Slip:Ravenscrag Cone 10R Celadon<br /><a title="96" href="https://digitalfire.com/recipe/gr10-g">GR10-G</a> - Ravenscrag Cone 10 Oxidation Variegated White<br /><a title="91" href="https://digitalfire.com/recipe/gr10-j">GR10-J</a> - Ravenscrag Cone 10R Dolomite Matte<br /><a title="108" href="https://digitalfire.com/recipe/gr10-j1">GR10-J1</a> - Ravenscrag Cone 10R Bamboo Matte<br /><a title="101" href="https://digitalfire.com/recipe/gr10-k1">GR10-K1</a> - Ravenscrag Cone 10R Tenmoku<br /><a title="110" href="https://digitalfire.com/recipe/gr10-l">GR10-L</a> - Ravenscrag Iron Crystal<br /><a title="5" href="https://digitalfire.com/recipe/gr6-a">GR6-A</a> - Ravenscrag Cone 6 Clear Glossy Base<br /><a title="1" href="https://digitalfire.com/recipe/gr6-b">GR6-B</a> - Ravenscrag Cone 6 Variegated Light Glossy Blue<br /><a title="76" href="https://digitalfire.com/recipe/gr6-c">GR6-C</a> - Ravenscrag Cone 6 White Glossy<br /><a title="77" href="https://digitalfire.com/recipe/gr6-d">GR6-D</a> - Ravenscrag Cone 6 Glossy Black<br /><a title="78" href="https://digitalfire.com/recipe/gr6-e">GR6-E</a> - Ravenscrag Cone 6 Raspberry Glossy<br /><a title="8" href="https://digitalfire.com/recipe/gr6-h">GR6-H</a> - Ravenscrag Cone 6 Oatmeal Matte<br /><a title="113" href="https://digitalfire.com/recipe/gr6-l">GR6-L</a> - Ravenscrag Cone 6 Transparent Burgundy<br /><a title="114" href="https://digitalfire.com/recipe/gr6-m">GR6-M</a> - Ravenscrag Cone 6 Floating Blue<br /><a title="124" href="https://digitalfire.com/recipe/gr6-n">GR6-N</a> - Ravenscrag Alberta Brilliant Cone 6 Celadon<br /><a title="65" href="https://digitalfire.com/recipe/grntcg">GRNTCG</a> - GRANITE Crystalline Glaze<br /><a title="138" href="https://digitalfire.com/recipe/l2000">L2000</a> - 25 Porcelain<br /><a title="57" href="https://digitalfire.com/recipe/l3341b">L3341B</a> - Alberta Slip Iron Crystal Cone 10R<br /><a title="109" href="https://digitalfire.com/recipe/l3685u">L3685U</a> - Cone 03 White Engobe Recipe<br /><a title="123" href="https://digitalfire.com/recipe/l3724f">L3724F</a> - Cone 03 Terra Cotta Stoneware<br /><a title="133" href="https://digitalfire.com/recipe/l3924c">L3924C</a> - Zero3 Porcelain Experimental<br /><a title="134" href="https://digitalfire.com/recipe/134"><button type="button" class="btn btn-dark">L3954B</button></a> - Cone 6 Engobe (for M340)<br /><a title="136" href="https://digitalfire.com/recipe/l3954n">L3954N</a> - Cone 10R Base White Engobe Recipe for stonewares<br /><a title="41" href="https://digitalfire.com/recipe/mgbase1">MGBase1</a> - High Calcium Semimatte 1 (Mastering Glazes)<br /><a title="42" href="https://digitalfire.com/recipe/mgbase2">MGBase2</a> - High Calcium Semimatte 2 (Mastering Glazes)<br /><a title="43" href="https://digitalfire.com/recipe/mgbase3">MGBase3</a> - General Purpose Glossy Base 1 (Mastering Glazes)<br /><a title="44" href="https://digitalfire.com/recipe/mgbase4">MGBase4</a> - Glossy Base 2 Cone 6 (Mastering Glazes)<br /><a title="46" href="https://digitalfire.com/recipe/mgbase5">MGBase5</a> - Glossy Clear Liner Cone 6 (Mastering Glazes)<br /><a title="47" href="https://digitalfire.com/recipe/mgbase6">MGBase6</a> - Zinc Semimatte Glossy Base Cone 6<br /><a title="48" href="https://digitalfire.com/recipe/mgbase7">MGBase7</a> - Raspberry Cone 6 (Mastering Glazes)<br /><a title="49" href="https://digitalfire.com/recipe/mgbase8">MGBase8</a> - Waxwing Brown Cone 6 (Mastering Glazes)<br /><a title="50" href="https://digitalfire.com/recipe/mgbase9">MGBase9</a> - Waterfall Brown Cone 6 (Mastering Glazes)<br /><a title="74" href="https://digitalfire.com/recipe/tnf2cg">TNF2CG</a> - Tin Foil II Crystalline Glaze<br /><a title="68" href="https://digitalfire.com/recipe/vesucg">VESUCG</a> - Vesuvius Crystalline Glaze</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><div style="padding:5px 10px 0px 10px; margin-bottom:10px; background-color:#eeeeee; border:thin solid grey; width:50%">
+<h4 style="margin-bottom:0px">Insight-Live Shares (also referencing this recipe)</h4>
+<p style="margin-bottom:0px; font-size:90%;">These add technical detail, development info, variations and improvements.</p>
+<ul>
+<li><a href="https://insight-live.com/insight/share.php?z=uiqNgtxwws">L3954F Cone 6 Engobe for Plainsman M340, M390, Coffee Clay</a></li>
+</ul></div>
+<h1>L3954B - Cone 6 White Engobe Recipe</h1>
+<p><b>Modified</b>: 2023-10-23 18:06:17</p>
+<p>Drying and firing shrinkage fitted to Plainsman M390, M340</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col">Material</th>
+<th class="text-center" scope="col">Amount</th>
+<th class="text-right" scope="col">Percent</th>
+</tr></thead><tbody>
+<tr><td class="label"><a href="https://digitalfire.com/material/nepheline+syenite">Nepheline Syenite</a></td><td class="text-right">18.00</td><td class="text-right">20.7</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/material/silica">Silica</a></td><td class="text-right">15.00</td><td class="text-right">17.2</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/material/om+%234+ball+clay">OM #4 Ball Clay</a></td><td class="text-right">54.00</td><td class="text-right">62.1</td></tr>
+<tr><td colspan="2" style="border-right:1px solid #fff; border-left:1px solid #fff">Added</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/material/zircopax">Zircopax</a></td><td class="text-right">10.00</td><td class="text-right">11.49</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/material/bentonite">Bentonite</a></td><td class="text-right">3.00</td><td class="text-right">3.45</td></tr>
+<tr><td class="text-right" colspan="2">100.00</td>
+<td class="text-right">100</td>
+</tr>
+</tbody></table>
+<h4>Notes</h4><p>This is white because of the 10% <a  href="https://digitalfire.com/material/1724">Zircopax</a>. Increase that 20% for maximum white. The black version of this is <a  href="https://insight-live.com/insight/share.php?z=uiqNgtxwws">L3954F</a>.<br />
+<br />
+This recipe has been tuned to have about the same <a  href="https://digitalfire.com/glossary/firing+shrinkage">fired shrinkage</a> as <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12876">M390</a>, <a  href="https://plainsmanclays.ca/data/index.php?product=12943">Coffee Clay</a> and <a  href="https://plainsmanclays.ca/data/index.php?product=12875">M340</a> at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> (we measure this at 6.7% dry-to-fired shrinkage using the <a  href="https://digitalfire.com/test/shab">SHAB test</a>). We also confirmed fired-shrinkage-match using the <a  href="https://digitalfire.com/test/ebct">EBCT test</a>). If the body you use has between 6.5 and 7.0 fired shrinkage, this should work. Do not ignore this detail. If you apply this as an <a  href="https://digitalfire.com/glossary/engobe">engobe</a> (e.g. by dipping <a  href="https://digitalfire.com/glossary/leather+hard">leather-hard</a> <a  href="https://digitalfire.com/glossary/functional">functional</a> pieces), and it is not firing-shrinkage-compatible with the body, it could eventually flake off during use.<br />
+<br />
+The color is whiter than previous trials (because of the zircopax), but some might prefer a little blue stain to brighten the color. We used 0.2% Mason 6336 with good success, other <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a> we tried agglomerated and caused specking). For a super white see the <a  href="https://insight-live.com/insight/share.php?z=uiqNgtxwws">L3954R</a> recipe.<br />
+<br />
+As will other <a  href="https://digitalfire.com/glossary/engobe">engobes</a> we recommend mixing in a <a  href="https://digitalfire.com/picture/3048">kitchen blender</a>, it is an ideal way to get the lumps out and thoroughly wet all particle surfaces.<br />
+<br />
+A <a  href="https://digitalfire.com/glossary/thixotropy">thixotropic</a> dipping <a  href="https://digitalfire.com/glossary/slurry">slurry</a> is needed and we have found it is possible to create a <a  href="https://digitalfire.com/glossary/deflocculation">deflocculated</a> one using 1000 powder, 780g water, ~3g <a  href="https://digitalfire.com/material/260">Darvan</a>. This produces a <a  href="https://digitalfire.com/glossary/specific+gravity">specific gravity</a> of ~1.55. If it is too viscous add more Darvan, too fluid add a tiny amount of <a  href="https://digitalfire.com/material/292">Epsom salts</a> to bring it back to a creamy texture.<br />
+<br />
+A <a  href="https://digitalfire.com/glossary/brushing+glaze">brushing version</a> can also be made, see the notes for the <a  href="https://insight-live.com/insight/share.php?z=uiqNgtxwws">L3954F</a> black engobe.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A white engobe on dark and buff burning cone 6 stonewares</h3>
+<br /><a title="White engobes on the insides" href="https://digitalfire.com/picture/2008"><img class="flexleft50" title="White engobes on the insides"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/hnpge8fc2r.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2008">click here</a> to see it.</p>
+<p>Left is <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12875">M340</a>. Right is <a  href="https://plainsmanclays.ca/data/index.php?product=12876">M390</a>. Each mug has been white-engobed inside (by pouring), using <a  href="https://digitalfire.com/recipe/l3954b">L3954B</a>, and halfway down the outside (by dipping). The insides have been glazed using <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a> clear. The inside surface has more depth and a richer appearance than could be achieved using a white glaze (especially over the dark burning body). The outside of the left one is <a  href="https://digitalfire.com/material/32">Alberta Slip</a> base <a  href="https://digitalfire.com/recipe/ga6-b">GA6-B</a>. The outside glaze on the right is the clear plus 4% <a  href="https://digitalfire.com/material/874">iron oxide</a>. This technique of using the <a  href="https://digitalfire.com/glossary/engobe">engobe</a> enables porcelain-like <a  href="https://digitalfire.com/glossary/functional">functional</a> surfaces on the insides and the visual contrasts and character on the outsides of the <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> mugs.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Four drops of Davan deflocculant fixed the problem!</h3>
+<br /><a href="https://digitalfire.com/picture/2007"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/xr6sekwpw4.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2007">click here</a> to see it.</p>
+<p>This is a white <a  href="https://digitalfire.com/glossary/engobe">engobe</a> (<a  href="https://digitalfire.com/recipe/l3954b">L3954B</a>) drying on two dark burning <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> <a  href="https://digitalfire.com/glossary/leather+hard">leather-hard</a> mugs (<a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12876">M390</a>). Those lumps are on the left cannot be screened out, they are <a  href="https://digitalfire.com/glossary/agglomeration">agglomerates</a>. That slip has excessive flocculant (powdered <a  href="https://digitalfire.com/material/292">Epsom salts</a> are added to gel it so that it stays put on the piece after dipping). About 4 drops of <a  href="https://digitalfire.com/material/260">Darvan</a> were added to one gallon of the <a  href="https://digitalfire.com/glossary/slurry">slurry</a>, this immediately made it smooth and a perfect consistency for application. It remains stable on ware (without runs). <a  href="https://digitalfire.com/glossary/engobe">Engobes</a> require tight control to have the right <a  href="https://digitalfire.com/glossary/viscosity">viscosity</a> and <a  href="https://digitalfire.com/glossary/thixotropy">thixotropy</a> (which can be achieved over a range of specific gravities (about 1.45-1.6). When they are right they are a joy to use, when they are not ware is ruined.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A cone 6 clear glaze plus iron vs. Alberta Slip amber base</h3>
+<br /><a href="https://digitalfire.com/picture/1990"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/psfkzbycw9.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1990">click here</a> to see it.</p>
+<p>These two mugs are made from a dark red burning <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> and fired in a cool-and-soak <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a>. A white <a  href="https://digitalfire.com/glossary/engobe">engobe</a> (L3954A) has been applied on the inside and half way down the outside. Both are glazed inside with <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a> <a  href="https://digitalfire.com/glossary/whiteware">whiteware</a> transparent glaze. The outside glaze on the left is the same transparent with 4% added <a  href="https://digitalfire.com/material/874">iron oxide</a>. It has been sieved to <a  href="https://digitalfire.com/glossary/sieve">80 mesh</a>. Notice the iron <a  href="https://digitalfire.com/glossary/agglomeration">agglomerates</a> and still produces specking (an effect that may be desired, but difficult to keep consistent). Interestingly, that iron is producing a clear amber-colored glass about equal in color to the <a  href="https://digitalfire.com/material/32">Alberta Slip</a> GA6A <a  href="https://digitalfire.com/glossary/base+glaze">base glaze</a> (80% Alberta Slip, 20% <a  href="https://digitalfire.com/material/356">Frit 3195</a>) on the mug on the right. Neither has the micro bubbles that mar a typical clear glaze on bodies like this.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">GA6A Alberta Slip base using Frit 3249 and 3195 on buff body</h3>
+<br /><a href="https://digitalfire.com/picture/2003"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/xw1sbyp3kd.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2003">click here</a> to see it.</p>
+<p>The body is buff burning <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12875">M340</a> (<a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>). The amber colored glaze is 80% <a  href="https://digitalfire.com/material/32">Alberta Slip</a> (raw:calcine mix) with 20% of each <a  href="https://digitalfire.com/glossary/frit">frit</a>. The white <a  href="https://digitalfire.com/glossary/engobe">engobe</a> on the inside of mug 1 is L3954A (also glazed inside using transparent <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a>). These <a  href="https://digitalfire.com/glossary/frit">frits</a> are producing an amber gloss glaze of high quality. On the outside of mug 1 we see the 3195 version on the white slip until midway down, then on the bare buff clay (the other has the 3249 version). These mugs are fired using a <a  href="https://digitalfire.com/glossary/drop-and-soak+firing">drop-and-soak firing</a> schedule. A couple of caveats: <a  href="https://digitalfire.com/material/369">Frit 3249</a> has a very low <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a>, use it on bodies that <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a> other glazes (like Plainsman <a  href="https://plainsmanclays.ca/data/index.php?product=12879">P300</a>), it could <a  href="https://digitalfire.com/glossary/glaze+shivering">shiver</a> on stonewares like this. Both of these frits prevent the formation of <a  href="https://digitalfire.com/trouble/bloating">bloating</a> blues (with additions of <a  href="https://digitalfire.com/material/1204">rutile</a> or <a  href="https://digitalfire.com/material/1644">titanium</a>).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Worst case scenario for handle joins and successful drying</h3>
+<br /><a alt="Leather hard mugs with waxed handles" href="https://digitalfire.com/picture/2019"><img class="flexleft50" alt="Leather hard mugs with waxed handles"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/msvhnaofw9.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2019">click here</a> to see it.</p>
+<p>These <a  href="https://plainsmanclays.ca/data/index.php?product=12876">M390</a> mugs had progressed to stiff <a  href="https://digitalfire.com/glossary/leather+hard">leather hard</a> (after handles were applied, using just slip, and bases trimmed). A white <a  href="https://digitalfire.com/glossary/engobe">engobe</a> was then applied to the inside. It significantly softened the bodies of the mugs (to re-dry them to the point of being able to turn them over takes 4-6 more hours). This process sets up a big moisture differential between mug and handle. "Even drying" is the key to success, so slowing down the handles is obviously needed. How? I apply <a  href="https://digitalfire.com/material/3157">wax emulsion</a> (actually I like Reed Wax), leaving just the inside handle-curves bare. That slows down drying enough to keep them even with the body of the mug. This method works so well that these do not even need covering during drying (even in our desert climate). Even drying is the goal - fast and even drying is much better than slow and uneven.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Stage 1 of engobing a cone 6 red stoneware mug</h3>
+<br /><a href="https://digitalfire.com/picture/2011"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/g6np7oqyng.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2011">click here</a> to see it.</p>
+<p>On the right is what it will look like when fired with a clear glaze on the inside and amber-clear on the outside. On the left it has dried and is ready for a little fix-up before <a  href="https://digitalfire.com/glossary/bisque">bisque firing</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Cone 6 engobe becomes super white with 20% zircon added</h3>
+<br /><a alt="Engobe with 20% zircon." href="https://digitalfire.com/picture/2910"><img class="flexleft50" alt="Engobe with 20% zircon."  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/drobx1pqmr.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2910">click here</a> to see it.</p>
+<p><a  href="https://digitalfire.com/glossary/engobe">Engobes</a> were applied to the insides, and up over the rim, of these <a  href="https://plainsmanclays.ca/data/index.php?product=12875">M340</a> pieces at the <a  href="https://digitalfire.com/glossary/leather+hard">leather hard</a> stage. They were then <a  href="https://digitalfire.com/glossary/bisque">bisque fired</a>, clear glazed and fired to <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>. On the left is <a  href="https://digitalfire.com/recipe/l3954b">L3954B</a>, no <a  href="https://digitalfire.com/material/1722">zircon</a> was added. The one on the right is <a  href="https://insight-live.com/insight/share.php?z=uiqNgtxwws">L3954S2</a>, in has 20% <a  href="https://digitalfire.com/material/1724">Zircopax</a>. These are part of a fitting effort to match the <a  href="https://digitalfire.com/glossary/firing+shrinkage">firing shrinkage</a> of the body, <a  href="https://plainsmanclays.ca/data/index.php?product=12875">M340</a>, to a base <a  href="https://digitalfire.com/glossary/engobe">engobe</a> (and colored versions of it).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Dark Umber-Stained Engobes on M340 at cone 6</h3>
+<br /><a href="https://digitalfire.com/picture/2058"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/3rjbe38sxo.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2058">click here</a> to see it.</p>
+<p>This is the standard <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> L3954D white <a  href="https://digitalfire.com/glossary/engobe">engobe</a> recipe with the 10% <a  href="https://digitalfire.com/material/1724">Zircopax</a> switched for <a  href="https://digitalfire.com/material/151">Burnt Umber</a>. The result is a dark, rich, ultra-gloss brown (almost black). The engobe is applied inside and half-way down the outside. The mug on the left is glazed inside and out with the base GA6A <a  href="https://digitalfire.com/material/32">Alberta Slip</a> <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> recipe (but uses Ferro <a  href="https://digitalfire.com/material/356">Frit 3195</a> instead of 3134). The one on the right has the same glaze on the outside but the <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a> clear transparent on the inside (it is <a  href="https://digitalfire.com/glossary/glaze+bubbles">micro-bubbling</a>). This engobe works even better with a black stain.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A cone 6 black-burning stoneware with a porcelain surface. How?</h3>
+<br /><a alt="A black stoneware mug" href="https://digitalfire.com/picture/2059"><img class="flexleft50" alt="A black stoneware mug"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/gy4hscvune.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2059">click here</a> to see it.</p>
+<p>Black-burning bodies are popular with many potters. This one is stained by adding 10% <a  href="https://digitalfire.com/material/2911">raw umber</a> to a buff-burning <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a>. Umbers are powerful natural clay <a  href="https://digitalfire.com/glossary/colorant">colorants</a>, they have high iron and also contain some manganese oxide. Could a white <a  href="https://digitalfire.com/glossary/engobe">engobe</a> produce a porcelain-like surface on such a <a  href="https://digitalfire.com/glossary/clay+body">clay body</a>? Yes. <a  href="https://digitalfire.com/recipe/l3954b">L3954B</a> engobe was applied during <a  href="https://digitalfire.com/glossary/leather+hard">leather-hard</a> stage to this <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12943">Coffee Clay</a> mug (on the inside and partway down the outside). After <a  href="https://digitalfire.com/glossary/bisque">bisque</a>, transparent <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a> glaze was applied inside and <a  href="https://digitalfire.com/recipe/ga6-b">GA6-B</a> outside. Notice the <a  href="https://plainsmanclays.ca/data/index.php?product=12944">GA6-B</a> over the engobe fires amber but over the black it produces a deep glossy brown. The engobe was mixed into a <a  href="https://digitalfire.com/glossary/thixotropy">thixotropic</a> <a  href="https://digitalfire.com/glossary/slurry">slurry</a>, as explained on the page at <a  href="https://digitalfire.com/url/221">PlainsmanClays.com</a> (see link below), and applied in a relatively thin layer. This porcelain-like result is a testament to the covering power of a true engobe. It is no wonder they are so popular in the <a  href="https://digitalfire.com/glossary/ceramic+tile">ceramic tile</a> industry - a red-burning body can be turned white as a <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a>, which enables all the marvellous glazing and decorating they can do.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A black engobe transforms the floating blue glaze over it</h3>
+<br /><a alt="Floating blue over black engobe" href="https://digitalfire.com/picture/2087"><img class="flexleft50" alt="Floating blue over black engobe"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/kw8dpqix8o.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2087">click here</a> to see it.</p>
+<p>This is <a  href="https://plainsmanclays.ca/data/index.php?product=12875">M340</a> <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> fired to <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> using the <a  href="https://digitalfire.com/schedule/c6dhsc">C6DHSC</a> schedule. The <a  href="https://digitalfire.com/recipe/l3954b">L3954B</a> <a  href="https://digitalfire.com/glossary/engobe">engobe</a> fires deep black (it has 10% Mason 6600 black stain). The engobe was applied by pouring and dipping at <a  href="https://digitalfire.com/glossary/leather+hard">leather hard</a> stage (inside and partway down the outside). After <a  href="https://digitalfire.com/glossary/bisque">bisque firing</a>, the piece was glazed inside using the base <a  href="https://digitalfire.com/recipe/ga6-b">GA6-B</a> <a  href="https://digitalfire.com/material/32">Alberta Slip</a> amber base. The outside glaze is Alberta Slip <a  href="https://digitalfire.com/glossary/rutile+blue+glazes">Rutile Blue</a> <a  href="https://digitalfire.com/recipe/ga6-c">GA6-C</a> (you are seeing it on the bare buff body near the bottoms and over the black clay surface on the uppers). </p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Absolutely Jet-Black Cone 6 Engobe on M340</h3>
+<h4 style="color:#888888; margin-top:0px;">This could also be super white</h4>
+<br /><a alt="A buff stoneware mug with black engobe" href="https://digitalfire.com/picture/2133"><img class="flexleft50" alt="A buff stoneware mug with black engobe"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/ecice6yfwh.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2133">click here</a> to see it.</p>
+<p>This is the <a  href="https://digitalfire.com/recipe/l3954b">L3954B</a> <a  href="https://digitalfire.com/glossary/engobe">engobe</a>. 15% Mason 6600 black body stain has been added (instead of the normal 10% <a  href="https://digitalfire.com/material/1724">Zircopax</a> used for white). Of course, a <a  href="https://digitalfire.com/glossary/base+glaze">cover glaze</a> is needed for a <a  href="https://digitalfire.com/glossary/functional">functional</a> surface. A lot of development work went into producing a recipe that fits this body, <a  href="https://plainsmanclays.ca/data/index.php?product=12875">M340</a>. It works even when thickly applied because it has the same fired <a  href="https://digitalfire.com/glossary/maturity">maturity</a> as the body. Lots of information is available on using <a  href="https://insight-live.com/insight/share.php?z=uiqNgtxwws">L3954B</a> (including mixing and adjustment instructions). <a  href="https://digitalfire.com/glossary/engobe">Engobes</a> are tricky to use. Follow the links below to learn more. <a  href="https://insight-live.com/insight/share.php?z=uiqNgtxwws">L3954B</a> is designed to work on regular <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12875">M340</a> (this piece), <a  href="https://plainsmanclays.ca/data/index.php?product=12876">M390</a> and <a  href="https://plainsmanclays.ca/data/index.php?product=12943">Coffee Clay</a>. Most importantly, adjusting its maturity, and thus reducing <a  href="https://digitalfire.com/glossary/firing+shrinkage">firing shrinkage</a>, is documented. These bodies dry better than porcelains and are much less expensive, so coating them with an engobe to get a surface like this makes a lot of sense. <a  href="https://rongetty.com/category/people/21">Ed Phillipson</a> discovered this 80 years ago, enabling selling pieces made from these clays as white hotelware.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Can an engobe block manganese speckle at cone 6?</h3>
+<br /><a alt="Engobe blocking manganese speckle" href="https://digitalfire.com/picture/2894"><img class="flexleft50" alt="Engobe blocking manganese speckle"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/tyaznywtgy.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2894">click here</a> to see it.</p>
+<p>Yes. If it is a true <a  href="https://digitalfire.com/glossary/engobe">engobe</a>. This is <a  href="https://digitalfire.com/recipe/l3954b">L3954B</a> fired at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> on <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12959">M340S</a>, it is fire-shrinkage-fitted to this <a  href="https://digitalfire.com/glossary/clay+body">clay body</a> and opacified with <a  href="https://digitalfire.com/material/1724">Zircopax</a>. The <a  href="https://digitalfire.com/glossary/base+glaze">cover glaze</a> is <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a> transparent. The <a  href="https://digitalfire.com/glossary/opacity">opacity</a> that this engobe is able to achieve here is because it is vitrifying to the same degree as the body, no melting is occurring and that is why it is completely opaque (even though it is applied as a very thin layer at the <a  href="https://digitalfire.com/glossary/leather+hard">leather hard</a> stage). This same performance could be expected in reduction firings to block the iron speckle (using the <a  href="https://digitalfire.com/recipe/l3954n">L3954N</a> and variations recipes).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Thickly applied slips must fit the body and each other</h3>
+<br /><a alt="Pottery slips are flaking off during drying" href="https://digitalfire.com/picture/3750"><img class="flexleft50" alt="Pottery slips are flaking off during drying"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/m7ssqcrchj.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3750">click here</a> to see it.</p>
+<p>Fit? It has to stick well. And stay stuck during drying (and shrinking). And the bond has to survive shrinkage that happens during firing. This potter is doing thick applications of each slip (actually that makes them <a  href="https://digitalfire.com/glossary/engobe">engobes</a>). She uses <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a>, that's wise, <a  href="https://digitalfire.com/glossary/metal+oxides">metal oxides</a> bring baggage when used to color slips (e.g. their <a  href="https://digitalfire.com/glossary/decomposition">decomposition</a> can affect the bond, they can gel the <a  href="https://digitalfire.com/glossary/slurry">slurry</a>, <a  href="https://digitalfire.com/glossary/flux">flux</a> the fired product thereby increasing the <a  href="https://digitalfire.com/glossary/firing+shrinkage">firing shrinkage</a> of the slip). Stains are better because they affect slurry and fired properties less. But there are still enough issues that each colored slip deserves testing. This potter first <a  href="https://digitalfire.com/glossary/slaking">slaked</a> B-mix as a slip (it is highly plastic), using it at a runny yogurt consistency. But it bubbled when fired hotter than a cool <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>. A switch to <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> slip (which is non-plastic) is shown here. It flaked off as it dried (even in a damp box for 24 hours), also after bisquing to cone 08, and sometimes even after firing to cone 6. This signalled a drying mismatch between body and slip, the bond that managed to survive drying was weakened enough to fail on firing.<br />
+<br />
+The solution was an <a  href="https://digitalfire.com/glossary/engobe">engobe</a> recipe that is super plastic and sticky. The popular Fish Sauce recipe is an example, it contains 10% <a  href="https://digitalfire.com/material/106">bentonite</a> and is unbelievably sticky. <a  href="https://digitalfire.com/recipe/l3954b">L3954B</a> was formulated with this in mind. It adheres well to <a  href="https://digitalfire.com/glossary/leather+hard">leather-hard</a> clay and doesn't flake off (misfit is instead evident by surface cracking if its shrinks more than the body). And it is not highly <a  href="https://digitalfire.com/glossary/vitreous">vitreous</a>, keeping its <a  href="https://digitalfire.com/glossary/firing+shrinkage">fired shrinkage</a> low enough to match <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> bodies. Mixing your own recipe also enables compensating the amount of <a  href="https://digitalfire.com/material/310">feldspar</a> if the stain affects the slip's degree of <a  href="https://digitalfire.com/glossary/vitrification">vitrification</a>, and therefore fired shrinkage (e.g. blues, oranges, yellows). <br />
+</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1551">https://insight-live.com/insight/share.php?z=uiqNgtxwws</a>
+<br /><i>White <a  href="https://digitalfire.com/glossary/cone+6">Cone 6</a> <a  href="https://digitalfire.com/glossary/engobe">Engobe</a>, New <a  href="https://digitalfire.com/material/32">Alberta Slip</a> glazes, Firing Schedule</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+</tbody></table>
+
+<h3 style="clear:left;">XML to Paste Into Insight-live</h3><button onclick="copyXml()" id="copyBtn">Copy XML</button><pre id="xmlContent">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;recipes version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;&gt;
+&lt;recipe name=&quot;Cone 6 White Engobe Recipe&quot; keywords=&quot;Drying and firing shrinkage fitted to Plainsman M390, M340&quot; id=&quot;134&quot; date=&quot;2023-10-23&quot; codenum=&quot;L3954B&quot;&gt;
+&lt;recipelines&gt;
+&lt;recipeline material=&quot;Nepheline Syenite&quot; amount=&quot;18.000&quot;/&gt;
+&lt;recipeline material=&quot;Silica&quot; amount=&quot;15.000&quot;/&gt;
+&lt;recipeline material=&quot;OM #4 Ball Clay&quot; amount=&quot;54.000&quot;/&gt;
+&lt;recipeline material=&quot;Zircopax&quot; amount=&quot;10.000&quot; added=&quot;1&quot;/&gt;
+&lt;recipeline material=&quot;Bentonite&quot; amount=&quot;3.000&quot; added=&quot;1&quot;/&gt;
+&lt;url url=&quot;https://digitalfire.com/recipe/134&quot; descrip=&quot;https://digitalfire.com/recipe/134&quot;/&gt;
+&lt;/recipelines&gt;
+&lt;urls/&gt;
+&lt;/recipe&gt;
+&lt;/recipes&gt;
+</pre><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

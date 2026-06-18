@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Understanding the Deflocculation Process in Slip Casting</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="Understanding the magic of deflocculation and how to measure specific gravity and viscosity, and how to interpret the results of these tests to adjust the slip, these are the key to controlling a casting process." name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item"><a class="nav-link" href="../material/list.html">Materials</a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item active" href="list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=article" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container"><p><a aria-controls="collapse1" aria-expanded="false" class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button">All Articles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a href="388.html" title="388">A ChatBot gives jaw-dropping glaze recipe advice - Jan 2025</a><br/><a href="244.html" title="244">A Low Cost Tester of Glaze Melt Fluidity</a><br/><a href="361.html" title="361">A One-speed Lab or Studio Slurry Mixer</a><br/><a href="353.html" title="353">A Textbook Cone 6 Matte Glaze With Problems</a><br/><a href="199.html" title="199">Adjusting Glaze Expansion by Calculation to Solve Shivering</a><br/><a href="251.html" title="251">Alberta Slip, 20 Years of Substitution for Albany Slip</a><br/><a href="273.html" title="273">An Overview of Ceramic Stains</a><br/><a href="37.html" title="37">Are You in Control of Your Production Process?</a><br/><a href="12.html" title="12">Are Your Glazes Food Safe or are They Leachable?</a><br/><a href="143.html" title="143">Attack on Glass: Corrosion Attack Mechanisms</a><br/><a href="204.html" title="204">Ball Milling Glazes, Bodies, Engobes</a><br/><a href="345.html" title="345">Binders for Ceramic Bodies</a><br/><a href="4.html" title="4">Bringing Out the Big Guns in Craze Control: MgO (G1215U)</a><br/><a href="381.html" title="381">Can We Help You Fix a Specific Problem?</a><br/><a href="124.html" title="124">Ceramic Glazes Today</a><br/><a href="208.html" title="208">Ceramic Material Nomenclature</a><br/><a href="336.html" title="336">Ceramic Tile Clay Body Formulation</a><br/><a href="217.html" title="217">Changing Our View of Glazes</a><br/><a href="22.html" title="22">Chemistry vs. Matrix Blending to Create Glazes from Native Materials</a><br/><a href="209.html" title="209">Concentrate on One Good Glaze</a><br/><a href="115.html" title="115">Copper Red Glazes</a><br/><a href="271.html" title="271">Crazing and Bacteria: Is There a Hazard?</a><br/><a href="190.html" title="190">Crazing in Stoneware Glazes: Treating the Causes, Not the Symptoms</a><br/><a href="97.html" title="97">Creating a Non-Glaze Ceramic Slip or Engobe</a><br/><a href="195.html" title="195">Creating Your Own Budget Glaze</a><br/><a href="36.html" title="36">Crystal Glazes: Understanding the Process and Materials</a><br/><a href="324.html" title="324">Deflocculants: A Detailed Overview</a><br/><a href="32.html" title="32">Demonstrating Glaze Fit Issues to Students</a><br/><a href="334.html" title="334">Diagnosing a Casting Problem at a Sanitaryware Plant</a><br/><a href="196.html" title="196">Drying Ceramics Without Cracks</a><br/><a href="187.html" title="187">Duplicating Albany Slip</a><br/><a href="45.html" title="45">Duplicating AP Green Fireclay</a><br/><a href="197.html" title="197">Electric Hobby Kilns: What You Need to Know</a><br/><a href="39.html" title="39">Fighting the Glaze Dragon</a><br/><a href="214.html" title="214">Firing Clay Test Bars</a><br/><a href="200.html" title="200">Firing: What Happens to Ceramic Ware in a Firing Kiln</a><br/><a href="113.html" title="113">First You See It Then You Don't: Raku Glaze Stability</a><br/><a href="316.html" title="316">Fixing a glaze that does not stay in suspension</a><br/><a href="338.html" title="338">Formulating a body using clays native to your area</a><br/><a href="191.html" title="191">Formulating a Clear Glaze Compatible with Chrome-Tin Stains</a><br/><a href="282.html" title="282">Formulating a Porcelain</a><br/><a href="188.html" title="188">Formulating Ash and Native-Material Glazes</a><br/><a href="114.html" title="114">G1214M Cone 5-7 20x5 glossy transparent glaze</a><br/><a href="121.html" title="121">G1214W Cone 6 transparent glaze</a><br/><a href="122.html" title="122">G1214Z Cone 6 matte glaze</a><br/><a href="226.html" title="226">G1916M Cone 06-04 transparent glaze</a><br/><a href="203.html" title="203">Getting the Glaze Color You Want: Working With Stains</a><br/><a href="342.html" title="342">Glaze and Body Pigments and Stains in the Ceramic Tile Industry</a><br/><a href="189.html" title="189">Glaze Chemistry Basics - Formula, Analysis, Mole%, Unity </a><br/><a href="358.html" title="358">Glaze chemistry using a frit of approximate analysis</a><br/><a href="123.html" title="123">Glaze Recipes: Formulate and Make Your Own Instead</a><br/><a href="343.html" title="343">Glaze Types, Formulation and Application in the Tile Industry</a><br/><a href="181.html" title="181">Having Your Glaze Tested for Toxic Metal Release</a><br/><a href="364.html" title="364">High Gloss Glazes</a><br/><a href="384.html" title="384">Hire Us for a 3D Printing Project</a><br/><a href="136.html" title="136">How a Material Chemical Analysis is Done</a><br/><a href="235.html" title="235">How desktop INSIGHT Deals With Unity, LOI and Formula Weight</a><br/><a href="331.html" title="331">How to Find and Test Your Own Native Clays</a><br/><a href="26.html" title="26">I have always done it this way!</a><br/><a href="344.html" title="344">Inkjet Decoration of Ceramic Tiles</a><br/><a href="279.html" title="279">Is Your Fired Ware Safe?</a><br/><a href="311.html" title="311">Leaching Cone 6 Glaze Case Study</a><br/><a href="206.html" title="206">Limit Formulas and Target Formulas</a><br/><a href="133.html" title="133">Low Budget Testing of Ceramic Glazes</a><br/><a href="333.html" title="333">Make Your Own Ball Mill Stand</a><br/><a href="347.html" title="347">Making Glaze Testing Cones</a><br/><a href="341.html" title="341">Monoporosa or Single Fired Wall Tiles</a><br/><a href="325.html" title="325">Organic Matter in Clays: Detailed Overview</a><br/><a href="105.html" title="105">Outdoor Weather Resistant Ceramics</a><br/><a href="27.html" title="27">Painting Glazes Rather Than Dipping or Spraying</a><br/><a href="212.html" title="212">Particle Size Distribution of Ceramic Powders</a><br/><a href="339.html" title="339">Porcelain Tile, Vitrified Tile</a><br/><a href="20.html" title="20">Rationalizing Conflicting Opinions About Plasticity</a><br/><a href="332.html" title="332">Ravenscrag Slip is Born</a><br/><a href="247.html" title="247">Recylcing Scrap Clay</a><br/><a href="101.html" title="101">Reducing the Firing Temperature of a Glaze From Cone 10 to 6</a><br/><a href="329.html" title="329">Setting up a Clay Testing Program in Your Company or Studio</a><br/><a href="211.html" title="211">Simple Physical Testing of Clays</a><br/><a href="350.html" title="350">Single Fire Glazing</a><br/><a href="326.html" title="326">Soluble Salts in Minerals: Detailed Overview</a><br/><a href="28.html" title="28">Some Keys to Dealing With Firing Cracks</a><br/><a href="249.html" title="249">Stoneware Casting Body Recipes</a><br/><a href="194.html" title="194">Substituting Cornwall Stone</a><br/><a href="274.html" title="274">Super-Refined Terra Sigillata</a><br/><a href="340.html" title="340">The Chemistry, Physics and Manufacturing of Glaze Frits</a><br/><a href="202.html" title="202">The Effect of Glaze Fit on Fired Ware Strength</a><br/><a href="125.html" title="125">The Four Levels on Which to View Ceramic Glazes</a><br/><a href="207.html" title="207">The Majolica Earthenware Process</a><br/><a href="43.html" title="43">The Potter's Prayer</a><br/><a href="359.html" title="359">The Right Chemistry for a Cone 6 Magnesia Matte</a><br/><a href="33.html" title="33">The Trials of Being the Only Technical Person in the Club</a><br/><a href="107.html" title="107">The Whining Stops Here: A Realistic Look at Clay Bodies</a><br/><a href="134.html" title="134">Those Unlabelled Bags and Buckets</a><br/><a href="16.html" title="16">Tiles and Mosaics for Potters</a><br/><a href="308.html" title="308">Toxicity of Firebricks Used in Ovens</a><br/><a href="379.html" title="379">Trafficking in Glaze Recipes</a><br/><a href="216.html" title="216">Understanding Ceramic Materials</a><br/><a href="210.html" title="210">Understanding Ceramic Oxides</a><br/><a href="130.html" title="130">Understanding Glaze Slurry Properties</a><br/><a href="213.html" title="213"><button class="btn btn-dark" type="button">Understanding the Deflocculation Process in Slip Casting</button></a><br/><a href="132.html" title="132">Understanding the Terra Cotta Slip Casting Recipes In North America</a><br/><a href="198.html" title="198">Understanding Thermal Expansion in Ceramic Glazes</a><br/><a href="313.html" title="313">Unwanted Crystallization in a Cone 6 Glaze</a><br/><a href="389.html" title="389">Using Dextrin, Glycerine and CMC Gum together</a><br/><a href="135.html" title="135">Volcanic Ash</a><br/><a href="201.html" title="201">What Determines a Glaze's Firing Temperature?</a><br/><a href="111.html" title="111">What is a Mole, Checking Out the Mole</a><br/><a href="38.html" title="38">What is the Glaze Dragon?</a><br/><a href="98.html" title="98">Where do I start in understanding glazes?</a><br/><a href="215.html" title="215">Why Textbook Glazes Are So Difficult</a><br/><a href="239.html" title="239">Working with children</a></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Understanding the Deflocculation Process in Slip Casting</h1>
+<h4 class="text-muted">Description</h4><p class="text-muted font-italic">Understanding the magic of deflocculation and how to measure specific gravity and viscosity, and how to interpret the results of these tests to adjust the slip, these are the key to controlling a casting process.</p><h4>Article</h4>
+<p>The only exposure ceramic hobbyists or potters have had to the casting process is the local <a href="../glossary/artware.html">art ware</a> shops where fragile <a href="../glossary/earthenware.html">low-fire</a> objects like ceramic frogs and nativity sets are made. These companies pour liquid clay <a href="../glossary/slurry.html">slurry</a> into <a href="../material/1124.html">plaster</a> molds and let it sit. The plaster absorbs water from the slurry building up a layer against the mold surface. When this layer has reached the desired thickness the slurry is poured back out of the mold. The mold then sits for a few minutes (or hours if it is large) and the clay article slowly stiffens, shrinks and pulls away from the plaster. The mold is then taken apart and the <a href="../glossary/leather+hard.html">leather hard</a> clay item removed.</p>
+<p>A simple mix of clay and water will not work for casting. Not only will it quickly waterlog the molds but it will shrink too much (and therefore crack in the molds) and it will take much too long to cast. It will also gel and settle out and generally make the process miserable. Optimal casting requires that the slurry have minimal <a href="../glossary/water+content.html">water content</a> (e.g. 30% instead of 60%), good flow and draining properties and that it not settle out or gel too quickly. When the slurry is right the casting process works amazingly well.</p>
+<p>The <a href="../glossary/artware.html">artware</a> operations buy molds, glazes, and clay slurries from a supply industry that gears itself to providing all the needed support so that almost anyone can manage the process with minimal technical knowledge about <a href="../glossary/deflocculation.html">deflocculation</a>. A big part of the success of the hobby casting industry is the standardization on a clay slurry recipe (called 'slip') of 50% <a href="../material/1620.html">talc</a> and 50% <a href="../material/80.html">ball clay</a> (with smaller variations and additions). While this body falls far short of <a href="../glossary/vitrification.html">vitrification</a> when fired, its working properties are very good, it dries very well and is about as 'idiot proof' as you can get in forming <a href="../glossary/ceramics.html">ceramics</a>. Many people buy their clay slurry already mixed but most bigger operations get dry clay and use a mixer to blend it with the correct amount of water and deflocculant (<a href="../material/1275.html">sodium silicate</a>, soda ash, <a href="../material/260.html">Darvan</a>, etc). The existence of this ‘standard’ clay:talc recipe enables manufacturers to take primary responsibility for formulations relieving the user to concentrate on the task of learning to use all the related products. Thus most hobby ceramists are quite happy to be unaware of the basic principles of mixing and maintaining slip clay, unaware of the magic that occurs in the bucket when they mix the slurry.</p>
+<p>Potters, on the other hand, are generally much more fascinated by the basic procedures and materials they use. Many have developed their own processes, built their own kilns, and even designed their own clay and <a href="../glossary/glaze+recipes.html">glaze recipes</a>. They often regard these developments with the same pride as the creativity they put into their ware. Many potters find the casting process distant and even beneath their dignity both because of the fact that molds and <a href="../glossary/commercial+hobby+brushing+glazes.html">commercial glazes</a> are used, but also because of the general ignorance in the hobby casting industry. By contrast, technicians in the industrial casting industry (e.g. <a href="../glossary/sanitary+ware.html">sanitary ware</a>) are much more keenly aware of not only the things the hobby casters try to get away with ignoring but things potters don't know about materials and processes. If you listen to one of these technicians talk about their work you will hear terms like <a href="../glossary/specific+gravity.html">specific gravity</a>, <a href="../glossary/viscosity.html">viscosity</a>, <a href="../glossary/thixotropy.html">thixotropy</a> and <a href="../glossary/rheology.html">rheology</a>. And they have instruments to measure these and <a href="../glossary/digitalfire+insight-live.html">record-keeping</a> systems to log them. Regardless, for everyone there is an obvious need for a slip with optimal flow properties in such a process. On this page, I want to convey an understanding of the deflocculation process and an ability to use it without needing expensive testing equipment.</p>
+<p>First consider how <a href="../glossary/casting+slip.html">casting body</a> dry ingredient recipes differ from plastic bodies. <a href="../glossary/casting+slip.html">Casting bodies</a> do not need to be nearly as plastic as <a href="../glossary/jiggering.html">jiggering</a>, <a href="../glossary/throwing.html">throwing</a> or pressing bodies since they do not require shaping. <a href="../glossary/plasticity.html">Plasticity</a> is only needed to impart shrinkage so the piece can pull away from the mold and to give it adequate dry strength. Too much plasticity is actually bad because plastic materials are less permeable to the passage of water through them, the casting process is slower (casting speed is an important factor in the process) and ware can split in molds with undercuts. Since ball clays are plastic you might then be wondering: “why does the hobby casting standard body have 50% ball clay?”. The answer is two-fold. Large particle low plasticity white burning ball clays are used and they are much more permeable. In addition, the talc also greatly increases the ability of the body to channel water. Obviously, it would cast even faster if some <a href="../material/925.html">kaolin</a> were used instead, but the tough nature of the greenware imparted by the ball clay is seen as more important. In industry, <a href="../glossary/stoneware.html">stoneware</a> and <a href="../glossary/porcelain.html">porcelain</a> casting bodies employ far less plastic clay because they know how to deal with lower dry strengths and they employ special hardeners in the clay if needed. 
+</p>
+<h2>Understanding Slip Rheology</h2>
+<p>Most people take the properties of liquids (like cosmetics or personal care products), for example, for granted. They do not realize that an entire industry exists to produce instruments people use try to understand and control the way these liquids, solutions and suspensions behave. It is not an accident that each time you buy a specific brand of hand creme that it feels exactly the same. The term 'rheology' encompasses physical presence of things like this in ceramic slurries. Describing a clay slip involves talking about the fluidity, the nature of the way it flows and resists changes in movement, its viscosity and its specific gravity. Once you understand the rheology of the slip you use you can take any sample, do some measurements and say exactly what needs to be done to bring its properties back into line. Ceramic slurries for use in casting are fragile entities, they flow and work the way they do as a result of a finely tuned recipe and mixing process and small changes can render them useless or difficult-to-use. There is thus compelling reason to study this more closely.</p>
+<h2>The Magic of Deflocculation</h2>
+<p>While a plastic pottery clay might have 21% water, a slurry made from the same material may need 60% water! As you can imagine, such a mixture would be unworkable in a mold. Not only would the mixture settle and the fluid level drop drastically during casting, but molds would become waterlogged quickly and excessive shrinkage would result in ware <a href="../glossary/splitting.html">splitting</a> before release from the mold. Obviously, a way is needed to minimize the water content of the slurry. Certain electrolytes like sodium silicate (materials that can supply sodium ions or charged particles) exhibit the remarkable property of turning a thick, viscous clay-water mixture into one so thin that it runs like water. This has to be seen to be believed. Imagine putting a powerful <a href="../glossary/propeller+mixer.html">propeller mixer</a> into a bucket of water and adding dry clay until the slurry turns to mud so thick it will no longer agitate. The addition of a few drops of electrolyte will instantly transform it back to a water-like consistency! You can add clay till it is too thick and do it again, and again. The amount of dry material that can be mixed into a small amount of water is truly remarkable to anyone accustomed to using plastic clay. In fact, it is possible to produce a pourable slip with only a little more water than it takes to make a clay suitable for plastic modelling and shaping!</p>
+<p>Unfortunately a different amount of deflocculant and water are needed to produce an optimal slurry for different recipes and even different water supplies. The question you are probably wondering is: How does one know how much electrolyte, water, and clay to use? As a general rule, most clay based slips can be <a href="../glossary/deflocculation.html">deflocculated</a> to have excellent fluidity yet have a specific gravity as high as 1.8. A specific gravity of 1.8 means that the slurry is almost twice as heavy as water. First time slip mixers are often surprised at the weight of the slip. Beginners often find that targeting 1.75 at the start is best. Then, as they become more familiar with the process, they can reduce water to take it higher. Whenever there is any kind of problem with a clay slurry an engineers first question is almost always “What is the specific gravity”? The specific gravity is thus the 'level playing field' of the <a href="../glossary/ceramic+slip.html">ceramic slip</a> casting process.</p>
+<p>The manner in which the 1.8 target was determined helps explain the relationship between the viscosity of the slurry and its specific gravity. Imagine starting with a pail of water, inserting your variable speed propeller mixer and adding clay until the slurry becomes too thick. You would then add a few drops of deflocculant to thin it and add more clay. However, on the third cycle it does not take as much clay before becoming too thick mix again. Also, bubbles within the mix rising and breaking at the surface do so less and less easily. After each add-clay:add-deflocculant cycle you would increase the mixer speed enough to pull a whirlpool but not so fast as to pull air bubbles into the mix. As it gets heavier you will note that as the entire slip mass is in motion during mixing it looks very smooth and can appear almost motionless (and the mixer has to work harder). When you reach the stage at which a small addition of deflocculant does not cause the whirlpool to pull deeper the slurry has reached its density limit. Remarkably most ceramic slurries hit this limit right around 1.8 (other slurries like alumina or <a href="../material/1722.html">zircon</a> can be taken to a much higher specific gravity).</p>
+<p>An interesting point to remember here is that the amount of deflocculant is key to both the specific gravity and the viscosity. However it is not generally viewed this way. It is the proportions of water and clay that determine the specific gravity, the deflocculant is simply there to make it possible to mix them in the desired proportions. However the final fluidity of the slurry is 'fine-tuned' by the deflocculant, thus there is a direct relationship between its amount and the viscosity. In other words, small changes in the amount of deflocculant cause changes in the viscosity. It is important to realize that the same is not true of specific gravity, the amount of water determines that (changing the amount of deflocculant in a slurry has no measurable effect on its specific gravity).</p>
+<p>Now I am going to tell you something that it sometimes takes many years to learn: The viscosity:deflocculant relationship comes clearly into focus when one realizes that it is not actually desirable to optimize a slip to the highest possible specific gravity or even to the lowest possible viscosity for a given specific gravity. Professionals learn that it is better to maintain the slurry in a state of 'controlled <a href="../glossary/flocculation.html">flocculation</a>'', that is, stop short of full fluidity. Why? Because such a slurry is less likely to settle out. If you stop too far short of full deflocculation the slurry will gel after sitting for a few minutes (it is actually possible to make a slip that appears to pour well and then have it gel so severely in an open mold that you can turn it upside down and it does not run out). The real trick is to <a href="../glossary/deflocculation.html">deflocculate</a> slip such that it gels after an hour or so. The gelling prevents it from <a href="../glossary/suspension.html">settling</a> out no matter how long it sits.</p>
+<p>An important and easy-to-overlook point is power mixing. Obviously slip should be mixed for an adequate amount of time to stabilize it. If a slip's flow properties change over time, inadequate mixing is a possible reason. How much time should it be mixed? Hours. Hours using a good mixer that can put a lot of energy into the slurry. In industry, it is not unusual to mix for 12 hours or more, and the big powerful mixers they use heat the slip until it is very warm to the touch! But there is another important factor to consider here: Warm slip flows better, a lot better, than cold slip. So if you fine-tune the viscosity using deflocculants based on the properties of warm slip, then when it cools it is not going to flow enough. This being said, hobbyists can still whip up a batch of <a href="../glossary/casting+slip.html">casting slip</a> in a few minutes and get away with using it right away - if optimal casting properties are not needed and adjusting it the next day is OK.</p>
+<p>As we can see from this, the specific gravity and fluidity (or viscosity) of the slurry are the two principle properties to understand. Most casting problems (and successes) can be traced to confusion and misunderstanding these two properties. My experience is that some clay slip suppliers incorrectly document them in their instruction booklets! By careful control of these properties you can maintain slip consistency despite variables like changing water supply, temperature, mixing time and integrity, water content of powders, evaporation from the tank, and additions of dry and leather hard scrap. Yes, you will have a good measure of control over your casting slip if you know how to measure the aforementioned properties. You should be able to say; "Show me the slip and I’ll measure its specific gravity and viscosity and tell you if it is right and if it is not I will tell you how to fix it". Let’s review what these are and how to measure each. Inexpensive devices for measuring specific gravity and viscosity are included in the Lehman Slip Testing Kit, it available from many suppliers (Lehman is a longtime manufacturer of slip mixing machines, tables, and pumps). However you can also make your own testing devices.</p>
+<h2>Specific Gravity</h2>
+<p>Specific gravity is defined as the comparison of a liquid’s weight with the weight of an equal volume of water. In metric it is simple: water weighs one gram per cc. If a slurry weighs 1.8 grams per cc (ccs and millilitres are the same), then it has a specific gravity of 1.8; it is 1.8 times heavier than water. A slip with a specific gravity that is too high is said to be "heavy" (the more water in a slip, the lower its specific gravity will be, the more solids, the higher it will be). As mentioned, slip with too much water will soak the molds more quickly, give slow casts, and result in excessive shrinkage that contributes to splits in the ware.</p>
+<p>Some slip suppliers quote specific gravity in ounces per pint (i.e. 29 oz/pt), however, this measure is not intuitive in my opinion. The British and US pints are not the same size and this method does not relate well to the weight of water. Avoid it, do it right and use grams per cc. Also, if you are mixing a large tank of slip, use the most accurate method possible. If someone tells you that a problem slip has a specific gravity of x, ask them how they measured that.</p>
+<h2>Viscosity</h2>
+<p>Viscosity refers to the mobility of the slip; its "thickness" or "runniness". A slip that has high viscosity is thick like syrup and one that has low viscosity is fluid. A deflocculant is used to lower the viscosity of a slip (provided of course that the slip does not have so high a solids content that a deflocculant simply cannot thin it anymore). A slip with a viscosity that is too high is said to be "thick".</p>
+<h3>Measuring Viscosity</h3>
+<p>The 60 cc veterinarian’s syringe is also an effective tool for measuring this property. To work properly it needs to have a large diameter needle insert (e.g. 3 mm). Pull out the needle and time how long it takes the slip to run out from the 60 cc mark to the 10 cc mark. <a href="../picture/2222.html">Calibrate</a> the test on a sample of slip that performs well. A viscometer also comes with the Lehman Slip Test Kit. http://lagunaclay.com sells a combination viscometer/specific gravity checker with a page of instructions.</p>
+<p>The following two statements are important to understand: 
+
+</p><ol>
+<li>For any given viscosity there can be a whole range of possible specific gravities depending on water content.</li>
+<li>For a given specific gravity a slip can have many different viscosities depending on deflocculant content.</li>
+</ol>
+<p>The most common method of preparation is to achieve the specific gravity first using the minimum needed deflocculant, then fine-tune the viscosity using a little more of the same deflocculant. Normally, beginners should try to achieve a specific gravity of 1.75, while experts will be able to work comfortably at 1.8 for many body types.</p>
+<p>Various typical recipes for standard low-temperature <a href="../glossary/whiteware.html">whiteware</a> and porcelain slips call for differing amounts of water. This underscores the importance of being able to measure specific gravity and viscosity. Below, I have provided some guidelines on mixing a slip. The first few times you mix a new recipe concentrate on creating a workable process and figuring out optimal amounts of water and deflocculant. After this, a period of fine tuning will perfect a process that can be committed to paper for repeating on a routine basis. However be ready to adjust things for different times of the year, different materials batches, for reprocessing scrap, etc. The notes to follow thus refer to the early stages of learning to mix a particular slip recipe.</p>
+<h2>Thixotrophy</h2>
+<p>Thixotropy refers to changes in a slips runniness or viscosity over moments, minutes or hours of time. Or, it refers to differences in the way the slip responds to stimuli to make it move (after beingmotionless for varying amounts of time). Simplistically, thixotropy thus involves time and interparticle reactions that happen in steady-state slurries. In short, slip should gel after sitting for a half hour or so. As discussed above, you want to achieve a state of controlled flocculation, a compromise between a fluid slip and one that will gel and therefore not settle out. This involves first thorough mixing (putting energy into it) to get a slurry to a state of equilibrium where its viscosity and <a href="../glossary/thixotropy.html">thixotropic</a> behavior are stable. Then it involves carefully noting the specific gravity and viscosity and flow behavior of the slurry and determining if slightly more or less deflocculant would be better. Obviously, you cannot add less deflocculant, thus you would have to add water and powder body mix if deflocculant levels are too high.</p>
+<h2>Clay Deflocculants</h2>
+<p>Although the <a href="../glossary/glaze+chemistry.html">chemistry</a> and <a href="../glossary/physical+testing.html">physics</a> of how they work is quite complex, for now just think of a deflocculant as a source of ions that charge clay particles to repel each other electrostatically and thus produce a slurry that is thinner than it would otherwise be. Manufacturers and suppliers generally compare their products to the standard sodium silicate:soda ash mix and many products are quite well documented. The products mentioned below (obviously an incomplete list) are simply a summary of my own personal experience.</p>
+<p><b>Soda Ash &amp;Sodium Silicate: </b>Sodium silicate is a liquid deflocculant that has been the standard for many years. Powdered soda ash is a ‘slip softener’ and produces protective colloids to deal with the anti-deflocculant effects of organic materials in the clays. These two materials work well together. Many technicians still refuse to use anything else and dispute claims that sodium silicate is responsible for clogging up mold pours and degrading performance, they say that if you can minimize the amount of sodium silicate to as close to 0.2% as possible using continuous and long mixing times that mold degradation is minimal.</p>
+<p><b>Darvan No. 7, Allied Colloids #311: </b>These are examples of more modern sodium polyacrylate dispersants, and manufacturers compare them with sodium silicate making the following claims:</p>
+<ul>
+<li>Lower minimum viscosity can be achieved and maintained longer.</li>
+<li>They produce a slip with a faster casting rate at minimum viscosity.</li>
+<li>They have a flatter over-deflocculation curve, that is, putting in too much is not as serious.</li>
+<li>They encourage a higher <a href="../glossary/green+strength.html">green strength</a>, allowing removal from the mold at higher water content.</li>
+<li>Amounts of 0.3 to 0.5% are required, which is more than sodium silicate.</li>
+<li>They afford better absorption and penetration into plaster.</li>
+<li>They produce little or no <a href="../glossary/efflorescence.html">efflorescence</a> on molds (build-up of fuzzy salt deposits) because the sodium ion is tied up in the organic deflocculant and will not exchange places with the calcium ion in the plaster (as with soda ash and sodium silicate).</li>
+<li>Less <a href="../material/1245.html">silica</a> remains in the pore structure of the plaster.</li>
+</ul>
+<h2>A Sample Slip Mixing Procedure</h2>
+<ul>
+<li>Measure about 90% of the predicted amount of water into a container. You can predict the amount using an existing water:powder:electrolyte recipe as a starting point. If possible use distilled or RO water, since these do not have variable electrolyte contents that can affect slip consistency. Add the soda ash (if applicable) and mix for a few minutes to dissolve it.</li>
+<li>Add all but 80% of the predicted deflocculant amount and mix.</li>
+<li>Add all of the powder slowly and mix till all lumps disappear and the slip is smooth. If you reach a point where the mix is too thick to add more powder, add some more of the deflocculant to thin it. Note if the deflocculant addition has been effective by thinning of the slurry (as simple as carefully watching the mixer whirlpool to see if it deepens).</li>
+<li>After the predicted amount of clay has been added to the water, measure the specific gravity. If it is too low, add more clay mix and thin using more deflocculant if needed. If you overshoot the specific gravity, thin with water.</li>
+<li>Finally, keep adding deflocculant until the slurry mixes as one complete mass, without any tendency to hang at the edges of the container. Do a test cast. If it gels excessively the mold will be difficult to drain or drain to an even inner surface. If that is the case, add a little more deflocculant, mix, and try another cast. Keep doing this cycle until the slurry gels somewhat in the mold during casting, but loosens up with the motion of pouring and draining. Note the amount of total deflocculant needed and use that as a guide for the next mixing session.</li>
+</ul>
+<h2>Casting Tests</h2>
+<p>Casting speed and ease of mold release are important factors in a casting operation. If you have a mold drier and make small items it should be possible to fill the molds many times each day. It is a very good idea to have a rating system so that you can take a sample of slip and compare its performance to the past. Make a small mold of a cone shape and keep it dry and replace often. To test leave the slurry in it for a set amount of time (e.g. 2 minutes). As soon as the liquidous state of the slip layer has disappeared, use a sharp knife to trim a clean line around the lip down to the plaster. Put the piece upside down on blocks and measure how long it takes until the piece falls out. When dry, measure the average thickness of the walls. This will give you a good measure of casting time and thickness buildup.</p>
+<div class="flexright25"><img src="../media/images/dyhfydufyd.jpg" style="width:100%;"/><p style="color:#888888; font-style:italic; font-size:80%; margin:4px 0px 5px 0px;">Propeller-mixing a clay slurry</p></div>
+<h3>A Good Mixer is Very Important</h3>
+<p>You need a good propeller mixer to mix slip properly. Slips should be mixed for hours so you need a mount and a mixer that is not going to overheat (an electric drill cannot possibly do this, they are designed to be run for a few seconds at a time). Good mixers are expensive, a small commercial one starts at about $500-$750! Thus you might consider watching for a bargain at an auction sale or on the internet. At Ebay.com, for example, searching for 'lab mixer' or 'duty mixer' should turn up something. Heavy-duty mixers are used in so many industries and are thus a common item. It is important to have a unit that can run for many hours, has variable speeds (so as to avoid mixing air bubbles into the slip by pulling a deep whirlpool, and is powerful enough to keep the whole mass in constant motion without overheating. A lot of science goes into selecting a propeller adapted each type of liquid. The standard three or four narrow blade type works well.</p>
+<h3>Mixing Time</h3>
+<p>Mix the slip for several hours for best results. It is only by putting energy into the slurry that you can thoroughly wet every particle and extract the best performance. Less deflocculant may be necessary if the slip is mixed for a longer period. This is an advantage because some deflocculants, like sodium silicate, attack your molds and the less that you use, the better. After the slip stands overnight and is mixed for a few minutes the next day, it will usually cast better.</p>
+<h3>More About Controlled Flocculation</h3>
+<p>Ideally, a slip should be adjusted to a state of "controlled flocculation" where it is fluid, yet the finer particles remain agglomerated somewhat. Quality slips are intentionally less fluid than they could be. In a totally deflocculated slip the particles are so free to move that they can settle out in a very hard layer. During a cast, the smaller ones will be drawn toward the mold surface causing differences in <a href="../glossary/particle+size+distribution.html">particle size distribution</a> and <a href="../glossary/drying+shrinkage.html">drying shrinkage</a> across the thickness of the clay wall, this can result in <a href="../glossary/drying+crack.html">drying cracks</a>. In thin slips poor mold release can also occur because the fine clay is able to penetrate very small recesses in the mold surface and "hold on", resisting release. If you have these problems, vinegar can be added to a slip to flocculate it a little (it is quite remarkable to see what a cap full of vinegar will do for a bucket of settling slip). If a slurry is in just the right state, it should gel slightly while standing for an hour or two, this holds all particles in <a href="../glossary/suspension.html">suspension</a> nicely. Re-mixing will loosen it and the slip should flow freely again.</p>
+<h3>Clays That Do Not Deflocculate</h3>
+<p>Do not assume that any clay recipe will respond to deflocculants. There are many clays that contain <a href="../glossary/soluble+salts.html">soluble salts</a> that impede or totally block their electrolytic action. Slurries of these materials simply gel immediately or over time. This problem is most likely with fire clay, stoneware or <a href="../glossary/earthenware.html">earthenware</a> sedimentary type clays, the vast majority of kaolins and ball clays will deflocculate normally.</p>
+<h2>Trouble Shooting</h2>
+<p>No matter what the problem with the slip is, your first question should always be: "What is the specific gravity"? Until you know this and know it reliably, you cannot fix the problem. For difficult slips be content with a specific gravity of 1.75 to solve problems in the short term. Target 1.78 when you are confident and have a body of experience.</p>
+<h3>Recognizing Under Deflocculation</h3>
+<p>If the slip is gelling after a few minutes or hanging motionless near the sides of the container while mixing, more deflocculant is probably needed. Be careful not to add too much; this is a common mistake (you will have to make more of the powder mix and add it, and more water, to counterbalance the oversupply of deflocculant). It is thus best to err on the side of under rather than over deflocculation when mixing a new batch. </p>
+<p>If the slip has not thinned after an addition of deflocculant, then there is already enough present. An easy way to tell if a slip thins is to use a good mixer and watch the depth of the whirlpool. Set the speed so that there is a moderately deep vortex but (not quite deep enough to suck air into the mix). Add a little deflocculant and watch if the vortex deepens. Sometimes a very small addition of water will thin a troublesome slip dramatically, take advantage of this and don't struggle to work with a slip of high specific gravity if a slightly lower value is much better.</p>
+<h3>Recognizing Over Deflocculation</h3>
+<p>If the slip does not gel at all, or settles out in a layer on the bottom of the container then there is too much deflocculant. Too much deflocculant is also indicated by a thin slow cast, a wavy and gritty looking inner surface after draining, rapid formation of a skin on the slip after the mixer is stopped, poor mold release, splitting and cracking of the ware during drying, powdery ware surface and brittle ware. It is quite amazing how poorly over-deflocculated slip can perform and it is not unusual to see people falsely blame the problem on changes in body ingredients or on the body recipe. Over-deflocculation is a phenomenon independent of specific gravity, a slip of 1.7 or even 1.85 or higher can be over-deflocculated. Also, you might feel that because your slurry does not have some or all of the problems mentioned above it is OK, but this is not true. I have seen a very fluid slurry of 1.87 that did not settle, yet exhibited serious skin formation and very poor casting. Because the slurry was very fluid, it seemed counterintuitive that it needed alot of water and less deflocculant, but when the specific gravity was correctly measured this became evident. It is interesting that a slurry of only 1.6 specific gravity might eye-ball and feel right, but cast pieces may not release and surfaces will feel powdery, just like as if it was over-deflocculated at 1.8 SG.</p>
+<p>What if you have a large batch of over-deflocculated slip? Then you will have to extract a liter and do tests of adding water to reduce the SG to a specific value (e.g. 1.65) and adding powder-mix to increase it back up to the target (e.g. 1.75; remember, do not shoot too high, be content with a lower SG until you have lots of experience). Record your testing carefully so you can correctly extrapolate that to the big batch.</p>
+<h3>Reprocessing Scrap</h3>
+<p>Incredible as it may sound there are actually people and companies who do not mix scrap clay back into new batches. This is invariably because of bad experiences resulting from not understanding how to maintain slip rheology. Scrap clay already has deflocculant in it, thus it seems logical that it should be possible to adjust only the water content to accommodate it. Actually, this is not true. For whatever reason, you invariably have to make adjustments in deflocculant amount also. The bottom line is that you need to understand the things explained on this page so that you can test any slip and determine what needs to be done to adjust it. With this ability you can add any amount of scrap and still have an optimal casting slip.</p>
+<h3>Recognizing Clay Recipe Problems</h3>
+<p>Even if you achieve an optimum slurry, it will not necessarily cast well if the clay recipe itself is not right. Recipes that contain a lot of fine clay minerals (i.e. ball clay, <a href="../material/106.html">bentonite</a>) will cast slowly because the clay is excessively impermeable to the passage of water and ware will resist release from the mold (although ceramic slip with its 50% typical ball clay is an exception because the high talc in the recipe helps vent the water). High clay formulations will produce ware that will shrink more and crack more. Recipes that have inadequate clay or clays of very low plasticity will shrink too little and will not release from the mold very well. They will produce fragile ware that fractures when being removed from the mold or during handling.</p>
+<p>If you would like to formulate your own casting body (e.g. A <a href="../glossary/terra+cotta.html">terra cotta</a>, a stoneware, a porcelain) it is obvious that decisions you make about its makeup will affect the way in which it performs during the process. As already noted, <a href="../glossary/casting+slip.html">casting body recipes</a> look very different than plastic bodies. This process enables you to make use of cleaner materials not suited to plastic bodies and you can discontinue the use of problematic materials. I have written an article specifically about this called “Understanding <a href="../glossary/slip+casting.html">Slip Casting</a> Body Recipes”.</p><p style="clear:left"></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">A hypodermic syringe for measuring slurry viscosity</h3>
+<br/><a href="../picture/344.html"><img class="flexleft50" loading="lazy" src="../media/images/syringe.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/344.html">click here</a> to see it.</p>
+<p>Notice the large diameter end that enables slip to freely flow.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">A must-have: Laboratory variable speed propeller mixer</h3>
+<br/><a href="../picture/489.html"><img class="flexleft50" loading="lazy" src="../media/images/gpzhse9c9v.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/489.html">click here</a> to see it.</p>
+<p>If you are at all serious about testing glazes and <a href="../glossary/clay+body.html">clay bodies</a>, you need one of these. There are other methods, but nothing else comes close to this. It is the most valuable and frequently used tool in any ceramic bodies and glazes testing lab or classroom. This is the Lightnin brand, they are expensive but high quality. This is a 1/20 hp variable speed unit, it could be $4000 new! But you can get them used on ebay.com (the industrial mixers are most common, lab mixers are jealously guarded). This one uses a 7.9mm dia (5/16") shaft. We adapted a mount (to give it vertical adjustment) from small drill press.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">A casting slip of 1.9 specific gravity. Should we use it?</h3>
+<br/><a href="../picture/813.html"><img class="flexleft50" loading="lazy" src="../media/images/bigtixozek.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/813.html">click here</a> to see it.</p>
+<p>A hydrometer is being used to check the <a href="../glossary/specific+gravity.html">specific gravity</a> of a ceramic <a href="../glossary/casting+slip.html">casting slip</a> in a graduated cylinder. Common traditional clay-containing <a href="../glossary/ceramic+slip.html">ceramic slips</a> are usually maintained around 1.75-1.8. In this case the <a href="../glossary/slurry.html">slurry</a> was too heavy, almost 1.9. Yet it is very fluid, why is this? It has both too much clay and too much deflocculant. While it is possible to use such a slip, it will not drain as well and it will gel too quickly as it stands. It is better to settle for a lower specific gravity (where you can control the <a href="../glossary/thixotropy.html">thixotropy</a> and it is easier to use). It might have been better to simply fill a 100cc cylinder and weigh it to get the specific gravity (slurries that are very viscous do not permit hydrometers to float freely).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Over-deflocculated ceramic slurry forms a skin</h3>
+<br/><a href="../picture/814.html"><img class="flexleft50" loading="lazy" src="../media/images/dyjpojonih.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/814.html">click here</a> to see it.</p>
+<p>In this instance, the <a href="../glossary/slurry.html">slurry</a> forms a skin a few minutes after the mixer has stopped. Casting recipes do not travel well. Over-deflocculation is a danger when simply using the percentage of water and deflocculant shown. Variables in water electrolytes, solubles in materials, mixing equipment and procedures, temperature and production requirements (and other factors) necessitate adapting recipes of others to your circumstances. Add less than the recommended deflocculant to try and reach the <a href="../glossary/specific+gravity.html">specific gravity</a> you want. If the slurry is too viscous (after vigorous mixing), then add more deflocculant. At times, more than what is recommended in your recipe will be needed. After all of this you will be in a position to lock-down a recipe for your production. However flexibility is still needed (for changing materials, water, seasons, etc).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Confirming slip viscosity using a paint-measuring device</h3>
+<br/><a alt="Measuring ceramic slip viscosity using a Ford cup - When is it practical?" href="../picture/1094.html"><img alt="Measuring ceramic slip viscosity using a Ford cup - When is it practical?" class="flexleft50" loading="lazy" src="../media/images/joxbugigow.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1094.html">click here</a> to see it.</p>
+<p>A <a href="../picture/1094.html">Ford Cup</a> is being using to measure the <a href="../glossary/viscosity.html">viscosity</a> of a <a href="../glossary/casting+slip.html">casting slip</a>. These are available at paint supply stores. This is a #4 (4.25mm opening), it holds 100ml and drains water in 10 seconds. This casting slip has a <a href="../glossary/specific+gravity.html">specific gravity</a> of 1.79. Having made it many times, our experience indicates 40-seconds as a drain target (after high energy mixing). In production situations, the seconds-value this test produces enables an audit-trail for quality control and problem solving. When first mixing a <a href="../glossary/slurry.html">slurry</a>, under-deflocculating and eye-balling the viscosity is typical, during that period the slurry gels while draining and Ford cup measurements are not valid. When the mixing process has been perfected and viscosity stabilized the Ford Cup becomes practical.<br/>
+<br/>
+Don’t overthink this type of measurement or the type of cup or opening size (you can even make your own cup). You must still determine the optimal flow rate based on experience with your process. This technique is more about maintaining to ongoing adherence to a standard you define.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Slip having proper rheology is so much better</h3>
+<br/><a href="../picture/1095.html"><img class="flexleft50" loading="lazy" src="../media/images/vevwefusyb.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1095.html">click here</a> to see it.</p>
+<p>This <a href="../glossary/deflocculation.html">deflocculated</a> <a href="../glossary/slurry.html">slurry</a> of 1.79 <a href="../glossary/specific+gravity.html">specific gravity</a> (only 28% water) has just been poured into a mold. The mold is dry, the wall thickness of the bowl will build quickly and the liquid level will sink only slightly. It can be drained in minutes (for a wall thickness of 3-4 mm). The clay is not too plastic (too fine particle sized) so it is permeable enough to enable efficient water migration to the plastic face. If the specific gravity of this slip was too low (too high a percentage of water) the liquid level would sink drastically during the time in the mold, take longer to build up a wall thickness and water-log the mold quickly. If the slip contained too much deflocculant it would cast slower, settle out, form a skin and drain poorly. If it had too little deflocculant it would gel in the mold and be difficult to pour out. The <a href="../glossary/rheology.html">rheology</a> is just right.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Here is how vigorously a deflocculated ceramic slurry should be mixed</h3>
+<video autoplay="false" class="flexleft50" controls="controls" poster="https://digitalfire.com/4sight/images/pictures/divvysipoj.jpg" preload="none" width="640">
+<source src="../media/videos/divvysipoj.mp4" type="video/mp4">Your browser does not support MP4 video.
+</source></video>
+<p>A video of the kind of agitation needed from a <a href="../glossary/propeller+mixer.html">propeller mixer</a> to get the best properties out of a <a href="../glossary/deflocculation.html">deflocculated</a> <a href="../glossary/slurry.html">slurry</a>. This is <a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12881">Polar Ice</a> mixing in a 5-gallon pail. Although it is quite plastic compared to industrial casting slips, it has a <a href="../glossary/specific+gravity.html">specific gravity</a> of 1.76, is very fluid and casts well in the hands of a potter. These properties are a product of, not just the recipe, but the mixer and its ability to put high energy into the slurry.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Are cheap plastic graduated cylinders useful?
+</h3>
+<h4 style="color:#888888; margin-top:0px;">Yes, you can calibrate them yourself.</h4>
+<br/><a href="../picture/1098.html"><img class="flexleft50" loading="lazy" src="../media/images/zagmyzosop.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1098.html">click here</a> to see it.</p>
+<p>Graduated cylinders like this are inexpensive (e.g. Amazon.com). Of course, these cheap plastic ones are not accurate. But, there is one factor that makes them useful: They are light and can thus be used to measure <a href="../glossary/specific+gravity.html">specific gravity</a> on a 200g scale. There is a way to make these accurate enough for a potter: <a href="../picture/2222.html">Calibrate</a> them by checking with 100g and 50g of water, just mark the levels using a Sharpie.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Measure specific gravity using a scale and measuring cup</h3>
+<br/><a href="../picture/1484.html"><img class="flexleft50" loading="lazy" src="../media/images/padcokumes.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1484.html">click here</a> to see it.</p>
+<p>The <a href="../glossary/specific+gravity.html">specific gravity</a> of a <a href="../glossary/suspension.html">suspension</a> is simply its weight compared to water (water weighs 1g per cc). For example, different glazes optimize to different specific gravities (e.g. 1.45 is typical for <a href="../glossary/stoneware.html">stoneware</a> glazes). Casting slips typically have specific gravities of 1.75-1.8. This plastic measuring cup accommodates 500g. I have already counter-weighed it on our <a href="../picture/3629.html">0.1g scale</a> and filled it with 500 grams of water to verify the accuracy of the 500g marking (mark the correct level with a felt pen or sticker if needed). Now, I am filling the cup with the <a href="../glossary/slurry.html">slurry</a> to the same level. The specific gravity will be that weight divided by 500.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Delflocculation accomplishes the seemingly impossible</h3>
+<br/><a alt="Two almost-full containers of clay powder, one half full of water" href="../picture/2428.html"><img alt="Two almost-full containers of clay powder, one half full of water" class="flexleft50" loading="lazy" src="../media/images/f67jpseffe.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2428.html">click here</a> to see it.</p>
+<p>It is possible to get that 3000g of <a href="../glossary/porcelain.html">porcelain</a> powder into this 1100g of water! And the fluid <a href="../glossary/slurry.html">slurry</a> produced, 2250cc, will fit into the front container. How is this even possible? The water has 11 grams of <a href="../material/260.html">Darvan</a> 7 deflocculant in it, it causes the clay particles to electrolytically repel each other! An awareness of “this magic” can help give you the determination to master <a href="../glossary/deflocculation.html">deflocculation</a>, the key enabler of the <a href="../glossary/slip+casting.html">slip casting</a> process. Determination? Yes, the process is fragile, you must develop the ability to “discover” the right amount of Darvan for your clay mix and water supply. And the ability to recognize what is wrong with a slurry that is not working (too much or little water, too much or little deflocculant).</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/redart.html">Redart</a>
+<br/><i>The most common commercially <a href="../glossary/200+mesh.html">200 mesh</a> available raw <a href="../glossary/terra+cotta.html">terra cotta</a> clay in North America. It fires red, has low <a href="../glossary/plasticity.html">plasticity</a> and matures a low kiln temperatures.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/sodium+silicate.html">Sodium Silicate</a>
+<br/><i>A sticky, viscous liquid. The most common deflocculant used in <a href="../glossary/ceramics.html">ceramics</a>. Also used as a bonding agent.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/darvan.html">Darvan</a>
+<br/><i>A common deflocculant used to disperse ceramic suspensions to minimize their <a href="../glossary/water+content.html">water content</a>, a more modern material than <a href="../material/1275.html">sodium silicate</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Properties</td>
+<td>
+<a href="../property/deflocculant.html">Deflocculant</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="stoneware+casting+body+recipes.html">Stoneware Casting Body Recipes</a>
+<br/><i>Some starting recipes for <a href="../glossary/stoneware.html">stoneware</a> and <a href="../glossary/porcelain.html">porcelain</a> with information on how to adjust and adapt them</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="understanding+the+terra+cotta+slip+casting+recipes+in+north+america.html">Understanding the Terra Cotta Slip Casting Recipes In North America</a>
+<br/><i>This article helps you understand a good recipe for a red <a href="../glossary/casting+slip.html">casting body</a> so that you will have control and adjustability.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="deflocculants%3a+a+detailed+overview.html">Deflocculants: A Detailed Overview</a>
+<br/><i>A detailed look and what <a href="../glossary/deflocculation.html">deflocculation</a> is, what the most common types of deflocculants are (there are many) and how they compare in function</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/deflocculation.html">Deflocculation</a>
+<br/><i><a href="../glossary/deflocculation.html">Deflocculation</a> is the magic behind the ceramic casting process, it enables slurries having impossibly low water contents and ware having amazingly low drying shrinkage</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/slip+casting.html">Slip Casting</a>
+<br/><i>A method of forming <a href="../glossary/ceramics.html">ceramics</a>. A <a href="../glossary/deflocculation.html">deflocculated</a> (low <a href="../glossary/water+content.html">water content</a>) <a href="../glossary/slurry.html">slurry</a> is poured into absorbent <a href="../material/1124.html">plaster</a> molds. As it sits in the mold, usually 10+ minutes, a layer builds against the mold walls. When thick enough the mold is drained.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/propeller+mixer.html">Propeller Mixer</a>
+<br/><i>In ceramic studios, labs and classrooms, a good <a href="../glossary/propeller+mixer.html">propeller mixer</a> is essential for mixing glaze and body slurries.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/specific+gravity.html">Specific gravity</a>
+<br/><i>In <a href="../glossary/ceramics.html">ceramics</a>, the <a href="../glossary/specific+gravity.html">specific gravity</a> of slurries tells us their water-to-solids ratio. That ratio is a key indicator of performance and enabler of consistency.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/viscosity.html">Viscosity</a>
+<br/><i>In ceramic slurries (especially casting slips, but also glazes) the degree of fluidity of the <a href="../glossary/suspension.html">suspension</a> is important to its performance.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="../project/troubles.html">Troubles</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="../test/rheo.html">Rheology of a Ceramic Slurry</a>
+<br/><i></i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></div></body>
+</html>

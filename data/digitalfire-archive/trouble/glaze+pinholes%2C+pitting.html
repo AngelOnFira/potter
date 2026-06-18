@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Glaze Pinholes, Pitting</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="Analyze the causes of ceramic glaze pinholing and pitting so your fix is dealing with the real issues, not a symptom." name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item"><a class="nav-link" href="../material/list.html">Materials</a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item active" href="list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=trouble" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container"><p><a aria-controls="collapse1" aria-expanded="false" class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button">All Troubles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a href="black+coring.html" title="29">Black Coring</a></nobr><br/><nobr><a href="bleeding+colors.html" title="30">Bleeding Colors</a></nobr><br/><nobr><a href="bloating.html" title="11">Bloating</a></nobr><br/><nobr><a href="casting+slip+problems.html" title="13">Casting Slip Problems</a></nobr><br/><nobr><a href="chrome+flashing+in+ceramic+glazes.html" title="7">Chrome Flashing in Ceramic Glazes</a></nobr><br/><nobr><a href="clouding+in+ceramic+glazes.html" title="23">Clouding in Ceramic Glazes</a></nobr><br/><nobr><a href="cracking+of+clays+during+drying.html" title="10">Cracking of Clays During Drying</a></nobr><br/><nobr><a href="crawling.html" title="1">Crawling</a></nobr><br/><nobr><a href="dunting+and+cracking+of+clay+bodies+during+firing.html" title="9">Dunting and Cracking of Clay Bodies During Firing</a></nobr><br/><nobr><a href="foaming+of+ceramicd+glaze+slurries.html" title="19">Foaming of Ceramicd Glaze Slurries</a></nobr><br/><nobr><a href="glaze+blisters.html" title="3">Glaze Blisters</a></nobr><br/><nobr><a href="glaze+crazing.html" title="2">Glaze Crazing</a></nobr><br/><nobr><a href="glaze+is+off-color.html" title="6">Glaze is Off-Color</a></nobr><br/><nobr><a href="glaze+marks+or+scratches.html" title="8">Glaze Marks or Scratches</a></nobr><br/><nobr><a href="glaze+peeling+on+drying.html" title="22">Glaze peeling on drying</a></nobr><br/><nobr><a href="5.html" title="5"><button class="btn btn-dark" type="button">Glaze Pinholes, Pitting</button></a></nobr><br/><nobr><a href="glaze+shivering.html" title="18">Glaze Shivering</a></nobr><br/><nobr><a href="glaze+slurry+is+difficult+to+use+or+settling.html" title="14">Glaze Slurry is Difficult to Use or Settling</a></nobr><br/><nobr><a href="leaking+of+fired+ceramics.html" title="26">Leaking of Fired Ceramics</a></nobr><br/><nobr><a href="lime+popping.html" title="28">Lime Popping</a></nobr><br/><nobr><a href="orange+peel+surface.html" title="27">Orange Peel Surface</a></nobr><br/><nobr><a href="over+firing+of+ceramic+glazes+and+bodies.html" title="21">Over Firing of Ceramic Glazes and Bodies</a></nobr><br/><nobr><a href="powdering%2C+cracking+and+settling+glazes.html" title="4">Powdering, Cracking and Settling Glazes</a></nobr><br/><nobr><a href="runny+ceramic+glazes.html" title="25">Runny Ceramic Glazes</a></nobr><br/><nobr><a href="specking+on+ceramic+ware.html" title="17">Specking on Ceramic Ware</a></nobr><br/><nobr><a href="splitting+at+the+plastic+stage.html" title="15">Splitting at the Plastic Stage</a></nobr><br/><nobr><a href="staining+of+fired+ceramic+glazes.html" title="24">Staining of Fired Ceramic Glazes</a></nobr><br/><nobr><a href="uneven+glaze+coverage.html" title="20">Uneven Glaze Coverage</a></nobr><br/><nobr><a href="warping.html" title="12">Warping</a></nobr></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Glaze Pinholes, Pitting</h1>
+<p class="text-muted" style="margin-left:20px">Analyze the causes of ceramic glaze pinholing and pitting so your fix is dealing with the real issues, not a symptom.
+</p><h2>Details</h2>
+<p>'Pinholes' are small holes in the fired glaze surface penetrating down to the body below, often into a surface pore or opening. 'Pits' are smaller, they mar the surface but to not penetrate all the way down. <a href="../glossary/pinholing.html">Pinholes</a> or pits are often no larger than the head of a pin. During firing bodies typically generate gases associated with the <a href="../glossary/decomposition.html">decomposition</a> of organic materials and other minerals, escape of crystal water, etc. If ware is glazed these gases may need to bubble up through the glaze melt, depending on how early it begins to melt. The causes of pinholes can often be similar to those of <a href="glaze+blisters.html">blistering</a>. 
+Keep in mind also that larger pinholes may actually be <a href="crawling.html">crawling</a> (see links to other articles). In the following I may confuse <a href="../glossary/pinholing.html">pinholing</a> and pitting or may neglect to mention one or the other, I apologize for this.</p>
+<p>When pinholes or pits occur there are often more than one contributing factor. Generally a true <a href="../glossary/pinholing.html">pinhole</a> is a problem with the body that extends up into the glaze whereas a pit could be considered a problem with the glaze or the firing. Still most strategies to eliminate these involve attack on several fronts:</p>
+<ul>
+<li>Reducing burn-off by higher <a href="../glossary/bisque.html">bisque</a> or cleaner body (less lignite for example)</li>
+<li>Distributing body out-gassing by finer grinding</li>
+<li>Giving the gases more time to escape by slower firing or using a <a href="../glossary/fast+fire+glazes.html">fast-fire</a> glaze that melts later</li>
+<li>Giving the glaze time to heal by soaking or slower cooling</li>
+<li>Providing more kiln draft to oxidize and carry away products of 
+	decomposition coming from the body or glaze</li>
+<li>Making the glaze more fluid or altering its <a href="../glossary/surface+tension.html">surface tension</a> to enable it to better heal itself</li>
+<li>Selecting glaze materials that <a href="../glossary/decomposition.html">decompose</a> to form less gases</li>
+<li>Being careful to apply a dense even lay down of glaze.</li>
+</ul>
+<p>Hobby and small scale producers have the flexibility to do much longer firings and generally must do so for the lack of fast-fire equipment and materials. Industrial producers must find ways to fire quickly, often in an hour or less. Strangely, even though small scale producers fire much slower, they can have just as many problems with pitting and pinholing. Some are using prepared bodies and/or glazes and thus have less flexibility to change things. Keep this factor in mind as you read the material below, the world you are in will determine the validity of the comments being made.</p>
+<p>If a pitting or pinholing problem has started to happen and it has not occurred before do not assume that there is some new problem. If reading this article makes it clear that there are some things that you have been overlooking, then the success you have had up until now might be accidental. This may be an opportunity to make your process better and more stable.</p>
+<h2>Is the body the problem?</h2>
+<blockquote>
+<h3>Are large particles or gas producing materials  present?</h3>
+</blockquote>
+<blockquote>
+<p>Do a <a href="../glossary/sieve.html">sieve</a> analysis of the body to determine if large particles are present. Weigh, fire to <a href="../glossary/low+temperature+glaze.html">cone 04</a>, and re-weigh a sample of the coarse particle material to see if it loses significant weight (due to decomposition and associated gas generation). If the particles are volatile 	(i.e. lignite, sulfur compounds) they will generate high volumes of gases at 	individual sites, possibly overwhelming the glaze's ability to heal itself there. The most practical solution is to either remove the implicated material from the body batch in favor of a finer particle grade (to distribute gas generation to more sites of less volume) or use a cleaner alternative (by cleaner I mean low-lignite and low-sulphur ball clays).</p>
+</blockquote>
+<blockquote>
+<h3>Are the particles melting vigorously?</h3>
+<p>Use a sieve to isolate some of the coarser particles and
+  fire them to body temperature. Fire to see fi any of them are active melters. 
+	Examine pinholes under the microscope so see if a glassy pool exists at its
+  base. If this is the case it is possible that a combination of vigorous
+  melting activity and the resultant creation of a glass <a href="../glossary/glaze+chemistry.html">chemistry</a> that resists
+  pinhole healing could be occurring. In this case, the offending particles in
+  the body must be eliminated or ground more finely.</p>
+</blockquote>
+<blockquote>
+<h3>Troublesome materials in the body?</h3>
+<p>If you can see 'white spots' and dimples on the glaze
+  surface this suggests that pinholes and imperfections existed but have healed 
+	incompletely (these may also suggest that the glaze melt does not flow as well
+  as its glossy surface might suggest, more <a href="../glossary/flux.html">flux</a> or later melting might be
+  needed). Even fine particled bodies can gas badly, especially if they contain
+  materials like <a href="../material/1620.html">talc</a>, <a href="../material/273.html">dolomite</a>, or whiting that release high volumes of gas. It 
+	is common for some talc to be used as a flux in middle fire bodies (e.g. 
+	2-5%) and there is not really a practical alternative that is as effective 
+	and inexpensive. That means that the firing curve must take the 
+	decomposition of talc into account slowing down the firing when this occurs.</p>
+<h3>Are there <a href="../glossary/soluble+salts.html">soluble salts</a> in the body?</h3>
+<p>Does the bare fired clay have a glassy film? Soluble
+  salts within the body can move out to the surface during drying. If these are
+  high in fluxing <a href="../glossary/ceramic+oxide.html">oxides</a> they can act as a reactive intermediate layer between
+  glaze and body. This can amplify existing pinhole contributors or produce
+  glaze surface irregularities that are akin to pinholing. Add <a href="../material/86.html">barium carbonate</a>
+  to the body mix to precipitate the solubles within the body or substitute
+  implicated materials in the body batch.</p>
+</blockquote>
+<blockquote>
+<h3>Is the body too open?</h3>
+<p>What is the fired <a href="../glossary/clay+body+porosity.html">porosity</a> of the body? Does it have an open porous structure
+  resulting from many coarser particles or <a href="../glossary/laminations.html">laminations</a> and air pockets (e.g.
+  from poor pugging or sand, <a href="../glossary/grog.html">grog</a>, shale, unground clay in the batch)? If pores are
+  networked in a body that produces alot of gases on firing then these gases escaping from within are channeled into the network and
+  converge at high volume surface vents (gas volume may be too large for the
+  glaze to heal). Use a finer particled body or perhaps a fine slip between
+  glaze and body.</p>
+<p>Is the body lacking <a href="../glossary/maturity.html">maturity</a> (not vitrifying)? For
+  example, using a body intended for cone 10 used at <a href="../glossary/cone+6.html">cone 6</a> can actually impede the
+  melt of the glaze since body <a href="../material/1245.html">silica</a> and alumina can rob the glaze of some of
+  its fluxes and therefore impede its ability to smooth out.</p>
+</blockquote>
+<blockquote>
+<h3>Is the body bisque surface rough or irregular?</h3>
+<p>If the body surface is rough (because it contains
+  grog or sand, or the ware has been mechanically trimmed during <a href="../glossary/leather+hard.html">leather hard</a>
+  stage opening imperfections in the surface), pinholes often occur as the glaze dries on the body. 
+	This is a poor lay-down and these raw pinholes may turn out as fired 
+	pinholes. In addition, a rough surface exposes pore networks inside the
+  body to larger volume 'exit vents' that produce pinholes in glazes. You can prevent this by using a finer body, smoothing the body
+  surface in the leather hard state after trimming, or by applying a
+  fine-grained slip. You can also wash bisque ware (do not soak it) prior to
+  glazing, this will tend to make the wet glaze application fill surface irregularities rather
+  than compress air into the voids then have it blow back out as a raw pinhole a 
+	few seconds later.</p>
+<h3>Do you understand the gas evolution profile of the body?</h3>
+<p>There are many ways to study the characteristics of your body in this 
+	regard so that you can adjust your firing to slow down during the high gas 
+	evolution phases.</p>
+</blockquote>
+<h2>Is there a problem with the glaze recipe?</h2>
+<blockquote>
+<h3>Do you use binders?</h3>
+<p>Glaze binders have been known to produce serious
+  pinholing and pitting problems. Some decompose at higher temperatures than you might
+  think. Switch to another binder that decomposes at a lower temperature,
+  eliminate it if there is adequate clay to harden the dry glaze layer, or
+  reformulate the glaze to melt later and more quickly using a fast-fire <a href="../glossary/frit.html">frit</a>. 
+	Once again I ask, do you really need a binder, or could <a href="../material/106.html">bentonite</a> do the 
+	same job?</p>
+</blockquote>
+<blockquote>
+<h3>Are any glaze materials contributing to the
+  problem?</h3>
+<p>Some glaze materials produce large volumes of gases as
+  they decompose during firing (e.g. whiting, dolomite, talc, coloring carbonates like copper, cobalt). These materials
+  can decompose as late at 1000C, if this is after the glaze has started to melt
+  it means trouble. In serious cases the glaze may not just pit or pinhole, but 
+	it may <a href="glaze+blisters.html">blister</a>,
+  the problem can be reduced or eliminated by employing other sources of the
+  needed oxides (i.e. wollastonite for <a href="../oxide/cao.html">CaO</a>, <a href="../glossary/frit.html">frits</a> for <a href="../oxide/mgo.html">MgO</a>, <a href="../glossary/ceramic+stain.html">stains</a> or coloring oxides for carbonates). Calculation will be
+  required to make the substitution (so that the formula stays the same).</p>
+<h3>Do you need a fast-fire glaze</h3>
+<p>In industry the chemistry of fast-fire glazes is well understood (e.g. 
+	they have zinc and lower <a href="../glossary/borate.html">boron</a>, this produces a later melt). If you are fast 
+	firing and are not using a glaze formulated for fast fire then you will 
+	almost certainly be having glaze pitting and surface imperfections.</p>
+</blockquote>
+<blockquote>
+<h3>Is the glaze melt is too viscous?</h3>
+<p>If the glaze melt is too viscous it will resist flow,
+  impede the passage of gas bubbles, tending to trap them in its matrix. Most
+  often a glaze melt is viscous because it is not melting enough. However even
+  well melting glazes can have a chemistry that makes them resist flow (i.e.
+  high alumina content) or they may contain a material like Zirconium that
+  stiffens <a href="../glossary/melt+fluidity.html">the melt</a> because it does not go into solution. Using <a href="../glossary/melt+fluidity.html">melt flow</a>
+  testers to gauge the melt mobility of your glaze is a good idea, it is very
+  difficult to detect melt flow changes by simple inspection of a glaze layer.
+  You might think that the melt is fluid enough, but only a melt flow test will say
+  for sure.</p>
+<p>Increasing flux content to produce a more <a href="../glossary/fluid+melt+glazes.html">fluid melt</a>
+  often works well to combat pinholes and pits. Sometimes very small additions of <a href="../oxide/zno.html">ZnO</a>,
+  <a href="../oxide/sro.html">SrO</a>, or <a href="../oxide/li2o.html">Li<sub>2</sub>O</a> can have a dramatic effect on glaze flow. Sourcing fluxes from
+  frit or using a finer particle size material will improve the melt flow also.
+  Or, you could simply fire higher.</p>
+<p>Likewise, a decrease in the <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a> content will make a glaze more fluid but 
+	could add unwanted gloss if you are using a matte. As already noted, if the
+  glaze contains a melt stiffener like <a href="../material/1722.html">zircon</a>, check to see if trading off some
+  of it for <a href="../material/1642.html">tin oxide</a> helps.</p>
+<p>It is possible that the glaze may be melting too much
+  and <a href="glaze+blisters.html">blisters</a> associated with glaze boiling may contribute to surface
+  imperfections, however this is more likely to cause blisters or be associated 
+	with soluble salts from the body boiling below the glaze.
+  Try adding Al<sub>2</sub>O<sub>3</sub> to the formulation and note an improvement to confirm this.</p>
+<h3>Is the glaze melt and sealing the surface too early?</h3>
+<p>Ideally the body should expel its gases before the glaze
+  melts. Modern fast fire frits are specially formulated to melt much later. The
+  modern <a href="../glossary/whiteware.html">whiteware</a> industry is build on this premise and glaze formulations have
+  been completely transformed in recent times. Fusion frit 300 is an example. If
+  you are using early melting high boron frits reformulate your glaze to take
+  advantage of fast fire formulations even if you don't fast fire.</p>
+</blockquote>
+<h2>Is there a problem with glaze application?</h2>
+<blockquote>
+<p>If a glaze layer is too thin pinholes may be a product of a simple lack of glaze to heal them. 
+Increasing the <a href="../glossary/glaze+thickness.html">glaze thickness</a> may dramatically reduce the pinhole population (of course your glaze must be stable enough not to run if applied thicker and it must fit well enough not to start <a href="glaze+crazing.html">crazing</a> due to increased tension between it and the body). Keep in mind that what may appear to be pinholes may actually be blistering, this is often evident when increased glaze thickness reduces the pinhole count but reveals the remnants of many healed blister craters (dough nut shaped rounded bumps on the surface when viewed at an angle in the light).</p>
+<p>It is possible that improper application could
+  contribute to pinhole formation. Such pinholes will usually be larger and
+  possibly not be true pinholes, and they may be accompanied by crawling.
+  To deal with this make sure your glaze <a href="../glossary/slurry.html">slurry</a> does not have too much water,
+  that it lays down into a dense layer on the body and that it bonds well to
+  produce a homogeneous dried surface with minimum airspace. To encourage the
+  production of a good surface during drying make sure ware is clean and dust
+  free and that glaze does not form pinholes during drying (try prewetting the
+  ware slightly if the latter happens). Many companies <a href="../glossary/deflocculation.html">deflocculate</a> their glazes
+  to get a denser lay down.</p>
+</blockquote>
+<h2>Is the glaze contaminated?</h2>
+<blockquote>
+<p>If pinholes are isolated and few in number it may be
+  possible that a contaminant is getting into the glaze. Pour a sample through a
+  fine screen to check. Do not underestimate the value of <a href="../glossary/ball+milling.html">ball milling</a> to
+  improve fired glaze surface qualities, many a problem with pinholing and
+  blistering has been solved this way. Many companies <a href="../glossary/ball+milling.html">ball mill</a> up to 12 hours
+  for best results.</p>
+</blockquote>
+<h3>Is the ware <a href="../glossary/once+fire+glazing.html">once-fire</a>?</h3>
+<blockquote>
+<p>Once-fired ware is much more prone to crawling and
+  pinholing because the glaze-body bond is more fragile after application and 
+	much more gas is generated during firing than for a body that has already be 
+	bisquit fired. Thus, while crawling is the most frequent complaint in 
+	once-fire glazed ware, pinholes are more common because of the significant out gassing associated
+  with first-fire. If you add fast-fire to this mix sometimes it is a wonder 
+	that it is even possible to get a nice fired surface on a glaze! Try <a href="../glossary/bisque.html">bisque firing</a> 
+	to see if this eliminates the problem. If it does then the gases of firing a 
+	raw body are not being passed by your glaze; reassess the whole process to reduce all
+  contributing factors as much as possible. Use a fast-fire glaze. See the
+  article on blisters for related information.</p>
+</blockquote>
+<h2>Is there problem with the glaze firing?</h2>
+<blockquote>
+<p>If ware is fired too rapidly the glaze melt may not have
+  a chance to smooth over. If thicker or protected sections of ware have more
+  pinholes this is usually an indication that slower more even firing will
+  improve the surface over the entire piece. Also, if glaze does not pit or 
+	pinhole in sections opposite an unglazed surface that it is clear that body 
+	gases are the problem and firing needs to be compensated at the right time 
+	(of the body needs to use cleaner materials).</p>
+<p>You need to consider both the needs of the glaze and body to determine 
+	where in the firing curve to fire more slowly. In most cases non-fast-fire 
+	settings fire slower toward the high end (i.e. an hour
+  per cone at cone 6), soak if possible, and slow the initial cooling phase. If
+  the glaze contains an early melting material (i.e. a high boron low alumina
+  frit) you may need to slow the firing just before the frit begins to fuse to
+  allow as much gas to vent as possible before continuing. Most frit suppliers
+  supply melting or softening temperature information.</p>
+<p>Modern automatic <a href="../glossary/kiln+firing.html">kiln firing</a> devices make it very easy
+  to control the firing curve. Serious pinholing problems have often been 
+	completely eliminated after studying the gas evolution characteristics of 
+	body and glaze and employing a firing curve that slows down at appropriate 
+	times. Many engineers in industry specialize in the study of firing curves 
+	and the programming of automatic kilns. For an example of a TGA (thermal 
+	gravimetric analysis) curve, see Copper Carboante and <a href="../material/237.html">Copper Oxide</a> on this 
+	site).</p>
+<p>A very important factor to consider also is that modern industrial kilns 
+	supply a lot of airflow to the chamber and this carries away products of 
+	decomposition. If you are using a kiln without adequate ventilation then 
+	there may be not be enough oxygen available at the glaze surface to oxidize 
+	and carry away the carbon products of decomposition. Ventilation systems can 
+	be added to kilns but that does not mean they are adequate, the air may not 
+	be passing over all sections of the ware or at a great enough rate (actually electric kilns heat by radiation, so there will never be enough draft) . Some 
+	industrial kilns have so much airflow that taller ware can actually blow 
+	over if it is not set correctly! If you are doing fast-fire this is 
+	critical, a fast fire kiln absolutely must have good air flow. If you are 
+	using an electric kiln without airflow, then expect glaze imperfections 
+	unless you are firing very slowly. This is especially true if you are firing heavy masses of ware in an electric kiln, that ware may simply not be heating up as fast as your <a href="../glossary/firing+schedule.html">firing schedule</a> might mislead you to believe. Heating it up slower may solve the problem, if the ware is light and thin walled enough. But for heavy ware the shady side (or under side) will never reach the temperature of the element side, no matter how long you soak!</p>
+<p>Another factor to consider is that surface pitting can occur even on cool 
+	down (e.g. high sulphur bodies). Thus you may need to adjust the kiln firing 
+	program to cool more slowly until the glaze stiffens.</p>
+</blockquote>
+<h2>Is the problem with the bisque firing?</h2>
+<blockquote>
+<p>Since most pinholes are the product of escaping gases,
+  it is logical to bisque as high and as long as possible to eliminate the bulk
+  of gases during that firing. The only disadvantage of bisquing higher is that
+  ware will be less absorbent and thus may not be as easy to glaze. Find a good
+  compromise temperature. Also, do not stack ware too tightly in the bisque and 
+	make sure there is good airflow in the kiln.</p>
+<p>It is important that the bisque fire be conducted in an
+  oxidation atmosphere to be able to burn away <a href="../oxide/organics.html">organics</a> and carbonates. Don’t underestimate the amount of time needed during the hold for thick pieces, many hours might be needed.</p>
+</blockquote>
+<h2>Is the problem spit-out?</h2>
+<blockquote>
+<p>If the surface of the glaze is covered with minute
+  broken blisters then the problem is probably spit-out, a condition caused by
+  expulsion of trapped water vapor inside porous <a href="../glossary/ceramics.html">ceramics</a> on <a href="../glossary/refiring+ceramics.html">refire</a> for luster
+  decoration. It is amazing how long it can take to drive off all the water in a 
+	fast firing, it may still be coming off past red heat! Make sure the ware 
+	you put in a glaze firing kiln is dry.</p>
+<p> </p>
+</blockquote>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Pinholes often happen on trimmed surfaces</h3>
+<br/><a href="../picture/1298.html"><img class="flexleft50" loading="lazy" src="../media/images/fewfejytoc.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1298.html">click here</a> to see it.</p>
+<p><a href="../glossary/pinholing.html">Pinholing</a> is often related to the smoothness of the underlying body surface. The lower half of this vase was tooled during the <a href="../glossary/leather+hard.html">leather hard</a> stage, all the <a href="../glossary/pinholing.html">pinholes</a> occur there. Even though this body contains 10% <a href="../glossary/grog.html">grog</a>, the pinholes are not appearing on the upper half because the slip generated during <a href="../glossary/throwing.html">throwing</a> has left a smooth surface.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Same cone 6 glazes. Same clay. Why is the one on the right pinholing?</h3>
+<br/><a href="../picture/914.html"><img class="flexleft50" loading="lazy" src="../media/images/zetmuvynow.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/914.html">click here</a> to see it.</p>
+<p>These are thick pieces, they need time for heat to penetrate. Both were soaked 15 minutes at <a href="../glossary/cone+6.html">cone 6</a> (2195F in our <a href="../picture/1293.html">test kiln</a>). But the one on the left was control-cooled to 2095F degrees and soaked 45 more minutes. <a href="../glossary/pinholing.html">Pinholes</a> and dimples are gone, the clay is more <a href="../glossary/maturity.html">mature</a> and the glaze is glossier and melted better. Why is this better than just soaking longer at cone 6? As the temperature rises the mineral particles <a href="../glossary/decomposition.html">decompose</a> and generate gases (e.g. <a href="../oxide/co2.html">CO2</a>, <a href="../oxide/so4.html">SO<sub>4</sub></a>). These need to bubble through the glaze. But on the way down this activity is ceasing. Whatever is gassing and creating the pinholes will has stopped by 2095F. Also, these are boron-fluxed glazes, they stay fluid all the way down to 1900F (so you could drop even further before soaking).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Let me count the reasons this glossy white cone 6 glaze is pinholing</h3>
+<br/><a href="../picture/683.html"><img class="flexleft50" loading="lazy" src="../media/images/nompizifer.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/683.html">click here</a> to see it.</p>
+<p>First, the layer is very thick. Second, the body was only <a href="../glossary/bisque.html">bisque fired</a> to <a href="../glossary/low+temperature+glaze.html">cone 06</a> and it is a raw brown burning <a href="../glossary/stoneware.html">stoneware</a> with lots of coarser particles that generate gases as they are heated. Third, the glaze contains <a href="../material/1724.html">zircopax</a>, it stiffens <a href="../glossary/melt+fluidity.html">the melt</a> and makes it less able to heal disruptions in the surface. Fourth, the glaze is high in <a href="../oxide/b2o3.html">B<sub>2</sub>O<sub>3</sub></a>, so it starts melting early (around 1450F) and seals the surface so the gases must bubble up through. Fifth, the firing was soaked at the end rather than dropping the temperature a little first (e.g. 100F) and soaking there instead.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">One fired flawless, the other dimpled and pinholed.
+</h3>
+<h4 style="color:#888888; margin-top:0px;">These are the same glaze/body.  Why?</h4>
+<br/><a href="../picture/2304.html"><img class="flexleft50" loading="lazy" src="../media/images/jyrxciismr.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2304.html">click here</a> to see it.</p>
+<p>The difference is a slow-cool firing. Both mugs are <a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12875">M340</a> and have the <a href="../recipe/l3954b.html">L3954B</a> black <a href="../glossary/engobe.html">engobe</a> inside and partway down on the outside. Both were <a href="../glossary/dipping+glaze.html">dip-glazed</a> with the <a href="../recipe/ga6-b.html">GA6-B</a> amber transparent and fired to <a href="../glossary/cone+6.html">cone 6</a>. The one on the right was fired using the <a href="../schedule/plc6ds.html">PLC6DS</a> <a href="../glossary/drop-and-soak+firing.html">drop-and-hold</a> schedule. That eliminated any <a href="glaze+blisters.html">blisters</a>, but some <a href="../glossary/pinholing.html">pinholes</a> remained. The one on the left was fired using the <a href="../schedule/c6dhsc.html">C6DHSC</a> slow-cool schedule. That differs in one way: It cools at 150F/hr from 2100F to 1400F (as opposed to a free-fall). It is amazing how much this improves the brilliance and surface quality (not fully indicated by this photo, the mug on the left is much better).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Why is this cone 10 oxidation iron-brown glaze pinholing?</h3>
+<br/><a href="../picture/657.html"><img class="flexleft50" loading="lazy" src="../media/images/nedditejug.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/657.html">click here</a> to see it.</p>
+<p>The glaze is simply insufficiently melted. In <a href="../glossary/reduction+firing.html">cone 10 reduction</a> the iron acts as a <a href="../glossary/flux.html">flux</a> and it melts very very well, so there are no <a href="../glossary/pinholing.html">pinholes</a>. But here it simply does not have enough fluidity to heal the disruptions caused as gases escaping from the body below bubble up through it.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">How can you best tell if a base glaze is prone to pinholing with your body?</h3>
+<br/><a href="../picture/731.html"><img class="flexleft50" loading="lazy" src="../media/images/rufveriwod.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/731.html">click here</a> to see it.</p>
+<p>Testing for <a href="../glossary/pinholing.html">pinholes</a> and dimples is often best done using a transparent glaze over a large surface and looking at the surface in the light. In this case, an open bowl is used. Heavy pieces like this are difficult to fire evenly and encourage under fired areas where pinholes are more likely to appear.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Bisque-glazing vs. green-glazing in medium temperature porcelain</h3>
+<br/><a href="../picture/1505.html"><img class="flexleft50" loading="lazy" src="../media/images/jujjabeset.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1505.html">click here</a> to see it.</p>
+<p>The mug on the left was <a href="../glossary/bisque.html">bisque fired</a> and then glazed, the one on the right was glazed in the green (dry) state. The glazes are the same inside and out but the <a href="../glossary/porcelain.html">porcelain</a> one the right is based on <a href="../material/2145.html">New Zealand kaolin</a> (vs. American <a href="../material/925.html">kaolin</a> on the left). Three secrets for success for the one on the right were: It was glazed inside and out in two operations with a drying phase between, it was heated to about 150F before each application and it was fired with a soaking period (at about 1900F) on the way up to top temperature (<a href="../glossary/cone+6.html">cone 6</a>).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">A once-fire mug vs. a bisque-fired mug</h3>
+<br/><a href="../picture/1506.html"><img class="flexleft50" loading="lazy" src="../media/images/limpymykef.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1506.html">click here</a> to see it.</p>
+<p>The mug on the right was <a href="../glossary/bisque.html">bisque fired</a> and then glazed, the one on the left was glazed in the green (dry) state using our standard meet-two-colors-at-the-rim glazing method. This method lends itself well to single fire glazing. Notice the glaze did not go on as thick on the once-fired piece (extra attention is needed to make sure it gets on thick enough without cracking the piece). In addition, there are a few <a href="../glossary/pinholing.html">pinholes</a> whereas the bisqued piece is flawless. Single firing ware requires extra attention to firing, climbing to a point just before the glaze begins to melt and soaking there to enable hydrates and carbon to escape.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Can this 5 lb thick walled bowl be fired evenly in an electric kiln. No.</h3>
+<br/><a href="../picture/1565.html"><img class="flexleft50" loading="lazy" src="../media/images/daljugygez.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1565.html">click here</a> to see it.</p>
+<p>When electric kilns, especially large ones are tightly packed with heavy ware, the shady or undersides of the pots simply will never reach the temperature of the element side, no matter how long you soak. In this example, the inside of this clear glazed <a href="../glossary/cone+6.html">cone 6</a> bowl has a flawless surface. The base is pinholed and <a href="crawling.html">crawling</a> a little and the surface of one side (the shady side), the remnants of healing disruptions in <a href="../glossary/melt+fluidity.html">the melt</a> (from escaping gases) have not smoothed over. The element side is largely flawless like the inside, however it is not as smooth on the area immediately outside the foot (because this is less element-facing). Industrial gas kilns have draft and subject ware to heat-work by convection, so all sides are much more evenly matured.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Can you bisque fire at cone 02? Yes. But why? How?</h3>
+<br/><a href="../picture/1568.html"><img class="flexleft50" loading="lazy" src="../media/images/gixxapefyx.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1568.html">click here</a> to see it.</p>
+<p>The buff <a href="../glossary/stoneware.html">stoneware</a> mug on the right was <a href="../glossary/bisque.html">bisque fired</a> at cone 02, the one on the left at <a href="../glossary/low+temperature+glaze.html">cone 06</a>. The cone 02 mug was immersed in the clear glaze for 1 second and allowed to dry. The other was glazed on the inside first, allowed to dry, then glazed on the outside with a 1 second dip. Of course, the cone 02 one took longer to dry. In spite of this, the glaze is thicker and more even on the one <a href="../glossary/bisque.html">bisque</a> fired to cone 02. How is the possible? The secret is the <a href="../glossary/thixotropy.html">thixotropy</a> of the glaze. When that is right, a one second dip will give the same thickness and evenness whether dry or bisque, 06 or 02. Why bisque fire to cone 02? To get a glazed surface free of <a href="../glossary/pinholing.html">pinholes</a> on some stoneware clays.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">What can you do using glaze chemistry? More than you think!</h3>
+<br/><a alt="And Insight-Live screenshot" href="../picture/1136.html"><img alt="And Insight-Live screenshot" class="flexleft50" loading="lazy" src="../media/images/8bquwz5cnn.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1136.html">click here</a> to see it.</p>
+<p>There is a direct relationship between the way ceramic glazes fire and their <a href="../glossary/glaze+chemistry.html">chemistry</a>. These green panels in my <a href="../glossary/digitalfire+insight-live.html">Insight-live</a> account compare two <a href="../glossary/glaze+recipes.html">glaze recipes</a>: A glossy and matte. Grasping their simple chemistry <a href="../glossary/mechanism.html">mechanisms</a> is a first step to getting control of your glazes. To fixing problems like <a href="glaze+crazing.html">crazing</a>, <a href="glaze+blisters.html">blistering</a>, <a href="../glossary/pinholing.html">pinholing</a>, <a href="../glossary/suspension.html">settling</a>, gelling, <a href="../glossary/glaze+bubbles.html">clouding</a>, <a href="../glossary/leaching.html">leaching</a>, <a href="crawling.html">crawling</a>, marking, scratching, powdering. To substituting <a href="../glossary/frit.html">frits</a> or incorporating available, better or cheaper materials while maintaining the same chemistry. To adjusting <a href="../glossary/melting+temperature.html">melting temperature</a>, gloss, surface character, color. And identifying weaknesses in glazes to avoid problems. And to creating and optimizing <a href="../glossary/base+glaze.html">base glazes</a> to work with difficult colors or <a href="../glossary/ceramic+stain.html">stains</a> and for special effects dependent on <a href="../glossary/opacifier.html">opacification</a>, <a href="../glossary/crystallization.html">crystallization</a> or <a href="../glossary/reactive+glazes.html">variegation</a>. And even to creating glazes from scratch and using your own native materials in the highest possible percentage.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Can a decal firing melt a glaze? Yes!</h3>
+<br/><a alt="Decal firing pits the glaze" href="../picture/1712.html"><img alt="Decal firing pits the glaze" class="flexleft50" loading="lazy" src="../media/images/rewxenipuj.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1712.html">click here</a> to see it.</p>
+<p>Typical zero-boron <a href="../glossary/high+temperature+glaze.html">high-temperature glazes</a> will not soften in a 1500F <a href="../glossary/ceramic+decals.html">decal</a> firing. But <a href="../glossary/low+temperature+glaze.html">low-temperature glazes</a> will (especially those high in <a href="../glossary/borate.html">boron</a>). Even <a href="../glossary/medium+temperature.html">middle-temperature</a> ones, especially those having significant <a href="../oxide/b2o3.html">B<sub>2</sub>O<sub>3</sub></a>, can soften. <a href="../recipe/g3806c.html">G3806C</a> (right), for example, is reactive and fluid, it certainly will. Even <a href="../recipe/g2926b.html">G2926B</a>, which has high <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a> and <a href="../oxide/sio2.html">SiO<sub>2</sub></a>, has tiny pits (because of the amount of B<sub>2</sub>O<sub>3</sub> in contains). In serious cases, they can bubble like the mug on the right. What happened to this one? Steam. It was in use and had been absorbing water in the months since it was first glaze-fired at cone 03. The one on the left was not used, but it did have some time to absorb water from the air, it is showing tiny pits in the surface. Even if moisture is not present, on <a href="../glossary/refiring+ceramics.html">refire</a> <a href="../glossary/earthenware.html">low fire</a> bodies continue to generate gases of <a href="../glossary/decomposition.html">decomposition</a> that affect glazes. Each decal manufacturer has a recommended firing temperature, that is for their decals, not your glaze.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">I once tolerated this amount of pinholing: 
+</h3>
+<h4 style="color:#888888; margin-top:0px;">Then I discovered drop-and-hold firing</h4>
+<br/><a alt="A cone 6 blue silky matte glazed vase with thousands of pinholes in the glaze" href="../picture/2533.html"><img alt="A cone 6 blue silky matte glazed vase with thousands of pinholes in the glaze" class="flexleft50" loading="lazy" src="../media/images/wfcbffmvmt.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2533.html">click here</a> to see it.</p>
+<p>This <a href="../glossary/cone+6.html">cone 6</a> vase was made from a coarse-grained <a href="../glossary/stoneware.html">stoneware</a> body typical of those long produced by <a href="../glossary/plainsman+clays.html">Plainsman</a> Clays. These materials performed exceptionally well at <a href="../glossary/reduction+firing.html">cone 10 reduction</a>, but when similar bodies began being fired at cone 6 oxidation, <a href="../glossary/pinholing.html">pinholing</a> often became a challenge. Why? The coarser particle structure creates fewer but larger pathways for escaping <a href="../glossary/decomposition.html">decomposition</a> gases, concentrating gas flow through localized vents and leaving behind pits like those visible here.<br/>
+<br/>
+Yet today many potters fire these same clays with little or no pinholing. Electronic <a href="../glossary/kiln+controller.html">kiln controllers</a> deserve much of the credit, making <a href="../glossary/drop-and-soak+firing.html">drop-and-hold</a> and slow-cooling schedules practical. Equally important, I formulate glazes with enough <a href="../glossary/melt+fluidity.html">melt fluidity</a> to heal gas-release craters during the hold, while maintaining sufficiently low <a href="../glossary/surface+tension.html">surface tension</a> to avoid trapping gases in bubbles that later become <a href="glaze+blisters.html">blisters</a>. <a href="../glossary/commercial+hobby+brushing+glazes.html">Commercial glaze</a> manufacturers have quietly optimized for these same properties.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Troubles</td>
+<td>
+<a href="crawling.html">Crawling</a>
+<br/><i>Ask yourself the right questions to figure out the real cause of a <a href="../glossary/glaze+crawling.html">glaze crawling</a> issue. Deal with the problem, not the symptoms.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Troubles</td>
+<td>
+<a href="glaze+blisters.html">Glaze Blisters</a>
+<br/><i>Questions and suggestions to help you reason out the real cause of ceramic glaze <a href="glaze+blisters.html">blistering</a> and <a href="../glossary/glaze+bubbles.html">bubbling</a> problems and work out a solution</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/copper+carbonate+basic.html">Copper Carbonate Basic</a>
+<br/><i>This form of <a href="../material/236.html">copper carbonate</a> is the article of commerce, a mixture of theoretical copper carbonate and copper hydroxide.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/pinholing.html">Pinholing</a>
+<br/><i><a href="../glossary/pinholing.html">Pinholing</a> is a common surface defect that occurs with ceramic glazes. The problem emerges from the kiln and can occur erratically in production.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/ceramic+glaze+defects.html">Ceramic Glaze Defects</a>
+<br/><i><a href="../glossary/ceramic+glaze+defects.html">Ceramic glaze defects</a> include things like <a href="../glossary/pinholing.html">pinholes</a>, <a href="glaze+blisters.html">blisters</a>, <a href="glaze+crazing.html">crazing</a>, <a href="../glossary/glaze+shivering.html">shivering</a>, <a href="../glossary/leaching.html">leaching</a>, <a href="crawling.html">crawling</a>, <a href="../glossary/cutlery+marking.html">cutlery marking</a>, <a href="../glossary/glaze+bubbles.html">clouding</a> and color problems.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Media</td>
+<td>
+<a href="../video/a+broken+glaze+meets+insight-live+and+a+magic+material.html">A Broken Glaze Meets Insight-Live and a Magic Material</a>
+<br/><i>Use <a href="../glossary/digitalfire+insight-live.html">Insight-Live</a>.com to do major surgery on a <a href="../material/310.html">feldspar</a> saturated <a href="../glossary/reduction+firing.html">cone 10R</a> glaze recipe with multiple issues: <a href="glaze+blisters.html">blistering</a>, <a href="../glossary/pinholing.html">pinholing</a>, <a href="glaze+crazing.html">crazing</a>, <a href="../glossary/suspension.html">settling</a>, dusting and possibly <a href="../glossary/leaching.html">leaching</a>!</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Media</td>
+<td>
+<a href="../video/manually+program+your+kiln+or+suffer+glaze+defects%21.html">Manually program your kiln or suffer glaze defects!</a>
+<br/><i>To do a <a href="../glossary/drop-and-soak+firing.html">drop-and-hold</a> firing you must <a href="../picture/2222.html">manually program</a> your <a href="../glossary/kiln+controller.html">kiln controller</a>. It is the secret to surfaces without <a href="../glossary/pinholing.html">pinholes</a> and <a href="glaze+blisters.html">blisters</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/3217">https://www.zschimmer-schwarz-ceramco.it/en/zs-lab/how-to/08-pin-holes-on-ceramic-surface-after-firing-causes-and-remedies-1</a>
+<br/><i><a href="../glossary/pinholing.html">Pinholes</a> on Ceramic Surface After Firing: Causes and Remedies</i>
+<br/><i style="color:#888888;">ZSCHIMMER &amp; SCHWARZ How-To video/page: Addresses temperatures &amp; improper drying processes, excessive amounts of organic material, chemical incompatibility between <a href="../glossary/engobe.html">engobe</a> and <a href="../glossary/frit.html">frit</a> (or glaze), the untouchable firing cycle. Pin-holes, <a href="../glossary/pinholing.html">Pinholing</a>.</i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></div></body>
+</html>

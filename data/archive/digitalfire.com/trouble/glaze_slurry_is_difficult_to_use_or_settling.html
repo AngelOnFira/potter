@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Glaze Slurry is Difficult to Use or Settling</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Understanding glaze slurry rheology is the key to solving problems and creating a suspension that does not settle out, applies well, dries crack free.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item active" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=trouble" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"></td><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Troubles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a title="29" href="https://digitalfire.com/trouble/black+coring">Black Coring</a></nobr><br /><nobr><a title="30" href="https://digitalfire.com/trouble/bleeding+colors">Bleeding Colors</a></nobr><br /><nobr><a title="11" href="https://digitalfire.com/trouble/bloating">Bloating</a></nobr><br /><nobr><a title="13" href="https://digitalfire.com/trouble/casting+slip+problems">Casting Slip Problems</a></nobr><br /><nobr><a title="7" href="https://digitalfire.com/trouble/chrome+flashing+in+ceramic+glazes">Chrome Flashing in Ceramic Glazes</a></nobr><br /><nobr><a title="23" href="https://digitalfire.com/trouble/clouding+in+ceramic+glazes">Clouding in Ceramic Glazes</a></nobr><br /><nobr><a title="10" href="https://digitalfire.com/trouble/cracking+of+clays+during+drying">Cracking of Clays During Drying</a></nobr><br /><nobr><a title="1" href="https://digitalfire.com/trouble/crawling">Crawling</a></nobr><br /><nobr><a title="9" href="https://digitalfire.com/trouble/dunting+and+cracking+of+clay+bodies+during+firing">Dunting and Cracking of Clay Bodies During Firing</a></nobr><br /><nobr><a title="19" href="https://digitalfire.com/trouble/foaming+of+ceramicd+glaze+slurries">Foaming of Ceramicd Glaze Slurries</a></nobr><br /><nobr><a title="3" href="https://digitalfire.com/trouble/glaze+blisters">Glaze Blisters</a></nobr><br /><nobr><a title="2" href="https://digitalfire.com/trouble/glaze+crazing">Glaze Crazing</a></nobr><br /><nobr><a title="6" href="https://digitalfire.com/trouble/glaze+is+off-color">Glaze is Off-Color</a></nobr><br /><nobr><a title="8" href="https://digitalfire.com/trouble/glaze+marks+or+scratches">Glaze Marks or Scratches</a></nobr><br /><nobr><a title="22" href="https://digitalfire.com/trouble/glaze+peeling+on+drying">Glaze peeling on drying</a></nobr><br /><nobr><a title="5" href="https://digitalfire.com/trouble/glaze+pinholes%2C+pitting">Glaze Pinholes, Pitting</a></nobr><br /><nobr><a title="18" href="https://digitalfire.com/trouble/glaze+shivering">Glaze Shivering</a></nobr><br /><nobr><a title="14" href="https://digitalfire.com/trouble/14"><button type="button" class="btn btn-dark">Glaze Slurry is Difficult to Use or Settling</button></a></nobr><br /><nobr><a title="26" href="https://digitalfire.com/trouble/leaking+of+fired+ceramics">Leaking of Fired Ceramics</a></nobr><br /><nobr><a title="28" href="https://digitalfire.com/trouble/lime+popping">Lime Popping</a></nobr><br /><nobr><a title="27" href="https://digitalfire.com/trouble/orange+peel+surface">Orange Peel Surface</a></nobr><br /><nobr><a title="21" href="https://digitalfire.com/trouble/over+firing+of+ceramic+glazes+and+bodies">Over Firing of Ceramic Glazes and Bodies</a></nobr><br /><nobr><a title="4" href="https://digitalfire.com/trouble/powdering%2C+cracking+and+settling+glazes">Powdering, Cracking and Settling Glazes</a></nobr><br /><nobr><a title="25" href="https://digitalfire.com/trouble/runny+ceramic+glazes">Runny Ceramic Glazes</a></nobr><br /><nobr><a title="17" href="https://digitalfire.com/trouble/specking+on+ceramic+ware">Specking on Ceramic Ware</a></nobr><br /><nobr><a title="15" href="https://digitalfire.com/trouble/splitting+at+the+plastic+stage">Splitting at the Plastic Stage</a></nobr><br /><nobr><a title="24" href="https://digitalfire.com/trouble/staining+of+fired+ceramic+glazes">Staining of Fired Ceramic Glazes</a></nobr><br /><nobr><a title="20" href="https://digitalfire.com/trouble/uneven+glaze+coverage">Uneven Glaze Coverage</a></nobr><br /><nobr><a title="12" href="https://digitalfire.com/trouble/warping">Warping</a></nobr></div><p style="clear:left"></p><p style="clear:left"></p><h1>Glaze Slurry is Difficult to Use or Settling</h1>
+<p class="text-muted" style="margin-left:20px">Understanding glaze slurry rheology is the key to solving problems and creating a suspension that does not settle out, applies well, dries crack free.
+<h2>Details</h2>
+<P>We often tend to put so much effort into adjusting our glazes to fine-tune fired properties that we tolerate poor application properties. Such glazes are not only frustrating to use, but they often produce poor fired results. When a <a  href="https://digitalfire.com/glossary/slurry">slurry</a> is right it should 'gel' and 'hang on'. You should be able to dip your finger in and pull it out with an even coverage and <B>no drips</B>. In fact, a <a  href="https://digitalfire.com/glossary/thixotropy">thixotropic</a> glaze will resist shedding off ware covered with <a  href="https://digitalfire.com/material/3157">wax emulsion</a>! And it will not settle out hard in the container! Yes, there is no reason to put up with a glaze that drips and drips, cracks on drying, dusts and does not produce an even layer (yes, these 
+problems are all related). </P>
+
+<P>In industry, maintaining the 'rheology' (flow properties) of the glaze slurry through material, water quality, seasonal, and personnel changes is often the most difficult challenge a factory faces. Maintenance of the <B>specific gravity</B> in particular is a reference point, 'an anchor' around which all other adjustments hinge (if your glaze is working well, measure its <a  href="https://digitalfire.com/glossary/specific+gravity">specific gravity</a> now). If your glazes application or drying properties are often problematic or they are always difficult to work with, read on, recipe change(s) might be most appropriate. Be careful about using glaze additives, try all the other approaches first.</P>
+
+<H3>Gel Your Glaze, Adjust its Recipe to Gel</H3>
+
+<BLOCKQUOTE>
+<P>The glaze slurry must be <B>thixotropic</B>, it must "gel" so that the <a  href="https://digitalfire.com/glossary/mechanism">mechanism</a> of its
+initial adherence to the ware is, to a considerable extent, a function of this property
+rather than absorption of water by porous <a  href="https://digitalfire.com/glossary/bisque">bisque</a>. While thixotropic behavior can be
+achieved by using glaze additives, most people lack the experience, knowledge, 
+equipment and circumstances to use
+them properly. It is thus desirable to avoid additives if possible and try to select a
+<a  href="https://digitalfire.com/material/925">kaolin</a> or <a  href="https://digitalfire.com/material/80">ball clay</a> that contributes thixotropic properties. <a  href="https://digitalfire.com/material/291">EPK</a> (kaolin) is a good
+example. If your glaze does not contain adequate kaolin (15-20%) then use ceramic calculations
+(e.g. <a  href="https://digitalfire.com/glossary/digitalfire+insight">Digitalfire INSIGHT</a>) to adjust it so that it does. How is this possible? Because
+ceramic <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> sees materials as 'oxide contributors' and it is thus possible to
+supply a specific chemistry from different mixtures of materials.</P>
+
+<P>It is possible to have <B>20% kaolin</B> in <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 04</a> glazes
+if you use low alumina <a  href="https://digitalfire.com/glossary/borate">boron</a> <a  href="https://digitalfire.com/glossary/frit">frits</a>. At higher temperatures glazes have significantly more
+<a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> and <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> and so it is usually easy to achieve a 25% kaolin content (because it
+contributes Al<sub>2</sub>O<sub>3</sub> and SiO<sub>2</sub>). 
+However there are many high temperature glazes that have large percentages of <a  href="https://digitalfire.com/material/310">feldspar</a>, 
+sometimes 70%! In such the feldspar is supplying all of the needed Al<sub>2</sub>O<sub>3</sub> and so there is
+little room for clay in the recipe. These glazes are evil and there is no need for this.
+The simplest way to fix this problem is use ceramic calculations to reduce the feldspar
+and supply the <a  href="https://digitalfire.com/glossary/alkali">alkali</a> <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> from other sources. This will enable you to increase the kaolin
+to supply the lost Al<sub>2</sub>O<sub>3</sub> (from the feldspar reduction). Ferro <a  href="https://digitalfire.com/material/349">Frit 3110</a> is a good example
+of a <a  href="https://digitalfire.com/glossary/frit">frit</a> that is very similar to a feldspar in chemistry, but it has very low alumina.
+</p></BLOCKQUOTE>
+
+<H3>Consider What Materials You Are Using</H3>
+<blockquote>
+	<P>Different clays produce slurries of differing properties. Bentonite-like materials
+have the ability to gel in water in small amounts, they will help suspend the other
+particles better than any other material. However bentonites gel the water and hold onto it 
+	so well that using any more than 5% will cause glazes dry too slowly and shrink too much. Ball clay
+is better, 20% of it in a recipe can produce a nice slurry, and many people prefer its
+characteristics. However ball clay glazes do not necessarily gel well (and ball clay
+introduces more iron than you might want). If you have a kaolin that suspends well, it is
+the ideal material. In North American, EPK, for example, produces very nice slurries that
+suspend well and gel to help them hold on immediately after the dip. Experiment with
+the kaolins and ball clays available to you to find the best one.</P>
+
+	<P>Some materials are soluble or partially soluble, this is even the case 
+	with some frits (which are of course not intended for glazes). When 
+	materials dissolve in the glaze they introduce electrolytes into the water 
+	which in turn can affect the <a  href="https://digitalfire.com/glossary/viscosity">viscosity</a> of the glaze. For example, high 
+	nepheline syenite glazes can thicken over time and each time you add water 
+	to re thin the glaze shrinks and cracks more during drying on the ware. High 
+	boron materials are often soluble. Clays, especially raw and native clays, 
+	often contain soluble <a  href="https://digitalfire.com/glossary/sulfates">sulfates</a> that can dramatically affect the slurry. 
+	These problems can be insidious because these materials often dissolve 
+	slowly overtime and thus the <a  href="https://digitalfire.com/glossary/rheology">rheology</a> will change accordingly. Admittedly, 
+	companies with a continuous production line can use slightly soluble 
+	materials since their glaze is used quickly and is not stored.</P>
+</blockquote>
+
+<h3>Dense Bisque Ware</h3>
+
+<BLOCKQUOTE>
+
+<P>Bisque ware should not be too high in <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a>. Variable porosity means variable thicknesses in
+the overlying glaze. Porous bisque ware demands that glaze slurries be thin and runny or
+the application will be too thick. If you are used to <a  href="https://digitalfire.com/glossary/bisque">bisque firing</a> from cone 010 to 06,
+go to <B>04 or higher</B> if you can and use a more gelled glaze.</P></BLOCKQUOTE>
+
+<H3>Use Additives Only if Absolutely Necessary</H3>
+
+<BLOCKQUOTE>
+<P>Misuse of glaze additives is very common because they are not nearly as well understood
+as other materials. Often they are listed in recipes in which they are not really needed. They
+should be avoided if possible, because they often have detrimental side effects. Remember,
+although you might think your glaze needs them, does it really? Only all-fritted glazes
+with very low kaolin normally need additives in typical traditional ceramic applications
+(an exception is <a  href="https://digitalfire.com/glossary/crystalline+glazes">crystalline glazes</a> that require a low alumina content). Many people use
+additives that actually worsen the application properties of their glazes. In 
+these cases, often a recipe adjustment to increase clay content (by sourcing the same chemistry 
+from a different set of materials) or a simple <a  href="https://digitalfire.com/material/106">bentonite</a> addition would be much 
+better (i.e. gum additions may give a thinner applying, slower drying, 'drippy' 
+glaze). Again, do not use an additive if it is not
+needed, additives are not a substitute for a good glaze recipe. </p>
+
+<p>Individual additives often defy easy classification because they claim to 
+impart <a  href="https://digitalfire.com/glossary/suspension">suspending</a>, adhesive and
+flow properties. Thus picking the right one is a matter of discerning the need and using
+the additive that 'emphasizes' the needed slurry property and gives the fewest side
+effects (i.e. color change, slow drying rate, biodegradation, film formation). I might add
+that it is also common to use much more of an additive than is needed, normally completely ruining
+glaze slurry properties.</P>
+
+<P>While gum does form a gel to suspend particles, it is usually more useful in making the
+slurry 'sticky', and acts as a temporary glue to cement otherwise loosely adhered
+particles; thus it is referred to as a 'binder', 'hardener', 'adhesive'. Remember that the
+mechanism of glaze adherence is normally simply contact, it 'hangs on' to irregularities
+in the surface by virtue of its own strength. Thus a harder dry glaze layer will adhere
+better. Note also that clays can impart both dry hardness plus <a  href="https://digitalfire.com/glossary/suspension">suspension</a> and gelling
+properties to the slurry, whereas gums usually only harden it. Starches usually act as
+hardeners and may thicken the slurry (therefore suspending it better). Cellulose ethers
+are used like gum and starch to harden and thicken, they are said to be more consistent
+and easier to control. Claylike plasticizers (like Veegum) can impart similar claylike
+properties to a slurry, but remember that the beneficial properties of kaolin, for
+example, come largely from having alot of it in the recipe. Bentonite clay, likewise, can
+be beneficial but only in amounts small enough that prevent it from slowing down the drying
+significantly. So generally clay-like additives have these same limitations. Other
+additives include wetting agents, foam control agents and sealers. People who know how to
+use these materials can do things with glaze that others might think impossible. Likewise,
+those of us who do not know how to use them can create a real mess. Manufacturers usually
+have instructions so do not buy these materials without good instructions.</P>
+
+</BLOCKQUOTE>
+<h3>Flocculants, Deflocculants</h3>
+<BLOCKQUOTE>
+<p>Electrolytes change the pH of the suspension and affect the charge of particles
+(this changing slurry viscosity); a few drops can make a thick slurry very runny and thin
+(deflocculating it), or make a thin one gel (<a  href="https://digitalfire.com/glossary/flocculation">flocculating</a> it). Thus deflocculants/deflocculants can be
+used to adjust otherwise variable flow properties. But this cannot be done by a novice.
+The amounts required are generally extremely small and must be tuned to the specific batch
+by careful measurements (a few drops too much can literally turn your glaze into jelly 
+or make it settle like a rock). It is
+amazing how much a small amount of a flocculant, such as calcium chloride, <a  href="https://digitalfire.com/material/292">epsom salts</a>, or
+vinegar can gel a glaze (so it makes sense to test on a small amount before adding it to a
+whole batch). At the risk of being repetitive, please consider: if you need to use these
+materials is it possible that adjusting the recipe to increase the clay or remove soluble
+materials (e.g. boric acid, <a  href="https://digitalfire.com/material/1070">nepheline syenite</a>, <a  href="https://digitalfire.com/material/975">lithium carbonate</a>) would be a better
+approach. One real downside of these materials is they can put a glaze batch on a
+roller coaster viscosity ride, even with powerful mixing equipment to try stabilize their
+action. Do you really want that?</P></BLOCKQUOTE>
+<h3>Mixing</h3>
+<BLOCKQUOTE>
+<p>If you are storing your glaze slurries it is very beneficial to have a mixer 
+that can put alot of energy into the slurry to thoroughly wet the surfaces of 
+all particles during primary mixing. After this, final adjustments with water 
+content and possible additives can be done to establish the final <a  href="https://digitalfire.com/glossary/rheology">rheological</a> 
+properties. When this is done the glaze slurry will be more stable for a longer 
+period of time.</P></BLOCKQUOTE>
+
+<h3>Conclusion</h3>
+<P>My general advice is this: If your glaze is not suspending, hardening, gelling 
+or applying
+properly, then, if possible reformulate it to have more clay, especially kaolin. If it still
+needs help then add bentonite (up to 3%). If the glaze still needs extra
+help, then use an additive, but beware. If there are still problems, then, heaven forbid,
+use a flocculant or deflocculant or study up on other more exotic additives!</P></BLOCKQUOTE>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Will a bentonite slurry addition suspend a glaze?</h3>
+<h4 style="color:#888888; margin-top:0px;">Not like you might have been told.</h4>
+<br /><a alt="A gallon of bentonite slurry" href="https://digitalfire.com/picture/3646"><img class="flexleft50" alt="A gallon of bentonite slurry"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/z9gep5agrv.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3646">click here</a> to see it.</p>
+<p>This is 50g of sodium <a  href="https://digitalfire.com/material/106">bentonite</a> in 1 gallon of water (~0.5% concentration). Sodium bentonite creates a gel that resists mixing. With a better propeller, faster mixer, hot water, slow addition, etc. we might be able to achieve 1% (or ~100g/gallon). Mud-men (drilling mud mixers) claim 4% is possible using shear pumps, ribbon blenders, or paddle mixers - that seems impossible to me! Why does all this matter? Some say that a gel like this can be added to a <a  href="https://digitalfire.com/glossary/suspension">settling</a> glaze to fix it. Is that true? Not really. Here is why. Our typical imperial gallon of <a  href="https://digitalfire.com/glossary/dipping+glaze">dipping glaze</a> contains 3500g powder (US gallon 2800g). At least 1% bentonite, or 35g, is needed to make any difference. The more typical 2% would be 70g. If you have a great mixer and can make a <a  href="https://digitalfire.com/glossary/slurry">slurry</a> having double the concentration of this one, then to deliver the minimum bentonite for a gallon of the glaze would require 1/3 gallon of this! While the added bentonite might help somewhat, the effects of all that extra water will cancel the benefits.<br />
+</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">The ball clay you use to suspend your glaze is important!</h3>
+<br /><a alt="Running behavior of two glaze slurries" href="https://digitalfire.com/picture/975"><img class="flexleft50" alt="Running behavior of two glaze slurries"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/glossary/fugsucafew.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/975">click here</a> to see it.</p>
+<p>I poured 4 teaspoons of two glazes onto a non-absorbent butcher’s board and let them sit for a minute, then inclined the board. The one on the right employs Gleason <a  href="https://digitalfire.com/material/80">Ball clay</a>, the left one has Old Hickory #5 ball clay. Neither has any <a  href="https://digitalfire.com/glossary/rheology">rheology</a> modifier additions. The one on the right has <a  href="https://digitalfire.com/glossary/suspension">settled</a> and, on incline of the board, the watery upper is running off. The other has gelled and the whole thing is running downward slowly. Below that you can see where I have begun to sponge them off, the one on the right is sticky. The most amazing thing about this: This difference appears despite the fact that there is only 7% ball clay in this heavily <a  href="https://digitalfire.com/glossary/frit">fritted</a> recipe.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/understanding+glaze+slurry+properties">Understanding Glaze Slurry Properties</a>
+<br /><i>It is possible to have a glaze <a  href="https://digitalfire.com/glossary/slurry">slurry</a> that is a joy to use, but only if you understand the <a  href="https://digitalfire.com/glossary/physical+testing">physics</a> of the materials in the glaze recipe.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/rheo">Rheology of a Ceramic Slurry</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ep+kaolin">EP Kaolin</a>
+<br /><i>A <a  href="https://digitalfire.com/material/925">kaolin</a> that gels slurries (thus handy to suspend ceramic glazes). It is plastic and fires white enough that it is also valuable in <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> bodies.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/feldspar+glazes">Feldspar Glazes</a>
+<br /><i><a  href="https://digitalfire.com/material/310">Feldspar</a> is a natural mineral that, by itself, is the most similar to a high temperature <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> glaze. Thus it is common to see alot of it in <a  href="https://digitalfire.com/glossary/glaze+recipes">glaze recipes</a>. Actually, too much.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/ceramic+glaze+defects">Ceramic Glaze Defects</a>
+<br /><i><a  href="https://digitalfire.com/glossary/ceramic+glaze+defects">Ceramic glaze defects</a> include things like <a  href="https://digitalfire.com/glossary/pinholing">pinholes</a>, <a  href="https://digitalfire.com/trouble/glaze+blisters">blisters</a>, <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a>, <a  href="https://digitalfire.com/glossary/glaze+shivering">shivering</a>, <a  href="https://digitalfire.com/glossary/leaching">leaching</a>, <a  href="https://digitalfire.com/trouble/crawling">crawling</a>, <a  href="https://digitalfire.com/glossary/cutlery+marking">cutlery marking</a>, <a  href="https://digitalfire.com/glossary/glaze+bubbles">clouding</a> and color problems.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Troubles</td>
+<td>
+<a href="https://digitalfire.com/trouble/powdering%2c+cracking+and+settling+glazes">Powdering, Cracking and Settling Glazes</a>
+<br /><i>Powdering and dusting glazes are difficult and a dust hazard. Shrinking and cracking glazes fall off and <a  href="https://digitalfire.com/trouble/crawling">crawl</a>. The cause is the wrong amount or type of clay.</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

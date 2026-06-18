@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>EP Kaolin</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="A kaolin that gels slurries (thus handy to suspend ceramic glazes). It is plastic and fires white enough that it is also valuable in porcelain bodies.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+March 2026: We are doing major upgrades to code here, please be patient regarding any issues. If any page is not working for a period of hours, please contact us. Thank you.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item active"><a class="nav-link" href="/material/list">Materials <span class="sr-only">(current)</span></a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=material" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:center; vertical-align:top;">Feb 14-15, 2026 - <b>Major Server <a href="https://digitalfire.com">Upgrade</a> Done</b></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table>
+<ul class="nav nav-tabs pt-1" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="material-tab" data-toggle="tab" href="#material" role="tab" aria-controls="material" aria-selected="true">Materials for Ceramics</a>
+  </li>
+</ul>
+<div class="tab-content mb-3" id="myTabContent" style="border-right:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #ddd; padding:10px;">
+  <div class="tab-pane fade show active" id="material" role="tabpanel" aria-labelledby="material-tab">
+<a href="/material/list/1-9">1-9</a> | <a href="/material/list/A">A</a> | <a href="/material/list/B">B</a> | <a href="/material/list/C">C</a> | <a href="/material/list/D">D</a> | <a href="/material/list/E">E</a> | <a href="/material/list/F">F</a> | <a href="/material/list/Frits">Frits</a> | <a href="/material/list/G">G</a> | <a href="/material/list/H">H</a> | <a href="/material/list/I">I</a> | <a href="/material/list/J">J</a> | <a href="/material/list/K">K</a> | <a href="/material/list/L">L</a> | <a href="/material/list/M">M</a> | <a href="/material/list/N">N</a> | <a href="/material/list/O">O</a> | <a href="/material/list/P">P</a> | <a href="/material/list/Q">Q</a> | <a href="/material/list/R">R</a> | <a href="/material/list/S">S</a> | <a href="/material/list/T">T</a> | <a href="/material/list/U">U</a> | <a href="/material/list/V">V</a> | <a href="/material/list/W">W</a> | <a href="/material/list/X">X</a> | <a href="/material/list/Y">Y</a> | <a href="/material/list/Z">Z</a><br />
+<nobr></nobr>
+</div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>EP Kaolin</h1>
+<p><b>Alternate Names</b>: EPK, Edgar Plastic Kaolin, EPK Kaolin</p>
+<p><b>Description</b>: Plastic White Firing Kaolin</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/oxide">Oxide</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/analysis">Analysis</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/formula">Formula</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/formula">Tolerance</a></th>
+</tr></thead><tbody>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/cao">CaO</a></td>
+<td class="text-right"">0.18%</td>
+<td class="text-right">
+0.01
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/k2o">K2O</a></td>
+<td class="text-right"">0.33%</td>
+<td class="text-right">
+0.01
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/mgo">MgO</a></td>
+<td class="text-right"">0.10%</td>
+<td class="text-right">
+0.01
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/na2o">Na2O</a></td>
+<td class="text-right"">0.06%</td>
+<td class="text-right">
+-
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/tio2">TiO2</a></td>
+<td class="text-right"">0.37%</td>
+<td class="text-right">
+0.01
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/al2o3">Al2O3</a></td>
+<td class="text-right"">37.36%</td>
+<td class="text-right">
+1.00
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/p2o5">P2O5</a></td>
+<td class="text-right"">0.24%</td>
+<td class="text-right">
+-
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/sio2">SiO2</a></td>
+<td class="text-right"">45.73%</td>
+<td class="text-right">
+2.08
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/fe2o3">Fe2O3</a></td>
+<td class="text-right"">0.79%</td>
+<td class="text-right">
+0.01
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/loi">LOI</a></td>
+<td class="text-right">13.20%</td><td class="text-right">n/a</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/h2o">H2O</a></td>
+<td class="text-right">1.40%</td><td class="text-right">n/a</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/so3">SO3</a></td>
+<td class="text-right">0.21%</td><td class="text-right">n/a</td></tr>
+<tr><td colspan="2">Oxide Weight</td><td colspan="2" class="text-right">
+232.50
+</td></tr>
+<tr><td colspan="2" class="text-right"><a href="https://digitalfire.com/glossary/formula+weight">Formula Weight</a></td><td colspan="2" style="text-align:right">
+272.92
+</td></tr>
+</tbody></table>
+<h4>Notes</h4><p>If you have issues getting this there are alternatives. If <a  href="https://digitalfire.com/material/291">EPK</a> is being used in a glaze and the percentage is low (e.g. 10-20%) switching to another will likely have minimal effect on fired properties. However, <a  href="https://digitalfire.com/glossary/slurry">slurry</a> properties might change. EPK helped <a  href="https://digitalfire.com/glossary/dipping+glaze">dipping glaze</a> slurries to gel, making them <a  href="https://digitalfire.com/glossary/thixotropy">thixotropic</a>. It was also sticky. Both <a  href="https://digitalfire.com/material/831">Grolleg</a> and <a  href="https://digitalfire.com/material/2145">New Zealand kaolin</a> impart similar properties. Up to about 25% could be tolerated in glazes before <a  href="https://digitalfire.com/glossary/drying+crack">drying cracks</a> became an issue. Pioneer <a  href="https://digitalfire.com/material/925">kaolin</a> didn’t gel but <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> was about the same. #6 Tile kaolin is far more plastic and, like Pioneer, but isn’t thixotropic, 20% may be the maximum to avoid drying cracks (if more kaolin is needed or there are other plastics in the recipe, e.g. <a  href="https://digitalfire.com/material/806">Gerstley Borate</a>, then a mix of <a  href="https://digitalfire.com/glossary/calcination">calcined</a> and raw kaolin can be tuned to produce the right balance of <a  href="https://digitalfire.com/glossary/suspension">suspension</a> and dry hardness with good drying).<br />
+<br />
+In porcelains, EPK fires whiter than most other North American kaolins. If whiteness is important consider substituting New Zealand or Grolleg kaolins. Switching for Grolleg will improve body whiteness somewhat. Depending on the percentage, New Zealand kaolin could make the body fire much whiter. Of course, these two kaolins are much more expensive. A practical approach is to substitute whichever kaolin you have and assess fired color and plasticity. If plasticity is lost just add a the amount of <a  href="https://digitalfire.com/material/106">bentonite</a> needed to restore it (e.g. 1-3%). If body workability is most important then #6 Tile kaolin is the right choice, it is the most plastic North American kaolin (actually, it might increase plasticity so much that the percentage of bentonite can be dropped).<br />
+<br />
+In review: EPK is a secondary water-washed kaolin mined in Florida, USA. EPK, when wet, is sticky and thixotropic, for these reasons it is considered by many to be the best North American kaolin for use in <a  href="https://digitalfire.com/glossary/suspension">suspending</a> ceramic glazes. 15-20% will normally make the glaze gel slightly, thus when a piece is immersed in the slurry and removed it drips very little and the wet glaze layer stays in place for the time it takes to dewater. And it dries relatively hard. Since EPK is close to theoretical kaolin <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a>, it will substitute for any other such kaolins chemically (but not necessarily phyically). If the percentage is greater than 25% consider <a  href="https://digitalfire.com/glossary/splitting">splitting</a> it with calcined kaolin to prevent <a  href="https://digitalfire.com/trouble/crawling">crawling</a>.<br />
+<br />
+EPK is whiter burning than other American kaolins, this is due to its relatively low iron content, but more importantly the low level of <a  href="https://digitalfire.com/oxide/tio2">TiO2</a>: 0.4 TiO2. While this is high compared to Grolleg and Super Standard <a  href="https://digitalfire.com/glossary/porcelain">Porcelain</a> kaolins (about 0.05%), but other common American kaolins have multiple times more TiO2 than EPK!<br />
+<br />
+EPK has excellent casting properties. But it is not plastic enough for <a  href="https://digitalfire.com/glossary/throwing">throwing</a> bodies, it must be augmented by a more plastic kaolin (like 6Tile) or by a <a  href="https://digitalfire.com/glossary/plasticity">plasticizer</a> like bentonite, smectite or hectorite. Or, if whiteness can be sacrificed, by a <a  href="https://digitalfire.com/material/80">ball clay</a>.<br />
+<br />
+This material is mined and processed in Edgar Florida. It is extracted hydraulically (a high-pressure stream of water is used to wash the clay/sand mix from the bank into a small lake). The slurry is pumped and transported to vibrating screens that separate out the sand and grade it into sizes. The clay that passes the screens is pumped into a pond and <a  href="https://digitalfire.com/glossary/suspension">settled</a> with the aid of a flocculant. The slurry is then dried and the flocculant neutralized. The main product at the mine is high-quality white sand, the clay is a byproduct. The company is confident that there are reserves for the next hundred years.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">What makes EP Kaolin unique? Are others as good?</h3>
+<br /><a alt="EPK kaolin slurry gels" href="https://digitalfire.com/picture/3336"><img class="flexleft50" alt="EPK kaolin slurry gels"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/bpqqht8fdq.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3336">click here</a> to see it.</p>
+<p>In <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>, <a  href="https://digitalfire.com/material/291">EPK</a>, or <a  href="https://digitalfire.com/material/291">EP Kaolin</a>, is used in <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a> and glazes. Top right: Pure EPK is fairly plastic on <a  href="https://digitalfire.com/glossary/kneading+clay">wedging</a>. But during the <a  href="https://digitalfire.com/glossary/throwing">throwing</a> process, it splits at the rim like this. The forming properties that it does have thus seem to be as much related to its stickiness and cohesion as <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a>. Without the help of <a  href="https://digitalfire.com/material/106">bentonite</a> or <a  href="https://digitalfire.com/material/80">ball clay</a> this would not be able to host the addition of <a  href="https://digitalfire.com/material/310">feldspar</a> and <a  href="https://digitalfire.com/material/1245">silica</a> to make a usable <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> or <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a>. But EPK shines in what it does as a <a  href="https://digitalfire.com/glossary/slurry">slurry</a>. Left: This slurry has been mixed to only 1.15 <a  href="https://digitalfire.com/glossary/specific+gravity">specific gravity</a> and forms a <a  href="https://digitalfire.com/glossary/thixotropy">thixotropic</a> gel that clings to the spatula in an even layer. Bottom: This low specific gravity gel is thick enough that it will hold this heavy spatula vertical! Considering that our typical glazes have a specific gravity of 1.45 yet are still quite fluid it is evident just how much EPK can gel (and suspend a <a  href="https://digitalfire.com/glossary/suspension">suspension</a>). It is thus no surprise that it is the <a  href="https://digitalfire.com/material/925">kaolin</a> of choice in ceramic glazes. Are there other sticky kaolins that gel like this? Yes. <a  href="https://digitalfire.com/material/831">Grolleg</a> and <a  href="https://digitalfire.com/material/2145">New Zealand kaolin</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">EPK fired test bars, data, certificate and the data</h3>
+<br /><a alt="Results of EPK testing" href="https://digitalfire.com/picture/3337"><img class="flexleft50" alt="Results of EPK testing"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/project/vjzltsyrel.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3337">click here</a> to see it.</p>
+<p>All of the test bars have been fired in this project to <a  href="https://digitalfire.com/glossary/characterization">characterize</a> a shipment of <a  href="https://digitalfire.com/material/291">EPK</a> (from cone 7-10 and 10R bottom to top). The dry and fired lengths and the dry and fired weights testdata was measured and entered into our <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a> account. The results are shown in the red-titled columns (the <a  href="https://digitalfire.com/glossary/drying+shrinkage">drying shrinkage</a>, <a  href="https://digitalfire.com/glossary/firing+shrinkage">firing shrinkage</a>, absorption). The weights from the <a  href="https://digitalfire.com/glossary/sieve">sieve</a> analysis are also shown. And the calculation of <a  href="https://digitalfire.com/glossary/water+content">water content</a> of the plastic material (a very high 33.4%) and <a  href="https://digitalfire.com/glossary/loi">LOI</a> (14.5%). We also like to take and upload a photo of the oversize material from the sieve analyses (to compare with past shipments) and of their manufacturers certificate of analysis.<br />
+<br />
+Notice the data that the manufacturer considers important to include on the certificate that they send with the shipment: Particle size, particle <a  href="https://digitalfire.com/glossary/surface+area">surface area</a> and moisture content. Of course, they would not be able to do all the tests we do. But our product is affected by the properties of the material, so we have to test.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">#6 Tile Kaolin 2021 vs EP Kaolin 2020: Fired properties tell an unexpected story</h3>
+<br /><a alt="EP Kaolin fired test bars" href="https://digitalfire.com/picture/3050"><img class="flexleft50" alt="EP Kaolin fired test bars"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/bwxq8sba3z.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3050">click here</a> to see it.</p>
+<p>These test bars are fired at <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10 reduction</a> (top) and 10, 9 and 8 oxidation (downward) - they demonstrate the importance of measuring <a  href="https://digitalfire.com/glossary/physical+testing">physical properties</a>. The charts for each show data for <a  href="https://digitalfire.com/glossary/drying+shrinkage">drying shrinkage</a>, <a  href="https://digitalfire.com/glossary/firing+shrinkage">firing shrinkage</a> and <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a> (water absorption). The left bars are #6 Tile <a  href="https://digitalfire.com/material/925">kaolin</a> and the right are <a  href="https://digitalfire.com/material/291">EPK</a>. These two kaolins had almost the same drying shrinkages in this <a  href="https://digitalfire.com/test/shab">SHAB test</a>, that suggests the same <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a>. And the EPK fires whiter. So it should make a better plastic <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a>, right? Not so. In reality, #6 Tile kaolin is far more plastic - EPK requires the addition of significant <a  href="https://digitalfire.com/material/106">bentonite</a> to equal it (bentonite is dirty and that compromises whiteness). And EPK fires less <a  href="https://digitalfire.com/glossary/vitreous">vitreous</a> - when <a  href="https://digitalfire.com/material/310">feldspar</a> is added color darkens. And, although both have extremely high firing shrinkages, the EPK is much higher than the #6 Tile (even though it is not as vitreous). Bottom line: #6 Tile is a better kaolin for <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Two batches of EP Kaolin tested quite differently in 2018</h3>
+<br /><a alt="Two different batches of EPK" href="https://digitalfire.com/picture/2373"><img class="flexleft50" alt="Two different batches of EPK"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/qmjsw27f8i.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2373">click here</a> to see it.</p>
+<p>The <a  href="https://digitalfire.com/material/291">EP kaolin</a> has been mixed 70:30 with <a  href="https://digitalfire.com/material/1070">nepheline syenite</a>. This creates a body that matures below <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>. And it enables comparing the degree to which the two kaolins influence <a  href="https://digitalfire.com/glossary/vitrification">vitrification</a> (and their contribution to fired color in a <a  href="https://digitalfire.com/glossary/vitreous">vitreous</a> body). The darker one is more plastic, has higher <a  href="https://digitalfire.com/glossary/drying+shrinkage">drying shrinkage</a> more <a  href="https://digitalfire.com/glossary/soluble+salts">soluble salts</a>. These dry test bars were fired at cone 4-8 and had similar fired shrinkages and porosities. However, the one on the right fired whiter at all temperatures. These differences would impact the <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> and drying shrinkage of bodies containing a significant percentage of the material. They would also influence the ability of this <a  href="https://digitalfire.com/material/925">kaolin</a> to suspend slurries.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">EPK fired bar (top) vs Grolleg kaolin at cone 10R. Why shrinking more?</h3>
+<br /><a href="https://digitalfire.com/picture/1819"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/ngjk9peqir.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1819">click here</a> to see it.</p>
+<p>From these <a  href="https://digitalfire.com/test/shab">SHAB test</a> bars <a  href="https://digitalfire.com/material/291">EP kaolin</a> appears to have a much higher <a  href="https://digitalfire.com/glossary/firing+shrinkage">fired shrinkage</a>. But half of that happened during drying. Still, <a  href="https://digitalfire.com/material/291">EPK</a> shrinks 4% more during firing. Yet <a  href="https://digitalfire.com/material/831">Grolleg</a> produces more <a  href="https://digitalfire.com/glossary/vitrification">vitrified</a> porcelains. The EPK bar also appears to be whiter. Yet in a <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> body, Grolleg fires whiter. That higher <a  href="https://digitalfire.com/glossary/drying+shrinkage">drying shrinkage</a> proves that EPK is much more plastic, right? Not really. <a  href="https://digitalfire.com/glossary/throwing">Throwing</a> porcelains containing either require <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> augmentation using similar percentages of <a  href="https://digitalfire.com/material/106">bentonite</a>. What do we learn? To compare materials like this we need to see them "playing on the team", in a recipe working with other materials. Don't rely on material data sheets, do the testing in your recipes.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A 70:30 mix of EPK:Nepheline Syenite has gone to mush</h3>
+<br /><a href="https://digitalfire.com/picture/1829"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/fiqq8qbpfv.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1829">click here</a> to see it.</p>
+<p>This was plastic and moldable two days ago, now it is incredibly sticky. It is being compared with 5 other <a  href="https://digitalfire.com/material/925">kaolin</a>:nepheline mixes, none of them have reacted in this way. The material is sourced from two mines, the other mine does not do this.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Two kaolins with different drying performance: </h3>
+<h4 style="color:#888888; margin-top:0px;">One always cracks, the other does not. Why?</h4>
+<br /><a href="https://digitalfire.com/picture/2245"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/emdbseqqrk.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2245">click here</a> to see it.</p>
+<p>Both of these bodies are 70:30 <a  href="https://digitalfire.com/material/925">kaolin</a>:feldspar. The kaolin on the left (Tile #6) contains finer particles and some natural <a  href="https://digitalfire.com/material/106">bentonitic</a> material, giving it higher <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> and better ability to absorb drying stresses. The <a  href="https://digitalfire.com/material/291">EPK</a> on the right is coarser and has less ability to redistribute stress. As the mugs dry, circumferential stresses develop near the base. The body cannot stretch enough to accommodate them, so cracks form around the bottom (or, as happens here, leave residual stresses that reveal later in <a  href="https://digitalfire.com/glossary/bisque">bisque firing</a>). The Tile #6 body, having greater “stress-relief plasticity”, can tolerate the strain and dries without cracking.<br />
+<br />
+Is it true that during forming, the larger kaolin particles line up concentrically to the center, producing more shrinkage along radius lines than along tangents? Not likely. Clay platelets do orient during forming, but the orientation tends to be parallel to the forming surface, not radially oriented toward the center. Further, shrinkage alone does not predict cracking; uneven shrinkage does. Despite efforts to prevent it, we could not eliminate it.<br />
+<br />
+While these specific cracks appear during our <a  href="https://digitalfire.com/glossary/bisque">bisque</a> firing, as noted, the cause originates earlier during drying. Uneven shrinkage creates residual tensile stresses in the clay. While the dried ware may appear sound, the body weakens during early firing when organic materials burn out and particle bonds weaken, releasing the stored stresses as the circumferential crack.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Thrown pieces made from pure Grolleg and EP kaolins</h3>
+<h4 style="color:#888888; margin-top:0px;">This is how you compare plasticities</h4>
+<br /><a alt="Mugs thrown from two pure kaolins" href="https://digitalfire.com/picture/2197"><img class="flexleft50" alt="Mugs thrown from two pure kaolins"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/hs4nu1hyu4.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2197">click here</a> to see it.</p>
+<p>These have just been <a  href="https://digitalfire.com/glossary/throwing">thrown</a> on the wheel. I find it to be a foolproof method of comparing the <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> of two clays. They were <a  href="https://digitalfire.com/glossary/slurry+up">slurried up</a> and dewatered to about the same moisture content and the same amount was thrown to compare the size achievable. While the <a  href="https://digitalfire.com/material/831">Grolleg</a> is stickier and dewaters a little slower, it is not nearly as plastic as <a  href="https://digitalfire.com/material/291">EPK</a> (which itself is not that plastic compared to others). Curiously, <a  href="https://digitalfire.com/material/2145">New Zealand kaolin</a> (halloysite) is quite a bit less plastic than the Grolleg but it responds to plasticity augmentation (in <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> recipes) just as well as Grolleg (similar amounts of <a  href="https://digitalfire.com/material/106">bentonite</a> producing similar plasticities). And, bodies containing EPK also need about the same amount of bentonite to produce plasticity suitable for <a  href="https://digitalfire.com/glossary/throwing">throwing</a> large forms. So, the plasticity that a <a  href="https://digitalfire.com/material/925">kaolin</a> appears to have by itself is not completely indicative of what it will contribute to a body (if augmented with bentonite). The EPK used here is the darker and more plastic of the two varieties <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> receives.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">An effective test to judge the plasticity of a shipment of EP Kaolin</h3>
+<br /><a alt="Throwing EPK" href="https://digitalfire.com/picture/1302"><img class="flexleft50" alt="Throwing EPK"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/milxyheduj.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1302">click here</a> to see it.</p>
+<p>This shipment of light <a  href="https://digitalfire.com/material/291">EPK</a> (there are two versions, light and dark) is just barely plastic enough to make this cylinder with a slight belly. Notice the splits on the rim, these are indicative of the shortness (low <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a>). The cohesiveness of the material, as much as plasticity, gives it a toughness to survive the stresses of <a  href="https://digitalfire.com/glossary/throwing">throwing</a> (an unique aspect of EPK).</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="https://digitalfire.com/mineral/kaolinite">Kaolinite</a>
+<br /><i>The most fundamental clay mineral. This mineral is found in nature in its purest form as <a  href="https://digitalfire.com/material/925">kaolin</a>. How</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/pioneer+kaolin">Pioneer Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/edgar+glass+sand">Edgar Glass Sand</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/kaolin">Kaolin</a>
+<br /><i>The purest of all clays in nature. Kaolins are used in porcelains and stonewares to impart whiteness, in glazes to supply <a  href="https://digitalfire.com/oxide/al2o3">Al2O3</a> and to suspend slurries.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/kao">Kaolin</a>
+<br /><i>Pure clay mineral, there are many brand names of varying purity and iron content.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Troubles</td>
+<td>
+<a href="https://digitalfire.com/trouble/glaze+slurry+is+difficult+to+use+or+settling">Glaze Slurry is Difficult to Use or Settling</a>
+<br /><i>Understanding glaze <a  href="https://digitalfire.com/glossary/slurry">slurry</a> <a  href="https://digitalfire.com/glossary/rheology">rheology</a> is the key to solving problems and creating a <a  href="https://digitalfire.com/glossary/suspension">suspension</a> that does not settle out, applies well, dries crack free.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/thixotropy">Thixotropy</a>
+<br /><i><a  href="https://digitalfire.com/glossary/thixotropy">Thixotropy</a> is a property of ceramic slurries of high <a  href="https://digitalfire.com/glossary/water+content">water content</a>. <a  href="https://digitalfire.com/glossary/thixotropy">Thixotropic</a> suspensions flow when moving but gel after sitting (for a few moments more depending on application). This phenomenon is helpful in getting even, drip-free glaze coverage.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="https://digitalfire.com/project/testing+a+new+load+of+ep+kaolin">Testing a New Load of EP Kaolin</a>
+<br /><i>Kaolins can vary in many ways. Yet they are the foundation of all <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> and light <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> <a  href="https://digitalfire.com/glossary/clay+body">clay body</a> recipes. It is vital to test each incoming shipment of material. Problematic brands can even require some testing on every pallet.</i>
+</td>
+</tr>
+</tbody></table>
+<h3>Data</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<th scope="row">Pyrometric Cone Equivalent</th>
+<td>35</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

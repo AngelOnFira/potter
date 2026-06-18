@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Project: Medalta Ball Pitcher Slip Casting Mold via 3D Printing</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="A project to make a reproduction of a Medalta Potteries piece that was done during the 1940s. This is the smallest of the three sizes they made.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+March 2026: We are doing major upgrades to code here, please be patient regarding any issues. If any page is not working for a period of hours, please contact us. Thank you.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item active" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=project" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:center; vertical-align:top;">Feb 14-15, 2026 - <b>Major Server <a href="https://digitalfire.com">Upgrade</a> Done</b></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Projects</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a title="15" href="https://digitalfire.com/project/15">2019 Jiggering-Casting Project of Medalta 66 Mug</a><br /><a title="54" href="https://digitalfire.com/project/54">A cereal bowl jigger mold made using 3D printing</a><br /><a title="33" href="https://digitalfire.com/project/33">Beer Bottle Master Mold via 3D Printing</a><br /><a title="61" href="https://digitalfire.com/project/61">Better porosity for Brown Sugar Savers</a><br /><a title="48" href="https://digitalfire.com/project/48">Build a kiln monitoring device</a><br /><a title="69" href="https://digitalfire.com/project/69">Celebration Project</a><br /><a title="60" href="https://digitalfire.com/project/60">Coffee Mug Slip Casting Mold via 3D Printing</a><br /><a title="29" href="https://digitalfire.com/project/29">Comparing the Melt Fluidity of 16 Frits</a><br /><a title="52" href="https://digitalfire.com/project/52">Cookie Cutting clay with 3D printed cutters</a><br /><a title="41" href="https://digitalfire.com/project/41">Evaluating a clay's suitability for use in pottery</a><br /><a title="55" href="https://digitalfire.com/project/55">Make a mold for 4-gallon stackable calciners</a><br /><a title="49" href="https://digitalfire.com/project/49">Make Your Own Pyrometric Cones</a><br /><a title="47" href="https://digitalfire.com/project/47">Make your own sieve shaker to process ceramic slurries</a><br /><a title="40" href="https://digitalfire.com/project/40">Making a high quality ceramic tile</a><br /><a title="46" href="https://digitalfire.com/project/46">Making a Plaster Table</a><br /><a title="37" href="https://digitalfire.com/project/37">Making Bricks</a><br /><a title="50" href="https://digitalfire.com/project/50">Making our own kiln posts using a hand extruder</a><br /><button type="button" class="btn btn-dark">Medalta Ball Pitcher Slip Casting Mold via 3D Printing</button><br /><a title="34" href="https://digitalfire.com/project/34">Medalta Jug Master Mold Development</a><br /><a title="63" href="https://digitalfire.com/project/63">Mold Natches</a><br /><a title="32" href="https://digitalfire.com/project/32">Mother Nature's Porcelain - Plainsman 3B</a><br /><a title="66" href="https://digitalfire.com/project/66">Mug Handle Casting</a><br /><a title="39" href="https://digitalfire.com/project/39">Nursery plant pot mold via 3D printing</a><br /><a title="30" href="https://digitalfire.com/project/30">Pie-Crust Mug-Making Method</a><br /><a title="35" href="https://digitalfire.com/project/35">Plainsman 3D, Mother Nature's Porcelain/Stoneware</a><br /><a title="38" href="https://digitalfire.com/project/38">Project to Document a Shimpo Jiggering Attachment</a><br /><a title="36" href="https://digitalfire.com/project/36">Roll, Cut, Pull, Attach Handle-making Method</a><br /><a title="23" href="https://digitalfire.com/project/23">Slurry Mixing and Dewatering Your Own Clay Body</a><br /><a title="24" href="https://digitalfire.com/project/24">Testing a New Load of EP Kaolin</a><br /><a title="44" href="https://digitalfire.com/project/44">Using milk as a glaze</a></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Medalta Ball Pitcher Slip Casting Mold via 3D Printing</h1>
+<p>This project will follow progress as I create a master mold for use at <a  href="http://rongetty.com/category/company/27">Medalta Potteries</a> in Medicine Hat. For information on the general track I will take check the beer bottle and mug mold project (linked below). Various aspects of this shape are quite challenging (e.g the handle, the shape of the lip, the angled foot). I will post pictures as I repeat cycles, version numbering where appropriate. When it is all working well I will remove all but the last successful version.<p style="clear:left"></p></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Medalta Ball Pitcher</h3>
+<br /><a href="https://digitalfire.com/picture/3409"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/wwfjzbypr4.4484869089_2swo.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3409">click here</a> to see it.</p>
+<p>Here is an example of one that was for sale on Ebay. The inset bottom will be a challenge, for version 1 we will likely settle for a flat bottom.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">3D mockup for 1940s Medalta Potteries ball pitcher</h3>
+<br /><a alt="Medalta ball pitcher 3D drawing" href="https://digitalfire.com/picture/3410"><img class="flexleft50" alt="Medalta ball pitcher 3D drawing"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/fhdhbyyuy8.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3410">click here</a> to see it.</p>
+<p>No molds have survived so we are going to start from scratch. We will use <a  href="https://digitalfire.com/picture/2453">Fusion 360</a> and 3D prints in <a  href="https://digitalfire.com/picture/3701">PLA</a> to create a block mold to make a rubber <a  href="https://digitalfire.com/picture/3728">case mold</a>. Learning to draw this rewarded me with some new <a  href="https://digitalfire.com/glossary/3d+design">3D drawing</a> skills. The geometry of the lip is challenging. It appears the piece will need to be cast with a full top and the lip shape and pouring hole cut manually (as was done originally at <a  href="http://rongetty.com/category/company/27">Medalta Potteries</a>). I will likely have to create a <a  href="https://digitalfire.com/glossary/3d-printing">3D-printed</a> PLA template as a cutting guide to get the lip contour more correct and consistent than they were able to do. Although not on the original, we are going to include a <a  href="https://digitalfire.com/glossary/foot+ring">foot ring</a> for easier glazing and better stability during forming and firing.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">CAD tools vs modelling tools</h3>
+<br /><a alt="Fusion 360 T-Splines made this model possible" href="https://digitalfire.com/picture/3445"><img class="flexleft50" alt="Fusion 360 T-Splines made this model possible"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/cdpac9tbcj.38.54 pm.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3445">click here</a> to see it.</p>
+<p>I have been struggling to recreate a Medalta <a  href="https://digitalfire.com/project/59">ball pitcher</a> using the <a  href="https://digitalfire.com/glossary/3d+design">solid modelling</a> tools in <a  href="https://digitalfire.com/picture/2453">Fusion 360</a>. The example on the left shows the issue (it was made by revolving a cross-section sketch and doing a cutout on the top). But I need a spherical body with an oval neck, the <a  href="https://digitalfire.com/glossary/3d+design">CAD</a> design tools don't enable that.<br />
+<br />
+The answer is <a  href="https://digitalfire.com/glossary/3d+modeling">3D modelling</a>. I veered away from Fusion 360 and searched and tried some 3D modelling apps. Nothing practical. Then I hired a freelancer who claimed to be able to do it in Fusion 360. He could not. My motivation to prove to him it is possible brought the solution: Revolving a fit point spline outline, in the form modelling workspace, to create a 3D T-Spline model. The points, lines and faces can be freely moved and the lines can be creased. This works really well, and it is going to open up for me the creation of very organic shapes. It took AutoDesk engineers years to get T-Splines working, but they are magic math now.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Warping during a large print - one solution is multiple pieces</h3>
+<br /><a alt="Cutting a 3D print into multiple pieces" href="https://digitalfire.com/picture/3426"><img class="flexleft50" alt="Cutting a 3D print into multiple pieces"  loading="lazy" src="https://digitalfire.com/4sight/images/pictures/pfn1vraqyu.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3426">click here</a> to see it.</p>
+<p>I am attempting to <a  href="https://digitalfire.com/glossary/3d-printing">3D print</a> a shell for making a rubber block mold (the base of a Medalta <a  href="https://digitalfire.com/project/59">ball pitcher</a>). This is almost at the limit of what will fit on the print-bed. It would take 30 hours. But at about 10 hours it did this: All four outer corners warped upwards. I have a larger printer but it will do the same thing! What is the solution? Cut it up into smaller pieces and print each of them at the best orientation (bottom right), this saves significant printing time and achieves better quality. For this piece, the inside surface on the center section is most important, printing it upright with <a  href="https://digitalfire.com/glossary/infill+and+support">printed support</a> took about 4 hours. All the other pieces print in about 1 hour each. Tape (either masking or MicroPore) can be used effectively to hold everything together for super-gluing or epoxy. Much of the tape can be left in place during the pour. The rubber form has thin 1cm walls, but these are supported by side-rails when <a  href="https://digitalfire.com/material/1124">plaster</a> is poured.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Medalta small ball pitcher first 3D print of block mold</h3>
+<br /><a href="https://digitalfire.com/picture/3457"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/project/qy6wnts6ho.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3457">click here</a> to see it.</p>
+<p>I cut it in two horizontally in the <a  href="https://digitalfire.com/glossary/3d+slicer">slicer software</a> printing the top part upside down. This minimizes the amount of <a  href="https://digitalfire.com/glossary/infill+and+support">printed support</a> that needs to be printed (thus greatly reducing print time). This was done on my Prusa <a  href="https://digitalfire.com/picture/3489">MK4</a>, the two halves mate perfectly. These two took about 6 hours to print. The support easily releases (I use a needle nose pliers).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Printed mold halves taped, railed, ready to fill</h3>
+<br /><a href="https://digitalfire.com/picture/3463"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/project/88aii6jmai.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3463">click here</a> to see it.</p>
+<p>Filling the printed form, from the back, with <a  href="https://digitalfire.com/material/1124">plaster</a> makes it rigid for the next step, pouring a <a  href="https://digitalfire.com/picture/3728">case mold</a>. The flimsiness of the printed shell is actually an advantage, the weight of the plaster pushes the mating surfaces down onto the table. The rails impose perfectly square corners and flat sides. I will pour the plaster just to the top of the printed part (not the top of the rails).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">The plaster-filled block mold negatve</h3>
+<br /><a href="https://digitalfire.com/picture/3458"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/project/518jr5bbaz.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3458">click here</a> to see it.</p>
+<p>The two parts mate perfectly, the slight seam is easy to remove from the <a  href="https://digitalfire.com/material/1124">plaster</a> negative that will be poured against this. Although polygons are visible on the inner side, they will not show on glazed pieces. Notice there is no provision for matches or spare, the reason will be clear later in the process.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Ready to pour a block mold</h3>
+<br /><a href="https://digitalfire.com/picture/3462"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/project/ok7mhe9gq2.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3462">click here</a> to see it.</p>
+<p>I have sanded the rings on the inside top and bottom - just smooth enough the release won't be too difficult (on the <a  href="https://digitalfire.com/material/1124">plaster</a> block mold and will be able to smooth them more effectively). I also applied some Murphys <a  href="https://digitalfire.com/url/3534">Oil Soap</a> on the those sections. Now it is just a matter of filling this with plaster.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Two block molds are ready for casting working molds</h3>
+<br /><a href="https://digitalfire.com/picture/3460"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/nbeade5skt.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3460">click here</a> to see it.</p>
+<p>At this stage any imperfections in the <a  href="https://digitalfire.com/glossary/3d-printing">3D print</a> are easily removed from the <a  href="https://digitalfire.com/material/1124">plaster</a> surface.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Block molds railed ready to pour working molds</h3>
+<br /><a alt="Medalta ball pitcher block molds" href="https://digitalfire.com/picture/3465"><img class="flexleft50" alt="Medalta ball pitcher block molds"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/project/7vzgqldxng.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3465">click here</a> to see it.</p>
+<p>The <a  href="https://digitalfire.com/material/1124">plaster</a> block molds have been oiled using Murphys <a  href="https://digitalfire.com/url/3534">Oil Soap</a>. I printed the <a  href="https://digitalfire.com/glossary/side+rails">side rails</a> to fit (by measuring the lengths and widths precisely and dividing them by two).1.7kg of plaster was enough to fill them both.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">First working mold ready for pouring</h3>
+<br /><a href="https://digitalfire.com/picture/3466"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/project/dcnqwtkzxk.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3466">click here</a> to see it.</p>
+<p>Two halves of my first test working mold are ready. I'll put them in our lab dehyrator for 6 hours at 150F to dry them out over night. I'll cast the first pieces tomorrow using our new recipe for <a  href="https://plainsmanclays.ca/data/index.php?product=12880">M370</a> Casting.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">First ball pitcher casts successful. Sort of.</h3>
+<br /><a href="https://digitalfire.com/picture/3470"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/project/52dtc6haoi.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3470">click here</a> to see it.</p>
+<p>The top has not yet been trimmed. We first tried casting this using a fast-casting <a  href="https://digitalfire.com/glossary/clay+body">clay body</a>, but the process was very quick and the pitcher dried so fast that by the time I got it out of the mold it was too brittle to cut properly with a fettling knife. This is a second cast, using <a  href="https://plainsmanclays.ca/data/index.php?product=12880">M370C</a>. It casts about three times slower (3-hour mold cycle time) but there are no issues with cutting the top to shape. Well, actually there are - it is very difficult to get the shape right, a template is needed There is an issue with the handle also - it is too close to the body and too thin and delicate.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Version 4 Ball Pitcher 3D printed block mold</h3>
+<br /><a alt="3D-printing v4 of Medalta ball pitcher mold" href="https://digitalfire.com/picture/3491"><img class="flexleft50" alt="3D-printing v4 of Medalta ball pitcher mold"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/yen5owqq38.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3491">click here</a> to see it.</p>
+<p>This project continues to demonstrate that multiple redesign, test cycles are a fact of life when making a new shape. <a  href="https://digitalfire.com/glossary/3d-printing">3D printing</a> makes this so much easier. Here are the changes from v3:<br />
+-This time I am not going to back fill with <a  href="https://digitalfire.com/material/1124">plaster</a>. I have heftier <a  href="https://digitalfire.com/glossary/side+rails">side rails</a> that should hold things firmly in place.<br />
+-The rim is now cast in into final shape.<br />
+-The includes a distinct footring, this will enable easier cleanup of glaze on the foot and a cleaner edge line.<br />
+-The handle is thicker and looks a little further from the body (to enable getting my fingers in there).<br />
+-I am using <a  href="https://digitalfire.com/glossary/mold+natches">natches</a> this time, the two 9mm holes will mount <a  href="https://digitalfire.com/picture/3483">embeds</a> (the retainer and embed are shown beside the holes) - they will position flush in the <a  href="https://digitalfire.com/picture/3728">case mold</a> (I will propagate the embeds into the working mold also).<br />
+-I am casting it upside down, positioning the spout between the lower handle join and the <a  href="https://digitalfire.com/glossary/foot+ring">foot ring</a>. We will drain for ten seconds then plug the hole using a plaster insert made to fit snug. Remaining slip inside will refill the hole and even build the wall a little thicker there (increasing wall strength by the lower handle join).<br />
+</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Ball pitcher v.4 case molds cast</h3>
+<br /><a alt="3D printed PLA mold to plaster case mold" href="https://digitalfire.com/picture/3493"><img class="flexleft50" alt="3D printed PLA mold to plaster case mold"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/project/n8glf5kokj.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3493">click here</a> to see it.</p>
+<p>We are just using pottery <a  href="https://digitalfire.com/material/1124">plaster</a> for now. Notice the <a  href="https://digitalfire.com/picture/3483">embeds</a> for the <a  href="https://digitalfire.com/glossary/mold+natches">natches</a>. This time I did not backfill the 3D prints, that is better - because they are flexible they were much easier to remove from the set plaster. The <a  href="https://digitalfire.com/glossary/side+rails">side rails</a> help keep them firmly in place and scotch tape on the backs was sufficient to keep them lined up at the join. These prints have a wall thickness of only <a  href="https://digitalfire.com/glossary/0.8mm+thickness">0.8mm</a>. I did not need to use a parting agent nor did I do any smoothing on the 3D prints (although some cleanup on the plaster <a  href="https://digitalfire.com/picture/3728">case mold</a> will be done). Next step: A working mold, version 4.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A method to make a two-part slip casting mold in one pour</h3>
+<br /><a alt="Complete case mold done in one pour of plaster" href="https://digitalfire.com/picture/3503"><img class="flexleft50" alt="Complete case mold done in one pour of plaster"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/felqey7u2c.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3503">click here</a> to see it.</p>
+<p>This is part of a project to create a new mold. I have to make various iterations to arrive at a final design where rubber will be used to make the <a  href="https://digitalfire.com/picture/3728">case mold</a>. But until then I will <a  href="https://digitalfire.com/glossary/3d-printing">3D print</a> the case mold directly. Here are some features that make this super cool:<br />
+-The center section is the jug being cast (two <a  href="https://digitalfire.com/glossary/pour+spout">pour spouts</a> will be glued on). It is hollow and will be split horizontally in <a  href="https://digitalfire.com/glossary/3d+slicer">the slicer</a> so the two halves can be printed with open side up and then glued together (with the aid of printed inner hoops to align them).<br />
+-The mold seams, where the two halves mate, is printed as a <a  href="https://digitalfire.com/glossary/0.8mm+thickness">0.4mm</a> membrane connected to the model and running vertically down its center.<br />
+-The membrane has 9.4mm holes for the insertion of standard mold <a  href="https://digitalfire.com/glossary/mold+natches">natch</a> pairs. During <a  href="https://digitalfire.com/material/1124">plaster</a> pour the membrane will flex somewhat, this will be a benefit to aligning the halves.<br />
+-The outer shell halves have no angles steeper than 45 degrees and thus print without printed supports. The <a  href="https://digitalfire.com/glossary/mold+shell+flange">flanges</a> were drawn using our rotation technique (see link below).<br />
+-The round flat base will be glued onto the bottom disk.<br />
+-Any rough surface sections of the model (printed on top of support), will be coated with a fluid epoxy to smooth them.<br />
+-A separate handle mold will be made.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">The v2 ball pitcher is way too big to 3D print. What now?</h3>
+<br /><a alt="Breaking a 3D print into four pieces" href="https://digitalfire.com/picture/3516"><img class="flexleft50" alt="Breaking a 3D print into four pieces"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/hgsbcbashr.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3516">click here</a> to see it.</p>
+<p>This is a <a  href="http://rongetty.com/category/company/27">Medalta Potteries</a> medium-sized <a  href="https://digitalfire.com/project/59">ball pitcher</a> block mold, version 2.0 - it has a more oval body shape. Upper left is the top section (actually, it is half of the top section, a base will fit on to create a three-piece working mold. There is to <a  href="https://digitalfire.com/glossary/3d-printing">3D print</a> something this large in one piece in a consumer <a  href="https://digitalfire.com/glossary/3d+printer">3D printer</a>. Even if it did it would require 50 hours of print time! Also, working surface quality is affected by the orientation of printing (especially if a surface is down-facing and on top of <a  href="https://digitalfire.com/glossary/infill+and+support">printed support</a>). Further, a large print would almost certainly warp and corner-lift during printing. Cutting it into four pieces and hollowing them individually (in the <a  href="https://digitalfire.com/glossary/3d+design">CAD</a> software, lower right) solved all the problems. Each of the pieces is still quite large, taking 10+ hours to print. But they can each be hollowed individually and rotated to the optimum position for the best finished surface (and print speed). It is amazing how well these four pieces fitted together. This approach really paid off because I made a mistake - and I only needed to reprint one of the pieces!</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Large mold a testament to what 3D printing can do</h3>
+<br /><a alt="3D printed ball pitcher block mold" href="https://digitalfire.com/picture/3522"><img class="flexleft50" alt="3D printed ball pitcher block mold"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/16dw7rpaqg.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3522">click here</a> to see it.</p>
+<p>This is a <a  href="https://digitalfire.com/glossary/3d-printing">3D-printed</a> block mold of a medium-sized <a  href="http://rongetty.com/category/company/27">Medalta Potteries</a> <a  href="https://digitalfire.com/project/59">ball pitcher</a> being prepared for filling with silicone rubber (to make a <a  href="https://digitalfire.com/picture/3728">case mold</a> for pouring working <a  href="https://digitalfire.com/material/1124">plaster</a> molds). Although I used two different consumer <a  href="https://digitalfire.com/glossary/3d+printer">3D printers</a>, a Prusa <a  href="https://digitalfire.com/picture/2450">MK3</a> and <a  href="https://digitalfire.com/picture/3489">MK4</a>, the four pieces mate very well! I taped them together first and then welded them using an ultra-violet curing superglue from Home Depot (6 seconds to harden). The glue leaves a slight bump - that is not a problem - can be removed from final working molds. Notice I also made a <a  href="https://digitalfire.com/glossary/3d-printing">3D printed</a> <a  href="https://digitalfire.com/glossary/displacer">displacer</a> (bottom inset) - I fill it with rocks as I fill the mold with <a  href="https://digitalfire.com/url/3533">PMC-746</a> rubber.<br />
+</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Ball pitcher mold ready to pour rubber. But how much rubber?</h3>
+<br /><a href="https://digitalfire.com/picture/3523"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/hacnzgpt1s.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3523">click here</a> to see it.</p>
+<p><a  href="https://digitalfire.com/url/3533">PMC-746</a> rubber is expensive - this is large and it will use a lot. The <a  href="https://digitalfire.com/glossary/displacer">displacer</a> (left) will reduce the pitcher walls to 1in thick (rather than a large solid piece of rubber). Following is how I calculated how much rubber is needed. First, I used <a  href="https://digitalfire.com/picture/2453">Fusion 360</a> to generate a solid model of the upper part of a pitcher (this mold will forms that). I sent it to <a  href="https://digitalfire.com/glossary/3d+slicer">the slicer</a> and it displays the volume in mm3 (as shown in the screenshot inset). To calculate the total volume of rubber needed I did this:<br />
+Outer Box volume (250mm x 205mm x 107mm = 5484cm<sup>3</sup>) -<br />
+Inner Box volume (231mm x 180mm x 96mm = 3991cm<sup>3</sup>) +<br />
+Pitcher volume / 2 (1817cm<sup>3</sup>/2 = 908cm<sup>3</sup>) -<br />
+Displacer volume (292cm<sup>3</sup>)<br />
+= 2109cm<sup>3</sup> + 10% error = ~2300cm<sup>3</sup><br />
+PMC-746 has a <a  href="https://digitalfire.com/glossary/specific+gravity">specific gravity</a> of 1.0 and the mix requires 2 parts yellow resin to 1 part blue hardener. Thus:<br />
+33.3% of 2300 = 765g blue<br />
+66.6% of 2300 = 1531g yellow.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">3D Printing an entire one-off case mold in one piece</h3>
+<video class="flexleft50"width="640" controls="controls" preload="none" autoplay="false" poster="https://digitalfire.com/4sight/images/project/jzvmwg4dz9.jpg">
+<source src="https://s3-us-west-2.amazonaws.com/reference/images/project/jzvmwg4dz9.mp4" type="video/mp4">Your browser does not support MP4 video.
+</video>
+<p>This <a  href="https://digitalfire.com/glossary/3d-printing">3D printed</a> shell encloses an entire two-piece mold for v 5.0 <a  href="http://rongetty.com/category/company/27">Medalta Potteries</a> <a  href="https://digitalfire.com/project/59">ball pitcher</a> - all that is needed is to fill it with <a  href="https://digitalfire.com/material/1124">plaster</a> and peel off the <a  href="https://digitalfire.com/picture/3701">PLA</a> casing after it sets. We are still in the development stages so the fact that this will only produce one mold is fine. The membrane across the center is where the two mold halves mate (it also holds the inner model in place). The membrane has holes where natch-pairs can be mated for embedding into the plaster mold. The spare (shown lower right) will be rotated 90 degrees, it has a slot that fits snuggly over the membrane to hold it in place. The handle is being done separately. This was printed on a consumer <a  href="https://digitalfire.com/glossary/3d+printer">3D printer</a> with standard PLA filament.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Extreme handle fitting: A Medalta v.5 ball pitcher</h3>
+<br /><a alt="Extreme handle fitting" href="https://digitalfire.com/picture/3552"><img class="flexleft50" alt="Extreme handle fitting"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/n3jjvrnwmc.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3552">click here</a> to see it.</p>
+<p>This handle mold is for v.5 of our 3D mold-making (and discovery) project for the <a  href="https://digitalfire.com/project/59">ball pitcher</a>. The process to make the <a  href="https://digitalfire.com/glossary/3d+design">3D drawing</a> is quite simple: Cut it out of the model (top left), draw and extrude side walls (top right) and slice off and remove the pointy parts (a step-by-step video coming soon). Bottom left: A ready-to-use mold. Notice how it fits perfectly onto the side of the pitcher form (bottom right). Because of the good fit, attaching these is just a matter of using some <a  href="https://digitalfire.com/glossary/casting+slip">casting slip</a> as the glue. Casting this handle separately affords multiple benefits: It simplifies making the mold of the pitcher itself, of extracting pieces after casting and it produces a more professional-looking product (without holes inside where the handles join). And, handles can be stockpiled in a damp box, ready to use when needed.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">v9 Hybrid 3D-Printed/Plaster Case Mold</h3>
+<br /><a alt="Ball pitcher case mold v9" href="https://digitalfire.com/picture/3649"><img class="flexleft50" alt="Ball pitcher case mold v9"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/d4d9khw55g.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3649">click here</a> to see it.</p>
+<p>At v7 I adopted a hybrid plaster/PLA approach, enabling a smooth working surface. This involved the use of <a  href="https://digitalfire.com/picture/3645">threaded anchors</a> to hold the back-plate to the model. v8 was the discovery of how to use tsplines in <a  href="https://digitalfire.com/picture/2453">Fusion 360</a> to enable an oval neck on a round body. The big advances at this stage are the use of magnets and inset <a  href="https://digitalfire.com/glossary/mold+shell+flange">flanges</a> (to hold it together) and discovery of how to project the lip geometry to make a perfect-fitting spare. As before, the 1.2mm thick parts print quickly.<br />
+The Backplate: It has holes for small bolts (to hold the threaded anchors), airholes, holes for <a  href="https://digitalfire.com/picture/3483">natch clips</a>, recesses to press in the magnets and an outer ridge to hold the rails in.<br />
+The <a  href="https://digitalfire.com/glossary/side+rails">Railing</a>: Printed in two parts for easy removal. The bottom flanges have magnet insets. They are inward-facing, enabling a bigger size to fit on the bed of the <a  href="https://digitalfire.com/glossary/3d+printer">3D printer</a>.<br />
+The Model Mold: The center piece will be filled with <a  href="https://digitalfire.com/material/1124">plaster</a> to the brim (from the back) and the back-plate (with anchors) will be pressed down onto it. It has an inherently strong shape to produce a precise plaster model (that will be surface smoothed later).<br />
+</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Medalta Ball Pitcher Mold v10</h3>
+<h4 style="color:#888888; margin-top:0px;">Using 3D prints and plaster to make a hybrid</h4>
+<br /><a href="https://digitalfire.com/picture/3691"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/xzwqgipdw1.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3691">click here</a> to see it.</p>
+<p>This is version 10 of my Medalta <a  href="https://digitalfire.com/project/59">ball pitcher</a> <a  href="https://digitalfire.com/picture/3728">case mold</a>. I am still determined that a standard <a  href="https://digitalfire.com/glossary/3d+printer">3D printer</a> with <a  href="https://digitalfire.com/picture/3701">PLA</a> filament brings complicated molds within reach of almost any potter or hobbyist willing to learn <a  href="https://digitalfire.com/glossary/3d+design">3D design</a>. The project has evolved to become hybrid, using both <a  href="https://digitalfire.com/material/1124">plaster</a> and 3D prints in the final mold. Two views of the PLA prints needed to pour a plaster half-model are shown at the top.<br />
+-Plaster is poured into A.<br />
+-I attach <a  href="https://digitalfire.com/picture/3645">threaded anchors</a> to the underside of the baseplate C (using bolts through the small inner holes), they hold the plate firmly in place on the plaster half-model.<br />
+-B is a spacer, it is clamped to the underside of C (and aligned using bushings in the holes), it is only used during the model pour.<br />
+-Bottom: A is on a perfectly flat and level surface. It was filled with plaster just to the rim and then the baseplate was placed on top of it (the spacer acting to correctly position it). More plaster was added and a few minutes after this it was scraped off flush.<br />
+After hardening the spacer can be removed, the mold peeled off using a <a  href="https://digitalfire.com/picture/3729">heat gun</a>, and the plaster surface finished and soaped. The 3D render also shows one of the <a  href="https://digitalfire.com/glossary/side+rails">side rails</a>, D. It holds in place by a flange that wraps under and locks into the holes (the last version used magnets; this approach has several advantages over that).</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Ball pitcher slip casting handle mold (with spares):</h3>
+<h4 style="color:#888888; margin-top:0px;">How to create the ridge as a cutting guide?</h4>
+<br /><a href="https://digitalfire.com/picture/3690"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/mijy8mdnec.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3690">click here</a> to see it.</p>
+<p>The <a  href="https://digitalfire.com/glossary/3d+design">3D design</a> of this handle mold was challenging because of the lack of a defining edge to guide cutting it, at <a  href="https://digitalfire.com/glossary/leather+hard">leather hard</a> stage, to accurately fit against the body of the bellied shape (a Medalta <a  href="https://digitalfire.com/project/59">ball pitcher</a>).<br />
+Center: I solved that problem by creating 2mm pipe along the path defined by the join between the handle and the spares.<br />
+Upper left: It has been <a  href="https://digitalfire.com/glossary/3d-printing">3D printed</a> using <a  href="https://digitalfire.com/picture/3701">PLA</a> filament. The walls are only <a  href="https://digitalfire.com/glossary/0.8mm+thickness">0.8mm</a> thick so printing is fast. The low profile means there is no bulging from the weight of the <a  href="https://digitalfire.com/material/1124">plaster</a>. The clips and <a  href="https://digitalfire.com/picture/3483">embeds</a> are in place, ready for the plaster.<br />
+Lower left: The plaster cast mold halves (with <a  href="https://digitalfire.com/glossary/mold+natches">natches</a> and spacers glued into the embeds). I used a <a  href="https://digitalfire.com/picture/3729">heat gun</a> to remove the PLA prints cleanly (to preserve crisp corners).<br />
+Right: The halves fit together perfectly.</p>
+<p style="clear:left"></p>
+<h3>Inbound Photo Links</h3><table><tr>
+<td style="vertical-align:top; font-size:80%;">
+<br /><a alt="MK4 3D printer for ceramics" href="https://digitalfire.com/picture/3489"><img style="margin:0px 10px 10px 0px; height:100px;" alt="MK4 3D printer for ceramics"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/kjpegnhl7m-100H.jpg" /></a><br />The Prusa MK4 3D printer is worth the upgrade from MK3
+</td>
+</tr></table><br />
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1714">https://medalta.org/</a>
+<br /><i>Medalta in the historic clay district site</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/2730">https://tonyhansen.com/medalta/index.php</a>
+<br /><i>Medalta, Hycroft and Sunburst Pottery Catalogs from the early and middle 1900s</i>
+<br /><i style="color:#888888;">Sunburst: 1964, 1966, 1971, 1974
+Hycroft: 1967
+Medalta: 1924, 1939, 1947, 1953</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/3305">http://medalta.pastperfectonline.com</a>
+<br /><i>Medalta Collections Database at PastPerfect - Search for the word "drawing" to see the mechanical drawings for hundreds of pieces</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="https://digitalfire.com/project/beer+bottle+master+mold+via+3d+printing">Beer Bottle Master Mold via 3D Printing</a>
+<br /><i>A project that took several years of failures and blind allies and is finally coming together - so much simpler than expected!</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="https://digitalfire.com/project/coffee+mug+slip+casting+mold+via+3d+printing">Coffee Mug Slip Casting Mold via 3D Printing</a>
+<br /><i>A potter can now use <a  href="https://digitalfire.com/glossary/ai+at+digitalfire">AI</a>, 3D <a  href="https://digitalfire.com/glossary/3d+design">CAD</a>, <a  href="https://digitalfire.com/glossary/3d-printing">3D printing</a> and custom <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a> to <a  href="https://digitalfire.com/glossary/slip+casting">slip-cast</a> beautiful quality <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> pottery mugs. It is efficient and practical.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="https://digitalfire.com/project/nursery+plant+pot+mold+via+3d+printing">Nursery plant pot mold via 3D printing</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/slip+casting">Slip Casting</a>
+<br /><i>A method of forming <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>. A <a  href="https://digitalfire.com/glossary/deflocculation">deflocculated</a> (low <a  href="https://digitalfire.com/glossary/water+content">water content</a>) <a  href="https://digitalfire.com/glossary/slurry">slurry</a> is poured into absorbent <a  href="https://digitalfire.com/material/1124">plaster</a> molds. As it sits in the mold, usually 10+ minutes, a layer builds against the mold walls. When thick enough the mold is drained.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/3d+design">3D Design</a>
+<br /><i><a  href="https://digitalfire.com/glossary/3d+design">3D Design</a> software is used to create dimensionally accurate objects by sketching 2D geometry and transforming it using tools to rotate, extrude, sweep, etc. The software generates the polygon surface.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/3mm">Mold making using 3D printing</a>
+<br /><i>An ordinary consumer <a  href="https://digitalfire.com/glossary/3d+printer">3D printer</a> has many exciting possibilities for making many types of molds, it is a place where people having both artistic and mechanical abilities can get a double the dopamine!</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

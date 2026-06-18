@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg">
+<link rel="mask-icon" href=/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Fireclay</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Alternate names: Fire Clay - Digitalfire Reference Library (no ads)">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item active"><a class="nav-link" href="/material/list">Materials <span class="sr-only">(current)</span></a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=material" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td><p style="float:right; font-size:80%; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table>
+<ul class="nav nav-tabs pt-1" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="material-tab" data-toggle="tab" href="#material" role="tab" aria-controls="material" aria-selected="true">Materials for Ceramics</a>
+  </li>
+</ul>
+<div class="tab-content mb-3" id="myTabContent" style="border-right:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #ddd; padding:10px;">
+  <div class="tab-pane fade show active" id="material" role="tabpanel" aria-labelledby="material-tab">
+<a href="/material/list/1-9">1-9</a> | <a href="/material/list/A">A</a> | <a href="/material/list/B">B</a> | <a href="/material/list/C">C</a> | <a href="/material/list/D">D</a> | <a href="/material/list/E">E</a> | <a href="/material/list/F">F</a> | <a href="/material/list/Frits">Frits</a> | <a href="/material/list/G">G</a> | <a href="/material/list/H">H</a> | <a href="/material/list/I">I</a> | <a href="/material/list/J">J</a> | <a href="/material/list/K">K</a> | <a href="/material/list/L">L</a> | <a href="/material/list/M">M</a> | <a href="/material/list/N">N</a> | <a href="/material/list/O">O</a> | <a href="/material/list/P">P</a> | <a href="/material/list/Q">Q</a> | <a href="/material/list/R">R</a> | <a href="/material/list/S">S</a> | <a href="/material/list/T">T</a> | <a href="/material/list/U">U</a> | <a href="/material/list/V">V</a> | <a href="/material/list/W">W</a> | <a href="/material/list/X">X</a> | <a href="/material/list/Y">Y</a> | <a href="/material/list/Z">Z</a><br />
+<nobr></nobr>
+</div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Fireclay</h1>
+<p><b>Alternate Names</b>: Fire Clay</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/oxide">Oxide</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/analysis">Analysis</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/formula">Formula</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/formula">Tolerance</a></th>
+</tr></thead><tbody>
+<h4>Notes</h4><p>'Fireclay' is a generic term that in the simplest terms refers to a <a  href="https://digitalfire.com/glossary/refractory">refractory</a> clay (one which can be fired to a high temperature without deforming or melting). Typically fireclays are plastic and have significant iron impurities. Light duty fireclays have a <a  href="https://digitalfire.com/glossary/pce">PCE</a> of about 27 and super duty materials can melt as as high as cone 32.<br />
+<br />
+The obvious use for fireclays is to make bricks and shapes for the structural elements in kilns and furnaces. These clay can be mixed with other materials to introduce air space in increase the insulating value of the product.<br />
+<br />
+Fireclays are useful in many types of <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a> including brick, certain types of tile and <a  href="https://digitalfire.com/glossary/sculpture">sculpture</a> and pottery clays. They impart <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> and <a  href="https://digitalfire.com/glossary/particle+size+distribution">particle size distribution</a> to the body and counter the early melting of any low temperature clays in the mix. For <a  href="https://digitalfire.com/glossary/vitreous">vitreous</a> <a  href="https://digitalfire.com/glossary/fireclay">fireclay</a> based bodies, considerable <a  href="https://digitalfire.com/material/310">feldspar</a> content is necessary.<br />
+<br />
+Hundreds of different kinds of fireclays are available. However they are not normally interchangeable in body recipes since they vary drastically in plasticity, particle size, fired color, <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a>, and <a  href="https://digitalfire.com/glossary/mineralogy">mineralogy</a>.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A fireclay that is not really a fireclay!</h3>
+<br /><a href="https://digitalfire.com/picture/wentemyrup"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/materials/sezfikiryn.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/wentemyrup">click here</a> to see it.</p>
+<p>This is a Lincoln 60 <a  href="https://digitalfire.com/glossary/fireclay">fireclay</a> drying disk (that has been fired to <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10R</a>). It has near zero-porosity and is dense and very strong. It is like a <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> clay, quite <a  href="https://digitalfire.com/glossary/vitreous">vitreous</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Skatgit Fireclay test bars</h3>
+<br /><a href="https://digitalfire.com/picture/hecvihelov"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/materials/kerxydewyh.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/hecvihelov">click here</a> to see it.</p>
+<p>Fired from cone 8-11 and 10 reduction (bottom to top). A <a  href="https://digitalfire.com/glossary/refractory">refractory</a> material.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Pine Lake fireclay lab test bars </h3>
+<br /><a href="https://digitalfire.com/picture/toknotoveg"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/zexfutetox.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/toknotoveg">click here</a> to see it.</p>
+<p>Fired to <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10R</a> (top) and 7,8,9,10 oxidation (from bottom to top). A <a  href="https://digitalfire.com/glossary/refractory">refractory</a> material.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Different runs of Plainsman Red Fireclay</h3>
+<br /><a href="https://digitalfire.com/picture/feltytihyj"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/vuzdibevag.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/feltytihyj">click here</a> to see it.</p>
+<p>These are <a  href="https://digitalfire.com/material/315">Fire-Red</a>, a red <a  href="https://digitalfire.com/glossary/refractory">refractory</a> low <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> clay mined in Manitoba, Canada. Red <a  href="https://digitalfire.com/glossary/fireclay">fireclay</a> are not common. The top bar on each set is fired to <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10R</a>, the iron imparts deep color but the matrix is still fairly pours. The next one down in each set is fired to cone 10 oxidation. The third one down is cone 8, the red color is holding (it shifts to brown between around cone 9).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">PBX Fireclay fired test bars</h3>
+<br /><a href="https://digitalfire.com/picture/filvuwixum"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/1rbrl4awzn.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/filvuwixum">click here</a> to see it.</p>
+<p><a  href="https://digitalfire.com/glossary/reduction+firing">Cone 10 reduction</a> (top), cone 10 down to 6 oxidation below that (top to bottom). A <a  href="https://digitalfire.com/glossary/refractory">refractory</a> material.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Jordan Fireclay fired test bars</h3>
+<br /><a href="https://digitalfire.com/picture/jatzanalav"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/materials/fehhohycir.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/jatzanalav">click here</a> to see it.</p>
+<p><a  href="https://digitalfire.com/glossary/cone+6">Cone 6</a> to 10 oxidation (top to bottom) <a  href="https://digitalfire.com/glossary/firing+shrinkage">fired shrinkage</a> and <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a> testing bars.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">What does Hawthorne Firelclay look like when fired?</h3>
+<br /><a href="https://digitalfire.com/picture/rezjojexyc"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/materials/cyvfocezug.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/rezjojexyc">click here</a> to see it.</p>
+<p>This is a Hawthorne <a  href="https://digitalfire.com/glossary/fireclay">Fireclay</a> sample from 1997, these test bars are made to measure <a  href="https://digitalfire.com/glossary/firing+shrinkage">fired shrinkage</a> and <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a>. Top bar: <a  href="https://digitalfire.com/glossary/reduction+firing">Cone 10R</a>. Proceeding down from there is cone 11, 10, 8, etc (oxidation). <a  href="https://digitalfire.com/glossary/drying+shrinkage">Drying shrinkage</a> is 4.5%. <a  href="https://digitalfire.com/glossary/firing+shrinkage">Firing shrinkage</a> is about 8% at cone 11 going down to 7% at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>, it is thus very stable across a wide range. Porosity is likewise, 3% at cone 11 slowly rising to 5% by cone 6. So this material is already fairly <a  href="https://digitalfire.com/glossary/vitreous">vitreous</a> by cone 6 yet still stable at cone 11.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Reduction and oxidation color difference in a cone 10 red fireclay</h3>
+<br /><a href="https://digitalfire.com/picture/mofsowonuf"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/lurhuvyvux.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/mofsowonuf">click here</a> to see it.</p>
+<p><a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12906">FireRed</a> <a  href="https://digitalfire.com/glossary/fireclay">fireclay</a> fired to <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10R</a>. This shows the effect of reduction where the body is exposed to the kiln atmosphere (very dark burning) and where it is not (inner <a  href="https://digitalfire.com/glossary/foot+ring">foot ring</a>).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">How can we tell if a clay is really a fireclay without doing a PCE?</h3>
+<br /><a alt="Two set of fireclay test bars" href="https://digitalfire.com/picture/dxuL5zNcjx"><img class="flexleft50" alt="Two set of fireclay test bars"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/1d6f986yhr.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/dxuL5zNcjx">click here</a> to see it.</p>
+<p>While a <a  href="https://digitalfire.com/glossary/pce">PCE</a> test is certainly desirable, few people or companies have the ability to do this test. But the more accessable <a  href="https://digitalfire.com/test/shab">SHAB test</a> produces <a  href="https://digitalfire.com/glossary/physical+testing">physical testing</a> data that is perhaps even better. The last column of numbers (titled "ABS", for absorption) prove that the clay on the right, my <a  href="https://digitalfire.com/glossary/code+numbering">code number</a> L4380, is very <a  href="https://digitalfire.com/glossary/refractory">refractory</a>. Even at <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10R</a> it has 11.3% absorption, and its <a  href="https://digitalfire.com/glossary/firing+shrinkage">firing shrinkage</a> is only 3.9%. How do I know cone 10 11.3% <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a> is impressive for a <a  href="https://digitalfire.com/glossary/fireclay">fireclay</a>? Because I have tested many other fireclays using this same procedure. What about the clay on the left, L4378? In comparison, its cone 10R porosity of 6.4%, making it quite a bit more <a  href="https://digitalfire.com/glossary/vitreous">vitreous</a>. But not enough to qualify it as a <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> (which would have 1-2% absorption and 6-7% firing shrinkage). Additionally, many common fireclays also exhibit same level of <a  href="https://digitalfire.com/glossary/maturity">maturity</a> as L4378. So is it a fireclay or a stoneware? A 10% <a  href="https://digitalfire.com/material/310">feldspar</a> addition would convert it to stoneware, so there is merit in calling it a "stoneware material". But that is "in comparison to" the very refractory L4380. But, if we were compare L4378 to any of the false fireclays commonly sold, then it could certainly be termed a fireclay.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/plainsman+red+fireclay">Plainsman Red Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/chamotte">Chamotte</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/cedar+heights+fireclay">Cedar Heights Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/plainsman+fireclay">Plainsman Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/christy+plastic+fireclay">Christy Plastic Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/clayburn+fireclay">Clayburn Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/denver+fireclay">Denver Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/fm+fireclay">FM Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/greenstripe+clay">Greenstripe Clay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/grefco+fireclay">Grefco Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/hawthorne+bond">Hawthorne Bond</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/idaho+1+fireclay">Idaho 1 Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/idaho+2+fireclay">Idaho 2 Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/imco+400+fireclay">Imco 400 Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/imco+800+fireclay">Imco 800 Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ixl+flintoft">IXL FLINTOFT</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/jordan+fireclay">Jordan Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/kaiser+denver+fireclay">Kaiser Denver Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/kaiser+missouri+fireclay">Kaiser Missouri Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/lincoln+60+fireclay">Lincoln 60 Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/m-4+fireclay">M-4 Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/apg+missouri+fireclay">APG Missouri Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/monmouth+fireclay">Monmouth Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/narco+fireclay">Narco Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/pbx+fireclay">PBX Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/pine+lake+fireclay">Pine Lake Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/red+mesa+fireclay">Red Mesa Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/skagit+x+fireclay">Skagit X Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/t19">T19</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/nat+dry+milled+fireclay">NAT Dry Milled Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ceramic+fireclay">Ceramic Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/industrial+fireclay">Industrial Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/fireclay+a%2fs">Fireclay A/S</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/whitfield+202+fireclay">Whitfield 202 Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/hallam+fireclay">Hallam Fireclay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/frc">Fireclay</a>
+<br /><i>Fireclays are non-kaolin non-ball clay materials similar to <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> clays but lacking fluxing <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a>. Many fireclays have a <a  href="https://digitalfire.com/glossary/pce">PCE</a> of 28 or more.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/frc">Fireclay</a>
+<br /><i>Fireclays are non-kaolin non-ball clay materials similar to <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> clays but lacking fluxing <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a>. Many fireclays have a <a  href="https://digitalfire.com/glossary/pce">PCE</a> of 28 or more.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/gnm">Generic Material</a>
+<br /><i>Generic materials are those with no brand name. Normally they are theoretical, the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> portrays what a specimen would be if it had no contamination. Generic materials are helpful in educational situations where students need to study material theory (later they graduate to dealing with real world materials). They are also helpful where the chemistry of an actual material is not known. Often the accuracy of calculations is sufficient using generic materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/pce">PCE</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/fireclay">Fireclay</a>
+<br /><i>A clay that withstands fire. In the <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a> industry, clays that are resistant to deforming and melting at high temperatures are called fireclays. Kiln bricks are often made from <a  href="https://digitalfire.com/glossary/fireclay">fireclay</a>.</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

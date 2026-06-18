@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Project: 2019 Jiggering-Casting Project of Medalta 66 Mug</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="My project to reproduce a mug made by Medalta Potteries more than 50 years ago. I cast the body and handle, jigger the rim and then attach the handle. 3D printing made this all possible.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item active" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=project" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:center; vertical-align:top;">Feb 14-15, 2026 - <b>Major Server <a href="https://digitalfire.com">Upgrade</a> Done</b></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Projects</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><button type="button" class="btn btn-dark">2019 Jiggering-Casting Project of Medalta 66 Mug</button><br /><a title="54" href="https://digitalfire.com/project/54">A cereal bowl jigger mold made using 3D printing</a><br /><a title="33" href="https://digitalfire.com/project/33">Beer Bottle Master Mold via 3D Printing</a><br /><a title="61" href="https://digitalfire.com/project/61">Better porosity for Brown Sugar Savers</a><br /><a title="48" href="https://digitalfire.com/project/48">Build a kiln monitoring device</a><br /><a title="69" href="https://digitalfire.com/project/69">Celebration Project</a><br /><a title="60" href="https://digitalfire.com/project/60">Coffee Mug Slip Casting Mold via 3D Printing</a><br /><a title="29" href="https://digitalfire.com/project/29">Comparing the Melt Fluidity of 16 Frits</a><br /><a title="52" href="https://digitalfire.com/project/52">Cookie Cutting clay with 3D printed cutters</a><br /><a title="41" href="https://digitalfire.com/project/41">Evaluating a clay's suitability for use in pottery</a><br /><a title="55" href="https://digitalfire.com/project/55">Make a mold for 4-gallon stackable calciners</a><br /><a title="49" href="https://digitalfire.com/project/49">Make Your Own Pyrometric Cones</a><br /><a title="47" href="https://digitalfire.com/project/47">Make your own sieve shaker to process ceramic slurries</a><br /><a title="40" href="https://digitalfire.com/project/40">Making a high quality ceramic tile</a><br /><a title="46" href="https://digitalfire.com/project/46">Making a Plaster Table</a><br /><a title="37" href="https://digitalfire.com/project/37">Making Bricks</a><br /><a title="50" href="https://digitalfire.com/project/50">Making our own kiln posts using a hand extruder</a><br /><a title="59" href="https://digitalfire.com/project/59">Medalta Ball Pitcher Slip Casting Mold via 3D Printing</a><br /><a title="34" href="https://digitalfire.com/project/34">Medalta Jug Master Mold Development</a><br /><a title="63" href="https://digitalfire.com/project/63">Mold Natches</a><br /><a title="32" href="https://digitalfire.com/project/32">Mother Nature's Porcelain - Plainsman 3B</a><br /><a title="66" href="https://digitalfire.com/project/66">Mug Handle Casting</a><br /><a title="39" href="https://digitalfire.com/project/39">Nursery plant pot mold via 3D printing</a><br /><a title="30" href="https://digitalfire.com/project/30">Pie-Crust Mug-Making Method</a><br /><a title="35" href="https://digitalfire.com/project/35">Plainsman 3D, Mother Nature's Porcelain/Stoneware</a><br /><a title="38" href="https://digitalfire.com/project/38">Project to Document a Shimpo Jiggering Attachment</a><br /><a title="36" href="https://digitalfire.com/project/36">Roll, Cut, Pull, Attach Handle-making Method</a><br /><a title="23" href="https://digitalfire.com/project/23">Slurry Mixing and Dewatering Your Own Clay Body</a><br /><a title="24" href="https://digitalfire.com/project/24">Testing a New Load of EP Kaolin</a><br /><a title="44" href="https://digitalfire.com/project/44">Using milk as a glaze</a></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>2019 Jiggering-Casting Project of Medalta 66 Mug</h1>
+<p>In 2019 I learned <a  href="https://digitalfire.com/glossary/3d+design">3D design</a> software and how to use <a  href="https://digitalfire.com/glossary/3d-printing">3D printing</a>. Many things I have made using this I either could not, or would not have otherwise done. It is incredible! And knowing about these enables me to prototype and tool-up much more easily to mass produce a product.<br />
+<br />
+The best accomplishment: 3D Printing the master <a  href="https://digitalfire.com/glossary/jiggering">jigger</a> molds and template and handle-casting molds. It took a year to go from concept to the first production mug. Perhaps the single biggest factor was learning how to use engineering consultants online (at <a  href="https://digitalfire.com/glossary/upwork">Upwork</a>.com). That helped me getting over the biggest obstacle: Learning to use 3D design (or solid modeling) software. I was lucky, by the second consultant I tried I struck gold. Right at the start he talked me out of using Blender and into using <a  href="https://digitalfire.com/picture/2453">Fusion 360</a>. I needed his help about 20 times throughout the year. He repeatedly made how-to videos. He always drew things parametrically. At the start I gave him a cross-section drawing, that I made using 2D software, everything he later did was based on that.<br />
+<br />
+The exciting events that frequented each stage of this adventure were the adrenaline that kept me going. The first was being able to rotate his <a  href="https://digitalfire.com/glossary/3d+design">3D drawing</a> in my copy of Fusion 360, that was an eye-opener. Then (after months of struggle building my first <a  href="https://digitalfire.com/glossary/3d+printer">3D printer</a>) I printed a prototype that I could hold in my hand! Other landmarks included seeing those incredible handle molds printing. Another exciting thing was seeing how fast 3D printing evolved in just that year. And how easy it was to adjust drawings and reprint as I learned what did not work.<br />
+<br />
+After scaling it up by 10% (to allow for drying and <a  href="https://digitalfire.com/glossary/firing+shrinkage">fired shrinkage</a>), I went through a series of failed ideas on how to print the mold for the master model and then the forms for the block molds for the jigger and handle molds. I ended up printing the mug model mold in two pieces and gluing them together. And the shell mold to fit around it needed to be printed in two pieces and glued also (it splits vertically for easy removal, being held together using simple paper clamps). By the time I got to doing these I had my second 3D printer, it produced much better quality. I was amazed how smooth a surface it could print, <a  href="https://digitalfire.com/material/1124">plaster</a> poured against can be smoothed in seconds with just a metal rib. My 3D printer nozzle layers down <a  href="https://digitalfire.com/glossary/0.8mm+thickness">0.4mm</a> wide paths, so I doubled that and printed <a  href="https://digitalfire.com/glossary/0.8mm+thickness">0.8mm</a> thick walls. These were rigid enough that no little deformation occurred when full of plaster (later I went to 1.2mm).<br />
+<br />
+Surprisingly, the jigger molds fit perfectly into the aluminum cuphead the first time! But then the template tip did not clear the far side of the mold as I brought the jigger arm downward! Then magic happened. I printed a new narrow template that just went down the side but not across the bottom. Then I <a  href="https://digitalfire.com/glossary/slip+casting">slip-cast</a> a mug in a jigger mold using a <a  href="https://digitalfire.com/glossary/3d-printing">3D printed</a> <a  href="https://digitalfire.com/glossary/pour+spout">pouring spout</a> (that I had developed for another project), this spout made it possible for the clay to extend well up from the top of the mold. Then I finished the cast mug, while still soft, by <a  href="https://digitalfire.com/glossary/jiggering">jiggering</a> just the wall and lip. Voila, that lip looked like one on a <a  href="https://digitalfire.com/glossary/throwing">thrown</a> mug. The mug dropped out of the mold easily.<br />
+<br />
+Then something else magic happened: The template only needed to go down the side-wall part way (the cast surface was smooth). It also became evident that I did not actually need the jigger arm - it was easy to just hold the template in my hand! In fact, it was not even necessary to have the jiggering wheel itself, just a quick spin on a heavy banding wheel and press of the template was enough to finish the lip!<br />
+<br />
+I have found that this process has a number of benefits:<br />
+-I can cast, finish and attach handles for a batch of mugs in a couple of hours. There is no need to cover them for trimming later, they are done.<br />
+-The cast mugs do not need special drying (no cover or drying chamber), casting clay has such low shrinkage nothing cracks.<br />
+-The casting process enables using every scrap of clay.<br />
+-Once the molds are made and you have a pail of <a  href="https://digitalfire.com/glossary/slurry">slurry</a> and a banding wheel, no other special equipment is needed (you can make the actual pieces in your kitchen if you want).<br />
+-Wall thickness is totally in your control, thick or thin.<br />
+<br />
+Aug 2024: We are working on this again, incorporating improvements and fitting the mold to an industrial jigger machine. Multiple steps have been cut out of the process and it is better.<p style="clear:left"></p></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Hand-tooling a mug model vs. 3D-printing a mold to cast it</h3>
+<br /><a href="https://digitalfire.com/picture/2438"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/ckmiqejery.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2438">click here</a> to see it.</p>
+<p>I am creating molds for a 2019 <a  href="https://digitalfire.com/glossary/casting-jiggering">casting-jiggering</a> project to reproduce heavy <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> mugs manufactured here 50 years ago (I am not a mold maker, just a potter). I have a profile drawing I want to match (upper left). The solid <a  href="https://digitalfire.com/material/1124">plaster</a> model on the left was my first attempt at manual tooling. The metal template was time-consuming to hand-make, its contour was difficult to match to the drawing and the plaster surface turned out rough and difficult-to-smooth. To make the plaster model on the right I <a  href="https://digitalfire.com/glossary/3d-printing">3D printed</a> a shell, poured the plaster in, extracted it after set and then smoothed it on the wheel using a metal rib and trimming tool. It matches the drawing perfectly and the round is very true. <a  href="https://digitalfire.com/glossary/3d-printing">3D-printing</a> is revolutionary for this type of thing! The drawings: I hired someone on <a  href="https://digitalfire.com/glossary/upwork">Upwork</a>.com to make them for me (using <a  href="https://digitalfire.com/picture/2453">Fusion 360</a>). The shell-mold (to cast the model) on the upper right: I printed that too, in two pieces.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">3D-Printing the Medalta 66 prototype mug</h3>
+<video class="flexleft50"width="640" controls="controls" preload="none" autoplay="false" poster="https://digitalfire.com/4sight/images/pictures/rafg3zqaj5.jpg">
+<source src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/rafg3zqaj5.mp4" type="video/mp4">Your browser does not support MP4 video.
+</video>
+<p>First, we did the <a  href="https://digitalfire.com/glossary/3d+design">3D drawing</a> in <a  href="https://digitalfire.com/picture/2453">Fusion 360</a>. It took 12 hours on this early inexpensive build-it-yourself Rep-rap printer! Notice the printed supports it creates for the handle, these break away after it is done. Of course, the surface is not smooth enough to use as a model for mold-making. But to be able to hold it to judge size, wall thickness, handle feel and shape was valuable. All other drawings we made (for molds, templates, spouts, etc) were based on this starting point.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">My first 3D-printed handle case mold</h3>
+<br /><a alt="3D-printed handle case molds" href="https://digitalfire.com/picture/2451"><img class="flexleft50" alt="3D-printed handle case molds"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/sb75znxyq8.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2451">click here</a> to see it.</p>
+<p>These molds were my first effort using <a  href="https://digitalfire.com/glossary/3d+design">3D design</a> and <a  href="https://digitalfire.com/glossary/3d-printing">3D printing</a>. They served well for making hundreds of pieces. They were part of a 2019 <a  href="https://digitalfire.com/glossary/casting-jiggering">casting-jiggering</a> project to reproduce a <a  href="http://rongetty.com/category/company/44">Medalta Potteries 1966</a> mug. Even with a thick handle like this and slip made using <a  href="https://digitalfire.com/material/925">kaolin</a> and <a  href="https://digitalfire.com/material/80">ball clay</a> not intended for casting, the molds split in less than an hour when casting solid (and in half an hour when casting hollow). As a parting agent on the <a  href="https://digitalfire.com/glossary/3d-printing">3D-printed</a> surface I used Murphy's <a  href="https://digitalfire.com/url/3534">Oil Soap</a>. The sidewalls had a draft of about 5 degrees and the handle cross-section was round rather than oval, so the <a  href="https://digitalfire.com/material/1124">plaster</a> molds released without corner breaking.<br />
+<br />
+This mold had spares - they did not provide a big enough reservoir and I later switched to using <a  href="https://digitalfire.com/glossary/3d-printing">3D printed</a> spouts. These also had plaster matches (I later found that no matches worked better on this size and shape of mold). I went through multiple more versions perfecting the process to enable making handles of more difficult shapes and finally using 3D printed <a  href="https://digitalfire.com/glossary/mold+natches">natches</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">v1.0 3D-printed flanged rail to cast working plaster jigger molds</h3>
+<br /><a alt="3D-printed flanged rail to cast plaster jigger molds" href="https://digitalfire.com/picture/2469"><img class="flexleft50" alt="3D-printed flanged rail to cast plaster jigger molds"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/krhbw6yba5.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2469">click here</a> to see it.</p>
+<p>The multi-use grey outer rail on the left was printed in two parts and glued together at the shoulder (to avoid the printing of support). The wall thickness is 1.6mm, actually too thick for fast printing. For v2.0 we went to 1.2mm and printed it upside down, in one piece, on a flange (this generated support but new printers to that so well that the step disconnects well and is not rough). The vertical split enables opening the shell a little after the <a  href="https://digitalfire.com/material/1124">plaster</a> has set, quickly releasing it. The center model, of the inside contour of the mug, is integrated into a two-step base, it was made by casting the plaster inside another two-piece <a  href="https://digitalfire.com/glossary/3d-printing">3D-printed</a> form. After removing that using a <a  href="https://digitalfire.com/picture/3729">heat gun</a>, I smoothed the plaster surface using a metal rib and trimming tool and then soaped it to ready for a pour. The mold shell is held securely in place by stretching a wide rubber band around the first step and clamping the shell into place around it. The assembly is then ready to be filled with plaster to make a <a  href="https://digitalfire.com/glossary/jiggering">jigger</a> mold. Doing this on a turntable is also a good idea - it enables rotating it while filling and agitating after full to dislodge any air bubbles.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Mug mold with pouring spout, handle mold with spare</h3>
+<br /><a href="https://digitalfire.com/picture/2496"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/5bje8mbaw2.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2496">click here</a> to see it.</p>
+<p>The <a  href="https://digitalfire.com/glossary/3d-printing">3D printed</a> <a  href="https://digitalfire.com/glossary/pour+spout">pouring spout</a> makes pour-out much less messy. It can be pulled off soon after, while the clay is still soft. This mug mold then drops into a <a  href="https://digitalfire.com/glossary/jiggering">jigger</a> wheel cuphead (for finishing the lip and truing the inside vertical wall). The handle mold is on the right.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">3D render of a jiggering template</h3>
+<br /><a alt="3D render of jiggering template" href="https://digitalfire.com/picture/2685"><img class="flexleft50" alt="3D render of jiggering template"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/jywzjqv9k8.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2685">click here</a> to see it.</p>
+<p>I print these using <a  href="https://digitalfire.com/picture/3701">PLA</a> filament, they are strong enough for hobby or studio use (even if not printed solid). The knife-edge prints precise and smooth, there is no need for sanding. Notice that the drawing (far left) includes the contours of the inside and outside of the mug. Making the <a  href="https://digitalfire.com/glossary/jiggering">jigger</a> template/knife only requires adding three straight lines. Then I extrude it forward 1cm and add a 30-degree draft. The top edge can, of course, be extended upward to mount on the jigger arm. The working template has to be narrower than this at the bottom to clear the edge when the jigger arm is lowered. I have also used this to hand-finish the <a  href="https://digitalfire.com/glossary/slip+casting">slip-cast</a> mugs (just by holding it, without a jigger arm).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">My potter's wheel with aluminum cup-head and jigger mold inserted</h3>
+<br /><a href="https://digitalfire.com/picture/2467"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/zdagzstsqg.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2467">click here</a> to see it.</p>
+<p>The cup-head was lathed from a block of aluminum and it attaches to the shaft the same as a regular wheel-head. <a  href="https://digitalfire.com/material/1124">Plaster</a> molds simply drop in and sit on their shoulder. The shoulder is the only point-of-contact, this prevents chattering while the mold spins when under pressure. I am using these molds for a <a  href="https://digitalfire.com/glossary/casting-jiggering">casting-jiggering</a> process (or just casting). For example, I can cast a mug in the mold, then pour out the slip, wait a few minutes and then, as the wheel spins, finish the rim and inside sure using a <a  href="https://digitalfire.com/glossary/3d-printing">3D-printed</a> template/rib. I do not actually use the <a  href="https://digitalfire.com/glossary/jiggering">jigger</a> arm, it is easier just to hold the template in hand. I can finish the rims on any round pieces made in these molds.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">3D Printed prototype beside first dried piece</h3>
+<br /><a href="https://digitalfire.com/picture/2495"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/d2kx86dw3l.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2495">click here</a> to see it.</p>
+<p>On the earlier pieces that I made (like this one) I had the walls too thin to be able to effectively round the lip and true-up the inside using the <a  href="https://digitalfire.com/glossary/jiggering">jigger</a> template.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Cone 10R mugs made with the casting-jiggering process</h3>
+<br /><a href="https://digitalfire.com/picture/2473"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/rgfabexsc8.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2473">click here</a> to see it.</p>
+<p>Very exciting! The easiest batch of mugs I have ever made, no wheel <a  href="https://digitalfire.com/glossary/throwing">throwing</a> or trimming. These are made from two casting recipes I am working on to match the fired appearance and glaze compatibility of <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12887">H550</a> and <a  href="https://plainsmanclays.ca/data/index.php?product=12885">H440</a> (buff and <a  href="https://digitalfire.com/glossary/iron+red+glaze">iron red</a> burning bodies). This is how many you have to make to learn some of the finer points of the process.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Jigger/Cast mugs 2019</h3>
+<br /><a href="https://digitalfire.com/picture/2681"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/naew5km3bw.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2681">click here</a> to see it.</p>
+<p>Made from <a  href="https://plainsmanclays.ca/data/index.php?product=12887">H550</a> Casting and firing at <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10R</a>. One of the advantages of this method is to make pieces, not just thicker and heavier as these are, but consistently so.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Final cast-jiggered cone 6 mug beside original 3D-printed mock-up</h3>
+<br /><a href="https://digitalfire.com/picture/2457"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/yc8ycffjt8.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2457">click here</a> to see it.</p>
+<p>This is a product of a <a  href="https://digitalfire.com/glossary/casting-jiggering">casting-jiggering</a> project I did in 2019 to recreate a 1960s <a  href="http://rongetty.com/category/company/27">Medalta Potteries</a> mug. The first step was drawing a profile in 2D (using Adobe Illustrator) and then working with a <a  href="https://digitalfire.com/picture/2453">Fusion 360</a> freelancer at <a  href="https://digitalfire.com/glossary/upwork">Upwork</a>.com to create a quality <a  href="https://digitalfire.com/glossary/3d+design">3D drawing</a>. <a  href="https://digitalfire.com/glossary/3d-printing">3D printing</a> this mock-up was possible after that, using my favorite <a  href="https://digitalfire.com/glossary/3d+slicer">3D slicer</a>, Simplify 3D. The mug was drawn "parametrically", that is, measurements and geometric relationships were built-in such that changing contours and the size preserved the original design. The first production mug, made about a year later, is on the right. Molds were scaled up 10% from this mockup size so that final pieces would be this size, however the <a  href="https://digitalfire.com/glossary/firing+shrinkage">firing shrinkage</a> of the clay turned out to be about 12%.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Poor plaster release from 3D printed mug handle case molds</h3>
+<br /><a alt="Failed 3D printed mug handle molds" href="https://digitalfire.com/picture/3529"><img class="flexleft50" alt="Failed 3D printed mug handle molds"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/x16avrkk8s.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3529">click here</a> to see it.</p>
+<p>My objective was to continue skipping the making of a rubber <a  href="https://digitalfire.com/picture/3728">case mold</a> and <a  href="https://digitalfire.com/glossary/3d-printing">3D print</a> them directly. Since <a  href="https://digitalfire.com/glossary/3d-printing">3D printed</a> surfaces naturally part well from <a  href="https://digitalfire.com/material/1124">plaster</a> and the <a  href="https://digitalfire.com/picture/3536">artifacts</a>, although visible, do not show on the final fired pieces, I even wanted to do this whole process without any sanding or oiling. However, despite printing a dozen or more variations, carefully controlling plaster/water ratios and waiting/mixing the recommended time periods, few good plaster molds were extracted without corner-breaking. Even painting the inner surface, oiling over it and beveling corners did resolve this issues. It seems that a combination of the printing artifacts, sharp corners, the handle perpendicular (because of the oval cross-section) and the inside negative shape all enabled the plaster to get a very firm grip on the <a  href="https://digitalfire.com/picture/3701">PLA</a> print. Although I could have resorted to a <a  href="https://digitalfire.com/picture/3729">heat gun</a> to soften the PLA material enough to pull it away I relented and decided to switch to making a block mold (for rubber) rather than a case mold (for plaster).<br />
+</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">CAD steps for a 3DP block mold to make a rubber case mold</h3>
+<br /><a alt="Drawing a mug handle block mold shell" href="https://digitalfire.com/picture/3533"><img class="flexleft50" alt="Drawing a mug handle block mold shell"  loading="lazy" src="https://digitalfire.com/4sight/images/pictures/2rkznfxncz.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3533">click here</a> to see it.</p>
+<p>The objective was to make a rubber master <a  href="https://digitalfire.com/picture/3728">case mold</a> for the production of working <a  href="https://digitalfire.com/material/1124">plaster</a> molds. <a  href="https://digitalfire.com/glossary/3d-printing">3DP</a> is a great solution. This drawing was done in <a  href="https://digitalfire.com/picture/2453">Fusion 360</a>.<br />
+1: A make a sketch of a box, around the handle, on the XY plane. Offset that outward by 1.2mm (my printer prints <a  href="https://digitalfire.com/glossary/0.8mm+thickness">0.4mm</a> wide, three passes give good strength).<br />
+2: Extrude to create box 1: The base backward by 1mm and the sides forward by 20mm.<br />
+3: Use five sides of the box as cutting planes to slice it out of the mug.<br />
+<br />
+At this point I could print this in <a  href="https://digitalfire.com/picture/3701">PLA</a> filament, pour plaster into and then use a hair drier to peel it off. But let’s make rubber molds instead.<br />
+<br />
+4: Move the box-with-handle away from the mug. Pull the four sides out by 5mm to thicken them.<br />
+5 & 6: Create box 2 around the outside of it, as a new body, 1.2mm wider and taller, 1mm more frontward and 1mm less backward.<br />
+7: Use box 1 as a cutter to remove material from box 2 and then pull the outer 1.2mm sides 5mm backward.<br />
+8: Shell out the back side to 1.2 wall thickness and make two 9.4mm holes (to accommodate <a  href="https://digitalfire.com/picture/3483">natch clips</a>).<br />
+<br />
+To make side 2 mirror-image a new body using the front or back as the reflexion plane. The back side is then filled with <a  href="https://digitalfire.com/url/3533">PMC-746</a> rubber to make the block mold. Plaster is poured into that to make each working mold.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">3D printing case vs block mug handle molds</h3>
+<br /><a alt="Block and case handle molds" href="https://digitalfire.com/picture/3531"><img class="flexleft50" alt="Block and case handle molds"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/jlk5w2e41a.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3531">click here</a> to see it.</p>
+<p>Top: Case molds (for pouring <a  href="https://digitalfire.com/material/1124">plaster</a> into to make working molds) in <a  href="https://digitalfire.com/glossary/3d+slicer">the slicer</a> about to be printed.<br />
+Bottom: Block molds (actually molds of block molds for pouring rubber into) about to be printed.<br />
+The top situation would have been a dream for a potter like me, the simplest possible way to introduce mold-making for <a  href="https://digitalfire.com/glossary/slip+casting">slip casting</a> into a process. However, my goal of print-and-pour was not met, this shape is not conducive to the extraction of the plaster without corner breaking. The block mold master (lower left) was made by pouring <a  href="https://digitalfire.com/url/3533">PMC-746</a> rubber into these molds. That works extremely well, there will be no problems making plaster molds with this. Notice how well it has preserved the printing <a  href="https://digitalfire.com/picture/3536">artifacts</a>, they look like wood grain. The white <a  href="https://digitalfire.com/picture/3483">embeds</a> enable inserting <a  href="https://digitalfire.com/glossary/mold+natches">natches</a> (that I make on the printer also).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">3D printed three-piece jigger case mold complete</h3>
+<p style="margin-top:0px;"><b>Available</b> on the <a target="_blank" href="https://digitalfire.com/downloads/index.php?picture=3541">Downloads</a> page</p>
+<br /><a alt="3D printed jigger case mold" href="https://digitalfire.com/picture/3541"><img class="flexleft50" alt="3D printed jigger case mold"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/k9f1nhmbhw.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3541">click here</a> to see it.</p>
+<p>It is now practical to make true-round, perfect-fitting, <a  href="https://digitalfire.com/picture/3553">all-in-one</a> case molds for <a  href="https://digitalfire.com/glossary/jiggering">jiggering</a> using a consumer <a  href="https://digitalfire.com/glossary/3d+printer">3D printer</a> and <a  href="https://digitalfire.com/picture/3701">PLA</a> filament. This was a one-off test mold to demonstrate the method but these print so fast this is suitable to make dozens of molds. The process: Create the drawing in 3D <a  href="https://digitalfire.com/glossary/3d+design">CAD</a> (e.g. <a  href="https://digitalfire.com/picture/2453">Fusion 360</a>), print the three sections, glue them, turn the assembly upside down, fill with <a  href="https://digitalfire.com/material/1124">plaster</a>, let it set and peel out the inside two pieces using a <a  href="https://digitalfire.com/picture/3729">heat gun</a>.<br />
+<br />
+Things to note:<br />
+-The outside profile can be adjusted to fit your <a  href="https://digitalfire.com/glossary/jiggering">jigger</a> machine or cuphead.<br />
+-This is light and prints quickly.<br />
+-The shoulder (C) is printed solid and the PLA printed surface from A to D is left in place permanently, this enables precise and durable fit into the cuphead. I print the outside shell upside down, so no <a  href="https://digitalfire.com/glossary/infill+and+support">printed support</a> is needed.<br />
+-The down-pointing flange (A) <a  href="https://digitalfire.com/picture/3483">embeds</a> it into the plaster providing a durable edge against which to fit the <a  href="https://digitalfire.com/glossary/pour+spout">pour spout</a> (F). The glue joint connecting A & B breaks when B+E are removed. <br />
+-B and E are printed upside down, no support is needed for B (since the top is open).<br />
+-The base E has a flange that enables gluing it precisely into B. Debossed logos are practical on the base. It prints upside down for maximum quality.<br />
+<br />
+You can get this on the <a  href="https://digitalfire.com/url/3634">downloads page</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">3D printed mold tests of embossed logo</h3>
+<br /><a alt="3D printed embossed logo mold" href="https://digitalfire.com/picture/3556"><img class="flexleft50" alt="3D printed embossed logo mold"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/reilwdd7sq.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3556">click here</a> to see it.</p>
+<p>We want to achieve embossed lettering inside the foot rings of <a  href="https://digitalfire.com/glossary/slip+casting">slip-cast</a> ceramic pieces by using a standard consumer <a  href="https://digitalfire.com/glossary/3d+printer">3D printer</a> with <a  href="https://digitalfire.com/picture/3701">PLA</a> filament. There are plenty of obstacles to overcome in doing this. Since <a  href="https://digitalfire.com/material/1124">plaster</a> does not release well at all from lettering having sharp corners, bevelling has to be done. However, our <a  href="https://digitalfire.com/glossary/3d+design">CAD</a> software has problems rounding the corners of many fonts, I had to search for one having no variations in stroke width. Then it was a matter of discovering how much to extrude and how much bevelling it would tolerate - this one permits a 1 mm extrusion with a 0.6 radius bevel.<br />
+Left front: A 1mm extrude without bevelling and cold release produced very poor results.<br />
+Centre: 1mm extrude, 0.6 radius bevelling, 0.2mm rise of background to minimize verticals and cold release - better but still problems.<br />
+Right: Same as center but released with <a  href="https://digitalfire.com/picture/3729">heat gun</a> - almost perfect.<br />
+Bottom: A test casting from the first prototype mold - looking really good (albeit backwards!).</p>
+<p style="clear:left"></p>
+<h3>Inbound Photo Links</h3><table><tr>
+<td style="vertical-align:top; font-size:80%;">
+<br /><a alt="3D-printed pour spout on a mug cast-jigger mold" href="https://digitalfire.com/picture/2468"><img style="margin:0px 10px 10px 0px; height:100px;" alt="3D-printed pour spout on a mug cast-jigger mold"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/qupwsroaht-100H.jpg" /></a><br />A 3D-printed pour spout on a mug jigger-casting mold
+</td>
+<td style="vertical-align:top; font-size:80%;">
+<br /><a alt="Complete case mold done in one pour of plaster" href="https://digitalfire.com/picture/3503"><img style="margin:0px 10px 10px 0px; height:100px;" alt="Complete case mold done in one pour of plaster"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/felqey7u2c-100H.jpg" /></a><br />A method to make a two-part slip casting mold in one pour
+</td>
+</tr></table><br />
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/3d-printing">3D-Printing</a>
+<br /><i>Standard <a  href="https://digitalfire.com/glossary/3d-printing">3D printing</a> technology (not printing with clay itself) is very useful to potters and ceramic industry in making objects that assist and enable production.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/casting-jiggering">Casting-Jiggering</a>
+<br /><i>A process in ceramic production where items are <a  href="https://digitalfire.com/glossary/slip+casting">slip-cast</a> first and then finished using a <a  href="https://digitalfire.com/glossary/jiggering">jigger</a> wheel.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/3d+printer">3D Printer</a>
+<br /><i>Standard <a  href="https://digitalfire.com/glossary/3d+printer">3D printers</a> (not clay 3D printers) are incredibly useful in ceramic production and design, bringing difficult processes within reach of potters and hobbyists.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/upwork">Upwork</a>
+<br /><i>Using the services of online freelancers connects potters and small ceramic producers to expert engineering talent at low cost.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/restaurant+ware">Restaurant Ware</a>
+<br /><i>If you are a potter and want to make <a  href="https://digitalfire.com/glossary/restaurant+ware">restaurant ware</a>, read this. Many of the things you already  think you know will mislead you in this type of venture.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/jiggering">Jiggering</a>
+<br /><i><a  href="https://digitalfire.com/glossary/jiggering">Jiggering</a> is a process of forming pottery that employs a spinning <a  href="https://digitalfire.com/material/1124">plaster</a> mold and a tapered template to press soft clay or <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> against it.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/slip+casting">Slip Casting</a>
+<br /><i>A method of forming <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>. A <a  href="https://digitalfire.com/glossary/deflocculation">deflocculated</a> (low <a  href="https://digitalfire.com/glossary/water+content">water content</a>) <a  href="https://digitalfire.com/glossary/slurry">slurry</a> is poured into absorbent <a  href="https://digitalfire.com/material/1124">plaster</a> molds. As it sits in the mold, usually 10+ minutes, a layer builds against the mold walls. When thick enough the mold is drained.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="https://digitalfire.com/project/project+to+document+a+shimpo+jiggering+attachment">Project to Document a Shimpo Jiggering Attachment</a>
+<br /><i>Make your own <a  href="https://digitalfire.com/glossary/jiggering">jiggering</a> attachment for your potter's wheel. Here are the plans and lots of help to get you going with molds and techniques.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="https://digitalfire.com/project/a+cereal+bowl+jigger+mold+made+using+3d+printing">A cereal bowl jigger mold made using 3D printing</a>
+<br /><i>A new way to <a  href="https://digitalfire.com/glossary/3d-printing">3D-print</a> your way to making <a  href="https://digitalfire.com/glossary/jiggering">jigger</a> molds and templates. The molds are encased in a <a  href="https://digitalfire.com/glossary/3d-printing">3D printed</a> shell that makes them fit perfectly into the cuphead. And the template is precise and very effectivwe.</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

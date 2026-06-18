@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>G2902B</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="The Digitalfire Reference Library documents recipes putting them into a context of materials and oxide information, that gives you control to adjust them">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+		function scrollToID(idName, idNote) { 
+			var elmnt = document.getElementById(idName);
+			var elmnt1 = document.getElementById(idNote); 
+			elmnt.innerHTML = '<img style=\"height:55px; float:left; margin:0px 5px 0px 0px;\" src=\"https://plainsmanclays.com/images/skulllogo.svg\"> Tell me about your use of Plainsman Clays'; 
+			elmnt1.innerHTML = 'What clay do you use? Why? Did you switch recently? Why?<br />What problems have you had?'; 
+			elmnt.scrollIntoView(); 
+		}
+		function copyXml() {
+			const xmlText = document.getElementById("xmlContent").innerText;
+			const btn = document.getElementById("copyBtn");
+
+			navigator.clipboard.writeText(xmlText).then(() => {
+				btn.innerText = "Copied!";
+				btn.style.backgroundColor = "green";
+				btn.style.color = "white";
+				setTimeout(() => {
+					btn.innerText = "Copy XML";
+					btn.style.backgroundColor = "";
+					btn.style.color = "";
+				}, 2000);
+			}).catch(err => {
+				console.error("Failed to copy: ", err);
+				alert("Failed to copy text.");
+			});
+		}
+		</script>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item active"><a class="nav-link" href="/recipe/list">Recipes <span class="sr-only">(current)</span></a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=recipe" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"></td><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Recipe Codes</a>  <a class="btn btn-primary"href="https://digitalfire.com/recipe/list" role="button" aria-expanded="false">All Recipes</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a title="72" href="https://digitalfire.com/recipe/bory1">BORY1</a> - Bory 1 Crystalline Glaze<br /><a title="64" href="https://digitalfire.com/recipe/celecg">CELECG</a> - Celestite Crystalline Glaze<br /><a title="69" href="https://digitalfire.com/recipe/faao">FAAO</a> - Fa's All-Opaque Crystalline Glaze<br /><a title="66" href="https://digitalfire.com/recipe/fac5">FAC5</a> - Crystal Number Five Glaze<br /><a title="67" href="https://digitalfire.com/recipe/fo">FO</a> - Octal Crystalline Glaze<br /><a title="37" href="https://digitalfire.com/recipe/g1214m">G1214M</a> - 20x5 Cone 6 Base Glossy Glaze<br /><a title="4" href="https://digitalfire.com/recipe/g1214w">G1214W</a> - Cone 6 Transparent Base<br /><a title="3" href="https://digitalfire.com/recipe/g1214z1">G1214Z1</a> - Cone 6 Silky CaO matte base glaze<br /><a title="45" href="https://digitalfire.com/recipe/g1215u">G1215U</a> - Low Expansion Glossy Clear Cone 6<br /><a title="117" href="https://digitalfire.com/recipe/g1216l">G1216L</a> - Transparent for Cone 6 Porcelains<br /><a title="106" href="https://digitalfire.com/recipe/g1216m">G1216M</a> - Cone 6 Ultraclear Glaze for Porcelains<br /><a title="122" href="https://digitalfire.com/recipe/g1916q">G1916Q</a> - Low Fire Highly-Expansion-Adjustable Transparent<br /><a title="40" href="https://digitalfire.com/recipe/g1947u">G1947U</a> - Cone 10 Glossy transparent glaze<br /><a title="120" href="https://digitalfire.com/recipe/g2000">G2000</a> - LA Matte Cone 6 Matte White<br /><a title="61" href="https://digitalfire.com/recipe/g2240">G2240</a> - Cone 10R Classic Spodumene Matte<br /><a title="39" href="https://digitalfire.com/recipe/g2571a">G2571A</a> - Cone 10 Silky Dolomite Matte glaze<br /><a title="62" href="https://digitalfire.com/recipe/g2826r">G2826R</a> - Floating Blue Cone 5-6 Original Glaze Recipe<br /><a title="63" href="https://digitalfire.com/recipe/g2826x">G2826X</a> - Randy's Red Cone 5<br /><a title="55" href="https://digitalfire.com/recipe/g2851h">g2851H</a> - Ravenscrag Cone 6 High Calcium Matte Blue<br /><a title="59" href="https://digitalfire.com/recipe/g2853b">G2853B</a> - Cone 04 Clear Ravenscrag School Glaze<br /><a title="102" href="https://digitalfire.com/recipe/g2896">G2896</a> - Ravenscrag Plum Red Cone 6<br /><a title="104" href="https://digitalfire.com/recipe/104"><button type="button" class="btn btn-dark">G2902B</button></a> - Cone 6 Crystal Glaze<br /><a title="105" href="https://digitalfire.com/recipe/g2902d">G2902D</a> - Cone 6 Crystalline Development Project<br /><a title="115" href="https://digitalfire.com/recipe/g2916f">G2916F</a> - Cone 6 Stoneware/Whiteware transparent glaze<br /><a title="118" href="https://digitalfire.com/recipe/g2926b">G2926B</a> - Cone 6 Whiteware/Porcelain transparent glaze<br /><a title="126" href="https://digitalfire.com/recipe/g2926j">G2926J</a> - Low Expansion G2926B<br /><a title="119" href="https://digitalfire.com/recipe/g2928c">G2928C</a> - Ravenscrag Silky Matte for Cone 6<br /><a title="131" href="https://digitalfire.com/recipe/g2931h">G2931H</a> - Ulexite High Expansion Zero3 Clear Glaze<br /><a title="132" href="https://digitalfire.com/recipe/g2931k">G2931K</a> - Low Fire Fritted Zero3 Transparent Glaze<br /><a title="127" href="https://digitalfire.com/recipe/g2931l">G2931L</a> - Low Expansion Low-Fire Clear<br /><a title="121" href="https://digitalfire.com/recipe/g2934">G2934</a> - Matte Glaze Base for Cone 6<br /><a title="135" href="https://digitalfire.com/recipe/g2934y">G2934Y</a> - Cone 6 Magnesia Matte Low LOI Version<br /><a title="125" href="https://digitalfire.com/recipe/g3806c">G3806C</a> - Cone 6 Clear Fluid-Melt transparent glaze<br /><a title="130" href="https://digitalfire.com/recipe/g3838a">G3838A</a> - Low Expansion Transparent for P300 Porcelain<br /><a title="141" href="https://digitalfire.com/recipe/g3879">G3879</a> - Cone 04 Transparent Low-Expansion transparent glaze<br /><a title="93" href="https://digitalfire.com/recipe/ga10-a">GA10-A</a> - Alberta Slip Base Cone 10R<br /><a title="32" href="https://digitalfire.com/recipe/ga10-b">GA10-B</a> - Alberta Slip Tenmoku Cone 10R<br /><a title="33" href="https://digitalfire.com/recipe/ga10-d">GA10-D</a> - Alberta Slip Black Cone 10R<br /><a title="94" href="https://digitalfire.com/recipe/ga10x-a">GA10x-A</a> - Alberta Slip Base for cone 10 oxidation<br /><a title="30" href="https://digitalfire.com/recipe/ga6-a">GA6-A</a> - Alberta Slip Cone 6 transparent honey glaze<br /><a title="139" href="https://digitalfire.com/recipe/ga6-b">GA6-B</a> - Alberta Slip Cone 6 transparent honey glaze<br /><a title="31" href="https://digitalfire.com/recipe/ga6-c">GA6-C</a> - Alberta Slip Floating Blue Cone 6<br /><a title="88" href="https://digitalfire.com/recipe/ga6-d">GA6-D</a> - Alberta Slip Glossy Brown Cone 6<br /><a title="97" href="https://digitalfire.com/recipe/ga6-f">GA6-F</a> - Alberta Slip Cone 6 Oatmeal<br /><a title="35" href="https://digitalfire.com/recipe/ga6-g">GA6-G</a> - Alberta Slip Lithium Brown Cone 6<br /><a title="107" href="https://digitalfire.com/recipe/ga6-g1">GA6-G1</a> - Alberta Slip Lithium Brown Cone 6 Low Expansion<br /><a title="36" href="https://digitalfire.com/recipe/ga6-h">GA6-H</a> - Alberta Slip Cone 6 Black<br /><a title="83" href="https://digitalfire.com/recipe/gbcg">GBCG</a> - Generic Base Crystalline Glaze<br /><a title="75" href="https://digitalfire.com/recipe/gc106">GC106</a> - GC106 Base Crystalline Glaze<br /><a title="58" href="https://digitalfire.com/recipe/gr10-a">GR10-A</a> - Pure Ravenscrag Slip<br /><a title="80" href="https://digitalfire.com/recipe/gr10-b">GR10-B</a> - Ravenscrag Cone 10R Gloss Base<br /><a title="95" href="https://digitalfire.com/recipe/gr10-c">GR10-C</a> - Ravenscrag Cone 10R Silky Talc Matte<br /><a title="92" href="https://digitalfire.com/recipe/gr10-e">GR10-E</a> - Alberta Slip:Ravenscrag Cone 10R Celadon<br /><a title="96" href="https://digitalfire.com/recipe/gr10-g">GR10-G</a> - Ravenscrag Cone 10 Oxidation Variegated White<br /><a title="91" href="https://digitalfire.com/recipe/gr10-j">GR10-J</a> - Ravenscrag Cone 10R Dolomite Matte<br /><a title="108" href="https://digitalfire.com/recipe/gr10-j1">GR10-J1</a> - Ravenscrag Cone 10R Bamboo Matte<br /><a title="101" href="https://digitalfire.com/recipe/gr10-k1">GR10-K1</a> - Ravenscrag Cone 10R Tenmoku<br /><a title="110" href="https://digitalfire.com/recipe/gr10-l">GR10-L</a> - Ravenscrag Iron Crystal<br /><a title="5" href="https://digitalfire.com/recipe/gr6-a">GR6-A</a> - Ravenscrag Cone 6 Clear Glossy Base<br /><a title="1" href="https://digitalfire.com/recipe/gr6-b">GR6-B</a> - Ravenscrag Cone 6 Variegated Light Glossy Blue<br /><a title="76" href="https://digitalfire.com/recipe/gr6-c">GR6-C</a> - Ravenscrag Cone 6 White Glossy<br /><a title="77" href="https://digitalfire.com/recipe/gr6-d">GR6-D</a> - Ravenscrag Cone 6 Glossy Black<br /><a title="78" href="https://digitalfire.com/recipe/gr6-e">GR6-E</a> - Ravenscrag Cone 6 Raspberry Glossy<br /><a title="8" href="https://digitalfire.com/recipe/gr6-h">GR6-H</a> - Ravenscrag Cone 6 Oatmeal Matte<br /><a title="113" href="https://digitalfire.com/recipe/gr6-l">GR6-L</a> - Ravenscrag Cone 6 Transparent Burgundy<br /><a title="114" href="https://digitalfire.com/recipe/gr6-m">GR6-M</a> - Ravenscrag Cone 6 Floating Blue<br /><a title="124" href="https://digitalfire.com/recipe/gr6-n">GR6-N</a> - Ravenscrag Alberta Brilliant Cone 6 Celadon<br /><a title="65" href="https://digitalfire.com/recipe/grntcg">GRNTCG</a> - GRANITE Crystalline Glaze<br /><a title="138" href="https://digitalfire.com/recipe/l2000">L2000</a> - 25 Porcelain<br /><a title="57" href="https://digitalfire.com/recipe/l3341b">L3341B</a> - Alberta Slip Iron Crystal Cone 10R<br /><a title="109" href="https://digitalfire.com/recipe/l3685u">L3685U</a> - Cone 03 White Engobe Recipe<br /><a title="123" href="https://digitalfire.com/recipe/l3724f">L3724F</a> - Cone 03 Terra Cotta Stoneware<br /><a title="133" href="https://digitalfire.com/recipe/l3924c">L3924C</a> - Zero3 Porcelain Experimental<br /><a title="134" href="https://digitalfire.com/recipe/l3954b">L3954B</a> - Cone 6 Engobe (for M340)<br /><a title="136" href="https://digitalfire.com/recipe/l3954n">L3954N</a> - Cone 10R Base White Engobe Recipe for stonewares<br /><a title="41" href="https://digitalfire.com/recipe/mgbase1">MGBase1</a> - High Calcium Semimatte 1 (Mastering Glazes)<br /><a title="42" href="https://digitalfire.com/recipe/mgbase2">MGBase2</a> - High Calcium Semimatte 2 (Mastering Glazes)<br /><a title="43" href="https://digitalfire.com/recipe/mgbase3">MGBase3</a> - General Purpose Glossy Base 1 (Mastering Glazes)<br /><a title="44" href="https://digitalfire.com/recipe/mgbase4">MGBase4</a> - Glossy Base 2 Cone 6 (Mastering Glazes)<br /><a title="46" href="https://digitalfire.com/recipe/mgbase5">MGBase5</a> - Glossy Clear Liner Cone 6 (Mastering Glazes)<br /><a title="47" href="https://digitalfire.com/recipe/mgbase6">MGBase6</a> - Zinc Semimatte Glossy Base Cone 6<br /><a title="48" href="https://digitalfire.com/recipe/mgbase7">MGBase7</a> - Raspberry Cone 6 (Mastering Glazes)<br /><a title="49" href="https://digitalfire.com/recipe/mgbase8">MGBase8</a> - Waxwing Brown Cone 6 (Mastering Glazes)<br /><a title="50" href="https://digitalfire.com/recipe/mgbase9">MGBase9</a> - Waterfall Brown Cone 6 (Mastering Glazes)<br /><a title="74" href="https://digitalfire.com/recipe/tnf2cg">TNF2CG</a> - Tin Foil II Crystalline Glaze<br /><a title="68" href="https://digitalfire.com/recipe/vesucg">VESUCG</a> - Vesuvius Crystalline Glaze</div><h1>G2902B - Cone 6 Crystal Glaze</h1>
+<p><b>Modified</b>: 2022-09-11 21:37:46</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col">Material</th>
+<th class="text-center" scope="col">Amount</th>
+<th class="text-right" scope="col">Percent</th>
+</tr></thead><tbody>
+<tr><td class="label"><a href="https://digitalfire.com/material/zinc+oxide">Zinc Oxide</a></td><td class="text-right">25.00</td><td class="text-right">24.3</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/material/dolomite">Dolomite</a></td><td class="text-right">5.00</td><td class="text-right">4.9</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/material/ferro+frit+3110">Ferro Frit 3110</a></td><td class="text-right">51.00</td><td class="text-right">49.5</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/material/silica">Silica</a></td><td class="text-right">19.00</td><td class="text-right">18.4</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/material/lithium+carbonate">Lithium Carbonate</a></td><td class="text-right">3.00</td><td class="text-right">2.9</td></tr>
+<tr><td class="text-right" colspan="2">103.00</td>
+<td class="text-right">100</td>
+</tr>
+</tbody></table>
+<h4>Notes</h4><p>We developed this after a survey of common crystal glazes, it is a middle-of-the-road <a  href="https://digitalfire.com/glossary/base+glaze">base recipe</a> (having no <a  href="https://digitalfire.com/glossary/colorant">colorants</a>). We used this in testing a <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">high expansion</a> body being developing, one that would prevent or minimize <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a> that is so common in <a  href="https://digitalfire.com/glossary/glass+vs.+crystalline">crystalline</a> glazed ware. Since we were only testing for crazing, the appearance or crystal development were not assessed. That being said, this did develop white crystals in the transparent glass using the <a  href="https://digitalfire.com/schedule/plc6cr">PLC6CR</a> schedule.<br />
+<br />
+We have tested this using both <a  href="https://digitalfire.com/glossary/calcination">calcined</a> and raw zinc and it works well with either one. Of course, like other such glazes, this has no <a  href="https://digitalfire.com/material/925">kaolin</a> or clay. That means the <a  href="https://digitalfire.com/glossary/slurry">slurry</a> will settle unless flocculated or an organic gum is employed.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Firing Schedules</td>
+<td>
+<a href="https://digitalfire.com/schedule/plc6cr">Cone 6 Crystal Glaze Plainsman</a>
+<br /><i>Five-Step firing with no holds</i>
+</td>
+</tr>
+</tbody></table>
+
+<h3 style="clear:left;">XML to Paste Into Insight-live</h3><button onclick="copyXml()" id="copyBtn">Copy XML</button><pre id="xmlContent">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;recipes version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;&gt;
+&lt;recipe name=&quot;Cone 6 Crystal Glaze&quot; id=&quot;104&quot; date=&quot;2022-09-11&quot; codenum=&quot;G2902B&quot;&gt;
+&lt;recipelines&gt;
+&lt;recipeline material=&quot;Zinc Oxide&quot; amount=&quot;25.000&quot;/&gt;
+&lt;recipeline material=&quot;Dolomite&quot; amount=&quot;5.000&quot;/&gt;
+&lt;recipeline material=&quot;Ferro Frit 3110&quot; amount=&quot;51.000&quot;/&gt;
+&lt;recipeline material=&quot;Silica&quot; amount=&quot;19.000&quot;/&gt;
+&lt;recipeline material=&quot;Lithium Carbonate&quot; amount=&quot;3.000&quot;/&gt;
+&lt;url url=&quot;https://digitalfire.com/recipe/104&quot; descrip=&quot;https://digitalfire.com/recipe/104&quot;/&gt;
+&lt;/recipelines&gt;
+&lt;urls/&gt;
+&lt;/recipe&gt;
+&lt;/recipes&gt;
+</pre><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

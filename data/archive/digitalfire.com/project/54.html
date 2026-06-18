@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Project: A cereal bowl jigger mold made using 3D printing</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="A new way to 3D-print your way to making jigger molds and templates. The molds are encased in a 3D printed shell that makes them fit perfectly into the cuphead. And the template is precise and very effectivwe.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+March 2026: We are doing major upgrades to code here, please be patient regarding any issues. If any page is not working for a period of hours, please contact us. Thank you.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item active" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=project" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:center; vertical-align:top;">Feb 14-15, 2026 - <b>Major Server <a href="https://digitalfire.com">Upgrade</a> Done</b></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Projects</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a title="15" href="https://digitalfire.com/project/15">2019 Jiggering-Casting Project of Medalta 66 Mug</a><br /><button type="button" class="btn btn-dark">A cereal bowl jigger mold made using 3D printing</button><br /><a title="33" href="https://digitalfire.com/project/33">Beer Bottle Master Mold via 3D Printing</a><br /><a title="61" href="https://digitalfire.com/project/61">Better porosity for Brown Sugar Savers</a><br /><a title="48" href="https://digitalfire.com/project/48">Build a kiln monitoring device</a><br /><a title="69" href="https://digitalfire.com/project/69">Celebration Project</a><br /><a title="60" href="https://digitalfire.com/project/60">Coffee Mug Slip Casting Mold via 3D Printing</a><br /><a title="29" href="https://digitalfire.com/project/29">Comparing the Melt Fluidity of 16 Frits</a><br /><a title="52" href="https://digitalfire.com/project/52">Cookie Cutting clay with 3D printed cutters</a><br /><a title="41" href="https://digitalfire.com/project/41">Evaluating a clay's suitability for use in pottery</a><br /><a title="55" href="https://digitalfire.com/project/55">Make a mold for 4-gallon stackable calciners</a><br /><a title="49" href="https://digitalfire.com/project/49">Make Your Own Pyrometric Cones</a><br /><a title="47" href="https://digitalfire.com/project/47">Make your own sieve shaker to process ceramic slurries</a><br /><a title="40" href="https://digitalfire.com/project/40">Making a high quality ceramic tile</a><br /><a title="46" href="https://digitalfire.com/project/46">Making a Plaster Table</a><br /><a title="37" href="https://digitalfire.com/project/37">Making Bricks</a><br /><a title="50" href="https://digitalfire.com/project/50">Making our own kiln posts using a hand extruder</a><br /><a title="59" href="https://digitalfire.com/project/59">Medalta Ball Pitcher Slip Casting Mold via 3D Printing</a><br /><a title="34" href="https://digitalfire.com/project/34">Medalta Jug Master Mold Development</a><br /><a title="63" href="https://digitalfire.com/project/63">Mold Natches</a><br /><a title="32" href="https://digitalfire.com/project/32">Mother Nature's Porcelain - Plainsman 3B</a><br /><a title="66" href="https://digitalfire.com/project/66">Mug Handle Casting</a><br /><a title="39" href="https://digitalfire.com/project/39">Nursery plant pot mold via 3D printing</a><br /><a title="30" href="https://digitalfire.com/project/30">Pie-Crust Mug-Making Method</a><br /><a title="35" href="https://digitalfire.com/project/35">Plainsman 3D, Mother Nature's Porcelain/Stoneware</a><br /><a title="38" href="https://digitalfire.com/project/38">Project to Document a Shimpo Jiggering Attachment</a><br /><a title="36" href="https://digitalfire.com/project/36">Roll, Cut, Pull, Attach Handle-making Method</a><br /><a title="23" href="https://digitalfire.com/project/23">Slurry Mixing and Dewatering Your Own Clay Body</a><br /><a title="24" href="https://digitalfire.com/project/24">Testing a New Load of EP Kaolin</a><br /><a title="44" href="https://digitalfire.com/project/44">Using milk as a glaze</a></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>A cereal bowl jigger mold made using 3D printing</h1>
+<p>Objective: See if it is possible for a potter to create a duplicate of a bowl purchased at Ikea. It is porcelaneous <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a>, not white but very <a  href="https://digitalfire.com/glossary/vitreous">vitreous</a>. It is a simple and stable form with a transparent crystal clear <a  href="https://digitalfire.com/glossary/glossy+glaze">glossy glaze</a>.<br />
+<br />
+As with other projects, this all depends on one's ability to do the 3D drawings. I use <a  href="https://digitalfire.com/picture/2453">Fusion 360</a>, one of the best skills I have ever learned.<br />
+<br />
+First, I measured the aluminum cuphead carefully and drew its cross-section.<br />
+<br />
+I drew the profile of the <a  href="https://digitalfire.com/glossary/jiggering">jigger</a> mold using outside dimensions to match the inside of the cup head and an inside contour to match the outside of the bowl (with 12% size increase to account for drying and <a  href="https://digitalfire.com/glossary/firing+shrinkage">firing shrinkage</a>).<br />
+<br />
+After making a couple of iterations I realized that it was not necessary to print a multi-piece rail mold (with vertical <a  href="https://digitalfire.com/glossary/mold+shell+flange">flanges</a>). A one-piece one works better (my Prusa MK3+ and <a  href="https://digitalfire.com/picture/3489">MK4</a> can just handle this, it stays perfectly round by virtue of the flange and step). Additionally, there is no need to remove the <a  href="https://digitalfire.com/glossary/3d-printing">3D-printed</a> shell from the mold, in fact, there are multiple advantages to leaving it in place.<p style="clear:left"></p></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">v2.0 DIY Jiggering is Here!</h3>
+<p style="margin-top:0px;"><b>Available</b> on the <a target="_blank" href="https://digitalfire.com/downloads/index.php?picture=3620">Downloads</a> page</p>
+<br /><a alt="DIY jiggering mold and template" href="https://digitalfire.com/picture/3620"><img class="flexleft50" alt="DIY jiggering mold and template"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/4xk5h9haya.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3620">click here</a> to see it.</p>
+<p>It is beyond amazing that this is possible at home now! Follow Lily, step-by-step as she uses <a  href="https://digitalfire.com/picture/2453">Fusion 360</a> to create this mold, intended for use in a cuphead, in 9 minutes!<br />
+<br />
+A newer larger <a  href="https://digitalfire.com/glossary/3d+printer">3D printer</a> made this type of mold much more practical (and it adds the ability to make a <a  href="https://digitalfire.com/picture/3583">clamping baseplate</a> to enable a hyprid plaster/PLA master). This procedure will work for <a  href="https://digitalfire.com/glossary/jiggering">jiggering</a> almost any closed shape. <a  href="https://digitalfire.com/glossary/3d-printing">3D print</a> the shell mold for the outside shape of the bowl, cast a <a  href="https://digitalfire.com/material/1124">plaster</a> model in it and tool and soap it for a perfect surface. Then, 3D print the shell of the outside of the <a  href="https://digitalfire.com/glossary/jiggering">jigger</a> mold (full or flanged clamped halves). Invert both onto a clamping baseplate, stick the model down using a sticky clay slip and use the correct spacer ring to center the model inside the shell mold. Pour it full of plaster to make a working mold. Finally, adjust the hole locations on the template to mount on the jigger arm and 3D print it. You will be amazed at the cutting edge of the template, and the quality it can produce.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Bowl jigger mold versions ready to pour</h3>
+<br /><a alt="3D-printed jigger template for cereal bowl" href="https://digitalfire.com/picture/3261"><img class="flexleft50" alt="3D-printed jigger template for cereal bowl"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/duxf9csjd3.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3261">click here</a> to see it.</p>
+<p>A <a  href="https://digitalfire.com/glossary/jiggering">jigger</a> mold is about to be poured in these two <a  href="https://digitalfire.com/glossary/3d-printing">3D-printed</a> housings. This is a demo, the <a  href="https://digitalfire.com/material/1124">plaster</a> model of the outside shape of the bowl itself has not yet been smoothed and soaped. It will be clay-glued or screwed onto the <a  href="https://digitalfire.com/picture/3583">clamping baseplate</a>. It is held on-center using a spacer ring (shown in place here).<br />
+<br />
+Top (method 1): The outside two-piece shell is clamped onto a clamping baseplate, tightly around the spacer ring. When the plaster has set this shell is removed and the bowl form drops out leaving the complete jigger mold.<br />
+ <br />
+Bottom (method 2): A one-piece outside shell is left in place for the service life of the mold. It wraps over the top partway (so the spacer ring is narrower).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Finished bowl jigger mold encased in a PLA 3D print</h3>
+<br /><a href="https://digitalfire.com/picture/3260"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/wtqaqsdq86.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3260">click here</a> to see it.</p>
+<p>This is much more durable than a standard <a  href="https://digitalfire.com/material/1124">plaster</a> <a  href="https://digitalfire.com/glossary/jiggering">jigger</a> mold. And much nicer to handle. And it drops very precisely into the cup head, a perfect fit. This was the unexpected culmination of a project to simply use 3D methods to create a traditional all-plaster mold. But it became evident it was better to leave the <a  href="https://digitalfire.com/picture/3701">PLA</a> shell in place.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">v1.0 bowl jigger mold procedure</h3>
+<br /><a alt="3D printing a jigger mold shell" href="https://digitalfire.com/picture/3256"><img class="flexleft50" alt="3D printing a jigger mold shell"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/bghce3omsb.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3256">click here</a> to see it.</p>
+<p>This version was done when I did not have a <a  href="https://digitalfire.com/glossary/3d+printer">3D printer</a> large enough to make the outer shell. So I did it in four pieces.<br />
+1 The original drawing in <a  href="https://digitalfire.com/picture/2453">Fusion 360</a> (aluminum cuphead, <a  href="https://digitalfire.com/glossary/jiggering">jigger</a> mold with bowl-outside profile, bowl mold, jigger mold case and jigger template).<br />
+2 The original bowl purchased at Ikea alongside the <a  href="https://digitalfire.com/glossary/3d-printing">3D printed</a> shell of its outside contours (12% bigger).<br />
+3 The <a  href="https://digitalfire.com/material/1124">plaster</a> model of the outside shape (created using the shell mold).<br />
+4 Printing a pair of circular rails (with <a  href="https://digitalfire.com/glossary/mold+shell+flange">flanges</a> for clamping).<br />
+5 The rail assembly (clamped and soaped) ready for use to pour working mold.<br />
+6 Old method: The model and rail assembly glued to an Arborite bat (using sticky clay). Both were centered manually on the potters wheel (we later did this using a 3D printed spacer ring).<br />
+7 The light-bulb moment of realizing the rails are not needed! I now print the outer shell as one unit, as thin as <a  href="https://digitalfire.com/glossary/0.8mm+thickness">0.8mm</a>. I leave it in place, for <a  href="https://digitalfire.com/glossary/glaze+durability">durability</a>.<br />
+8 The finished working mold with PLA-printed outer shell left in place.<br />
+9 The jigger mold inserted into the cuphead, ready for use.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Jigger wheel aluminum cuphead (for plates)</h3>
+<br /><a href="https://digitalfire.com/picture/2865"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/bhepdhbhxq.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2865">click here</a> to see it.</p>
+<p>The head is lathed from aluminum. It fits on a potter's wheel (adjust the inside diameter to fit the shaft). The <a  href="https://digitalfire.com/material/1124">plaster</a> mold drops into it this cuphead and stays in place by friction. The only point of contact between the mold and aluminum should be at the top inside corner of the cuphead.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Jigger arm assembly for a Shimpo RK2 pottery wheel</h3>
+<br /><a href="https://digitalfire.com/picture/2623"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/bq64qnaemd.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2623">click here</a> to see it.</p>
+<p>We have mechanical drawings for this (and the cup heads). This is very sturdy and useful. The arm is relatively short compared to industrial <a  href="https://digitalfire.com/glossary/jiggering">jigger</a> wheels and is thus useful for only small shapes. There is an advantage: The template contacts vertical walls at a more perpendicular angle. But the disadvantage is that the trailing edge of the template hits the outside edge of the lip on taller shapes. The pointed bolts hold the arm securely and their tightness enables varying the friction of movement. They have enough length to also position the arm horizontally. We <a  href="https://digitalfire.com/glossary/3d-printing">3D print</a> templates and block masters for making working molds that drop into the cuphead.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Shimpo Jigger attachment drawing</h3>
+<p style="margin-top:0px;"><b>Available</b> on the <a target="_blank" href="https://digitalfire.com/downloads/index.php?picture=3015">Downloads</a> page</p>
+<br /><a alt="Jigger arm assembly" href="https://digitalfire.com/picture/3015"><img class="flexleft50" alt="Jigger arm assembly"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/marqejwbba.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3015">click here</a> to see it.</p>
+<p>Made from 1/2" x 3" flat steel, this frame is heavy and very strong and solid. The two larger 3.5" long bolts are custom-made from 5/8in-11 threaded rod, they have a 45-degree cone tip and locking nuts. The small vertical stopper-bolt is made from 3/8" rod. It is 2" long with 1" dia washer welded on top and a locking nut. The small bolt setting determines the bottom point of arm travel. The pivot sockets on the <a  href="https://digitalfire.com/glossary/jiggering">jigger</a> arm are 1" long and made from 1" steel rod, each has the 45-degree recess machined into it. The arm can be moved left or right and its tension set by adjusting the two larger bolts. The weighted collar on the back of the arm employs two pieces of 1" thick flat steel, it is heavy (important for convenience-of-operation). The triangular notch enables the arm to be lifted higher. The weight colar needs some sort of set screw to hold it in place. A number of corners need to be rounded or rubber-padded for safety reasons.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Using a Giffin Grip for jiggering</h3>
+<br /><a href="https://digitalfire.com/picture/3659"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/mrvxhz2z4j.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3659">click here</a> to see it.</p>
+<p>Techniques like this may not be as good as using a cup-head, but it may be more practical for potters and hobbyists who also use their potters wheel for <a  href="https://digitalfire.com/glossary/throwing">throwing</a> (because changing wheelheads can be a big hassle). Mols could also be secured to the standard wheelhead using other techniques (e.g. bat pins or a clamp-on cuphead). This arrangement also enables easier mold-making because the backside is flat. And a wide range of sizes can be accommodated. And, of course, this method is less expensive.</p>
+<p style="clear:left"></p>
+<h3>Inbound Photo Links</h3><table><tr>
+<td style="vertical-align:top; font-size:80%;">
+<br /><a alt="Black underglazed bowl" href="https://digitalfire.com/picture/3376"><img style="margin:0px 10px 10px 0px; height:100px;" alt="Black underglazed bowl"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/aivz3xiczh-100H.jpg" /></a><br />When a DIY black underglaze makes sense
+</td>
+</tr></table><br />
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/3d-printing">3D-Printing</a>
+<br /><i>Standard <a  href="https://digitalfire.com/glossary/3d-printing">3D printing</a> technology (not printing with clay itself) is very useful to potters and ceramic industry in making objects that assist and enable production.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/3d+design">3D Design</a>
+<br /><i><a  href="https://digitalfire.com/glossary/3d+design">3D Design</a> software is used to create dimensionally accurate objects by sketching 2D geometry and transforming it using tools to rotate, extrude, sweep, etc. The software generates the polygon surface.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="https://digitalfire.com/project/nursery+plant+pot+mold+via+3d+printing">Nursery plant pot mold via 3D printing</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="https://digitalfire.com/project/2019+jiggering-casting+project+of+medalta+66+mug">2019 Jiggering-Casting Project of Medalta 66 Mug</a>
+<br /><i>My project to reproduce a mug made by <a  href="https://rongetty.com/category/company/27">Medalta Potteries</a> more than 50 years ago. I cast the body and handle, <a  href="https://digitalfire.com/glossary/jiggering">jigger</a> the rim and then attach the handle. <a  href="https://digitalfire.com/glossary/3d-printing">3D printing</a> made this all possible.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/3mm">Mold making using 3D printing</a>
+<br /><i>An ordinary consumer <a  href="https://digitalfire.com/glossary/3d+printer">3D printer</a> has many exciting possibilities for making many types of molds, it is a place where people having both artistic and mechanical abilities can get a double the dopamine!</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Media</td>
+<td>
+<a href="https://digitalfire.com/video/design+a+triangular+pottery+plate+block+mold+in+fusion+360">Design a Triangular Pottery Plate Block Mold in Fusion 360</a>
+<br /><i>Lilly will take you step-by-step through the process of parametrically drawing a triangular plate with curved sides and rounded corners, for <a  href="https://digitalfire.com/glossary/3d-printing">3D printing</a> to pour a <a  href="https://digitalfire.com/material/1124">plaster</a> working mold.</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

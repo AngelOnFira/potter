@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Alberta Slip</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Albany Slip successor - a plastic clay that melts to dark brown glossy at cone 10R, with a frit addition it can also host a wide range of glazes at cone 6.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item active"><a class="nav-link" href="/material/list">Materials <span class="sr-only">(current)</span></a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=material" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"></td><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table>
+<ul class="nav nav-tabs pt-1" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="material-tab" data-toggle="tab" href="#material" role="tab" aria-controls="material" aria-selected="true">Materials for Ceramics</a>
+  </li>
+</ul>
+<div class="tab-content mb-3" id="myTabContent" style="border-right:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #ddd; padding:10px;">
+  <div class="tab-pane fade show active" id="material" role="tabpanel" aria-labelledby="material-tab">
+<a href="/material/list/1-9">1-9</a> | <a href="/material/list/A">A</a> | <a href="/material/list/B">B</a> | <a href="/material/list/C">C</a> | <a href="/material/list/D">D</a> | <a href="/material/list/E">E</a> | <a href="/material/list/F">F</a> | <a href="/material/list/Frits">Frits</a> | <a href="/material/list/G">G</a> | <a href="/material/list/H">H</a> | <a href="/material/list/I">I</a> | <a href="/material/list/J">J</a> | <a href="/material/list/K">K</a> | <a href="/material/list/L">L</a> | <a href="/material/list/M">M</a> | <a href="/material/list/N">N</a> | <a href="/material/list/O">O</a> | <a href="/material/list/P">P</a> | <a href="/material/list/Q">Q</a> | <a href="/material/list/R">R</a> | <a href="/material/list/S">S</a> | <a href="/material/list/T">T</a> | <a href="/material/list/U">U</a> | <a href="/material/list/V">V</a> | <a href="/material/list/W">W</a> | <a href="/material/list/X">X</a> | <a href="/material/list/Y">Y</a> | <a href="/material/list/Z">Z</a><br />
+<nobr></nobr>
+</div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Alberta Slip</h1>
+<p><b>Alternate Names</b>: Archie Bray Slip</p>
+<p><b>Description</b>: Albany slip substitute</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/oxide">Oxide</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/analysis">Analysis</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/formula">Formula</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/formula">Tolerance</a></th>
+</tr></thead><tbody>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/cao">CaO</a></td>
+<td class="text-right"">5.90%</td>
+<td class="text-right">
+0.38
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/na2o">Na2O</a></td>
+<td class="text-right"">2.20%</td>
+<td class="text-right">
+0.13
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/mgo">MgO</a></td>
+<td class="text-right"">3.90%</td>
+<td class="text-right">
+0.35
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/tio2">TiO2</a></td>
+<td class="text-right"">0.30%</td>
+<td class="text-right">
+0.01
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/al2o3">Al2O3</a></td>
+<td class="text-right"">15.20%</td>
+<td class="text-right">
+0.54
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/p2o5">P2O5</a></td>
+<td class="text-right"">0.10%</td>
+<td class="text-right">
+-
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/sio2">SiO2</a></td>
+<td class="text-right"">53.54%</td>
+<td class="text-right">
+3.24
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/fe2o3">Fe2O3</a></td>
+<td class="text-right"">4.50%</td>
+<td class="text-right">
+0.10
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/k2o">K2O</a></td>
+<td class="text-right"">3.50%</td>
+<td class="text-right">
+0.13
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/loi">LOI</a></td>
+<td class="text-right">9.20%</td><td class="text-right">n/a</td></tr>
+<tr><td colspan="2">Oxide Weight</td><td colspan="2" class="text-right">
+323.81
+</td></tr>
+<tr><td colspan="2" class="text-right"><a href="https://digitalfire.com/glossary/formula+weight">Formula Weight</a></td><td colspan="2" style="text-align:right">
+356.62
+</td></tr>
+</tbody></table>
+<h4>Notes</h4><p>This material was formulated as a physical and chemical substitute for the late and very popular <a  href="https://digitalfire.com/material/31">Albany Slip</a> from New York state. Like Albany, it is a low melting iron stained clay. <a  href="https://digitalfire.com/material/32">Alberta Slip</a> is more consistent than Albany was since it is made from a blend of raw materials.<br />
+<br />
+Alberta slip has a slightly lower iron content than Albany had so some glazes may not fire as dark (this can be counteracted by adding additional <a  href="https://digitalfire.com/material/874">iron oxide</a>). Alberta slip melts as well and works in most glazes that call for Albany. Alberta slip is more plastic (less silty) so recipes containing larger proportions may shrink and crack during drying (requiring the use of a <a  href="https://digitalfire.com/glossary/calcination">calcine</a>:raw mix).<br />
+<br />
+<a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> Clays has made this material for many years and it is established in the market place across North America. It has its own website at <a  href="https://plainsmanclays.ca/data/index.php?product=12910">albertaslip</a>.com. You can use Alberta Slip at 100% (raw:calcine mix) to create a chocolate brown <a  href="https://digitalfire.com/glossary/glossy+glaze">glossy glaze</a> at cone 10. Many Albany glazes were based on the addition of an active <a  href="https://digitalfire.com/glossary/flux">flux</a> that increased <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> so that greenish and yellowish iron crystals grew on cooling. Many black glazes were based on Albany Slip, since it already contained lots of iron only a little more and some extra cobalt or manganese were needed.<br />
+<br />
+The <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> of Alberta Slip is very helpful in <a  href="https://digitalfire.com/glossary/suspension">suspending</a> glaze slurries. However if there is more than about 40% (with no other clays), then you must use a raw:calcine mix. The <a  href="https://plainsmanclays.ca/data/index.php?product=12910">albertaslip</a>.com website has information on how to do the calcining and how to adjust for the change in <a  href="https://digitalfire.com/glossary/loi">LOI</a>.<br />
+<br />
+The analysis of this material was changed here in Sept 2013, not because the material changed, but because they switched to an actual assay instead of a calculated analysis.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">An original container bag of Alberta Slip</h3>
+<br /><a href="https://digitalfire.com/picture/1983"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/9kd745zjex.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1983">click here</a> to see it.</p>
+<p></p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Melt fluidity of Albany Slip vs. Alberta Slip at cone 10R</h3>
+<br /><a alt="Albany vs Alberta Slip melt" href="https://digitalfire.com/picture/526"><img class="flexleft50" alt="Albany vs Alberta Slip melt"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/vmj7kunfqa.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/526">click here</a> to see it.</p>
+<p>This is a <a  href="https://digitalfire.com/test/glfl">GLFL test</a>, it employs a slipcast <a  href="https://digitalfire.com/picture/2350">melt flow tester</a> to show the flow patterns of two glazes (or materials), side-by-side. <a  href="https://digitalfire.com/material/31">Albany Slip</a> was a pure mined silty clay that, by itself, melted to a glossy dark brown glaze at <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10R</a>. By itself it was a <a  href="https://digitalfire.com/glossary/tenmoku">Tenmoku</a> glaze at high temperatures. <a  href="https://digitalfire.com/material/32">Alberta Slip</a> is a recipe of mined clays with added refined minerals that give it a similar <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a>, firing behavior and raw physical appearance. As you can see, the <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> is very similar.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">How runs of Alberta Slip are compared in production testing</h3>
+<br /><a href="https://digitalfire.com/picture/355"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/ygzbhspq74.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/355">click here</a> to see it.</p>
+<p>These are two runs of <a  href="https://digitalfire.com/material/32">Alberta slip</a> (plus 20% <a  href="https://digitalfire.com/material/351">frit 3134</a>) in a <a  href="https://digitalfire.com/test/glfl">GLFL test</a> to compare <a  href="https://digitalfire.com/glossary/melt+fluidity">melt flow</a> at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Cone 10R beanpot glazed with Alberta Slip (100%).</h3>
+<br /><a href="https://digitalfire.com/picture/368"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/beanpot.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/368">click here</a> to see it.</p>
+<p>The need for molds at the emerging <a  href="http://rongetty.com/category/company/27">Medalta Potteries</a> project was the incentive to produce these beanpot reproductions. This provided early opportunty to introduce digital technologies into the <a  href="https://digitalfire.com/glossary/jiggering">jigger</a> mold-making design process (during the 1990s). These were also an enablerbto showcasing <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> Clay's <a  href="https://digitalfire.com/material/32">Alberta Slip</a> glaze material (this glaze is 100% of that material).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Alberta Slip base amber-clear glaze on the outside of a Polar Ice cone 6 mug</h3>
+<br /><a href="https://digitalfire.com/picture/2030"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/9akjtkdo5n.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2030">click here</a> to see it.</p>
+<p>However this version employs Ferro <a  href="https://digitalfire.com/material/356">Frit 3195</a> instead of <a  href="https://digitalfire.com/material/351">Frit 3134</a> to <a  href="https://digitalfire.com/glossary/flux">flux</a> the <a  href="https://digitalfire.com/material/32">Alberta Slip</a>. <a  href="https://plainsmanclays.ca/data/index.php?product=12881">Polar Ice</a> is a <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> super-white <a  href="https://digitalfire.com/glossary/translucency">translucent</a> <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> from <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> Clays.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A metallic, silky crystal black glaze based on Alberta Slip</h3>
+<br /><a href="https://digitalfire.com/picture/351"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/recipes/altaslipplus5stain7ironcone10r.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/351">click here</a> to see it.</p>
+<p>This is a 50:50 mix of <a  href="https://digitalfire.com/glossary/calcination">calcine</a> and raw <a  href="https://digitalfire.com/material/32">Alberta Slip</a> plus 5 parts Mason 6600 black stain, 5 Mason 6666 black and 7 iron.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Alberta Slip as a base for glossy black glazes at cone 10R</h3>
+<br /><a href="https://digitalfire.com/picture/354"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/recipes/altaslipplus1blackstain6600-6666at10r.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/354">click here</a> to see it.</p>
+<p>A jet a black <a  href="https://digitalfire.com/glossary/glossy+glaze">glossy glaze</a> for <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10R</a> is as easy as 1% black stain and 99% <a  href="https://digitalfire.com/material/32">Alberta Slip</a> (Mason 6666 or 6600). Of course, the 99% is a mix of <a  href="https://digitalfire.com/glossary/calcination">calcine</a> and raw material (starting at 50:50).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Melt fluidity and coverage: RedArt Slip vs. Albany Slip vs. Alberta Slip</h3>
+<br /><a alt="Two Albany Slip substitute melt flows and glaze tests" href="https://digitalfire.com/picture/2439"><img class="flexleft50" alt="Two Albany Slip substitute melt flows and glaze tests"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/jqcpyok8xl.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2439">click here</a> to see it.</p>
+<p>These three melt flows and mugs were fired at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> (using the <a  href="https://digitalfire.com/schedule/c6dhsc">C6DHSC</a> <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a>). The benchmark recipe is 80% clay and 20% Ferro <a  href="https://digitalfire.com/material/356">Frit 3195</a> (our standard <a  href="https://digitalfire.com/recipe/ga6-b">GA6-B</a> recipe). <br />
+-The center <a  href="https://digitalfire.com/glossary/melt+fluidity">melt flow</a> (and matching buff <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> mug below) employ the original <a  href="https://digitalfire.com/material/31">Albany Slip</a>.<br />
+-The one on the right employs <a  href="https://digitalfire.com/material/32">Alberta Slip</a>. Notice that, although having a very similar melt flow, it needs an <a  href="https://digitalfire.com/material/874">iron oxide</a> addition to darken the color (e.g. 2%).<br />
+-The one on the far left uses an Albany Slip substitute made from 80% <a  href="https://digitalfire.com/material/1191">Redart</a>, 6.5% <a  href="https://digitalfire.com/material/173">calcium carbonate</a>, 6.5% <a  href="https://digitalfire.com/material/273">dolomite</a> and 6.5% <a  href="https://digitalfire.com/material/1070">nepheline syenite</a> (our code L3613D). The <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> of RedArt is different enough from Albany that some compromises were needed to avoid over-supplying the iron even more (and firing darker yet). Although this Redart version runs in a very similar pattern on <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> flow, the character of the glaze on the mug reveals it needs a little more melting (increasing the <a  href="https://digitalfire.com/glossary/frit">frit</a> percentage would take care of that).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Alberta Slip used in the common lithium-tin cone 6 glaze</h3>
+<br /><a href="https://digitalfire.com/picture/316"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/altasliplithiumbrown.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/316">click here</a> to see it.</p>
+<p>This is 85% <a  href="https://digitalfire.com/material/32">Alberta Slip</a>, 11% lithium and 4% tin fired at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> in oxidation. Like the original Albany version, it has a very low <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> (because of the high lithium content) and likes to <a  href="https://digitalfire.com/glossary/glaze+shivering">shiver</a> on many <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">95% Alberta Slip plus 4% iron at cone 10R</h3>
+<br /><a href="https://digitalfire.com/picture/319"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/materials/altaslipplus4iron10r.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/319">click here</a> to see it.</p>
+<p></p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">The rutile mechanism in glazes</h3>
+<br /><a href="https://digitalfire.com/picture/292"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/g2862-431x170-6.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/292">click here</a> to see it.</p>
+<p>2, 3, 4, 5% <a  href="https://digitalfire.com/material/1204">rutile</a> added to an 80:20 mix of <a  href="https://digitalfire.com/material/32">Alberta Slip</a>:Frit 3134 at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>. This <a  href="https://digitalfire.com/glossary/variegation">variegating</a> <a  href="https://digitalfire.com/glossary/mechanism">mechanism</a> of rutile is well-known among potters. Rutile can be added to many glazes to <a  href="https://digitalfire.com/glossary/variegation">variegate</a> existing color and <a  href="https://digitalfire.com/glossary/opacifier">opacification</a>. If more rutile is added the surface turns an ugly yellow in a mass of <a  href="https://digitalfire.com/material/1644">titanium</a> crystals.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Here is what happens when a glaze has too much raw clay</h3>
+<br /><a alt="A high clay glaze is cracking" href="https://digitalfire.com/picture/812"><img class="flexleft50" alt="A high clay glaze is cracking"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/mivmozixit.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/812">click here</a> to see it.</p>
+<p>This is an example of how a glaze that contains too much plastic clay has been applied too thick. It shrinks and cracks during drying and is guaranteed to <a  href="https://digitalfire.com/trouble/crawling">crawl</a>. This is raw <a  href="https://digitalfire.com/material/32">Alberta Slip</a>. To solve this problem you need to tune a mix of raw and <a  href="https://digitalfire.com/glossary/calcination">roasted</a> clay. Enough raw clay is needed to suspend the <a  href="https://digitalfire.com/glossary/slurry">slurry</a> and dry it to a hard surface, but enough <a  href="https://digitalfire.com/glossary/calcination">calcine</a> is needed to keep the shrinkage low enough that this cracking does not happen. Perhaps you have been using a glaze having a high percentage of clay and this does not happen - the reason is likely that the clay is not highly plastic.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Clay in a glaze recipes. Why is it there?</h3>
+<h4 style="color:#888888; margin-top:0px;">What happens when there is too much?</h4>
+<br /><a alt="Glaze cracking during drying" href="https://digitalfire.com/picture/1442"><img class="flexleft50" alt="Glaze cracking during drying"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/hosgajelaz.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1442">click here</a> to see it.</p>
+<p>If I put this on social, I might get 100 comments on the cause. Most would say it's applied too thick. That is not correct. At the top, it is too thick, but not at the bottom (where it is still cracking). <a  href="https://digitalfire.com/trouble/crawling">Crawling</a> during firing is almost certain.<br />
+<br />
+Before offering any opinion, one needs to <a  href="https://digitalfire.com/glossary/limit+recipe">sanity check</a> the recipe. This one, <a  href="https://digitalfire.com/recipe/ga6-b">GA6-B</a>, contains a lot of clay. Why do <a  href="https://digitalfire.com/glossary/dipping+glaze">dipping glazes</a> contain clay, usually <a  href="https://digitalfire.com/material/925">kaolin</a>, <a  href="https://digitalfire.com/material/80">ball clay</a>? To suspend the <a  href="https://digitalfire.com/glossary/slurry">slurry</a>, slow down drying, gel the slurry to make it <a  href="https://digitalfire.com/glossary/thixotropy">thixotropic</a> and harden the layer on drying. But their <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> is also important, clays supply the all-important <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> and <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> to <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> (which would otherwise have to come from <a  href="https://digitalfire.com/material/310">feldspar</a>). Certain clays excel at <a  href="https://digitalfire.com/glossary/suspension">suspending</a>. 15-20% <a  href="https://digitalfire.com/material/291">EP kaolin</a>, for example, is all that is needed. It’s not that plastic, but sticky and thixotropic (<a  href="https://digitalfire.com/material/831">Grolleg</a> and New Zealand kaolins are similar or even better). 10% of a gelling ball clay might be enough. However, 50% of a silty non-plastic clay might be needed. When the clay has too much influence, glazes shrink too much as they dry and then crack like this. Ones lacking clay (or employing one that is not suitable) have poor application properties (for dipping) and are powdery. This glaze has 80% pure raw <a  href="https://digitalfire.com/material/32">Alberta Slip</a>. That is a plastic clay, no wonder this is happening! 50% of it needs to be <a  href="https://digitalfire.com/glossary/calcination">roasted</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">CMC Gum is magic for multi-layering, even for raw Alberta Slip</h3>
+<br /><a alt="A glaze that cracks on drying was fixed" href="https://digitalfire.com/picture/2261"><img class="flexleft50" alt="A glaze that cracks on drying was fixed"  loading="lazy" src="https://digitalfire.com/4sight/images/pictures/naeeyct1se.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2261">click here</a> to see it.</p>
+<p>The glaze on the left is 85% of a <a  href="https://digitalfire.com/glossary/calcination">calcine</a>:raw <a  href="https://digitalfire.com/material/32">Alberta Slip</a> mix (40:60). It was on too thick so it cracked on drying (even if not too thick, if others are layered over it everything will flake off). The center piece has the same recipe but uses 85% pure raw Alberta Slip, yet it sports no cracks. It should be cracked much worse than #1. How is this possible? 1% added <a  href="https://digitalfire.com/material/228">CMC Gum</a> (via a gum solution) was added! This is magic, but there is more. It is double-layered! Plus very thick strokes of a commercial <a  href="https://digitalfire.com/glossary/brushing+glaze">brushing glaze</a> have been applied over that. Yet no cracks. CMC is the secret of dipping-glazes for <a  href="https://digitalfire.com/glossary/glaze+layering">multi-layering</a>. The downside: More patience during dipping, they drip a lot and take much longer to dry.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Metallic deep purple: Pure Alberta Slip at cone 10R, then refired at cone 6 oxidation</h3>
+<br /><a href="https://digitalfire.com/picture/788"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/wixpycuzaw.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/788">click here</a> to see it.</p>
+<p>A nice thing about this is that the percentage of metallic oxide is comparatively low compared to other <a  href="https://digitalfire.com/glossary/metallic+glazes">metallic glazes</a>. And, it is <a  href="https://digitalfire.com/material/874">iron oxide</a>, which is not toxic at all.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Alberta Slip as-a-glaze at cone 10R</h3>
+<br /><a href="https://digitalfire.com/picture/1042"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/gqfrbpv7pa.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1042">click here</a> to see it.</p>
+<p>This is 100% <a  href="https://digitalfire.com/material/32">Alberta Slip</a> (outside) on a buff <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> (left) and iron stoneware (right) fired to <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10R</a>. The glaze is made using a blend of roast and raw (as instructed at the <a  href="https://digitalfire.com/url/221">PlainsmanClays.com</a> product page). Alberta Slip was originally formulated during the 1980s (using Insight software) as a chemical duplicate of <a  href="https://digitalfire.com/material/31">Albany Slip</a>. The inside: G2947U transparent. The intensity of the color depends on firing, add a little <a  href="https://digitalfire.com/material/874">iron oxide</a> (e.g. 1%) if needed.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A commercial bottled brushing version of Albany Slip brown glaze</h3>
+<br /><a alt="Albany brown glazed mug" href="https://digitalfire.com/picture/689"><img class="flexleft50" alt="Albany brown glazed mug"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/nagpaw1svl.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/689">click here</a> to see it.</p>
+<p>Amaco <a  href="https://insight-live.com/insight/share.php?z=gzHKA1kiaE">PC-32</a> Albany Brown on <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12959">M340S</a>. The inside glaze is <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a> over <a  href="https://digitalfire.com/glossary/ceramic+transfer">tissue transfers</a> applied at <a  href="https://digitalfire.com/glossary/leather+hard">leather hard</a>. This fires similar to the original <a  href="https://insight-live.com/insight/share.php?z=gzHKA1kiaE">G2415E</a> recipe (although they are likely using a much lower percentage of lithium).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Alberta Slip GA6-B base darkened with iron oxide</h3>
+<br /><a alt="Glazed tiles showing darkening with increased iron additions to GA6-B" href="https://digitalfire.com/picture/2587"><img class="flexleft50" alt="Glazed tiles showing darkening with increased iron additions to GA6-B"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/pxadztgpvm.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2587">click here</a> to see it.</p>
+<p>Fired to <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> using the <a  href="https://digitalfire.com/schedule/c6dhsc">C6DHSC</a> schedule. Top: <a  href="https://digitalfire.com/recipe/ga6-b">GA6-B</a>. This recipe is 80% <a  href="https://digitalfire.com/material/32">Alberta slip</a> and 20% Ferro <a  href="https://digitalfire.com/material/356">Frit 3195</a> (we used to use <a  href="https://digitalfire.com/material/351">frit 3134</a> but have found <a  href="https://digitalfire.com/glossary/frit">frit</a> 3195 works much better). Bottom: We added 1, 2, 3 and 4% <a  href="https://digitalfire.com/material/874">iron oxide</a>. At about 2%, the color matches the rich reddish effect you would get if you used an 80:20 Albany:3195 recipe (without an iron addition). An added benefit is that the iron acts as a <a  href="https://digitalfire.com/glossary/fining+agent">fining agent</a> to remove micro-bubbles to achieve better transparency.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Roasting Alberta and Ravenscrag Slips at 1000F: Essential for good glazes</h3>
+<br /><a href="https://digitalfire.com/picture/822"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/kdcpkj2abu.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/822">click here</a> to see it.</p>
+<p><a  href="https://digitalfire.com/glossary/calcination">Roasted</a> <a  href="https://digitalfire.com/material/32">Alberta Slip</a> (right) and raw powder (left). These are thin-walled 5 inch cast bowls, each holds about 1 kg. I hold the kiln at 1000F for 30 minutes. Why do this? Because Alberta Slip is a clay, it shrinks on drying (if used raw the <a  href="https://digitalfire.com/recipe/ga6-b">GA6-B</a> and similar recipes will crack as they dry and then <a  href="https://digitalfire.com/trouble/crawling">crawl</a> during firing). <a  href="https://digitalfire.com/glossary/calcination">Roasting</a> eliminates that. Calcining to 1850F <a  href="https://digitalfire.com/glossary/sintering">sinters</a> some particles together (creating a gritty material) while roasting to 1000F produces a smooth, fluffy powder. Technically, Alberta Slip losses 3% of its weight on roasting so I should use 3% less than a recipe calls for. But I often just swap them gram-for-gram.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/duplicating+albany+slip">Duplicating Albany Slip</a>
+<br /><i>How <a  href="https://digitalfire.com/material/32">Alberta Slip</a> was created by analysing and duplicating the physical and chemical properties of Albany Slip</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/alberta+slip%2c+20+years+of+substitution+for+albany+slip">Alberta Slip, 20 Years of Substitution for Albany Slip</a>
+<br /><i><a  href="https://digitalfire.com/material/32">Alberta Slip</a> makes a great base for glazes because not only is it almost a complete glaze by itself but it has low <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a>, it works well with <a  href="https://digitalfire.com/glossary/frit">frits</a> and <a  href="https://digitalfire.com/glossary/slurry">slurry</a> properties can be adjusted.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/84">https://plainsmanclays.com/data/index.php?product=12910</a>
+<br /><i><a  href="https://digitalfire.com/material/32">Alberta Slip</a> data sheet at PlainsmanClays.com</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/380">http://albertaslip.com</a>
+<br /><i><a  href="https://plainsmanclays.ca/data/index.php?product=12910">AlbertaSlip</a>.com</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/jasper+slip">Jasper Slip</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ravenscrag+slip">Ravenscrag Slip</a>
+<br /><i>A light-colored silty clay that melts to a clear glaze at <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10R</a>, with a <a  href="https://digitalfire.com/glossary/frit">frit</a> addition it creates a good base for a wide range of <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> glazes.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/albany+slip">Albany Slip</a>
+<br /><i>A pure low <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> clay that, by itself, melted to a glossy dark brown glaze at <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10R</a>. It was a popular glaze ingredient for many decades.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/alberta+slip+1900f+calcined">Alberta Slip 1900F Calcined</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/odenwalder+clay">Odenwalder Clay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/alberta+slip+1000f+roasted">Alberta Slip 1000F Roasted</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/arroyo+slip">Arroyo Slip</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/asr">Alberta Slip Glaze Recipes</a>
+<br /><i><a  href="https://digitalfire.com/material/32">Alberta Slip</a> is a substitute for <a  href="https://digitalfire.com/material/31">Albany Slip</a> that has gained a life of its own so that there are now many glazes based specifically on it.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/clo">Clay Other</a>
+<br /><i>Clays that are not kaolins, ball clays or bentonites. For example, <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> clays are mixtures of all of the above plus quartz, <a  href="https://digitalfire.com/material/310">feldspar</a>, mica and other minerals. There are also many clays that have high <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> like <a  href="https://digitalfire.com/material/106">bentonite</a> but are much different mineralogically.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Recipes</td>
+<td>
+<a href="https://digitalfire.com/recipe/ga6-d">GA6-D - Alberta Slip Glossy Brown Cone 6</a>
+<br /><i><a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://digitalfire.com/glossary/cone+6">Cone 6</a> <a  href="https://digitalfire.com/material/32">Alberta Slip</a> based glaze. It can be found among others at http://albertaslip.com.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Recipes</td>
+<td>
+<a href="https://digitalfire.com/recipe/ga6-c">GA6-C - Alberta Slip Floating Blue Cone 6</a>
+<br /><i><a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://digitalfire.com/glossary/cone+6">Cone 6</a> <a  href="https://digitalfire.com/material/32">Alberta Slip</a> based glaze the fires bright blue but with zero cobalt.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Recipes</td>
+<td>
+<a href="https://digitalfire.com/recipe/ga6-a">GA6-A - Alberta Slip Cone 6 transparent honey glaze</a>
+<br /><i>An amber-colored glaze that produces a clean, micro bubble free transparent glass on brown and red burning stonewares.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Recipes</td>
+<td>
+<a href="https://digitalfire.com/recipe/ga10x-a">GA10x-A - Alberta Slip Base for cone 10 oxidation</a>
+<br /><i><a  href="https://digitalfire.com/material/32">Alberta Slip</a> creates a glossy transparent brown at cone 10 with the simple addition of 10% <a  href="https://digitalfire.com/glossary/frit">frit</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Recipes</td>
+<td>
+<a href="https://digitalfire.com/recipe/ga10-a">GA10-A - Alberta Slip Base Cone 10R</a>
+<br /><i><a  href="https://digitalfire.com/material/32">Alberta Slip</a> at 60:40 <a  href="https://digitalfire.com/glossary/calcination">calcine</a>:raw makes a great tenmoku-like glaze at cone 10R</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Recipes</td>
+<td>
+<a href="https://digitalfire.com/recipe/ga10-d">GA10-D - Alberta Slip Black Cone 10R</a>
+<br /><i>You can make a black glaze at <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10R</a> using only 1% black stain in a 100% <a  href="https://digitalfire.com/glossary/calcination">calcine</a>:raw mix of Alberta Slip</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Troubles</td>
+<td>
+<a href="https://digitalfire.com/trouble/crawling">Crawling</a>
+<br /><i>Ask yourself the right questions to figure out the real cause of a <a  href="https://digitalfire.com/glossary/glaze+crawling">glaze crawling</a> issue. Deal with the problem, not the symptoms.</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

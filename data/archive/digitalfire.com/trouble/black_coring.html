@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Black Coring</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="A common fault in reduction gas fired ceramic ware made from iron bearing clays.  The interior cross section of the clay turns black.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item active" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=trouble" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Troubles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a title="29" href="https://digitalfire.com/trouble/29"><button type="button" class="btn btn-dark">Black Coring</button></a></nobr><br /><nobr><a title="30" href="https://digitalfire.com/trouble/bleeding+colors">Bleeding Colors</a></nobr><br /><nobr><a title="11" href="https://digitalfire.com/trouble/bloating">Bloating</a></nobr><br /><nobr><a title="13" href="https://digitalfire.com/trouble/casting+slip+problems">Casting Slip Problems</a></nobr><br /><nobr><a title="7" href="https://digitalfire.com/trouble/chrome+flashing+in+ceramic+glazes">Chrome Flashing in Ceramic Glazes</a></nobr><br /><nobr><a title="23" href="https://digitalfire.com/trouble/clouding+in+ceramic+glazes">Clouding in Ceramic Glazes</a></nobr><br /><nobr><a title="10" href="https://digitalfire.com/trouble/cracking+of+clays+during+drying">Cracking of Clays During Drying</a></nobr><br /><nobr><a title="1" href="https://digitalfire.com/trouble/crawling">Crawling</a></nobr><br /><nobr><a title="9" href="https://digitalfire.com/trouble/dunting+and+cracking+of+clay+bodies+during+firing">Dunting and Cracking of Clay Bodies During Firing</a></nobr><br /><nobr><a title="19" href="https://digitalfire.com/trouble/foaming+of+ceramicd+glaze+slurries">Foaming of Ceramicd Glaze Slurries</a></nobr><br /><nobr><a title="3" href="https://digitalfire.com/trouble/glaze+blisters">Glaze Blisters</a></nobr><br /><nobr><a title="2" href="https://digitalfire.com/trouble/glaze+crazing">Glaze Crazing</a></nobr><br /><nobr><a title="6" href="https://digitalfire.com/trouble/glaze+is+off-color">Glaze is Off-Color</a></nobr><br /><nobr><a title="8" href="https://digitalfire.com/trouble/glaze+marks+or+scratches">Glaze Marks or Scratches</a></nobr><br /><nobr><a title="22" href="https://digitalfire.com/trouble/glaze+peeling+on+drying">Glaze peeling on drying</a></nobr><br /><nobr><a title="5" href="https://digitalfire.com/trouble/glaze+pinholes%2C+pitting">Glaze Pinholes, Pitting</a></nobr><br /><nobr><a title="18" href="https://digitalfire.com/trouble/glaze+shivering">Glaze Shivering</a></nobr><br /><nobr><a title="14" href="https://digitalfire.com/trouble/glaze+slurry+is+difficult+to+use+or+settling">Glaze Slurry is Difficult to Use or Settling</a></nobr><br /><nobr><a title="26" href="https://digitalfire.com/trouble/leaking+of+fired+ceramics">Leaking of Fired Ceramics</a></nobr><br /><nobr><a title="28" href="https://digitalfire.com/trouble/lime+popping">Lime Popping</a></nobr><br /><nobr><a title="27" href="https://digitalfire.com/trouble/orange+peel+surface">Orange Peel Surface</a></nobr><br /><nobr><a title="21" href="https://digitalfire.com/trouble/over+firing+of+ceramic+glazes+and+bodies">Over Firing of Ceramic Glazes and Bodies</a></nobr><br /><nobr><a title="4" href="https://digitalfire.com/trouble/powdering%2C+cracking+and+settling+glazes">Powdering, Cracking and Settling Glazes</a></nobr><br /><nobr><a title="25" href="https://digitalfire.com/trouble/runny+ceramic+glazes">Runny Ceramic Glazes</a></nobr><br /><nobr><a title="17" href="https://digitalfire.com/trouble/specking+on+ceramic+ware">Specking on Ceramic Ware</a></nobr><br /><nobr><a title="15" href="https://digitalfire.com/trouble/splitting+at+the+plastic+stage">Splitting at the Plastic Stage</a></nobr><br /><nobr><a title="24" href="https://digitalfire.com/trouble/staining+of+fired+ceramic+glazes">Staining of Fired Ceramic Glazes</a></nobr><br /><nobr><a title="20" href="https://digitalfire.com/trouble/uneven+glaze+coverage">Uneven Glaze Coverage</a></nobr><br /><nobr><a title="12" href="https://digitalfire.com/trouble/warping">Warping</a></nobr></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Black Coring</h1>
+<p class="text-muted" style="margin-left:20px">A common fault in reduction gas fired ceramic ware made from iron bearing clays.  The interior cross section of the clay turns black.
+<h2>Details</h2>
+<p>For potters, who use periodic kilns and slow <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedules</a>, black coring almost always occurs in reduction firings with iron-containing bodies. But it can also occur in densely packed oxidation-fired kilns (see below). In industry, it occurs in oxidation firings (mainly in tile because production requirements demand fast firing). <br />
+<br />
+There are two schools of thought about the cause in pottery. One blames a combination of fast firing, heavy reduction and trapped carbon. The view is that body carbon fails to oxidize to <a  href="https://digitalfire.com/oxide/co2">CO2</a> and steals oxygen from <a  href="https://digitalfire.com/oxide/fe2o3">Fe<sub>2</sub>O<sub>3</sub></a> (reducing it to <a  href="https://digitalfire.com/oxide/feo">FeO</a>, a powerful <a  href="https://digitalfire.com/glossary/flux">flux</a>). This FeO then fluxes the body, sealing it and preventing the escape of remaining carbon thus producing the characteristic 'black core' in ware cross-section.<br />
+<br />
+However, black coring happens in bodies that have no carbon: Ones high in iron that have already been <a  href="https://digitalfire.com/glossary/bisque">bisque fired</a>. The higher the iron and the larger its particle size the more the black coring. Ware cross sections totally enclosed in glaze exhibit the most black coring. Thus, the characteristic black color is likely the reduced black iron, not carbon. This occurs even when kiln reduction is not heavy.<br />
+<br />
+There will always be some degree of blackness (or gray) in the cross-section of <a  href="https://digitalfire.com/glossary/reduction+firing">reduction-fired</a> ware that contains materials having any amount of <a  href="https://digitalfire.com/material/874">iron oxide</a> and carbon (including ball clays). Electric kilns can also produce this phenomenon (in the case of clays of high carbon and iron content, dense kiln pack and little airflow). Once iron is reduced to FeO it is very difficult to reoxidize it back to Fe<sub>2</sub>O<sub>3</sub>.<br />
+<br />
+In the tile industry, where ware has not been <a  href="https://digitalfire.com/glossary/bisque">bisque</a> fired, the problem is <a  href="https://digitalfire.com/oxide/organics">organics</a> in the body using up any available oxygen and thus preventing the oxidation of iron compounds. The high density of the ceramic coupled with fast firing make it amazing that it is even possible to fire tile without this issue. Black coring is not considered a <a  href="https://digitalfire.com/glossary/functional">functional</a> issue (e.g. strength) as much as an aesthetic one. For heavier <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>, one source suggested the addition of ammonium nitrate, stating that it promotes the oxidation of organic substances in the preheating phase.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Close up of black coring: Is it carbon? Nope. Is it always bad? Nope.</h3>
+<br /><a alt="Closeup of black coring in a pottery shard" href="https://digitalfire.com/picture/3120"><img class="flexleft50" alt="Closeup of black coring in a pottery shard"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/efpa8m8w5k.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3120">click here</a> to see it.</p>
+<p>This is a closeup of a shard from the wall of a <a  href="https://digitalfire.com/glossary/throwing">thrown</a> vessel. The clay is an iron <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a>, <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://digitalfire.com/material/315">Fire-Red</a> with added <a  href="https://digitalfire.com/material/310">feldspar</a>, fired in reduction at cone 10. The reduction was not heavy, the kiln was fired with enough air to burn almost all the gas leaving only a slight yellow (but mostly blue) flame at the damper. Is this black color carbon? Consider the following. Carbon is <a  href="https://digitalfire.com/glossary/refractory">refractory</a>, this is glassy. During <a  href="https://digitalfire.com/glossary/bisque">bisquit firing</a> the carbon was burned out of this. These black zones have a hole at their centers. This is black iron, a strong <a  href="https://digitalfire.com/glossary/flux">flux</a>. The iron is coming from large particles (20-40 mesh) of iron pyrite. In the reduction atmosphere, the natural <a  href="https://digitalfire.com/oxide/fe2o3">Fe<sub>2</sub>O<sub>3</sub></a> is being robbed of oxygen (from both the <a  href="https://digitalfire.com/glossary/decomposition">decomposition</a> of neighboring particles and the atmosphere of the kiln) and converting to <a  href="https://digitalfire.com/oxide/feo">FeO</a>. That is melting and interacting with the feldspar to soak into the surrounding matrix. Contrary to what most people think this does not weaken the clay, it strengthens ware (provided the feldspar is present). Once the black has permeated the entire matrix of a piece it becomes very strong (even with a hammer it was unexpectedly difficult to break ware to get these shards). Note the right side is not glaze-covered, if it had been the entire matrix would be black. But still strong.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Black coring with L4168G and L4168F</h3>
+<br /><a alt="Block coring cross section" href="https://digitalfire.com/picture/3116"><img class="flexleft50" alt="Block coring cross section"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/voea9qr4px.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3116">click here</a> to see it.</p>
+<p>These are iron reduction test bodies. The L4168G (left) is far stronger yet it has a higher percentage of <a  href="https://digitalfire.com/oxide/fe2o3">Fe<sub>2</sub>O<sub>3</sub></a> and much more black coring. How is that possible? Because it has 10% added <a  href="https://digitalfire.com/material/310">feldspar</a>. The black <a  href="https://digitalfire.com/oxide/feo">FeO</a> iron is staining the feldspar black (<a  href="https://digitalfire.com/trouble/bleeding+colors">bleeding</a> out from each pyrite particle), helping it do its job of producing a glassy black color is not coming from the kiln atmosphere? Because the buff-burning bodies in the same kiln did not have any of this. On the right, the iron is restricted by its ability to vitrify the body by limited glass development, ending up destabilizing it instead (by increasing body <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a>).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Iron red reduction clay suitable for functional ware? How?</h3>
+<br /><a alt="Iron reduction functional ware" href="https://digitalfire.com/picture/3103"><img class="flexleft50" alt="Iron reduction functional ware"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/vprqlpqh5n.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3103">click here</a> to see it.</p>
+<p>This is a high iron two-material <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> fired in reduction, purely a test body we are working on. Normally such bodies are rendered unsuitable because of black coring associated with <a  href="https://digitalfire.com/oxide/feo">FeO</a>. But 10% added <a  href="https://digitalfire.com/material/253">Custer Feldspar</a> solves that problem, combining with the iron to vitrify the body to excellent <a  href="https://digitalfire.com/glossary/fired+strength">fired strength</a> (it does have 5% <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a> but this is mainly due to the cavities formerly occupied by the iron pyrite particles. The color and iron speckle are contributed by both of the raw materials in the body. <a  href="https://digitalfire.com/material/1212">Saint Rose Red</a> supplies most of the iron to produce the red coloration. <a  href="https://digitalfire.com/material/1141">A1</a> bentonitic clay adds <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> and contributes the pyritic iron particles. The fired bars of this body show it at <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10 reduction</a> (top) and cone 10 oxidation down to 7 (downward from top). Adding just a little more <a  href="https://digitalfire.com/material/310">feldspar</a> produces a metallic firing surface! The glaze is <a  href="https://insight-live.com/insight/share.php?z=7MF5sjibG8">GR10-CW</a>, pure <a  href="https://digitalfire.com/material/1178">Ravenscrag</a> Slip with 10% <a  href="https://digitalfire.com/material/1620">talc</a> opacified with a little <a  href="https://digitalfire.com/material/1724">Zircopax</a> and <a  href="https://digitalfire.com/material/1642">tin oxide</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">C-Red clay glazed and black coring at cone 10R</h3>
+<br /><a alt="Black coring failed cup" href="https://digitalfire.com/picture/3090"><img class="flexleft50" alt="Black coring failed cup"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/5cymkcxmax.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3090">click here</a> to see it.</p>
+<p><a  href="https://digitalfire.com/material/2234">C-Red</a> clay (also called <a  href="https://digitalfire.com/material/186">Carbondale Red</a>) has 12% <a  href="https://digitalfire.com/material/874">iron oxide</a>. It is also <a  href="https://digitalfire.com/glossary/refractory">refractory</a> so easily handles <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10R</a>. However with that amount of iron is it pretty well impossible to prevent black carbon coring in glazed ware. This cup simply fell to pieces when just touched. Each of these small pieces can be broken into many more with just light finger pressure. Yet the unglazed test bars were unbreakable by hand! The glaze-body bond is also strong. What is demonstrated here is the extreme compression under which the glaze is attached to the clay, breakage relieves it. That means the black coring is increasing the <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> of the body, as the piece cools in the kiln the body is contracting thermally more than the glaze, putting the latter under more and more compression.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Feldspar saves this iron red, black coring reduction body</h3>
+<br /><a alt="Two clack cored mugs" href="https://digitalfire.com/picture/3102"><img class="flexleft50" alt="Two clack cored mugs"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/mavpunh1ny.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3102">click here</a> to see it.</p>
+<p>These two pieces were in the same firing, the right one exited broken and cracked like this. They contain the same percentage of iron (it is supplied by red <a  href="https://digitalfire.com/glossary/fireclay">fireclay</a>). The glaze is the same. The walls on both of these are completely black-cored. Multiple other pieces of this same size and shape were made of each of these two clays and the result was the same on all of them. The difference: The body on the left has 10% added <a  href="https://digitalfire.com/material/310">feldspar</a>. That feldspar is combining with the <a  href="https://digitalfire.com/material/874">iron oxide</a>, reduced to black <a  href="https://digitalfire.com/oxide/feo">FeO</a>, to vitrify the body - that left mug is incredibly strong. The one on the right is fragile, a light tap with a hammer and it exploded into a dozen pieces. Why? The FeO, for lack of a <a  href="https://digitalfire.com/glossary/vitrification">vitrified</a> matrix, has increased the <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> of the body to the point pieces are failing spontaneously from <a  href="https://digitalfire.com/glossary/glaze+compression">glaze compression</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Here is something potters can do that industry cannot do!</h3>
+<br /><a title="Two cone 10R speckled mugs" href="https://digitalfire.com/picture/3193"><img class="flexleft50" title="Two cone 10R speckled mugs"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/ndd9skg1ii.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3193">click here</a> to see it.</p>
+<p>These mugs were fired at <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10R</a>. The body is <a  href="https://insight-live.com/insight/share.php?z=FN6zjemnNK">L4168G5</a>, I mixed it myself using 50% <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://digitalfire.com/material/1212">Saint Rose Red</a>, 40% <a  href="https://digitalfire.com/material/1142">Plainsman A2</a>, 10% <a  href="https://digitalfire.com/material/253">Custer feldspar</a>. The Saint Rose clay contributes the color, the <a  href="https://plainsmanclays.ca/data/index.php?product=12899">A2</a> the speckle and <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> and the <a  href="https://digitalfire.com/material/310">feldspar</a> matures the body enough to avoid black coring. The heavy iron specking is being sourced by these very unique clays, both were ground at <a  href="https://digitalfire.com/glossary/42+mesh">42 mesh</a> only. The left glaze is <a  href="https://insight-live.com/insight/share.php?z=7MF5sjibG8">GR10-CW</a> <a  href="https://digitalfire.com/material/1178">Ravenscrag</a> <a  href="https://digitalfire.com/material/1620">Talc</a> matte with added <a  href="https://digitalfire.com/material/1724">Zircopax</a>. The right one has that same glaze on the inside and <a  href="https://digitalfire.com/recipe/g2571a">G2571A</a> <a  href="https://digitalfire.com/glossary/bamboo+glaze">bamboo matte</a> on the outside. The unglazed body is a beautiful deep red. These are certainly not <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> strength but the glazes fit, the mugs are durable enough and serviceable for normal use. This type of ware is the domain of potters only, no industry would be able to babysit the touchy process it takes to make these, they would not be able to find a reliable material supply, they would not be able to maintain enough consistency and would not be able to justify to customers the high body <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a> required.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Glazing ware only on the inside - the hazard</h3>
+<br /><a alt="Black coring mug fracturing" href="https://digitalfire.com/picture/3234"><img class="flexleft50" alt="Black coring mug fracturing"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/jtlnb5vbfr.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3234">click here</a> to see it.</p>
+<p>This is an example of one of John Prosser's "house mugs". They have been fracturing. Partially broken ones are spring-loaded like this. All broken pieces have black coring. Of course when thick-walled, high carbon, high iron bodies are fired without a previous <a  href="https://digitalfire.com/glossary/bisque">bisque</a> in heavy reduction one can expect true black coring (where <a  href="https://digitalfire.com/oxide/fe2o3">Fe<sub>2</sub>O<sub>3</sub></a> and <a  href="https://digitalfire.com/oxide/co2">CO2</a> react to form a body matrix hostile to even slight <a  href="https://digitalfire.com/glossary/thermal+shock">thermal shock</a>). But none of these factors are present. Of course, testing could be done to bisque these higher, soak longer in the bisque, start reduction later, and oxidize longer at the end. But these measures will not likely be enough. The outer surface could be put on as an <a  href="https://digitalfire.com/glossary/engobe">engobe</a> over a <a  href="https://digitalfire.com/glossary/vitreous">vitreous</a> body (but lots of work using the <a  href="https://digitalfire.com/test/ebct">EBCT test</a> would be needed because of the difference in <a  href="https://digitalfire.com/glossary/firing+shrinkage">firing shrinkage</a>).<br />
+<br />
+Stepping back consider: These black cored sections are unglazed. When iron reduces it turns black so the color black alone does not mean official black coring. When there is enough <a  href="https://digitalfire.com/material/310">feldspar</a> to form a good measure of <a  href="https://digitalfire.com/glossary/vitrification">vitrification</a> (as is the case with this body) one can expect it to be suitable for light duty <a  href="https://digitalfire.com/glossary/functional">functional</a> ware. <a  href="https://digitalfire.com/glossary/magnesia+matte">Magnesia mattes</a> like this have low <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> because they contain a lot of <a  href="https://digitalfire.com/oxide/mgo">MgO</a>, a super <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">low expansion</a> <a  href="https://digitalfire.com/glossary/flux">flux</a>. That puts them under compression on the body, a lot of unglazed external surface like this compounds the problem. The solution is to raise glaze expansion, something fairly easy to do in high fire. Just increase the <a  href="https://digitalfire.com/picture/1775">KNaO</a> at the expense of <a  href="https://digitalfire.com/oxide/cao">CaO</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Carbon burnout in a ball clay</h3>
+<br /><a href="https://digitalfire.com/picture/851"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/gefjylylux.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/851">click here</a> to see it.</p>
+<p>A broken test bar of <a  href="https://digitalfire.com/material/80">ball clay</a> fired to <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10 reduction</a>. Notice the black <a  href="https://digitalfire.com/trouble/black+coring">carbon core</a>. Ball clays commonly contain carbon, many have a noticeable grey color in the raw state because of this. Notice it has not burned out despite the fact that the clay itself is still fairly porous, the firing was slow and the temperature reached was high. Ball clay typically does not comprise more than 30% of a body recipe so its opportunity to burn away is sufficient. However some specialized bodies have a much higher percentage.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/black+core">Black Core</a>
+<br /><i>A common fault in reduction gas fired ceramic ware made from iron bearing clays.  The interior cross section of the clay turns black.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/organic+matter+in+clays%3a+detailed+overview">Organic Matter in Clays: Detailed Overview</a>
+<br /><i>A detailed look at what materials contain <a  href="https://digitalfire.com/oxide/organics">organics</a>, what its effects are in firing (e.g. <a  href="https://digitalfire.com/trouble/black+coring">black core</a>), what to do to deal with the problem and how to measure the amount of organics in a clay material.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Temperatures</td>
+<td>
+<a href="https://digitalfire.com/temperature/36">Organic burnout (300-)</a>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Tungsten Compounds Toxicology</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Digitalfire Reference Library: Practical material hazards information in the traditional ceramic industry">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item active" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=hazard" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Hazards</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a title="341" href="https://digitalfire.com/hazard/341">Alumina Toxicology</a> |</nobr> <nobr><a title="333" href="https://digitalfire.com/hazard/333">Ammonia and Latex Toxicity</a> |</nobr> <nobr><a title="16" href="https://digitalfire.com/hazard/16">Antimony Oxide</a> |</nobr> <nobr><a title="412" href="https://digitalfire.com/hazard/412">Are colored porcelains hazardous?</a> |</nobr> <nobr><a title="18" href="https://digitalfire.com/hazard/18">Arsenic Oxide</a> |</nobr> <nobr><a title="19" href="https://digitalfire.com/hazard/19">Asbestos Toxicity</a> |</nobr> <nobr><a title="22" href="https://digitalfire.com/hazard/22">Ball Clay</a> |</nobr> <nobr><a title="321" href="https://digitalfire.com/hazard/321">BARIUM and COMPOUNDS Toxicology</a> |</nobr> <nobr><a title="367" href="https://digitalfire.com/hazard/367">Barium Carbonate in Clay Bodies</a> |</nobr> <nobr><a title="26" href="https://digitalfire.com/hazard/26">Barium Carbonate in Glazes</a> |</nobr> <nobr><a title="31" href="https://digitalfire.com/hazard/31">Bentonite Toxicity</a> |</nobr> <nobr><a title="33" href="https://digitalfire.com/hazard/33">Beryllium Monoxide Toxicology</a> |</nobr> <nobr><a title="352" href="https://digitalfire.com/hazard/352">Bismuth Trioxide Toxicology</a> |</nobr> <nobr><a title="326" href="https://digitalfire.com/hazard/326">Boron Compounds and Their Toxicity</a> |</nobr> <nobr><a title="1" href="https://digitalfire.com/hazard/1">Brown Stain</a> |</nobr> <nobr><a title="335" href="https://digitalfire.com/hazard/335">Cadmium Toxicity</a> |</nobr> <nobr><a title="343" href="https://digitalfire.com/hazard/343">Calcium Carbonate Toxicology</a> |</nobr> <nobr><a title="334" href="https://digitalfire.com/hazard/334">Carbon Monoxide Toxicity</a> |</nobr> <nobr><a title="353" href="https://digitalfire.com/hazard/353">Cesium Toxicology</a> |</nobr> <nobr><a title="330" href="https://digitalfire.com/hazard/330">Chromium Compounds Toxicology</a> |</nobr> <nobr><a title="146" href="https://digitalfire.com/hazard/146">Clay Toxicity</a> |</nobr> <nobr><a title="73" href="https://digitalfire.com/hazard/73">Cobalt Oxide and Carbonate</a> |</nobr> <nobr><a title="331" href="https://digitalfire.com/hazard/331">Cobalt Toxicology</a> |</nobr> <nobr><a title="329" href="https://digitalfire.com/hazard/329">Copper Compounds Toxicology</a> |</nobr> <nobr><a title="78" href="https://digitalfire.com/hazard/78">Copper Oxide and Carbonate</a> |</nobr> <nobr><a title="84" href="https://digitalfire.com/hazard/84">Cristobalite Toxicity</a> |</nobr> <nobr><a title="337" href="https://digitalfire.com/hazard/337">Cryolite and Ceramics</a> |</nobr> <nobr><a title="372" href="https://digitalfire.com/hazard/372">Dealing With Dust in Ceramics</a> |</nobr> <nobr><a title="351" href="https://digitalfire.com/hazard/351">Diatomaceous Earth Toxicology</a> |</nobr> <nobr><a title="323" href="https://digitalfire.com/hazard/323">Dioxins in Clays</a> |</nobr> <nobr><a title="95" href="https://digitalfire.com/hazard/95">Epsom Salts</a> |</nobr> <nobr><a title="348" href="https://digitalfire.com/hazard/348">Eye Injuries Due to Radiation</a> |</nobr> <nobr><a title="222" href="https://digitalfire.com/hazard/222">Feldspar</a> |</nobr> <nobr><a title="320" href="https://digitalfire.com/hazard/320">Fighting Micro-Organisms in Ceramics</a> |</nobr> <nobr><a title="108" href="https://digitalfire.com/hazard/108">Fluorine Gas</a> |</nobr> <nobr><a title="413" href="https://digitalfire.com/hazard/413">Fumes from gas kilns</a> |</nobr> <nobr><a title="354" href="https://digitalfire.com/hazard/354">Gallium Oxide Toxicology</a> |</nobr> <nobr><a title="342" href="https://digitalfire.com/hazard/342">Hafnium Oxide Toxicty</a> |</nobr> <nobr><a title="345" href="https://digitalfire.com/hazard/345">Hydrofluoric Acid Toxicity</a> |</nobr> <nobr><a title="350" href="https://digitalfire.com/hazard/350">Iron oxide and Hematite</a> |</nobr> <nobr><a title="169" href="https://digitalfire.com/hazard/169">Lead Chromate</a> |</nobr> <nobr><a title="368" href="https://digitalfire.com/hazard/368">Lead in Ceramic Glazes</a> |</nobr> <nobr><a title="328" href="https://digitalfire.com/hazard/328">Lead Toxicology</a> |</nobr> <nobr><a title="174" href="https://digitalfire.com/hazard/174">Lithium Carbonate Toxicity</a> |</nobr> <nobr><a title="349" href="https://digitalfire.com/hazard/349">Lithium Toxicology</a> |</nobr> <nobr><a title="322" href="https://digitalfire.com/hazard/322">Man-Made Vitreous Fibers (MMVF) Toxicology</a> |</nobr> <nobr><a title="410" href="https://digitalfire.com/hazard/410">Man-Made Vitreous Fibers Safety Update</a> |</nobr> <nobr><a title="406" href="https://digitalfire.com/hazard/406">Manganese and Parkinsons by Jane Watkins</a> |</nobr> <nobr><a title="187" href="https://digitalfire.com/hazard/187">Manganese in Clay Bodies</a> |</nobr> <nobr><a title="317" href="https://digitalfire.com/hazard/317">Manganese Inorganic Compounds Toxicology</a> |</nobr> <nobr><a title="409" href="https://digitalfire.com/hazard/409">Manganese Toxicity by Elke Blodgett</a> |</nobr> <nobr><a title="407" href="https://digitalfire.com/hazard/407">Manganese: Creativity and Illness by Dierdre O'Reilly</a> |</nobr> <nobr><a title="332" href="https://digitalfire.com/hazard/332">Molybdenum Compounds Toxicology</a> |</nobr> <nobr><a title="327" href="https://digitalfire.com/hazard/327">Nickel Compounds Toxicity</a> |</nobr> <nobr><a title="314" href="https://digitalfire.com/hazard/314">Niobium Oxide Toxicity</a> |</nobr> <nobr><a title="318" href="https://digitalfire.com/hazard/318">Occupational Dermatoses</a> |</nobr> <nobr><a title="370" href="https://digitalfire.com/hazard/370">Overview of Material Safety by Gavin Stairs</a> |</nobr> <nobr><a title="364" href="https://digitalfire.com/hazard/364">Paraffin Toxicology</a> |</nobr> <nobr><a title="216" href="https://digitalfire.com/hazard/216">Perlite Toxicity</a> |</nobr> <nobr><a title="238" href="https://digitalfire.com/hazard/238">Plant Ash Toxicity</a> |</nobr> <nobr><a title="346" href="https://digitalfire.com/hazard/346">Potassium Carbonate Toxicity</a> |</nobr> <nobr><a title="365" href="https://digitalfire.com/hazard/365">Pregnancy and Ceramics</a> |</nobr> <nobr><a title="355" href="https://digitalfire.com/hazard/355">Propane Toxicology</a> |</nobr> <nobr><a title="251" href="https://digitalfire.com/hazard/251">Quartz Toxicity</a> |</nobr> <nobr><a title="369" href="https://digitalfire.com/hazard/369">Quartz Toxicity on Clayart</a> |</nobr> <nobr><a title="336" href="https://digitalfire.com/hazard/336">Rare Earth Compounds Toxicity</a> |</nobr> <nobr><a title="366" href="https://digitalfire.com/hazard/366">Rubidium and Cesium Toxicology</a> |</nobr> <nobr><a title="356" href="https://digitalfire.com/hazard/356">Rutile Toxicology</a> |</nobr> <nobr><a title="324" href="https://digitalfire.com/hazard/324">Silicosis and Screening</a> |</nobr> <nobr><a title="357" href="https://digitalfire.com/hazard/357">Silver Compounds Toxicology</a> |</nobr> <nobr><a title="358" href="https://digitalfire.com/hazard/358">Sodium Azide Toxicology</a> |</nobr> <nobr><a title="359" href="https://digitalfire.com/hazard/359">Sodium Carbonate Toxicology</a> |</nobr> <nobr><a title="360" href="https://digitalfire.com/hazard/360">Sodium Silicate Powder Toxicology</a> |</nobr> <nobr><a title="315" href="https://digitalfire.com/hazard/315">Stannous Chloride Toxicity</a> |</nobr> <nobr><a title="316" href="https://digitalfire.com/hazard/316">Strontium Carbonate Toxicity Note</a> |</nobr> <nobr><a title="347" href="https://digitalfire.com/hazard/347">Sulfur Dioxide Toxicity</a> |</nobr> <nobr><a title="3" href="https://digitalfire.com/hazard/3">Talc Hazards Overview</a> |</nobr> <nobr><a title="361" href="https://digitalfire.com/hazard/361">Talc Toxicology</a> |</nobr> <nobr><a title="362" href="https://digitalfire.com/hazard/362">Thallium Oxide Toxicology</a> |</nobr> <nobr><a title="344" href="https://digitalfire.com/hazard/344">Thorium Dioxide Toxicity</a> |</nobr> <nobr><a title="338" href="https://digitalfire.com/hazard/338">Tin Inorganic Compounds</a> |</nobr> <nobr><a title="339" href="https://digitalfire.com/hazard/339">Titanium Dioxide Toxicology</a> |</nobr> <nobr><a title="313" href="https://digitalfire.com/hazard/313">Toxicological Assessment of Zeolites</a> |</nobr> <nobr><a title="363" href="https://digitalfire.com/hazard/363"><button type="button" class="btn btn-dark">Tungsten Compounds Toxicology</button></a> |</nobr> <nobr><a title="371" href="https://digitalfire.com/hazard/371">Understanding Acronyms on MSDS's</a> |</nobr> <nobr><a title="325" href="https://digitalfire.com/hazard/325">Uranium and Ceramics</a> |</nobr> <nobr><a title="319" href="https://digitalfire.com/hazard/319">Vanadium and Compounds Toxicology</a> |</nobr> <nobr><a title="411" href="https://digitalfire.com/hazard/411">Vermiculite</a> |</nobr> <nobr><a title="340" href="https://digitalfire.com/hazard/340">Zinc Compounds Toxicology</a> |</nobr> <nobr><a title="373" href="https://digitalfire.com/hazard/373">Zirconium Compounds Toxicity</a> |</nobr> <nobr><a title="234" href="https://digitalfire.com/hazard/234">Zirconium Encapsulated Stains Toxicity</a></nobr></div><h1>Tungsten Compounds Toxicology</h1>
+<DT><B><FONT SIZE="+1" COLOR="#004080">Synonym :
+Wolfram</FONT></B>
+   
+<p>
+   
+<DT><B><U><FONT COLOR="#004080">Compounds :</FONT></U></B>
+   
+<DT><FONT COLOR="#004080">-Tungsten carbide,</FONT>
+   
+<DT><FONT COLOR="#004080">-Tungsten sulfide,</FONT>
+   
+<DT><FONT COLOR="#004080">-Tungsten carbonyl,</FONT>
+   
+<DT><FONT COLOR="#004080">-Tungsten chloride,</FONT>
+   
+<DT><FONT COLOR="#004080">-Tungsten fluoride,</FONT>
+   
+<DT><FONT COLOR="#004080">-Tungsten oxychloride,</FONT>
+   
+<DT><FONT COLOR="#004080">-Tungsten silicide,</FONT>
+   
+<DT><FONT COLOR="#004080">-Tungsten oxide,</FONT>
+   
+<DT><FONT COLOR="#004080">-Tungstic acid,</FONT>
+   
+<DT><FONT COLOR="#004080">-Various tungstates.</FONT>
+   
+<p>
+   
+<DT><B><U><FONT COLOR="#004080">Uses :</FONT></U></B>
+   
+<DT><FONT COLOR="#004080">-In ferrous and nonferrous
+alloys,</FONT>
+   
+<DT><FONT COLOR="#004080">-filaments in incandescent lamps,</FONT>
+   
+<DT><FONT COLOR="#004080">-heating elements,</FONT>
+   
+<DT><FONT COLOR="#004080">-welding electrodes,</FONT>
+   
+<DT><FONT COLOR="#004080">-manufacture of abrasives and
+tools,</FONT>
+   
+<DT><FONT COLOR="#004080">-manufacture of textiles and
+<a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>.</FONT>
+   
+<p>
+   
+<p>
+   
+<DT><B><U><FONT SIZE="+2" COLOR="#AF0000">Tungsten
+Trioxide</FONT></U></B>
+   
+<p>
+   
+<p>
+   
+<DT><B><U><FONT SIZE="+1" COLOR="#004080">Introduction
+:</FONT></U></B>
+   
+<p>
+   
+<DT><B><FONT COLOR="#004080">CAS Number :</FONT></B><FONT COLOR="#004080"> 1314-35-8</FONT>
+   
+<DT><B><FONT COLOR="#004080">Molecular Formula :</FONT></B><FONT COLOR="#004080"> WO<sub>3</sub></FONT>
+   
+<p>
+   
+<DT><B><U><FONT COLOR="#004080">I-Main Synonyms :</FONT></U></B>
+   
+<p>
+   
+<DT><I><FONT COLOR="#004080">French Names :</FONT></I>
+   
+<DT><FONT COLOR="#004080">Trioxyde de tungstene,</FONT>
+   
+<DT><FONT COLOR="#004080">Trioxyde de tungst&egrave;ne.</FONT>
+   
+<DT><I><FONT COLOR="#004080">English Names :</FONT></I>
+   
+<DT><FONT COLOR="#004080">Tungsten trioxide, </FONT>
+   
+<DT><FONT COLOR="#004080">Tungstic anhydride, </FONT>
+   
+<DT><FONT COLOR="#004080">Tungstic oxide, </FONT>
+   
+<DT><FONT COLOR="#004080">Tungstic acid, </FONT>
+   
+<DT><FONT COLOR="#004080">Tungsten oxide. </FONT>
+   
+<p>
+   
+<DT><B><U><FONT COLOR="#004080">II-Uses and Sources of Emission
+:</FONT></U></B>
+   
+<DT><FONT COLOR="#004080">Manufacture of inorganic
+products,</FONT>
+   
+<DT><FONT COLOR="#004080">colourant.</FONT>
+   
+<p>
+   
+<DT><B><U><FONT SIZE="+1" COLOR="#004080">Hygiene and safety
+:</FONT></U></B>
+   
+<p>
+   
+<DT><B><U><FONT COLOR="#004080">I-Appearance : </FONT></U></B>
+   
+<DT><FONT COLOR="#004080">Yellow.</FONT>
+   
+<p>
+   
+<DT><B><U><FONT COLOR="#004080">II-Physical Properties
+:</FONT></U></B>
+   
+<DT><B><FONT COLOR="#004080">Physical State : </FONT></B><FONT COLOR="#004080">Solid  </FONT>
+   
+<DT><B><FONT COLOR="#004080">Odor :</FONT></B><FONT COLOR="#004080"> Odorless   </FONT>
+   
+<DT><B><FONT COLOR="#004080">Freezing/Melting Point
+:</FONT></B><FONT COLOR="#004080">1473 deg C  </FONT>
+   
+<DT><B><FONT COLOR="#004080">Solubility : </FONT></B><FONT COLOR="#004080">Insoluble in water </FONT>
+   
+<DT><B><FONT COLOR="#004080">Specific Gravity/Density
+:</FONT></B><FONT COLOR="#004080">7.1600</FONT>
+   
+<p>
+   
+<DT><B><U><FONT COLOR="#004080">III-Inflammability and
+Explosiveness</FONT></U></B><FONT COLOR="#004080"> </FONT>
+   
+<DT><B><FONT COLOR="#004080">Inflammability:</FONT></B><FONT COLOR="#004080"> </FONT>
+   
+<DT><FONT COLOR="#004080">This product is non flammable.</FONT>
+   
+<p>
+   
+<DT><B><U><FONT SIZE="+1" COLOR="#004080">Prevention
+:</FONT></U></B>
+   
+<p>
+   
+<DT><B><U><FONT COLOR="#004080">I-Reactivity :</FONT></U></B>
+   
+<p>
+   
+<DT><B><FONT COLOR="#004080">Chemical Stability : </FONT></B>
+   
+<DT><FONT COLOR="#004080">Stable under normal temperatures and
+pressures.</FONT>
+   
+<DT><B><FONT COLOR="#004080">Conditions to Avoid :</FONT></B><FONT COLOR="#004080"> </FONT>
+   
+<DT><FONT COLOR="#004080">Incompatible materials, dust generation.
+</FONT>
+   
+<DT><B><FONT COLOR="#004080">Incompatibilities with Other
+Materials : </FONT></B>
+   
+<DT><FONT COLOR="#004080">Chlorine, Chlorine trifluoride, Lithium.
+</FONT>
+   
+<DT><B><FONT COLOR="#004080">Hazardous <a  href="https://digitalfire.com/glossary/decomposition">Decomposition</a> Products
+:</FONT></B><FONT COLOR="#004080"> </FONT>
+   
+<DT><FONT COLOR="#004080">None. </FONT>
+   
+<DT><B><FONT COLOR="#004080">Hazardous Polymerization :
+</FONT></B>
+   
+<DT><FONT COLOR="#004080">Has not been reported.</FONT>
+   
+<p>
+   
+<DT><B><U><FONT COLOR="#004080">II-Handling :</FONT></U></B>
+   
+<DT><FONT COLOR="#004080">Wash thoroughly after handling. Use only
+in a well-ventilated area. Minimize dust generation and
+accumulation. </FONT>
+   
+<DT><FONT COLOR="#004080">Keep container tightly closed. </FONT>
+   
+<p>
+   
+<DT><B><U><FONT COLOR="#004080">III-Storage :</FONT></U></B><FONT COLOR="#004080"> </FONT>
+   
+<DT><FONT COLOR="#004080">Store in a cool, dry, well-ventilated
+area away from incompatible substances. </FONT>
+   
+<DT><FONT COLOR="#004080">Keep containers tightly closed. </FONT>
+   
+<p>
+   
+<DT><B><U><FONT COLOR="#004080">IV-Accidental Release Measures
+:</FONT></U></B>
+   
+<p>
+   
+<DT><B><FONT COLOR="#004080">General Information :</FONT></B><FONT COLOR="#004080"> </FONT>
+   
+<DT><FONT COLOR="#004080">Use proper personal protective
+equipment. </FONT>
+   
+<DT><B><FONT COLOR="#004080">Spills/Leaks :</FONT></B><FONT COLOR="#004080"> </FONT>
+   
+<DT><FONT COLOR="#004080">Clean up spills immediately, wearing
+appropriate protective equipment. Sweep up, then place into a
+suitable container for disposal. Avoid generating dusty
+conditions. </FONT>
+   
+<DT><B><FONT COLOR="#004080">Provide ventilation. </FONT></B>
+   
+<p>
+   
+<DT><B><U><FONT COLOR="#004080">V-Waste Disposal :</FONT></U></B>
+   
+<DT><FONT COLOR="#004080">Dispose according to local and state
+regulations.</FONT>
+   
+<p>
+   
+<p>
+   
+<DT><B><U><FONT SIZE="+1" COLOR="#004080">Toxicology
+:</FONT></U></B>
+   
+<p>
+   
+<DT><B><U><FONT COLOR="#004080">I-LD50 : </FONT></U></B>
+   
+<DT><FONT COLOR="#004080">Oral, rat : LD50 = 1059 mg/kg.</FONT>
+   
+<p>
+   
+<DT><B><U><FONT COLOR="#004080">II-Acute Effects :</FONT></U></B>
+   
+<p>
+   
+<DT><B><FONT COLOR="#004080">Eyes : </FONT></B>
+   
+<DT><FONT COLOR="#004080">May cause eye irritation. </FONT>
+   
+<DT><B><FONT COLOR="#004080">Skin :</FONT></B><FONT COLOR="#004080"> </FONT>
+   
+<DT><FONT COLOR="#004080">May cause skin irritation. </FONT>
+   
+<DT><B><FONT COLOR="#004080">Ingestion : </FONT></B>
+   
+<DT><FONT COLOR="#004080">May cause gastrointestinal irritation
+with nausea, vomiting and diarrhea. </FONT>
+   
+<DT><FONT COLOR="#004080">May be harmful if swallowed. </FONT>
+   
+<DT><B><FONT COLOR="#004080">Inhalation : </FONT></B>
+   
+<DT><FONT COLOR="#004080">May cause respiratory tract
+irritation</FONT>
+   
+<p>
+   
+<DT><B><U><FONT COLOR="#004080">III-Chronic Effects :
+</FONT></U></B>
+   
+<DT><FONT COLOR="#004080">Prolonged or repeated skin contact may
+cause dermatitis. </FONT>
+   
+<DT><FONT COLOR="#004080">May cause lung damage. </FONT>
+   
+<p>
+   
+<DT><B><U><FONT COLOR="#004080">IV-Effects on development :
+</FONT></U></B>
+   
+<DT><FONT COLOR="#004080">No data concerning antenatal development
+was found in the consulted documentary sources.</FONT>
+   
+<p>
+   
+<DT><B><U><FONT COLOR="#004080">V-Effects on reproduction :
+</FONT></U></B>
+   
+<DT><FONT COLOR="#004080">No data concerning reproduction was
+found in the consulted documentary sources.</FONT>
+   
+<p>
+   
+<DT><B><U><FONT COLOR="#004080">VI-Effects on breast milk :
+</FONT></U></B>
+   
+<DT><FONT COLOR="#004080">There is no data concerning its
+excretion or detection in milk.</FONT>
+   
+<p>
+   
+<DT><B><U><FONT COLOR="#004080">VII-Mutagenicity : </FONT></U></B>
+   
+<DT><FONT COLOR="#004080">No information found.  </FONT>
+   
+<p>
+   
+<DT><B><U><FONT COLOR="#004080">VIII-Carcinogenicity :
+</FONT></U></B>
+   
+<DT><FONT COLOR="#004080">Not listed by ACGIH, IARC, NTP.</FONT>
+   
+<p>
+   
+<p>
+   
+<DT><B><U><FONT SIZE="+1" COLOR="#004080">First Aid Measures
+:</FONT></U></B>
+   
+<p>
+   
+<DT><B><U><FONT COLOR="#004080">I-Eyes : </FONT></U></B>
+   
+<DT><FONT COLOR="#004080">Flush eyes with plenty of water for at
+least 15 minutes, occasionally lifting the upper and lower
+eyelids. Get medical aid. </FONT>
+   
+<DT><B><U><FONT COLOR="#004080">II-Skin : </FONT></U></B>
+   
+<DT><FONT COLOR="#004080">Get medical aid. Flush skin with plenty
+of water for at least 15 minutes while removing contaminated
+clothing and shoes. Wash clothing before reuse. </FONT>
+   
+<DT><B><U><FONT COLOR="#004080">III-Ingestion
+:</FONT></U></B><FONT COLOR="#004080"> </FONT>
+   
+<DT><FONT COLOR="#004080">Never give anything by mouth to an
+unconscious person. Get medical aid immediately. Do NOT induce
+vomiting. If conscious and alert, rinse mouth and drink 2-4
+cupfuls of milk or water. </FONT>
+   
+<DT><B><U><FONT COLOR="#004080">IV-Inhalation : </FONT></U></B>
+   
+<DT><FONT COLOR="#004080">Remove from exposure and move to fresh
+air immediately. If not breathing, give artificial respiration. If
+breathing is difficult, give oxygen. Get medical aid. </FONT>
+   
+<DT><B><U><FONT COLOR="#004080">V-Notes to Physician
+:</FONT></U></B><FONT COLOR="#004080"> </FONT>
+   
+<DT><FONT COLOR="#004080">Treat symptomatically </FONT>
+   
+<DT><B><U><FONT COLOR="#004080">VI-Antidote : </FONT></U></B>
+   
+<DT><FONT COLOR="#004080">None reported. </FONT>
+   
+<p>
+   
+<p>
+   
+<DT><B><U><FONT SIZE="+1" COLOR="#004080">Exposure Controls,
+Personal Protection :</FONT></U></B>
+   
+<p>
+   
+<DT><B><U><FONT COLOR="#004080">I-Engineering Controls
+:</FONT></U></B><FONT COLOR="#004080"> </FONT>
+   
+<DT><FONT COLOR="#004080">Use adequate general or local exhaust
+ventilation to keep airborne concentrations below the permissible
+exposure limits. </FONT>
+   
+<DT><B><U><FONT COLOR="#004080">II-Personal Protective Equipment
+:</FONT></U></B>
+   
+<DT><B><FONT COLOR="#004080">Eyes :</FONT></B><FONT COLOR="#004080"> </FONT>
+   
+<DT><FONT COLOR="#004080">Wear appropriate protective eyeglasses
+or chemical safety goggles.</FONT>
+   
+<DT><B><FONT COLOR="#004080">Skin :</FONT></B><FONT COLOR="#004080"> </FONT>
+   
+<DT><FONT COLOR="#004080">Wear appropriate gloves to prevent skin
+exposure. </FONT>
+   
+<DT><B><FONT COLOR="#004080">Clothing : </FONT></B>
+   
+<DT><FONT COLOR="#004080">Wear appropriate protective clothing to
+minimize contact with skin. </FONT>
+   
+<DT><B><FONT COLOR="#004080">Respirators : </FONT></B>
+   
+<DT><FONT COLOR="#004080">Wear an approved full-facepiece airline
+respirator in the positive pressure mode with emergency escape
+provisions.</FONT>
+   
+<p>
+   
+<p>
+   
+<DT><B><U><FONT SIZE="+1" COLOR="#004080">Fire Fighting Measures
+:</FONT></U></B>
+   
+<p>
+   
+<DT><B><U><FONT COLOR="#004080">I-General Information :
+</FONT></U></B>
+   
+<DT><FONT COLOR="#004080">As in any fire, wear a self-contained
+breathing apparatus in pressure-demand, and full protective gear.
+</FONT>
+   
+<DT><B><U><FONT COLOR="#004080">II-Extinguishing Media :
+</FONT></U></B>
+   
+<DT><FONT COLOR="#004080">Use water fog, dry chemical, carbon
+dioxide, or regular foam.</FONT>
+   
+<p>
+   
+<DT><B><U><FONT SIZE="+1" COLOR="#004080">Ecological Information
+:</FONT></U></B>
+   
+<p>
+   
+<DT><B><U><FONT COLOR="#004080">I-Ecotoxicity : </FONT></U></B>
+   
+<DT><FONT COLOR="#004080">No data available. No information
+available. </FONT>
+   
+<DT><B><U><FONT COLOR="#004080">II-Environmental : </FONT></U></B>
+   
+<DT><FONT COLOR="#004080">No information found. </FONT>
+   
+<DT><B><U><FONT COLOR="#004080">III-Physical : </FONT></U></B>
+   
+<DT><FONT COLOR="#004080">No information found. </FONT>
+   
+<DT><B><U><FONT COLOR="#004080">IV-Other :</FONT></U></B><FONT COLOR="#004080"> </FONT>
+   
+<DT><FONT COLOR="#004080">No information available. </FONT>
+   
+<p>
+   
+<p>
+   
+<DT><B><U><FONT SIZE="+1" COLOR="#004080">Quebec's Exposure Limits
+:</FONT></U></B>
+   
+<p>
+   
+<DT><B><U><FONT COLOR="#004080">Valeur d'Exposition Moyenne
+Pond&eacute;r&eacute;e (VEMP) : </FONT></U></B><FONT COLOR="#004080">  5 mg/m&#179; expressed as W.</FONT>
+   
+<p>
+   
+   
+<DT><B><I><FONT COLOR="#004080">References :</FONT></I></B>
+   
+<DT><I><FONT COLOR="#004080">  </FONT></I>
+   
+<DT><I><FONT COLOR="#004080">1-Occupational Medicine,Carl Zenz,
+last edition.</FONT></I>
+   
+<DT><I><FONT COLOR="#004080">2-Clinical Environmental Health and
+Toxic Exposures, Sullivan &amp; Krieger; last edition.</FONT></I>
+   
+<DT><I><FONT COLOR="#004080">3-Sax's Dangerous Properties of
+Industrial Materials, Lewis C., last edition.</FONT></I>
+   
+<DT><I><FONT COLOR="#004080">4-Toxicologie Industrielle et
+Intoxications Professionnelles, Lauwerys R. last
+edition.</FONT></I>
+   
+<DT><I><FONT COLOR="#004080">5-Chemical Hazards of the Workplace,
+Proctor &amp; Hughes, 4th edition.</FONT></I>
+   
+<DT><I><FONT COLOR="#004080">6-CSST-Quebec, R&eacute;pertoite
+Toxicologique.</FONT></I>
+   
+<DT><I><FONT COLOR="#004080">7- Fischer Scientific, <a  href="https://digitalfire.com/glossary/ghs+safety+data+sheets">MSDS</a>, 
+2003.</FONT></I>
+<hr><p>By Edouard Bastarache </p>
+<h2 style="font-style:italic; margin-top:40px;">Related Information</h2>
+
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/eba">Article by Edouard Bastarache</a>
+<br /><i>Edouard Bastarache is a well known doctor that has written many articles on the subject of <a  href="https://digitalfire.com/glossary/toxicity">toxicity</a> of ceramic materials and books on technical aspects of <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>. He writes in both English and French.</i>
+</td>
+</tr>
+</tbody></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

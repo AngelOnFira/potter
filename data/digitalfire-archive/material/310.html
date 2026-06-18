@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Feldspar</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="In ceramics, feldspars are used in glazes and clay bodies. They vitrify stonewares and porcelains. They supply KNaO flux to glazes to help them melt." name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item active"><a class="nav-link" href="list.html">Materials <span class="sr-only">(current)</span></a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=material" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container">
+<ul class="nav nav-tabs pt-1" id="myTab" role="tablist">
+<li class="nav-item">
+<a aria-controls="material" aria-selected="true" class="nav-link active" data-toggle="tab" href="#material" id="material-tab" role="tab">Materials for Ceramics</a>
+</li>
+</ul>
+<div class="tab-content mb-3" id="myTabContent" style="border-right:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #ddd; padding:10px;">
+<div aria-labelledby="material-tab" class="tab-pane fade show active" id="material" role="tabpanel">
+<a href="list_1-9.html">1-9</a> | <a href="list_A.html">A</a> | <a href="list_B.html">B</a> | <a href="list_C.html">C</a> | <a href="list_D.html">D</a> | <a href="list_E.html">E</a> | <a href="list_F.html">F</a> | <a href="list_Frits.html">Frits</a> | <a href="list_G.html">G</a> | <a href="list_H.html">H</a> | <a href="list_I.html">I</a> | <a href="list_J.html">J</a> | <a href="list_K.html">K</a> | <a href="list_L.html">L</a> | <a href="list_M.html">M</a> | <a href="list_N.html">N</a> | <a href="list_O.html">O</a> | <a href="list_P.html">P</a> | <a href="list_Q.html">Q</a> | <a href="list_R.html">R</a> | <a href="list_S.html">S</a> | <a href="list_T.html">T</a> | <a href="list_U.html">U</a> | <a href="list_V.html">V</a> | <a href="list_W.html">W</a> | <a href="list_X.html">X</a> | <a href="list_Y.html">Y</a> | <a href="list_Z.html">Z</a><br/>
+<nobr></nobr>
+</div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Feldspar</h1>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/oxide.html">Oxide</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/analysis.html">Analysis</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Formula</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Tolerance</a></th>
+</tr></thead><tbody>
+<tr><td class="label"><a href="../oxide/k2o.html">K2O</a></td>
+<td class="text-right">16.92%</td>
+<td class="text-right">
+1.00
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/al2o3.html">Al2O3</a></td>
+<td class="text-right">18.32%</td>
+<td class="text-right">
+1.00
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/sio2.html">SiO2</a></td>
+<td class="text-right">64.76%</td>
+<td class="text-right">
+6.00
+</td><td class="text-right">
+</td></tr>
+<tr><td colspan="2">Oxide Weight</td><td class="text-right" colspan="2">
+556.74
+</td></tr>
+<tr><td class="text-right" colspan="2"><a href="../glossary/formula+weight.html">Formula Weight</a></td><td colspan="2" style="text-align:right">
+556.74
+</td></tr>
+</tbody></table>
+<h4>Notes</h4><p>Theoretically speaking, the term 'feldspar' refers to a family of minerals with a specific <a href="../glossary/glass+vs.+crystalline.html">crystalline</a> presence. However actual <a href="310.html">feldspar</a> powders are made from crushed crystalline rock containing a mixture of aluminum silicates of sodium and potassium (with minor amounts of lithium or calcium). They normally contain 10-15% <a href="../glossary/alkali.html">alkali</a> (<a href="../oxide/k2o.html">K<sub>2</sub>O</a>, <a href="../oxide/na2o.html">Na<sub>2</sub>O</a>) and melt well at medium to high temperatures and are an economic source of <a href="../glossary/flux.html">flux</a>. Commercially available <a href="310.html">feldspars</a> tend to predominate in one specific mineral kind with lesser amounts of another and traces of others. Manufacturers can be found around the world and they usually do a good job of delivering uniform and clean products when one considers that feldspar deposits vary widely in composition and contain many impurities. Large quantities of feldspar are used in non-ceramic industry (e.g. cement, agri).<br/>
+<br/>
+In many countries feldspar companies draw upon the same mine year and year, marketing a brand name product that gains wide acceptance. In other countries (e.g. India) large feldspar suppliers do not even have mines, they buy raw product according to the <a href="../glossary/glaze+chemistry.html">chemistry</a> and blend from different sources to achieve a specific product. Over time they change suppliers but through careful quality control, their ceramic manufacturing customers often do not realize their feldspar is coming from different sources with different shipments. Increasingly customers are connecting with suppliers on other continents, not infrequently this has led to misunderstandings and delivery of bad or variable product.<br/>
+<br/>
+Generally, high potash feldspars are employed in bodies and promote <a href="../glossary/vitrification.html">vitrification</a> by forming a glassy phase that 'cements' more <a href="../glossary/refractory.html">refractory</a> particles together and triggers the formation of <a href="1054.html">mullite</a> from clay mineral. It is typical to see about 25% feldspar in cone 10 <a href="../glossary/vitreous.html">vitreous</a> bodies (1300C) and 35% at <a href="../glossary/cone+6.html">cone 6</a> (1200C), although porcelains may have a little more. Much below 1200C feldspar will not produce a vitreous body. Manufacturers often employ feldspar percentages inappropriate to their situations and other materials (like <a href="1246.html">silica sand</a>, alumina, extra quartz) are added to compensate. It is important to test the <a href="../glossary/clay+body+porosity.html">porosity</a> and <a href="../glossary/firing+shrinkage.html">fired shrinkage</a> of your body at temperatures above and below your production firing (e.g. -30, -60, -90, +30, +60, +90). This will tell you where you are on the porosity and shrinkage curves (it is not good to be near or on the down-slope of the <a href="../glossary/firing+shrinkage.html">firing shrinkage</a> or up-slope of the porosity). You can organize this testing in your account at <a href="../glossary/digitalfire+insight-live.html">insight-live</a>.com.<br/>
+<br/>
+In glazes, feldspar promotes melting at medium and high temperatures (feldspars are the primary ingredient in most high-temperature raw glazes). Sodium feldspars are most common and used mainly as a source of alkalis. Feldspars are mineral compounds of <a href="1245.html">silica</a>, alumina and fluxes and are among the relatively few insoluble sources of K<sub>2</sub>O, Na<sub>2</sub>O and <a href="../oxide/li2o.html">Li<sub>2</sub>O</a>. No other raw material is closer to being a complete <a href="../glossary/stoneware.html">stoneware</a> glaze on its own than feldspar. Since feldspars contain a complex mix of <a href="../glossary/ceramic+oxide.html">oxides</a>, ceramic chemistry calculations are needed to 'juggle' a recipe to achieve the desired balance of fluxing oxides with alumina and silica and to control the high <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> that they impart.<br/>
+<br/>
+Many feldspars begin to melt around 2100F (1150C) and make good glaze bases because they contribute alumina and silica in forms that participate well in <a href="../glossary/melt+fluidity.html">the melt</a>. Feldspars tend to work well in <a href="../glossary/fast+fire+glazes.html">fast-fire</a> <a href="../glossary/high+temperature+glaze.html">high-temperature glazes</a> because they remain relatively inert until the later stages of firing. <br/>
+<br/>
+Geologists see feldspar as a mineral and classify feldspars mainly as <a href="../mineral/19.html">albite</a>, microcline, orthoclase and anorthite. However, for use in glazes, we can view feldspars as 'warehouses of oxides' (e.g. because they supply K<sub>2</sub>O, Na<sub>2</sub>O, <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a> and <a href="../oxide/sio2.html">SiO<sub>2</sub></a> to the glaze melt).<br/>
+<br/>
+Alert<br/>
+'Flux-saturated' glazes with high feldspar contents tend to be chemically unbalanced and thus make poor bases for <a href="../glossary/functional.html">functional</a> ware, especially for glaze containing metallic color oxides (the glazes can be soft, leachable, <a href="../trouble/glaze+crazing.html">crazed</a>, oxidizable). High feldspar can contribute to a high <a href="../glossary/surface+tension.html">surface tension</a> in the glaze melt and may lead to high bubble population (producing milkiness in the fired matrix). Stoneware glazes using large amounts of feldspar as a flux almost always <a href="../trouble/glaze+crazing.html">craze</a> because <a href="../glossary/co-efficient+of+thermal+expansion.html">high-expansion</a> sodium and potassium predominate. <a href="../picture/1960.html">High feldspar glazes</a> often lack clay content and thus do not suspend well, they settle in a hard layer on the bottom of the container and dry to a powdery surface on ware. In fact, thousands of potters are using feldspar saturated glazes and living with many problems without being aware of the cause.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Stockpile of crude feldspar from MGK Minerals (India) deposit</h3>
+<br/><a href="../picture/803.html"><img class="flexleft50" loading="lazy" src="../media/images/xyhwyxulir.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/803.html">click here</a> to see it.</p>
+<p></p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Closeup of feldspar deposit in the MGK Minerals quarry in India</h3>
+<br/><a href="../picture/805.html"><img class="flexleft50" loading="lazy" src="../media/images/gulsuselax.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/805.html">click here</a> to see it.</p>
+<p></p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Feldspars, the primary high temperature flux, melt less than you think.</h3>
+<br/><a alt="Feldspar melt flows at cone 8 and 11" href="../picture/431.html"><img alt="Feldspar melt flows at cone 8 and 11" class="flexleft50" loading="lazy" src="../media/images/4feldspars.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/431.html">click here</a> to see it.</p>
+<p>Our <a href="../picture/2350.html">melt fluidity tester</a> is being used to compare cone 8 melt fluidities of Custer, G-200 and i-Minerals high soda and high potassium <a href="310.html">feldspars</a>. Notice how little the pure materials are moving (bottom), even though they are fired to cone 11. In addition, the sodium feldspars move better than the potassium ones. But feldspars do their real fluxing work when they can interact with other materials. As a demonstration of that, note how well they flow with only 10% <a href="../glossary/frit.html">frit</a> added (top), even though fired three cones lower.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">A soda feldspar applied like at glaze at cone 4-7</h3>
+<br/><a alt="Feldspar as a glaze on porcelain tiles" href="../picture/1143.html"><img alt="Feldspar as a glaze on porcelain tiles" class="flexleft50" loading="lazy" src="../media/images/hiwrohedyl.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1143.html">click here</a> to see it.</p>
+<p>This is pure soda <a href="310.html">feldspar</a> (Minspar 200) fired like a glaze at cone 4, 5, 6 and 7 on porcelainous <a href="../glossary/stoneware.html">stoneware</a> tiles. The bottom samples are balls that have melted down at cone 7 and 8 (although they appear to be well melted they exhibit no movement in a <a href="../glossary/melt+fluidity.html">melt fluidity</a> test. Notice there is no melting at all at cone 4. Also, serious <a href="../trouble/glaze+crazing.html">crazing</a> is highlighted with ink on the <a href="../glossary/cone+6.html">cone 6</a> sample (it is also happening at <a href="../glossary/cone+5.html">cone 5</a> and 7). <a href="310.html">Feldspars</a> have high <a href="../picture/1775.html">KNaO</a>, that means they have high <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansions</a>. That is why high-feldspar glazes almost always <a href="../trouble/glaze+crazing.html">craze</a>. Since feldspar is barely melting at cone 6 it is not possible to make a <a href="../glossary/functional.html">functional</a> cone 6 glaze that only uses feldspar as the <a href="../glossary/flux.html">flux</a> (<a href="../glossary/borate.html">boron</a>, lithia or zinc are also needed).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Craze city: Feldspar and Nepheline Syenite on cone 10R porcelain bodies</h3>
+<br/><a href="../picture/1901.html"><img class="flexleft50" loading="lazy" src="../media/images/6vwwiaqz4c.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1901.html">click here</a> to see it.</p>
+<p>These were applied to the <a href="../glossary/bisque.html">bisque</a> as a <a href="../glossary/slurry.html">slurry</a> (<a href="../glossary/suspension.html">suspended</a> by gelling with powdered or dissolved <a href="292.html">Epsom salts</a>). On the left is <a href="253.html">Custer feldspar</a>, the right is Covia <a href="1070.html">Nepheline Syenite</a>. Notice the <a href="../trouble/glaze+crazing.html">crazing</a> (<a href="310.html">feldspars</a>, and nepheline syenite, always <a href="../trouble/glaze+crazing.html">craze</a> because they are high in <a href="../oxide/k2o.html">K<sub>2</sub>O</a> and <a href="../oxide/na2o.html">Na<sub>2</sub>O</a>, these <a href="../glossary/ceramic+oxide.html">oxides</a> have by far the highest <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansions</a>).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">This feldspar melts by itself to be a glaze, but crazes badly</h3>
+<br/><a href="../picture/1113.html"><img class="flexleft50" loading="lazy" src="../media/images/costogybuc.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1113.html">click here</a> to see it.</p>
+<p>Pure MinSpar <a href="310.html">feldspar</a> fired at <a href="../glossary/cone+6.html">cone 6</a> on <a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12880">M370</a> <a href="../glossary/porcelain.html">porcelain</a>. Although it is melting, the <a href="../trouble/glaze+crazing.html">crazing</a> is extreme! And expected. <a href="310.html">Feldspars</a> contain a high percentage of <a href="../oxide/k2o.html">K<sub>2</sub>O</a> and <a href="../oxide/na2o.html">Na<sub>2</sub>O</a> (<a href="../picture/1775.html">KNaO</a>), these two <a href="../glossary/ceramic+oxide.html">oxides</a> have the highest <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> of any oxide. By far! Thus, glazes high in feldspar (e.g. 50%) are likely to <a href="../trouble/glaze+crazing.html">craze</a>. Using a little <a href="../glossary/glaze+chemistry.html">glaze chemistry</a>, it is often possible to substitute some of the KNaO for another fluxing oxide having a lower thermal expansion.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">A down side of high feldspar glazes: Crazing!</h3>
+<br/><a alt="A runny, amber, crazed glaze" href="../picture/659.html"><img alt="A runny, amber, crazed glaze" class="flexleft50" loading="lazy" src="../media/images/dungibojot.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/659.html">click here</a> to see it.</p>
+<p>This reduction celadon is <a href="../trouble/glaze+crazing.html">crazing</a>. Why? High <a href="310.html">feldspar</a>. Feldspar supplies the <a href="../glossary/ceramic+oxide.html">oxides</a> <a href="../oxide/k2o.html">K<sub>2</sub>O</a> and <a href="../oxide/na2o.html">Na<sub>2</sub>O</a>, they contribute the brilliant gloss and great color but the price is very high <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a>. Scores of recipes being traded online are high-feldspar, some more than 50%! There are ways to tolerate the <a href="../glossary/co-efficient+of+thermal+expansion.html">high expansion</a> of <a href="../picture/1775.html">KNaO</a>, but the vast majority are crazing on all but high quartz bodies. Crazing is a plague for potters. Ware strength suffers dramatically, pieces leak, the glaze can harbor bacteria and customers return pieces. The simplest fix is to transplant the color and <a href="../glossary/opacity.html">opacity</a> <a href="../glossary/mechanism.html">mechanism</a> into a better transparent, one that fits your ware (in this glaze, for example, the mechanism is simply an iron addition). Fixing the recipe may also be practical. A 2:1 mix of <a href="1245.html">silica</a>:kaolin has the same <a href="../glossary/silica%3Aalumina+ratio.html">Si:Al</a> ratio as most glossy glazes, this glaze could possibly tolerate 10% of that. That would reduce running, improve fit and increase <a href="../glossary/glaze+durability.html">durability</a>. Failing that, the next step is to substitute some of the <a href="../glossary/co-efficient+of+thermal+expansion.html">high-expansion</a> KNaO, the <a href="../glossary/flux.html">flux</a>, for the <a href="../glossary/co-efficient+of+thermal+expansion.html">low-expansion</a> <a href="../oxide/mgo.html">MgO</a>, that requires doing some <a href="../glossary/glaze+chemistry.html">glaze chemistry</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Getting the feldspar percentage right in an iron reduction clay body</h3>
+<br/><a alt="Iron reduction clay body surface character" href="../picture/3367.html"><img alt="Iron reduction clay body surface character" class="flexleft50" loading="lazy" src="../media/images/dl1thhk17z.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3367.html">click here</a> to see it.</p>
+<p>We are trying to achieve a body sufficiently <a href="../glossary/vitreous.html">vitreous</a> for <a href="../glossary/functional.html">functional</a> ware but open enough to still have the characteristic variegated patching of light and dark brown (with reduction iron speck of course). Our <a href="../glossary/base+glaze.html">base recipe</a> is a two-part mix of red and buff <a href="../glossary/fireclay.html">fireclay</a>. Mugs #1 and #2 have 12% <a href="253.html">Custer feldspar</a> but #2 has more of the white clay (it’s more <a href="../glossary/refractory.html">refractory</a> and more plastic - so #2 has a <a href="../glossary/clay+body+porosity.html">porosity</a> of 3.5% while #1 has 2.8%). #3 has the same clay mix as #2 but it uses 12% <a href="1070.html">Nepheline Syenite</a> - it’s greater fluxing power has turned the color a solid brown (and dropped porosity to 1.5%). The next step: We will target 3% porosity in #3 using a reduced percentage of Nepheline, likely about 9%. We have depended on 100% clay mixes in the past and the body has suffered variations in density (as measured by our <a href="../test/shab.html">SHAB test</a>) and has seldom hit the 3% porosity target, having <a href="310.html">feldspar</a> in the recipe will enable accurately controlling it in future (so we are more comfortable recommending it for light duty functional ware).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Feldspar from Okene, Koji, Nigera</h3>
+<br/><a href="../picture/8.html"><img class="flexleft50" loading="lazy" src="../media/images/j8s77zbpyp.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/8.html">click here</a> to see it.</p>
+<p></p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Which is the champion melter of American/Canadian feldspars?</h3>
+<br/><a alt="Feldspars melting" href="../picture/2746.html"><img alt="Feldspars melting" class="flexleft50" loading="lazy" src="../media/images/mrqnfkmwdp.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2746.html">click here</a> to see it.</p>
+<p><a href="310.html">Feldspars</a> are employed in <a href="../glossary/glaze+recipes.html">glaze recipes</a> as melters. So comparing their melt fluidities should be helpful in deciding if one can substitute for another (of course, if possible, a soda-predominant <a href="310.html">feldspar</a> should be substituted for another soda spar). Feldspars don't melt alone at <a href="../glossary/cone+6.html">cone 6</a> (<a href="../glossary/cone+6.html">2200F</a>) so we mixed each with 15% Ferro <a href="356.html">Frit 3195</a> (we consider a feldspar a material that sources <a href="../picture/1775.html">KNaO</a>). <a href="1070.html">Nepheline Syenite</a>, this is A270, is the champion melter here. Other similar ones can be spotted easily. In the end, degree of melt is a valid consideration in determining if one feldspar is a viable substitute for another in a recipe. Even if the feldspar you want to substitute does not melt as much a little <a href="../glossary/frit.html">frit</a> can be added to the recipe to make up for the difference (e.g. 3-5%).</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">High feldspar glazes craze. 
+</h3>
+<h4 style="color:#888888; margin-top:0px;">Don't put up with it. Fix them.</h4>
+<br/><a href="../picture/3546.html"><img class="flexleft50" loading="lazy" src="../media/images/svjajzgeww.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3546.html">click here</a> to see it.</p>
+<p>This glaze, "Bamboo Cone 10%", contains 50% potash <a href="310.html">feldspar</a>, so it certainly qualifies as a high-feldspar glaze. <a href="../oxide/k2o.html">K<sub>2</sub>O</a> and <a href="../oxide/na2o.html">Na<sub>2</sub>O</a> are thus oversupplied. They have the highest <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansions</a> of all <a href="../glossary/ceramic+oxide.html">oxides</a>, by far. These are needed and valuable, but when grossly oversupplied the result is <a href="../trouble/glaze+crazing.html">crazing</a>. This glaze used to work on this body, <a href="https://plainsmanclays.ca/data/index.php?product=12887">H550</a>. The previous version of <a href="https://plainsmanclays.ca/data/index.php?product=12887">H550</a> was firing near the <a href="../trouble/bloating.html">bloating</a> point of the body, about 1% <a href="../glossary/clay+body+porosity.html">porosity</a>, so the recipe had to be changed to provide more margin for error. The new recipe has a more practical 2.0-2.5% porosity; it has no danger of bloating or warping and still has excellent <a href="../glossary/maturity.html">maturity</a> and strength. This glaze was crazing before, and pieces did not leak because the body was dense enough - so they were still watertight. But now it does not work. The solution is to do something that should have been done before: Use a silky matte <a href="../glossary/base+glaze.html">base recipe</a> that does not <a href="../trouble/glaze+crazing.html">craze</a>. I recommend the <a href="../recipe/g2571a.html">G2571A</a> base (below right) - the <a href="1724.html">Zircopax</a>, <a href="1204.html">rutile</a>, and <a href="874.html">iron oxide</a> in the original can be added to it instead.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/a+low+cost+tester+of+glaze+melt+fluidity.html">A Low Cost Tester of Glaze Melt Fluidity</a>
+<br/><i>Use this novel device to compare the <a href="../glossary/melt+fluidity.html">melt fluidity</a> of glazes and materials. Simple physical observations of the results provide a better understanding of the fired properties of your glaze (and problems you did not see before).</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/formulating+a+porcelain.html">Formulating a Porcelain</a>
+<br/><i>The principles behind formulating a <a href="../glossary/porcelain.html">porcelain</a> are quite simple. You just need to know the purpose of each material, a starting recipe and a testing regimen.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/are+your+glazes+food+safe+or+are+they+leachable%3f.html">Are Your Glazes Food Safe or are They Leachable?</a>
+<br/><i>Many potters do not think about <a href="../glossary/leaching.html">leaching</a>, but times are changing. What is the <a href="../glossary/glaze+chemistry.html">chemistry</a> of stability? There are simple ways to check for leaching, and fix <a href="../trouble/glaze+crazing.html">crazing</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/crazing+in+stoneware+glazes%3a+treating+the+causes%2c+not+the+symptoms.html">Crazing in Stoneware Glazes: Treating the Causes, Not the Symptoms</a>
+<br/><i>Band-aid solutions to <a href="../trouble/glaze+crazing.html">crazing</a> are often recommended by authors, but these do not get at the root cause of the problem, a <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> mismatch between glaze and body.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/is+your+fired+ware+safe%3f.html">Is Your Fired Ware Safe?</a>
+<br/><i>Glazed ware can be a safety hazard to end users because it may leach metals into food and drink, it could harbor bacteria and it could flake of in knife-edged pieces.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/bringing+out+the+big+guns+in+craze+control%3a+mgo+%28g1215u%29.html">Bringing Out the Big Guns in Craze Control: MgO (G1215U)</a>
+<br/><i><a href="../oxide/mgo.html">MgO</a> is the secret weapon of <a href="../trouble/glaze+crazing.html">craze</a> control. If your application can tolerate it you can create a <a href="../glossary/cone+6.html">cone 6</a> glaze of very low <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> that is very resistant to <a href="../trouble/glaze+crazing.html">crazing</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/309">http://en.wikipedia.org/wiki/Feldspar</a>
+<br/><i><a href="310.html">Feldspar</a> at Wikipedia</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/308">http://en.wikipedia.org/wiki/Feldspar</a>
+<br/><i>Wikipedia <a href="310.html">Feldspar</a> Page</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1341">http://studiopotter.org/pdfs/Sohng%20pps84-89.pdf</a>
+<br/><i>Article about <a href="../glossary/cristobalite.html">cristobalite</a> in clay bodies</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/2623">https://www.youtube.com/watch?v=FVUuhjnjAoA</a>
+<br/><i>German potter Cornelius Breymann investigates <a href="../glossary/limit+formula.html">limit formulas</a>, eutectics</i>
+<br/><i style="color:#888888;">On this Youtube video Cornelius will take you on a slow and deliberate journey. If you stick with him you will discover how, by industrious blending of <a href="310.html">feldspar</a>, <a href="173.html">calcium carbonate</a> and <a href="1245.html">silica</a> we can see what ratios of <a href="../oxide/cao.html">CaO</a>, <a href="../oxide/sio2.html">SiO2</a> and <a href="../oxide/al2o3.html">Al2O3</a> (and the materials sourcing them) produce a well-melted <a href="../glossary/high+temperature+glaze.html">high temperature glaze</a>. You will see how the process demonstrates where feldspar comes up short as a glaze by itself and what it needs to be one. And you will see the CaO:SiO2:Al2O3 <a href="../glossary/eutectic.html">eutectic</a> demonstrated.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="custer+feldspar.html">Custer Feldspar</a>
+<br/><i>The most common potash <a href="310.html">feldspar</a> used in <a href="../glossary/ceramics.html">ceramics</a> in North America. While having been a standard for many decades its supply appears in doubt in 2024.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="soda+feldspar.html">Soda Feldspar</a>
+<br/><i>A <a href="310.html">feldspar</a> having a <a href="../picture/1775.html">KNaO</a> content that predominates in sodium.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potash+feldspar.html">Potash Feldspar</a>
+<br/><i>A <a href="310.html">feldspar</a> having a <a href="../picture/1775.html">KNaO</a> content that predominates in potassium.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="calcium+feldspar.html">Calcium Feldspar</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="spodumene.html">Spodumene</a>
+<br/><i><a href="1287.html">Spodumene</a> is a lithium sourcing <a href="310.html">feldspar</a>, an alternative to <a href="975.html">lithium carbonate</a> to supply <a href="../oxide/li2o.html">Li2O</a> to ceramic glazes. Contains up to about 8% Li2O.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="nepheline+syenite.html">Nepheline Syenite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="nepheline+syenite+norwegian.html">Nepheline Syenite Norwegian</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3110.html">Ferro Frit 3110</a>
+<br/><i>High sodium, high <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> low <a href="../glossary/boron+frit.html">boron frit</a>. A super-feldspar in <a href="../glossary/clay+body.html">clay bodies</a>. Melts a very low temperatures.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="feldspath+ice+10.html">Feldspath ICE 10</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="kaolin+a.html">Kaolin A</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pegmatite.html">Pegmatite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="minspar+200.html">Minspar 200</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="kona+f-4+feldspar.html">Kona F-4 Feldspar</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="m-200+feldespato.html">M-200 Feldespato</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="g-200+2r+feldspar.html">G-200 2R Feldspar</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Hazards</td>
+<td>
+<a href="../hazard/feldspar.html">Feldspar</a>
+<br/><i><a href="310.html">Feldspars</a> are abundant and varied in nature. They contain small amounts of quartz (while <a href="1070.html">nepheline syenite</a> does not).</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/fel">Feldspar</a>
+<br/><i>The most common source of fluxes for high and <a href="../glossary/medium+temperature.html">medium temperature</a> glazes and bodies.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/gnm">Generic Material</a>
+<br/><i>Generic materials are those with no brand name. Normally they are theoretical, the <a href="../glossary/glaze+chemistry.html">chemistry</a> portrays what a specimen would be if it had no contamination. Generic materials are helpful in educational situations where students need to study material theory (later they graduate to dealing with real world materials). They are also helpful where the chemistry of an actual material is not known. Often the accuracy of calculations is sufficient using generic materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/fel">Feldspar</a>
+<br/><i>The most common source of fluxes for high and <a href="../glossary/medium+temperature.html">medium temperature</a> glazes and bodies.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Troubles</td>
+<td>
+<a href="../trouble/powdering%2c+cracking+and+settling+glazes.html">Powdering, Cracking and Settling Glazes</a>
+<br/><i>Powdering and dusting glazes are difficult and a dust hazard. Shrinking and cracking glazes fall off and <a href="../trouble/crawling.html">crawl</a>. The cause is the wrong amount or type of clay.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Troubles</td>
+<td>
+<a href="../trouble/glaze+crazing.html">Glaze Crazing</a>
+<br/><i>Ask the right questions to analyse the real cause of <a href="../glossary/glaze+crazing.html">glaze crazing</a>. Do not just treat the symptoms, the real cause is <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> mismatch with the body.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/al2o3.html">Al2O3 - Aluminum Oxide, Alumina</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/na2o.html">Na2O - Sodium Oxide, Soda</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/li2o.html">Li2O - Lithium Oxide, Lithia</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/sio2.html">SiO2 - Silicon Dioxide, Silica</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/knao.html">KNaO - Potassium/Sodium Oxides</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Media</td>
+<td>
+<a href="../video/mica+and+feldspar+mine+of+mgk+minerals.html">Mica and Feldspar Mine of MGK Minerals</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Media</td>
+<td>
+<a href="../video/a+broken+glaze+meets+insight-live+and+a+magic+material.html">A Broken Glaze Meets Insight-Live and a Magic Material</a>
+<br/><i>Use <a href="../glossary/digitalfire+insight-live.html">Insight-Live</a>.com to do major surgery on a <a href="310.html">feldspar</a> saturated <a href="../glossary/reduction+firing.html">cone 10R</a> glaze recipe with multiple issues: <a href="../trouble/glaze+blisters.html">blistering</a>, <a href="../glossary/pinholing.html">pinholing</a>, <a href="../trouble/glaze+crazing.html">crazing</a>, <a href="../glossary/suspension.html">settling</a>, dusting and possibly <a href="../glossary/leaching.html">leaching</a>!</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/crackle+glaze.html">Crackle glaze</a>
+<br/><i>Crackle glazes have a crack pattern that is a product of <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> mismatch between body and glaze. They are not suitable on <a href="../glossary/functional.html">functional</a> ware.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/feldspar+glazes.html">Feldspar Glazes</a>
+<br/><i><a href="310.html">Feldspar</a> is a natural mineral that, by itself, is the most similar to a high temperature <a href="../glossary/stoneware.html">stoneware</a> glaze. Thus it is common to see alot of it in <a href="../glossary/glaze+recipes.html">glaze recipes</a>. Actually, too much.</i>
+</td>
+</tr>
+</tbody></table>
+<h3>Mechanisms</h3><table>
+<table class="table table-bordered"><tbody>
+<tr><th scope="row">Body Maturity</th><td>Feldspar is the most important body flux for cone 2+. Many clays and other body materials contain feldspar. The classic cone 10 porcelain recipe is 25% each of feldspar, ball clay, silica and kaolin.</td></tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></table></div></body>
+</html>

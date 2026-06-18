@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Sieve Analysis 35-325 Wet - SIEV</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="A measure of particle size distribution by washing a powdered or slaked sample through a series of successively finer sieves">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item active" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=test" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:center; vertical-align:top;">Feb 14-15, 2026 - <b>Major Server <a href="https://digitalfire.com">Upgrade</a> Done</b></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">Test Code-numbers</a> <a class="btn btn-primary"href="https://digitalfire.com/test/list" role="button" aria-expanded="false">All Tests</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a title="94 - +44 and +63 Micron Residue" href="https://digitalfire.com/test/44mr">44MR</a> |</nobr> <nobr><a title="38 - Apparent Porosity" href="https://digitalfire.com/test/appo">APPO</a> |</nobr> <nobr><a title="85 - Average Particle Size (Microns)" href="https://digitalfire.com/test/avps">AVPS</a> |</nobr> <nobr><a title="42 - Apparent Viscosity (cps)" href="https://digitalfire.com/test/avsc">AVSC</a> |</nobr> <nobr><a title="36 - Bulk Density g/cc (Packed)" href="https://digitalfire.com/test/bdgc">BDGC</a> |</nobr> <nobr><a title="23 - Bulk Density lbs/cu. ft. (Packed)" href="https://digitalfire.com/test/bdlb">BDLB</a> |</nobr> <nobr><a title="73 - Borate LOI" href="https://digitalfire.com/test/bloi">BLOI</a> |</nobr> <nobr><a title="89 - Boiling Water:Ice Water Glaze Fit Test" href="https://digitalfire.com/test/bwiw">BWIW</a> |</nobr> <nobr><a title="90 - Carbon content" href="https://digitalfire.com/test/ccon">CCON</a> |</nobr> <nobr><a title="62 - Drying Factor/Water Content/Solubles" href="https://digitalfire.com/test/cdry">CDRY</a> |</nobr> <nobr><a title="25 - CEC (meq/100g)" href="https://digitalfire.com/test/cec">CEC</a> |</nobr> <nobr><a title="47 - Clay Water Content - Powder, Plastic" href="https://digitalfire.com/test/clwc">CLWC</a> |</nobr> <nobr><a title="99 - Compressive Strength" href="https://digitalfire.com/test/cmst">CMST</a> |</nobr> <nobr><a title="10 - Co-efficient of Linear Expansion" href="https://digitalfire.com/test/cole">COLE</a> |</nobr> <nobr><a title="64 - Cold Over Boiled Porosity" href="https://digitalfire.com/test/covb">COVB</a> |</nobr> <nobr><a title="63 - Clay, Silt, Sand Sedimentation Test" href="https://digitalfire.com/test/csss">CSSS</a> |</nobr> <nobr><a title="1 - Density (Specific Gravity)" href="https://digitalfire.com/test/dens">DENS</a> |</nobr> <nobr><a title="46 - Drying Factor" href="https://digitalfire.com/test/dfac">DFAC</a> |</nobr> <nobr><a title="77 - Deflocculation Demand" href="https://digitalfire.com/test/dfdm">DFDM</a> |</nobr> <nobr><a title="105 - Dielectric Strength" href="https://digitalfire.com/test/diel">DIEL</a> |</nobr> <nobr><a title="8 - Density, loose packed (lbs/cu fut)" href="https://digitalfire.com/test/dnlp">DNLP</a> |</nobr> <nobr><a title="19 - Dry Strength (kgf/cm2)" href="https://digitalfire.com/test/ds">DS</a> |</nobr> <nobr><a title="51 - Drying Shrinkage" href="https://digitalfire.com/test/dshr">DSHR</a> |</nobr> <nobr><a title="59 - Dry Strenth (Round Bars)" href="https://digitalfire.com/test/dsrn">DSRN</a> |</nobr> <nobr><a title="60 - Dry Strength (Square Bars)" href="https://digitalfire.com/test/dstr">DSTR</a> |</nobr> <nobr><a title="13 - Decomposition Temperature" href="https://digitalfire.com/test/dtmp">DTMP</a> |</nobr> <nobr><a title="112 - Engobe Body Compatibility Test" href="https://digitalfire.com/test/ebct">EBCT</a> |</nobr> <nobr><a title="97 - Elastic Modulus, 20 degrees C" href="https://digitalfire.com/test/em20">EM20</a> |</nobr> <nobr><a title="96 - Frit Fusibility Test" href="https://digitalfire.com/test/frfu">FRFU</a> |</nobr> <nobr><a title="65 - Fired Strength Round Bars" href="https://digitalfire.com/test/frrd">FRRD</a> |</nobr> <nobr><a title="102 - Fracture Toughness" href="https://digitalfire.com/test/frtg">FRTG</a> |</nobr> <nobr><a title="21 - Firing Shrinkage" href="https://digitalfire.com/test/fshr">FSHR</a> |</nobr> <nobr><a title="66 - Fired Strength Square Bars" href="https://digitalfire.com/test/fstr">FSTR</a> |</nobr> <nobr><a title="113 - Glaze Body Bond Test" href="https://digitalfire.com/test/gbbt">GBBT</a> |</nobr> <nobr><a title="110 - Glaze Melt Fluidity - Ball Test" href="https://digitalfire.com/test/gbmf">GBMF</a> |</nobr> <nobr><a title="27 - GE Brightness" href="https://digitalfire.com/test/gebr">GEBR</a> |</nobr> <nobr><a title="68 - Glaze Observations" href="https://digitalfire.com/test/glaz">GLAZ</a> |</nobr> <nobr><a title="58 - Glaze Melt Flow - Runway Test" href="https://digitalfire.com/test/glfl">GLFL</a> |</nobr> <nobr><a title="69 - Glaze Hardness" href="https://digitalfire.com/test/glhd">GLHD</a> |</nobr> <nobr><a title="70 - Glaze Leaching Test" href="https://digitalfire.com/test/glle">GLLE</a> |</nobr> <nobr><a title="14 - Frit Softening Point" href="https://digitalfire.com/test/gspt">GSPT</a> |</nobr> <nobr><a title="92 - Glass Transition Temperature" href="https://digitalfire.com/test/gttm">GTTM</a> |</nobr> <nobr><a title="100 - Hardness (Microindentation) Test" href="https://digitalfire.com/test/hdmi">HDMI</a> |</nobr> <nobr><a title="28 - Hegman Fineness" href="https://digitalfire.com/test/hegf">HEGF</a> |</nobr> <nobr><a title="91 - Heating Microscope Analysis for Frits" href="https://digitalfire.com/test/hma">HMA</a> |</nobr> <nobr><a title="95 - Heating Microscope Analysis" href="https://digitalfire.com/test/hman">HMAN</a> |</nobr> <nobr><a title="7 - Hardness (Moh)" href="https://digitalfire.com/test/hmoh">HMOH</a> |</nobr> <nobr><a title="88 - I.F.P. (celsius)" href="https://digitalfire.com/test/ifp">IFP</a> |</nobr> <nobr><a title="108 - 300F:Ice Water Crazing Test" href="https://digitalfire.com/test/iwct">IWCT</a> |</nobr> <nobr><a title="79 - % < 10 microns" href="https://digitalfire.com/test/l10m">L10M</a> |</nobr> <nobr><a title="81 - % < 1 micron" href="https://digitalfire.com/test/l1m">L1M</a> |</nobr> <nobr><a title="78 - % < 20 microns" href="https://digitalfire.com/test/l20m">L20M</a> |</nobr> <nobr><a title="80 - % < 2 microns" href="https://digitalfire.com/test/l2m">L2M</a> |</nobr> <nobr><a title="93 - % < 30 microns" href="https://digitalfire.com/test/l30m">L30M</a> |</nobr> <nobr><a title="17 - % < 5 microns" href="https://digitalfire.com/test/l5">L5</a> |</nobr> <nobr><a title="18 - % < 0.5 microns" href="https://digitalfire.com/test/l5m">L5M</a> |</nobr> <nobr><a title="49 - LOI/Density/Water Content" href="https://digitalfire.com/test/ldw">LDW</a> |</nobr> <nobr><a title="15 - LOI (100-1000C)" href="https://digitalfire.com/test/loi">LOI</a> |</nobr> <nobr><a title="30 - Liquid Limit" href="https://digitalfire.com/test/lqlm">LQLM</a> |</nobr> <nobr><a title="76 - Median Particle Size (Microns)" href="https://digitalfire.com/test/mdps">MDPS</a> |</nobr> <nobr><a title="57 - Frit Melting Range (C)" href="https://digitalfire.com/test/mlrg">MLRG</a> |</nobr> <nobr><a title="75 - Moisture Content - Powder" href="https://digitalfire.com/test/moip">MOIP</a> |</nobr> <nobr><a title="61 - Modulus of Rupture - Fired" href="https://digitalfire.com/test/mor">MOR</a> |</nobr> <nobr><a title="74 - Dry M.O.R. (50% Silica)" href="https://digitalfire.com/test/mor5">MOR5</a> |</nobr> <nobr><a title="12 - Modulus of Rupture - Dry" href="https://digitalfire.com/test/mord">MORD</a> |</nobr> <nobr><a title="5 - Oil Adsorption (Spatula)" href="https://digitalfire.com/test/olad">OLAD</a> |</nobr> <nobr><a title="107 - % Passing 200 Mesh Wet" href="https://digitalfire.com/test/p200">P200</a> |</nobr> <nobr><a title="32 - % Passing 325 Mesh Wet" href="https://digitalfire.com/test/p325">P325</a> |</nobr> <nobr><a title="71 - Pugged Body Properties Overview" href="https://digitalfire.com/test/pbpo">PBPO</a> |</nobr> <nobr><a title="11 - Pyrometric Cone Equivalent" href="https://digitalfire.com/test/pce">PCE</a> |</nobr> <nobr><a title="4 - pH (pugged clay)" href="https://digitalfire.com/test/phpg">pHPG</a> |</nobr> <nobr><a title="87 - pH for dry powder" href="https://digitalfire.com/test/phpw">pHPW</a> |</nobr> <nobr><a title="72 - Pyroplastic Deformation" href="https://digitalfire.com/test/ppd">PPD</a> |</nobr> <nobr><a title="98 - Poisson's Ratio" href="https://digitalfire.com/test/prsm">PRSM</a> |</nobr> <nobr><a title="6 - Particle Shape (1-7 microns)" href="https://digitalfire.com/test/pshp">PSHP</a> |</nobr> <nobr><a title="37 - Reheat Change" href="https://digitalfire.com/test/rc">RC</a> |</nobr> <nobr><a title="34 - Rheology of a Ceramic Slurry" href="https://digitalfire.com/test/rheo">RHEO</a> |</nobr> <nobr><a title="9 - Sieve Analysis Dry" href="https://digitalfire.com/test/sadr">SADR</a> |</nobr> <nobr><a title="16 - Surface Area (m2/gm)" href="https://digitalfire.com/test/samg">SAMG</a> |</nobr> <nobr><a title="84 - Simple Clay Evaluation" href="https://digitalfire.com/test/scle">SCLE</a> |</nobr> <nobr><a title="41 - Shrinkage/Absorption Test" href="https://digitalfire.com/test/shab">SHAB</a> |</nobr> <nobr><a title="48 - Sieve Analysis 35-325 Wet" href="https://digitalfire.com/test/48"><button type="button" class="btn btn-dark">SIEV</button></a> |</nobr> <nobr><a title="35 - Solubility" href="https://digitalfire.com/test/slby">SLBY</a> |</nobr> <nobr><a title="45 - Soluble Salts" href="https://digitalfire.com/test/solu">SOLU</a> |</nobr> <nobr><a title="104 - Specific Heat Capacity" href="https://digitalfire.com/test/sphc">SPHC</a> |</nobr> <nobr><a title="83 - Simple Shrinkage/Absorption" href="https://digitalfire.com/test/ssab">SSAB</a> |</nobr> <nobr><a title="24 - Sieve Analysis Wet" href="https://digitalfire.com/test/svwt">SVWT</a> |</nobr> <nobr><a title="82 - TGA" href="https://digitalfire.com/test/tga">TGA</a> |</nobr> <nobr><a title="103 - Thermal Conductivity, 20 degrees C" href="https://digitalfire.com/test/thco">THCO</a> |</nobr> <nobr><a title="101 - Tensile Strength, 25 degrees C" href="https://digitalfire.com/test/tnst">TNST</a> |</nobr> <nobr><a title="26 - Trace Elements (ppm)" href="https://digitalfire.com/test/trel">TREL</a> |</nobr> <nobr><a title="33 - Trace Minerals" href="https://digitalfire.com/test/trmn">TRMN</a> |</nobr> <nobr><a title="111 - Thermal Shock Failure" href="https://digitalfire.com/test/tsfl">TSFL</a> |</nobr> <nobr><a title="40 - Ultimate Particle Size Distribution" href="https://digitalfire.com/test/upsd">UPSD</a> |</nobr> <nobr><a title="20 - Water absorption" href="https://digitalfire.com/test/wabs">WABS</a> |</nobr> <nobr><a title="43 - Water of Plasticity" href="https://digitalfire.com/test/wopl">WOPL</a> |</nobr> <nobr><a title="50 - Whole Rock Analysis" href="https://digitalfire.com/test/wra">WRA</a> |</nobr> <nobr><a title="86 - Wet Sieve Residue" href="https://digitalfire.com/test/wsr">WSR</a> |</nobr> <nobr><a title="3 - Index of Refraction" href="https://digitalfire.com/test/xref">XREF</a></nobr></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>SIEV - Sieve Analysis 35-325 Wet Test</h1>
+<p>This is a good standard test to measure physical <a  href="https://digitalfire.com/glossary/particle+size+distribution">particle size distribution</a> in <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a> and materials (not <a  href="https://digitalfire.com/glossary/ultimate+particles">ultimate particles</a>). Wet <a  href="https://digitalfire.com/glossary/sieve">sieving</a> is more reliable than doing a dry <a  href="https://digitalfire.com/glossary/sieve">sieve</a> analysis (at least where information on finer sizes is needed), this is because of particle <a  href="https://digitalfire.com/glossary/agglomeration">agglomerates</a> that dry shaking fails to break down and the mechanical issues of passing dry particles through openings barely bigger than they are (especially if they are oblong). See ASTM E-11.<br />
+<br />
+<a  href="https://digitalfire.com/glossary/sieve">Sieves</a> are rated according to the number of wires per inch. At around 100 mesh the wires become invisible to the human eye (at least most human eyes). Thus, a <a  href="https://digitalfire.com/glossary/325+mesh">325 mesh</a> screen has incredibly small openings.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A root-of-two series of test sieves</h3>
+<br /><a href="https://digitalfire.com/picture/528"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/mycca1zdmd.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/528">click here</a> to see it.</p>
+<p>The coarsest screen is at the top, the finest on the bottom. The top one has an opening of 425 microns (thus 425 micron and finer particles will pass through it, +425 micron particles will not). Its opening area is 180,000 square microns (425x425). Going downward, the openings have areas half that of the one above (thus, for the second, the opening area is 300x300=90,000 microns). Structural products industries, like brick, measure coarser particles than this, using 10-70 mesh. Using this series one can produce a standard measurement of the distribution of <a  href="https://digitalfire.com/glossary/particle+sizes">particle sizes</a> in a material powder.  The finer <a  href="https://digitalfire.com/glossary/sieve">sieves</a> (from 100-325) are only practical for wet processing (where the powder is water washed through the stack). In <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a> the <a  href="https://digitalfire.com/test/siev">SIEV test</a> (water washed) uses this series of sieves.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Preparing a representative sample of dry material</h3>
+<br /><a href="https://digitalfire.com/picture/527"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/articles/takesamp.gif" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/527">click here</a> to see it.</p>
+<p>Repeat a cycle of layering to create a pile of material, quartering it, removing opposite quarters and remixing. Do this until the amount needed for testing is achieved.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Skagit Fireclay PSD test</h3>
+<br /><a href="https://digitalfire.com/picture/665"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/materials/pexzaxuwop.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/665">click here</a> to see it.</p>
+<p>Particles from each category in a <a  href="https://digitalfire.com/glossary/particle+size+distribution">particle size distribution</a> test of Skagit Fireclay</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Could these bentonite particles cause specking in a porcelain?</h3>
+<br /><a href="https://digitalfire.com/picture/767"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/nucdivanyn.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/767">click here</a> to see it.</p>
+<p>The stated particle size of a material and fired appearance can both be misleading. For example, these are Volclay 325 <a  href="https://digitalfire.com/material/106">bentonite</a> particles fired to cone 8 oxidation. They are from a water washed <a  href="https://digitalfire.com/glossary/sieve">sieve</a> analysis test, the <a  href="https://digitalfire.com/picture/3706">oversize particles</a> from a <a  href="https://digitalfire.com/glossary/325+mesh">325 mesh</a> screen (left) make up 2% of the total and 1% are from the <a  href="https://digitalfire.com/glossary/200+mesh">200 mesh</a> screen (right). Although the 325 particles appear ominously dark, individually they are likely to small to produce apparent fired specks in a <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a>. However 200 mesh sizes can produce visible fired specks, but that fraction of oversize does not have nearly as high iron or <a  href="https://digitalfire.com/glossary/flux">flux</a> content. Still, the finer darker particles could <a  href="https://digitalfire.com/glossary/agglomeration">agglomerate</a>, it might be better to use a cleaner bentonite to <a  href="https://digitalfire.com/glossary/plasticity">plasticize</a> a porcelain.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Ball clay powders are minus 200 mesh. Right? Wrong!</h3>
+<br /><a href="https://digitalfire.com/picture/1034"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/kovxebevix.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1034">click here</a> to see it.</p>
+<p>These are the <a  href="https://digitalfire.com/picture/3706">oversize particles</a> (from the 79, 100, 140 and <a  href="https://digitalfire.com/glossary/200+mesh">200 mesh</a> <a  href="https://digitalfire.com/glossary/sieve">sieves</a>) from 100 grams of a commercial Gleason <a  href="https://digitalfire.com/material/80">ball clay</a>. They have been fired to cone 8 oxidation. There is 1.5 grams total, this is within the limits stated on their data sheet even though the material is sold as 200 mesh grade. Firing the samples shows whether the particles contain iron that will produce specking in porcelains and <a  href="https://digitalfire.com/glossary/whiteware">whiteware</a>. In this case there are a few. We do this test on many materials and this is typical of what we see.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Watch out for iron particles in ball clays</h3>
+<br /><a href="https://digitalfire.com/picture/1036"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/tests/ryhcezanek.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1036">click here</a> to see it.</p>
+<p>These are the <a  href="https://digitalfire.com/picture/3706">oversize particles</a> (from the 70, 100, 140 and <a  href="https://digitalfire.com/glossary/200+mesh">200 mesh</a> <a  href="https://digitalfire.com/glossary/sieve">sieves</a>) from 100 grams of a commercial <a  href="https://digitalfire.com/material/80">ball clay</a>. They have been fired to <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10 reduction</a>. As you can see, this material is a potential cause of specking, especially in <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> bodies. It is not only wise to check for oversize particles in clays, but firing these particles will reveaal if they contain iron. A 200 mesh screen would be a good start for this test, it would catch all of these.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Oversize particles in a typical manufactured porcelain body</h3>
+<br /><a href="https://digitalfire.com/picture/1268"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/voljuderyj.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1268">click here</a> to see it.</p>
+<p>Example of the <a  href="https://digitalfire.com/picture/3706">oversize particles</a> from a 100 gram wet <a  href="https://digitalfire.com/glossary/sieve">sieve</a> analysis test of a powdered sample of a <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> body made from North American refined materials. Although these materials are sold as <a  href="https://digitalfire.com/glossary/200+mesh">200 mesh</a>, that designation does not mean that there are no particles coarser than 200 mesh. Here, there are significant numbers of particles on the 100 and even 70 mesh screens. These contain some darker particles that could produce fired specks (if they are iron and not lignite); thank goodness in this case they do not. Oversize particlate is a fact of life in bodies made from refined materials and used by potters and hobbyists. Industrial manufacturers (e.g. tile, tableware, <a  href="https://digitalfire.com/glossary/sanitary+ware">sanitaryware</a>) commonly process the materials further, <a  href="https://digitalfire.com/glossary/slurry">slurrying</a> them and screening or ball milling; this is done to guarantee defect-free glazed surfaces.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Large particle grogs are difficult to produce</h3>
+<br /><a href="https://digitalfire.com/picture/1053"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/buvfuponar.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1053">click here</a> to see it.</p>
+<p>These particles are from a <a  href="https://digitalfire.com/glossary/grog">grog</a> that has been milled and separated into its constituent sizes in the lab. As you can see it has a wide range of <a  href="https://digitalfire.com/glossary/particle+sizes">particle sizes</a>, from 48 to finer than <a  href="https://digitalfire.com/glossary/200+mesh">200 mesh</a>. When fired ceramic (like bricks) is ground the finer sizes often predominate. Because the coarser grades have a lower yield they can be much more expensive and harder to get. But they are the most effective in reducing the <a  href="https://digitalfire.com/glossary/drying+shrinkage">drying shrinkage</a> and fired stability of structural and sculptural bodies.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">This is what labs use to measure particle size</h3>
+<br /><a alt="Two example of high quality brass laboratory sieves" title="Two examples of high quality brass laboratory sieves" href="https://digitalfire.com/picture/1518"><img class="flexleft50" title="Two examples of high quality brass laboratory sieves"  alt="Two example of high quality brass laboratory sieves"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/jozfanekiw.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1518">click here</a> to see it.</p>
+<p>To measure particle size in a <a  href="https://digitalfire.com/glossary/slurry">slurry</a> or powder you need <a  href="https://digitalfire.com/glossary/sieve">sieves</a>. This is the most popular type used in labs. They are made from brass by a company named Tyler. The range of screen sizes for testing particle size is very wide (obvious here: the top screen has an opening of 56 mm, the bottom one 0.1 mm - the wires are almost too small to see). You can often buy these used on Ebay for a lot less than new ones, search for "<a  href="https://digitalfire.com/picture/1518">tyler sieve</a>". The finer sieves (especially 200) are fragile and more easily ripped. For potters it is good to have a 50, 100 and 150.</p>
+<p style="clear:left"></p>
+<h2>Variables</h2>
+<b>TOT - Total Weight (V)</b><p style="margin-left:10px;">
+<p>The total weight of powder washed through the screens. When weighing, add the water content to the total weight. For example, if the water content is 2.5%, then weight out 102.5 grams.</p>
+</p>
+<b>35M - 35 mesh (V)</b><p style="margin-left:10px;">
+<p>The residue left on the 35 mesh screen after drying.</p>
+</p>
+<b>48M - 48 mesh (V)</b><p style="margin-left:10px;">
+<p></p>
+</p>
+<b>65M - 65 mesh (V)</b><p style="margin-left:10px;">
+<p></p>
+</p>
+<b>100M - 100 mesh (V)</b><p style="margin-left:10px;">
+<p></p>
+</p>
+<b>150M - 150 mesh (V)</b><p style="margin-left:10px;">
+<p></p>
+</p>
+<b>200M - 200 mesh (V)</b><p style="margin-left:10px;">
+<p></p>
+</p>
+<b>325M - 325 mesh (V)</b><p style="margin-left:10px;">
+<p></p>
+</p>
+<b>NOTE - Note (V)</b><p style="margin-left:10px;">
+<p>Use this to iddentify each specimen if more than one was done.</p>
+</p>
+
+<h2>Procedure</h2>
+<p>1. <b>Purpose</b></p>
+<p>This test is best done using a Data Collection Fill-In form. Collect data on a number tests, then enter this into the computer in a batch.<br />
+<br />
+Related information on the theory, purpose, procedure and interpretation for this test is available in the Magic of Fire II book.</p>
+</p>
+<p>2. <b>Scope</b></p>
+<p>2.1 This test is done to assess particle size of incoming material.</p>
+</p>
+<p>3. <b>Definitions</b></p>
+<p>3.1 TYLER SIEVE NUMBER<br />
+A standard sieve numbering system using the W.S. Tyler Sieve Company.<br />
+<br />
+3.2 MESH<br />
+The number of wires per inch on a testing sieve.</p>
+</p>
+<p>4. <b>Responsibilities</b></p>
+<p>4.1 This procedure is carried out by the quality control technician on powder or dry samples provided by the receiver or collected in production.</p>
+</p>
+<p>5. <b>Procedure</b></p>
+<p>5.1 If the material is supplied as a chunk of dry clay:<br />
+5.1.1 Break the chunk into small pellet no bigger than 3-4 mm and weigh out 100 grams.<br />
+5.1.2 Continue as for powder sample.<br />
+<br />
+5.2 If the material is provided as a pugged wet sample:<br />
+5.2.1 Roll the pugged clay into a thin slab (about 5 mm) and dry it.<br />
+5.2.2 Continue as above for dried chunk.<br />
+<br />
+5.3 Wash powder through sieves<br />
+5.3.1 Weigh 100 grams of powder or broken chunks and pour it into about a litre of water. Let stand for a few minutes for powder, for an hour for pellets.<br />
+5.3.2 Wash the water/powder mix through the 325# screen until all minus 325 material is gone. If some pellets do not break down well, wash with hot water, or dry the sieve as is and wash a second time.<br />
+5.3.3 Reverse wash the oversize material back into the water container.<br />
+5.3.4 Stack the sieves from finest to coarsest, with finest at the bottom, and wash the plus 325 material through the stack. Thoroughly spray the material on each sieve to encourage all finer material to fall through each.<br />
+5.3.5 Dissassemble the stack of sieves and set in warm area to dry.<br />
+5.3.6 Write the material iddentification on a new line on the SIEV logsheet.<br />
+5.3.7 Use a brush to remove the oversize material from each screen and weigh it. Write the weight on the logsheet.<br />
+5.3.8 Enter the data into the computer using the correct ID# for the body or material. If an ID# does not already exist, assign one.<br />
+<br />
+5.4 Equipment<br />
+5.4.1 Tyler root of two series of interlocking testing sieves with soft seive brush.<br />
+5.4.2 .01 gram balance<br />
+5.4.3 Drying area<br />
+5.4.4 Spraying hose and sink<br />
+<br />
+5.5. Safety<br />
+5.5.1 Brass sieves can get very hot if dried near a heat source; be careful not to get burned.<br />
+5.5.2 Mixing clay/water slurries can generate a lot of dust. Take measures to reduce it and not breathe it.<br />
+<br />
+5.6. Workmanship<br />
+5.6.1 Carefully wash all material through each sieve with a repeated back and forth motion.<br />
+5.6.2 Do not use too high pressure as this could splatter some of the material out of the sieve.<br />
+5.6.3 Wash all material through the finest sieve first, then stack them all up and wash the remainder through. This is a necessity to prevent blinding that causes water overflows and material loss on the finer meshes.<br />
+5.6.4 Wash the oversize to the centre of each sieve so it can more easily be brushed out when dry.<br />
+5.6.5 If drying is done near a hot kiln, be careful that the temperature will not be high enough to melt the solder on the sieves.<br />
+5.6.6 Use the brush carefully on the finer sieves to avoid damaging them.<br />
+5.6.7 Watch carefully for rips in the sieves, especially around the edges. Repair with hot glue if necessary.<br />
+5.6.8 Watch the stacking order carefully to be sure the sieves are in order during washing.</p>
+</p>
+<p>6. <b>Reference Documents</b></p>
+<p>Test Definition Report,<br />
+Test Procedure Report,<br />
+Data Collection Fill-In Form Report.</p>
+</p>
+<p>7. <b>Reason for Re-issue</b></p>
+<p>Temp 1 Initial Draft<br />
+Temp 2 Spelling and Grammer check and minor revisions.<br />
+Temp 3 Adjustment in data collection process due to better data entry facilities in the software.</p>
+</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<h3>Videos</h3><table>
+<table class="table table-bordered"><tbody>
+</tbody></table>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/simple+physical+testing+of+clays">Simple Physical Testing of Clays</a>
+<br /><i>Learn to test your <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a> and clay materials and record the results in an organized way, understanding the purpose of each test and how to relate its results to changes that need to be made in process, recipe and materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/how+to+find+and+test+your+own+native+clays">How to Find and Test Your Own Native Clays</a>
+<br /><i>Some of the key tests needed to really understand what a clay is and what it can be used for can be done with inexpensive equipment and simple procedures. These practical tests can give you a better picture than a data sheet full of numbers.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/setting+up+a+clay+testing+program+in+your+company+or+studio">Setting up a Clay Testing Program in Your Company or Studio</a>
+<br /><i>Set up a routine testing pipeline and start generating historical data that will enable your staff to understand your source materials and maintain, adjust and troubleshoot your <a  href="https://digitalfire.com/glossary/clay+body">clay body</a> recipes.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/p325">% Passing 325 Mesh Wet</a>
+<br /><i>The amount of particulate material left on a <a  href="https://digitalfire.com/glossary/325+mesh">325 mesh</a> <a  href="https://digitalfire.com/glossary/sieve">sieve</a> after washing through a measured amount of the powder.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/hegf">Hegman Fineness</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/upsd">Ultimate Particle Size Distribution</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/sadr">Sieve Analysis Dry</a>
+<br /><i>A measure of <a  href="https://digitalfire.com/glossary/particle+size+distribution">particle size distribution</a> by vibrating a powdered sample through a series of successively finer sieves</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/svwt">Sieve Analysis Wet</a>
+<br /><i>A measure of <a  href="https://digitalfire.com/glossary/particle+size+distribution">particle size distribution</a> by washing a powdered or <a  href="https://digitalfire.com/glossary/slaking">slaked</a> sample through a series of successively finer sieves</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/avps">Average Particle Size (Microns)</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/wsr">Wet Sieve Residue</a>
+<br /><i>Make a quick determination of <a  href="https://digitalfire.com/picture/3706">oversize particles</a> by washing a measured amount of powder through a 150 or <a  href="https://digitalfire.com/glossary/200+mesh">200 mesh</a> <a  href="https://digitalfire.com/glossary/sieve">sieve</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/kaolin">Kaolin</a>
+<br /><i>The purest of all clays in nature. Kaolins are used in porcelains and stonewares to impart whiteness, in glazes to supply <a  href="https://digitalfire.com/oxide/al2o3">Al2O3</a> and to suspend slurries.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ball+clay">Ball Clay</a>
+<br /><i>A fine particled highly plastic <a  href="https://digitalfire.com/glossary/secondary+clay">secondary clay</a> used mainly to impart <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> to clay and <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> bodies and to suspend glaze, slips and <a  href="https://digitalfire.com/glossary/engobe">engobe</a> slurries.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/ptt">Particle Tests</a>
+<br /><i>Tests conducted to determine particle populations, sizes, shapes, densities, surface areas, etc.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/bdt">Body Tests</a>
+<br /><i>Tests conducted on bodies made from materials, as opposed to the materials themselves.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1178">http://en.wikipedia.org/wiki/Mesh_(scale)</a>
+<br /><i>Tyler and US <a  href="https://digitalfire.com/glossary/sieve">sieve</a> mesh and conversion information at Wikipedia</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1543">https://insight-live.com/insight/help/It+Starts+With+a+Lump+of+Clay-433.html</a>
+<br /><i>Case Study: Testing a <a  href="https://digitalfire.com/glossary/native+clay">Native Clay</a> Using <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-Live</a>.com</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/splitting">Splitting</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/representative+sample">Representative Sample</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/particle+size+distribution">Particle Size Distribution</a>
+<br /><i>Knowing the distribution of <a  href="https://digitalfire.com/glossary/particle+sizes">particle sizes</a> in a <a  href="https://digitalfire.com/glossary/ceramic+material">ceramic material</a> is often very important in assessing its function and suitability for an application.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/sieve">Sieve</a>
+<br /><i><a  href="https://digitalfire.com/glossary/sieve">Sieves</a> are important in <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a> for removing particulates and <a  href="https://digitalfire.com/glossary/agglomeration">agglomerates</a> from glaze, <a  href="https://digitalfire.com/glossary/engobe">engobe</a> and body slurries.</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

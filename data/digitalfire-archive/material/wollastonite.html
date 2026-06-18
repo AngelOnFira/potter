@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Wollastonite</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="Alternate names: Wolastonite - Digitalfire Reference Library (no ads)" name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item active"><a class="nav-link" href="list.html">Materials <span class="sr-only">(current)</span></a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=material" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container">
+<ul class="nav nav-tabs pt-1" id="myTab" role="tablist">
+<li class="nav-item">
+<a aria-controls="material" aria-selected="true" class="nav-link active" data-toggle="tab" href="#material" id="material-tab" role="tab">Materials for Ceramics</a>
+</li>
+</ul>
+<div class="tab-content mb-3" id="myTabContent" style="border-right:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #ddd; padding:10px;">
+<div aria-labelledby="material-tab" class="tab-pane fade show active" id="material" role="tabpanel">
+<a href="list_1-9.html">1-9</a> | <a href="list_A.html">A</a> | <a href="list_B.html">B</a> | <a href="list_C.html">C</a> | <a href="list_D.html">D</a> | <a href="list_E.html">E</a> | <a href="list_F.html">F</a> | <a href="list_Frits.html">Frits</a> | <a href="list_G.html">G</a> | <a href="list_H.html">H</a> | <a href="list_I.html">I</a> | <a href="list_J.html">J</a> | <a href="list_K.html">K</a> | <a href="list_L.html">L</a> | <a href="list_M.html">M</a> | <a href="list_N.html">N</a> | <a href="list_O.html">O</a> | <a href="list_P.html">P</a> | <a href="list_Q.html">Q</a> | <a href="list_R.html">R</a> | <a href="list_S.html">S</a> | <a href="list_T.html">T</a> | <a href="list_U.html">U</a> | <a href="list_V.html">V</a> | <a href="list_W.html">W</a> | <a href="list_X.html">X</a> | <a href="list_Y.html">Y</a> | <a href="list_Z.html">Z</a><br/>
+<nobr></nobr>
+</div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Wollastonite</h1>
+<p><b>Alternate Names</b>: Wolastonite</p>
+<p><b>Description</b>: Calcium Silicate</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/oxide.html">Oxide</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/analysis.html">Analysis</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Formula</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Tolerance</a></th>
+</tr></thead><tbody>
+<tr><td class="label"><a href="../oxide/cao.html">CaO</a></td>
+<td class="text-right">48.28%</td>
+<td class="text-right">
+1.00
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/sio2.html">SiO2</a></td>
+<td class="text-right">51.72%</td>
+<td class="text-right">
+1.00
+</td><td class="text-right">
+</td></tr>
+<tr><td colspan="2">Oxide Weight</td><td class="text-right" colspan="2">
+116.20
+</td></tr>
+<tr><td class="text-right" colspan="2"><a href="../glossary/formula+weight.html">Formula Weight</a></td><td colspan="2" style="text-align:right">
+116.20
+</td></tr>
+</tbody></table>
+<h4>Notes</h4><p>A white nonmetallic, natural mineral identified chemically as calcium metasilicate, CaSiO<sub>3</sub>. It is the only commercially available pure white mineral that is wholly acicular (needle-like crystals). Wollastonite is available in fine particle size powders as well as fibrous 'high aspect ratio' products (20:1). This powdered material used in <a href="../glossary/ceramics.html">ceramics</a> has a very unusual texture, it does not flow at all (a hand full can be picked up with fingers downward). <br/>
+<br/>
+Wollastonite's unique qualities were first recognized in 1822 by an English scientist, Sir William Wollaston. However, as a commercially available raw material, wollastonite has only been around since the 1950s. Explosive market growth took place during the 1980s and 90s and major industrial sectors have adopted the material. When added as a reinforcing agent and <a href="../glossary/functional.html">functional</a> filler (e.g. to thermoplastics, thermosets, engineering alloys and elastomers), the needle-like particle shape enhances mechanical strength, toughness and <a href="../glossary/glaze+durability.html">durability</a>, improves dimensional stability and reduces susceptibility to shrinkage and heat distortion. These same benefits are possible in ceramics, especially at low temperatures, for improving physical strength (at higher temperatures the particle properties and shapes will likely be altered or even melted by <a href="310.html">feldspar</a> or other catalysts present).<br/>
+<br/>
+Deposits are mined mainly in US, China, India, Mexico, Canada, and Finland. They vary in purity; some require almost no beneficiation; others may require the removal of up to 80% impurities such as garnet, diopside, limestone, and <a href="273.html">dolomite</a> (e.g. by magnetic separation, froth flotation, optical sorting). Synthetic wollastonite is also made by combining quicklime with quartz, <a href="173.html">calcium carbonate</a> and calcium hydrate.<br/>
+<br/>
+No commercial products have the theoretical <a href="../glossary/glaze+chemistry.html">chemistry</a> shown here. <a href="../glossary/325+mesh.html">325 mesh</a> is used commonly in ceramics.<br/>
+<br/>
+Some example physical data (US) of Nyad 325 (Vansil W-30 is very similar)<br/>
+<br/>
+Appearance: Brilliant White<br/>
+Shape: Acicular<br/>
+<a href="../glossary/specific+gravity.html">Specific gravity</a>: 2.9<br/>
+Refractive Index: 1.63<br/>
+GE Brightness: 90<br/>
+pH (aqueous solution): 9.9<br/>
+<a href="../glossary/water+solubility.html">Water solubility</a> (gms./100cc): 0.0095<br/>
+Density (lbs./cu.ft.): 181 (2.9 g/cc)<br/>
+Moh's hardness: 4.5<br/>
+Coefficient of expansion: (in/in/degree C): 6.5 x 10 -8<br/>
+Melting point: 1410<br/>
+on 325# <a href="../glossary/sieve.html">sieve</a>: 1% (Vansil W-30: 0.05%)<br/>
+Hegman Fineness of Grain: 3 (Vansil W-30: 4)<br/>
+Median Particle Size: 14<br/>
+<a href="../glossary/surface+area.html">Surface Area</a> (m2/g) (BET): 1.5<br/>
+<a href="../glossary/loi.html">LOI</a> (1000C): 0.5% (Vansil: 1.6%)<br/>
+<br/>
+The fibrous form of wollastonite can be very beneficial in bodies. In low-fired ceramics, wollastonite reduces drying and <a href="../glossary/firing+shrinkage.html">firing shrinkage</a> and drying and firing warpage. In the fired product, it can also promote lower moisture and <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> and increase firing strength. It fires with no <a href="../oxide/loi.html">LOI</a> and its fibers help vent out-gassing. These factors have made it a valuable component in tile bodies, especially for <a href="../glossary/fast+fire+glazes.html">fast-fire</a>. It is common to see 10% wollastonite in <a href="../glossary/earthenware.html">low-fire</a> <a href="../glossary/earthenware.html">earthenware</a> recipes. <a href="../glossary/vitreous.html">Vitreous</a> and semi-vitreous bodies can also show reduced shrinkage with small additions (2-5%).However, wollastonite becomes a stronger <a href="../glossary/flux.html">flux</a> as temperatures go above 1100C. The <a href="../oxide/sio2.html">SiO<sub>2</sub></a> and <a href="../oxide/cao.html">CaO</a> that it contributes react more readily to form silicates, thus wollastonite is used as a major flux in high-temperature <a href="../glossary/sanitary+ware.html">sanitaryware</a>, tile and electrical insulators (augmenting feldspar and <a href="1245.html">silica</a>, pushing their percentages down very significantly).<br/>
+<br/>
+Wollastonite exhibits a slight solubility in water, but slips containing it can become more alkaline (potentially affecting <a href="../glossary/rheology.html">rheological</a> properties). In <a href="../glossary/casting+slip.html">casting bodies</a> this can be a benefit, its gellation can decrease casting rates.<br/>
+<br/>
+The powdered form has a tendency to form <a href="../glossary/agglomeration.html">agglomerates</a> during storage (which create lumps in glazes necessitating <a href="../glossary/sieve.html">sieving</a>). Manufacturers warn that stock should be rotated to prevent it getting to old, that it should be stored in dry conditions and that pallets should not be stacked more than two high.<br/>
+<br/>
+At higher temperatures the powdered form is valuable as a source of CaO flux in glazes (and bodies). The other main raw source of CaO is whiting but it releases a high volume of gases of <a href="../glossary/decomposition.html">decomposition</a> which produce <a href="../glossary/suspension.html">suspended</a> <a href="../glossary/glaze+bubbles.html">micro-bubbles</a> that demand slow firing to clear. Also, since wollastonite sources silica as well, <a href="../glossary/glaze+recipes.html">glaze recipes</a> employing it do not need as much raw silica powder, especially at lower temperatures (since the wollastonite is sourcing SiO<sub>2</sub>). Wollastonite's greater readiness to melt at higher temperatures has a curious side effect: Glazes can tolerate higher SiO<sub>2</sub> (from the Wollastonite) and melt just as well or better.<br/>
+<br/>
+In glass and fiberglass making wollastonite melts more readily (lower energy costs) and microbubble generation is lower than limestone-sand mixes.<br/>
+<br/>
+Wollastonite has the ability to seed crystals (in glaze melts of sympathetic chemistry), and can be valuable to create special effects which depend on <a href="../glossary/crystallization.html">devitrification</a> (<a href="../glossary/crystallization.html">crystallization</a> during cooling). Since CaO tends to <a href="../glossary/crystallization.html">devitrify</a> in high temperature <a href="../picture/761.html">slow cooled</a> glazes wollastonite can be employed to make faster cooled lower CaO content ones exhibit the same effect.<br/>
+<br/>
+Wollastonite is also used in stain and <a href="../glossary/frit.html">frit</a> formulations to supply CaO in a more easily melted form. Even though powdered samples may appear quite similar to feel and the naked eye, pay attention to the amount of +325 material if you need to switch brands or suppliers.<br/>
+<br/>
+<a href="../glossary/mineralogy.html">Mineralogy</a> vs. Chemistry, Wollastonite vs. Calcium Carbonate<br/>
+<br/>
+Wollastonite is an excellent demonstration of the fact that we must consider chemistry a relative science, one piece in the glaze puzzle. The mineralogy of materials is another important factor to consider. For example, the <a href="../glossary/melting+temperature.html">melting temperature</a> of a frit or glass is predictable, but since raw minerals are most often <a href="../glossary/glass+vs.+crystalline.html">crystalline</a>, the bonds holding the molecular structure together are more complex. The melting temperature of minerals of similar or even identical chemistry, for example, can be vastly different. To demonstrate we took a reliable <a href="../glossary/cone+6.html">cone 6</a> <a href="../glossary/calcia+matte.html">calcium matte</a> glaze (Wollastonite - 34.0, Ferro <a href="351.html">Frit 3134</a> - 21.0, <a href="925.html">Kaolin</a> - 45.0) and used the above technique to calculate an equivalent recipe employing whiting to source the CaO. We fired the two glazes side-by-side on upright tiles and in a flow tester to cone 6 (picture shown below). You might expect these glazes to fire the same since they have the same chemistry. Not so. The wollastonite version runs much more on the flow tester. This is because the wollastonite melts at a lower temperature than whiting or is more easily dissolved in the melting frit glass. Also, the entrained bubble population is much higher in the whiting version (whiting has an LOI of 45%). Additionally, the wollastonite version is a silky pleasant matte, the whiting version is glossy. The former more <a href="../glossary/fluid+melt+glazes.html">fluid melt</a> gives the crystals much more freedom to grow during cooling.<br/>
+<br/>
+In simply looking at the glazed tiles one might easily assume that the transparent glossy whiting version is melting more than the matte wollastonite one, however the opposite is clearly the case. This is a good reminder that ceramic calculations need to be viewed in perspective. They excel in ongoing predictions of how changes to existing material amounts in a recipe will affect fired properties. They are much less reliable as absolute indicators of properties of unknown glazes. Always remember that glazes are made of materials that have a chemistry, mineralogy and <a href="../glossary/physical+testing.html">physical properties</a> and you cannot ignore any of these.<br/>
+<br/>
+Strangely, with the addition of magnesia and the right firing, wollastonite refractories of high <a href="../glossary/clay+body+porosity.html">porosity</a> can be manufactured.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Wollastonite containing glazes should be sieved</h3>
+<br/><a href="../picture/1073.html"><img class="flexleft50" loading="lazy" src="../media/images/tuzxedizez.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1073.html">click here</a> to see it.</p>
+<p>Screen a glaze to break down the wollastonite <a href="../glossary/agglomeration.html">agglomerates</a> (which often form in storage). This is an <a href="../glossary/sieve.html">80 mesh</a> plastic <a href="../glossary/sieve.html">sieve</a> (the actual screen is a metal insert inside), I am using a spatula to encourage it to pass through the screen. If you do not do this, the small lumps you see on the freshly glazed piece will fire to surface bumps and ruin the glaze.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">A wollastonite containing glaze slurry was not sieved before use</h3>
+<br/><a href="../picture/2017.html"><img class="flexleft50" loading="lazy" src="../media/images/ltsmx4dgn4.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2017.html">click here</a> to see it.</p>
+<p>This glaze has just been applied to a bisqued tile. It contains wollastonite, which can <a href="../glossary/agglomeration.html">agglomerate</a> in storage. It was propeller-mixed at high speed, but that was not enough to break down the white lumps (<a href="../glossary/agglomeration.html">agglomerates</a>). But they can be broken down by <a href="../glossary/sieve.html">sieving</a> the <a href="../glossary/slurry.html">slurry</a> through <a href="../glossary/sieve.html">80 mesh</a> or finer. Many other materials behave in a similar manner (e.g. <a href="86.html">barium carbonate</a>, <a href="874.html">iron oxide</a>, <a href="230.html">cobalt oxide</a>, clays, <a href="1642.html">tin oxide</a>, <a href="1722.html">zircon</a>, <a href="1644.html">titanium dioxide</a>).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Wollastonite helps switching from electric to gas firing</h3>
+<br/><a href="../picture/1964.html"><img class="flexleft50" loading="lazy" src="../media/images/qbnrhqaps8.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1964.html">click here</a> to see it.</p>
+<p>The sample on the left is <a href="../glossary/glaze+bubbles.html">clouding</a> up with entrained <a href="../glossary/glaze+bubbles.html">micro-bubbles</a> and the surface is not a smooth. The solution was to source <a href="../oxide/cao.html">CaO</a> from wollastonite instead of <a href="173.html">calcium carbonate</a> and fire fast, very fast. That is what gas kilns do well!</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Glaze chemistry works best when changing material amounts, not material types</h3>
+<br/><a href="../picture/293.html"><img class="flexleft50" loading="lazy" src="../media/images/lesson7-7.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/293.html">click here</a> to see it.</p>
+<p>Two glazes, same <a href="../glossary/glaze+chemistry.html">chemistry</a>, different materials. The glaze on the left is sourcing <a href="../oxide/cao.html">CaO</a> from wollastonite, the one on the right from <a href="173.html">calcium carbonate</a>. Thus the oxide chemistry of the two is the same but the recipe of materials sourcing that chemistry is different. The difference in this <a href="../test/glfl.html">GLFL test</a> for <a href="../glossary/melt+fluidity.html">melt flow</a> is an expression of how choosing different mineral sources to source an oxide can produce melting patterns that go outside what the chemistry suggests. The difference here is not extreme, but it can be much more.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="vansil+wollastonite.html">Vansil Wollastonite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fibrous+wollastonite.html">Fibrous Wollastonite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="nyad+325+wollastonite.html">Nyad 325 Wollastonite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="usakos+wollastonite.html">USAKOS Wollastonite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pfizer+wollastonite.html">Pfizer Wollastonite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="calcium+carbonate.html">Calcium Carbonate</a>
+<br/><i>In <a href="../glossary/ceramics.html">ceramics</a>, <a href="173.html">calcium carbonate</a> is primarily a source of <a href="../oxide/cao.html">CaO</a> in raw <a href="../glossary/stoneware.html">stoneware</a> and <a href="../glossary/porcelain.html">porcelain</a> glazes.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/gnm">Generic Material</a>
+<br/><i>Generic materials are those with no brand name. Normally they are theoretical, the <a href="../glossary/glaze+chemistry.html">chemistry</a> portrays what a specimen would be if it had no contamination. Generic materials are helpful in educational situations where students need to study material theory (later they graduate to dealing with real world materials). They are also helpful where the chemistry of an actual material is not known. Often the accuracy of calculations is sufficient using generic materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/fls">Flux Source</a>
+<br/><i>Materials that source <a href="../oxide/na2o.html">Na2O</a>, <a href="../oxide/k2o.html">K2O</a>, <a href="../oxide/li2o.html">Li2O</a>, <a href="../oxide/cao.html">CaO</a>, <a href="../oxide/mgo.html">MgO</a> and other fluxes but are not <a href="310.html">feldspars</a> or <a href="../glossary/frit.html">frits</a>. Remember that materials can be <a href="../glossary/flux.html">flux</a> sources but also perform many other roles. For example, <a href="1620.html">talc</a> is a flux in high temperature glazes, but a matting agent in low temperatures ones. It can also be a flux, a filler and an expansion increaser in bodies.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/435">http://en.wikipedia.org/wiki/Wollastonite</a>
+<br/><i>Wollastonite at Wikipedia</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1434">http://www.associatedceramics.com/wollastonite.htm</a>
+<br/><i>Wollstonite refractories properties at Associated Ceramics</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/cao.html">CaO - Calcium Oxide, Calcia</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/matte+glaze.html">Matte Glaze</a>
+<br/><i>Random material mixes that melt well overwhelmingly want to be glossy, creating a <a href="../glossary/matte+glaze.html">matte glaze</a> that is also <a href="../glossary/functional.html">functional</a> is not an easy task.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/fired+strength.html">Fired Strength</a>
+<br/><i><a href="../glossary/ceramics.html">Ceramics</a>, by their brittle nature, have high compressive strength and unsurpassed surface hardness. Maximum <a href="../glossary/fired+strength.html">fired strength</a> can come at the expense of various working and fired properties, so testing is needed to reach a balance.</i>
+</td>
+</tr>
+</tbody></table>
+<h3>Data</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<th scope="row">Hardness (Moh)</th>
+<td>4.5-5</td>
+</tr>
+<tr>
+<th scope="row"><a href="../test/14.html">Frit Softening Point</a></th>
+<td>1540C</td>
+</tr>
+<tr>
+<th scope="row">Solubility</th>
+<td>Soluble in HCl</td>
+</tr>
+<tr>
+<th scope="row">Density (Specific Gravity)</th>
+<td>2.8-2.9</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></table></div></body>
+</html>

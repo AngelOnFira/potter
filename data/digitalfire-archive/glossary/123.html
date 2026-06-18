@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Limit Formula</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="A way of establishing guideline for each oxide in the chemistry for different ceramic glaze types. Understanding the roles of each oxide and the limits of this approach are a key to effectively using these guidelines." name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item"><a class="nav-link" href="../material/list.html">Materials</a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item active"><a class="nav-link" href="list.html">Glossary <span class="sr-only">(current)</span></a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=glossary" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container"><p><a aria-controls="collapse1" aria-expanded="false" class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button">All Glossary</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a href="0.8mm+thickness.html" title="398">0.8mm thickness</a> |</nobr> <nobr><a href="200+mesh.html" title="343">200 mesh</a> |</nobr> <nobr><a href="325+mesh.html" title="335">325 mesh</a> |</nobr> <nobr><a href="3d+design.html" title="309">3D Design</a> |</nobr> <nobr><a href="3d+modeling.html" title="390">3D Modeling</a> |</nobr> <nobr><a href="3d+printer.html" title="310">3D Printer</a> |</nobr> <nobr><a href="3d+printing+clay.html" title="314">3D Printing Clay</a> |</nobr> <nobr><a href="3d+slicer.html" title="311">3D Slicer</a> |</nobr> <nobr><a href="3d-printing.html" title="267">3D-Printing</a> |</nobr> <nobr><a href="42+mesh.html" title="410">42 mesh</a> |</nobr> <nobr><a href="a.i.+in+ceramics.html" title="378">A.I. in Ceramics</a> |</nobr> <nobr><a href="abrasion+ceramics.html" title="1">Abrasion Ceramics</a> |</nobr> <nobr><a href="acidic+oxides.html" title="2">Acidic Oxides</a> |</nobr> <nobr><a href="agglomeration.html" title="168">Agglomeration</a> |</nobr> <nobr><a href="ai+at+digitalfire.html" title="424">AI at Digitalfire</a> |</nobr> <nobr><a href="alkali.html" title="139">Alkali</a> |</nobr> <nobr><a href="alkaline+earths.html" title="140">Alkaline Earths</a> |</nobr> <nobr><a href="all-in-one+case+mold.html" title="397">All-in-one case mold</a> |</nobr> <nobr><a href="amorphous.html" title="3">Amorphous</a> |</nobr> <nobr><a href="apparent+porosity.html" title="4">Apparent porosity</a> |</nobr> <nobr><a href="artware.html" title="368">Artware</a> |</nobr> <nobr><a href="ball+milling.html" title="208">Ball milling</a> |</nobr> <nobr><a href="bamboo+glaze.html" title="174">Bamboo Glaze</a> |</nobr> <nobr><a href="base+glaze.html" title="262">Base Glaze</a> |</nobr> <nobr><a href="base-coat+dipping+glaze.html" title="303">Base-Coat Dipping Glaze</a> |</nobr> <nobr><a href="basic+oxides.html" title="6">Basic Oxides</a> |</nobr> <nobr><a href="batch+recipe.html" title="133">Batch Recipe</a> |</nobr> <nobr><a href="bisque.html" title="8">Bisque</a> |</nobr> <nobr><a href="bit+image.html" title="194">Bit Image</a> |</nobr> <nobr><a href="black+core.html" title="9">Black Core</a> |</nobr> <nobr><a href="bleeding+of+colors.html" title="228">Bleeding of colors</a> |</nobr> <nobr><a href="blender+mixing.html" title="366">Blender Mixing</a> |</nobr> <nobr><a href="blunging.html" title="10">Blunging</a> |</nobr> <nobr><a href="body+bloating.html" title="114">Body Bloating</a> |</nobr> <nobr><a href="body+glaze+interface.html" title="261">Body glaze Interface</a> |</nobr> <nobr><a href="body+warping.html" title="124">Body Warping</a> |</nobr> <nobr><a href="bone+china.html" title="145">Bone China</a> |</nobr> <nobr><a href="borate.html" title="129">Borate</a> |</nobr> <nobr><a href="boron+blue.html" title="106">Boron Blue</a> |</nobr> <nobr><a href="boron+frit.html" title="135">Boron Frit</a> |</nobr> <nobr><a href="borosilicate.html" title="103">Borosilicate</a> |</nobr> <nobr><a href="breaking+glaze.html" title="249">Breaking Glaze</a> |</nobr> <nobr><a href="brick+making.html" title="370">Brick Making</a> |</nobr> <nobr><a href="brushing+glaze.html" title="290">Brushing Glaze</a> |</nobr> <nobr><a href="calcia+matte.html" title="426">Calcia Matte</a> |</nobr> <nobr><a href="calcination.html" title="137">Calcination</a> |</nobr> <nobr><a href="calculated+thermal+expansion.html" title="164">Calculated Thermal Expansion</a> |</nobr> <nobr><a href="candling.html" title="13">Candling</a> |</nobr> <nobr><a href="carbon+burnout.html" title="250">Carbon Burnout</a> |</nobr> <nobr><a href="carbon+trap+glazes.html" title="14">Carbon trap glazes</a> |</nobr> <nobr><a href="cas+numbers.html" title="153">CAS Numbers</a> |</nobr> <nobr><a href="casting+slip.html" title="403">Casting Slip</a> |</nobr> <nobr><a href="casting-jiggering.html" title="313">Casting-Jiggering</a> |</nobr> <nobr><a href="catch+glaze.html" title="375">Catch Glaze</a> |</nobr> <nobr><a href="celadon+glaze.html" title="100">Celadon Glaze</a> |</nobr> <nobr><a href="ceramic.html" title="16">Ceramic</a> |</nobr> <nobr><a href="ceramic+binder.html" title="183">Ceramic Binder</a> |</nobr> <nobr><a href="ceramic+decals.html" title="29">Ceramic Decals</a> |</nobr> <nobr><a href="ceramic+glaze.html" title="45">Ceramic Glaze</a> |</nobr> <nobr><a href="ceramic+glaze+defects.html" title="347">Ceramic Glaze Defects</a> |</nobr> <nobr><a href="ceramic+ink.html" title="245">Ceramic Ink</a> |</nobr> <nobr><a href="ceramic+material.html" title="121">Ceramic Material</a> |</nobr> <nobr><a href="ceramic+oxide.html" title="67">Ceramic Oxide</a> |</nobr> <nobr><a href="ceramic+slip.html" title="217">Ceramic Slip</a> |</nobr> <nobr><a href="ceramic+stain.html" title="182">Ceramic Stain</a> |</nobr> <nobr><a href="ceramic+tile.html" title="307">Ceramic Tile</a> |</nobr> <nobr><a href="ceramic+transfer.html" title="394">Ceramic Transfer</a> |</nobr> <nobr><a href="ceramics.html" title="298">Ceramics</a> |</nobr> <nobr><a href="characterization.html" title="299">Characterization</a> |</nobr> <nobr><a href="chemical+analysis.html" title="5">Chemical Analysis</a> |</nobr> <nobr><a href="chromaticity.html" title="176">Chromaticity</a> |</nobr> <nobr><a href="clay.html" title="141">Clay</a> |</nobr> <nobr><a href="clay+body.html" title="11">Clay body</a> |</nobr> <nobr><a href="clay+body+porosity.html" title="72">Clay Body Porosity</a> |</nobr> <nobr><a href="clay+stiffness.html" title="258">Clay Stiffness</a> |</nobr> <nobr><a href="clays+for+construction.html" title="373">Clays for Construction</a> |</nobr> <nobr><a href="clays+for+ovens+and+heaters.html" title="337">Clays for Ovens and Heaters</a> |</nobr> <nobr><a href="co-efficient+of+thermal+expansion.html" title="18">Co-efficient of Thermal Expansion</a> |</nobr> <nobr><a href="code+numbering.html" title="302">Code Numbering</a> |</nobr> <nobr><a href="coil+pottery.html" title="19">Coil pottery</a> |</nobr> <nobr><a href="colloid.html" title="20">Colloid</a> |</nobr> <nobr><a href="colorant.html" title="148">Colorant</a> |</nobr> <nobr><a href="commercial+hobby+brushing+glazes.html" title="376">Commercial hobby brushing glazes</a> |</nobr> <nobr><a href="cone+1.html" title="333">Cone 1</a> |</nobr> <nobr><a href="cone+5.html" title="348">Cone 5</a> |</nobr> <nobr><a href="cone+6.html" title="340">Cone 6</a> |</nobr> <nobr><a href="cone+plaque.html" title="22">Cone plaque</a> |</nobr> <nobr><a href="content+management+system.html" title="425">Content Management System</a> |</nobr> <nobr><a href="copper+red.html" title="241">Copper Red</a> |</nobr> <nobr><a href="cordierite+ceramics.html" title="199">Cordierite Ceramics</a> |</nobr> <nobr><a href="crackle+glaze.html" title="24">Crackle glaze</a> |</nobr> <nobr><a href="cristobalite.html" title="256">Cristobalite</a> |</nobr> <nobr><a href="cristobalite+inversion.html" title="115">Cristobalite Inversion</a> |</nobr> <nobr><a href="crm.html" title="419">CRM</a> |</nobr> <nobr><a href="crucible.html" title="255">Crucible</a> |</nobr> <nobr><a href="crystalline+glazes.html" title="28">Crystalline glazes</a> |</nobr> <nobr><a href="crystallization.html" title="132">Crystallization</a> |</nobr> <nobr><a href="cuerda+seca.html" title="315">Cuerda Seca</a> |</nobr> <nobr><a href="cutlery+marking.html" title="131">Cutlery Marking</a> |</nobr> <nobr><a href="decomposition.html" title="136">Decomposition</a> |</nobr> <nobr><a href="deflocculation.html" title="30">Deflocculation</a> |</nobr> <nobr><a href="dehydration.html" title="177">Dehydration</a> |</nobr> <nobr><a href="differential+thermal+analysis.html" title="371">Differential thermal analysis</a> |</nobr> <nobr><a href="digitalfire+api.html" title="382">Digitalfire API</a> |</nobr> <nobr><a href="digitalfire+foresight.html" title="260">Digitalfire Foresight</a> |</nobr> <nobr><a href="digitalfire+insight.html" title="259">Digitalfire Insight</a> |</nobr> <nobr><a href="digitalfire+insight-live.html" title="253">Digitalfire Insight-Live</a> |</nobr> <nobr><a href="digitalfire+reference+library.html" title="320">Digitalfire Reference Library</a> |</nobr> <nobr><a href="digitalfire+taxonomy.html" title="383">Digitalfire Taxonomy</a> |</nobr> <nobr><a href="dimpled+glaze.html" title="32">Dimpled glaze</a> |</nobr> <nobr><a href="dinnerware+safe.html" title="399">Dinnerware Safe</a> |</nobr> <nobr><a href="dip+glazing.html" title="297">Dip Glazing</a> |</nobr> <nobr><a href="dipping+glaze.html" title="301">Dipping Glaze</a> |</nobr> <nobr><a href="dishwasher+safe.html" title="272">Dishwasher Safe</a> |</nobr> <nobr><a href="displacer.html" title="391">Displacer</a> |</nobr> <nobr><a href="do-it-yourself.html" title="414">Do-It-Yourself</a> |</nobr> <nobr><a href="drop-and-soak+firing.html" title="289">Drop-and-Soak Firing</a> |</nobr> <nobr><a href="drying+crack.html" title="196">Drying Crack</a> |</nobr> <nobr><a href="drying+performance.html" title="170">Drying Performance</a> |</nobr> <nobr><a href="drying+shrinkage.html" title="265">Drying Shrinkage</a> |</nobr> <nobr><a href="dunting.html" title="33">Dunting</a> |</nobr> <nobr><a href="dust+pressing.html" title="169">Dust Pressing</a> |</nobr> <nobr><a href="earthenware.html" title="34">Earthenware</a> |</nobr> <nobr><a href="efflorescence.html" title="142">Efflorescence</a> |</nobr> <nobr><a href="encapsulated+stain.html" title="37">Encapsulated Stain</a> |</nobr> <nobr><a href="engobe.html" title="35">Engobe</a> |</nobr> <nobr><a href="eutectic.html" title="36">Eutectic</a> |</nobr> <nobr><a href="fast+fire+glazes.html" title="154">Fast Fire Glazes</a> |</nobr> <nobr><a href="fat+glaze.html" title="105">Fat Glaze</a> |</nobr> <nobr><a href="fdm%2C+sla%2C+sls%2C+mex+3d+printing+technologies.html" title="401">FDM, SLA, SLS, MEX 3D printing technologies</a> |</nobr> <nobr><a href="feldspar+glazes.html" title="155">Feldspar Glazes</a> |</nobr> <nobr><a href="filter+press.html" title="357">Filter Press</a> |</nobr> <nobr><a href="fining+agent.html" title="350">Fining Agent</a> |</nobr> <nobr><a href="firebrick.html" title="39">Firebrick</a> |</nobr> <nobr><a href="fireclay.html" title="229">Fireclay</a> |</nobr> <nobr><a href="fired+strength.html" title="242">Fired Strength</a> |</nobr> <nobr><a href="firing+schedule.html" title="226">Firing Schedule</a> |</nobr> <nobr><a href="firing+shrinkage.html" title="150">Firing Shrinkage</a> |</nobr> <nobr><a href="flameware.html" title="98">Flameware</a> |</nobr> <nobr><a href="flashing.html" title="173">Flashing</a> |</nobr> <nobr><a href="flocculation.html" title="40">Flocculation</a> |</nobr> <nobr><a href="fluid+melt+glazes.html" title="283">Fluid Melt Glazes</a> |</nobr> <nobr><a href="flux.html" title="42">Flux</a> |</nobr> <nobr><a href="food+safe.html" title="271">Food Safe</a> |</nobr> <nobr><a href="foot+ring.html" title="195">Foot Ring</a> |</nobr> <nobr><a href="forming+method.html" title="159">Forming Method</a> |</nobr> <nobr><a href="formula+ratios.html" title="202">Formula Ratios</a> |</nobr> <nobr><a href="formula+weight.html" title="161">Formula Weight</a> |</nobr> <nobr><a href="frit.html" title="43">Frit</a> |</nobr> <nobr><a href="fritware.html" title="287">Fritware</a> |</nobr> <nobr><a href="functional.html" title="210">Functional</a> |</nobr> <nobr><a href="ghs+safety+data+sheets.html" title="279">GHS Safety Data Sheets</a> |</nobr> <nobr><a href="glass+vs.+crystalline.html" title="44">Glass vs. Crystalline</a> |</nobr> <nobr><a href="glass-ceramic+glazes.html" title="191">Glass-Ceramic Glazes</a> |</nobr> <nobr><a href="glaze+blisters.html" title="264">Glaze Blisters</a> |</nobr> <nobr><a href="glaze+bubbles.html" title="184">Glaze Bubbles</a> |</nobr> <nobr><a href="glaze+chemistry.html" title="118">Glaze Chemistry</a> |</nobr> <nobr><a href="glaze+compression.html" title="197">Glaze Compression</a> |</nobr> <nobr><a href="glaze+crawling.html" title="26">Glaze Crawling</a> |</nobr> <nobr><a href="glaze+crazing.html" title="27">Glaze Crazing</a> |</nobr> <nobr><a href="glaze+durability.html" title="284">Glaze Durability</a> |</nobr> <nobr><a href="glaze+fit.html" title="46">Glaze fit</a> |</nobr> <nobr><a href="glaze+gelling.html" title="244">Glaze Gelling</a> |</nobr> <nobr><a href="glaze+laydown.html" title="365">Glaze laydown</a> |</nobr> <nobr><a href="glaze+layering.html" title="281">Glaze Layering</a> |</nobr> <nobr><a href="glaze+mixing.html" title="294">Glaze Mixing</a> |</nobr> <nobr><a href="glaze+recipes.html" title="276">Glaze Recipes</a> |</nobr> <nobr><a href="glaze+shivering.html" title="79">Glaze shivering</a> |</nobr> <nobr><a href="glaze+shrinkage.html" title="212">Glaze Shrinkage</a> |</nobr> <nobr><a href="glaze+thickness.html" title="257">Glaze thickness</a> |</nobr> <nobr><a href="globally+harmonized+data+sheets.html" title="274">Globally Harmonized Data Sheets</a> |</nobr> <nobr><a href="glossy+glaze.html" title="47">Glossy Glaze</a> |</nobr> <nobr><a href="green+strength.html" title="227">Green Strength</a> |</nobr> <nobr><a href="grog.html" title="48">Grog</a> |</nobr> <nobr><a href="gunmetal+glaze.html" title="213">Gunmetal glaze</a> |</nobr> <nobr><a href="hand+building+techniques.html" title="429">Hand Building Techniques</a> |</nobr> <nobr><a href="high+temperature+glaze.html" title="116">High Temperature Glaze</a> |</nobr> <nobr><a href="hot+pressing.html" title="158">Hot Pressing</a> |</nobr> <nobr><a href="incised+decoration.html" title="222">Incised decoration</a> |</nobr> <nobr><a href="industrial+clay+body.html" title="342">Industrial clay body</a> |</nobr> <nobr><a href="infill+and+support.html" title="389">Infill and Support</a> |</nobr> <nobr><a href="ink+jet+printing.html" title="247">Ink Jet Printing</a> |</nobr> <nobr><a href="inside-only+glazing.html" title="305">Inside-only Glazing</a> |</nobr> <nobr><a href="iron+red+glaze.html" title="221">Iron Red Glaze</a> |</nobr> <nobr><a href="jasper+ware.html" title="192">Jasper Ware</a> |</nobr> <nobr><a href="jiggering.html" title="49">Jiggering</a> |</nobr> <nobr><a href="json.html" title="422">JSON</a> |</nobr> <nobr><a href="kaki.html" title="50">Kaki</a> |</nobr> <nobr><a href="kiln+controller.html" title="23">Kiln Controller</a> |</nobr> <nobr><a href="kiln+firing.html" title="236">Kiln Firing</a> |</nobr> <nobr><a href="kiln+fumes.html" title="51">Kiln fumes</a> |</nobr> <nobr><a href="kiln+venting+system.html" title="52">Kiln venting system</a> |</nobr> <nobr><a href="kiln+wash.html" title="53">Kiln Wash</a> |</nobr> <nobr><a href="kneading+clay.html" title="374">Kneading clay</a> |</nobr> <nobr><a href="kovar+metal.html" title="323">Kovar Metal</a> |</nobr> <nobr><a href="laminations.html" title="225">Laminations</a> |</nobr> <nobr><a href="leaching.html" title="54">Leaching</a> |</nobr> <nobr><a href="lead+in+ceramic+glazes.html" title="55">Lead in Ceramic Glazes</a> |</nobr> <nobr><a href="leather+hard.html" title="57">Leather hard</a> |</nobr> <nobr><a href="limit+formula.html" title="123">Limit Formula</a> |</nobr> <nobr><a href="limit+recipe.html" title="304">Limit Recipe</a> |</nobr> <nobr><a href="liner+glaze.html" title="193">Liner Glaze</a> |</nobr> <nobr><a href="liner+glazing.html" title="361">Liner Glazing</a> |</nobr> <nobr><a href="liquid+bright+colors.html" title="99">Liquid Bright Colors</a> |</nobr> <nobr><a href="loi.html" title="56">LOI</a> |</nobr> <nobr><a href="low+temperature+glaze.html" title="119">Low Temperature Glaze</a> |</nobr> <nobr><a href="magnesia+matte.html" title="146">Magnesia Matte</a> |</nobr> <nobr><a href="majolica.html" title="59">Majolica</a> |</nobr> <nobr><a href="managed+service+provider.html" title="420">Managed Service Provider</a> |</nobr> <nobr><a href="marbling.html" title="235">Marbling</a> |</nobr> <nobr><a href="material+substitution.html" title="219">Material Substitution</a> |</nobr> <nobr><a href="matte+glaze.html" title="130">Matte Glaze</a> |</nobr> <nobr><a href="maturity.html" title="60">Maturity</a> |</nobr> <nobr><a href="maximum+density.html" title="331">Maximum Density</a> |</nobr> <nobr><a href="mdt.html" title="216">MDT</a> |</nobr> <nobr><a href="mechanism.html" title="286">Mechanism</a> |</nobr> <nobr><a href="medium+temperature.html" title="117">Medium Temperature</a> |</nobr> <nobr><a href="melt+fluidity.html" title="112">Melt Fluidity</a> |</nobr> <nobr><a href="melting+temperature.html" title="165">Melting Temperature</a> |</nobr> <nobr><a href="metal+oxides.html" title="339">Metal Oxides</a> |</nobr> <nobr><a href="metallic+glazes.html" title="181">Metallic Glazes</a> |</nobr> <nobr><a href="micro+organisms.html" title="185">Micro Organisms</a> |</nobr> <nobr><a href="microwave+safe.html" title="205">Microwave Safe</a> |</nobr> <nobr><a href="mineral+phase.html" title="70">Mineral phase</a> |</nobr> <nobr><a href="mineralogy.html" title="120">Mineralogy</a> |</nobr> <nobr><a href="mocha+glazes.html" title="61">Mocha glazes</a> |</nobr> <nobr><a href="mohs+hardness.html" title="324">Mohs Hardness</a> |</nobr> <nobr><a href="mold+natches.html" title="392">Mold Natches</a> |</nobr> <nobr><a href="mold+shell+flange.html" title="404">Mold Shell Flange</a> |</nobr> <nobr><a href="mole%25.html" title="204">Mole%</a> |</nobr> <nobr><a href="monocottura.html" title="156">Monocottura</a> |</nobr> <nobr><a href="mosaic+tile.html" title="266">Mosaic Tile</a> |</nobr> <nobr><a href="mottled.html" title="62">Mottled</a> |</nobr> <nobr><a href="native+clay.html" title="321">Native Clay</a> |</nobr> <nobr><a href="non+oxide+ceramics.html" title="104">Non Oxide Ceramics</a> |</nobr> <nobr><a href="oil-spot+glaze.html" title="240">Oil-spot glaze</a> |</nobr> <nobr><a href="once+fire+glazing.html" title="63">Once fire glazing</a> |</nobr> <nobr><a href="opacifier.html" title="64">Opacifier</a> |</nobr> <nobr><a href="opacity.html" title="200">Opacity</a> |</nobr> <nobr><a href="ovenware.html" title="97">Ovenware</a> |</nobr> <nobr><a href="overglaze.html" title="65">Overglaze</a> |</nobr> <nobr><a href="oxidation+firing.html" title="66">Oxidation Firing</a> |</nobr> <nobr><a href="oxide+formula.html" title="41">Oxide Formula</a> |</nobr> <nobr><a href="oxide+interaction.html" title="207">Oxide Interaction</a> |</nobr> <nobr><a href="oxide+system.html" title="163">Oxide System</a> |</nobr> <nobr><a href="particle+classification.html" title="408">Particle classification</a> |</nobr> <nobr><a href="particle+orientation.html" title="68">Particle orientation</a> |</nobr> <nobr><a href="particle+size+distribution.html" title="230">Particle Size Distribution</a> |</nobr> <nobr><a href="particle+size+reduction.html" title="407">Particle size reduction</a> |</nobr> <nobr><a href="particle+sizes.html" title="338">Particle Sizes</a> |</nobr> <nobr><a href="pce.html" title="69">PCE</a> |</nobr> <nobr><a href="permeability.html" title="291">Permeability</a> |</nobr> <nobr><a href="phase+diagram.html" title="190">Phase Diagram</a> |</nobr> <nobr><a href="phase+separation.html" title="138">Phase Separation</a> |</nobr> <nobr><a href="physical+testing.html" title="269">Physical Testing</a> |</nobr> <nobr><a href="pinholing.html" title="198">Pinholing</a> |</nobr> <nobr><a href="plainsman+clays.html" title="325">Plainsman Clays</a> |</nobr> <nobr><a href="plaster+bat.html" title="7">Plaster Bat</a> |</nobr> <nobr><a href="plaster+table.html" title="319">Plaster table</a> |</nobr> <nobr><a href="plasticine.html" title="251">Plasticine</a> |</nobr> <nobr><a href="plasticity.html" title="143">Plasticity</a> |</nobr> <nobr><a href="plucking.html" title="263">Plucking</a> |</nobr> <nobr><a href="porcelain.html" title="71">Porcelain</a> |</nobr> <nobr><a href="porcelain+insulators.html" title="428">Porcelain Insulators</a> |</nobr> <nobr><a href="porcelaineous+stoneware.html" title="326">Porcelaineous Stoneware</a> |</nobr> <nobr><a href="portable+document+format.html" title="421">Portable Document Format</a> |</nobr> <nobr><a href="pour+glazing.html" title="296">Pour Glazing</a> |</nobr> <nobr><a href="pour+spout.html" title="381">Pour Spout</a> |</nobr> <nobr><a href="powder+processing.html" title="351">Powder Processing</a> |</nobr> <nobr><a href="precipitation.html" title="234">Precipitation</a> |</nobr> <nobr><a href="primary+clay.html" title="231">Primary Clay</a> |</nobr> <nobr><a href="primitive+firing.html" title="73">Primitive Firing</a> |</nobr> <nobr><a href="propane.html" title="74">Propane</a> |</nobr> <nobr><a href="propeller+mixer.html" title="175">Propeller Mixer</a> |</nobr> <nobr><a href="pugmill.html" title="239">Pugmill</a> |</nobr> <nobr><a href="pyroceramics.html" title="128">Pyroceramics</a> |</nobr> <nobr><a href="pyrometric+cone.html" title="248">Pyrometric Cone</a> |</nobr> <nobr><a href="quartz+inversion.html" title="162">Quartz Inversion</a> |</nobr> <nobr><a href="raku.html" title="75">Raku</a> |</nobr> <nobr><a href="reactive+glazes.html" title="94">Reactive Glazes</a> |</nobr> <nobr><a href="reduction+firing.html" title="125">Reduction Firing</a> |</nobr> <nobr><a href="reduction+speckle.html" title="186">Reduction Speckle</a> |</nobr> <nobr><a href="refiring+ceramics.html" title="330">Refiring Ceramics</a> |</nobr> <nobr><a href="refractory.html" title="76">Refractory</a> |</nobr> <nobr><a href="refractory+ceramic+coatings.html" title="17">Refractory Ceramic Coatings</a> |</nobr> <nobr><a href="representative+sample.html" title="220">Representative Sample</a> |</nobr> <nobr><a href="restaurant+ware.html" title="336">Restaurant Ware</a> |</nobr> <nobr><a href="rheology.html" title="127">Rheology</a> |</nobr> <nobr><a href="rutile+blue+glazes.html" title="171">Rutile Blue Glazes</a> |</nobr> <nobr><a href="salt+and+soda+firing.html" title="77">Salt and Soda firing</a> |</nobr> <nobr><a href="sanitary+ware.html" title="273">Sanitary ware</a> |</nobr> <nobr><a href="sculpture.html" title="275">Sculpture</a> |</nobr> <nobr><a href="search+engine+optimization+.html" title="423">Search Engine Optimization </a> |</nobr> <nobr><a href="secondary+clay.html" title="232">Secondary Clay</a> |</nobr> <nobr><a href="shino+glazes.html" title="78">Shino Glazes</a> |</nobr> <nobr><a href="side+rails.html" title="380">Side Rails</a> |</nobr> <nobr><a href="sieve.html" title="80">Sieve</a> |</nobr> <nobr><a href="sieve+shaker.html" title="356">Sieve Shaker</a> |</nobr> <nobr><a href="silica%3Aalumina+ratio.html" title="151">Silica:Alumina Ratio</a> |</nobr> <nobr><a href="silk+screen+printing.html" title="81">Silk screen printing</a> |</nobr> <nobr><a href="sintering.html" title="82">Sintering</a> |</nobr> <nobr><a href="slaking.html" title="160">Slaking</a> |</nobr> <nobr><a href="slip+casting.html" title="15">Slip Casting</a> |</nobr> <nobr><a href="slip+trailing.html" title="147">Slip Trailing</a> |</nobr> <nobr><a href="slipware.html" title="367">Slipware</a> |</nobr> <nobr><a href="slurry.html" title="362">Slurry</a> |</nobr> <nobr><a href="slurry+processing.html" title="329">Slurry Processing</a> |</nobr> <nobr><a href="slurry+up.html" title="349">Slurry Up</a> |</nobr> <nobr><a href="soaking.html" title="84">Soaking</a> |</nobr> <nobr><a href="soluble+colors.html" title="157">Soluble colors</a> |</nobr> <nobr><a href="soluble+salts.html" title="254">Soluble Salts</a> |</nobr> <nobr><a href="specific+gravity.html" title="86">Specific gravity</a> |</nobr> <nobr><a href="splitting.html" title="206">Splitting</a> |</nobr> <nobr><a href="spray+glazing.html" title="277">Spray Glazing</a> |</nobr> <nobr><a href="stain+medium.html" title="327">Stain Medium</a> |</nobr> <nobr><a href="stoneware.html" title="85">Stoneware</a> |</nobr> <nobr><a href="stull+chart.html" title="189">Stull Chart</a> |</nobr> <nobr><a href="sulfate+scum.html" title="179">Sulfate Scum</a> |</nobr> <nobr><a href="sulfates.html" title="180">Sulfates</a> |</nobr> <nobr><a href="surface+area.html" title="111">Surface Area</a> |</nobr> <nobr><a href="surface+tension.html" title="108">Surface Tension</a> |</nobr> <nobr><a href="suspension.html" title="83">Suspension</a> |</nobr> <nobr><a href="tapper+clay.html" title="187">Tapper Clay</a> |</nobr> <nobr><a href="tenmoku.html" title="87">Tenmoku</a> |</nobr> <nobr><a href="terra+cotta.html" title="88">Terra Cotta</a> |</nobr> <nobr><a href="terra+sigilatta.html" title="238">Terra Sigilatta</a> |</nobr> <nobr><a href="test+kiln.html" title="322">Test Kiln</a> |</nobr> <nobr><a href="theoretical+material.html" title="122">Theoretical Material</a> |</nobr> <nobr><a href="thermal+conductivity.html" title="306">Thermal Conductivity</a> |</nobr> <nobr><a href="thermal+shock.html" title="89">Thermal shock</a> |</nobr> <nobr><a href="thermocouple.html" title="90">Thermocouple</a> |</nobr> <nobr><a href="thixotropy.html" title="91">Thixotropy</a> |</nobr> <nobr><a href="throwing.html" title="359">Throwing</a> |</nobr> <nobr><a href="tipping+point.html" title="396">Tipping point</a> |</nobr> <nobr><a href="tony+hansen.html" title="282">Tony Hansen</a> |</nobr> <nobr><a href="toxicity.html" title="316">Toxicity</a> |</nobr> <nobr><a href="trafficking.html" title="341">Trafficking</a> |</nobr> <nobr><a href="translucency.html" title="233">Translucency</a> |</nobr> <nobr><a href="transparent+glazes.html" title="149">Transparent Glazes</a> |</nobr> <nobr><a href="triaxial+glaze+blending.html" title="280">Triaxial Glaze Blending</a> |</nobr> <nobr><a href="ultimate+particles.html" title="113">Ultimate Particles</a> |</nobr> <nobr><a href="underglaze.html" title="92">Underglaze</a> |</nobr> <nobr><a href="unity+formula.html" title="93">Unity Formula</a> |</nobr> <nobr><a href="upwork.html" title="312">Upwork</a> |</nobr> <nobr><a href="variegation.html" title="346">Variegation</a> |</nobr> <nobr><a href="viscosity.html" title="109">Viscosity</a> |</nobr> <nobr><a href="vitreous.html" title="332">Vitreous</a> |</nobr> <nobr><a href="vitrification.html" title="95">Vitrification</a> |</nobr> <nobr><a href="volatiles.html" title="110">Volatiles</a> |</nobr> <nobr><a href="water+content.html" title="379">Water Content</a> |</nobr> <nobr><a href="water+in+ceramics.html" title="144">Water in Ceramics</a> |</nobr> <nobr><a href="water+smoking.html" title="237">Water Smoking</a> |</nobr> <nobr><a href="water+solubility.html" title="126">Water Solubility</a> |</nobr> <nobr><a href="wedging.html" title="96">Wedging</a> |</nobr> <nobr><a href="whiteware.html" title="308">Whiteware</a> |</nobr> <nobr><a href="woocommerce.html" title="387">WooCommerce</a> |</nobr> <nobr><a href="wood+ash+glaze.html" title="101">Wood Ash Glaze</a> |</nobr> <nobr><a href="wood+firing.html" title="172">Wood Firing</a> |</nobr> <nobr><a href="wordpress.html" title="386">WordPress</a> |</nobr> <nobr><a href="zero3.html" title="293">Zero3</a> |</nobr> <nobr><a href="zero4.html" title="355">Zero4</a> |</nobr> <nobr><a href="zeta+potential.html" title="178">Zeta Potential</a></nobr></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Limit Formula</h1>
+<p class="text-muted" style="margin-left:20px">A way of establishing guideline for each oxide in the chemistry for different ceramic glaze types. Understanding the roles of each oxide and the limits of this approach are a key to effectively using these guidelines.
+</p><p class="text-muted" style="margin-left:20px; font-style:italic; font-size:90%;"><b>Key phrases linking here:</b> balanced chemistry, target formula, limit formulas, limit formula
+ - <a href="https://digitalfire.com/home/linkmaker">Learn more</a></p>
+<h2>Details</h2>
+<p>The term 'limit formula' historically has typically referred to efforts to establish absolute ranges for mixtures of <a href="ceramic+oxide.html">oxides</a> that melt well at an intended temperature and are not in sufficient excess to cause defects. These formulas typically show ranges for each oxide commonly used in a specific glaze type (as opposed to the concept of a <a href="limit+recipe.html">limit recipe</a> that expresses normal material amounts expected in a given type of product).<br/>
+<br/>
+Many prefer the term "<a href="limit+formula.html">target formula</a>". This is because the term 'limit formula' suggests that glazes outside the ranges will not work and that ones inside are somehow safe. However, this is not the case. Melting well simply carries with it a much higher likelihood that a glaze is reasonably <a href="functional.html">functional</a> and balanced (does not have excessive amounts of any individual oxide that might lead to instability or reactivity). These limits are also dependent on the amount of <a href="../oxide/b2o3.html">B<sub>2</sub>O<sub>3</sub></a> present (if more can be tolerated, then more <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a> and <a href="../oxide/sio2.html">SiO<sub>2</sub></a> can also be tolerated).<br/>
+<br/>
+Specific ceramic industries have created proprietary limits for the glazes that they make (e.g. super <a href="co-efficient+of+thermal+expansion.html">low expansion</a>, high abrasion resistance, resistance to bacteria growth, high elasticity, specific colors, fast fire). These limits are often closely guarded secrets and would be well outside normal the ranges shown here. A common public domain target example is <a href="glass+vs.+crystalline.html">crystalline</a> glazes; they require almost no alumina, much higher than normal sodium and zinc. They also require special treatment during firing.<br/>
+<br/>
+There is a difference between sourcing an oxide from a <a href="frit.html">frit</a> or raw material. <a href="frit.html">Frits</a> readily release their oxides to the glaze melt, giving more time for them to participate intimately in the formation of a homogeneous glaze structure (this is especially important where materials have high melting temperatures). Thus, oxides like <a href="../oxide/bao.html">BaO</a>, that might potentially leach in a glaze where they are sourced from raw materials might not do so from a frit, especially when levels are relatively low.<br/>
+<br/>
+However, we are mainly concerned with creating glazes for use on functional ware. Using the term "target formula" instead of "<a href="limit+formula.html">limit formula</a>" suggests we are more interested in comparing a new glaze with one we already understand (have used and tested extensively). It recognizes that judging the suitability of glazes is more of a relative than absolute science. This is good.<br/>
+<br/>
+Here is an example of a typical limit formula for <a href="cone+6.html">cone 6</a> glazes.<br/>
+<br/>
+<a href="../oxide/cao.html">CaO</a> - 0-0.55<br/>
+<a href="../oxide/mgo.html">MgO</a> - 0-0.325<br/>
+<a href="../picture/1775.html">KNaO</a> - 0-0.375<br/>
+<a href="../oxide/zno.html">ZnO</a> - 0-0.3<br/>
+BaO - 0-0.4<br/>
+B<sub>2</sub>O<sub>3</sub> - 0-0.35<br/>
+Al<sub>2</sub>O<sub>3</sub> - 0.285-0.64<br/>
+SiO<sub>2</sub> - 2.4-4.7<br/>
+<br/>
+These values refer to comparative numbers of molecules. They are meant to be compared with a glaze whose formula has been unified (fluxes, or melters, add up to one). At cone 6, the fluxes are CaO to BaO. They balance against the Al<sub>2</sub>O<sub>3</sub> (stabilizer) and SiO<sub>2</sub> (glass former). The B<sub>2</sub>O<sub>3</sub> is a low-temperature glass that also functions as a <a href="flux.html">flux</a>.<br/>
+<br/>
+This suggests that CaO (usually from <a href="../material/173.html">calcium carbonate</a> or wollastonite) can be anywhere from zero to 0.55. But in actual practice, you will almost never see a glaze with zero CaO, there is almost always a significant amount (0.3 or more). In matte glazes, the CaO is very often higher than this limit.<br/>
+<br/>
+-MgO (from <a href="../material/1620.html">talc</a> and <a href="../material/273.html">dolomite</a>) is less common in than CaO or KNaO in glazes; it tends to matte them when the amount gets to 0.3 and higher. In fact, silky matte glazes, which are very common, will often have 0.35 or more.<br/>
+<br/>
+-KNaO (combined total <a href="../oxide/k2o.html">K<sub>2</sub>O</a> and <a href="../oxide/na2o.html">Na<sub>2</sub>O</a> from <a href="../material/310.html">feldspars</a> and frits) is a key melter. Like CaO, almost all glazes have it. Glazes fire to a brilliant gloss when this is higher. But KNaO has high <a href="co-efficient+of+thermal+expansion.html">thermal expansion</a> so the limiting factor is <a href="../trouble/glaze+crazing.html">crazing</a> susceptibility on your body (which will likely place it below limit expressed here).<br/>
+<br/>
+-ZnO is an auxiliary melter; it is not common in slow-fire glazes (e.g. for pottery), especially when sourced from <a href="../material/1718.html">zinc oxide</a>. Because other melters (especially <a href="borate.html">boron</a>) have so many less side effects (e.g. glaze defects, maleffects on color), it will almost never reach this 0.3 limit.  However, in <a href="fast+fire+glazes.html">fast-fire</a> industrial applications (1 to 2 hour firings) it can be tolerated when sourced from frits and will reach this limit.<br/>
+<br/>
+-BaO is treated with caution because of toxicity; any glaze that has 0.4 BaO would be off-the-scale for potential to leach! That aside, the only time BaO would be at this high limit should be for special-purpose, non-functional, crystal matte or blue matte glazes. However, even though the glaze is not being used for functional ware, the potter making the ware is exposed to high levels of raw barium. For functional glazes low BaO levels can often be tolerated (e.g. 0.05-0.1) if the <a href="glaze+chemistry.html">glaze chemistry</a> is balanced (enough SiO<sub>2</sub> and Al<sub>2</sub>O<sub>3</sub>) and melting well (but not crystallizing). Industry often employs frits to source BaO, they are obviously much safer to use.<br/>
+<br/>
+-SrO, although not shown, could be considered like BaO (it is not toxic and is a common auxiliary flux).<br/>
+<br/>
+-Li<sub>2</sub>O is also not shown. Use only a small amount (e.g. 0.05), it is a powerful flux. It also has <a href="toxicity.html">toxicity</a> issues.<br/>
+<br/>
+-B<sub>2</sub>O<sub>3</sub> is needed in almost all middle temperature glazes; they just will not melt enough without it. The upper limit here is conservative, but a well-melting glaze can still be achieved with levels below this (e.g. 0.2). But if you need a glaze that has a high gloss with <a href="colorant.html">colorant</a> and <a href="opacifier.html">opacifiers</a>, or variegated reactive visual effects, then significantly more than 0.35 would likely be needed (double this amount is not unusual!). However, this limit is likely a reflection of the needs of industry; they have reason to minimize boron because of its side effects (<a href="boron+blue.html">boron blue</a> and <a href="crystallization.html">devitrification</a>, micro bubbles, <a href="glaze+durability.html">durability</a> issues, difficulty with fast fire).<br/>
+<br/>
+-Al3O<sub>3</sub> is needed in all glazes (except crystalline). It holds <a href="melt+fluidity.html">the melt</a> from running down off vertical surfaces, stabilizing it. It also imparts hardness and durability. Generally, you want as much as possible (but if there is too much, gloss will be lost) and more than that it won't melt (it would be very unusual to see the 0.64 upper limit). Around 0.4 would be much more typical.<br/>
+<br/>
+-SiO<sub>2</sub> makes up the bulk of all glazes; it is the glass former. The more the glaze will take (and still melt well), the better. All of its effects are beneficial. This upper limit is conservative; if more boron (or auxiliary fluxes like <a href="../oxide/li2o.html">Li<sub>2</sub>O</a>, ZnO) are present, more SiO<sub>2</sub> can be tolerated.<br/>
+<br/>
+-Colorants (e.g. oxides of Fe, Co, Mn, Cu, Cr). Be sensible. If 1% cobalt gives a bright blue, do not put in 5%. If 5% stain is enough, do not put in 10%. Iron is not dangerous. Copper can make a glaze leachable; test it. <a href="../oxide/mno.html">MnO</a> makes fumes during firing. Cadmium and lead obviously require know-how to use safely.<br/>
+<br/>
+-Titanium and <a href="../material/1204.html">Rutile</a>: These are commonly added to <a href="variegation.html">variegate</a> glazes (crystallize and produce <a href="phase+separation.html">phase changes</a>). They are effective up to about 5%; above that, the surface will usually become rough and matte (a mesh of crystals). There are crow-bar ways to prevent this, like incorporating significant zinc or lithium. But such glazes are notoriously finicky and difficult. Beware.<br/>
+<br/>
+Physical Limits: Is the glaze well melted? Can you scratch it with metal? Will it survive a <a href="leaching.html">leaching</a> test? Is it heavily crystallized? (Do a close-up with your camera and zoom it). Is the melted glass full of air bubbles? Is it crazing? These are obvious things, but there is not much sense in fussing over <a href="glaze+chemistry.html">chemistry</a> if there are obvious problems like these!<br/>
+<br/>
+Most people with lots of experience mixing and testing glazes and watching their chemistry would likely rationalize these limits in a similar way as done here. Once you have this outline fixed in mind, you will never need to look at another limit chart; it becomes second nature!<br/>
+<br/>
+There is a link to a lengthy article on limits below.</p><p style="clear:left"></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">The Seger Unity Formula</h3>
+<br/><a href="../picture/1777.html"><img class="flexleft50" loading="lazy" src="../media/images/bevdicotis.png"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1777.html">click here</a> to see it.</p>
+<p><a href="ceramic+material.html">Ceramic material</a> powders can be <a href="glass+vs.+crystalline.html">crystalline</a> or <a href="amorphous.html">amorphous</a> (or a combination), and they can be natural or man-made, and they can have very different particle <a href="physical+testing.html">physics</a>. Ceramic materials are classic case studies of the sciences of <a href="mineralogy.html">solid state</a> physics and solid state <a href="glaze+chemistry.html">chemistry</a>. Mineral sources of <a href="ceramic+oxide.html">oxides</a> impose their own melting patterns in glazes. When oxides are then supplied by a different material, a new "system" is entered. An extreme example of this is sourcing <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a> to a glaze using <a href="../material/41.html">calcined alumina</a> instead of <a href="../material/925.html">kaolin</a>. Although the chemical formula of the glaze, as a whole, may remain unchanged, the fired result would be completely different. This is because very little of the alumina would dissolve into the glaze melt. At the opposite extreme, a different <a href="frit.html">frit</a> could be used to supply a set of oxides (while maintaining the overall chemistry of the glaze), and the fired result would be much more chemically predictable. Why? Because they readily release their oxides to <a href="melt+fluidity.html">the melt</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Does adding boron alone always increase glaze melt?</h3>
+<br/><a href="../picture/1595.html"><img class="flexleft50" loading="lazy" src="../media/images/guxnowifar.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1595.html">click here</a> to see it.</p>
+<p><a href="borate.html">Boron</a> (<a href="../oxide/b2o3.html">B<sub>2</sub>O<sub>3</sub></a>) is like <a href="../material/1245.html">silica</a>, but it is also a <a href="flux.html">flux</a>. <a href="frit.html">Frits</a> and <a href="../material/806.html">Gerstley Borate</a> supply it to glazes. In this test, I increased the amount of boron from 0.33 to 0.40 (using the <a href="glaze+chemistry.html">chemistry</a> tools in my <a href="digitalfire+insight-live.html">insight-live</a>.com account). I was sure that this would make the glaze melt more and have less of a tendency to <a href="../trouble/glaze+crazing.html">craze</a>. But as these GBMF tests for <a href="melt+fluidity.html">melt flow</a> (10 gram <a href="../test/gbmf.html">GBMF test</a> balls melted on <a href="porcelain.html">porcelain</a> tiles) show, that did not happen. Why? I am guessing that to get the effect B<sub>2</sub>O<sub>3</sub> has to be substituted, molecule for molecule for <a href="../oxide/sio2.html">SiO<sub>2</sub></a> (not just added to the glaze).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">A limit or target glaze formula. What does this mean?</h3>
+<br/><a alt="A glaze formula compared to a target formula" href="../picture/1787.html"><img alt="A glaze formula compared to a target formula" class="flexleft50" loading="lazy" src="../media/images/wzadbqjfk6.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1787.html">click here</a> to see it.</p>
+<p>Recipes show us the materials in a the glaze powder (or <a href="slurry.html">slurry</a>).  Formulas enumerate the oxide molecules and their comparative quantities in the fired glass. <a href="ceramic+oxide.html">Oxides</a> construct the fired glass. The kiln de-constructs ceramic materials to get their oxides, discards the carbon, sulfur, etc. and builds the glass from the rest. There is a direct relationship between fired glaze properties (e.g. melting range, gloss, <a href="co-efficient+of+thermal+expansion.html">thermal expansion</a>, hardness, <a href="glaze+durability.html">durability</a>, color response, etc) and its <a href="oxide+formula.html">oxide formula</a>. There are 8-10 oxides to know about (vs. hundreds of materials). From the formula-viewpoint materials are thus "sources-of-oxides". While there are other factors besides pure <a href="glaze+chemistry.html">chemistry</a> that determine how a glaze fires, none is as important. <a href="digitalfire+insight-live.html">Insight-live</a> can calculate and show the formula of a recipe, this enables comparing it side-by-side and with a <a href="limit+formula.html">target formula</a> (or another recipe known to work as needed). Target formulas are opened using the advanced recipe search, choosing the limits batch and clicking/tapping the search button (search 'target recipe' in Insight-live help for more info).</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/limit+formulas+and+target+formulas.html">Limit Formulas and Target Formulas</a>
+<br/><i>Glaze chemistries for each type of glaze have a typical look to them that enables us to spot ones that are non-typical. Limit and target formulas are useful to us if we keep in perspective their proper use.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/where+do+i+start+in+understanding+glazes%3f.html">Where do I start in understanding glazes?</a>
+<br/><i>Break your addiction to online recipes that don't work or bottled expensive glazes that you could <a href="do-it-yourself.html">DIY</a>. Learn why glazes fire as they do. Why each material is used. How to create perfect dipping and brushing properties. Even some <a href="glaze+chemistry.html">chemistry</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/creating+your+own+budget+glaze.html">Creating Your Own Budget Glaze</a>
+<br/><i>How to take a stockroom full of unused materials and turn them into a good glaze rather than try umpteen online recipes that require buying yet more materials you do not need and do not work.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/glaze+recipes%3a+formulate+and+make+your+own+instead.html">Glaze Recipes: Formulate and Make Your Own Instead</a>
+<br/><i>The only way you will ever get the glaze you really need is to formulate your own. The longer you stay on the glaze recipe treadmill the more time you waste.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Recipes</td>
+<td>
+<a href="../recipe/g3806c.html">G3806C - Cone 6 Clear Fluid-Melt transparent glaze</a>
+<br/><i>A base <a href="fluid+melt+glazes.html">fluid-melt</a> glaze recipe developed by <a href="tony+hansen.html">Tony Hansen</a>. With <a href="colorant.html">colorant</a> additions it forms reactive melts that <a href="variegation.html">variegate</a> and run. It is more resistant to <a href="../trouble/glaze+crazing.html">crazing</a> than others.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Recipes</td>
+<td>
+<a href="../recipe/g2926b.html">G2926B - Cone 6 Whiteware/Porcelain transparent glaze</a>
+<br/><i>A <a href="base+glaze.html">base transparent</a> glaze recipe created by <a href="tony+hansen.html">Tony Hansen</a>, it fires high gloss and ultra clear with low melt mobility.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Recipes</td>
+<td>
+<a href="../recipe/g2934.html">G2934 - Matte Glaze Base for Cone 6</a>
+<br/><i>A base <a href="../oxide/mgo.html">MgO</a> <a href="matte+glaze.html">matte glaze</a> recipe fires to a hard utilitarian surface and has very good working properties. Blend in the glossy if it is too matte.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="ceramic+oxide.html">Ceramic Oxide</a>
+<br/><i>In <a href="glaze+chemistry.html">glaze chemistry</a>, the oxide is the basic unit of formulas and analyses. Knowledge of what materials supply an oxide and of how it affects the fired glass or glaze is a key to control.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="glaze+chemistry.html">Glaze Chemistry</a>
+<br/><i><a href="glaze+chemistry.html">Glaze chemistry</a> is the study of how the oxide <a href="glaze+chemistry.html">chemistry</a> of glazes relate to the way they fire. It accounts for color, surface, hardness, texture, <a href="melting+temperature.html">melting temperature</a>, <a href="co-efficient+of+thermal+expansion.html">thermal expansion</a>, etc.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="glaze+durability.html">Glaze Durability</a>
+<br/><i>Ceramic glazes vary widely in their resistance to wear and <a href="leaching.html">leaching</a> by acids and bases. The principle factors that determine <a href="glaze+durability.html">durability</a> are the <a href="glaze+chemistry.html">glaze chemistry</a> and firing temperature.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="colorant.html">Colorant</a>
+<br/><i>In <a href="ceramics.html">ceramics</a> and pottery, <a href="colorant.html">colorants</a> are added to glazes as <a href="metal+oxides.html">metal oxides</a>, metal-oxide-containing raw materials or as manufactured <a href="ceramic+stain.html">stains</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="flux.html">Flux</a>
+<br/><i>Fluxes are the reason we can fire <a href="clay+body.html">clay bodies</a> and glazes in common kilns, they make glazes melt and bodies vitrify at lower temperatures.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="leaching.html">Leaching</a>
+<br/><i>Ceramic glazes can leach heavy metals into food and drink. This subject is not complex, there are many things anyone can do to deal with this issue</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="limit+recipe.html">Limit Recipe</a>
+<br/><i>"<a href="limit+recipe.html">Recipe logic</a>" is the ability to sanity-check ceramic <a href="glaze+recipes.html">glaze recipes</a> on sight, by noting that materials present and their relative percentages.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/bao.html">BaO - Barium Oxide, Baria</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/zno.html">ZnO - Zinc Oxide</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/li2o.html">Li2O - Lithium Oxide, Lithia</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/al2o3.html">Al2O3 - Aluminum Oxide, Alumina</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/sio2.html">SiO2 - Silicon Dioxide, Silica</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/b2o3.html">B2O3 - Boric Oxide</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/cao.html">CaO - Calcium Oxide, Calcia</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/coo.html">CoO - Cobalt Oxide</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/cr2o3.html">Cr2O3 - Chrome Oxide</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/mno.html">MnO - Manganous Oxide</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/mno2.html">MnO2 - Manganese Dioxide</a>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/2623">https://www.youtube.com/watch?v=FVUuhjnjAoA</a>
+<br/><i>German potter Cornelius Breymann investigates <a href="limit+formula.html">limit formulas</a>, eutectics</i>
+<br/><i style="color:#888888;">On this Youtube video Cornelius will take you on a slow and deliberate journey. If you stick with him you will discover how, by industrious blending of <a href="../material/310.html">feldspar</a>, <a href="../material/173.html">calcium carbonate</a> and <a href="../material/1245.html">silica</a> we can see what ratios of <a href="../oxide/cao.html">CaO</a>, <a href="../oxide/sio2.html">SiO2</a> and <a href="../oxide/al2o3.html">Al2O3</a> (and the materials sourcing them) produce a well-melted <a href="high+temperature+glaze.html">high temperature glaze</a>. You will see how the process demonstrates where feldspar comes up short as a glaze by itself and what it needs to be one. And you will see the CaO:SiO2:Al2O3 <a href="eutectic.html">eutectic</a> demonstrated.</i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></div></body>
+</html>

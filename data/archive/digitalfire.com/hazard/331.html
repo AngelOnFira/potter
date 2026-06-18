@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Cobalt Toxicology</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Digitalfire Reference Library: Practical material hazards information in the traditional ceramic industry">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+March 2026: We are doing major upgrades to code here, please be patient regarding any issues. If any page is not working for a period of hours, please contact us. Thank you.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item active" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=hazard" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:center; vertical-align:top;">Feb 14-15, 2026 - <b>Major Server <a href="https://digitalfire.com">Upgrade</a> Done</b></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Hazards</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a title="341" href="https://digitalfire.com/hazard/341">Alumina Toxicology</a> |</nobr> <nobr><a title="333" href="https://digitalfire.com/hazard/333">Ammonia and Latex Toxicity</a> |</nobr> <nobr><a title="16" href="https://digitalfire.com/hazard/16">Antimony Oxide</a> |</nobr> <nobr><a title="412" href="https://digitalfire.com/hazard/412">Are colored porcelains hazardous?</a> |</nobr> <nobr><a title="18" href="https://digitalfire.com/hazard/18">Arsenic Oxide</a> |</nobr> <nobr><a title="19" href="https://digitalfire.com/hazard/19">Asbestos Toxicity</a> |</nobr> <nobr><a title="22" href="https://digitalfire.com/hazard/22">Ball Clay</a> |</nobr> <nobr><a title="321" href="https://digitalfire.com/hazard/321">BARIUM and COMPOUNDS Toxicology</a> |</nobr> <nobr><a title="367" href="https://digitalfire.com/hazard/367">Barium Carbonate in Clay Bodies</a> |</nobr> <nobr><a title="26" href="https://digitalfire.com/hazard/26">Barium Carbonate in Glazes</a> |</nobr> <nobr><a title="31" href="https://digitalfire.com/hazard/31">Bentonite Toxicity</a> |</nobr> <nobr><a title="33" href="https://digitalfire.com/hazard/33">Beryllium Monoxide Toxicology</a> |</nobr> <nobr><a title="352" href="https://digitalfire.com/hazard/352">Bismuth Trioxide Toxicology</a> |</nobr> <nobr><a title="326" href="https://digitalfire.com/hazard/326">Boron Compounds and Their Toxicity</a> |</nobr> <nobr><a title="1" href="https://digitalfire.com/hazard/1">Brown Stain</a> |</nobr> <nobr><a title="335" href="https://digitalfire.com/hazard/335">Cadmium Toxicity</a> |</nobr> <nobr><a title="343" href="https://digitalfire.com/hazard/343">Calcium Carbonate Toxicology</a> |</nobr> <nobr><a title="334" href="https://digitalfire.com/hazard/334">Carbon Monoxide Toxicity</a> |</nobr> <nobr><a title="353" href="https://digitalfire.com/hazard/353">Cesium Toxicology</a> |</nobr> <nobr><a title="330" href="https://digitalfire.com/hazard/330">Chromium Compounds Toxicology</a> |</nobr> <nobr><a title="146" href="https://digitalfire.com/hazard/146">Clay Toxicity</a> |</nobr> <nobr><a title="73" href="https://digitalfire.com/hazard/73">Cobalt Oxide and Carbonate</a> |</nobr> <nobr><a title="331" href="https://digitalfire.com/hazard/331"><button type="button" class="btn btn-dark">Cobalt Toxicology</button></a> |</nobr> <nobr><a title="329" href="https://digitalfire.com/hazard/329">Copper Compounds Toxicology</a> |</nobr> <nobr><a title="78" href="https://digitalfire.com/hazard/78">Copper Oxide and Carbonate</a> |</nobr> <nobr><a title="84" href="https://digitalfire.com/hazard/84">Cristobalite Toxicity</a> |</nobr> <nobr><a title="337" href="https://digitalfire.com/hazard/337">Cryolite and Ceramics</a> |</nobr> <nobr><a title="372" href="https://digitalfire.com/hazard/372">Dealing With Dust in Ceramics</a> |</nobr> <nobr><a title="351" href="https://digitalfire.com/hazard/351">Diatomaceous Earth Toxicology</a> |</nobr> <nobr><a title="323" href="https://digitalfire.com/hazard/323">Dioxins in Clays</a> |</nobr> <nobr><a title="95" href="https://digitalfire.com/hazard/95">Epsom Salts</a> |</nobr> <nobr><a title="348" href="https://digitalfire.com/hazard/348">Eye Injuries Due to Radiation</a> |</nobr> <nobr><a title="222" href="https://digitalfire.com/hazard/222">Feldspar</a> |</nobr> <nobr><a title="320" href="https://digitalfire.com/hazard/320">Fighting Micro-Organisms in Ceramics</a> |</nobr> <nobr><a title="108" href="https://digitalfire.com/hazard/108">Fluorine Gas</a> |</nobr> <nobr><a title="413" href="https://digitalfire.com/hazard/413">Fumes from gas kilns</a> |</nobr> <nobr><a title="354" href="https://digitalfire.com/hazard/354">Gallium Oxide Toxicology</a> |</nobr> <nobr><a title="342" href="https://digitalfire.com/hazard/342">Hafnium Oxide Toxicty</a> |</nobr> <nobr><a title="345" href="https://digitalfire.com/hazard/345">Hydrofluoric Acid Toxicity</a> |</nobr> <nobr><a title="350" href="https://digitalfire.com/hazard/350">Iron oxide and Hematite</a> |</nobr> <nobr><a title="169" href="https://digitalfire.com/hazard/169">Lead Chromate</a> |</nobr> <nobr><a title="368" href="https://digitalfire.com/hazard/368">Lead in Ceramic Glazes</a> |</nobr> <nobr><a title="328" href="https://digitalfire.com/hazard/328">Lead Toxicology</a> |</nobr> <nobr><a title="174" href="https://digitalfire.com/hazard/174">Lithium Carbonate Toxicity</a> |</nobr> <nobr><a title="349" href="https://digitalfire.com/hazard/349">Lithium Toxicology</a> |</nobr> <nobr><a title="322" href="https://digitalfire.com/hazard/322">Man-Made Vitreous Fibers (MMVF) Toxicology</a> |</nobr> <nobr><a title="410" href="https://digitalfire.com/hazard/410">Man-Made Vitreous Fibers Safety Update</a> |</nobr> <nobr><a title="406" href="https://digitalfire.com/hazard/406">Manganese and Parkinsons by Jane Watkins</a> |</nobr> <nobr><a title="187" href="https://digitalfire.com/hazard/187">Manganese in Clay Bodies</a> |</nobr> <nobr><a title="317" href="https://digitalfire.com/hazard/317">Manganese Inorganic Compounds Toxicology</a> |</nobr> <nobr><a title="409" href="https://digitalfire.com/hazard/409">Manganese Toxicity by Elke Blodgett</a> |</nobr> <nobr><a title="407" href="https://digitalfire.com/hazard/407">Manganese: Creativity and Illness by Dierdre O'Reilly</a> |</nobr> <nobr><a title="332" href="https://digitalfire.com/hazard/332">Molybdenum Compounds Toxicology</a> |</nobr> <nobr><a title="327" href="https://digitalfire.com/hazard/327">Nickel Compounds Toxicity</a> |</nobr> <nobr><a title="314" href="https://digitalfire.com/hazard/314">Niobium Oxide Toxicity</a> |</nobr> <nobr><a title="318" href="https://digitalfire.com/hazard/318">Occupational Dermatoses</a> |</nobr> <nobr><a title="370" href="https://digitalfire.com/hazard/370">Overview of Material Safety by Gavin Stairs</a> |</nobr> <nobr><a title="364" href="https://digitalfire.com/hazard/364">Paraffin Toxicology</a> |</nobr> <nobr><a title="216" href="https://digitalfire.com/hazard/216">Perlite Toxicity</a> |</nobr> <nobr><a title="238" href="https://digitalfire.com/hazard/238">Plant Ash Toxicity</a> |</nobr> <nobr><a title="346" href="https://digitalfire.com/hazard/346">Potassium Carbonate Toxicity</a> |</nobr> <nobr><a title="365" href="https://digitalfire.com/hazard/365">Pregnancy and Ceramics</a> |</nobr> <nobr><a title="355" href="https://digitalfire.com/hazard/355">Propane Toxicology</a> |</nobr> <nobr><a title="251" href="https://digitalfire.com/hazard/251">Quartz Toxicity</a> |</nobr> <nobr><a title="369" href="https://digitalfire.com/hazard/369">Quartz Toxicity on Clayart</a> |</nobr> <nobr><a title="336" href="https://digitalfire.com/hazard/336">Rare Earth Compounds Toxicity</a> |</nobr> <nobr><a title="366" href="https://digitalfire.com/hazard/366">Rubidium and Cesium Toxicology</a> |</nobr> <nobr><a title="356" href="https://digitalfire.com/hazard/356">Rutile Toxicology</a> |</nobr> <nobr><a title="324" href="https://digitalfire.com/hazard/324">Silicosis and Screening</a> |</nobr> <nobr><a title="357" href="https://digitalfire.com/hazard/357">Silver Compounds Toxicology</a> |</nobr> <nobr><a title="358" href="https://digitalfire.com/hazard/358">Sodium Azide Toxicology</a> |</nobr> <nobr><a title="359" href="https://digitalfire.com/hazard/359">Sodium Carbonate Toxicology</a> |</nobr> <nobr><a title="360" href="https://digitalfire.com/hazard/360">Sodium Silicate Powder Toxicology</a> |</nobr> <nobr><a title="315" href="https://digitalfire.com/hazard/315">Stannous Chloride Toxicity</a> |</nobr> <nobr><a title="316" href="https://digitalfire.com/hazard/316">Strontium Carbonate Toxicity Note</a> |</nobr> <nobr><a title="347" href="https://digitalfire.com/hazard/347">Sulfur Dioxide Toxicity</a> |</nobr> <nobr><a title="3" href="https://digitalfire.com/hazard/3">Talc Hazards Overview</a> |</nobr> <nobr><a title="361" href="https://digitalfire.com/hazard/361">Talc Toxicology</a> |</nobr> <nobr><a title="362" href="https://digitalfire.com/hazard/362">Thallium Oxide Toxicology</a> |</nobr> <nobr><a title="344" href="https://digitalfire.com/hazard/344">Thorium Dioxide Toxicity</a> |</nobr> <nobr><a title="338" href="https://digitalfire.com/hazard/338">Tin Inorganic Compounds</a> |</nobr> <nobr><a title="339" href="https://digitalfire.com/hazard/339">Titanium Dioxide Toxicology</a> |</nobr> <nobr><a title="313" href="https://digitalfire.com/hazard/313">Toxicological Assessment of Zeolites</a> |</nobr> <nobr><a title="363" href="https://digitalfire.com/hazard/363">Tungsten Compounds Toxicology</a> |</nobr> <nobr><a title="371" href="https://digitalfire.com/hazard/371">Understanding Acronyms on MSDS's</a> |</nobr> <nobr><a title="325" href="https://digitalfire.com/hazard/325">Uranium and Ceramics</a> |</nobr> <nobr><a title="319" href="https://digitalfire.com/hazard/319">Vanadium and Compounds Toxicology</a> |</nobr> <nobr><a title="411" href="https://digitalfire.com/hazard/411">Vermiculite</a> |</nobr> <nobr><a title="340" href="https://digitalfire.com/hazard/340">Zinc Compounds Toxicology</a> |</nobr> <nobr><a title="373" href="https://digitalfire.com/hazard/373">Zirconium Compounds Toxicity</a> |</nobr> <nobr><a title="234" href="https://digitalfire.com/hazard/234">Zirconium Encapsulated Stains Toxicity</a></nobr></div><h1>Cobalt Toxicology</h1>
+<p><DL> <br />
+   <DT><B><U><FONT SIZE="+1" COLOR="#004080">Introduction <br />
+   :</FONT></U></B> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Cobalt (Co)-atomic weight 58.9, density <br />
+   8.9 g/cm3, and melting point 1495 0C, is water- insoluble, but <br />
+   soluble in acids.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">It is a bluish-white metal, shiny, very <br />
+   hard, with magnetic properties.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">The most important ores are the <br />
+   arsenides, sulfides and <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a>. Zaire is the world largest <br />
+   producer with 58% of the production.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">The commercially significant cobalt <br />
+   compounds are the oxides, hydroxide, chloride, phosphate, <br />
+   carbonate, acetate, oxalate, and other carboxylic acid <br />
+   derivatives.</FONT> <br />
+    <br />
+   <DT><I><FONT COLOR="#004080">Compounds used by ceramicists are the <br />
+   carbonate and the oxide.</FONT></I> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><B><U><FONT SIZE="+1" COLOR="#004080">Uses and Sources of <br />
+   Exposure :</FONT></U></B> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">About 75% of its consumption is used in <br />
+   production of steel and alloys.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">It is used :</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">- in the production of very resistant <br />
+   alloys. One employs the alloy aluminium-nickel-cobalt for the <br />
+   manufacture of magnets; </FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">-in the industry of hard metal or <br />
+   <a  href="https://digitalfire.com/glossary/frit">fritted</a> metals. The cobalt-carbide of tungsten mixture is <br />
+   particularly resistant (hardness from 90% to 95% of that of <br />
+   diamond). It is used to manufacture teeth of saws, drilling <br />
+   machines, drills, bits for drills; </FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">- in the ceramic and glass industry <br />
+   cobalt salts are used for the preparation of glazes and colouring <br />
+   materials; </FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">-in cobalt plating of metals by <br />
+   electrolysis, it covers them with a shiny finish more resistant <br />
+   than nickel; </FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">-in the body of certain tools as a union <br />
+   material with their tungsten ends. </FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">The grinding of surgical and dental <br />
+   prostheses (alloy with nickel, chromium and molybdenum) can <br />
+   involve exposure to cobalt as well as the polishing of diamonds <br />
+   using discs made up of microdiamonds whose binding agent is <br />
+   cobalt. </FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Cobalt is present in trace amounts in <br />
+   some cements.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><B><U><FONT SIZE="+1" COLOR="#004080">Experimental Toxicology <br />
+   :</FONT></U></B> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">In the rat, the oral lethal dose 50 <br />
+   (LD50) of different inorganic cobalt compounds (cobalt fluoride, <br />
+   oxide, phosphate, bromide, chloride, sulphate, nitrate, and <br />
+   acetate) varies from 150 to 500 mg/kg body weight. </FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Animals given cobalt chloride perorally <br />
+   or via injections show higher concentrations in the liver, with <br />
+   somewhat lower concentrations in the kidney and spleen.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Cobalt salts inhalation causes <br />
+   respiratory irritation possibly leading to pulmonary oedema <br />
+   (chemical pneumonia) in animals. Inhalation studies in hamsters <br />
+   did not show any increase in tumors from <a  href="https://digitalfire.com/material/230">cobalt oxide</a>.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Its polycythemic action resembles the <br />
+   human essential variety. This action would result from its <br />
+   </FONT><I><FONT COLOR="#004080">in vivo</FONT></I><FONT <br />
+   COLOR="#004080"> unstable action on renal lysosomes causing the <br />
+   secretion of a factor stimulating the production of <br />
+   erythropoetin.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Pancreatic lesions have been observed in <br />
+   animals but, the pancreatic cells effects are reversible by <br />
+   hyperglycemia.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Cobalt may cause myocardial <br />
+   degeneration.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Cancers (lung cancer, <br />
+   rhabdomyofibrosarcoma) may be caused in animals, at least when <br />
+   cobalt (oxide dust, chloride) is administered parenterally or <br />
+   intratracheally.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">In procaryotic cells </FONT><I><FONT <br />
+   COLOR="#004080">in vitro</FONT></I><FONT COLOR="#004080">, <br />
+   divalent cobalt compounds (CoII) do not cause any mutagenic <br />
+   action.</FONT> <br />
+    <br />
+   <DT><I><FONT COLOR="#004080">In vitro</FONT></I><FONT <br />
+   COLOR="#004080"> ,in mammalian cells, cobalt compounds induce DNA <br />
+   strand breaks and an increase in sister-chromatid exchanges and <br />
+   micronuclei. Cobalt sulfide (CoS), insoluble, induces breaks in <br />
+   ovarian cells of the chinese hamster. </FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Cobalt chloride</FONT><I><FONT <br />
+   COLOR="#004080"> in vivo</FONT></I><FONT COLOR="#004080">, does <br />
+   not seem to be foetotoxic nor teratogenic in the rat; but at high <br />
+   doses, it may cause testicular degeneration in rodents which is <br />
+   partly reversible with the administration of zinc.</FONT> <br />
+    <br />
+   <DT><I><FONT COLOR="#004080">In vivo</FONT></I><FONT <br />
+   COLOR="#004080">, cobalt inhibits microsomal enzymes oxidizing <br />
+   foreign substances and lowers the concentration of P 450 <br />
+   cytochrome</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><B><U><FONT SIZE="+1" COLOR="#004080">Clinical Toxicology <br />
+   :</FONT></U></B> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><B><FONT COLOR="#004080">I-General Information :</FONT></B> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">For the general population, food and <br />
+   beverages represent the main source of cobalt exposure. Traces of <br />
+   cobalt are also present in various household products.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">One atom of cobalt comprises the central <br />
+   and necessary core in the vitamin B12, or cyanocobalamin, molecule <br />
+   which is an essential vitamin.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Its deficiency may cause anemia.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Polycythemia has been reported in heavy <br />
+   drinkers of cobalt fortified beer.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Cobalt per se is not essential for <br />
+   humans or other mammals.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><B><FONT COLOR="#004080">II-Routes of Absorption and Exposure <br />
+   :</FONT></B> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">The usual routes of absorption are <br />
+   ingestion and inhalation.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Absorption through the skin can occur <br />
+   for certain compounds but is low.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">The main source of absorption during <br />
+   occupational exposure is via the respiratory tract.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><B><FONT COLOR="#004080">III-Biochemokinetics :</FONT></B> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Cobalt is not a cumulative toxin. <br />
+   </FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">The normal daily intake by ingestion is <br />
+   estimated at 20-40&#181;g.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">The total body burden is about 1.5 <br />
+   mg.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">After absorption, cobalt is mainly <br />
+   distributed to the liver.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Cobalt is mainly excreted in urine and <br />
+   to a lesser extent via faeces.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Gastrointestinal absorption of <br />
+   radioactive cobalt chloride in humans has been estimated to be <br />
+   about 18%. Eight days after parenteral administration, 56% and 11% <br />
+   of the given dose is eliminated via urine and feces, <br />
+   respectively.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Following initial rapid elimination, the <br />
+   remaining 10% usually clears slowly with a biologic half-time of <br />
+   about 2 years. </FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Relatively high concentrations are also <br />
+   found in the myocardium (heart).</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">The major proportion of parenterally <br />
+   administered cobalt is rapidly cleared from the body, mainly via <br />
+   the urine.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Cobalt concentrations of 90&#181;g/m3 in <br />
+   air have been reported to give cobalt concentration of about <br />
+   100&#181;g/L urine after a work shift, decreasing to less than <br />
+   half this concentration within 1 day.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">The normal concentrations of cobalt in <br />
+   blood and urine from non-occupationally exposed persons are about <br />
+   0.1 to 2&#181;g/L. The levels of cobalt in blood, and particularly <br />
+   in urine, increase in proportion to the level of occupational <br />
+   exposure and may be used for biologic monitoring in order to <br />
+   assess individual exposure.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Elimination of cobalt is considerably <br />
+   slower in uremic patients. </FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><B><FONT COLOR="#004080">IV-Symptoms and Signs :</FONT></B> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><B><FONT COLOR="#004080">A-Acute <a  href="https://digitalfire.com/glossary/toxicity">Toxicity</a> :</FONT></B> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Possible irritation of :</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">-skin;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">-eyes;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">-respiratory tract</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">If ingested or inhaled in large amounts <br />
+   :</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">-nausea;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">-vomiting;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">-diarrhoea;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">-epigastric pain.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><B><FONT COLOR="#004080">B-Chronic Toxicity</FONT></B> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><B><FONT COLOR="#004080">1-Non-Occupational Intoxication <br />
+   :</FONT></B> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Endemic outbreaks of cardiomyopathy with <br />
+   mortality rates up to 50% have been described among heavy <br />
+   consumers (up to 10L/day) of cobalt-contaminated beer giving an <br />
+   exposure of a few milligrams per day.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">It has been suggested that the <br />
+   cardiomyopathy had a multicausal origin, since cobalt exposure <br />
+   from beer was considerably lower than the doses prescribed to <br />
+   patients with anemia.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Other factors of importance are high <br />
+   alcool intake combined with a generally poor nutritional <br />
+   status.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">This practice of fortifying beer with <br />
+   cobalt chloride in order to improve the stability of the foam has <br />
+   now been abandoned.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">The disease may be reproduced in the <br />
+   animal.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><B><FONT COLOR="#004080">2-Occupational <br />
+   Intoxication</FONT></B><FONT COLOR="#004080"> :</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">The two main target organs are the <br />
+   respiratory tract and the skin.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><B><I><FONT COLOR="#004080">Respiratoty Symptoms <br />
+   :</FONT></I></B> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Concomitant exposure to tungsten carbide <br />
+   increases the pulmonary absorption rate of metallic cobalt.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><B><FONT COLOR="#004080">a-Transitory symptoms :</FONT></B> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Shortness of breath, pharyngeal <br />
+   irritation, sneezing and dry cough are only encountered during the <br />
+   work shift and disappear with job change. Exposure at a <br />
+   concentration near 40&#181;g/m3 for a few hours would be <br />
+   sufficient to cause these effects.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">It has been demonstrated that an <br />
+   exposure mainly above 50&#181;g/m3 causes an increase in the <br />
+   prevalence of exertional shortness of breath in a refinery where <br />
+   workers were exposed to metallic cobalt, oxides and salts.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><B><FONT COLOR="#004080">b-Spasmodic Rhinitis or Occupational <br />
+   Asthma : </FONT></B> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">The clinical picture may be one of <br />
+   spasmodic rhinitis or typical, true, classical occupational asthma <br />
+   with a probable immunologic origin. Antibodies (IgE) against the <br />
+   cobalt-albumin complex have been found in the serum of patients <br />
+   suffering from cobalt asthma.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">A cobalt chloride challenge test may be <br />
+   positive.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">In the hard metal industry, cobalt <br />
+   asthma may occur at levels of exposure lower than <br />
+   50&#181;g/m3.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">In one report, the syndrome did not <br />
+   develop until after 6 to 18 months of exposure.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">On screening 1039 tungsten carbide <br />
+   workers work-related wheezing occurred in 10.9%</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">There is no evidence that this type of <br />
+   disease progresses to interstitial fibrosis.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><B><FONT COLOR="#004080">c-Allergic Alveolitis :</FONT></B> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Symptoms may ressemble those of allergic <br />
+   alveolitis (shortness of breath, chills, fever).</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Cases have been described among workers <br />
+   exposed to cobalt in cutting oils used to polish hard metals. <br />
+   Symptoms disappear when workers are away from work for 1 month <br />
+   but, come back when work resumes. The alveolitis may be associated <br />
+   with a bronchoconstrictive reaction.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><B><FONT COLOR="#004080">d-Desquamative Alveolitis <br />
+   :</FONT></B> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Desquamative alveolitis with <br />
+   multinuclear giant cells (type II alveolar cells and macrophages) <br />
+   evolving progressively towards diffuse interstitial fibrosis, <br />
+   characterized clinically by shortness of breath and weight loss, <br />
+   may develop.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">On clinical grounds, functionnal and <br />
+   radiologic, this syndrome in its acute phase resembles the <br />
+   previous one and we may ask ourselves if a distinction between the <br />
+   two syndromes is justified.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">At the beginning of the disease, <br />
+   symptomatogy may be very scarce (dry cough, exertional shortness <br />
+   of breath) and the chest X-ray may seem normal. If exposure <br />
+   persists, general health state may deteriorate and a rapidly fatal <br />
+   alveolitis may occur.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">This disease has been observed mainly in <br />
+   hard metal and diamond industries.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Lung physiology testing shows a <br />
+   restrictive pattern with a lowered CO diffusing capacity.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Chest X-ray shows reticulo-nodular <br />
+   lesions.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Giant multinuclear cells may be found <br />
+   following bronchoalveolar lavage.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">An allergic origin is suspected.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">On screening 1039 tungsten carbide <br />
+   workers, interstitial lung disease was observed in 0.7%.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Experiments in animals tend to <br />
+   incriminate cobalt as the main cause of desquamative alveolitis <br />
+   but, its pulmonary toxicity would be enhanced by the presence of <br />
+   tungsten carbide and other substances</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Analogous results have been encountered <br />
+   in studies in workers exposed to a mixture of cobalt dust and <br />
+   other substances such as carbides. </FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">But, some authors believe that exposure <br />
+   to cobalt dusts alone without a concomitant exposure to tungsten <br />
+   carbide (diamond polishing) may cause fibrosing alveolitis with <br />
+   giant mononuclear cell interstitial infiltrate or diffuse <br />
+   interstitial fibrosis.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><B><I><FONT COLOR="#004080">Cutaneous effects :</FONT></I></B> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Cobalt may cause allergic dermatitis <br />
+   with positive skin patch tests( urticaria and/or exzema). Cobalt <br />
+   itself is a sensitizer as well as different salts and oxides. <br />
+   </FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">This allergic dermatitis of an <br />
+   erythematous papular type usually occurs in the skin areas <br />
+   subjected to friction, such as the ankle, elbow flexures, and <br />
+   sides of the neck.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Even if there is no cross allergy <br />
+   between metals, sensitization to cobalt is often encountered in <br />
+   patients already allergic to chromium and/or nickel.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><B><I><FONT COLOR="#004080">Other effects :</FONT></I></B> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">-Cobalt cardiomyopathy has been <br />
+   described in workers exposed to cobalt in different <br />
+   situations.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">-Polycythemia could be encountrered <br />
+   among workers exposed to cobalt in the production of fritted <br />
+   metallic carbides.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">-One case of progressive deafness and <br />
+   optic nerve atrophy has been attributed to a severe exposure to <br />
+   powdered metallic cobalt for 20 months.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">-Sub-clinical hypothyroidism has been <br />
+   described among workers exposed exclusively to cobalt in a <br />
+   refinery of this metal.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">-Ocular effects have included congestion <br />
+   of conjunctiva.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><B><U><FONT SIZE="+1" COLOR="#004080">Carcinogenesis <br />
+   :</FONT></U></B> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">In man, it has been suggested that <br />
+   cobalt was carcinogenic(lung cancer); it is most probable that it <br />
+   is due to its association with other particles such as tungsten <br />
+   carbide, or concomitant exposure to arsenic and nickel as <br />
+   suggested among workers employed in cobalt recycling in nickel <br />
+   extraction firms.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">A significant increase in lung cancer <br />
+   has been observed among workers of some hard metal industries, but <br />
+   not in others.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">It is agreed that human data are <br />
+   insufficient to conclude that cobalt per se is carcinogenic in <br />
+   man.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Cobalt has been designated as being <br />
+   possibly carcinogenic to humans, group 2B, by IARC.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Taking into account data from <br />
+   epidemiologic studies, it is possible that exposure to dusts from <br />
+   hard metals may increase the risk of lung cancer but this requires <br />
+   confirmation.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><B><U><FONT SIZE="+1" COLOR="#004080">Medical Surveillance <br />
+   :</FONT></U></B> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Cobalt in blood and urine mainly <br />
+   reflects recent exposure.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Among workers exposed to cobalt-tungsten <br />
+   carbide dust, a good correlation was found between the severity of <br />
+   exposure to cobalt and its concentration in urine at the end of <br />
+   the work week. Taking into account the biologic half-life of <br />
+   urinary cobalt, its concentration at the end of the work week <br />
+   reflects mostly the average exposure of previous days. Under these <br />
+   circumstances, an average exposure of 0.1 mg/m3 would lead to a <br />
+   urinary concentration of 60 &#181;g/L at the end of the work <br />
+   week.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">End of shift blood and urine cobalt also <br />
+   eflects severity of exposure.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">ACGIH proposed in 1996 :</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">-Urine :15 &#181;g/ L as a biological <br />
+   limit (end of work week) corresponding to an atmospheric <a  href="https://digitalfire.com/hazard/371">TLV</a> of 20 <br />
+   &#181;g/m3.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">-Blood : a maximal permissible <br />
+   concentration of 0.1 &#181;g/100 ml (end of work week).</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">When occupational exposure has ceased <br />
+   for a long period of time, these measurements are not reliable <br />
+   anymore to assert previous exposure but, measurements in hair and <br />
+   nails could.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Those who were subjected to hip <br />
+   arthroplasty ( hip prosthesis) may have elevated levels of urinary <br />
+   cobalt, chromium and nickel.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><B><FONT COLOR="#004080">Periodical examination :</FONT></B> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">For workers exposed to cobalt and hard <br />
+   metals.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">It should comprise :</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">-Specific medical history taking <br />
+   :</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">-Physical examination with special <br />
+   attention to the skin and lungs;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">-A chest X-ray every 2 years;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">-Spirometry once a year and CO diffusion <br />
+   capacity every 2-3 years;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">-Urinary cobalt measurement.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><B><U><FONT SIZE="+1" COLOR="#004080">Exposure Limits <br />
+   :</FONT></U></B> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">In Quebec, the VEMP ( Valeur <br />
+   d'Exposition Moyenne Pond&eacute;r&eacute;e) is set at 0.02 mg/m3 <br />
+   (as Co) for metallic cobalt and inorganic compounds. </FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">It has a C3 designation, which means it <br />
+   is a carcinogen in animals and the results of animal studies are <br />
+   not necessarily applicable to man,</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><B><U><FONT SIZE="+1" COLOR="#004080">Summary :</FONT></U></B> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Certain cobalt compounds skin absorb but <br />
+   the absorption is low.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">If skin contact occurs, protection <br />
+   should be used to avoid skin sensitization.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Good housekeeping of your studio is <br />
+   important. Avoidance of processes generating unnecessary dust is <br />
+   also important.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">Depending on the severity of exposure, <br />
+   local ventilation should be used and the aspired air should be <br />
+   vented outside to avoid producing dust from work tables and the <br />
+   floor.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">The wearing of an approved dust mask <br />
+   when the exposure seems hazardous is mandatory.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">It should be forbidden to drink, eat or <br />
+   smoke in the workshop.</FONT> <br />
+    <br />
+   <DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+    <br />
+   <DT><I><FONT COLOR="#004080">References :</FONT></I> <br />
+    <br />
+   <DT><I><FONT COLOR="#004080">1-Chemical Hazards of the Workplace, <br />
+   Proctor &amp; Hughes, last edition.</FONT></I> <br />
+    <br />
+   <DT><I><FONT COLOR="#004080">2-Occupational &amp; Environmental <br />
+   Medicine, Ladou J., last edition</FONT></I> <br />
+    <br />
+   <DT><I><FONT COLOR="#004080">3-Sax's Dangerous Properties of <br />
+   Industrial Materials, Lewis C., last edition.</FONT></I> <br />
+    <br />
+   <DT><I><FONT COLOR="#004080">4-Occupational Medicine, Zenz Carl, <br />
+   last edition.</FONT></I> <br />
+    <br />
+   <DT><I><FONT COLOR="#004080">5-Toxicologie Industrielle et <br />
+   Intoxications Professionnelles, Lauwerys R.R.</FONT></I> <br />
+    <br />
+   <DT><I><FONT COLOR="#004080">last edition</FONT></I> <br />
+</DL></p>
+<hr><p>By Edouard Bastarache </p>
+<h2 style="font-style:italic; margin-top:40px;">Related Information</h2>
+
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/eba">Article by Edouard Bastarache</a>
+<br /><i>Edouard Bastarache is a well known doctor that has written many articles on the subject of <a  href="https://digitalfire.com/glossary/toxicity">toxicity</a> of ceramic materials and books on technical aspects of <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>. He writes in both English and French.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/cobalt+oxide">Cobalt Oxide</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/cobalt+carbonate">Cobalt Carbonate</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Hazards</td>
+<td>
+<a href="https://digitalfire.com/hazard/cobalt+oxide+and+carbonate">Cobalt Oxide and Carbonate</a>
+<br /><i></i>
+</td>
+</tr>
+</tbody></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>G3806C</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="High fluid melt glaze for reactive effects and super gloss colors">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+		function scrollToID(idName, idNote) { 
+			var elmnt = document.getElementById(idName);
+			var elmnt1 = document.getElementById(idNote); 
+			elmnt.innerHTML = '<img style=\"height:55px; float:left; margin:0px 5px 0px 0px;\" src=\"https://plainsmanclays.com/images/skulllogo.svg\"> Tell me about your use of Plainsman Clays'; 
+			elmnt1.innerHTML = 'What clay do you use? Why? Did you switch recently? Why?<br />What problems have you had?'; 
+			elmnt.scrollIntoView(); 
+		}
+		function copyXml() {
+			const xmlText = document.getElementById("xmlContent").innerText;
+			const btn = document.getElementById("copyBtn");
+
+			navigator.clipboard.writeText(xmlText).then(() => {
+				btn.innerText = "Copied!";
+				btn.style.backgroundColor = "green";
+				btn.style.color = "white";
+				setTimeout(() => {
+					btn.innerText = "Copy XML";
+					btn.style.backgroundColor = "";
+					btn.style.color = "";
+				}, 2000);
+			}).catch(err => {
+				console.error("Failed to copy: ", err);
+				alert("Failed to copy text.");
+			});
+		}
+		</script>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item active"><a class="nav-link" href="/recipe/list">Recipes <span class="sr-only">(current)</span></a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=recipe" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"></td><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Recipe Codes</a>  <a class="btn btn-primary"href="https://digitalfire.com/recipe/list" role="button" aria-expanded="false">All Recipes</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a title="72" href="https://digitalfire.com/recipe/bory1">BORY1</a> - Bory 1 Crystalline Glaze<br /><a title="64" href="https://digitalfire.com/recipe/celecg">CELECG</a> - Celestite Crystalline Glaze<br /><a title="69" href="https://digitalfire.com/recipe/faao">FAAO</a> - Fa's All-Opaque Crystalline Glaze<br /><a title="66" href="https://digitalfire.com/recipe/fac5">FAC5</a> - Crystal Number Five Glaze<br /><a title="67" href="https://digitalfire.com/recipe/fo">FO</a> - Octal Crystalline Glaze<br /><a title="37" href="https://digitalfire.com/recipe/g1214m">G1214M</a> - 20x5 Cone 6 Base Glossy Glaze<br /><a title="4" href="https://digitalfire.com/recipe/g1214w">G1214W</a> - Cone 6 Transparent Base<br /><a title="3" href="https://digitalfire.com/recipe/g1214z1">G1214Z1</a> - Cone 6 Silky CaO matte base glaze<br /><a title="45" href="https://digitalfire.com/recipe/g1215u">G1215U</a> - Low Expansion Glossy Clear Cone 6<br /><a title="117" href="https://digitalfire.com/recipe/g1216l">G1216L</a> - Transparent for Cone 6 Porcelains<br /><a title="106" href="https://digitalfire.com/recipe/g1216m">G1216M</a> - Cone 6 Ultraclear Glaze for Porcelains<br /><a title="122" href="https://digitalfire.com/recipe/g1916q">G1916Q</a> - Low Fire Highly-Expansion-Adjustable Transparent<br /><a title="40" href="https://digitalfire.com/recipe/g1947u">G1947U</a> - Cone 10 Glossy transparent glaze<br /><a title="120" href="https://digitalfire.com/recipe/g2000">G2000</a> - LA Matte Cone 6 Matte White<br /><a title="61" href="https://digitalfire.com/recipe/g2240">G2240</a> - Cone 10R Classic Spodumene Matte<br /><a title="39" href="https://digitalfire.com/recipe/g2571a">G2571A</a> - Cone 10 Silky Dolomite Matte glaze<br /><a title="62" href="https://digitalfire.com/recipe/g2826r">G2826R</a> - Floating Blue Cone 5-6 Original Glaze Recipe<br /><a title="63" href="https://digitalfire.com/recipe/g2826x">G2826X</a> - Randy's Red Cone 5<br /><a title="55" href="https://digitalfire.com/recipe/g2851h">g2851H</a> - Ravenscrag Cone 6 High Calcium Matte Blue<br /><a title="59" href="https://digitalfire.com/recipe/g2853b">G2853B</a> - Cone 04 Clear Ravenscrag School Glaze<br /><a title="102" href="https://digitalfire.com/recipe/g2896">G2896</a> - Ravenscrag Plum Red Cone 6<br /><a title="104" href="https://digitalfire.com/recipe/g2902b">G2902B</a> - Cone 6 Crystal Glaze<br /><a title="105" href="https://digitalfire.com/recipe/g2902d">G2902D</a> - Cone 6 Crystalline Development Project<br /><a title="115" href="https://digitalfire.com/recipe/g2916f">G2916F</a> - Cone 6 Stoneware/Whiteware transparent glaze<br /><a title="118" href="https://digitalfire.com/recipe/g2926b">G2926B</a> - Cone 6 Whiteware/Porcelain transparent glaze<br /><a title="126" href="https://digitalfire.com/recipe/g2926j">G2926J</a> - Low Expansion G2926B<br /><a title="119" href="https://digitalfire.com/recipe/g2928c">G2928C</a> - Ravenscrag Silky Matte for Cone 6<br /><a title="131" href="https://digitalfire.com/recipe/g2931h">G2931H</a> - Ulexite High Expansion Zero3 Clear Glaze<br /><a title="132" href="https://digitalfire.com/recipe/g2931k">G2931K</a> - Low Fire Fritted Zero3 Transparent Glaze<br /><a title="127" href="https://digitalfire.com/recipe/g2931l">G2931L</a> - Low Expansion Low-Fire Clear<br /><a title="121" href="https://digitalfire.com/recipe/g2934">G2934</a> - Matte Glaze Base for Cone 6<br /><a title="135" href="https://digitalfire.com/recipe/g2934y">G2934Y</a> - Cone 6 Magnesia Matte Low LOI Version<br /><a title="125" href="https://digitalfire.com/recipe/125"><button type="button" class="btn btn-dark">G3806C</button></a> - Cone 6 Clear Fluid-Melt transparent glaze<br /><a title="130" href="https://digitalfire.com/recipe/g3838a">G3838A</a> - Low Expansion Transparent for P300 Porcelain<br /><a title="141" href="https://digitalfire.com/recipe/g3879">G3879</a> - Cone 04 Transparent Low-Expansion transparent glaze<br /><a title="93" href="https://digitalfire.com/recipe/ga10-a">GA10-A</a> - Alberta Slip Base Cone 10R<br /><a title="32" href="https://digitalfire.com/recipe/ga10-b">GA10-B</a> - Alberta Slip Tenmoku Cone 10R<br /><a title="33" href="https://digitalfire.com/recipe/ga10-d">GA10-D</a> - Alberta Slip Black Cone 10R<br /><a title="94" href="https://digitalfire.com/recipe/ga10x-a">GA10x-A</a> - Alberta Slip Base for cone 10 oxidation<br /><a title="30" href="https://digitalfire.com/recipe/ga6-a">GA6-A</a> - Alberta Slip Cone 6 transparent honey glaze<br /><a title="139" href="https://digitalfire.com/recipe/ga6-b">GA6-B</a> - Alberta Slip Cone 6 transparent honey glaze<br /><a title="31" href="https://digitalfire.com/recipe/ga6-c">GA6-C</a> - Alberta Slip Floating Blue Cone 6<br /><a title="88" href="https://digitalfire.com/recipe/ga6-d">GA6-D</a> - Alberta Slip Glossy Brown Cone 6<br /><a title="97" href="https://digitalfire.com/recipe/ga6-f">GA6-F</a> - Alberta Slip Cone 6 Oatmeal<br /><a title="35" href="https://digitalfire.com/recipe/ga6-g">GA6-G</a> - Alberta Slip Lithium Brown Cone 6<br /><a title="107" href="https://digitalfire.com/recipe/ga6-g1">GA6-G1</a> - Alberta Slip Lithium Brown Cone 6 Low Expansion<br /><a title="36" href="https://digitalfire.com/recipe/ga6-h">GA6-H</a> - Alberta Slip Cone 6 Black<br /><a title="83" href="https://digitalfire.com/recipe/gbcg">GBCG</a> - Generic Base Crystalline Glaze<br /><a title="75" href="https://digitalfire.com/recipe/gc106">GC106</a> - GC106 Base Crystalline Glaze<br /><a title="58" href="https://digitalfire.com/recipe/gr10-a">GR10-A</a> - Pure Ravenscrag Slip<br /><a title="80" href="https://digitalfire.com/recipe/gr10-b">GR10-B</a> - Ravenscrag Cone 10R Gloss Base<br /><a title="95" href="https://digitalfire.com/recipe/gr10-c">GR10-C</a> - Ravenscrag Cone 10R Silky Talc Matte<br /><a title="92" href="https://digitalfire.com/recipe/gr10-e">GR10-E</a> - Alberta Slip:Ravenscrag Cone 10R Celadon<br /><a title="96" href="https://digitalfire.com/recipe/gr10-g">GR10-G</a> - Ravenscrag Cone 10 Oxidation Variegated White<br /><a title="91" href="https://digitalfire.com/recipe/gr10-j">GR10-J</a> - Ravenscrag Cone 10R Dolomite Matte<br /><a title="108" href="https://digitalfire.com/recipe/gr10-j1">GR10-J1</a> - Ravenscrag Cone 10R Bamboo Matte<br /><a title="101" href="https://digitalfire.com/recipe/gr10-k1">GR10-K1</a> - Ravenscrag Cone 10R Tenmoku<br /><a title="110" href="https://digitalfire.com/recipe/gr10-l">GR10-L</a> - Ravenscrag Iron Crystal<br /><a title="5" href="https://digitalfire.com/recipe/gr6-a">GR6-A</a> - Ravenscrag Cone 6 Clear Glossy Base<br /><a title="1" href="https://digitalfire.com/recipe/gr6-b">GR6-B</a> - Ravenscrag Cone 6 Variegated Light Glossy Blue<br /><a title="76" href="https://digitalfire.com/recipe/gr6-c">GR6-C</a> - Ravenscrag Cone 6 White Glossy<br /><a title="77" href="https://digitalfire.com/recipe/gr6-d">GR6-D</a> - Ravenscrag Cone 6 Glossy Black<br /><a title="78" href="https://digitalfire.com/recipe/gr6-e">GR6-E</a> - Ravenscrag Cone 6 Raspberry Glossy<br /><a title="8" href="https://digitalfire.com/recipe/gr6-h">GR6-H</a> - Ravenscrag Cone 6 Oatmeal Matte<br /><a title="113" href="https://digitalfire.com/recipe/gr6-l">GR6-L</a> - Ravenscrag Cone 6 Transparent Burgundy<br /><a title="114" href="https://digitalfire.com/recipe/gr6-m">GR6-M</a> - Ravenscrag Cone 6 Floating Blue<br /><a title="124" href="https://digitalfire.com/recipe/gr6-n">GR6-N</a> - Ravenscrag Alberta Brilliant Cone 6 Celadon<br /><a title="65" href="https://digitalfire.com/recipe/grntcg">GRNTCG</a> - GRANITE Crystalline Glaze<br /><a title="138" href="https://digitalfire.com/recipe/l2000">L2000</a> - 25 Porcelain<br /><a title="57" href="https://digitalfire.com/recipe/l3341b">L3341B</a> - Alberta Slip Iron Crystal Cone 10R<br /><a title="109" href="https://digitalfire.com/recipe/l3685u">L3685U</a> - Cone 03 White Engobe Recipe<br /><a title="123" href="https://digitalfire.com/recipe/l3724f">L3724F</a> - Cone 03 Terra Cotta Stoneware<br /><a title="133" href="https://digitalfire.com/recipe/l3924c">L3924C</a> - Zero3 Porcelain Experimental<br /><a title="134" href="https://digitalfire.com/recipe/l3954b">L3954B</a> - Cone 6 Engobe (for M340)<br /><a title="136" href="https://digitalfire.com/recipe/l3954n">L3954N</a> - Cone 10R Base White Engobe Recipe for stonewares<br /><a title="41" href="https://digitalfire.com/recipe/mgbase1">MGBase1</a> - High Calcium Semimatte 1 (Mastering Glazes)<br /><a title="42" href="https://digitalfire.com/recipe/mgbase2">MGBase2</a> - High Calcium Semimatte 2 (Mastering Glazes)<br /><a title="43" href="https://digitalfire.com/recipe/mgbase3">MGBase3</a> - General Purpose Glossy Base 1 (Mastering Glazes)<br /><a title="44" href="https://digitalfire.com/recipe/mgbase4">MGBase4</a> - Glossy Base 2 Cone 6 (Mastering Glazes)<br /><a title="46" href="https://digitalfire.com/recipe/mgbase5">MGBase5</a> - Glossy Clear Liner Cone 6 (Mastering Glazes)<br /><a title="47" href="https://digitalfire.com/recipe/mgbase6">MGBase6</a> - Zinc Semimatte Glossy Base Cone 6<br /><a title="48" href="https://digitalfire.com/recipe/mgbase7">MGBase7</a> - Raspberry Cone 6 (Mastering Glazes)<br /><a title="49" href="https://digitalfire.com/recipe/mgbase8">MGBase8</a> - Waxwing Brown Cone 6 (Mastering Glazes)<br /><a title="50" href="https://digitalfire.com/recipe/mgbase9">MGBase9</a> - Waterfall Brown Cone 6 (Mastering Glazes)<br /><a title="74" href="https://digitalfire.com/recipe/tnf2cg">TNF2CG</a> - Tin Foil II Crystalline Glaze<br /><a title="68" href="https://digitalfire.com/recipe/vesucg">VESUCG</a> - Vesuvius Crystalline Glaze</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><div style="padding:5px 10px 0px 10px; margin-bottom:10px; background-color:#eeeeee; border:thin solid grey; width:50%">
+<h4 style="margin-bottom:0px">Insight-Live Shares (also referencing this recipe)</h4>
+<p style="margin-bottom:0px; font-size:90%;">These add technical detail, development info, variations and improvements.</p>
+<ul>
+<li><a href="https://insight-live.com/insight/share.php?z=uxrGP5yY8P">G3806 Cone 6 Fluid Melt Clear Glaze Project 2015 - Stage 2 (Adjust Panama Blue)</a></li>
+<li><a href="https://insight-live.com/insight/share.php?z=gbcM8HXmX2">G3806 Cone 6 Fluid Melt Base Glaze Project 2019 - Stage 3 (Even Lower COE)</a></li>
+<li><a href="https://insight-live.com/insight/share.php?z=DEdcwWAZ6K">Compare a Stable Functional Cone 6 Clear Glaze With a Fluid-melt Clear</a></li>
+<li><a href="https://insight-live.com/insight/share.php?z=KoGbaNQqyp">Highest Possible Melt Fluidity Cone 6 Clear Glaze</a></li>
+</ul></div>
+<h1>G3806C - Panama Cone 6 Adjustment 2015</h1>
+<p><b>Modified</b>: 2024-07-24 17:59:11</p>
+<p>High fluid melt glaze for reactive effects and super gloss colors</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col">Material</th>
+<th class="text-center" scope="col">Amount</th>
+</tr></thead><tbody>
+<tr><td class="label"><a href="https://digitalfire.com/material/silica">Silica</a></td><td class="text-right">26.30</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/material/kaolin">Kaolin</a></td><td class="text-right">19.70</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/material/dolomite">Dolomite</a></td><td class="text-right">8.70</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/material/strontium+carbonate">Strontium Carbonate</a></td><td class="text-right">4.40</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/material/ferro+frit+3110">Ferro Frit 3110</a></td><td class="text-right">31.10</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/material/ferro+frit+3134">Ferro Frit 3134</a></td><td class="text-right">6.60</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/material/zinc+oxide">Zinc Oxide</a></td><td class="text-right">3.30</td></tr>
+<tr><td colspan="2" style="border-right:1px solid #fff; border-left:1px solid #fff">Added</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/material/copper+oxide">Copper Oxide</a></td><td class="text-right">2.00</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/material/tin+oxide">Tin Oxide</a></td><td class="text-right">2.50</td></tr>
+<tr><td class="text-right" colspan="2">104.60</td>
+</tr>
+</tbody></table>
+<h4>Notes</h4><p>This is work I did in 2015 (in 2019 a much bigger project developed this further).<br />
+<br />
+The copper and tin produce the turquoise celadon effect.<br />
+<br />
+This recipe is for a brilliant <a  href="https://digitalfire.com/glossary/fluid+melt+glazes">fluid-melt</a> transparent <a  href="https://digitalfire.com/glossary/base+glaze">base glaze</a>, initially for copper blues and greens, but later for <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a>. "Fluid-melt" means it runs down off ware if applied too thickly, this is a key for achieving many visual effects.<br />
+<br />
+Initiailly I compared a number of recipes I found on line and finally selected Panama Blue. I removed the <a  href="https://digitalfire.com/glossary/colorant">colorants</a> and made adjustments to improve <a  href="https://digitalfire.com/glossary/slurry">slurry</a> properties and lower the <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> (it has serious <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a> issues). Fluid-melts have a down side: Crazing is an issue (because the <a  href="https://digitalfire.com/glossary/fluid+melt+glazes">fluid melt</a> requires more fluxes, these have higher <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansions</a>).<br />
+<br />
+Then I did three adjustments, each lowering the thermal expansion more than the last. While keeping the same brilliant visual appearance. The recipe ended up being quite different (two materials were eliminated from the recipe, their <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> supplied by the others). The <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> of this one moves much of the <a  href="https://digitalfire.com/picture/1775">KNaO</a> to <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">low-expansion</a> <a  href="https://digitalfire.com/oxide/mgo">MgO</a>. This makes it melt a little less, but visually it is the same. Higher <a  href="https://digitalfire.com/oxide/zno">ZnO</a> helps melting (since MgO is not nearly as powerful a <a  href="https://digitalfire.com/glossary/flux">flux</a> as KNaO). I was even able to add extra <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a>. The <a  href="https://digitalfire.com/glossary/calculated+thermal+expansion">calculated thermal expansion</a> has gone from 7.7 down to 7.3.<br />
+<br />
+This worked well on stonewares but still <a  href="https://digitalfire.com/trouble/glaze+crazing">crazed</a> on <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12879">P300</a> and <a  href="https://plainsmanclays.ca/data/index.php?product=12880">M370</a> (but was OK on <a  href="https://plainsmanclays.ca/data/index.php?product=12881">Polar Ice</a>). <a  href="https://digitalfire.com/glossary/fluid+melt+glazes">Fluid melt glazes</a> look best on porcelains so this was obviously a problem. So I continued development in pursuit of a fluid melt having a lower thermal expansion (see subsequent articles, recipes and posts).</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Cone 6 copper glaze works because of the fluid-melting base recipe</h3>
+<br /><a href="https://digitalfire.com/picture/1740"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/recipes/bovnovuwov.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1740">click here</a> to see it.</p>
+<p>This is not just a typical transparent <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> glaze with 2% <a  href="https://digitalfire.com/material/236">copper carbonate</a> added (and 2.5% <a  href="https://digitalfire.com/material/1642">tin oxide</a>). Knowing what is different about this clear base, its trade-offs and how it was developed are important. The porcelains are <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12879">P300</a> and <a  href="https://plainsmanclays.ca/data/index.php?product=12880">M370</a>. The <a  href="https://digitalfire.com/glossary/liner+glaze">liner glaze</a> is <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a>, it is a gloss but has a much lower <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> than the outer glaze, <a  href="https://digitalfire.com/recipe/g3806c">G3806C</a> (as a <a  href="https://digitalfire.com/glossary/functional">functional</a> transparent its main job is to fit the body and be hard and durable). But in order for that outer glaze to accommodate the copper and still be super glossy it must have a much higher melt fluidity. It was tricky to develop since that fluidity comes with high sodium and lower <a  href="https://digitalfire.com/material/1245">silica</a>, that raises the <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> and moves it toward <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">More copper can produce fewer bubbles!</h3>
+<br /><a href="https://digitalfire.com/picture/1663"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/tidhotedih.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1663">click here</a> to see it.</p>
+<p>The first glaze, <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a>, is a standard <a  href="https://digitalfire.com/glossary/functional">functional</a> transparent glaze with added copper. The other three are part of a project to find a copper blue (L3806B has the best color and the best compromise of flow and bubble-clearing ability).<br />
+<br />
+The GLFL testers for <a  href="https://digitalfire.com/glossary/melt+fluidity">melt flow</a> at the back, and the <a  href="https://digitalfire.com/test/gbmf">GBMF test</a> melt-down-balls contain 1% <a  href="https://digitalfire.com/material/236">copper carbonate</a>. The glazed samples in front have 2% copper carbonate. But why do the recipes containing half the amount of copper have far more bubbles? Because they are thinner? Not really, in use on ware, they also have fewer bubbles. Why? A small <a  href="https://digitalfire.com/oxide/cuo">CuO</a> addition can change where and how bubbles nucleate and how viscous <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> is. At some point between 1% and 2%, a threshold is crossed that affects nucleation and coalescence. For example, a little copper could encourage lots of tiny bubbles to form and stay trapped, while more changes the melt <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> enough that they coalesce and escape (or simply aren’t nucleated the same way). <a  href="https://digitalfire.com/glossary/phase+separation">Phase separation</a> could produce Cu-rich droplets that enable copper to be its own <a  href="https://digitalfire.com/glossary/fining+agent">fining agent</a>.<br />
+<br />
+</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Our G2926B glaze may not work on dark burning clays</h3>
+<br /><a href="https://digitalfire.com/picture/1694"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/tygpozygap.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1694">click here</a> to see it.</p>
+<p>These two glazes, applied to the outsides of these mugs, both fire as brilliant glass-like super-transparents. But on this high-iron <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a>, from which both pieces are made, only one is working well. <a  href="https://digitalfire.com/recipe/g3806c">G3806C</a> (on the outside of the piece on the left) melts more, it is fluid and much more runny. This <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> gives it the capacity to pass the micro-bubbles generated as the body gases during firing. <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a> (right) works great on <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> and buff stoneware but it cannot clear the clouds of bubbles coming out of this body (the bubbles are actually partially opacifying it). Even the normal glassy smooth surface has been affected. The moral: Potters need more than one <a  href="https://digitalfire.com/glossary/base+glaze">base transparent</a> recipe. Being able to host colors, <a  href="https://digitalfire.com/glossary/opacifier">opacifiers</a> and <a  href="https://digitalfire.com/glossary/variegation">variegators</a> is nice, but sometimes just a transparent that works well is needed. An interesting trade-off of reactive melt-fluid glazes is that, while they develop more interesting surfaces, their lower <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> and <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> contents make them susceptible to <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a>, <a  href="https://digitalfire.com/glossary/suspension">settling</a> of the <a  href="https://digitalfire.com/glossary/slurry">slurry</a> and <a  href="https://digitalfire.com/glossary/cutlery+marking">cutlery marking</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">An ultra-clear brilliantly-glossy cone 6 clear base glaze? Yes!</h3>
+<br /><a href="https://digitalfire.com/picture/1628"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/zabjasuwam.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1628">click here</a> to see it.</p>
+<p>I am comparing 6 well known <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> <a  href="https://digitalfire.com/glossary/fluid+melt+glazes">fluid melt</a> <a  href="https://digitalfire.com/glossary/base+glaze">base glazes</a> and have found some surprising things. The top row are 10 gram <a  href="https://digitalfire.com/test/gbmf">GBMF test</a> balls of each melted down onto a tile to demonstrate <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> and bubble populations. Second, third, fourth rows show them on <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a>, buff, brown stonewares. The first column is a typical cone 6 boron-fluxed clear. The others add strontium, lithium and zinc or super-size the <a  href="https://digitalfire.com/glossary/borate">boron</a>. They have more glassy smooth surfaces, less bubbles and would should give brilliant colors and reactive visual effects. The cost? They settle, crack, dust, gel, run during firing, <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a> or risk <a  href="https://digitalfire.com/glossary/leaching">leaching</a>. Out of this work came the <a  href="https://insight-live.com/insight/share.php?z=gbcM8HXmX2">G3806E</a> and <a  href="https://insight-live.com/insight/share.php?z=gbcM8HXmX2">G3806F</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Almost final recipe for cone 6 copper blue - G3806B</h3>
+<br /><a href="https://digitalfire.com/picture/1668"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/bddfn1hq18.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1668">click here</a> to see it.</p>
+<p>This is the winner of a five-way <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> copper blue glaze comparison that started with my dissatisfaction with Panama blue. When I compared these glazes I did not just eyeball them on a tile. I compared the <a  href="https://digitalfire.com/glossary/melt+fluidity">melt flow</a>, <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> and <a  href="https://digitalfire.com/glossary/slurry">slurry</a> performance of the bases (without the copper and tin). Ball-melt GBMF tests also showed bubble and color development for very thick sections. Then I tried more copper and did more flow tests. I also did <a  href="https://digitalfire.com/glossary/leaching">leaching</a> tests. Where needed I adjusted recipes to increase clay content (while maintaining <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a>) so the slurries would work better. Without my account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">insight-live</a>.com to keep all of this organized it would have been so much more difficult, actually, I probably would not even have bothered with the project. The final recipe, <a  href="https://digitalfire.com/recipe/g3806c">G3806C</a>, was an adjustment to reduce the thermal expansion of this one.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A problem with brilliantly colored fluid-melt glazes: Micro-crystals</h3>
+<br /><a href="https://digitalfire.com/picture/1754"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/pygdurykok.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1754">click here</a> to see it.</p>
+<p><a  href="https://digitalfire.com/glossary/crystallization">Crystallization</a> (also called devritrification). You can see the tiny crystals on the surface of this copper stained <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> glaze (<a  href="https://digitalfire.com/recipe/g3806c">G3806C</a>). The preferred orientation of metallic <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> is <a  href="https://digitalfire.com/glossary/glass+vs.+crystalline">crystalline</a>. When kilns cool quickly there is simply not enough time for oxides in an average glaze to organize themselves in the preferred way and therefore crystals do not grow. But if the glaze has a <a  href="https://digitalfire.com/glossary/fluid+melt+glazes">fluid melt</a> and it cools slowly through the temperature at which the crystals like to form, they will. There is another issue here also: There are tiny dimples in the surface. This is because <a  href="https://digitalfire.com/material/236">copper carbonate</a> was used here instead of <a  href="https://digitalfire.com/material/237">copper oxide</a>. During firing, it generates carbon dioxide (because it is a carbonate) that bubbles out of <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a>, leaving behind dimples that may or may not heal during cooling.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Underglazes require a fluid melt transparent</h3>
+<h4 style="color:#888888; margin-top:0px;">But extra melt fluidity comes at a cost</h4>
+<br /><a alt="A fluid melt glaze over underglaze" href="https://digitalfire.com/picture/1902"><img class="flexleft50" alt="A fluid melt glaze over underglaze"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/qkdbjxpj78.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1902">click here</a> to see it.</p>
+<p>These <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> mugs were decorated with the same <a  href="https://digitalfire.com/url/3409">Amaco Velvet</a> <a  href="https://digitalfire.com/glossary/underglaze">underglazes</a> (applied at <a  href="https://digitalfire.com/glossary/leather+hard">leather hard</a>), then <a  href="https://digitalfire.com/glossary/bisque">bisque fired</a>, dipped in clear glaze and fired to <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> (using a <a  href="https://digitalfire.com/glossary/drop-and-soak+firing">drop-and-hold</a> schedule). While the <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a> clear glaze (left) is normally a great glossy transparent for general use, its <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> is not enough to clear the micro-bubble clouds that dull the colors below (while these bubbles are a product of the <a  href="https://digitalfire.com/glossary/loi">LOI</a> of body and glaze, <a  href="https://digitalfire.com/glossary/underglaze">underglaze</a> colors can really generate them too). However, the <a  href="https://digitalfire.com/recipe/g3806c">G3806C</a> recipe (right) has a more <a  href="https://digitalfire.com/glossary/fluid+melt+glazes">fluid melt</a> that better enables bubble escape. But such glazes have downsides. <a  href="https://digitalfire.com/glossary/melt+fluidity">The melt</a> fluidity requires care not to get it too thick (or it will run). Its high <a  href="https://digitalfire.com/glossary/flux">flux</a> content means it is not as durable. And, its high <a  href="https://digitalfire.com/picture/1775">KNaO</a> content raises the <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> (<a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">COE</a>) considerably (and thus the danger of <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a>). This porcelain has a high enough COE to fit this, but this glaze crazes on others (that's why I always use the <a  href="https://insight-live.com/insight/share.php?z=DEdcwWAZ6K">G2926B</a> on the insides of ware). To get even better transparency a thinner layer could be applied (by mixing it as a <a  href="https://digitalfire.com/glossary/brushing+glaze">brushing glaze</a>).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">In pursuit of a reactive cone 6 base that I can live with</h3>
+<br /><a href="https://digitalfire.com/picture/1655"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/rovvotatyp.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1655">click here</a> to see it.</p>
+<p>These GLFL tests and GBMF tests for <a  href="https://digitalfire.com/glossary/melt+fluidity">melt-flow</a> compare 6 unconventionally <a  href="https://digitalfire.com/glossary/flux">fluxed</a> glazes with a traditional <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> moderately <a  href="https://digitalfire.com/glossary/borate">boron</a> fluxed (+soda/calcia/magnesia) base (far left <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a>). The objective is to achieve higher <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> for a more brilliant surface and for more reactive response with <a  href="https://digitalfire.com/glossary/colorant">colorant</a> and variegator additions (with awareness of downsides of this). Classified by most active fluxes they are:<br />
+<a  href="https://insight-live.com/insight/share.php?z=nB3JEnMhBi">G3814</a> - Moderate zinc, no boron<br />
+<a  href="https://insight-live.com/insight/share.php?z=nB3JEnMhBi">G2938</a> - High-soda+lithia+strontium<br />
+<a  href="https://insight-live.com/insight/share.php?z=1e5PZvzZ2H">G3808</a> - High boron+soda (<a  href="https://digitalfire.com/material/806">Gerstley Borate</a> based)<br />
+<a  href="https://insight-live.com/insight/share.php?z=1e5PZvzZ2H">G3808A</a> - 3808 <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> sourced from <a  href="https://digitalfire.com/glossary/frit">frits</a><br />
+<a  href="https://insight-live.com/insight/share.php?z=kM4EdoTzp1">G3813</a> - Boron+zinc+lithia<br />
+<a  href="https://insight-live.com/insight/share.php?z=uxrGP5yY8P">G3806B</a> - Soda+zinc+strontium+boron (mixed oxide effect)<br />
+This series of tests was done to choose a recipe, that while more fluid, will have a minimum of the problems associated with such (e.g. <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a>, <a  href="https://digitalfire.com/trouble/glaze+blisters">blistering</a>, low run volatility, susceptibility to <a  href="https://digitalfire.com/glossary/leaching">leaching</a>). As a final step the recipe will be adjusted as needed. We eventually evolved the <a  href="https://insight-live.com/insight/share.php?z=uxrGP5yY8P">G3806B</a>, after many iterations <a  href="https://digitalfire.com/glossary/suspension">settled</a> on <a  href="https://insight-live.com/insight/share.php?z=gbcM8HXmX2">G3806E</a> or <a  href="https://insight-live.com/insight/share.php?z=gbcM8HXmX2">G3806F</a> as best for now.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">2% Copper carbonate in two different cone 6 copper-blues</h3>
+<br /><a href="https://digitalfire.com/picture/1665"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/dudnosahik.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1665">click here</a> to see it.</p>
+<p>The top <a  href="https://digitalfire.com/glossary/base+glaze">base glaze</a> has just enough <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> to produce a brilliant transparent (without <a  href="https://digitalfire.com/glossary/colorant">colorant</a> additions). However it does not have enough fluidity to pass the bubbles and heal over from the <a  href="https://digitalfire.com/glossary/decomposition">decomposition</a> of this added <a  href="https://digitalfire.com/material/236">copper carbonate</a>! Why is lower glaze passing the bubbles? How can it melt better yet have 65% less <a  href="https://digitalfire.com/glossary/borate">boron</a>? How can it not be <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a> when the <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">COE</a> calculates to 7.7 (vs. 6.4)? First, it has 40% less <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> and <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> (which normally stiffen <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a>). Second, it has higher <a  href="https://digitalfire.com/glossary/flux">flux</a> content that is more diversified (it adds two new ones: <a  href="https://digitalfire.com/oxide/sro">SrO</a>, <a  href="https://digitalfire.com/oxide/zno">ZnO</a>). That zinc is a key to why it is melting so well and why it starts melting later (enabling unimpeded gas escape until then). It also benefits from the mixed-oxide-effect, the diversity itself improves the melt. And the crazing? The ZnO obviously pushes the COE down disproportionately to its percentage.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Two base clear glazes with 2% copper:</h3>
+<h4 style="color:#888888; margin-top:0px;">One is bubbling and one is not.</h4>
+<br /><a alt="Copper is bubbling a pottery glaze" href="https://digitalfire.com/picture/1667"><img class="flexleft50" alt="Copper is bubbling a pottery glaze"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/pugtevidik.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1667">click here</a> to see it.</p>
+<p>By itself, without copper, the <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a> recipe (right) produces a better and more durable glass (comparing the cups in the back). But a 2% copper addition, front, turns its surface to a mass of unhealed bubble-escapes. The <a  href="https://insight-live.com/insight/share.php?z=1e5PZvzZ2H">G3808A</a> recipe, on the left, develops much more <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a>, the extra mobility enables the bubbles, created by the decomposing copper, to coalesce, grow, break at the surface and heal before <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> stiffens too much.<br />
+</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Copper oxide needs a fluid-melt transparent to produce a glossy glaze</h3>
+<br /><a href="https://digitalfire.com/picture/1669"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/zencamotan.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1669">click here</a> to see it.</p>
+<p>Fired at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>. A <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> comparison (behind) shows the <a  href="https://insight-live.com/insight/share.php?z=1e5PZvzZ2H">G3808A</a> clear base is much more fluid. While <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a> is a very good crystal clear transparent by itself (and with some <a  href="https://digitalfire.com/glossary/colorant">colorants</a>), with 2% added <a  href="https://digitalfire.com/material/237">copper oxide</a> it is unable to heal all the surface defects (caused by the escaping gases as the copper decomposes). The <a  href="https://insight-live.com/insight/share.php?z=1e5PZvzZ2H">G3808A</a>, by itself, is too fluid (to the point it will run down off the ware onto the shelf during firing). But that fluidity is needed to develop the copper blue effect (actually, this one is a little more fluid that it needs to be). Because copper blue and green glazes need fluid bases, strategies are needed to avoid them running off the ware. That normally involves thinner application, use on more horizontal surfaces or away from the lower parts of verticals.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A fluid melt glaze bleeds much more into adjoining ones</h3>
+<br /><a href="https://digitalfire.com/picture/1928"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/mqz1pbdkdz.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1928">click here</a> to see it.</p>
+<p>The outer green glaze on these <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> mugs has a high <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a>.  The liner on the upper mug is <a  href="https://digitalfire.com/recipe/g3806c">G3806C</a>, a <a  href="https://digitalfire.com/glossary/fluid+melt+glazes">fluid melt</a> high gloss clear. The <a  href="https://digitalfire.com/glossary/liner+glaze">liner glaze</a> on the lower one, <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a>, is high gloss but not highly melt fluid. Thus, when both the outer and inner glazes have high melt fluidity (upper mug), they bleed together forming a fuzzy boundary. But when even one of them is not, a crisp boundary is achieved (lower mug).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">G3806D cone 6 glaze with copper carbonate, copper oxide</h3>
+<br /><a alt="Copper in a clear cone 6 glaze" href="https://digitalfire.com/picture/2383"><img class="flexleft50" alt="Copper in a clear cone 6 glaze"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/cqnkdmbpvm.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2383">click here</a> to see it.</p>
+<p>This <a  href="https://insight-live.com/insight/share.php?z=DEdcwWAZ6K">G3806D</a> <a  href="https://digitalfire.com/glossary/fluid+melt+glazes">fluid melt</a> glaze recipe demonstates the different color characteristics imparted by <a  href="https://digitalfire.com/material/236">copper carbonate</a> (left) and <a  href="https://digitalfire.com/material/237">copper oxide</a> (at 2%). The carbonate version is bluer and less intense. Copper carbonate is about 65% <a  href="https://digitalfire.com/oxide/cuo">CuO</a> while the oxide version is 100%. Our supply of the oxide version is not producing any specking (if yours does you may need to <a  href="https://digitalfire.com/glossary/sieve">sieve</a> or <a  href="https://digitalfire.com/glossary/blender+mixing">blender mix</a> the <a  href="https://digitalfire.com/glossary/slurry">slurry</a>).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Why do these cone 04 and 6 clear glazes have so similar a chemistry?</h3>
+<br /><a title="Insight-live screenshot showing cone 04 and 6 glazes having very similar chemistry" href="https://digitalfire.com/picture/2423"><img class="flexleft50" title="Insight-live screenshot showing cone 04 and 6 glazes having very similar chemistry"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/mcvnsss99o.png" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2423">click here</a> to see it.</p>
+<p>The glaze on the left (as shown in my account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">insight-live</a>.com) is a crystal clear at <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 04</a>. The high <a  href="https://digitalfire.com/glossary/frit">frit</a> content minimizes micro-bubbles. The high <a  href="https://digitalfire.com/oxide/b2o3">B<sub>2</sub>O<sub>3</sub></a> melts it very well (this has 0.66 B<sub>2</sub>O<sub>3</sub>, that is three times as high as a typical <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> glaze). The recipe on the right is the product of a project to develop a low-thermal-expansion <a  href="https://digitalfire.com/glossary/fluid+melt+glazes">fluid-melt</a> transparent for cone 6 (with added <a  href="https://digitalfire.com/glossary/colorant">colorants</a> fluid melts produce brilliant and even metallic results and they <a  href="https://digitalfire.com/glossary/variegation">variegate</a> well). While the balance of fluxes (the red numbers in the formula) is pretty different, look how similar the B<sub>2</sub>O<sub>3</sub>, <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> and <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> levels are (yellow, red and blue backgrounded numbers in the formula), these mainly determine the melting range. That means that a fluid-melt cone 6 glaze may actually be just a <a  href="https://digitalfire.com/glossary/low+temperature+glaze">low temperature glaze</a> being overfired to cone 6.<br />
+</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Recipes</td>
+<td>
+<a href="https://digitalfire.com/recipe/g2926b">G2926B - Cone 6 Whiteware/Porcelain transparent glaze</a>
+<br /><i>A <a  href="https://digitalfire.com/glossary/base+glaze">base transparent</a> glaze recipe created by <a  href="https://digitalfire.com/glossary/tony+hansen">Tony Hansen</a>, it fires high gloss and ultra clear with low melt mobility.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Recipes</td>
+<td>
+<a href="https://digitalfire.com/recipe/gr6-a">GR6-A - Ravenscrag Cone 6 Clear Glossy Base</a>
+<br /><i>This <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://digitalfire.com/glossary/cone+6">Cone 6</a> <a  href="https://digitalfire.com/material/1178">Ravenscrag</a> Slip base is just the pure material with 20% added <a  href="https://digitalfire.com/glossary/frit">frit</a> to make it melt to a glossy natural clear.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/glossy+glaze">Glossy Glaze</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/thixotropy">Thixotropy</a>
+<br /><i><a  href="https://digitalfire.com/glossary/thixotropy">Thixotropy</a> is a property of ceramic slurries of high <a  href="https://digitalfire.com/glossary/water+content">water content</a>. <a  href="https://digitalfire.com/glossary/thixotropy">Thixotropic</a> suspensions flow when moving but gel after sitting (for a few moments more depending on application). This phenomenon is helpful in getting even, drip-free glaze coverage.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/limit+formula">Limit Formula</a>
+<br /><i>A way of establishing guideline for each oxide in the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> for different ceramic glaze types. Understanding the roles of each oxide and the limits of this approach are a key to effectively using these guidelines.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/surface+tension">Surface Tension</a>
+<br /><i>In <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>, <a  href="https://digitalfire.com/glossary/surface+tension">surface tension</a> is discussed in two contexts: The glaze melt and the glaze <a  href="https://digitalfire.com/glossary/suspension">suspension</a>. In both, the quality of the glaze surface is impacted.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/base+glaze">Base Glaze</a>
+<br /><i>Understand your a glaze and learn how to adjust and improve it. Build others from that. We have bases for low, medium and high fire.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1521">https://insight-live.com/insight/share.php?z=DEdcwWAZ6K</a>
+<br /><i>G3806C/G2926B <a  href="https://digitalfire.com/glossary/cone+6">Cone 6</a> Transparent Glazes</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1640">https://insight-live.com/insight/share.php?z=gbcM8HXmX2</a>
+<br /><i>2019 Development of <a  href="https://insight-live.com/insight/share.php?z=uxrGP5yY8P">G3806</a> melt-fluid <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">low-expansion</a> clear base glaze</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+</tbody></table>
+
+<h3 style="clear:left;">XML to Paste Into Insight-live</h3><button onclick="copyXml()" id="copyBtn">Copy XML</button><pre id="xmlContent">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;recipes version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;&gt;
+&lt;recipe name=&quot;Panama Cone 6 Adjustment 2015&quot; keywords=&quot;High fluid melt glaze for reactive effects and super gloss colors&quot; id=&quot;125&quot; date=&quot;2024-07-24&quot; codenum=&quot;G3806C&quot;&gt;
+&lt;recipelines&gt;
+&lt;recipeline material=&quot;Silica&quot; amount=&quot;26.300&quot;/&gt;
+&lt;recipeline material=&quot;Kaolin&quot; amount=&quot;19.700&quot;/&gt;
+&lt;recipeline material=&quot;Dolomite&quot; amount=&quot;8.700&quot;/&gt;
+&lt;recipeline material=&quot;Strontium Carbonate&quot; amount=&quot;4.400&quot;/&gt;
+&lt;recipeline material=&quot;Ferro Frit 3110&quot; amount=&quot;31.100&quot;/&gt;
+&lt;recipeline material=&quot;Ferro Frit 3134&quot; amount=&quot;6.600&quot;/&gt;
+&lt;recipeline material=&quot;Zinc Oxide&quot; amount=&quot;3.300&quot;/&gt;
+&lt;recipeline material=&quot;Copper Oxide&quot; amount=&quot;2.000&quot; added=&quot;1&quot;/&gt;
+&lt;recipeline material=&quot;Tin Oxide&quot; amount=&quot;2.500&quot; added=&quot;1&quot;/&gt;
+&lt;url url=&quot;https://digitalfire.com/recipe/125&quot; descrip=&quot;https://digitalfire.com/recipe/125&quot;/&gt;
+&lt;/recipelines&gt;
+&lt;urls/&gt;
+&lt;/recipe&gt;
+&lt;/recipes&gt;
+</pre><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Formulating a Porcelain</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="The principles behind formulating a porcelain are quite simple. You just need to know the purpose of each material, a starting recipe and a testing regimen." name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item"><a class="nav-link" href="../material/list.html">Materials</a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item active" href="list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=article" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container"><p><a aria-controls="collapse1" aria-expanded="false" class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button">All Articles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a href="388.html" title="388">A ChatBot gives jaw-dropping glaze recipe advice - Jan 2025</a><br/><a href="244.html" title="244">A Low Cost Tester of Glaze Melt Fluidity</a><br/><a href="361.html" title="361">A One-speed Lab or Studio Slurry Mixer</a><br/><a href="353.html" title="353">A Textbook Cone 6 Matte Glaze With Problems</a><br/><a href="199.html" title="199">Adjusting Glaze Expansion by Calculation to Solve Shivering</a><br/><a href="251.html" title="251">Alberta Slip, 20 Years of Substitution for Albany Slip</a><br/><a href="273.html" title="273">An Overview of Ceramic Stains</a><br/><a href="37.html" title="37">Are You in Control of Your Production Process?</a><br/><a href="12.html" title="12">Are Your Glazes Food Safe or are They Leachable?</a><br/><a href="143.html" title="143">Attack on Glass: Corrosion Attack Mechanisms</a><br/><a href="204.html" title="204">Ball Milling Glazes, Bodies, Engobes</a><br/><a href="345.html" title="345">Binders for Ceramic Bodies</a><br/><a href="4.html" title="4">Bringing Out the Big Guns in Craze Control: MgO (G1215U)</a><br/><a href="381.html" title="381">Can We Help You Fix a Specific Problem?</a><br/><a href="124.html" title="124">Ceramic Glazes Today</a><br/><a href="208.html" title="208">Ceramic Material Nomenclature</a><br/><a href="336.html" title="336">Ceramic Tile Clay Body Formulation</a><br/><a href="217.html" title="217">Changing Our View of Glazes</a><br/><a href="22.html" title="22">Chemistry vs. Matrix Blending to Create Glazes from Native Materials</a><br/><a href="209.html" title="209">Concentrate on One Good Glaze</a><br/><a href="115.html" title="115">Copper Red Glazes</a><br/><a href="271.html" title="271">Crazing and Bacteria: Is There a Hazard?</a><br/><a href="190.html" title="190">Crazing in Stoneware Glazes: Treating the Causes, Not the Symptoms</a><br/><a href="97.html" title="97">Creating a Non-Glaze Ceramic Slip or Engobe</a><br/><a href="195.html" title="195">Creating Your Own Budget Glaze</a><br/><a href="36.html" title="36">Crystal Glazes: Understanding the Process and Materials</a><br/><a href="324.html" title="324">Deflocculants: A Detailed Overview</a><br/><a href="32.html" title="32">Demonstrating Glaze Fit Issues to Students</a><br/><a href="334.html" title="334">Diagnosing a Casting Problem at a Sanitaryware Plant</a><br/><a href="196.html" title="196">Drying Ceramics Without Cracks</a><br/><a href="187.html" title="187">Duplicating Albany Slip</a><br/><a href="45.html" title="45">Duplicating AP Green Fireclay</a><br/><a href="197.html" title="197">Electric Hobby Kilns: What You Need to Know</a><br/><a href="39.html" title="39">Fighting the Glaze Dragon</a><br/><a href="214.html" title="214">Firing Clay Test Bars</a><br/><a href="200.html" title="200">Firing: What Happens to Ceramic Ware in a Firing Kiln</a><br/><a href="113.html" title="113">First You See It Then You Don't: Raku Glaze Stability</a><br/><a href="316.html" title="316">Fixing a glaze that does not stay in suspension</a><br/><a href="338.html" title="338">Formulating a body using clays native to your area</a><br/><a href="191.html" title="191">Formulating a Clear Glaze Compatible with Chrome-Tin Stains</a><br/><a href="282.html" title="282"><button class="btn btn-dark" type="button">Formulating a Porcelain</button></a><br/><a href="188.html" title="188">Formulating Ash and Native-Material Glazes</a><br/><a href="114.html" title="114">G1214M Cone 5-7 20x5 glossy transparent glaze</a><br/><a href="121.html" title="121">G1214W Cone 6 transparent glaze</a><br/><a href="122.html" title="122">G1214Z Cone 6 matte glaze</a><br/><a href="226.html" title="226">G1916M Cone 06-04 transparent glaze</a><br/><a href="203.html" title="203">Getting the Glaze Color You Want: Working With Stains</a><br/><a href="342.html" title="342">Glaze and Body Pigments and Stains in the Ceramic Tile Industry</a><br/><a href="189.html" title="189">Glaze Chemistry Basics - Formula, Analysis, Mole%, Unity </a><br/><a href="358.html" title="358">Glaze chemistry using a frit of approximate analysis</a><br/><a href="123.html" title="123">Glaze Recipes: Formulate and Make Your Own Instead</a><br/><a href="343.html" title="343">Glaze Types, Formulation and Application in the Tile Industry</a><br/><a href="181.html" title="181">Having Your Glaze Tested for Toxic Metal Release</a><br/><a href="364.html" title="364">High Gloss Glazes</a><br/><a href="384.html" title="384">Hire Us for a 3D Printing Project</a><br/><a href="136.html" title="136">How a Material Chemical Analysis is Done</a><br/><a href="235.html" title="235">How desktop INSIGHT Deals With Unity, LOI and Formula Weight</a><br/><a href="331.html" title="331">How to Find and Test Your Own Native Clays</a><br/><a href="26.html" title="26">I have always done it this way!</a><br/><a href="344.html" title="344">Inkjet Decoration of Ceramic Tiles</a><br/><a href="279.html" title="279">Is Your Fired Ware Safe?</a><br/><a href="311.html" title="311">Leaching Cone 6 Glaze Case Study</a><br/><a href="206.html" title="206">Limit Formulas and Target Formulas</a><br/><a href="133.html" title="133">Low Budget Testing of Ceramic Glazes</a><br/><a href="333.html" title="333">Make Your Own Ball Mill Stand</a><br/><a href="347.html" title="347">Making Glaze Testing Cones</a><br/><a href="341.html" title="341">Monoporosa or Single Fired Wall Tiles</a><br/><a href="325.html" title="325">Organic Matter in Clays: Detailed Overview</a><br/><a href="105.html" title="105">Outdoor Weather Resistant Ceramics</a><br/><a href="27.html" title="27">Painting Glazes Rather Than Dipping or Spraying</a><br/><a href="212.html" title="212">Particle Size Distribution of Ceramic Powders</a><br/><a href="339.html" title="339">Porcelain Tile, Vitrified Tile</a><br/><a href="20.html" title="20">Rationalizing Conflicting Opinions About Plasticity</a><br/><a href="332.html" title="332">Ravenscrag Slip is Born</a><br/><a href="247.html" title="247">Recylcing Scrap Clay</a><br/><a href="101.html" title="101">Reducing the Firing Temperature of a Glaze From Cone 10 to 6</a><br/><a href="329.html" title="329">Setting up a Clay Testing Program in Your Company or Studio</a><br/><a href="211.html" title="211">Simple Physical Testing of Clays</a><br/><a href="350.html" title="350">Single Fire Glazing</a><br/><a href="326.html" title="326">Soluble Salts in Minerals: Detailed Overview</a><br/><a href="28.html" title="28">Some Keys to Dealing With Firing Cracks</a><br/><a href="249.html" title="249">Stoneware Casting Body Recipes</a><br/><a href="194.html" title="194">Substituting Cornwall Stone</a><br/><a href="274.html" title="274">Super-Refined Terra Sigillata</a><br/><a href="340.html" title="340">The Chemistry, Physics and Manufacturing of Glaze Frits</a><br/><a href="202.html" title="202">The Effect of Glaze Fit on Fired Ware Strength</a><br/><a href="125.html" title="125">The Four Levels on Which to View Ceramic Glazes</a><br/><a href="207.html" title="207">The Majolica Earthenware Process</a><br/><a href="43.html" title="43">The Potter's Prayer</a><br/><a href="359.html" title="359">The Right Chemistry for a Cone 6 Magnesia Matte</a><br/><a href="33.html" title="33">The Trials of Being the Only Technical Person in the Club</a><br/><a href="107.html" title="107">The Whining Stops Here: A Realistic Look at Clay Bodies</a><br/><a href="134.html" title="134">Those Unlabelled Bags and Buckets</a><br/><a href="16.html" title="16">Tiles and Mosaics for Potters</a><br/><a href="308.html" title="308">Toxicity of Firebricks Used in Ovens</a><br/><a href="379.html" title="379">Trafficking in Glaze Recipes</a><br/><a href="216.html" title="216">Understanding Ceramic Materials</a><br/><a href="210.html" title="210">Understanding Ceramic Oxides</a><br/><a href="130.html" title="130">Understanding Glaze Slurry Properties</a><br/><a href="213.html" title="213">Understanding the Deflocculation Process in Slip Casting</a><br/><a href="132.html" title="132">Understanding the Terra Cotta Slip Casting Recipes In North America</a><br/><a href="198.html" title="198">Understanding Thermal Expansion in Ceramic Glazes</a><br/><a href="313.html" title="313">Unwanted Crystallization in a Cone 6 Glaze</a><br/><a href="389.html" title="389">Using Dextrin, Glycerine and CMC Gum together</a><br/><a href="135.html" title="135">Volcanic Ash</a><br/><a href="201.html" title="201">What Determines a Glaze's Firing Temperature?</a><br/><a href="111.html" title="111">What is a Mole, Checking Out the Mole</a><br/><a href="38.html" title="38">What is the Glaze Dragon?</a><br/><a href="98.html" title="98">Where do I start in understanding glazes?</a><br/><a href="215.html" title="215">Why Textbook Glazes Are So Difficult</a><br/><a href="239.html" title="239">Working with children</a></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Formulating a Porcelain</h1>
+<h4 class="text-muted">Description</h4><p class="text-muted font-italic">The principles behind formulating a porcelain are quite simple. You just need to know the purpose of each material, a starting recipe and a testing regimen.</p><h4>Article</h4>
+<div class="flexright33"><img src="../media/images/11rzphgplc.jpg" style="width:100%;"/><p style="color:#888888; font-style:italic; font-size:80%; margin:4px 0px 5px 0px;">A <a href="../glossary/translucency.html">translucent</a> <a href="https://plainsmanclays.ca/data/index.php?product=12881">Polar Ice</a> <a href="../glossary/porcelain.html">porcelain</a> mug</p></div>
+<p>Incredible strides in porcelain ware production and firing equipment have occurred in recent decades. Robotics, controllers, inkjets, <a href="../glossary/3d+printer.html">3D printers</a> and other equipment have revolutionized the whole <a href="../glossary/ceramics.html">ceramics</a> industry. This has put the focus on fiddling with machines rather than the porcelain recipe. Let's try to take at least some of the mystery out of common plastic porcelain formulation (many of the principles also apply to casting and pressing versions).</p>
+<p>A traditional <a href="../glossary/functional.html">functional</a> ware plastic porcelain is actually just a <a href="../glossary/vitrification.html">vitrified</a> <a href="../glossary/clay+body.html">clay body</a> with low <a href="../oxide/fe2o3.html">Fe<sub>2</sub>O<sub>3</sub></a> contamination. Unlike glazes, here we are interested in <a href="../glossary/physical+testing.html">physical properties</a> that can be observed and measured rather than the <a href="../glossary/glaze+chemistry.html">chemistry</a>.</p>
+<p>General purpose functional porcelains contain:</p>
+<ul>
+<li>Silica (quartz): It provides an aggregate framework for the fired matrix (like gravel in concrete).</li>
+<li>Clay: Imparts <a href="../glossary/plasticity.html">plasticity</a> and drying hardness to the wet materials and transforms into a mesh of crystals during firing (which gives porcelain its strength).</li>
+<li>Feldspar and <a href="../material/1070.html">Nepheline Syenite</a>: The melting of the <a href="../material/310.html">feldspar</a> dissolves some of the <a href="../material/1245.html">silica</a> and <a href="../material/925.html">kaolin</a> grains and fills the voids between them, cementing together a strong mass.</li>
+</ul>
+<p>Special purpose porcelains may also contain:</p>
+<ul>
+<li>Alumina: Instead of or to augment silica to create a lower expansion and harder fired material.</li>
+<li>Organic hardeners: Instead of or in addition to clay (for <a href="../glossary/dust+pressing.html">dust pressing</a> bodies, for example).</li>
+<li>Frits: Instead of or in addition to feldspar to achieve a lower temperature <a href="../glossary/maturity.html">maturity</a>.</li>
+<li>Low expansion minerals (e.g. pyrophyllite): to reduce <a href="../glossary/co-efficient+of+thermal+expansion.html">co-efficient of thermal expansion</a> (<a href="../glossary/co-efficient+of+thermal+expansion.html">COE</a>), these require glazes also of lower COE also.</li>
+</ul>
+<p>The whitest and most translucent porcelains are made using the most expensive and cleanest (low iron) materials.</p>
+<p>The "Universal 25 Porcelain" recipe typically produces an inexpensive cone 10 not-very-white porcelain having moderate plasticity and near zero <a href="../glossary/clay+body+porosity.html">porosity</a>. It is made from 25% each of <a href="../material/80.html">ball clay</a>, kaolin, feldspar, and silica, or more simply, 50% clay and 25% each of silica and feldspar. Thousands of potters and manufacturers use this "as is" using the brand name materials they have access to. Let's consider some physical properties to look for in a porcelain (not ordered in any specific way).</p>
+<div class="flexright33"><img src="../media/images/rstgh16aqm.jpg" style="width:100%;"/><p style="color:#888888; font-style:italic; font-size:80%; margin:4px 0px 5px 0px;">Translucent vs non-translucent porcelain</p></div>
+<ul>
+<li>Maturity: Water absorption (or porosity) is the most common measure of maturity. Near zero-porosity is normal. <a href="../glossary/firing+shrinkage.html">Fired shrinkage</a> is also a good comparator of maturity, as bodies <a href="../glossary/maturity.html">mature</a> and densify in the kiln they shrink to a minimum, hold for a while and then begin to expand and <a href="../trouble/bloating.html">bloat</a> as they over-fire. Highly <a href="../glossary/vitreous.html">vitreous</a> translucent porcelains can have more than 15-18% <a href="../picture/2239.html">total shrinkage</a> (from pugged to fired) whereas <a href="../glossary/whiteware.html">whiteware</a> type bodies (0-1% porosity) have around 12% shrinkage. It is wise to target the firing temperature of a body based on a knowledge of its maturity over a range of temperatures below and above.
+
+</li><li>Fired <a href="../glossary/translucency.html">translucency</a>: This comes at a price - translucent porcelains melt more so they warp more. They require more feldspar and less and whiter clays (typically only kaolin) having a low <a href="../oxide/tio2.html">TiO2</a> content. White kaolins are less plastic and more expensive.</li>
+<li>Consistency. Only quality control over several years will demonstrate this. Look for variations in <a href="../glossary/drying+shrinkage.html">drying shrinkage</a>, <a href="../glossary/drying+performance.html">drying performance</a>, fired porosity and shrinkage and fired color and character. Test to connect property changes with a specific raw material. Different kaolin and ball clay companies display diverse commitments and attitudes toward maintaining physical properties of their materials for the ceramics industry.</li>
+<li>Plasticity. This can be deduced from drying shrinkage, and judged physically by comparing workability. Highly plastic porcelains can have up to 7% drying shrinkage. Plasticity can be imparted (after firing properties have been achieved) by the addition of <a href="../material/106.html">bentonite</a> or related mineral products (many different ones are available).</li>
+<li>Drying Performance. Porcelains often tend to crack when drying, they do not have the <a href="../glossary/green+strength.html">green strength</a> of <a href="../glossary/stoneware.html">stoneware</a> bodies (as noted, they can have very high drying shrinkages if significant plasticizers are present). Use an accelerated drying gradient test (like <a href="../test/dfac.html">DFAC test</a>) to <a href="../glossary/characterization.html">characterize</a> this property.</li>
+<li>Fired and Dry Strength. Porcelains usually have low dry strength but high <a href="../glossary/fired+strength.html">fired strength</a>. There are a variety of ways you can compare the strengths of different porcelains (use your ingenuity, and lab equipment if you have it).</li>
+<li>Speck Development - Observe this in fired ware, especially in reduction burning. Impurities can appear in various raw materials, but especially ball clays and bentonites, identify sources by washing material through a <a href="../glossary/200+mesh.html">200 mesh</a> <a href="../glossary/sieve.html">sieve</a>.</li>
+<li>Solubles. Ball clays, bentonites and sometimes kaolins have <a href="../glossary/soluble+salts.html">soluble salts</a>, calcium and magnesium <a href="../glossary/sulfates.html">sulfates</a> that migrate to the surface with water during drying. These can leave visible surface-scum after drying and firing. Use the SOLU test to determine if this is a problem.</li>
+<li>Thermal Shock Resistance. This refers to the fired clay's ability to withstand thermal gradients (sudden changes in temperature to one part of a piece) without cracking. If this property is important to you, compare bodies using a flame or ice water/boiling water immersion test.</li>
+<li>Ease of <a href="../glossary/glaze+fit.html">Glaze Fit</a>. Some porcelains <a href="../trouble/glaze+crazing.html">craze</a> glazes much more than others, especially if the ware is subjected to sudden cooling after being hot. Porcelains with high silica contents are easier to fit glazes to (provided it is not too fine grained). When additions of pyrophyllite are used the <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> of glazes must be reduced to avoid <a href="../trouble/glaze+crazing.html">crazing</a>.</li>
+<li>Fired Whiteness. Paper white porcelains are possible. Super white kaolins and iron free plasticizers are amazing materials, but they are much much more expensive.</li>
+<li>Firing Volatility. If translucency is needed, for example, it is usually necessary formulate the body so that it softens enough to achieve the desired translucency, but not so much that it warps excessively. The target temperature range can be quite narrow and good firing control is thus needed (consider such “tipping point” bodies).</li>
+<li>Surface Character. The most pleasant surfaces are the most vitrified. That means the recipe must contain the most feldspar possible.</li>
+</ul>
+<p>Porcelains can be compared in all of the above areas. Testing is needed to find property balances. Most physical properties can be measured or at least compared using simple equipment, methods and observations. Let's look again at each of the materials in the recipe.</p>
+<div class="flexright33"><img src="../media/images/wevhytidij.jpg" style="width:100%;"/><p style="color:#888888; font-style:italic; font-size:80%; margin:4px 0px 5px 0px;">Pure #6 Tile kaolin can be <a href="../glossary/throwing.html">thrown</a> like a pottery clay</p></div>
+<h2>Kaolin</h2>
+<p>A true porcelain would normally derive all its plasticity from a kaolin. Since kaolins are often of limited plasticity, this limits the workability of <a href="../glossary/throwing.html">throwing</a> or modeling porcelains made from them. Still, there are some surprisingly plastic kaolins, although the limited range of <a href="../glossary/particle+sizes.html">particle sizes</a> can mean less than ideal drying performance. Do not accept that a kaolin is plastic just because its name includes the word plastic or a supplier says it is plastic, test yourself. For casting porcelains, an all-kaolin approach is quite feasible (using 50% kaolin rather than 25% kaolin and 25% ball clay) since these bodies benefit greatly from the reduced drying shrinkage and increased water <a href="../glossary/permeability.html">permeability</a> associated with the larger particle size of kaolins. However an all-kaolin casting porcelain may not have the strength to pull away from the <a href="../material/1124.html">plaster</a> mold without cracking, add a little <a href="../glossary/plasticity.html">plasticizer</a> if needed.</p>
+<p>Kaolins can differ widely in maturity. British kaolins require the use of less feldspar because they already have some natural fluxes as part their mineral particle profile. So even though these might be less plastic, less <a href="../glossary/flux.html">flux</a> is needed, so more kaolin can be used in a recipe. It is an good idea to make up the kaolin complement of a recipe using more than one brand, this provides a better distribution of ultimate particle sizes and minimizes the effect on the body if one kaolin changes.</p>
+<p>Since kaolins vary quite widely in their plasticity, maturity, soluble salts, particle size and whiteness, it can be quite a challenge to test and classify them all. Data sheets are often not that helpful because they present information in different ways and seldom does a company explain its materials in terms of other well known alternatives. The burden of picking the best kaolins thus rests on you and your ability to evaluate and compare them using tests that document the appropriate physical properties. We recommend you use the DFAC test, <a href="../test/shab.html">SHAB test</a>, and <a href="../test/ldw.html">LDW test</a> to compare kaolins (and ball clays).</p>
+<p>About <a href="../glossary/casting+slip.html">casting bodies</a>: Larger particle size kaolins tend to be dirtier, less plastic, more expensive and have lower dry strength, so their benefits come at a cost. It is possible to make fairly fast-casting zero-ball-clay bodies with ordinary light burning kaolins like <a href="../material/291.html">EPK</a>. Some companies use large-particle-size kaolin when they also have ball clay in the mix, the latter may be canceling the benefit of the former! Of course large particle ball clays are also available, but remember that they are still considerably finer than standard kaolins. Also, fine-tuning a kaolin mix makes little sense if the body is not <a href="../glossary/deflocculation.html">deflocculated</a> properly. The best approach is to use a standard white burning kaolin, <a href="../glossary/deflocculation.html">deflocculate</a> it properly and learn to work with it. Then fine tune it by the substitution of some large particle material to speed casting rate while watching for any deleterious properties introduced.</p>
+<p>Following is a sample of a <a href="../glossary/digitalfire+foresight.html">Foresight</a> report on a kaolin (Foresight was the predecessor to <a href="../glossary/digitalfire+insight-live.html">insight-live</a>.com). I have tested using DFAC, SHAB, LDW and SIEV tests.</p>
+<h2>Ball Clay &amp; Bentonite</h2>
+<div class="flexleft33"><img src="../media/images/cahpydihec.jpg" style="width:100%;"/><p style="color:#888888; font-style:italic; font-size:80%; margin:4px 0px 5px 0px;">OM4 Ball Clay fired <a href="../glossary/reduction+firing.html">cone 10R</a> and 10 down to 4 oxidation</p></div>
+<p>Ball clay is much finer and thus much more plastic than kaolin. A very wide range of ball clays are available. White burning ball clays should not have near the plasticity of their dirtier counterparts - but often they do! Bentonite is much finer than ball clay (the <a href="../glossary/ultimate+particles.html">ultimate particles</a> are much smaller). It is incredibly plastic, adding only 2% to a recipe can drastically improve working properties. However, these materials have a down side. Ball clays can have ten times the amount of brown-firing <a href="../material/874.html">iron oxide</a> that kaolin has and many have soluble salts that can produce a scum on the burned surface. Many also contain lignite particles that can produce glaze imperfections. Raw bentonites can be downright dirty, burning brown or red with possible specking and soluble salts sometimes so heavy they form a glaze. White firing bentonites come in a wide range of plasticities. Some have so little plasticity one wonders why anyone would use them for ceramics, others are incredibly plastic. But beware, even though only 3-5% might be used, the cost of this one material could be more than the other 95% combined! A study of all the ball clays and bentonites available in your area can be a real education! Again it is important that you have a testing regimen to compare and characterize these materials (e.g. a group account at Insight-Live.com). There is another up-side of ball clay worth mentioning. Ball clays contain free silica, so if there is significant ball clay in a recipe the silica can be reduced leaving room to add more clay for plasticity or feldspar for maturity.</p>
+<p>So the easiest way to increase the plasticity of the standard '25 Porcelain' is to add 2%-3% raw bentonite. Even though most inexpensive 200 mesh bentonites can be quite dirty, this small amount may not affect the fired color as much as expected. Do not overlook one detail: Bentonite is difficult to process, one bag of raw bentonite may not contain iron specks while the next does not. Microfine ceramic grades (e.g. 600 mesh) are available, but obviously are much more expensive. If whiteness is not all-important, increase the ball clay at the expense of kaolin to produce a plastic whiteware (feldspar percentage may need reduction also, ball clay is less <a href="../glossary/refractory.html">refractory</a> than kaolin). For a very white porcelain, the challenge will likelybe reducing or entirely eliminating the ball clay. Where super whiteness is secondary to having a good general purpose body, some ball clay can usually be tolerated. If having the most plastic body possible is the most important, then use all ball clay and no kaolin (e.g. B-Mix from Laguna), that brings awesome workability also.</p>
+<h2>Feldspars (and Nepheline Syenite)</h2>
+<div class="flexright25"><img src="../media/images/sshppfsda1.jpg" style="width:100%;"/><p style="color:#888888; font-style:italic; font-size:80%; margin:4px 0px 5px 0px;">Feldspar vs Nepheline Syenite <a href="../glossary/melt+fluidity.html">melt fluidity</a> test</p></div>
+<p>These are the fluxes, or more correctly, contain the fluxes. Fluxes are the <a href="../glossary/ceramic+oxide.html">oxides</a> that help develop fired maturity by liquefying and slowly dissolving some of the clay and silica. The total flux amount necessary is easily determined by simply firing to a range of temperatures above and below the intended; studying the absorption, strength, and <a href="../glossary/firing+shrinkage.html">firing shrinkage</a> curves; and adjusting the amount of feldspar to give the desired maturity. The amount of feldspar for a cone 10 body varies from 15%-30%, depending on the other materials in the recipe. For a typical American kaolin, it takes about 25% for cone 10 and up to 50% for <a href="../glossary/cone+6.html">cone 6</a>.<br/>
+<a href="../material/310.html">Feldspars</a> are not without potential problems. While some brands can be relatively iron free, others fire surprisingly darker. Some can present <a href="../glossary/flocculation.html">flocculation</a> problems due to slight solubility. Sodium feldspars are generally cleaner and more potent. Use two or three together if possible (to dampen changes that could occur in one).</p>
+<h2>Silica</h2>
+<div class="flexleft25"><img src="../media/images/lyhhefyveg.jpg" style="width:100%;"/><p style="color:#888888; font-style:italic; font-size:80%; margin:4px 0px 5px 0px;">When silica is inadequate this happens</p></div>
+<p>Silica tends to be a very consistent and inexpensive material. Quartz grains act primarily as a micro-aggregate or framework structure for the fired matrix. In addition, some of the silica particle and particle edges are dissolved by the fluxes to produce aluminum-silicate glasses. Too much silica in a recipe could mean lower plasticity (since less room is left for clay). However, there is also much discussion about the detrimental effects of crystobalite (i.e. <a href="../trouble/dunting+and+cracking+of+clay+bodies+during+firing.html">dunting</a>), whose development during high temperature firing is related to available free quartz. Thus there is some merit to lower silica amounts, especially if you have the ability to adjust your glazes to lower their expansion. The use of less silica means more clay can be added resulting in higher plasticity. A finer silica (300 mesh) reacts better with the fluxes and thus less is needed (but thermal expansion drops). Too little silica in a body can mean crazing glazes since the quartz mineral contributes to higher expansion that assists glaze fit. Of course, lack of silica will also mean more of a tendency to warp during firing. For cone 10, many technicians aim at 20-25% for expansion reasons and to provide firing stability over a range of temperatures. </p>
+<h2>Recipes &amp; Strategies</h2>
+<p>Most people have noted that the '25 Plastic Porcelain' recipe has flaws that can be corrected for individual situations and materials. To improve this recipe for cone 10:</p>
+<ul>
+<li>For more whiteness replace some or all of the ball clay with plastic kaolin</li>
+<li>Add some bentonite (e.g. 1-3%) if more plasticity if needed (but be prepared for more drying shrinkage)</li>
+<li>Diversify the clays and feldspar, using 2 or 3 kinds of each (to make the recipe resilient to change in individual materials)</li>
+<li>Test fire and adjust maturity by tuning the feldspar percentage (usually by trade-offs with the clay).</li>
+</ul>
+<p>To formulate a white translucent cone 6 plastic porcelain:</p>
+<ul>
+<li>Start with 20% silica for glaze fit</li>
+<li>Add 40% feldspar for maturity (Nepheline Syenite or Minspar are very white)</li>
+<li>Add 40% of the whitest kaolin possible (e.g. New Zealand, UK)</li>
+<li>Add 3-5% of the whitest bentonite or hectorite available (Veegum is the best we know of)</li>
+<li>Make a trial mix and evaluate the fired porosity, drying performance and workability</li>
+<li>Add or reduce plasticizer as needed</li>
+<li>Increase feldspar at the expense of kaolin for more maturity, do the opposite if it is over-fired</li>
+<li>Test again and repeat.</li>
+</ul>
+<p>For a casting porcelain, remember that much lower plasticity is needed. Common consensus in industry is that it is much more important to use kaolins of large particle size, so water can easily be drawn out by the plaster mold. However for a smaller operation that does not need to really optimize mold release time, normal kaolins are fine. The cleanest kaolins and ball clays are also the least plastic, thus casting porcelains (that can tolerate this) can achieve whiter and more translucent effects than their plastic counterparts. It is imperative to understand the principles of <a href="../glossary/deflocculation.html">deflocculation</a> so that the amount of water in the <a href="../glossary/slurry.html">slurry</a> can be minimized and proper mold release and casting time can be achieved. To cast very thin ware some bentonite May be needed (start with 1%) to give it the strength to pull itself away from the mold during drying.</p>
+<p>For plastic porcelain for modelling or throwing pay careful attention to drying properties. Since porcelains are fine-grained, they don't usually dry well, thus plastic porcelains are even worse. Add just enough bentonite to give the plasticity needed (the DFAC test can be handy for this). Some people add molochite <a href="../glossary/grog.html">grog</a> to porcelains for better drying.</p>
+<p>Give careful thought to how mature the porcelain needs to fire. If zero absorption is not necessary, consider reducing the feldspar to get more plasticity from the clays (and be able to reduce the bentonite). Such a body can still be considered functional and vitreous and it will resist warping in the kiln. In addition, material changes that result in more maturity will be less likely to cause trouble in a body that has some 'room to move'. Measure fired absorption at a variety of temperatures (a 'measure-only-at-the-working-temperature' philosophy is a tunnel vision approach that will almost certainly get you into trouble, especially in situations where the working temperature is far above the point at which zero porosity is attained).</p>
+<p>Trade-offs to consider when formulating or adjusting a plastic porcelain.</p>
+<table border="1" cellpadding="6" cellspacing="1">
+<tr>
+<td valign="top"><b>Material</b></td>
+<td valign="top"><b>Typical %</b></td>
+<td valign="top"><b>Details</b></td>
+</tr>
+<tr>
+<td valign="top">Silica</td>
+<td valign="top">20%-25%</td>
+<td valign="top">Use at least 20% (more for <a href="../glossary/co-efficient+of+thermal+expansion.html">high expansion</a> glazes, less for low). For maximum translucency use less (less silica permits more feldspar)
+  </td></tr>
+<tr>
+<td valign="top">Flux</td>
+<td style="white-space:nowrap;" valign="top">Feldspar body<br/>Cone 10: 25% feldspar<br/>Cone 6: 35% feldspar<br/><br/><br/>Frit body<br/>Cone 10:10%<br/>Cone 6: 20%</td>
+<td valign="top">Use the amount required for the degree <a href="../glossary/vitrification.html">vitrification</a> and translucency needed.</td>
+</tr>
+<tr>
+<td valign="top">Kaolin</td>
+<td valign="top">Cone 10: 25%-50%<br/>Cone 6: 20%-40%.</td>
+<td valign="top">Ideally, use as much kaolin and as little ball clay as possible (for firing whiteness). Test various types for the best combination of whiteness and plasticity.</td>
+</tr>
+<tr>
+<td valign="top">Ball Clay</td>
+<td valign="top">Up to 25%</td>
+<td valign="top">Ball clays impart plasticity but are higher in iron and detrimentally effect fired whiteness. Doing detailed fired and workability comparisons of brand names can really pay off. If necessary, add <a href="../material/86.html">barium carbonate</a> (for the ball clay proportion) to precipitate solubles.</td>
+</tr>
+<tr>
+<td valign="top">Plasticizers</td>
+<td valign="top">Plastic bodies: 2-4%<br/>Casting bodies:0-1%</td>
+<td valign="top">Bentonites are cheapest. Highly processed smectites and hectorites are most expensive. The best quality products are twenty or thirty times more expensive than the cheapest. Do tests to find a compromise between impact on fired color, plasticity gained and cost.</td>
+</tr>
+</table>
+<h2>Bone China</h2>
+<p>These are fired around 1250C <a href="../glossary/bisque.html">bisque</a> and glazed between 1050 and 1100C. One composition we know of is 45% bone, 30% clay and 25% mix of potash feldspar and quartz. But lower bone versions are used also, it being as low as 10% (the clay is the same but the feldspar obviously has to be much higher). It is not completely clear why companies do not simply add <a href="../glossary/frit.html">frit</a> to a standard white porcelain to get translucency. If you know this, please email me.</p>
+<h2>Money-Is-No-Object Recipe</h2>
+<p>Frit can be used to mature a porcelain, <a href="../glossary/zero4.html">Zero4</a> porcelain is an example.</p><p style="clear:left"></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Now that is a translucent porcelain! But much more.</h3>
+<br/><a alt="Polar Ice porcelain mug with a light inside to demonstrate its translucency" href="../picture/935.html" title="Two porcelain cups, one is translucent"><img alt="Polar Ice porcelain mug with a light inside to demonstrate its translucency" class="flexleft50" loading="lazy" src="../media/images/pexmefysyx.jpg" title="Two porcelain cups, one is translucent"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/935.html">click here</a> to see it.</p>
+<p>These are two <a href="../glossary/cone+6.html">cone 6</a> transparent-glazed <a href="../glossary/porcelain.html">porcelain</a> mugs. On the left is the porcelainous <a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12880">M370</a> (Laguna B-Mix 6 would have similar <a href="../glossary/opacity.html">opacity</a> - none). Right is the highly <a href="../glossary/vitreous.html">vitreous</a>, New Zealand kaolin-based porcelain, <a href="https://plainsmanclays.ca/data/index.php?product=12881">Polar Ice</a>. The secret to making this porcelain super-white is the NZ <a href="../material/925.html">kaolin</a>. The secret of its impossibly high <a href="../glossary/plasticity.html">plasticity</a> is the very expensive <a href="../glossary/plasticity.html">plasticizer</a>, <a href="../material/1672.html">VeeGum T</a>. What about the <a href="../glossary/translucency.html">translucency</a>? That is a little more complicated. <a href="../material/1070.html">Nepheline syenite</a> is used as the <a href="../material/310.html">feldspar</a>, but it alone, in a practical recipe, cannot deliver this kind of translucency at cone 6. Amazingly, the 4% Veegum acts as a translucency catalyst; it is the real secret. Commercial manufacturers could never use a sticky and difficult-to-dry porcelain like this, but a potter can do incredible things with it (e.g. throw thinner, lighter, bigger than any other clay he/she has ever used!). Can you make this? Yes. Try the <a href="https://insight-live.com/insight/share.php?z=rEgF5sd2dk">L3778D</a> or <a href="https://insight-live.com/insight/share.php?z=tgsPMxNsAP">L3778G</a> recipes.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Cone 6 porcelain marbled and thrown</h3>
+<br/><a alt="Polar ice marbled porcelain bowls by Tony Hansen" href="../picture/955.html" title="Polar ice marbled porcelain bowls by Tony Hansen"><img alt="Polar ice marbled porcelain bowls by Tony Hansen" class="flexleft50" loading="lazy" src="../media/images/vabhamajok.jpg" title="Polar ice marbled porcelain bowls by Tony Hansen"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/955.html">click here</a> to see it.</p>
+<p>These bowls were made by <a href="../glossary/tony+hansen.html">Tony Hansen</a> using a mixture of white and stained New-Zealand-kaolin-based <a href="../glossary/porcelain.html">porcelain</a> (<a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12881">Polar Ice</a>) fired at <a href="../glossary/cone+6.html">cone 6</a>. The body is not only white, but very <a href="../glossary/translucency.html">translucent</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">New Zealand kaolin based slip casts at 1mm thickness. How?</h3>
+<br/><a alt="A very thin walled porcelain bowl" href="../picture/991.html"><img alt="A very thin walled porcelain bowl" class="flexleft50" loading="lazy" src="../media/images/kyhdozalyt.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/991.html">click here</a> to see it.</p>
+<p>This is <a href="https://plainsmanclays.ca/data/index.php?product=12881">Polar Ice</a> casting, a New Zealand Halloysite based <a href="../glossary/cone+6.html">cone 6</a> <a href="../glossary/translucency.html">translucent</a> <a href="../glossary/porcelain.html">porcelain</a>. The base body recipe would never have enough plastic strength to pull itself from this mold without tearing. But the addition of 1% Veegum gives it amazing strength. This dried cast bowl measures 130mm in diameter and 85mm deep, it only weighs 89 gm! The slip was in the mold for only 1 minute before pour-out. Of course, there is a price to pay for adding the Veegum: Increased casting time and more difficult <a href="../glossary/deflocculation.html">deflocculation</a>. Regular <a href="../material/106.html">bentonite</a> can be used in most bodies, but for super-whites like this, Veegum (or equivalent) is the choice. Testing is needed to determine what percentage gives the needed strength yet does not increase the casting time too much. The <a href="https://plainsmanclays.ca/data/index.php?product=12881">polar ice</a> information page at <a href="https://digitalfire.com/url/221">plainsmanclays.com</a> has very good information, under the heading “Casting Recipe”, about the challenges and trade-offs of using this <a href="../material/925.html">kaolin</a> in <a href="../glossary/casting+slip.html">casting bodies</a>.<br/>
+</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Two reasons why porcelain recipes need silica</h3>
+<br/><a alt="A porcelain cup with serious crazing and base crack concentric to the center" href="../picture/2240.html" title="Crazing has been enhanced by ink."><img alt="A porcelain cup with serious crazing and base crack concentric to the center" class="flexleft50" loading="lazy" src="../media/images/m8dey8wg8t.jpg" title="Crazing has been enhanced by ink."/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2240.html">click here</a> to see it.</p>
+<p>This is 70% <a href="../material/925.html">kaolin</a> and 30% <a href="../material/310.html">feldspar</a>. Fired at <a href="../glossary/cone+6.html">cone 6</a> with glaze <a href="../recipe/g2926b.html">G2926B</a>. The fired body has a nice porcelaneous surface. But, right out of the kiln, it crazes like this! The dense <a href="../trouble/glaze+crazing.html">craze</a> pattern indicates a very serious fit problem. The <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> of the kaolin:feldspar mix is much too low. Adding 25% <a href="../glossary/co-efficient+of+thermal+expansion.html">low-expansion</a> <a href="../material/1245.html">silica</a> will solve the problem. The other issue is with the flat particle shape of kaolin. The <a href="../glossary/throwing.html">throwing</a> process has lined up the predominant kaolin particles concentric to the centre. During drying, and especially firing, more shrinkage occurs across them than along them. All ten of the cups made cracked like this! The solution is adding a filler, one with rounded particles to separate the kaolin plates. Silica is perfect, using the same 25% addition. The grains act like aggregate in concrete, strengthening the matrix and separating the clay particles, forcing them to orient more randomly.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Global supply chain issues?
+</h3>
+<h4 style="color:#888888; margin-top:0px;">A DIY mindset can make you more resilient</h4>
+<br/><a alt="Shipping containers piled high" href="../picture/2813.html"><img alt="Shipping containers piled high" class="flexleft50" loading="lazy" src="../media/images/m5zr6a9t1t.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2813.html">click here</a> to see it.</p>
+<p>The more complex your supplier's <a href="../picture/2813.html">supply chain</a>, the more likely they won't be able to deliver. And that prices will rise even further. How can you adapt to disruptions, even turn them into a benefit? Historically, pottery has been a shining star of resilience and independence because the materials were in the ground nearby. You cannot likely head out to the nearest hill with your wheelbarrow to get clay, but you can do something even better.<br/>
+<br/>
+Rather than viewing these containers as full of specific brand-name clays, minerals and man-made powders, it is better to view them as full of materials that supply the <a href="../glossary/physical+testing.html">physical properties</a> and chemistries needed to make bodies, glazes, <a href="../glossary/engobe.html">engobes</a>, slips, etc. By <a href="../glossary/characterization.html">characterizing</a> your glazes and bodies, using an effective <a href="../glossary/digitalfire+insight-live.html">record-keeping</a> system, you can not only adjust recipes to adapt to changing supplies, but even improve them in the process (adjusting glaze <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a>, temperature, surface, color, etc). Or, use materials native to your area. It is not rocket science; it is just work and gradual learning accompanied by organized record-keeping, good labelling and interpretation skills.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">DIY clay bodies via slurry mixing:
+</h3>
+<h4 style="color:#888888; margin-top:0px;">Consider the advantages.</h4>
+<br/><a href="../picture/3698.html"><img class="flexleft50" loading="lazy" src="../media/images/nebdy742yk.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3698.html">click here</a> to see it.</p>
+<p>Consider the advantages of making your own <a href="../glossary/clay+body.html">clay bodies</a> using a <a href="../glossary/propeller+mixer.html">propeller mixer</a> and <a href="../glossary/plaster+table.html">plaster table</a>.<br/>
+-Independence: You control product availability, quality and consistency.<br/>
+-Flexibility: You control the recipe (with our help if needed). Fine-tune and adjust it over time to fit your needs and compensate for variations in material properties and supply.<br/>
+-Special-purpose clay bodies are possible, ones that <a href="https://digitalfire.com/url/1709">ceramic suppliers</a> do not or cannot make.<br/>
+-The <a href="../glossary/slurry+up.html">slurry up</a> process achieves better mixing and deairing than any <a href="../glossary/pugmill.html">pugmill</a>. No aging needed.<br/>
+-A mixer and <a href="../material/1124.html">plaster</a> table are useful for so many other things in a pottery studio.<br/>
+-Achieving the right stiffness is an integral part of the process.<br/>
+-Recycling scrap, by <a href="../glossary/slaking.html">slaking</a>, fits the process.<br/>
+-Local native clays: Slurries enable the use of a magnet to remove iron, a <a href="../glossary/sieve.html">sieve</a> to remove particulates and a <a href="../glossary/suspension.html">settling</a> process to remove <a href="../glossary/soluble+salts.html">soluble salts</a>.<br/>
+-Cleanup is easy so many kinds of clay can be made without cross contamination.<br/>
+-It is rewarding - you will own the whole process, the bragging rights alone make it worthwhile for me!<br/>
+</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Potter goes full DIY and makes her own porcelain
+</h3>
+<h4 style="color:#888888; margin-top:0px;">The best thing happens: Failure on the third mix!</h4>
+<br/><a alt="Blistered porcelain mug" href="../picture/3773.html"><img alt="Blistered porcelain mug" class="flexleft50" loading="lazy" src="../media/images/nsb7gccung.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3773.html">click here</a> to see it.</p>
+<p>Super white <a href="../glossary/translucency.html">translucent</a> porcelains are expensive, approaching $200/box in some countries! Even so, variation in properties is common (certainly not good for a "<a href="../glossary/tipping+point.html">tipping point</a> body" that is difficult to make). The idea of making your own <a href="../glossary/clay+body.html">clay body</a> is actually feasible here. Yet <a href="https://digitalfire.com/url/3747">Kirsty Kash</a>, maker of this mug, told me that this amount of <a href="../glossary/do-it-yourself.html">DIY</a> was something she had never really considered, thinking it would be too complicated without guidance. But ongoing issues with the commercial clay gave her the motivation to give it a try (using a recipe similar to <a href="https://insight-live.com/insight/share.php?z=rEgF5sd2dk">L3778D</a>). She weighed out the materials, <a href="../glossary/slurry+up.html">slurried up</a> the mix using a <a href="../glossary/propeller+mixer.html">propeller mixer</a>, finished by <a href="../glossary/blender+mixing.html">blender mixing</a> and then dewatered on a super-clean <a href="../glossary/plaster+bat.html">plaster bat</a>.<br/>
+<br/>
+By the third batch, something good happened: The <a href="../glossary/porcelain.html">porcelain</a> blistered (tiny bumps on the surface). Subsequent correspondence brought the realization that this type of body is "walking a recipe tightrope" that requires control of the percentage of the key ingredient: <a href="../material/310.html">Feldspar</a>. It determines the <a href="../glossary/maturity.html">maturity</a> of the fired product. Too much brings <a href="../trouble/glaze+blisters.html">blisters</a>, too little and <a href="../glossary/translucency.html">translucency</a> is lost. Simple testing is all that is needed to determine the needed amount. More good news: The change enabled increasing the <a href="../material/925.html">kaolin</a> percentage by the same amount. That, in turn, enabled reducing the percentage of veegum (reducing the cost).<br/>
+<br/>
+Her comment a few days ago was inspiring: "I'm getting to know my material so intimately. I have been learning SO much." When I suggested she might end up buying commercial again she responded: "I just bought large bags of all the materials and plan to keep going. I like having the control and being less reliant on the boxed clay. You've converted me!". </p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="stoneware+casting+body+recipes.html">Stoneware Casting Body Recipes</a>
+<br/><i>Some starting recipes for <a href="../glossary/stoneware.html">stoneware</a> and <a href="../glossary/porcelain.html">porcelain</a> with information on how to adjust and adapt them</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="rationalizing+conflicting+opinions+about+plasticity.html">Rationalizing Conflicting Opinions About Plasticity</a>
+<br/><i>How can two potters have completely different opinions about the <a href="../glossary/plasticity.html">plasticity</a> and workability characteristics of the same clay body</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="formulating+a+body+using+clays+native+to+your+area.html">Formulating a body using clays native to your area</a>
+<br/><i>Being able to mix your own <a href="../glossary/clay+body.html">clay body</a> and glaze from native materials might seem ridiculous, yet Covid-19 taught us about the need for independence. </i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/feldspar.html">Feldspar</a>
+<br/><i>In <a href="../glossary/ceramics.html">ceramics</a>, <a href="../material/310.html">feldspars</a> are used in glazes and <a href="../glossary/clay+body.html">clay bodies</a>. They vitrify stonewares and porcelains. They supply <a href="../picture/1775.html">KNaO</a> <a href="../glossary/flux.html">flux</a> to glazes to help them melt.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/veegum.html">Veegum</a>
+<br/><i>A clay of incredibly small particle size. It has the highest <a href="../glossary/plasticity.html">plasticity</a> of any known clay and acts as a <a href="../glossary/suspension.html">suspending</a> and gelling agent in slurries.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/kaolin.html">Kaolin</a>
+<br/><i>The purest of all clays in nature. Kaolins are used in porcelains and stonewares to impart whiteness, in glazes to supply <a href="../oxide/al2o3.html">Al2O3</a> and to suspend slurries.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/silica.html">Silica</a>
+<br/><i><a href="../material/1245.html">Silica</a>, sold as a white powder, is pure quartz mineral. Quartz is pure <a href="../oxide/sio2.html">SiO2</a> silicon dioxide. It is the most abundant mineral on earth and most used in <a href="../glossary/ceramics.html">ceramics</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/ball+clay.html">Ball Clay</a>
+<br/><i>A fine particled highly plastic <a href="../glossary/secondary+clay.html">secondary clay</a> used mainly to impart <a href="../glossary/plasticity.html">plasticity</a> to clay and <a href="../glossary/porcelain.html">porcelain</a> bodies and to suspend glaze, slips and <a href="../glossary/engobe.html">engobe</a> slurries.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/bentonite.html">Bentonite</a>
+<br/><i><a href="../material/106.html">Bentonite</a> can make a <a href="../glossary/clay+body.html">clay body</a> instantly plastic, only 2-3% can have a big effect. It also suspends slurries so they don't settle out and slows down drying.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/hectorite.html">Hectorite</a>
+<br/><i>A sodium magnesium <a href="../material/106.html">montmorillonite</a> that burns much whiter than <a href="../material/106.html">bentonite</a> (because of lower iron content).</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/hpm-20+volclay+bentonite.html">HPM-20 Volclay Bentonite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/ferro+frit+3110.html">Ferro Frit 3110</a>
+<br/><i>High sodium, high <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> low <a href="../glossary/boron+frit.html">boron frit</a>. A super-feldspar in <a href="../glossary/clay+body.html">clay bodies</a>. Melts a very low temperatures.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Properties</td>
+<td>
+<a href="../property/body+maturity.html">Body Maturity</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="../test/shab.html">Shrinkage/Absorption Test</a>
+<br/><i>SHAB Shrinkage and absorption test procedure for plastic <a href="../glossary/clay+body.html">clay bodies</a> and materials</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="../test/solu.html">Soluble Salts</a>
+<br/><i>Evaluate and compare the solubles salts content in <a href="../glossary/clay+body.html">clay bodies</a> and materials</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="../test/dfac.html">Drying Factor</a>
+<br/><i>The DFAC Drying Factor test visually displays a plastic clay's response to very uneven drying. It is beneficial to show the relative <a href="../glossary/drying+performance.html">drying performance</a> of different clays.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="../test/ldw.html">LOI/Density/Water Content</a>
+<br/><i>LDW <a href="../glossary/loi.html">LOI</a>, density and <a href="../glossary/water+content.html">water content</a> test procedure for plastic <a href="../glossary/clay+body.html">clay bodies</a> and porcelains</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="../test/cdry.html">Drying Factor/Water Content/Solubles</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="../test/iwct.html">300F:Ice Water Crazing Test</a>
+<br/><i>Ceramic glazes that <a href="../glossary/glaze+fit.html">do not fit</a> the body often do not <a href="../trouble/glaze+crazing.html">craze</a> until later. This progressively stresses the fit until failure point, thus giving it a score</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/porcelain.html">Porcelain</a>
+<br/><i>How do you make <a href="../glossary/porcelain.html">porcelain</a>? There is a surprisingly simple logic to formulating them and to adjusting their working, drying, glazing and firing properties for different purposes.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/sintering.html">Sintering</a>
+<br/><i>A densification process occurring within a ceramic kiln. With increasing temperatures particles pack tighter and tighter together, bonding more and more into a stronger and stronger matrix.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1352">https://digitalfire.com/university/insight-live/overview/Insight-Live%20Overview.html</a>
+<br/><i><a href="../glossary/digitalfire+insight-live.html">Insight-Live</a>.com Overview Video</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Recipes</td>
+<td>
+<a href="../recipe/l2000.html">L2000 - 25 Porcelain</a>
+<br/><i>Base 25x4 <a href="../glossary/porcelain.html">porcelain</a> recipe</i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></div></body>
+</html>

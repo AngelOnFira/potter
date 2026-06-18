@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Cadmium Toxicity</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Digitalfire Reference Library: Practical material hazards information in the traditional ceramic industry">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+March 2026: We are doing major upgrades to code here, please be patient regarding any issues. If any page is not working for a period of hours, please contact us. Thank you.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item active" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=hazard" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:center; vertical-align:top;">Feb 14-15, 2026 - <b>Major Server <a href="https://digitalfire.com">Upgrade</a> Done</b></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Hazards</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a title="341" href="https://digitalfire.com/hazard/341">Alumina Toxicology</a> |</nobr> <nobr><a title="333" href="https://digitalfire.com/hazard/333">Ammonia and Latex Toxicity</a> |</nobr> <nobr><a title="16" href="https://digitalfire.com/hazard/16">Antimony Oxide</a> |</nobr> <nobr><a title="412" href="https://digitalfire.com/hazard/412">Are colored porcelains hazardous?</a> |</nobr> <nobr><a title="18" href="https://digitalfire.com/hazard/18">Arsenic Oxide</a> |</nobr> <nobr><a title="19" href="https://digitalfire.com/hazard/19">Asbestos Toxicity</a> |</nobr> <nobr><a title="22" href="https://digitalfire.com/hazard/22">Ball Clay</a> |</nobr> <nobr><a title="321" href="https://digitalfire.com/hazard/321">BARIUM and COMPOUNDS Toxicology</a> |</nobr> <nobr><a title="367" href="https://digitalfire.com/hazard/367">Barium Carbonate in Clay Bodies</a> |</nobr> <nobr><a title="26" href="https://digitalfire.com/hazard/26">Barium Carbonate in Glazes</a> |</nobr> <nobr><a title="31" href="https://digitalfire.com/hazard/31">Bentonite Toxicity</a> |</nobr> <nobr><a title="33" href="https://digitalfire.com/hazard/33">Beryllium Monoxide Toxicology</a> |</nobr> <nobr><a title="352" href="https://digitalfire.com/hazard/352">Bismuth Trioxide Toxicology</a> |</nobr> <nobr><a title="326" href="https://digitalfire.com/hazard/326">Boron Compounds and Their Toxicity</a> |</nobr> <nobr><a title="1" href="https://digitalfire.com/hazard/1">Brown Stain</a> |</nobr> <nobr><a title="335" href="https://digitalfire.com/hazard/335"><button type="button" class="btn btn-dark">Cadmium Toxicity</button></a> |</nobr> <nobr><a title="343" href="https://digitalfire.com/hazard/343">Calcium Carbonate Toxicology</a> |</nobr> <nobr><a title="334" href="https://digitalfire.com/hazard/334">Carbon Monoxide Toxicity</a> |</nobr> <nobr><a title="353" href="https://digitalfire.com/hazard/353">Cesium Toxicology</a> |</nobr> <nobr><a title="330" href="https://digitalfire.com/hazard/330">Chromium Compounds Toxicology</a> |</nobr> <nobr><a title="146" href="https://digitalfire.com/hazard/146">Clay Toxicity</a> |</nobr> <nobr><a title="73" href="https://digitalfire.com/hazard/73">Cobalt Oxide and Carbonate</a> |</nobr> <nobr><a title="331" href="https://digitalfire.com/hazard/331">Cobalt Toxicology</a> |</nobr> <nobr><a title="329" href="https://digitalfire.com/hazard/329">Copper Compounds Toxicology</a> |</nobr> <nobr><a title="78" href="https://digitalfire.com/hazard/78">Copper Oxide and Carbonate</a> |</nobr> <nobr><a title="84" href="https://digitalfire.com/hazard/84">Cristobalite Toxicity</a> |</nobr> <nobr><a title="337" href="https://digitalfire.com/hazard/337">Cryolite and Ceramics</a> |</nobr> <nobr><a title="372" href="https://digitalfire.com/hazard/372">Dealing With Dust in Ceramics</a> |</nobr> <nobr><a title="351" href="https://digitalfire.com/hazard/351">Diatomaceous Earth Toxicology</a> |</nobr> <nobr><a title="323" href="https://digitalfire.com/hazard/323">Dioxins in Clays</a> |</nobr> <nobr><a title="95" href="https://digitalfire.com/hazard/95">Epsom Salts</a> |</nobr> <nobr><a title="348" href="https://digitalfire.com/hazard/348">Eye Injuries Due to Radiation</a> |</nobr> <nobr><a title="222" href="https://digitalfire.com/hazard/222">Feldspar</a> |</nobr> <nobr><a title="320" href="https://digitalfire.com/hazard/320">Fighting Micro-Organisms in Ceramics</a> |</nobr> <nobr><a title="108" href="https://digitalfire.com/hazard/108">Fluorine Gas</a> |</nobr> <nobr><a title="413" href="https://digitalfire.com/hazard/413">Fumes from gas kilns</a> |</nobr> <nobr><a title="354" href="https://digitalfire.com/hazard/354">Gallium Oxide Toxicology</a> |</nobr> <nobr><a title="342" href="https://digitalfire.com/hazard/342">Hafnium Oxide Toxicty</a> |</nobr> <nobr><a title="345" href="https://digitalfire.com/hazard/345">Hydrofluoric Acid Toxicity</a> |</nobr> <nobr><a title="350" href="https://digitalfire.com/hazard/350">Iron oxide and Hematite</a> |</nobr> <nobr><a title="169" href="https://digitalfire.com/hazard/169">Lead Chromate</a> |</nobr> <nobr><a title="368" href="https://digitalfire.com/hazard/368">Lead in Ceramic Glazes</a> |</nobr> <nobr><a title="328" href="https://digitalfire.com/hazard/328">Lead Toxicology</a> |</nobr> <nobr><a title="174" href="https://digitalfire.com/hazard/174">Lithium Carbonate Toxicity</a> |</nobr> <nobr><a title="349" href="https://digitalfire.com/hazard/349">Lithium Toxicology</a> |</nobr> <nobr><a title="322" href="https://digitalfire.com/hazard/322">Man-Made Vitreous Fibers (MMVF) Toxicology</a> |</nobr> <nobr><a title="410" href="https://digitalfire.com/hazard/410">Man-Made Vitreous Fibers Safety Update</a> |</nobr> <nobr><a title="406" href="https://digitalfire.com/hazard/406">Manganese and Parkinsons by Jane Watkins</a> |</nobr> <nobr><a title="187" href="https://digitalfire.com/hazard/187">Manganese in Clay Bodies</a> |</nobr> <nobr><a title="317" href="https://digitalfire.com/hazard/317">Manganese Inorganic Compounds Toxicology</a> |</nobr> <nobr><a title="409" href="https://digitalfire.com/hazard/409">Manganese Toxicity by Elke Blodgett</a> |</nobr> <nobr><a title="407" href="https://digitalfire.com/hazard/407">Manganese: Creativity and Illness by Dierdre O'Reilly</a> |</nobr> <nobr><a title="332" href="https://digitalfire.com/hazard/332">Molybdenum Compounds Toxicology</a> |</nobr> <nobr><a title="327" href="https://digitalfire.com/hazard/327">Nickel Compounds Toxicity</a> |</nobr> <nobr><a title="314" href="https://digitalfire.com/hazard/314">Niobium Oxide Toxicity</a> |</nobr> <nobr><a title="318" href="https://digitalfire.com/hazard/318">Occupational Dermatoses</a> |</nobr> <nobr><a title="370" href="https://digitalfire.com/hazard/370">Overview of Material Safety by Gavin Stairs</a> |</nobr> <nobr><a title="364" href="https://digitalfire.com/hazard/364">Paraffin Toxicology</a> |</nobr> <nobr><a title="216" href="https://digitalfire.com/hazard/216">Perlite Toxicity</a> |</nobr> <nobr><a title="238" href="https://digitalfire.com/hazard/238">Plant Ash Toxicity</a> |</nobr> <nobr><a title="346" href="https://digitalfire.com/hazard/346">Potassium Carbonate Toxicity</a> |</nobr> <nobr><a title="365" href="https://digitalfire.com/hazard/365">Pregnancy and Ceramics</a> |</nobr> <nobr><a title="355" href="https://digitalfire.com/hazard/355">Propane Toxicology</a> |</nobr> <nobr><a title="251" href="https://digitalfire.com/hazard/251">Quartz Toxicity</a> |</nobr> <nobr><a title="369" href="https://digitalfire.com/hazard/369">Quartz Toxicity on Clayart</a> |</nobr> <nobr><a title="336" href="https://digitalfire.com/hazard/336">Rare Earth Compounds Toxicity</a> |</nobr> <nobr><a title="366" href="https://digitalfire.com/hazard/366">Rubidium and Cesium Toxicology</a> |</nobr> <nobr><a title="356" href="https://digitalfire.com/hazard/356">Rutile Toxicology</a> |</nobr> <nobr><a title="324" href="https://digitalfire.com/hazard/324">Silicosis and Screening</a> |</nobr> <nobr><a title="357" href="https://digitalfire.com/hazard/357">Silver Compounds Toxicology</a> |</nobr> <nobr><a title="358" href="https://digitalfire.com/hazard/358">Sodium Azide Toxicology</a> |</nobr> <nobr><a title="359" href="https://digitalfire.com/hazard/359">Sodium Carbonate Toxicology</a> |</nobr> <nobr><a title="360" href="https://digitalfire.com/hazard/360">Sodium Silicate Powder Toxicology</a> |</nobr> <nobr><a title="315" href="https://digitalfire.com/hazard/315">Stannous Chloride Toxicity</a> |</nobr> <nobr><a title="316" href="https://digitalfire.com/hazard/316">Strontium Carbonate Toxicity Note</a> |</nobr> <nobr><a title="347" href="https://digitalfire.com/hazard/347">Sulfur Dioxide Toxicity</a> |</nobr> <nobr><a title="3" href="https://digitalfire.com/hazard/3">Talc Hazards Overview</a> |</nobr> <nobr><a title="361" href="https://digitalfire.com/hazard/361">Talc Toxicology</a> |</nobr> <nobr><a title="362" href="https://digitalfire.com/hazard/362">Thallium Oxide Toxicology</a> |</nobr> <nobr><a title="344" href="https://digitalfire.com/hazard/344">Thorium Dioxide Toxicity</a> |</nobr> <nobr><a title="338" href="https://digitalfire.com/hazard/338">Tin Inorganic Compounds</a> |</nobr> <nobr><a title="339" href="https://digitalfire.com/hazard/339">Titanium Dioxide Toxicology</a> |</nobr> <nobr><a title="313" href="https://digitalfire.com/hazard/313">Toxicological Assessment of Zeolites</a> |</nobr> <nobr><a title="363" href="https://digitalfire.com/hazard/363">Tungsten Compounds Toxicology</a> |</nobr> <nobr><a title="371" href="https://digitalfire.com/hazard/371">Understanding Acronyms on MSDS's</a> |</nobr> <nobr><a title="325" href="https://digitalfire.com/hazard/325">Uranium and Ceramics</a> |</nobr> <nobr><a title="319" href="https://digitalfire.com/hazard/319">Vanadium and Compounds Toxicology</a> |</nobr> <nobr><a title="411" href="https://digitalfire.com/hazard/411">Vermiculite</a> |</nobr> <nobr><a title="340" href="https://digitalfire.com/hazard/340">Zinc Compounds Toxicology</a> |</nobr> <nobr><a title="373" href="https://digitalfire.com/hazard/373">Zirconium Compounds Toxicity</a> |</nobr> <nobr><a title="234" href="https://digitalfire.com/hazard/234">Zirconium Encapsulated Stains Toxicity</a></nobr></div><h1>Cadmium Toxicity</h1>
+<b><u><font FACE="Arial" SIZE="3"> 
+<p>Compounds</font></u><font FACE="Arial" SIZE="3">:</font></b><font FACE="Arial" SIZE="3"> 
+cadmium oxide; cadmium carbonate; cadmium chloride; cadmium sulfate; cadmium 
+sulfide.</p> 
+<b><u> 
+<p>Uses</u>:&nbsp;</b>The metal is used in electroplating, in solder for 
+aluminium, as a constituent of easily fusible alloys, as a deoxidizer in nickel 
+plating, in process engraving, in cadmium-nickel batteries, and in reactor 
+control rods.</p> 
+<p>Cadmium compounds are employed as TV phosphors, as pigments in glazes and 
+enamels, in dyeing and printing, and in semi-conductors and rectifiers.</p> 
+<b><u> 
+<p>Exposure</u>:</b> Cadmium is well-absorbed by<b><u> inhalation </u></b>but, 
+poorly by ingestion.</p> 
+<p>It is not absorbed by the skin. Aside from occupational exposure, it is also 
+present in&nbsp;:</p> 
+<p>1-Food<br> 
+2-Cigarette smoke (the main source of contamination in the general population).<br> 
+3-Urban atmospheric air (levels may be high in the vicinity of cadmium producing 
+facilities)<br> 
+4-Lichen and moss ( they concentrate cadmium as well as other heavy metals).</p> 
+<p><b><u>Acute intoxication</u>:</p> 
+<p>1-Metal fume fever:</p> 
+</b> 
+<p>Inhalation of cadmium oxide fumes, produced when cadmium metal and cadmium 
+compounds are heated to high temperature, causes flu-like symptoms better known 
+as Ã‚Â«&nbsp;metal fume fever&nbsp;Ã‚Â», a benign condition. Treatment is entirely 
+symptomatic.</p> 
+<b> 
+<p>2-Pulmonary effects:</p> 
+</b> 
+<p>More severe exposures may cause lung damage and ultimately death.</p> 
+<p>Cadmium oxide fume is a severe pulmonary irritant; cadmium dust is a less 
+potent irritant than cadmium fume because it has a larger particle size.</p> 
+<p>Inhalation exposure to high levels of cadmium fumes or dust is intensely 
+irritating to respiratory tissue. Particle size appears to be a more important 
+determinant of <a  href="https://digitalfire.com/glossary/toxicity">toxicity</a> than chemical form. However, most acute intoxications 
+have been caused by inhalation of cadmium fume at concentrations that did not 
+provide sufficient warning symptoms of irritation so that workers could leave the 
+contaminated workplace.</p> 
+<p>Concentrations of fume responsible for fatalities have been 40 to 50 mg/m3 
+for 1 hour or 9 mg/m3 for 5 hours. There have been non-fatal cases at lower 
+concentrations.</p> 
+<p>Pulmonary symptoms and clinical signs reflect lesions ranging from 
+nasopharyngeal and bronchial irritation to pulmonary oedema, and death.</p> 
+<p>There also may be possibly&nbsp;: headache, chills, muscle aches, nausea, 
+vomiting, and diarrhea.</p> 
+<p>Among survivors , the subsequent course is unpredictable ; most cases resolve 
+slowly, but respiratory symptoms may linger for several weeks, and impairment of 
+pulmonary function may persists for months.</p> 
+<p><b><u>Chronic intoxication</u>:</p> 
+<p>1-Kidney effects:</p> 
+</b> 
+<p>Chronic exposure to cadmium, by inhalation or ingestion, results in renal 
+damage which may continue to progress even after exposure ceases.</p> 
+<b> 
+<p>2-Pulmonary effects:</p> 
+</b> 
+<p>Long-term inhalation exposure at low levels leads to decreased lung function 
+and emphysema.</p> 
+<b> 
+<p>3-Bone effects:</p> 
+</b> 
+<p>Even if absorbtion by ingestion is low, chronic exposure to high levels of 
+cadmium in food has caused bone disorders, including osteoporosis and 
+osteamalacia. Long term ingestion, by a Japanese population, of water and food 
+contaminated with cadmium, was associated with a crippling 
+condition,&nbsp;Ã‚Â«&nbsp;itai-itai&nbsp;Ã‚Â» (ouch-ouch) disease. The affliction is 
+characterized by pain in the back and joints, osteomalacia (adult rickets), bone 
+fractures, and occasional renal failure, and most often affects women with 
+multiple risk factors such as multiparity and poor nutrition.</p> 
+<b> 
+<p>4-Miscellaneous:</p> 
+</b> 
+<p>Other consequences of cadmium exposure are: anemia, yellow discoloration of 
+the teeth, rhinitis, occasional ulceration of the nasal septum, damage to the 
+olfactory nerve, and anosmia.</p> 
+<b><u> 
+<p>Carcinogenesis and mutagenesis</u>:</p> 
+</b> 
+<p>Several inorganic cadmium compounds cause malignant tumors in animals.</p> 
+<p>Occupational exposure to cadmium has been implicated in a significant 
+increase of lung and prostate cancer. The IARC has determined that there is 
+sufficient evidence in humans for the carcinogenicity of cadmium and cadmium 
+compounds. It also appears that cadmium has the capability to alter genetic 
+materials, particularly chromosomes.</p> 
+<b><u> 
+<p>Exposure&nbsp;:</p> 
+</u></b> 
+<p>The important thing is your level of exposure to cadmium, it may vary if you 
+are a pottery factory worker, a teacher, a full-time studio potter or a 
+part-time. It certainly depends also on the amount used over a given period of 
+time. In the wet state (in glazes), these compounds are certainly much less 
+hazardous than as dust (main route of entry being inhalation).</p> 
+<p>Factories can afford the monitoring of cadmium exposure but it is not the 
+same for artists and crafts persons.</p> 
+<p>The ACGIH <b>threshold limit value</b> time-weighted average (TLV-TWA) for 
+elemental cadmium and compounds as Cd is 0.01 mg/m3 for total particulate dust 
+(while it is 10mg/m3 for <a  href="https://digitalfire.com/material/1644">titanium dioxide</a> in Quebec); or 0.002 mg/m3 for the 
+respirable fraction of dust , there is an A&nbsp;2 suspected human carcinogen 
+designation for both forms.</p> 
+<b><u> 
+<p>Prevention</u>:</p> 
+</b> 
+<p>Good housekeeping of your studio is important. Avoidance of processes 
+generating unnecessary dust is also important.</p> 
+<p>Depending on the severity of exposure, local ventilation should be used and 
+the aspired air should be vented outside to avoid producing dust from work 
+tables and the floor.</p> 
+<p>The wearing of an approved dust mask when the exposure seems hazardous is 
+mandatory.</p> 
+<p>It should be forbidden to drink, eat or smoke in the workshop.</p> 
+<b><u> 
+<p>Medical surveillance</u>:</p> 
+</b> 
+<p>The diagnosis of the intoxication is based on:</p> 
+<p>1-Case history,</p> 
+<p>2 -Search for proteinuria, in order to screen for a beginning renal 
+impairment, like:</p> 
+<p>a-Beta-2 microglobulin (a low molecular weight protein),</p> 
+<p>b -The retinol carrying protein (a low molecular weight protein),</p> 
+<p>or</p> 
+<p>c-Alpha-1 globulin (a low molecular weight protein),</p> 
+<p>d-Albumine (a high molecular weight protein).</p> 
+<p>3-Measurements in biological tissues, such as blood and urine, more 
+particularly to assess the chronic intoxication risk.</p> 
+<p>A large part of absorbed cadmium is retained in the body and its excretion is 
+very slow. The very long biological half-life of cadmium allows to assess 
+excessive impregnation several years after cessation of exposure.</p> 
+<p>When there are repeated increases in one of the urinary proteins, a thorough 
+investigation of the renal function more must be carried out.</p> 
+<p><b><u><font FACE="Arial">Biological monitoring tests for populations 
+exposed to cadmium in the industry &amp; the environment</p> 
+</font></u> 
+</b><font FACE="Arial"> 
+<table border="0" cellspacing="1" cellpadding="3"> 
+  <tr> 
+    <td valign="top" bgcolor="#C0C0C0"><font FACE="Arial"> 
+<b> 
+Parameter</b> 
+</font> 
+    </td> 
+    <td valign="top" bgcolor="#C0C0C0"><font FACE="Arial"> 
+ <b> 
+ Tissue</b> 
+      </font></td> 
+    <td valign="top" bgcolor="#C0C0C0"><b><font FACE="Arial"> 
+ Normal value 
+</font> 
+      <font FACE="Arial"> &nbsp; 
+</font> 
+      </b></td> 
+    <td valign="top" bgcolor="#C0C0C0"><font FACE="Arial"><b> Maximal allowable concentration</b> 
+</font> 
+    </td> 
+    <td valign="top" bgcolor="#C0C0C0"><font FACE="Arial"> <b> Significance</b></font> 
+    </td> 
+  </tr> 
+  <tr> 
+    <td valign="top"><font FACE="Arial"> 
+Cadmium<font FACE="Arial"> 
+ &nbsp; 
+</font> 
+</font> 
+    </td> 
+    <td valign="top"><font FACE="Arial"> 
+ Blood 
+</font> 
+    </td> 
+    <td valign="top"><font FACE="Arial"> 
+ &lt;0.5 Ã‚Âµg/L 
+</font> 
+    </td> 
+    <td valign="top"><font FACE="Arial"> 
+ 5 Ã‚Âµg/L 
+</font> 
+    </td> 
+    <td valign="top"><font FACE="Arial"> 
+ Recent exposure 
+</font> 
+    </td> 
+  </tr> 
+  <tr> 
+    <td valign="top"><font FACE="Arial"> 
+Cadmium 
+</font> 
+    </td> 
+    <td valign="top"><font FACE="Arial"><font FACE="Arial"> 
+ Urine&nbsp; 
+</font> 
+      </font> 
+    </td> 
+    <td valign="top"><font FACE="Arial"> 
+&nbsp;</font><font FACE="Arial">&lt;2 Ã‚Âµg/g<font FACE="Arial"> 
+ creatinine 
+</font> 
+</font> 
+    </td> 
+    <td valign="top"><font FACE="Arial"> 
+ &lt;5 Ã‚Âµg/g<font FACE="Arial"> 
+ creatinine 
+</font> 
+</font> 
+    </td> 
+    <td valign="top"><font FACE="Arial"> 
+ Body burden** 
+</font> 
+    </td> 
+  </tr> 
+  <tr> 
+    <td valign="top"><font FACE="Arial"> 
+BÃƒÂªta-2 micro-globulin* 
+</font> 
+    </td> 
+    <td valign="top"><font FACE="Arial"> 
+ Urine&nbsp;</font></td> 
+    <td valign="top"><font FACE="Arial"> 
+ &lt;300 Ã‚Âµg/g creatinine 
+</font> 
+    </td> 
+    <td valign="top"> 
+    </td> 
+    <td valign="top"><font FACE="Arial"> 
+Tubular impairment</font></td> 
+  </tr> 
+  <tr> 
+    <td valign="top"><font FACE="Arial"> 
+Retinol carrying<font FACE="Arial"> protein 
+</font> 
+      </font></td> 
+    <td valign="top"><font FACE="Arial"><font FACE="Arial"> 
+ Urine 
+      </font></font></td> 
+    <td valign="top"><font FACE="Arial"> 
+ &lt;300 Ã‚Âµg/g creatinine&nbsp; 
+</font> 
+    </td> 
+    <td valign="top"> 
+    </td> 
+    <td valign="top"><font FACE="Arial"> 
+Tubular impairment 
+</font> 
+    </td> 
+  </tr> 
+  <tr> 
+    <td valign="top"><font FACE="Arial"> 
+Albumin&nbsp; 
+</font> 
+    </td> 
+    <td valign="top"><font FACE="Arial"> 
+ Urine 
+</font> 
+    </td> 
+    <td valign="top"><font FACE="Arial"> 
+ &lt;20 mg/g creatinine 
+</font> 
+    </td> 
+    <td valign="top"> 
+    </td> 
+    <td valign="top"><font FACE="Arial"> 
+ Glomerular impairment 
+</font> 
+    </td> 
+  </tr> 
+</table> 
+<p>* unstable if urinary pH &lt; 5.6<br> 
+** in case of moderate exposure and in the absence of renal damage</font></p> 
+<p><b><u>Treatment</u>:</p> 
+</b> 
+<p>Dissodic calcium ETDA may be used in the treatment of the acute intoxication 
+but one must be very careful in the presence of renal impairment. No chelating 
+agent can be proposed for the treatment of the chronic intoxication.</p> 
+<hr> 
+</p> 
+<p><font FACE="Arial" SIZE="3"> 
+<b><u> 
+References</u></b>&nbsp;:</p> 
+<p>1-Chemical Hazards of the Workplace, Proctor &amp; Hughes, last edition.<br> 
+2-Hazardous Materials Toxicology, Sullivan &amp; Krieger, last edition.<br> 
+3-EncyclopÃƒÂ©die MÃƒÂ©dico-Chirurgicale, Toxicologie-Pathologie Professionnelle. 
+Paris, Juillet 2001.<br> 
+4-Occupational &amp; Environmental Medicicne, Ladou J., last edition</p> 
+</font>
+<hr><p>By Edouard Bastarache </p>
+<h2 style="font-style:italic; margin-top:40px;">Related Information</h2>
+
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/cadmium+sulfide">Cadmium Sulfide</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ferro+239416+yellow+stain">Ferro 239416 Yellow Stain</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/eba">Article by Edouard Bastarache</a>
+<br /><i>Edouard Bastarache is a well known doctor that has written many articles on the subject of <a  href="https://digitalfire.com/glossary/toxicity">toxicity</a> of ceramic materials and books on technical aspects of <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>. He writes in both English and French.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1549">http://cen.acs.org/articles/95/web/2017/06/Sunlight-surprise-raises-cadmium-pollution-risk.html</a>
+<br /><i>Cadmium solubility increases in sunlight</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+</tbody></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

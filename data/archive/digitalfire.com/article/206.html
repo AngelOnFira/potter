@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Limit Formulas and Target Formulas</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Glaze chemistries for each type of glaze have a typical look to them that enables us to spot ones that are non-typical. Limit and target formulas are useful to us if we keep in perspective their proper use.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item active" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=article" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:center; vertical-align:top;">Feb 14-15, 2026 - <b>Major Server <a href="https://digitalfire.com">Upgrade</a> Done</b></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Articles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a title="388" href="https://digitalfire.com/article/388">A ChatBot gives jaw-dropping glaze recipe advice - Jan 2025</a><br /><a title="244" href="https://digitalfire.com/article/244">A Low Cost Tester of Glaze Melt Fluidity</a><br /><a title="361" href="https://digitalfire.com/article/361">A One-speed Lab or Studio Slurry Mixer</a><br /><a title="353" href="https://digitalfire.com/article/353">A Textbook Cone 6 Matte Glaze With Problems</a><br /><a title="199" href="https://digitalfire.com/article/199">Adjusting Glaze Expansion by Calculation to Solve Shivering</a><br /><a title="251" href="https://digitalfire.com/article/251">Alberta Slip, 20 Years of Substitution for Albany Slip</a><br /><a title="273" href="https://digitalfire.com/article/273">An Overview of Ceramic Stains</a><br /><a title="37" href="https://digitalfire.com/article/37">Are You in Control of Your Production Process?</a><br /><a title="12" href="https://digitalfire.com/article/12">Are Your Glazes Food Safe or are They Leachable?</a><br /><a title="143" href="https://digitalfire.com/article/143">Attack on Glass: Corrosion Attack Mechanisms</a><br /><a title="204" href="https://digitalfire.com/article/204">Ball Milling Glazes, Bodies, Engobes</a><br /><a title="345" href="https://digitalfire.com/article/345">Binders for Ceramic Bodies</a><br /><a title="4" href="https://digitalfire.com/article/4">Bringing Out the Big Guns in Craze Control: MgO (G1215U)</a><br /><a title="381" href="https://digitalfire.com/article/381">Can We Help You Fix a Specific Problem?</a><br /><a title="124" href="https://digitalfire.com/article/124">Ceramic Glazes Today</a><br /><a title="208" href="https://digitalfire.com/article/208">Ceramic Material Nomenclature</a><br /><a title="336" href="https://digitalfire.com/article/336">Ceramic Tile Clay Body Formulation</a><br /><a title="217" href="https://digitalfire.com/article/217">Changing Our View of Glazes</a><br /><a title="22" href="https://digitalfire.com/article/22">Chemistry vs. Matrix Blending to Create Glazes from Native Materials</a><br /><a title="209" href="https://digitalfire.com/article/209">Concentrate on One Good Glaze</a><br /><a title="115" href="https://digitalfire.com/article/115">Copper Red Glazes</a><br /><a title="271" href="https://digitalfire.com/article/271">Crazing and Bacteria: Is There a Hazard?</a><br /><a title="190" href="https://digitalfire.com/article/190">Crazing in Stoneware Glazes: Treating the Causes, Not the Symptoms</a><br /><a title="97" href="https://digitalfire.com/article/97">Creating a Non-Glaze Ceramic Slip or Engobe</a><br /><a title="195" href="https://digitalfire.com/article/195">Creating Your Own Budget Glaze</a><br /><a title="36" href="https://digitalfire.com/article/36">Crystal Glazes: Understanding the Process and Materials</a><br /><a title="324" href="https://digitalfire.com/article/324">Deflocculants: A Detailed Overview</a><br /><a title="32" href="https://digitalfire.com/article/32">Demonstrating Glaze Fit Issues to Students</a><br /><a title="334" href="https://digitalfire.com/article/334">Diagnosing a Casting Problem at a Sanitaryware Plant</a><br /><a title="196" href="https://digitalfire.com/article/196">Drying Ceramics Without Cracks</a><br /><a title="187" href="https://digitalfire.com/article/187">Duplicating Albany Slip</a><br /><a title="45" href="https://digitalfire.com/article/45">Duplicating AP Green Fireclay</a><br /><a title="197" href="https://digitalfire.com/article/197">Electric Hobby Kilns: What You Need to Know</a><br /><a title="39" href="https://digitalfire.com/article/39">Fighting the Glaze Dragon</a><br /><a title="214" href="https://digitalfire.com/article/214">Firing Clay Test Bars</a><br /><a title="200" href="https://digitalfire.com/article/200">Firing: What Happens to Ceramic Ware in a Firing Kiln</a><br /><a title="113" href="https://digitalfire.com/article/113">First You See It Then You Don't: Raku Glaze Stability</a><br /><a title="316" href="https://digitalfire.com/article/316">Fixing a glaze that does not stay in suspension</a><br /><a title="338" href="https://digitalfire.com/article/338">Formulating a body using clays native to your area</a><br /><a title="191" href="https://digitalfire.com/article/191">Formulating a Clear Glaze Compatible with Chrome-Tin Stains</a><br /><a title="282" href="https://digitalfire.com/article/282">Formulating a Porcelain</a><br /><a title="188" href="https://digitalfire.com/article/188">Formulating Ash and Native-Material Glazes</a><br /><a title="114" href="https://digitalfire.com/article/114">G1214M Cone 5-7 20x5 glossy transparent glaze</a><br /><a title="121" href="https://digitalfire.com/article/121">G1214W Cone 6 transparent glaze</a><br /><a title="122" href="https://digitalfire.com/article/122">G1214Z Cone 6 matte glaze</a><br /><a title="226" href="https://digitalfire.com/article/226">G1916M Cone 06-04 transparent glaze</a><br /><a title="203" href="https://digitalfire.com/article/203">Getting the Glaze Color You Want: Working With Stains</a><br /><a title="342" href="https://digitalfire.com/article/342">Glaze and Body Pigments and Stains in the Ceramic Tile Industry</a><br /><a title="189" href="https://digitalfire.com/article/189">Glaze Chemistry Basics - Formula, Analysis, Mole%, Unity </a><br /><a title="358" href="https://digitalfire.com/article/358">Glaze chemistry using a frit of approximate analysis</a><br /><a title="123" href="https://digitalfire.com/article/123">Glaze Recipes: Formulate and Make Your Own Instead</a><br /><a title="343" href="https://digitalfire.com/article/343">Glaze Types, Formulation and Application in the Tile Industry</a><br /><a title="181" href="https://digitalfire.com/article/181">Having Your Glaze Tested for Toxic Metal Release</a><br /><a title="364" href="https://digitalfire.com/article/364">High Gloss Glazes</a><br /><a title="384" href="https://digitalfire.com/article/384">Hire Us for a 3D Printing Project</a><br /><a title="136" href="https://digitalfire.com/article/136">How a Material Chemical Analysis is Done</a><br /><a title="235" href="https://digitalfire.com/article/235">How desktop INSIGHT Deals With Unity, LOI and Formula Weight</a><br /><a title="331" href="https://digitalfire.com/article/331">How to Find and Test Your Own Native Clays</a><br /><a title="26" href="https://digitalfire.com/article/26">I have always done it this way!</a><br /><a title="344" href="https://digitalfire.com/article/344">Inkjet Decoration of Ceramic Tiles</a><br /><a title="279" href="https://digitalfire.com/article/279">Is Your Fired Ware Safe?</a><br /><a title="311" href="https://digitalfire.com/article/311">Leaching Cone 6 Glaze Case Study</a><br /><a title="206" href="https://digitalfire.com/article/206">Limit Formulas and Target Formulas</a><br /><a title="133" href="https://digitalfire.com/article/133">Low Budget Testing of Ceramic Glazes</a><br /><a title="333" href="https://digitalfire.com/article/333">Make Your Own Ball Mill Stand</a><br /><a title="347" href="https://digitalfire.com/article/347">Making Glaze Testing Cones</a><br /><a title="341" href="https://digitalfire.com/article/341">Monoporosa or Single Fired Wall Tiles</a><br /><a title="325" href="https://digitalfire.com/article/325">Organic Matter in Clays: Detailed Overview</a><br /><a title="105" href="https://digitalfire.com/article/105">Outdoor Weather Resistant Ceramics</a><br /><a title="27" href="https://digitalfire.com/article/27">Painting Glazes Rather Than Dipping or Spraying</a><br /><a title="212" href="https://digitalfire.com/article/212">Particle Size Distribution of Ceramic Powders</a><br /><a title="339" href="https://digitalfire.com/article/339">Porcelain Tile, Vitrified Tile</a><br /><a title="20" href="https://digitalfire.com/article/20">Rationalizing Conflicting Opinions About Plasticity</a><br /><a title="332" href="https://digitalfire.com/article/332">Ravenscrag Slip is Born</a><br /><a title="247" href="https://digitalfire.com/article/247">Recylcing Scrap Clay</a><br /><a title="101" href="https://digitalfire.com/article/101">Reducing the Firing Temperature of a Glaze From Cone 10 to 6</a><br /><a title="329" href="https://digitalfire.com/article/329">Setting up a Clay Testing Program in Your Company or Studio</a><br /><a title="211" href="https://digitalfire.com/article/211">Simple Physical Testing of Clays</a><br /><a title="350" href="https://digitalfire.com/article/350">Single Fire Glazing</a><br /><a title="326" href="https://digitalfire.com/article/326">Soluble Salts in Minerals: Detailed Overview</a><br /><a title="28" href="https://digitalfire.com/article/28">Some Keys to Dealing With Firing Cracks</a><br /><a title="249" href="https://digitalfire.com/article/249">Stoneware Casting Body Recipes</a><br /><a title="194" href="https://digitalfire.com/article/194">Substituting Cornwall Stone</a><br /><a title="274" href="https://digitalfire.com/article/274">Super-Refined Terra Sigillata</a><br /><a title="340" href="https://digitalfire.com/article/340">The Chemistry, Physics and Manufacturing of Glaze Frits</a><br /><a title="202" href="https://digitalfire.com/article/202">The Effect of Glaze Fit on Fired Ware Strength</a><br /><a title="125" href="https://digitalfire.com/article/125">The Four Levels on Which to View Ceramic Glazes</a><br /><a title="207" href="https://digitalfire.com/article/207">The Majolica Earthenware Process</a><br /><a title="43" href="https://digitalfire.com/article/43">The Potter's Prayer</a><br /><a title="359" href="https://digitalfire.com/article/359">The Right Chemistry for a Cone 6 Magnesia Matte</a><br /><a title="33" href="https://digitalfire.com/article/33">The Trials of Being the Only Technical Person in the Club</a><br /><a title="107" href="https://digitalfire.com/article/107">The Whining Stops Here: A Realistic Look at Clay Bodies</a><br /><a title="134" href="https://digitalfire.com/article/134">Those Unlabelled Bags and Buckets</a><br /><a title="16" href="https://digitalfire.com/article/16">Tiles and Mosaics for Potters</a><br /><a title="308" href="https://digitalfire.com/article/308">Toxicity of Firebricks Used in Ovens</a><br /><a title="379" href="https://digitalfire.com/article/379">Trafficking in Glaze Recipes</a><br /><a title="216" href="https://digitalfire.com/article/216">Understanding Ceramic Materials</a><br /><a title="210" href="https://digitalfire.com/article/210">Understanding Ceramic Oxides</a><br /><a title="130" href="https://digitalfire.com/article/130">Understanding Glaze Slurry Properties</a><br /><a title="213" href="https://digitalfire.com/article/213">Understanding the Deflocculation Process in Slip Casting</a><br /><a title="132" href="https://digitalfire.com/article/132">Understanding the Terra Cotta Slip Casting Recipes In North America</a><br /><a title="198" href="https://digitalfire.com/article/198">Understanding Thermal Expansion in Ceramic Glazes</a><br /><a title="313" href="https://digitalfire.com/article/313">Unwanted Crystallization in a Cone 6 Glaze</a><br /><a title="389" href="https://digitalfire.com/article/389">Using Dextrin, Glycerine and CMC Gum together</a><br /><a title="135" href="https://digitalfire.com/article/135">Volcanic Ash</a><br /><a title="201" href="https://digitalfire.com/article/201">What Determines a Glaze's Firing Temperature?</a><br /><a title="111" href="https://digitalfire.com/article/111">What is a Mole, Checking Out the Mole</a><br /><a title="38" href="https://digitalfire.com/article/38">What is the Glaze Dragon?</a><br /><a title="98" href="https://digitalfire.com/article/98">Where do I start in understanding glazes?</a><br /><a title="215" href="https://digitalfire.com/article/215">Why Textbook Glazes Are So Difficult</a><br /><a title="239" href="https://digitalfire.com/article/239">Working with children</a></div><h1>Limit Formulas and Target Formulas</h1>
+<h4 class="text-muted">Description</h4><p class="text-muted font-italic">Glaze chemistries for each type of glaze have a typical look to them that enables us to spot ones that are non-typical. Limit and target formulas are useful to us if we keep in perspective their proper use.</p><h4>Article</h4>
+<H2>Target Formulas</H2>
+
+<p>I shy away from classifying and pigeon-holing glazes into specific categories. In the past I have over-rated the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> of glazes (<a  href="https://digitalfire.com/glossary/digitalfire+insight">Digitalfire Insight</a> desktop software focused completely on that for many years). While chemistry is a key factor in understanding why glazes fire the way they do, we must not overlook their physical presence. <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a>, the successor to <a  href="https://digitalfire.com/glossary/digitalfire+insight">desktop Insight</a>, is much more about understanding the <a  href="https://digitalfire.com/glossary/physical+testing">physics</a> of glazes (e.g. understanding their flow, color, surface, <a  href="https://digitalfire.com/glossary/reactive+glazes">variegation</a>, crystal formation as impacted by temperature, <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a>, application, preparation techniques and material selection) and the bodies to which they are applied. Insight-live still does the chemistry but is less idealistic and more realistic about its impact, putting it into context with the physics. I thus find that the term "<a  href="https://digitalfire.com/glossary/limit+formula">Limit Formulas</a>" suggests we have a better understanding and control of the chemistry than we actually do and that specific glaze types have a narrow chemistry profile (which they most often do not). This is why I prefer the term "<a  href="https://digitalfire.com/glossary/limit+formula">Target Formula</a>". In recent years more and more people do not even use <a  href="https://digitalfire.com/glossary/unity+formula">unity formulas</a>, they prefer to compare glazes via <a  href="https://digitalfire.com/glossary/chemical+analysis">percentage analysis</a> or molar percent. The more you know about a recipe the more it defies pigeon-holing in these ways, the physics part of Insight is very much about that. It is about understanding a body or glaze in terms of ones you already know about. When you take a physics approach you are much more inclined to test glazes more thoroughly and in more circumstances and you are less inclined to classify them over-specifically.</p>
+
+<P>A target formula is a formula that is likely to produce a certain effect. Note I am talking about formulas, not recipes. They are the 'universal language' of glazes. You must calculate the mix of materials needed to supply a formula. Consider a <a  href="https://digitalfire.com/glossary/glass+vs.+crystalline">crystalline</a> glaze. Among other things, a target formula would specify a low alumina content to encourage a <a  href="https://digitalfire.com/glossary/fluid+melt+glazes">fluid melt</a> so crystals can grow. Likewise mattes, copper reds, chrome-tin pinks, and many special surface effects and colors have 'mechanisms' that we can isolate, that is, rationalize in terms of the formula. In some glazes the balance of the entire formula is critical to producing the effect, in others you can identify the presence of one or two <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> that are responsible. In the latter it is usually possible to 'transplant' the <a  href="https://digitalfire.com/glossary/mechanism">mechanism</a> into a proven <a  href="https://digitalfire.com/glossary/base+glaze">base glaze</a>. For the former it is often possible to adjust the chemistry of the base and then transplant in the mechanism.</P>
+
+<P>There is a temptation to identify <a  href="https://digitalfire.com/glossary/mechanism">mechanisms</a> by capturing existing recipes of the desired type (i.e. from the Internet) and studying them as a group. However with this approach the conclusion will be tainted by the effects of 'bad' examples in the study group or recipes that produce the same visual effect using a different mechanism. A better approach is to select a trusted recipe and examine its formula in the light of what is written and what is known about the oxides. Comparison with poorer specimens of the same glaze type could then help identify tolerances.</P>
+
+<H2>Limit Formulas</H2>
+<P>When I talk about limit formulas I am talking about guidelines for <b>base <a  href="https://digitalfire.com/glossary/functional">functional</a> glazes</b>. We all want glazes that are reliable, stable, predictable, work with many colors, resist <a  href="https://digitalfire.com/glossary/leaching">leaching</a>, do not <a  href="https://digitalfire.com/trouble/glaze+blisters">blister</a> or <a  href="https://digitalfire.com/trouble/crawling">crawl</a> or <a  href="https://digitalfire.com/glossary/pinholing">pinhole</a>, are durable, expansion adjustable, have clarity, do not <a  href="https://digitalfire.com/glossary/crystallization">devitrify</a>, etc. At <a  href="https://digitalfire.com/glossary/digitalfire+reference+library">Digitalfire</a> we advocate a base-with-adjustments approach to provide a solid foundation for subsequent colored, opacified, and variegated versions. In theory it is impossible to come up with a guideline that will always yield all of the above properties for a specific type of glaze. This is because the measures necessary to achieve these properties often oppose each other and have to be balanced and rationalized. This area is certainly such a case, there is no substitute for oxide knowledge when it comes to comparing an existing glaze with limit or target formulas.</P>
+
+<P>However as humans we want numbers anyway, right! Admittedly limit formulas have proven to be a valuable watchdog to spot suspicious glazes and explain obvious lacks in stability, hardness, and other issues. The fact that we can isolate a surface-character mechanism for a glaze type and reproduce it with remarkable success is also a testament to the possible usefulness of limit formulas to achieve specific functional properties in <a  href="https://digitalfire.com/glossary/base+glaze">base glazes</a>. Limit formulas can be found in many textbooks and were developed by ceramic industry experienced technicians as <I>conservative guidelines</I> for well melted and durable glazes (not necessarily resistant to leaching however). They are not typically simply 'an average recipe' calculated from a large number of working recipes, each oxide range has been rationalized in the light of testing and manufacturing history and what is known about it and its interaction with others. We can only speculate on the thought processes and testing that go into developing a set of limit formulas. The chart author must balance oxide amounts by considering the fact that some enhance hardness, others accelerate melting, resist leaching, matte the surface, reduce the expansion, stabilize the glass, etc. For example, an oxide that encourages glaze hardness does not necessarily promote chemical stability and vice versa (i.e. <a  href="https://digitalfire.com/oxide/cao">CaO</a>). Using limits is admittedly a matter of trust and faith. Still, when students mix up a recipe whose formula is middle-of-the-limits they have a high likelihood of first-fire-success.</P>
+
+<P>Limit formulas typically show preferred ranges for each oxide for a specific type of glaze, they tell us what chemistry a class of glazes have in common. The term 'limit formula' tends to invite non-compliance so we sometimes use the term 'suggestion formula'. Still, if you have a glaze that does not fit within the ranges for its type then you should have a clear rationalization and test results to justify it (see the articles on testing glazes for more information).</P>
+
+<H3>Controversy About Limit Formulas</H3>
+
+<P>People in the 'ceramics without limits' camp point out that limits are restrictive and arbitrary to the average ceramist, they are intended for professionals, they produce base glazes capable of limited color range and surface qualities, and that durable glazes can be made that fall far outside the limits. Are these things true? I've seen none of them proven. Yet they propose analyses of the formulas of existing glazes to identify commonality to better understand a given glaze type, thus in a sense trying to create limit formulas. I submit that the average person does not have the expertise or testing facilities to select good candidates for group analysis, and that the best range of 'functional' colors and surface qualities are possible when you adhere to limits intended to make glazes functional and durable. I also feel that limit formulas are best employed by inexperienced people as a conservative approach until they develop 'license' to exceed the limits. Let me put this another way: Give me any functional glaze that looks great yet is <a  href="https://digitalfire.com/trouble/glaze+crazing">crazed</a>, soft, leachable, blistered, pinholed, unreliable, and difficult to work with an I'll bet I can reproduce it as a one that is hard, leach resistant, non-crazed, reliable, and functional. And I'll bet it's formula will end up being within typical limits for that type!</P>
+
+<P>It is true that limits do not express the complexity of functional glaze science. But until we have a viable alternative disowning the limits is giving student license for complete abandon. And this is happening. I see textbooks full of glazes that do not belong on functional ware. Beginners should take a conservative approach. When you look at a limit chart visualize an industrial glaze technician with years of experience and testing what works and does not work functionally. Should you ignore him? </P>
+
+<H2>Comparing and Learning From These Limit Charts</H2>
+<P>Unfortunately there is some confusion about limit charts. The following table compares two sets of limit charts (for low, medium, and high fire glazes) and illustrates this. One is a set that we have used for years (from UK Ceramic industry tradition), the other is from Green and Cooper. At first the lesson appears to be that G&C numbers more keenly emphasize the need for adequate <a  href="https://digitalfire.com/material/1245">silica</a> and alumina in glazes, especially at higher temperatures.</P>
+<table height="275" border="1">
+  <tbody>
+    <tr>
+      <th align="right" rowSpan="2"> 
+        <p align="right"><strong>Oxide</strong></p>
+      </th>
+      <th align="right" colSpan="3"><strong>
+        <p align="center">UK Traditional Limits</strong></p>
+      </th>
+      <td align="right" rowSpan="12"> </td>
+      <th align="right" colSpan="3">
+        <p align="center">Green & Cooper Limits</p>
+      </th>
+    </tr>
+    <tr>
+      <th align="right">
+        <p align="right">Cone 04-02</p>
+      </th>
+      <th align="right">
+        <p align="right">Cone 3-7</p>
+      </th>
+      <th align="right">
+        <p align="right">Cone 8-10</p>
+      </th>
+      <th align="right">
+        <p align="right">Cone 04</p>
+      </th>
+      <th align="right">
+        <p align="right">Cone 6</p>
+      </th>
+      <th align="right">
+        <p align="right">Cone 10</p>
+      </th>
+    </tr>
+    <tr>
+      <td align="right"><strong>CaO</strong></td>
+      <td align="right">0.1-0.6</td>
+      <td align="right">0.1-0.7</td>
+      <td align="right">0.35-0.8</td>
+      <td align="right">0-0.3</td>
+      <td align="right">0-0.55</td>
+      <td align="right">0-0.7</td>
+    </tr>
+    <tr>
+      <td align="right"><strong>ZnO</strong></td>
+      <td align="right">-0.20</td>
+      <td align="right">-0.25</td>
+      <td align="right">-0.3</td>
+      <td align="right">0-0.18</td>
+      <td align="right">0-0.3</td>
+      <td align="right">0-0.36</td>
+    </tr>
+    <tr>
+      <td align="right"><strong>BaO</strong></td>
+      <td align="right">-0.3</td>
+      <td align="right">-0.3</td>
+      <td align="right">-0.3</td>
+      <td align="right">0-0.28</td>
+      <td align="right">0-0.4</td>
+      <td align="right">0-0.475</td>
+    </tr>
+    <tr>
+      <td align="right"><strong>MgO</strong></td>
+      <td align="right">-0.3</td>
+      <td align="right">-0.3</td>
+      <td align="right">-0.4</td>
+      <td align="right">0-0.3</td>
+      <td align="right">0-0.325</td>
+      <td align="right">0-0.34</td>
+    </tr>
+    <tr>
+      <td align="right"><strong>KNaO</strong></td>
+      <td align="right">-0.5</td>
+      <td align="right">0.1-0.5</td>
+      <td align="right">0.1-0.5</td>
+      <td align="right">0-0.525</td>
+      <td align="right">0-0.375</td>
+      <td align="right">0-0.3</td>
+    </tr>
+    <tr>
+      <td align="right"><strong>Li<sub>2</sub>O</strong></td>
+      <td align="right">-0.2</td>
+      <td align="right"> </td>
+      <td align="right"> </td>
+      <td align="right">n/a</td>
+      <td align="right">n/a</td>
+      <td align="right">n/a</td>
+    </tr>
+    <tr>
+      <td align="right"><strong>SrO</strong></td>
+      <td align="right"> </td>
+      <td align="right">-0.4</td>
+      <td align="right">0.7</td>
+      <td align="right">n/a</td>
+      <td align="right">n/a</td>
+      <td align="right">n/a</td>
+    </tr>
+    <tr>
+      <td align="right"><strong>B<sub>2</sub>O<sub>3</sub></strong></td>
+      <td align="right">0.3-1.1</td>
+      <td align="right">-0.4</td>
+      <td align="right">-0.3</td>
+      <td align="right">0-1.0</td>
+      <td align="right">0-.35</td>
+      <td align="right">0-.225</td>
+    </tr>
+    <tr>
+      <td align="right"><strong>Al<sub>2</sub>O<sub>3</sub></strong></td>
+      <td align="right">0.1-0.4</td>
+      <td align="right">0.2-0.35</td>
+      <td align="right">0.3-0.55</td>
+      <td align="right">0.1-0.45</td>
+      <td align="right">0.275-0.65</td>
+      <td align="right">0.45-0.825</td>
+    </tr>
+    <tr>
+      <td align="right"><strong>SiO<sub>2</sub></strong></td>
+      <td align="right">1.5-3.0</td>
+      <td align="right">2.5-3.5</td>
+      <td align="right">3.0-5.0</td>
+      <td align="right">1.375-3.15</td>
+      <td align="right">2.4-4.7</td>
+      <td align="right">3.5-6.4</td>
+    </tr>
+  </tbody>
+</table>
+
+<UL>
+<LI>Functional glazes must have adequate silica and alumina to form a chemically stable and durable glass and under supplying them is the most common source on instability in functional glazes. The second set of charts also recommends higher minimums for both. Note also that, unlike the others, the <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> and <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> oxides are always quoted with minimum amounts emphasizing the need for adequate levels to achieve glaze hardness.</li>
+<LI>Notice that the <a  href="https://digitalfire.com/oxide/b2o3">B<sub>2</sub>O<sub>3</sub></a> amounts are close to being the same although the G&C one is slightly more conservative. This emphasizes the need to minimize B<sub>2</sub>O<sub>3</sub> for glaze hardness.</li>
+<LI>Flux unity is always assumed in limit charts. As mentioned above, some technicians prefer to classify B<sub>2</sub>O<sub>3</sub> as a <a  href="https://digitalfire.com/glossary/flux">flux</a> while others treat it separately to recognize its complementary function as a glass former. Some limit charts do not specify if they are boron-unity or not. Notice that the first set of three charts above have 1.1 as the maximum B<sub>2</sub>O<sub>3</sub> amount at <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 04</a>, this is a tip-off that it must not be including B<sub>2</sub>O<sub>3</sub> in unity (since 1.0 would be the mathematical maximum). Likewise, the second set of charts shows the cone 04 limit at 1.0, this also indicates that these do not include B<sub>2</sub>O<sub>3</sub> in unity. </li>
+<LI>Dual function oxides, optimum melting: Some of the fluxes melt vigorously at high temperatures but do not function as fluxes at low temperatures (i.e. <a  href="https://digitalfire.com/oxide/mgo">MgO</a>, CaO). This is a weakness in the whole flux-unity standard. Also it is an implied limit that concentrations of more <a  href="https://digitalfire.com/glossary/refractory">refractory</a> fluxes would not exceed those that fully dissolve and that for any amount of one flux there exists an optimum mix of other accompanying ones to give the best melt. However limit formulas are not intended as a guide to optimum melting, they are a range within which optimum mixes are most likely to be discovered. For example at the lower end of the temperate range there will need to be a higher proportion of alkalis, and lower <a  href="https://digitalfire.com/glossary/alkali">alkali</a> earths. </li>
+<LI>Precision: It is not clear why the G&C table takes amounts to three decimals, there is no way a limit chart can be that precise. </li>
+
+<LI>Other Chart Differences:<BR>-Higher G&C CaO at low temperature could be
+a recognition of its function as a matting agent.<BR>-G&C allows for more
+<a  href="https://digitalfire.com/oxide/zno">ZnO</a> and this seems unusual given our experience with high zinc glazes.<BR>
+-The G&C chart sees <a  href="https://digitalfire.com/picture/1775">KNaO</a> more as a low temperature flux. It is also possible that
+it is inducing readers to diversify among the many effective fluxes at high
+temperatures and keep <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> low.<BR>
+-The G&C charts allow for
+much higher Al<sub>2</sub>O<sub>3</sub> and SiO<sub>2</sub>. This confirms the importance of adequate amounts of
+these oxides and that high amounts are OK if the glaze is properly melt tested. </li>
+
+<LI>The charts (especially the G&C) allow for an inordinate amount of <a  href="https://digitalfire.com/oxide/bao">BaO</a>. Don't use BaO on functional surfaces. Even though BaO is listed in both we recommend you leave it out of food-surface glazes if you do not have leach testing capability. </li>
+<LI>Exceeding some limits is not nearly as serious as others. For example, if you were using the first set of charts it would not be difficult to oversupply Al<sub>2</sub>O<sub>3</sub> in a well melted glaze. This is much less serious then having it under supplied, especially if the is adequate <a  href="https://digitalfire.com/glossary/borate">boron</a> to melt it. </li>
+<LI>Approaching some limits should be done with caution. For example, if a glaze is at the low end in both SiO<sub>2</sub> and Al<sub>2</sub>O<sub>3</sub> then putting B<sub>2</sub>O<sub>3</sub> at the upper end may create an excessively fluid glaze. </li>
+
+<LI>Charts are created for specific glaze types. For example, do not refer to limits for leaded glazes if you are using a boron glaze. Furthermore glazes intended for floor tile are going to have much different limits that those intended for <a  href="https://digitalfire.com/glossary/artware">artware</a>, since the formula emphasizes hardness and <a  href="https://digitalfire.com/glossary/glaze+durability">durability</a> and ability to fast fire, the latter appearance and visual effects. </li>
+<LI>Range of oxides: A greater variety of fluxes is typically of itself an inducement to lower melting temperatures. Limit formulas unusually assume a range of fluxes are being employed. </li>
+<LI>The UK charts quote minimums on oxides while the G&C ones do not. For example, CaO and KNaO are beneficial enough fluxes that the authors of the first set of formulas believed that every glaze should have at least some. </li>
+<LI>Other complicating factors: The presence of <a  href="https://digitalfire.com/glossary/colorant">colorants</a>, encapsulants, <a  href="https://digitalfire.com/glossary/opacifier">opacifiers</a>, <a  href="https://digitalfire.com/glossary/variegation">variegators</a>, etc. will impose changes in <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> that will often narrow the limits for other oxides. For example, an <a  href="https://digitalfire.com/glossary/opacifier">opacifier</a> will stiffen the melt and lower the amount of alumina that can be tolerated. Copper can convert an otherwise leach resistant base into a leacher.</li>
+<LI>Interpreting these charts assumes some knowledge of the effects of each oxide. For example, if the amount of one oxide is high or low it usually narrows the range for other oxides. Suppose you wish to achieve a transparent glaze free of bubbles and crystal clouds. If CaO is high then you will also have to have high Al<sub>2</sub>O<sub>3</sub> to prevent it from crystallizing. However high Al<sub>2</sub>O<sub>3</sub> will stiffen the melt and prevent bubbles from escaping. Thus rationalization and testing will be necessary to succeed. </LI></UL>
+<P>So are limits worth the troubles involved with interpreting them? Yes. The performance of colorants in recipes provides an analogy that vindicates the concept of limit formulas. If 2% stain gives a light color and 7.5% achieves the darkest, then why put in 15%? It is wasted, it probably contributes to chemical instability. Thus there is an implied limit of 7.5%. Limit formulas are great references for food-surface glazes, within limits does not guarantee durability or leach resistance, but a well melted glaze is obviously a the best start. Furthermore, I find limit formulas a good frame-of-reference for explaining troublesome glazes, analyzing their deviance from the limits often points out a fruitful strategy to fight the problem. </P>
+
+<H2>Ethics</H2>
+<P>However, limit formulas go beyond practicality and bring the matter of ethics and accountability into focus. If you are not a glaze chemist and don't have testing equipment, then should you use functional and liner glazes that wildly defy these limits without some testing and clear rationalization? I've never made bread but I'm sure there are some limits, I'm guessing that 1 teaspoon of yeast is good but that one cup is not. Likewise if a glaze formula has twice the maximum of an oxide (I see this all the time with manganese, barium, lithium, fluxes, metallics) or half the minimum (i.e. SiO<sub>2</sub> or Al<sub>2</sub>O<sub>3</sub>) eyebrows should raise! It is true that 'visual' or <a  href="https://digitalfire.com/glossary/reactive+glazes">reactive glazes</a> often defy the norms (i.e. fluid variegated glazes often lack alumina or have high boron) but no one expects them to be <a  href="https://digitalfire.com/glossary/food+safe">food safe</a>, fit the clay perfectly, and fire to a very hard and abrasion resistant surface either. We also expect that such glazes not be <a  href="https://digitalfire.com/glossary/trafficking">trafficked</a> on the functional glaze market where they quickly develop amnesia about who and what they are.</P>
+<P>Remember, the alternative to limit charts is no guidance, or perhaps worse, averaging formulas of unproven textbook recipes. Be conservative when it comes to producing ware that people expect to be durable and food safe.</P>
+
+<h3>Limit Charts for Unstable Glazes</h3>
+<p>Many visual effects can only be achieved by venturing outside typical functional formula limits. For example, matte glazes must push the limits to even be matte. They are therefore unconventional in the sense that they seldom fit nicely without functional limits. However <a  href="https://digitalfire.com/glossary/glaze+chemistry">glaze chemistry</a> plays a role in understanding unconventional mechanisms also, perhaps even more so. The term "target formula" is thus very appropriate for this.</p><p style="clear:left"></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/low+budget+testing+of+ceramic+glazes">Low Budget Testing of Ceramic Glazes</a>
+<br /><i>There is more to glazes than their visual character, they have other <a  href="https://digitalfire.com/glossary/physical+testing">physical properties</a> like hardness, <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a>, leachability, <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> and they exhibit many defects. Here are some simple tests.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/a+low+cost+tester+of+glaze+melt+fluidity">A Low Cost Tester of Glaze Melt Fluidity</a>
+<br /><i>Use this novel device to compare the <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> of glazes and materials. Simple physical observations of the results provide a better understanding of the fired properties of your glaze (and problems you did not see before).</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/creating+your+own+budget+glaze">Creating Your Own Budget Glaze</a>
+<br /><i>How to take a stockroom full of unused materials and turn them into a good glaze rather than try umpteen online recipes that require buying yet more materials you do not need and do not work.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/limit+formula">Limit Formula</a>
+<br /><i>A way of establishing guideline for each oxide in the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> for different ceramic glaze types. Understanding the roles of each oxide and the limits of this approach are a key to effectively using these guidelines.</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

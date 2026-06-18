@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Lead Toxicology</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="Digitalfire Reference Library: Practical material hazards information in the traditional ceramic industry" name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item"><a class="nav-link" href="../material/list.html">Materials</a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item active" href="list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=hazard" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container"><p><a aria-controls="collapse1" aria-expanded="false" class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button">All Hazards</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a href="341.html" title="341">Alumina Toxicology</a> |</nobr> <nobr><a href="333.html" title="333">Ammonia and Latex Toxicity</a> |</nobr> <nobr><a href="16.html" title="16">Antimony Oxide</a> |</nobr> <nobr><a href="412.html" title="412">Are colored porcelains hazardous?</a> |</nobr> <nobr><a href="18.html" title="18">Arsenic Oxide</a> |</nobr> <nobr><a href="19.html" title="19">Asbestos Toxicity</a> |</nobr> <nobr><a href="22.html" title="22">Ball Clay</a> |</nobr> <nobr><a href="321.html" title="321">BARIUM and COMPOUNDS Toxicology</a> |</nobr> <nobr><a href="367.html" title="367">Barium Carbonate in Clay Bodies</a> |</nobr> <nobr><a href="26.html" title="26">Barium Carbonate in Glazes</a> |</nobr> <nobr><a href="31.html" title="31">Bentonite Toxicity</a> |</nobr> <nobr><a href="33.html" title="33">Beryllium Monoxide Toxicology</a> |</nobr> <nobr><a href="352.html" title="352">Bismuth Trioxide Toxicology</a> |</nobr> <nobr><a href="326.html" title="326">Boron Compounds and Their Toxicity</a> |</nobr> <nobr><a href="1.html" title="1">Brown Stain</a> |</nobr> <nobr><a href="335.html" title="335">Cadmium Toxicity</a> |</nobr> <nobr><a href="343.html" title="343">Calcium Carbonate Toxicology</a> |</nobr> <nobr><a href="334.html" title="334">Carbon Monoxide Toxicity</a> |</nobr> <nobr><a href="353.html" title="353">Cesium Toxicology</a> |</nobr> <nobr><a href="330.html" title="330">Chromium Compounds Toxicology</a> |</nobr> <nobr><a href="146.html" title="146">Clay Toxicity</a> |</nobr> <nobr><a href="73.html" title="73">Cobalt Oxide and Carbonate</a> |</nobr> <nobr><a href="331.html" title="331">Cobalt Toxicology</a> |</nobr> <nobr><a href="329.html" title="329">Copper Compounds Toxicology</a> |</nobr> <nobr><a href="78.html" title="78">Copper Oxide and Carbonate</a> |</nobr> <nobr><a href="84.html" title="84">Cristobalite Toxicity</a> |</nobr> <nobr><a href="337.html" title="337">Cryolite and Ceramics</a> |</nobr> <nobr><a href="372.html" title="372">Dealing With Dust in Ceramics</a> |</nobr> <nobr><a href="351.html" title="351">Diatomaceous Earth Toxicology</a> |</nobr> <nobr><a href="323.html" title="323">Dioxins in Clays</a> |</nobr> <nobr><a href="95.html" title="95">Epsom Salts</a> |</nobr> <nobr><a href="348.html" title="348">Eye Injuries Due to Radiation</a> |</nobr> <nobr><a href="222.html" title="222">Feldspar</a> |</nobr> <nobr><a href="320.html" title="320">Fighting Micro-Organisms in Ceramics</a> |</nobr> <nobr><a href="108.html" title="108">Fluorine Gas</a> |</nobr> <nobr><a href="413.html" title="413">Fumes from gas kilns</a> |</nobr> <nobr><a href="354.html" title="354">Gallium Oxide Toxicology</a> |</nobr> <nobr><a href="342.html" title="342">Hafnium Oxide Toxicty</a> |</nobr> <nobr><a href="345.html" title="345">Hydrofluoric Acid Toxicity</a> |</nobr> <nobr><a href="350.html" title="350">Iron oxide and Hematite</a> |</nobr> <nobr><a href="169.html" title="169">Lead Chromate</a> |</nobr> <nobr><a href="368.html" title="368">Lead in Ceramic Glazes</a> |</nobr> <nobr><a href="328.html" title="328"><button class="btn btn-dark" type="button">Lead Toxicology</button></a> |</nobr> <nobr><a href="174.html" title="174">Lithium Carbonate Toxicity</a> |</nobr> <nobr><a href="349.html" title="349">Lithium Toxicology</a> |</nobr> <nobr><a href="322.html" title="322">Man-Made Vitreous Fibers (MMVF) Toxicology</a> |</nobr> <nobr><a href="410.html" title="410">Man-Made Vitreous Fibers Safety Update</a> |</nobr> <nobr><a href="406.html" title="406">Manganese and Parkinsons by Jane Watkins</a> |</nobr> <nobr><a href="187.html" title="187">Manganese in Clay Bodies</a> |</nobr> <nobr><a href="317.html" title="317">Manganese Inorganic Compounds Toxicology</a> |</nobr> <nobr><a href="409.html" title="409">Manganese Toxicity by Elke Blodgett</a> |</nobr> <nobr><a href="407.html" title="407">Manganese: Creativity and Illness by Dierdre O'Reilly</a> |</nobr> <nobr><a href="332.html" title="332">Molybdenum Compounds Toxicology</a> |</nobr> <nobr><a href="327.html" title="327">Nickel Compounds Toxicity</a> |</nobr> <nobr><a href="314.html" title="314">Niobium Oxide Toxicity</a> |</nobr> <nobr><a href="318.html" title="318">Occupational Dermatoses</a> |</nobr> <nobr><a href="370.html" title="370">Overview of Material Safety by Gavin Stairs</a> |</nobr> <nobr><a href="364.html" title="364">Paraffin Toxicology</a> |</nobr> <nobr><a href="216.html" title="216">Perlite Toxicity</a> |</nobr> <nobr><a href="238.html" title="238">Plant Ash Toxicity</a> |</nobr> <nobr><a href="346.html" title="346">Potassium Carbonate Toxicity</a> |</nobr> <nobr><a href="365.html" title="365">Pregnancy and Ceramics</a> |</nobr> <nobr><a href="355.html" title="355">Propane Toxicology</a> |</nobr> <nobr><a href="251.html" title="251">Quartz Toxicity</a> |</nobr> <nobr><a href="369.html" title="369">Quartz Toxicity on Clayart</a> |</nobr> <nobr><a href="336.html" title="336">Rare Earth Compounds Toxicity</a> |</nobr> <nobr><a href="366.html" title="366">Rubidium and Cesium Toxicology</a> |</nobr> <nobr><a href="356.html" title="356">Rutile Toxicology</a> |</nobr> <nobr><a href="324.html" title="324">Silicosis and Screening</a> |</nobr> <nobr><a href="357.html" title="357">Silver Compounds Toxicology</a> |</nobr> <nobr><a href="358.html" title="358">Sodium Azide Toxicology</a> |</nobr> <nobr><a href="359.html" title="359">Sodium Carbonate Toxicology</a> |</nobr> <nobr><a href="360.html" title="360">Sodium Silicate Powder Toxicology</a> |</nobr> <nobr><a href="315.html" title="315">Stannous Chloride Toxicity</a> |</nobr> <nobr><a href="316.html" title="316">Strontium Carbonate Toxicity Note</a> |</nobr> <nobr><a href="347.html" title="347">Sulfur Dioxide Toxicity</a> |</nobr> <nobr><a href="3.html" title="3">Talc Hazards Overview</a> |</nobr> <nobr><a href="361.html" title="361">Talc Toxicology</a> |</nobr> <nobr><a href="362.html" title="362">Thallium Oxide Toxicology</a> |</nobr> <nobr><a href="344.html" title="344">Thorium Dioxide Toxicity</a> |</nobr> <nobr><a href="338.html" title="338">Tin Inorganic Compounds</a> |</nobr> <nobr><a href="339.html" title="339">Titanium Dioxide Toxicology</a> |</nobr> <nobr><a href="313.html" title="313">Toxicological Assessment of Zeolites</a> |</nobr> <nobr><a href="363.html" title="363">Tungsten Compounds Toxicology</a> |</nobr> <nobr><a href="371.html" title="371">Understanding Acronyms on MSDS's</a> |</nobr> <nobr><a href="325.html" title="325">Uranium and Ceramics</a> |</nobr> <nobr><a href="319.html" title="319">Vanadium and Compounds Toxicology</a> |</nobr> <nobr><a href="411.html" title="411">Vermiculite</a> |</nobr> <nobr><a href="340.html" title="340">Zinc Compounds Toxicology</a> |</nobr> <nobr><a href="373.html" title="373">Zirconium Compounds Toxicity</a> |</nobr> <nobr><a href="234.html" title="234">Zirconium Encapsulated Stains Toxicity</a></nobr></div><p style="clear:left"></p><h1>Lead Toxicology</h1>
+<p style="font-style:italic">Note: The CDC published a revised view of lead in 2012, so material on this page may be outdated. See the glossary entry for more information.</p>
+<dl>
+<dt><b><u><font color="#004080" size="+1">Sources :</font></u></b><font color="#004080"> </font>
+</dt><dd><font color="#004080"> </font>
+</dd><dt><font color="#004080" face="Times New Roman">The inorganic 
+compounds which are of concern in <a href="../glossary/ceramics.html">ceramics</a> are : </font>
+<dt>
+<dt><font color="#004080">-basic lead 
+carbonate 2PbCO<sub>3</sub>.Pb(OH)2,</font>
+<dt><font color="#004080">-lead <a href="../glossary/frit.html">frits</a>, 
+including lead-boro silicate.</font>
+<dt><font color="#004080">-lead <a href="../glossary/ceramic+oxide.html">oxides</a> : 
+</font>
+<dt><font color="#004080">-red (minium) 
+Pb3O<sub>4</sub> , </font>
+<dt><font color="#004080">-yellow 
+(litharge) <a href="../oxide/pbo.html">PbO</a>.</font>
+<dt>
+<dt><b><u><font color="#004080" size="+1">Stability :</font></u></b>
+<dt>
+<dt><b><font color="#004080">I-Lead 
+Carbonate :</font></b>
+<dt><font color="#004080">This product is 
+unstable under the following conditions : when heated it 
+decomposes at 400 degrees Celsius and emits lead monoxide, carbon 
+monoxide and carbon dioxide. </font>
+<dt>
+<dt><b><font color="#004080">II-Lead Frits 
+:</font></b>
+<dt><font color="#004080">In the relevant 
+literature, we have not found any information relating to thermal 
+breakdown products for the following lead frits: <a href="../material/645.html">lead bisilicate</a>, 
+<a href="../material/962.html">lead sesquisilicate</a> and lead-boro-silicate. </font>
+<dt><font color="#004080">On the other hand 
+lead silicate, PbO.SiO<sub>2</sub>, emits toxic lead fumes when heated to 
+<a href="../glossary/decomposition.html">decomposition</a>. </font>
+<dt>
+<dt><b><font color="#004080">III-Red Lead 
+Oxide :</font></b>
+<dt><font color="#004080">This product is 
+unstable under the following conditions : when heated to 
+decomposition (more than 500 degrees Celsius), there is release of 
+oxygene and emission of toxic lead fumes. </font>
+<dt><font color="#004080">  </font>
+<dt><b><font color="#004080">IV-Yellow Lead 
+Oxide :</font></b>
+<dt><font color="#004080">This product is 
+unstable under the following conditions : when heated between 300 
+to 400 degrees Celsius, it is converted to lead tetroxide. </font>
+<dt>
+<dt><b><u><font color="#004080" size="+1">Absorption :</font></u></b>
+</dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt><dd>
+</dd><dt><font color="#004080">Inorganic lead is 
+absorbed only by the respiratory and digestive tracts, except for 
+metallic lead, which can penetrate the skin in a negligible 
+way.</font>
+</dt><dd>
+</dd><dt><b><font color="#004080">Toxicological 
+Properties :</font></b>
+<dt>
+<dt><b><font color="#004080">I-Lead 
+Toxicokinetics : </font></b>
+</dt></dt></dt><dd>
+</dd><dt><u><font color="#004080">A- Pulmonary 
+absorption :</font></u>
+<dt><font color="#004080">1-Pulmonary 
+absorption of lead depends on the size of particles; a small 
+proportion of particles of size greater than 0,5 µm is 
+retained at the pulmonary level. The retention of particles having 
+a diameter smaller than 0,5 µm is inversely proportional to 
+their size. </font>
+<dt><font color="#004080">2-Pulmonary 
+absorption also depends on respiratory frequency. </font>
+<dt><font color="#004080">3- The pulmonary 
+deposition rate of lead present in the air is approximately 30 to 
+50%. </font>
+<dt><font color="#004080">4- Lead which 
+penetrates deeply into the lungs is almost completely absorbed. 
+The rest of lead particles which are found in the higher parts of 
+the respiratory tract, are directed towards the gastro-intestinal 
+system where they are ingested. </font>
+<dt><font color="#004080">5-Lead does not 
+accumulate in the respiratory tract. </font>
+<dt>
+<dt><u><font color="#004080">B-Gastrointestinal absorption :</font></u>
+<dt><font color="#004080">1-Gastrointestinal absorption of lead varies 
+according to the physiological state of the individual (fast, age) 
+and the type of lead compound ingested. Thus, the rate of 
+absorption may vary in the fasting adult from 5-15 % to 60-80 %. 
+It is approximately 30 to 50 % in the child. </font>
+<dt><font color="#004080">2-Absorption is 
+influenced by the size of the ingested particles (the smallest 
+being better absorbed). </font>
+<dt><font color="#004080">3-Absorption of 
+lead, which takes place in the duodenal region of the small 
+intestine, seems to occur by a saturable <a href="../glossary/mechanism.html">mechanism</a>. </font>
+<dt>
+<dt><u><font color="#004080">C-Distribution 
+:</font></u>
+</dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt><dd>
+</dd><dt><font color="#004080">1-Independently 
+from the route of absorption, absorpbed lead passes into the blood 
+circulation where more than 90 % finds itself bound to 
+erythrocytes (it is fixed especially inside the cell rather than 
+on the membrane). The remainder diffuses into the serum. </font>
+<dt>
+<dt><font color="#004080">2-Studies 
+undertaken in man indicate that absorbed lead is distributed 
+primarily in 3 compartments: the first compartment is blood, the 
+second is made up of soft tissues (central and peripheral nervous 
+systems, liver, kidneys and muscles) and the third one is composed 
+of bone tissue. </font>
+<dt>
+<dt><font color="#004080">a-Several 
+researchers have proposed refinements to this kinetic model, it 
+has thus been proposed to subdivide the blood compartment into 4 
+in order to better take into account lead kinetics in the plasma 
+and in the erythrocytes. It is also proposed to subdivide the bone 
+compartment into 2 in order to better reflect the speed of 
+turnover and bone tissue metabolism. </font>
+<dt><font color="#004080">b-Thereafter a 
+model was proposed taking into account the soft tissues with which 
+the exchanges are fast and those with which they are slow. </font>
+<dt>
+<dt><u><font color="#004080">D-Metabolism 
+:</font></u>
+<dt><font color="#004080">Lead is not 
+metabolized in the body.</font>
+</dt></dt></dt></dt></dt></dt></dt></dt></dt><dd>
+</dd><dt><u><font color="#004080">E-Excretion 
+:</font></u>
+<dt><font color="#004080">1- Ingested lead 
+that is not absorbed is directly excreted in the feces.</font>
+<dt><font color="#004080">2-Nearly 80 % of 
+the absorbed lead is eliminated by the urinary tract, 
+approximately 16 % is eliminated via the bile and the remainder is 
+eliminated in the saliva, sweat, hair and nails.There are 
+significant inter-individual variations in the capacity of lead 
+elimination. </font>
+<dt>
+<dt><u><font color="#004080">F-Half-life 
+:</font></u>
+<dt><font color="#004080">1-In the adult, 
+blood lead half-life is approximately 1 month.</font>
+<dt><font color="#004080">2-The half-life 
+in soft tissues (such as central and peripheral nervous systems, 
+the liver, kidneys and muscles) is approximately 40 to 60 days. 
+</font>
+<dt><font color="#004080">3-The half-life 
+in the bone compartment is approximately 20 to 30 years </font>
+<dt><font color="#004080">4-The whole body 
+lead half-life depends on the body burden, which itself is related 
+to the duration of exposure of workers. </font>
+<dt>
+<dt><b><font color="#004080">II-Interaction 
+: </font></b>
+</dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt><dd>
+</dd><dt><font color="#004080">Lead 
+toxicokinetics and toxicological effects can be affected by 
+interactions with certain essential elements and nutriments: 
+</font>
+<dt>
+<dt><font color="#004080">A-The 
+administration of calcium and phosphorus, at concentrations which 
+can be found in an average meal, decreases lead gastrointestinal 
+absorption by a factor of 6 in fasting adults. </font>
+<dt><font color="#004080">B-It would also 
+seem that the daily intake of food fibers, thiamin and iron lowers 
+blood lead level (BLL) in exposed workers.</font>
+<dt><font color="#004080">C-Lead absorption 
+is reduced by a calcium or zinc intake, probably by a competitive 
+mechanism at the intestinal level. </font>
+<dt><font color="#004080">D-Lead absorption 
+is enhanced by the intake of food high in fat. </font>
+</dt></dt></dt></dt></dt></dt><dd>
+</dd><dt><b><font color="#004080">III-Acute 
+Intoxication :</font></b>
+</dt><dd>
+</dd><dt><font color="#004080">Acute 
+intoxication is rare in the work environment. </font>
+<dt>
+<dt><font color="#004080">The inhalation of 
+significant lead amounts can cause digestive disorders (vomiting, 
+epigastric and abdominal pain, diarrhoea and black stools), renal 
+disorders, hemolytic anemia, neurological disorders 
+(encephalopathy, intracranial hypertension, convulsive coma). 
+</font>
+<dt>
+<dt><b><font color="#004080">IV-Chronic 
+Intoxication :</font></b>
+<dt>
+<dt><font color="#004080">A-The effects of 
+lead intoxication in man are the same whatever the route of entry 
+into the body. They are generally described in terms of internal 
+dose (amounts of lead in the blood ) rather than in terms of 
+ambient level of </font>
+<dt><font color="#004080">exposure 
+(mg/m³ or ppm). </font>
+<dt>
+<dt><font color="#004080">B-One of the 
+first symptoms of lead exposure is the appearance of digestive 
+disorders. </font>
+<dt><font color="#004080">This results in 
+colics (intense abdominal pains, nausea, vomiting), constipation, 
+anorexia and a loss of weight. </font>
+<dt>
+<dt><font color="#004080">C-Articular and 
+muscular pains in the extremities are also reported.</font>
+<dt>
+<dt><font color="#004080">D- A blue 
+coloured line has been observed on the gingival tissues of people 
+exposed to significant lead concentrations. </font>
+<dt>
+<dt><font color="#004080">E-Lead exerts 
+certain blood effects. It induces anemia (caused by a reduction in 
+the lifespan of red cells and by a fall of the synthesis of heme 
+by enzymatic inhibition). It also involves an increased production 
+of abnormal erythrocytes. </font>
+<dt>
+<dt><font color="#004080">F-Lead has 
+effects on the nervous system thus being able to cause 
+encephalopathy and peripheral neuropathy. </font>
+<dt><font color="#004080">The first 
+symptoms of encephalopathy can appear in the weeks following 
+initial exposure to lead; these are irritability, lassitude, loss 
+of appetite, reduction in the attention,headaches, jerked 
+movements of the eyes, hallucinations, a deterioration of the 
+cognitive functions (reduction in the performance in certain 
+psychometric tests like, for example, eye-hand coordination, 
+skills of verbal reasoning, memory, etc). </font>
+<dt><font color="#004080">Symptoms may 
+worsen, sometimes abruptly, and one can observe delirium, 
+convulsions, paralysis, coma and death. Peripheral neuropathy can 
+result in muscular tremors, weakness of the upper limbs and 
+paraesthesias of the lower limbs (pins and needles, tingling). 
+</font>
+<dt>
+<dt><font color="#004080">G-Workers exposed 
+to lead present an increased risk of chronic nephrotoxicity. 
+</font>
+<dt><font color="#004080">The lead levels 
+which can cause such an effect seem to be a function of the 
+duration of exposure. A review of several studies seems to 
+indicate that lead can cause nephropathy at blood lead levels as 
+low as 1,93 µmol/l. </font>
+<dt><font color="#004080">Certain toxic 
+effects are reversible whereas others are not. A recent study 
+suggests that the exposure to low lead levels can cause renal 
+problems in middle-age and old age men. </font>
+<dt>
+<dt><font color="#004080">H-Some studies 
+suggest that there is a weak positive correlation between blood 
+lead level (BLL) and an increase in blood pressure. However, it is 
+currently premature to draw conclusions on this subject. </font>
+<dt>
+<dt><font color="#004080">I-There is some 
+evidence that high lead doses could be responsible for cardiac 
+lesions and disturbances in the electrocardiogram. </font>
+<dt>
+<dt><font color="#004080">J-According to 
+some studies, lead could weaken the immune system. </font>
+<dt><font color="#004080">  </font>
+<dt><b><u><font color="#004080" size="+1">Biological Monitoring :</font></u></b>
+<dt>
+<dt><b><font color="#004080">I-Biological 
+parameter, biological index of exposure and time of blood sampling 
+: </font></b>
+<p><u><font color="#004080">A-Blood lead 
+level (BLL):</font></u><font color="#004080"> </font></p>
+<dt><font color="#004080">Variable 
+according to different organizations, (time of blood sampling is 
+discretionary); the ACGIH proposes 1,45 µmol/L (level aiming 
+at minimizing or preventing the effects being able to result in a 
+persistent <a href="../glossary/functional.html">functional</a> damage); </font>
+<dt><font color="#004080">the WHO and 
+Lauwerys propose 1,93 µmol/L (maximum tolerable blood lead 
+level); the level in non-exposed individuals is &lt; 0,50 
+µmol/L. </font>
+<dt>
+<dt><u><font color="#004080">B-Zinc 
+protoporphyrins (ZPP) : </font></u>
+<dt><font color="#004080">The time of blood 
+sampling must be at least one month after the beginning of 
+exposure. Lauwerys proposes 0,67 µmol/L in order to prevent 
+certain health effects. The level for non-exposed individuals is 
+&lt; 0,32 µmol/L. </font>
+<dt>
+<dt><b><font color="#004080">II-Other 
+Exposure Indicators :</font></b>
+<dt><font color="#004080">Urinary 
+aminolevulinic acid : an indicator of toxic effect; this test is 
+less sensitive than the measurement of ZPP. </font>
+<dt>
+<dt><b><font color="#004080">III-Factors to 
+be considered for interpretation :</font></b>
+<dt><font color="#004080">- these values 
+apply only to exposures to metallic lead or inorganic salts. 
+</font>
+</dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt><dd>
+</dd><dt><u><font color="#004080">A-BLL 
+:</font></u>
+<dt><font color="#004080">1-possibility of 
+absorption by the digestive tract;</font>
+<dt><font color="#004080">2-a BLL of about 
+2,42 µmol/L is expected in workers who are exposed, day after 
+day, to lead air levels of 0,15 mg/m³ ; </font>
+<dt>
+<dt><u><font color="#004080">B-ZPP 
+:</font></u>
+<dt><font color="#004080">1-hemolytic 
+anemia, iron deficiency (increased ZPP); </font>
+<dt><font color="#004080">2-erythropoietic 
+protoporphyria (increased ZPP); increased carboxyhemoglobin, if 
+the analysis of ZPP is carried out by hematofluorometry (method 
+used by the IRSST, Quebec), it involves an undervaluation of the 
+concentration of ZPP. </font>
+<dt>
+<dt>
+<dt><b><font color="#004080">IV-Correlation 
+between lead blood concentrations and their toxic effects : 
+</font></b>
+<dt>
+</dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt><dd>
+</dd><dt><center><table bgcolor="#ffffff" border="1" cellpadding="10" cellspacing="0" width="90%">
+<tr>
+<td width="250">
+<p><b><font color="#004080">Blood 
+lead level (µmol/l)</font></b>
+</p></td><td>
+<p><b><font color="#004080">Effect 
+</font></b>
+</p></td></tr>
+<tr>
+<td width="250">
+<p></p><center><font color="#004080">&lt; 0,48</font></center>
+</td><td>
+<p><font color="#004080">Blood 
+lead level of a nonexposed person </font>
+</p></td></tr>
+<tr>
+<td width="250">
+<p></p><center><font color="#004080">0,97 à 2,90</font></center>
+</td><td>
+<p><font color="#004080">Increase 
+in the concentration of erythrocyte protoporphyrins 
+</font>
+</p></td></tr>
+<tr>
+<td width="250">
+<p></p><center><font color="#004080">&gt; 1,93</font></center>
+</td><td>
+<p><font color="#004080">Increase 
+in the urinary concentration of coproporphyrin </font>
+</p></td></tr>
+<tr>
+<td width="250">
+<p></p><center><font color="#004080">2,41 à 2,90</font></center>
+</td><td>
+<p><font color="#004080">Chronic 
+encephalopathy in the child </font>
+</p></td></tr>
+<tr>
+<td width="250">
+<p></p><center><font color="#004080">&gt; 3,86</font></center>
+</td><td>
+<p><font color="#004080">Chronic 
+encephalopathy in the adult </font>
+</p></td></tr>
+<tr>
+<td width="250">
+<p></p><center><font color="#004080">2,90 à 3,86</font></center>
+</td><td>
+<p><font color="#004080">Peripheral neuropathy </font>
+</p></td></tr>
+<tr>
+<td width="250">
+<p></p><center><font color="#004080">3,38 à 4,80</font></center>
+</td><td>
+<p><font color="#004080">Nephropathies </font>
+</p></td></tr>
+<tr>
+<td width="250">
+<p></p><center><font color="#004080">3,86 à 4,80</font></center>
+</td><td>
+<p><font color="#004080">Anemia 
+</font>
+</p></td></tr>
+<tr>
+<td width="250">
+<p></p><center><font color="#004080">3,86 à 14,5</font></center>
+</td><td>
+<p><font color="#004080">Acute 
+encephalopathy </font>
+</p></td></tr>
+</table></center>
+<dt>
+<dt><b><font color="#004080">V-Conversion 
+factor for blood lead level :</font></b><font color="#004080" face="Times New Roman"> </font>
+</dt></dt></dt><dd><i><font color="#004080"> </font></i>
+</dd><dt><i><font color="#004080">µg/l x 
+0,004826 = µmol/l </font></i>
+</dt><dd>
+</dd><dt><b><font color="#004080">VI-Sensitive 
+populations :</font></b><font color="#004080"> </font>
+</dt><dd>
+</dd><dt><font color="#004080">A-People 
+suffering from a neurological dysfonction;</font>
+<dt><font color="#004080">B-People 
+suffering from a renal disease;</font>
+<dt><font color="#004080">C-People having 
+certain genetic diseases, such as thalassemia, glucose-6 phosphate 
+dehydrogenase deficiency, porphyrias, an excessive activity of the 
+ALA synthase. </font>
+<dt><font color="#004080">D-Children; 
+</font>
+<dt><font color="#004080">E-Pregnant or 
+breast-feeding women;</font>
+<dt><font color="#004080">F-The embryo or 
+foetus;</font>
+<dt><font color="#004080">G-Elderlies; 
+</font>
+<dt><font color="#004080">H-Smokers; 
+</font>
+<dt><font color="#004080">I-Alcoholics.</font>
+<dt><font color="#004080">  </font>
+<dt><b><u><font color="#004080" size="+1">Carcinogenesis and Mutagenesis :</font></u></b>
+<dt>
+<dt><b><font color="#004080">I-Metallic 
+Lead : </font></b>
+</dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt><dd>
+</dd><dt><font color="#004080">ACGIH evaluation 
+: Confirmed animal carcinogen (group <a href="https://plainsmanclays.ca/data/index.php?product=12900">A3</a>). </font>
+<dt>
+<dt><b><font color="#004080">II-Basic lead 
+carbonate, yellow and red lead oxide :</font></b><font color="#004080" face="Times New Roman"> </font>
+<dt>
+<dt><font color="#004080">IARC.evaluation: 
+Probably carcinogenic to humans (group 2B). </font>
+<dt><font color="#004080">ACGIH evaluation: 
+Confirmed animal carcinogen (group <a href="https://plainsmanclays.ca/data/index.php?product=12900">A3</a>). </font>
+</dt></dt></dt></dt></dt></dt><dd>
+</dd><dt><b><u><font color="#004080" size="+1">Occupational Hygiene :</font></u></b>
+<dt>
+<dt><b><font color="#004080">I-IDLH 
+(Immediate Danger to Life and Health) :</font></b>
+<dt>
+<dt><font color="#004080">A-Basic Lead 
+Carbonate :</font>
+<dt><font color="#004080">100 Pb mg/m³ 
+as Pb. </font>
+<dt>
+<dt><font color="#004080">B-Red Lead Oxide 
+:</font>
+<dt><font color="#004080">100 Pb mg/m³ 
+as Pb.</font>
+<dt>
+<dt><font color="#004080">C-Yellow Lead 
+Oxide :</font>
+<dt><font color="#004080">100 mg/m³ as 
+Pb. </font>
+<dt><font color="#004080">  </font>
+<dt><b><font color="#004080">II-Evaluation 
+of Exposure :</font></b>
+<dt>
+<dt><font color="#004080">Exposure limit in 
+Quebec :</font>
+<dt><font color="#004080">Valeur 
+d'exposition moyenne pondérée (VEMP) : 0,15 
+mg/m³</font>
+</dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt><dd>
+</dd><dt><font color="#004080">Note</font>
+<dt><font color="#004080">Non-conventional 
+schedule : Weekly </font>
+<dt><font color="#004080">Comments </font>
+<dt><font color="#004080">Limit for dusts 
+and fumes, expressed as Pb (lead). </font>
+<dt>
+<dt><b><u><font color="#004080" size="+1">Prevention :</font></u></b>
+<dt>
+<dt><b><font color="#004080">I- Technical 
+Methods :</font></b>
+<dt><font color="#004080">Main measures are 
+as follows:</font>
+</dt></dt></dt></dt></dt></dt></dt></dt></dt><dd>
+</dd><dt><font color="#004080">A-Work 
+organization :</font>
+<dt><font color="#004080">Operations 
+involving a hazard of lead exposure should not be dispersed in the 
+factory, but on the contrary, put together.</font>
+<dt>
+<dt><font color="#004080">B-Ventilation 
+:</font>
+<dt><font color="#004080">Primarily, local 
+aspiration systems at the place of generation of lead dusts, fumes 
+and vapors. </font>
+<dt>
+<dt><font color="#004080">C-General 
+cleanliness of workstations :</font>
+<dt><font color="#004080">Regular washing 
+with water to avoid accumulation of lead dust. </font>
+<dt>
+<dt><font color="#004080">D-Sanitary 
+equipment :</font>
+<dt><font color="#004080">To allow for 
+adequate personal hygiene: sinks, showers, different lockers for 
+work and town clothes, refectory away from workstations. </font>
+<dt>
+<dt><font color="#004080">E- Regular 
+evaluation of lead concentration in the air :</font>
+<dt><font color="#004080">It must be done 
+at the workstation. Since in the industrial settings, the main 
+route of entry is the respiratory tract, the mesurement of lead in 
+the air allows to estimate the exposure hazard. </font>
+<dt>
+<dt><font color="#004080">F-Personal 
+protection :</font>
+<dt><font color="#004080">1-A respiratory 
+protection apparatus should be worn if the concentration in the 
+work environment is greater than the VEMP (0,15 filter 
+mg/m³)</font>
+<dt><font color="#004080">Masks: they must 
+be regularly cleaned and filters replaced. </font>
+<dt><font color="#004080"> 2-Personal 
+hygiene: nobody should smoke nor eat in workshops. One must also 
+incite workers to wash their hands regularly and to use 
+shower/baths after each working day. Working clothes will not be 
+carried home. </font>
+<dt>
+<dt><b><font color="#004080">II- Medical 
+Methods :</font></b>
+<dt>
+<dt><font color="#004080">A-Pre-employment 
+medical examination :</font>
+<dt>
+<dt><font color="#004080">Subjects 
+suffering from anemia, kidney diseases; pregnant or breast-feeding 
+women, should be kept away from lead exposure. According to Cramer 
+(1966), alcoholism would make workers more sensitive to the toxic 
+action of lead. </font>
+<dt>
+<dt><font color="#004080">B-Periodical 
+examination :</font>
+<dt>
+<dt><font color="#004080">It is necessary 
+to seek and recognize the signs of lead impregnation and the first 
+symptoms and clinical signs of lead poisoning, and to prescribe 
+the biological tests cited above such as BLL and ZPP.</font>
+<dt><font color="#004080">In the case of 
+chronic intoxication, tests for kidney function can also be 
+indicated.</font>
+</dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt><dd>
+</dd><dt><font color="#004080">In the USA, the 
+Action Level (AL) is .03 mg/m3 of air. The general industry 
+standard requires that all employees exposed to or above the AL 
+for more than 30 days per year take part in a medical surveillance 
+program provided by the employer, regardless of whether 
+respiratory protection is used. Routine measurements of BLL and 
+ZPP supplement the information provided by air lead measurements 
+to guide prevention efforts. </font>
+</dt><dd>
+</dd><dt><font color="#004080">C-Medical 
+Evaluations :</font>
+<dt><font color="#004080">1-General 
+industry standard :</font>
+<dt><font color="#004080">a- A medical 
+examination must be undergone by all the candidates for employment 
+where an exposure to lead higher than the AL during more than 30 
+days per year is encountered. This examination must comprise a 
+clinical evaluation and laboratory tests. </font>
+<dt><font color="#004080">-Clinical 
+Evaluation :General and lead-specific history and physical 
+examination with special attention to hematological, neurological, 
+(central and peripheral ), pulmonary, cardiovascular, 
+gastrointestinal, musculoskeletal, renal, and reproductive 
+systems.Medical clearance to wear respirator, if used, applies to 
+all categories. </font>
+<dt><font color="#004080">-Laboratory 
+Testing: it must include BLL, ZPP, blood count with blood smear, 
+urea and plasma creatinine , complete urinalysis. A sperm analysis 
+or pregnancy test could be made if requested by the employee, and 
+any other test the physician deems necessary.</font>
+<dt><font color="#004080">-Periodicity: it 
+will be necessary to repeat BLL and ZPP measurements every 6 
+months. </font>
+<dt><font color="#004080">b- When the last 
+BLL was = or &gt; 1.93 µmol/L. but lower than the threshold 
+recommended to carry out Medical Removal Protection.</font>
+<dt><font color="#004080">-Clinical 
+Evaluation: complete evaluation as described above, annually. 
+</font>
+<dt><font color="#004080">-Laboratory 
+Testing : complete lab panel if not done within last 12 months 
+(see above). Repeat BLL and ZPP every two (2) months until two (2) 
+consecutive BLLs are &lt; 1.93 µmol/L.</font>
+<dt><font color="#004080">c- When a single 
+BLL is = or &gt; 2.896 µmol/L. or when the average of the 
+last three (3) BLLs, or of all the BLLs of the previous six (6) 
+months are = or &gt; than 2.413 µmol/L. (whichever covers a 
+longer time period), Medical Removal Protection becomes mandatory. 
+</font>
+<dt><font color="#004080">-Clinical 
+Evaluation: as soon as the Medical Removal Protection is 
+initiated. See the clinical evaluation described above. </font>
+<dt><font color="#004080">-Laboratory 
+Testing: Complete lab panel (see above). Repeat BLL and ZPP at 
+least monthly until two (2) consecutive BLLs are =or&lt; 1.93 
+µmol/L. </font>
+<dt><font color="#004080">d- When an 
+employee reports signs or symptoms of lead toxiciy, desires advice 
+about effects of lead exposure (on reproductive system, child 
+bearing, etc.), has increased risk of material impairment to 
+health due to lead exposure, or has difficulty breathing with 
+respirator use. </font>
+<dt><font color="#004080">-Clinical 
+Evaluation: as soon as possible (see above).</font>
+<dt><font color="#004080">-Laboratory 
+Testing: as deemed appropriate by the physician based on 
+individual case needs.</font>
+</dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt><dd>
+</dd><dt><font color="#004080">2-Construction 
+Industry Standard :</font><b><font color="#004080"> </font></b>
+<dt><font color="#004080">It will not be 
+discussed here because it is irrelevant.</font>
+<dt>
+<dt><font color="#004080">D- Medical 
+Removal Protection : </font>
+<dt><font color="#004080">The physician 
+must recommend to the employer that an employee be removed from 
+lead exposure and enter a Medical Removal Protection program if 
+any of the following conditions are met.</font>
+<dt>
+<dt><font color="#004080">1- General 
+Industry Standard :</font>
+<dt><font color="#004080">a-A single 
+BLL=or&gt; 2.896 µmol/L, or</font>
+<dt><font color="#004080">b-An average of 
+the last three (3) BLLs or of all BBLs over the previous 6 months 
+(whichever covers a longer period of time) is=or&gt;2.413 
+µmol/L. </font>
+<dt><font color="#004080">c-The employee 
+has a « detected medical condition » that places him or 
+her at increased risk of « material impairment to health 
+». The physician is given the discretion to make such a 
+determination on an individual case basis.</font>
+<dt><font color="#004080">d-When the 
+physician detects symptoms and/or clinical signs usually 
+associated with lead poisoning even if the BLL is lower than the 
+standards cited above, or when the employee is pregnant. </font>
+<dt><font color="#004080">e-When the 
+employee is withdrawn from work, Laboratory Testing (Biological 
+Monitoring) must be done at least once per month. </font>
+<dt><font color="#004080">f-When the BLL is 
+twice consecutively = or &lt; 1.93 µmol/L. the physician may 
+recommend the return to work provided that the employer has taken 
+proper steps to control lead exposure and that the symptoms/ 
+clinical signs of the intoxication have disappeared. </font>
+<dt><font color="#004080">g-During Medical 
+Removal Protection a physician may recommend that an employee, if 
+physically able, returns to work in a place where there is no lead 
+exposure, or in a place where lead exposure is below the AL 
+(Action Level) which is below .03 mg/m3. </font>
+</dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt><dd>
+</dd><dt><font color="#004080">2-Construction 
+Industry Standard : </font>
+<dt><font color="#004080">It will not be 
+discussed here because it is irrelevant.</font>
+<dt>
+<dt><b><u><font color="#004080" size="+1">Treatment</font></u></b>
+<dt>
+<dt><b><font color="#004080">I-Acute 
+Intoxication :</font></b>
+<dt>
+<dt><font color="#004080">It consists of 
+:</font>
+<dt><font color="#004080">a gastric lavage 
+with a solution precipitating lead in the form of insoluble 
+sulphate, for example : </font>
+<dt><font color="#004080">- soda 
+sulphate,</font>
+<dt><font color="#004080">- magnesia 
+sulphate aa 40g,</font>
+<dt><font color="#004080">- water ad 1 
+liter;</font>
+<dt><font color="#004080">- daily injection 
+of calcium EDTA, in association with BAL in the child;</font>
+<dt><font color="#004080">- need to treat 
+shock, especially by the parenteral rehydration. </font>
+<dt><font color="#004080">  </font>
+<dt><b><font color="#004080">II-Chronic 
+Intoxication :</font></b>
+<dt>
+<dt><font color="#004080">A-Chelation 
+Therapy :</font>
+<dt>
+<dt><font color="#004080">1-EDTA 
+(ethylenediaminetetraacetic acid) is a chelating agent capable of 
+fixing lead, calcium and other cations to form a non-ionized 
+complex. To avoid hypocalcemy, a salt of calcium or disodium 
+should be given. Lead (but also other metals: zinc, copper, iron) 
+will replace calcium. The soluble complex lead-EDTA is quickly 
+excreted by the kidneys (glomerular filtration). </font>
+<dt><font color="#004080">Since EDTA is 
+toxic to the kidneys, especially to the glomerular basal membrane, 
+its administration should be done with prudence in the presence of 
+renal ailments. Renal function should be monitored during 
+treatment. The maximum amount to be given should not exceed 
+50mg/kg/day. </font>
+<dt><font color="#004080">Treatment must 
+last 5 days and if urinary lead remains high, it can be repeated 
+after a period of rest of at least 4 to 5 days. </font>
+</dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt><dd>
+</dd><dt><font color="#004080">2-DTPA 
+(diethylenetriaminepentaacetic acid trisodium salt, monocalcic) 
+seems slightly more effective than EDTA. </font>
+<dt>
+<dt><font color="#004080">3-DMSA 
+(dimercaptosuccinic acid) given orally in gradually increasing 
+amounts has been recommended. Its administration is more effective 
+than EDTA when the presence of lead in the digestive tract can be 
+excluded. </font>
+<dt>
+<dt><font color="#004080">4-Double 
+chelation therapy with EDTA and DMSA has been recommended in the 
+case of significant intoxication. </font>
+<dt>
+<dt><font color="#004080">5-In the case of 
+lead encephalopathy in the child, it seems that the combined 
+administration of BAL and EDTA is preferable to EDTA alone. 
+</font>
+<dt>
+<dt><font color="#004080">Finally, let us 
+remember that the preventive administration of a chelating agent 
+is to be prohibited. Only the control of the work environment 
+represents the method of adequate prevention. A drug cannot 
+replace industrial hygiene measures.</font>
+<dt>
+<dt><font color="#004080">B-Symptomatic 
+Treatment :</font>
+<dt>
+<dt><font color="#004080">It is of various 
+types: </font>
+<dt><font color="#004080">a-in lead colicky 
+abdominal pain: antispasmodic drugs;</font>
+<dt><font color="#004080">b-in lead 
+encephalopathy :</font>
+<dt><font color="#004080">-treatment of 
+convulsions by barbiturates,</font>
+<dt><font color="#004080">-treatment of 
+intracranial hypertension by the intravenous administration of a 
+hypertonic solution. </font>
+<dt><font color="#004080">c-in paroxystic 
+hypertension: blood pressure lowering drugs. </font>
+<dt>
+<dt><font color="#004080">In the case of 
+renal impairment, peritoneal dialysis allows a significant and 
+fast elimination of lead, avoiding kidney poisonous chelating 
+drugs. </font>
+<dt>
+<dt><b><font color="#004080">III-Treatment 
+of Lead Impregnation : </font></b>
+<dt>
+<dt><font color="#004080">In the case of 
+lead impregnation, hazard control is a must (prevention measures, 
+job change) and possibly, an EDTA treatment in the adult, 4g/day 
+by mouth, during 5 to 10 days. By mouth, dimercaptosuccinic acid 
+(DMSA) seems more active than EDTA. </font>
+<dt>
+<dt><i><font color="#004080">References 
+:</font></i>
+<dt><i><font color="#004080"> </font></i>
+<dt><i><font color="#004080">1-CSST-Quebec, 
+Repertoire Toxicologique, 2002</font></i>
+<dt><i><font color="#004080">2-Toxicologie 
+Industrielle et Intoxications Professionnelles, Lauwerys R. last 
+edition.</font></i>
+<dt><i><font color="#004080">3-Potterycrafts-MSDS, United Kingdom, april 
+2002.</font></i>
+<dt><i><font color="#004080">4-Sax's 
+Dangerous Properties of Industrial Materials, Lewis C., last 
+edition.</font></i>
+<dt><i><font color="#004080">5-Medical 
+Surveillance of the Lead Exposed Worker, Current Guidelines, 
+Hipkins K.L. et al, AACHN Journal, July 1998.</font></i>
+<dt><i><font color="#004080">6-Clinical 
+Environmental Health and Toxic Exposures, Sullivan J.B and Krieger 
+G.R., last edition.</font></i>
+</dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt></dt><dd>
+<dd>
+</dd></dd><dt><font color="#004080" face="Arial" size="-2"> </font>
+</dt></dl>
+<hr/><p>By Edouard Bastarache </p>
+<h2 style="font-style:italic; margin-top:40px;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Is Mexican Terra-cotta pottery lead-glazed? Yes. Does it leach? Yes.</h3>
+<br/><a alt="A lead-glazed handled cup sold in markets in Mexico" href="../picture/2539.html"><img alt="A lead-glazed handled cup sold in markets in Mexico" class="flexleft50" loading="lazy" src="../media/images/fmjqrwdmkp.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2539.html">click here</a> to see it.</p>
+<p>This piece was bought in Sinaloa in 2020 (made in Puebla). By breaking it and refiring shards I estimate the firing temperature around 1800F. This lead test procedure involves leaving white vinegar in the piece overnight, pouring some of that into a test tube, dipping a cotton swab into a reagent solution and then stirring the vinegar with it. Darkening of the color indicates the concentration of lead in the leachate. It has turned black! Yet a typical <a href="../glossary/frit.html">fritted</a> <a href="../material/645.html">lead bisilicate</a> <a href="../oxide/pbo.html">PbO</a>:2SiO<sub>2</sub> glaze (having 10-15% clay to suspend it) does not leach lead (when melted well). The very thin glaze application suggests potters were trying to save money (although thin or thick does not make it more reachable). <a href="../glossary/frit.html">Frits</a> are expensive, so it seems likely they are using white lead powder. But, they are not mixing enough <a href="../material/1245.html">silica</a> to produce a stable lead silicate <a href="../glossary/glaze+chemistry.html">chemistry</a> (likely because adding silica would require firing at a higher temperature to get a good melt).<br/>
+<br/>
+Yet this pottery is a tradition in Mexican culture (and elsewhere) and is used for food and liquid surfaces everywhere. Some manufacturers are trying to make <a href="../glossary/stoneware.html">stoneware</a> that retains the traditional <a href="../glossary/terra+cotta.html">terra cotta</a> appearance, but many prefer this.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/eba">Article by Edouard Bastarache</a>
+<br/><i>Edouard Bastarache is a well known doctor that has written many articles on the subject of <a href="../glossary/toxicity.html">toxicity</a> of ceramic materials and books on technical aspects of <a href="../glossary/ceramics.html">ceramics</a>. He writes in both English and French.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/red+lead.html">Red Lead</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/litharge.html">Litharge</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/lead+carbonate.html">Lead Carbonate</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/lead+bisilicate+frit.html">Lead Bisilicate Frit</a>
+<br/><i>A standard <a href="../glossary/frit.html">frit</a> of 1 molar part of <a href="../oxide/pbo.html">PbO</a> and 2 of <a href="../oxide/sio2.html">SiO2</a>. It is considered stable and non-leachable.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/lead+monosilicate+frit.html">Lead Monosilicate Frit</a>
+<br/><i>A standard <a href="../glossary/frit.html">frit</a> of 1 molar part of <a href="../oxide/pbo.html">PbO</a> and 1 of <a href="../oxide/sio2.html">SiO2</a>. It melts lower than a <a href="../material/645.html">lead bisilicate</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Hazards</td>
+<td>
+<a href="lead+in+ceramic+glazes.html">Lead in Ceramic Glazes</a>
+<br/><i><a href="../glossary/lead+in+ceramic+glazes.html">Lead glazes</a> may or may not be hazardous. This topic is not as clear as you might think.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/lead+in+ceramic+glazes.html">Lead in Ceramic Glazes</a>
+<br/><i>Lead is a melter in ceramic glazes and performs exceptionally well and must be misused to be toxic. It is also now environmentally pervasive. It is toxic and cumulative at any level of exposure.</i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></div></body>
+</html>

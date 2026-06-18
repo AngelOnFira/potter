@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>First You See It Then You Don't: Raku Glaze Stability</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="Tom Buck discusses the change in color over time that can happen with some raku glazes" name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item"><a class="nav-link" href="../material/list.html">Materials</a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item active" href="list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=article" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container"><p><a aria-controls="collapse1" aria-expanded="false" class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button">All Articles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a href="388.html" title="388">A ChatBot gives jaw-dropping glaze recipe advice - Jan 2025</a><br/><a href="244.html" title="244">A Low Cost Tester of Glaze Melt Fluidity</a><br/><a href="361.html" title="361">A One-speed Lab or Studio Slurry Mixer</a><br/><a href="353.html" title="353">A Textbook Cone 6 Matte Glaze With Problems</a><br/><a href="199.html" title="199">Adjusting Glaze Expansion by Calculation to Solve Shivering</a><br/><a href="251.html" title="251">Alberta Slip, 20 Years of Substitution for Albany Slip</a><br/><a href="273.html" title="273">An Overview of Ceramic Stains</a><br/><a href="37.html" title="37">Are You in Control of Your Production Process?</a><br/><a href="12.html" title="12">Are Your Glazes Food Safe or are They Leachable?</a><br/><a href="143.html" title="143">Attack on Glass: Corrosion Attack Mechanisms</a><br/><a href="204.html" title="204">Ball Milling Glazes, Bodies, Engobes</a><br/><a href="345.html" title="345">Binders for Ceramic Bodies</a><br/><a href="4.html" title="4">Bringing Out the Big Guns in Craze Control: MgO (G1215U)</a><br/><a href="381.html" title="381">Can We Help You Fix a Specific Problem?</a><br/><a href="124.html" title="124">Ceramic Glazes Today</a><br/><a href="208.html" title="208">Ceramic Material Nomenclature</a><br/><a href="336.html" title="336">Ceramic Tile Clay Body Formulation</a><br/><a href="217.html" title="217">Changing Our View of Glazes</a><br/><a href="22.html" title="22">Chemistry vs. Matrix Blending to Create Glazes from Native Materials</a><br/><a href="209.html" title="209">Concentrate on One Good Glaze</a><br/><a href="115.html" title="115">Copper Red Glazes</a><br/><a href="271.html" title="271">Crazing and Bacteria: Is There a Hazard?</a><br/><a href="190.html" title="190">Crazing in Stoneware Glazes: Treating the Causes, Not the Symptoms</a><br/><a href="97.html" title="97">Creating a Non-Glaze Ceramic Slip or Engobe</a><br/><a href="195.html" title="195">Creating Your Own Budget Glaze</a><br/><a href="36.html" title="36">Crystal Glazes: Understanding the Process and Materials</a><br/><a href="324.html" title="324">Deflocculants: A Detailed Overview</a><br/><a href="32.html" title="32">Demonstrating Glaze Fit Issues to Students</a><br/><a href="334.html" title="334">Diagnosing a Casting Problem at a Sanitaryware Plant</a><br/><a href="196.html" title="196">Drying Ceramics Without Cracks</a><br/><a href="187.html" title="187">Duplicating Albany Slip</a><br/><a href="45.html" title="45">Duplicating AP Green Fireclay</a><br/><a href="197.html" title="197">Electric Hobby Kilns: What You Need to Know</a><br/><a href="39.html" title="39">Fighting the Glaze Dragon</a><br/><a href="214.html" title="214">Firing Clay Test Bars</a><br/><a href="200.html" title="200">Firing: What Happens to Ceramic Ware in a Firing Kiln</a><br/><a href="113.html" title="113">First You See It Then You Don't: Raku Glaze Stability</a><br/><a href="316.html" title="316">Fixing a glaze that does not stay in suspension</a><br/><a href="338.html" title="338">Formulating a body using clays native to your area</a><br/><a href="191.html" title="191">Formulating a Clear Glaze Compatible with Chrome-Tin Stains</a><br/><a href="282.html" title="282">Formulating a Porcelain</a><br/><a href="188.html" title="188">Formulating Ash and Native-Material Glazes</a><br/><a href="114.html" title="114">G1214M Cone 5-7 20x5 glossy transparent glaze</a><br/><a href="121.html" title="121">G1214W Cone 6 transparent glaze</a><br/><a href="122.html" title="122">G1214Z Cone 6 matte glaze</a><br/><a href="226.html" title="226">G1916M Cone 06-04 transparent glaze</a><br/><a href="203.html" title="203">Getting the Glaze Color You Want: Working With Stains</a><br/><a href="342.html" title="342">Glaze and Body Pigments and Stains in the Ceramic Tile Industry</a><br/><a href="189.html" title="189">Glaze Chemistry Basics - Formula, Analysis, Mole%, Unity </a><br/><a href="358.html" title="358">Glaze chemistry using a frit of approximate analysis</a><br/><a href="123.html" title="123">Glaze Recipes: Formulate and Make Your Own Instead</a><br/><a href="343.html" title="343">Glaze Types, Formulation and Application in the Tile Industry</a><br/><a href="181.html" title="181">Having Your Glaze Tested for Toxic Metal Release</a><br/><a href="364.html" title="364">High Gloss Glazes</a><br/><a href="384.html" title="384">Hire Us for a 3D Printing Project</a><br/><a href="136.html" title="136">How a Material Chemical Analysis is Done</a><br/><a href="235.html" title="235">How desktop INSIGHT Deals With Unity, LOI and Formula Weight</a><br/><a href="331.html" title="331">How to Find and Test Your Own Native Clays</a><br/><a href="26.html" title="26">I have always done it this way!</a><br/><a href="344.html" title="344">Inkjet Decoration of Ceramic Tiles</a><br/><a href="279.html" title="279">Is Your Fired Ware Safe?</a><br/><a href="311.html" title="311">Leaching Cone 6 Glaze Case Study</a><br/><a href="206.html" title="206">Limit Formulas and Target Formulas</a><br/><a href="133.html" title="133">Low Budget Testing of Ceramic Glazes</a><br/><a href="333.html" title="333">Make Your Own Ball Mill Stand</a><br/><a href="347.html" title="347">Making Glaze Testing Cones</a><br/><a href="341.html" title="341">Monoporosa or Single Fired Wall Tiles</a><br/><a href="325.html" title="325">Organic Matter in Clays: Detailed Overview</a><br/><a href="105.html" title="105">Outdoor Weather Resistant Ceramics</a><br/><a href="27.html" title="27">Painting Glazes Rather Than Dipping or Spraying</a><br/><a href="212.html" title="212">Particle Size Distribution of Ceramic Powders</a><br/><a href="339.html" title="339">Porcelain Tile, Vitrified Tile</a><br/><a href="20.html" title="20">Rationalizing Conflicting Opinions About Plasticity</a><br/><a href="332.html" title="332">Ravenscrag Slip is Born</a><br/><a href="247.html" title="247">Recylcing Scrap Clay</a><br/><a href="101.html" title="101">Reducing the Firing Temperature of a Glaze From Cone 10 to 6</a><br/><a href="329.html" title="329">Setting up a Clay Testing Program in Your Company or Studio</a><br/><a href="211.html" title="211">Simple Physical Testing of Clays</a><br/><a href="350.html" title="350">Single Fire Glazing</a><br/><a href="326.html" title="326">Soluble Salts in Minerals: Detailed Overview</a><br/><a href="28.html" title="28">Some Keys to Dealing With Firing Cracks</a><br/><a href="249.html" title="249">Stoneware Casting Body Recipes</a><br/><a href="194.html" title="194">Substituting Cornwall Stone</a><br/><a href="274.html" title="274">Super-Refined Terra Sigillata</a><br/><a href="340.html" title="340">The Chemistry, Physics and Manufacturing of Glaze Frits</a><br/><a href="202.html" title="202">The Effect of Glaze Fit on Fired Ware Strength</a><br/><a href="125.html" title="125">The Four Levels on Which to View Ceramic Glazes</a><br/><a href="207.html" title="207">The Majolica Earthenware Process</a><br/><a href="43.html" title="43">The Potter's Prayer</a><br/><a href="359.html" title="359">The Right Chemistry for a Cone 6 Magnesia Matte</a><br/><a href="33.html" title="33">The Trials of Being the Only Technical Person in the Club</a><br/><a href="107.html" title="107">The Whining Stops Here: A Realistic Look at Clay Bodies</a><br/><a href="134.html" title="134">Those Unlabelled Bags and Buckets</a><br/><a href="16.html" title="16">Tiles and Mosaics for Potters</a><br/><a href="308.html" title="308">Toxicity of Firebricks Used in Ovens</a><br/><a href="379.html" title="379">Trafficking in Glaze Recipes</a><br/><a href="216.html" title="216">Understanding Ceramic Materials</a><br/><a href="210.html" title="210">Understanding Ceramic Oxides</a><br/><a href="130.html" title="130">Understanding Glaze Slurry Properties</a><br/><a href="213.html" title="213">Understanding the Deflocculation Process in Slip Casting</a><br/><a href="132.html" title="132">Understanding the Terra Cotta Slip Casting Recipes In North America</a><br/><a href="198.html" title="198">Understanding Thermal Expansion in Ceramic Glazes</a><br/><a href="313.html" title="313">Unwanted Crystallization in a Cone 6 Glaze</a><br/><a href="389.html" title="389">Using Dextrin, Glycerine and CMC Gum together</a><br/><a href="135.html" title="135">Volcanic Ash</a><br/><a href="201.html" title="201">What Determines a Glaze's Firing Temperature?</a><br/><a href="111.html" title="111">What is a Mole, Checking Out the Mole</a><br/><a href="38.html" title="38">What is the Glaze Dragon?</a><br/><a href="98.html" title="98">Where do I start in understanding glazes?</a><br/><a href="215.html" title="215">Why Textbook Glazes Are So Difficult</a><br/><a href="239.html" title="239">Working with children</a></div><h1>First You See It Then You Don't: Raku Glaze Stability</h1>
+<h4 class="text-muted">Description</h4><p class="text-muted font-italic">Tom Buck discusses the change in color over time that can happen with some raku glazes</p><h4>Article</h4>
+<p><i>Ceramic Review Issue #159, May/June 1996</i><br/>Susan Bennett's letter in CR 149 raised questions about the <a href="../glossary/raku.html">raku</a> process, specifically, the long-term stability of some fired glazes. Some lush colours changed over time into muddy browns. Why? And can such fragile glazes be made more durable? Ms Bennett might find solace knowing that she's not alone in this experience. Recently, someone wrote:</p>
+<p>"It has come to my attention that the lively raku recipes I've been using for many years have been quietly turning from rainbow hues to brown. I am understandably upset and those who have collected my work will be as well. Asking around I have been told that this is a common problem with copper matt raku lustres (which) I have been using." The writer asked for revised recipes to overcome "this browning of the fired surface" and cited four recipes:</p>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Red Lustre</th></tr>
+<tr>
+<td>Gerstley borate</td>
+<td>50</td></tr>
+<tr>
+<td>Borax</td>
+<td>50</td></tr>
+<tr>
+<td>Copper oxide, red</td>
+<td>10</td></tr>
+<tr>
+<td>Iron oxide, red</td>
+<td>10</td></tr>
+<tr>
+<td colspan="2"><font size="2">(This a version of Tomato Red by <br/>Carol Townsend who used Paul<br/>Soldner's 50/50 <a href="../glossary/base+glaze.html">base glaze</a>).</font></td></tr></tbody></table>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Gold Lustre</th></tr>
+<tr>
+<td>Gerstley borate</td>
+<td>87</td></tr>
+<tr>
+<td>Nepheline syenite</td>
+<td>13</td></tr>
+<tr>
+<td>Tin oxide </td>
+<td>2.2</td></tr>
+<tr>
+<td>Bismuth subnitrate</td>
+<td>4.4</td></tr>
+<tr>
+<td>Silver nitrate</td>
+<td>4.4</td></tr>
+<tr>
+<td colspan="2"><font size="2">(Similar to Robert Piepenberg's Gold <br/>Lustre and related to Soldner's 80/20 base).</font></td></tr></tbody></table>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Copper 80/20</th></tr>
+<tr>
+<td>Colemanite</td>
+<td>80</td></tr>
+<tr>
+<td>Nepheline syenite</td>
+<td>20</td></tr>
+<tr>
+<td>Copper carbonate </td>
+<td>10</td></tr>
+<tr>
+<td>Iron oxide, red </td>
+<td>5</td></tr>
+<tr>
+<td colspan="2"><font size="2">(Paul Soldner is usually credited with this design <br/>although Piepenberg and others have cited similar recipes).</font></td></tr></tbody></table>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Copper Sand</th></tr>
+<tr>
+<td>Colemanite</td>
+<td>80</td></tr>
+<tr>
+<td>Bone ash </td>
+<td>20</td></tr>
+<tr>
+<td>Copper carbonate </td>
+<td>5</td></tr>
+<tr>
+<td>Cobalt carbonate</td>
+<td>2.5</td></tr>
+<tr>
+<td colspan="2"><font size="2">(Another off-shoot of Soldner's 80/20 glaze).</font></td></tr></tbody></table>
+<p>Whenever a group raku-firing occurs, someone will likely be using one of the above "traditional" <a href="../glossary/glaze+recipes.html">glaze recipes</a> (I would not be surprised if one of them was mentioned in CR's first issue in February 1970). These glazes can excite the senses; often, they yield striking results for beginners.</p>
+<p>The Red Lustre, suitably reduced, usually produces a streaky semi-matt glaze with some shiny areas. It shows red-mauve tones suggestive of an over-ripe tomato. The Gold Lustre, when fired at lowest possible temperature and reduced via a brief contact with the reduction medium, shows high-sheen gold flashes and sometimes streaks of matt silvery metal.</p>
+<p>Copper 80/20, when heavily reduced, looks like freshly-minted copper. Copper Sand gives a surface like fine sandpaper with a range of mid-blue and red hues. For best results these four glazes should be applied on the thin side. I mixed test glazes at 1.5 grams per milli-litre density and brushed on one or two coats, with the occasional thicker layer for contrast. If applied too thickly some surface effects, for example, cratering, may occur because the <a href="../glossary/borate.html">borate</a> minerals give off a lot of gases.</p>
+<h2>Good glass needs silica</h2>
+<p>A peek below at the Seger formulas shows why these glazes may change. They lack sufficient <a href="../material/1245.html">silica</a> (silica, quartz, or chemically silicon oxide, <a href="../oxide/sio2.html">SiO<sub>2</sub></a>) to form a durable glass. Two glazes are also deficient in alumina (aluminium oxide, <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a>) which toughens glass and helps to seal the glass surface.</p>
+<p>Moreover, the minerals Colemanite and <a href="../material/806.html">Gerstley borate</a> are the key ingredients. These minerals come to the potter with little upgrading other than grinding/sieving to a powder. For years, it was often said the two materials gave the same results when they were freely substituted for one another, gram for gram. That may not be true today since their compositions have changed. Colemanite ore from Turkey is still shipped around the world but its content of calcium borate Ca2B6O11.5H<sub>2</sub>O went from 48% boric oxide (<a href="../oxide/b2o3.html">B<sub>2</sub>O<sub>3</sub></a>) to today's 40% boria. In North America, Turkish colemanite ore is chiefly upgraded into a high-cost "chemical" for industrial use (glassfibre, fire-retardant). Because of cost, colemanite (ore-grade or chemical-grade) is rarely stocked nowadays by pottery supply houses in North America; they offer gerstley borate instead.</p>
+<p>And today's gerstley borate -- a mineral-mix of colemanite, <a href="../material/1660.html">ulexite</a> (sodium/calcium borate) and shale/limestone -- comes from California with a <a href="../glossary/borate.html">boron</a> oxide (B<sub>2</sub>O<sub>3</sub>) content now at 28% (27-29%), down from the 34% (33.5-34.5%) registered in the 1970s. So, today's borate ores will, if a <a href="../glossary/batch+recipe.html">batch recipe</a> is followed without adjustment, decrease the glaze's B<sub>2</sub>O<sub>3</sub> content by 20% (perhaps more) and render the resultant glaze even more fragile. Also, if the recipe calls for <a href="../material/2271.html">Borax</a> (hydrated sodium borate), the amount of boron oxide actually contributed to the mix could vary even further. The common form of borax, the one used mostly for washing clothes, has a chemical formula of <a href="../oxide/na2o.html">Na<sub>2</sub>O</a>.2B<sub>2</sub>O<sub>3</sub>.10H<sub>2</sub>O (sodium borate decahydrate). This material, if left standing about, will gain or lose moisture (<a href="../oxide/h2o.html">H<sub>2</sub>O</a>), hence, will undergo a change in "formula" weight and the crystal shape may also change to another form.</p>
+<h2>Many factors involved</h2>
+<p>Raku is a chancy process with many factors to control: the <a href="../glossary/clay+body.html">clay body</a> and its ability to withstand severe thermal shock; the glaze mix, its <a href="../glossary/melting+temperature.html">melting temperature</a> and the glaze's <a href="../glossary/viscosity.html">viscosity</a> at this point; the kiln's heating rate, usually very rapid; how much and how fast <a href="../glossary/volatiles.html">volatiles</a>, mostly inert gases, are emitted; how one determines whether and when the kiln-load is ready for removal; the speed of removal and placement in the reduction medium; and the reducing agent itself, sawdust or wood-dust, wood-chips, straw, leaves, paper, etc.</p>
+<p>Useful here to recall the history of raku. It emerged in Japan as a quick method to make roofing tiles in an emergency and afterwards became the dominant way to make ceremonial tea bowls. The Japanese perform a "tea ceremony" that dates from antiquity; many people prefer a newly-fired simple bowl for this ritual. The early raku potters shaped a sandy <a href="../glossary/earthenware.html">earthenware</a> clay into a bowl, coated it with glaze, red or black from iron pigments, once-fired it to temperature, removed it from the kiln and let it cool in air.</p>
+<h2>Leach launches new wave</h2>
+<p>Modern raku began after Bernard Leach returned from his sojourn in Japan 70-plus years ago and used the process at St. Ives. He also wrote about raku in A Potter's Book (pub. 1941) and thereby inspired some American potters to <a href="../glossary/fast+fire+glazes.html">fast-fire</a> their pots. These pioneers included Hal Riegger, Paul Soldner, Jean Griffith and Robert Piepenberg. Soldner is generally credited with being the first to cool the glowing pots in various organic materials. He and Piepenberg designed many of the <a href="../glossary/base+glaze.html">base glazes</a> still in use. During this experimental period, roughly 1950 to 1970, the raku potters slowly became more successful, using more <a href="../glossary/refractory.html">refractory</a> bodies and twice-firing the ware (<a href="../glossary/bisque.html">bisque</a>, then glost). </p>
+<p>Today's raku process was developed by <a href="../glossary/stoneware.html">stoneware</a> potters trying a new way of converting heavily-grogged clay into works of art. Moreover, they used an instinctive cut-and-try approach that led to problems, namely, good glass does not come from impure calcium borate (colemanite/ gerstley borate) and/or hydrated sodium borate (borax). Neither borate material by itself or the two together will form a long-lasting surface. Also, it takes more than 20% <a href="../material/1070.html">nepheline syenite</a> to provide enough silica and alumina to make the glaze durable. </p>
+<p>The four borate glazes quoted above are usually reduced in sawdust or wood-chips, etc., during which they undergo some unusual chemical reactions. These reactions, in turn, produce some complex compounds of the colourant metals and their <a href="../glossary/ceramic+oxide.html">oxides</a>. Concurrently, these complexes become linked to oxides of iron, boron, phosphorus (when present) and aluminium. The overall result is an ultra-thin layer of coloured glass on or near the glaze surface. Unfortunately, these surface complexes are open to attack by airborne oxygen, moisture, and sulphur compounds (eg, the compounds that tarnish silver). Put simply, the reduced glaze is too porous and too easily affected by the environment.</p>
+<h2>Protect or revise?</h2>
+<p>The question remains: Do I continue to make colourful pots whose glory will fade with time (and I so advise all who collect my works)? Or, do I strive to learn of ways to revise my raku methods so as to obtain the lasting qualities of, say, <a href="../glossary/majolica.html">majolica</a> ware?</p>
+<p>In Raku a personal approach (pub. 1991), Steve Branfman gives a new generation of raku potters the same "80/20" borate glaze recipes of the 1960s (with minor changes). He does, however, also list newer balanced glazes that use <a href="../glossary/frit.html">frits</a> in their mix (both borate and alkaline frits). </p>
+<p>Since most raku pieces are not meant to be <a href="../glossary/functional.html">functional</a>, that is, hold water or food, a raku potter has the option to use published glazes, like those above, and follow the practice of artists working with more fragile media (oil painting, water-colour and pastel painting) -- they spray-coat the finished work to seal the colours underneath from the atmosphere. They use a clear plastic paint/varnish, usually an acrylic, that will yellow slightly with age. If raku pieces are so coated, the potter should advise potential clients to store the work in a dry, cool place beyond direct sunlight.</p>
+<p>Or one can seek raku glazes that are more durable. Acceptable adjustments can be established in a straight-forward manner by use of Seger formulas easily calculated on a micro-computer. By converting it to a <a href="../glossary/flux.html">Flux</a> <a href="../glossary/unity+formula.html">Unity formula</a>, a batch recipe is readily compared to other glazes on a fundamental or molecular level. This procedure, however, requires one to know the <a href="../glossary/chemical+analysis.html">chemical analysis</a> of each material used in the recipe. For glazes, each analysis cites the percentages of basic "substances", that is, the amount/proportion of each metallic oxide involved, 10 to 15 may be included. The analysis should be accurate to at least 1 part per hundred (+/- 1%, see Appendix).</p>
+<p>Chemically, a glass may be defined by its components -- those molecules that result when oxygen and metals combine. Chemists group the molecules of component oxides in a specific order, called the Seger or unity formula. The list reflects the relative amounts (proportions) of the "flux" oxides, the amphoteric oxides, and the glass-forming oxides that fuse to form glass on the piece at temperature in the kiln. Whether the sum of the flux-oxide molecules adds up to a trillion, a billion, one hundred, or 1, the proportions of all components in the mix, one to another, remain unchanged. </p>
+<p>Data from thousands of successful tests can then be summarized in table form, usually called <a href="../glossary/limit+formula.html">Limit Formulas</a> (Flux Unity). The table gathers the component oxides together for a given kiln temperature or temperature range. Because the table comes from successful glaze tests, it serves as a reliable guide within which to seek a particular solution to a glaze problem. From INSIGHT's Help File comes the following:</p>
+<h2>Limit Formulas (Flux Unity) for Leadless Glazes</h2>
+<table border="1" cellpadding="5">
+<tbody>
+<tr>
+<td>Temp°C</td>
+<td>880</td>
+<td>980</td>
+<td>1080</td></tr>
+<tr>
+<td>Cone</td>
+<td>012</td>
+<td>08-05</td>
+<td>04-02</td></tr>
+<tr>
+<td>Calcium ox. CaO</td>
+<td>0.1-.4</td>
+<td>.15-.5</td>
+<td>0.1-.6</td></tr>
+<tr>
+<td>Magnesium ox. MgO</td>
+<td>0-.1</td>
+<td>0-.15</td>
+<td>0-.3</td></tr>
+<tr>
+<td>Alkali oxides*</td>
+<td>0.25-.5</td>
+<td>0.25-.5</td>
+<td>0-.5</td></tr>
+<tr>
+<td>Barium ox. BaO**</td>
+<td>0-.1</td>
+<td>0-.2</td>
+<td>0-.3</td></tr>
+<tr>
+<td>Zinc oxide ZnO</td>
+<td>0-.05</td>
+<td>0-.15</td>
+<td>0-.2</td></tr>
+<tr>
+<td>Boron ox. B<sub>2</sub>O<sub>3</sub></td>
+<td>0.8-1.5</td>
+<td>0.6-1.3</td>
+<td>0.3-1.1</td></tr>
+<tr>
+<td>Alum. ox. Al<sub>2</sub>O<sub>3</sub></td>
+<td>0.1-.15</td>
+<td>0.1-.25</td>
+<td>0.1-.4</td></tr>
+<tr>
+<td>Silicon ox. SiO<sub>2</sub></td>
+<td>1.25-2.0</td>
+<td>1.5-2.5</td>
+<td>1.5-3.0</td></tr>
+<tr>
+<td colspan="4"><font size="2">*Oxides of potassium(K), sodium(Na), and sometimes lithium(Li).<br/>**Or Strontium oxide <a href="../oxide/sro.html">SrO</a>.</font></td></tr></tbody></table>
+<p>The table allows new or revised glazes to be calculated by linking the basic or essential oxides to raw materials available to the potter. One needs some practice to make a scratch recipe. For example, let's design "My Raku Base Glaze" to melt at approximately 900°C (1650°F, cone 011); it will have the following Seger chosen from the Limits table, using past experience as a guide:</p>
+<table border="1" cellpadding="6" cellspacing="4">
+<tbody>
+<tr>
+<th colspan="6">My Raku Base Glaze</th></tr>
+<tr>
+<td colspan="2">Flux oxides</td>
+<td colspan="2">Amphoteric ox.</td>
+<td colspan="2">Glass-formers</td></tr>
+<tr>
+<td>CaO</td>
+<td>0.4</td>
+<td>B<sub>2</sub>O<sub>3</sub> </td>
+<td>1.1</td>
+<td>SiO<sub>2</sub></td>
+<td>1.3</td></tr>
+<tr>
+<td>MgO</td>
+<td>0.1</td>
+<td>Al<sub>2</sub>O<sub>3</sub></td>
+<td>0.12</td>
+<td> </td>
+<td> </td></tr>
+<tr>
+<td>KNaO</td>
+<td>0.5</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td></tr></tbody></table>
+<p><font size="2">(Magnesium oxide, a high-temperature flux, 1200°C or more,<br/>will help give this glaze a broader range during which melting will occur).</font></p>
+<p>By use of the Insight computer program or similar system, the Seger calculations are carried out automatically. The computer sums the first column of flux oxides. Then, the proportions of other oxides are determined by using the original flux-oxide total as divisor (denominator). These calculations yield the Seger/Flux Unity formula. Boron oxide B<sub>2</sub>O<sub>3</sub> is sometimes placed under the glass-formers heading as in UK and Europe and sometimes it is found in the amphoteric column as in North America. This reflects the behaviour of the amphoteric oxides, iron, <a href="../oxide/fe2o3.html">Fe<sub>2</sub>O<sub>3</sub></a>, boron, B<sub>2</sub>O<sub>3</sub>, aluminium, Al<sub>2</sub>O<sub>3</sub>; they may have a dual role, flux and glass-former, in a given glaze mix.</p>
+<p>The Seger formula is made easier to interpret by choosing the flux-oxide total as 1 (unity), with the other amounts of components calculated accordingly. One can regard the Seger formula as a re-arrangement of the glaze's chemical composition expressed in mole percent, that is, the number of molecular weights of each basic oxide expressed as a percentage of the total combination). When it is expressed in mole percent (mol%), the amount of each component will, by itself, be less than unity.</p>
+<p>Often, composition is stated in parts by weight of the <a href="../glossary/basic+oxides.html">basic oxides</a> in the mix. For example, Red Lustre glaze has this parts-by-weight composition (<a href="../material/237.html">copper oxide</a> excluded):</p>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Red Lustre</th></tr>
+<tr>
+<td>Calcium oxide, CaO</td>
+<td>13.0%</td></tr>
+<tr>
+<td>Magnesium oxide, MgO</td>
+<td>2.5%</td></tr>
+<tr>
+<td>Sodium oxide, Na<sub>2</sub>O </td>
+<td>15.1%</td></tr>
+<tr>
+<td>Iron oxide, red, Fe<sub>2</sub>O<sub>3</sub></td>
+<td>14.9%</td></tr>
+<tr>
+<td>Boron oxide, B<sub>2</sub>O<sub>3</sub></td>
+<td>46.6%</td></tr>
+<tr>
+<td>Aluminium oxide, Al<sub>2</sub>O<sub>3</sub></td>
+<td>0.9%</td></tr>
+<tr>
+<td>Silicon oxide, SiO<sub>2</sub></td>
+<td>7.0%</td></tr></tbody></table>
+<p>This type of analysis shows the low levels of alumina and silica. But it leaves open the questions: How much silica and alumina should be added? Using what raw materials?</p>
+<h2>Finding the batch recipe</h2>
+<p>To arrive at a batch recipe of My Raku Base Glaze, one enters data into the Insight program and conducts the "Supply Oxide" routine. For this Seger formula, a major restriction is imposed by the B<sub>2</sub>O<sub>3</sub> content, 1.1 molecular weights, which demands use of raw materials high in B<sub>2</sub>O<sub>3</sub>. These include: borax, boracic acid (orthoboric acid, H3BO<sub>3</sub>), gerstley borate, borate frits, and colemanite as available. The computer program will lead to many recipes that match the Seger of My Raku Base Glaze. I have chosen the following four):</p>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">My Raku Base Glaze #1</th></tr>
+<tr>
+<td>Borax (as 10H<sub>2</sub>O)</td>
+<td>43</td></tr>
+<tr>
+<td>Gerstley borate</td>
+<td>34</td></tr>
+<tr>
+<td>Silica</td>
+<td>15</td></tr>
+<tr>
+<td>Grolleg kaolin</td>
+<td>8</td></tr></tbody></table>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">My Raku Base Glaze #2</th></tr>
+<tr>
+<td>Gerstley borate</td>
+<td>43</td></tr>
+<tr>
+<td>Silica</td>
+<td>19</td></tr>
+<tr>
+<td>Soda ash </td>
+<td>15</td></tr>
+<tr>
+<td>Boracic acid*</td>
+<td>13</td></tr>
+<tr>
+<td>Grolleg kaolin</td>
+<td>10</td></tr></tbody></table>
+<p><font size="2">*Chief form of this material is orthoboric acid (or boric acid), H3BO<sub>3</sub>, molecular weight 61.83, although it has two other forms, metaboric acid, HBO2, molecular weight 43.82, and tetraboric (pyroboric) acid, H2B4O7, molecular weight 157.26.</font></p>
+<p>Because water dissolves borax decahydrate, boracic acid, and soda ash when the glaze is first mixed, it is best to fresh-mix these recipes just before application to the biscuit. Otherwise, on standing for a week or more, some sodium borate (borax) and/or sodium carbonate (soda ash) may come out of solution as rather large crystals making the glaze dispersion non-uniform. If one's work demands an "on-hand" supply of Base #1, one can use a methanol-water mix (3:2 by volume) to keep borax <a href="../glossary/suspension.html">suspended</a>. This does, however, add another hazard to one's studio since methanol (methyl alcohol, wood spirits, gasline antifreeze) is combustible and toxic. Base #2 should be fresh-mixed since boracic acid is soluble in methanol/water, and may lead to crystals on standing.</p>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">My Raku Base Glaze #3</th></tr>
+<tr>
+<td>Gerstley borate</td>
+<td>45</td></tr>
+<tr>
+<td>Ferro <a href="../glossary/frit.html">frit</a> 3185 </td>
+<td>29.5</td></tr>
+<tr>
+<td>Pemco frit 2201</td>
+<td>15.5</td></tr>
+<tr>
+<td>Grolleg kaolin</td>
+<td>10</td></tr></tbody></table>
+<p><font size="2">(Please note that gerstley borate is slightly soluble, moreso in hot water, and will cause problems, the glaze will "floc", i.e., form a massive clump).</font></p>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">My Raku Base Glaze #4</th></tr>
+<tr>
+<td>Pemco frit 2201</td>
+<td>54</td></tr>
+<tr>
+<td>Pot.-crafts P2957</td>
+<td>27.5</td></tr>
+<tr>
+<td>Ferro frit 3185</td>
+<td>12</td></tr>
+<tr>
+<td>Ferro frit 3819</td>
+<td>6.5</td></tr></tbody></table>
+<p>If one can find a source of these frits and mix either #3 or #4, all the components would be insoluble in water and the glaze would have a long shelf life. Where a specific frit isn't available, a substitute may be possible using a local frit whose
+analysis is known; the Insight program allows one to match Seger formulas by addition of common materials. For example, PC P2960 frit can be matched by using FF3195 + quartz/silica + <a href="../material/925.html">kaolin</a>. And in many cases, a UK frit may replace a US frit. </p>
+<p>The objective for My Raku Base Glaze is to mix a glaze that will melt at approximately 900oC, one that will serve as a conduit for some colourants, and a glaze that will be stable long-term. Moreover, each recipe cited above is exactly like the other three recipes on a molecular level, that is, each will produce precisely the same mix of basic oxides when fusion occurs on a piece of pottery in a kiln at temperature. This holds true as long as the composition or analyses of the components remain steady over time.</p>
+<h2>Revising the recipes</h2>
+<p>The method used to design My Raku Base Glaze will also work to revise other glazes. However, one should note that the Limits table cites the minimum amounts of Al<sub>2</sub>O<sub>3</sub> and SiO<sub>2</sub> for each temperature range at which a glaze melt occurs. And that less B<sub>2</sub>O<sub>3</sub> is required as the temperature rises. Also, that there is narrow range in which the common flux oxides, the first five items in the table above, add up to unity. There will be, moreover, some successful glaze mixes that lie outside the flux-unity table--the glaze melt will be, in part, <a href="../glossary/flux.html">fluxed</a> by the changelings (oxides of iron Fe<sub>2</sub>O<sub>3</sub>, boron B<sub>2</sub>O<sub>3</sub> and aluminium Al<sub>2</sub>O<sub>3</sub>) and sometimes by the colourant oxides when they are present in significant amounts (5% or more).</p>
+<p>If glazes are mixed using today's materials the four batch recipes (see above) will produce the following formulas:</p>
+<table border="1" cellpadding="6" cellspacing="4">
+<tbody>
+<tr>
+<th colspan="6">Red Lustre</th></tr>
+<tr>
+<td colspan="2">Flux oxides</td>
+<td colspan="2">Amphoterics</td>
+<td colspan="2">Glass-formers</td></tr>
+<tr>
+<td>CaO</td>
+<td>0.43</td>
+<td>Fe<sub>2</sub>O<sub>3</sub> </td>
+<td>0.17</td>
+<td>SiO<sub>2</sub></td>
+<td>0.22</td></tr>
+<tr>
+<td>MgO</td>
+<td>0.12</td>
+<td>B<sub>2</sub>O<sub>3</sub></td>
+<td>1.25</td>
+<td> </td>
+<td> </td></tr>
+<tr>
+<td>Na<sub>2</sub>O</td>
+<td>0.45</td>
+<td>Al<sub>2</sub>O<sub>3</sub></td>
+<td>0.02</td>
+<td> </td>
+<td> </td></tr></tbody></table>
+<p><font size="2">(plus colourant <a href="../oxide/cu2o.html">Cu<sub>2</sub>O</a>, 0.10, which will likely lower the fusion point).</font></p>
+<table border="1" cellpadding="6" cellspacing="4">
+<tbody>
+<tr>
+<th colspan="6">Gold Lustre</th></tr>
+<tr>
+<td colspan="2">Flux oxides</td>
+<td colspan="2">Amphoterics</td>
+<td colspan="2">Glass-formers</td></tr>
+<tr>
+<td>CaO</td>
+<td>0.62</td>
+<td>B<sub>2</sub>O<sub>3</sub></td>
+<td>0.79</td>
+<td>SiO<sub>2</sub></td>
+<td>0.61</td></tr>
+<tr>
+<td>MgO</td>
+<td>0.17</td>
+<td>Al<sub>2</sub>O<sub>3</sub></td>
+<td>0.09</td>
+<td> </td>
+<td> </td></tr>
+<tr>
+<td>Na<sub>2</sub>O</td>
+<td>0.21</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td></tr></tbody></table>
+<p><font size="2">(colourants may help flux the glaze).</font></p>
+<table border="1" cellpadding="6" cellspacing="4">
+<tbody>
+<tr>
+<th colspan="6">Copper 80/20</th></tr>
+<tr>
+<td colspan="2">Flux oxides</td>
+<td colspan="2">Amphoterics</td>
+<td colspan="2">Glass-formers</td></tr>
+<tr>
+<td>CaO</td>
+<td>0.82</td>
+<td>Fe<sub>2</sub>O<sub>3</sub></td>
+<td>.07</td>
+<td>SiO<sub>2</sub></td>
+<td>.59</td></tr>
+<tr>
+<td>MgO</td>
+<td>0.08</td>
+<td>B<sub>2</sub>O<sub>3</sub></td>
+<td>1.13</td>
+<td> </td>
+<td> </td></tr>
+<tr>
+<td>Na<sub>2</sub>O</td>
+<td>0.10</td>
+<td>Al<sub>2</sub>O<sub>3</sub></td>
+<td>.11</td>
+<td> </td>
+<td> </td></tr>
+<tr>
+<td colspan="6"><font size="2">(copper colourant will also flux the glaze).</font></td></tr></tbody></table>
+<table border="1" cellpadding="6" cellspacing="4">
+<tbody>
+<tr>
+<th colspan="6">Copper Sand</th></tr>
+<tr>
+<td colspan="2">Flux oxides</td>
+<td colspan="2">Amphoterics</td>
+<td colspan="2">Glass-formers</td></tr>
+<tr>
+<td>CaO</td>
+<td>0.95</td>
+<td>P<sub>2</sub>O<sub>5</sub></td>
+<td>0.10</td>
+<td>SiO<sub>2</sub></td>
+<td>0.10</td></tr>
+<tr>
+<td>MgO</td>
+<td>0.04</td>
+<td>B<sub>2</sub>O<sub>3</sub></td>
+<td>0.84</td>
+<td> </td>
+<td> </td></tr>
+<tr>
+<td>Na<sub>2</sub>O</td>
+<td>0.01</td>
+<td>Al<sub>2</sub>O<sub>3</sub></td>
+<td>0.01</td>
+<td> </td>
+<td> </td></tr>
+<tr>
+<td colspan="6"><font size="2">(colourants will serve as fluxes too)</font></td></tr></tbody></table>
+<p>By comparing a recipe's Seger to data in the Limits table, and using the computer again, one can determine a revised recipe for a durable glaze melting at temperatures used in most raku firings. Then, one tests the new glaze to verify that the new mix will produce a result similar to that of the fragile glaze. Some fine-tuning will likely be needed since materials often have analyses that differ somewhat from those cited in the Appendix.</p>
+<p>The Limits table says that lustres, to be durable and melt at approximately 900°C, should have Seger formulas that list alumina as 0.1 to 0.15 and silica as 1.25 or more. Following the procedure used above (for My Raku Base Glaze) the Seger formula of the Red Lustre glaze is targeted at:</p>
+<table border="1" cellpadding="6" cellspacing="4">
+<tbody>
+<tr>
+<th colspan="2">Flux oxides</th>
+<th colspan="2">Amphoterics</th>
+<th colspan="2">Glass-formers</th></tr>
+<tr>
+<td>CaO</td>
+<td>0.40</td>
+<td>Fe<sub>2</sub>O<sub>3</sub></td>
+<td>0.16</td>
+<td>SiO<sub>2</sub></td>
+<td>1.25</td></tr>
+<tr>
+<td>MgO</td>
+<td>0.11</td>
+<td>B<sub>2</sub>O<sub>3</sub></td>
+<td>1.14</td>
+<td> </td>
+<td> </td></tr>
+<tr>
+<td>Na<sub>2</sub>O</td>
+<td>0.49</td>
+<td>Al<sub>2</sub>O<sub>3</sub></td>
+<td>0.10</td>
+<td> </td>
+<td> </td></tr></tbody></table>
+<p>The other lustres, when revised, show similar Seger formulas, although the amounts of <a href="../oxide/cao.html">CaO</a>, Na<sub>2</sub>O, Fe<sub>2</sub>O<sub>3</sub> and B<sub>2</sub>O<sub>3</sub> may differ.</p>
+<p>Once converted into a batch recipe via the computer, this Red Lustre glaze will likely be molten at approximately 900°C, and therefore undergo reduction with results similar to the original recipe. Depending on the materials used, many batch recipes are feasible, all of them are equivalent except where noted. They include:</p>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Red Lustre (revised) #1:</th></tr>
+<tr>
+<td>Borax (decahydrate)</td>
+<td>50</td></tr>
+<tr>
+<td>Gerstley borate</td>
+<td>50</td></tr>
+<tr>
+<td>Silica</td>
+<td>17</td></tr>
+<tr>
+<td>Nepheline syenite</td>
+<td>15</td></tr>
+<tr>
+<td>Copper oxide, red</td>
+<td>10</td></tr>
+<tr>
+<td>Iron oxide, red</td>
+<td>10</td></tr></tbody></table>
+<p>This version, by adding to the base mix, changes the colourants to approximately 7.5%. (Note: The Canadian and S. African syenites show slight differences, see Appendix; however, these differences are usually not enough to affect the glaze mix produced by a typical studio weighing).</p>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Red Lustre #2:</th></tr>
+<tr>
+<td>Borax (decahydrate)</td>
+<td>38</td></tr>
+<tr>
+<td>Gerstley borate</td>
+<td>38</td></tr>
+<tr>
+<td>Silica</td>
+<td>12.5</td></tr>
+<tr>
+<td>Nepheline syenite</td>
+<td>11.5</td></tr>
+<tr>
+<td>Copper oxide, red</td>
+<td>10</td></tr>
+<tr>
+<td>Iron oxide, red</td>
+<td>10</td></tr></tbody></table>
+<p>This version keeps the copper and iron oxides at their original percentages.</p>
+<p>One can obtain a water-insoluble Red Lustre if one obtains one or more borate frits:</p>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Red Lustre #3:</th></tr>
+<tr>
+<td>Frit Ferro 3819</td>
+<td>50</td></tr>
+<tr>
+<td>Gerstley borate</td>
+<td>50</td></tr>
+<tr>
+<td>Copper oxide, red</td>
+<td>10</td></tr>
+<tr>
+<td>Iron oxide, red</td>
+<td>10</td></tr></tbody></table>
+<p>This simple mix suffers from the inherent limitations of the base's two main ingredients; they work at cross-purposes. As a result, this mix is a compromise with lower boria (0.82) higher alumina (0.17) than called for in the Seger above. Thus, it may melt at 950oC or higher and on some bodies it may yield a matt glaze rather than a high-sheen gloss. </p>
+<p>Other frits, borate or alkaline, can replace borax and perhaps gerstley borate too. However, to be able to calculate the new batch mix one needs a reliable analysis of the frit, weight percent or mole percent. Emmanuel Cooper cites analyses for two Potterycrafts frits, P2957 (borate) and P2962 (alkaline), see Appendix. These frits yield:</p>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Red Lustre #4:</th></tr>
+<tr>
+<td>Borax (decahydrate)</td>
+<td>37</td></tr>
+<tr>
+<td>Potterycrafts P2957</td>
+<td>33</td></tr>
+<tr>
+<td>Gerstley borate </td>
+<td>30</td></tr>
+<tr>
+<td>Copper oxide, red</td>
+<td>10</td></tr>
+<tr>
+<td>Iron oxide, red</td>
+<td>10</td></tr></tbody></table>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Red Lustre #5:</th></tr>
+<tr>
+<td>Borax (decahydrate)</td>
+<td>40</td></tr>
+<tr>
+<td>Gerstley borate</td>
+<td>27</td></tr>
+<tr>
+<td>Potterycrafts P2962</td>
+<td>17</td></tr>
+<tr>
+<td>Silica</td>
+<td>10</td></tr>
+<tr>
+<td>Grolleg kaolin</td>
+<td>6</td></tr>
+<tr>
+<td>Copper oxide, red</td>
+<td>10</td></tr>
+<tr>
+<td>Iron oxide, red</td>
+<td>10</td></tr></tbody></table>
+<p>Like the first two revised recipes, these (#4 &amp; #5) should be fresh-mixed just before being applied to ware. This also applies to the following batches that include frit Ferro 3185, Ferro 3278, Pemco P830, or Hommel K3. The new batch recipes would be:</p>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Red Lustre #6:</th></tr>
+<tr>
+<td>Gerstley borate</td>
+<td>40</td></tr>
+<tr>
+<td>Frit F3185</td>
+<td>27</td></tr>
+<tr>
+<td>Borax (decahydrate)</td>
+<td>25</td></tr>
+<tr>
+<td>Grolleg kaolin</td>
+<td>8</td></tr>
+<tr>
+<td>Copper oxide, red</td>
+<td>10</td></tr>
+<tr>
+<td>Iron oxide, red</td>
+<td>10</td></tr></tbody></table>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Red Lustre #7:</th></tr>
+<tr>
+<td>Borax (decahydrate)</td>
+<td>35</td></tr>
+<tr>
+<td>Frit F3278/P830/K3</td>
+<td>34</td></tr>
+<tr>
+<td>Gerstley borate</td>
+<td>23</td></tr>
+<tr>
+<td>Grolleg kaolin</td>
+<td>8</td></tr>
+<tr>
+<td>Copper oxide, red</td>
+<td>10</td></tr>
+<tr>
+<td>Iron oxide, red</td>
+<td>10</td></tr></tbody></table>
+<p>The borate frits 3185 and 3278 have too much silica content to permit them to substitute greatly for borax and/or gerstley borate without increasing the firing temperature significantly. Version #7 (with F3278) was mixed and tested; it produced an easily-melted glaze that, when heavily reduced, gave brilliant reds and blues with high gloss.</p>
+<p>Another possible recipe, insoluble, is one that uses Ferro frits 3134 and 3195, namely:</p>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Red Lustre #8:</th></tr>
+<tr>
+<td>Gerstley borate</td>
+<td>38</td></tr>
+<tr>
+<td>Frit F3134</td>
+<td>31</td></tr>
+<tr>
+<td>Frit F3195</td>
+<td>31</td></tr>
+<tr>
+<td>Copper oxide, red</td>
+<td>10</td></tr>
+<tr>
+<td>Iron oxide, red</td>
+<td>10</td></tr></tbody></table>
+<p>This version (boria 0.82) was mixed and fired, yielding an excellent semi-matt lustre.</p>
+<p>And finally, if Pemco frit 2201 (Fusion F309) is available, it will yield a simple, insoluble batch mix:</p>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Red Lustre #9:</th></tr>
+<tr>
+<td>Frit P2201</td>
+<td>57</td></tr>
+<tr>
+<td>Potterycrafts P2957</td>
+<td>43</td></tr>
+<tr>
+<td>Iron oxide, red</td>
+<td>13</td></tr>
+<tr>
+<td>Copper oxide, red</td>
+<td>10</td></tr></tbody></table>
+<p>Of these nine replacement recipes, Nos. 2, 4, 7, and 9 come closest to reproducing the original Seger formula with appropriate increases in alumina and silica. And for some raku potters, Nos. 3, 5, and 8 may prove to be more attractive.</p>
+<h2>Gold Lustre</h2>
+<p>This glaze exhibits low silica, low boria, and high CaO/MgO content, and is beyond the usual limits for 900oC. However, if the silica is brought to 1.25 units, the glaze will become more durable and the mix insoluble in water. The first revision achieves this:</p>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Gold Lustre revised #1</th></tr>
+<tr>
+<td>Gerstley borate</td>
+<td>74</td></tr>
+<tr>
+<td>Silica</td>
+<td>14</td></tr>
+<tr>
+<td>Nepheline syenite</td>
+<td>12</td></tr>
+<tr>
+<td>Bismuth subnitrate</td>
+<td>4</td></tr>
+<tr>
+<td>Silver nitrate</td>
+<td>4</td></tr></tbody></table>
+<p>This version was mixed and tested, using newspaper to provide a gentle reduction. The pot's colour was right but the gloss surface was marred by excessive <a href="../glossary/glaze+bubbles.html">bubbling</a>, a result of the glaze coat being too thick.</p>
+<p>A second version makes use of a frit:</p>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Gold Lustre #2</th></tr>
+<tr>
+<td>Gerstley borate</td>
+<td>60</td></tr>
+<tr>
+<td>Potterycrafts P2957</td>
+<td>40</td></tr>
+<tr>
+<td>Tin oxide</td>
+<td>2</td></tr>
+<tr>
+<td>Bismuth subnitrate</td>
+<td>4</td></tr>
+<tr>
+<td>Silver nitrate</td>
+<td>4</td></tr></tbody></table>
+<p>Both Nos. 1 &amp; 2 match the original glaze with more silica added. For more venturesome potters, the literature offers two unusual Gold Lustres, one higher fire, the other a crackle type:</p>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Gold Lustre #3</th></tr>
+<tr>
+<td>Gerstley borate</td>
+<td>50</td></tr>
+<tr>
+<td>Grolleg kaolin</td>
+<td>33</td></tr>
+<tr>
+<td>Silica</td>
+<td>17</td></tr>
+<tr>
+<td>Silver nitrate </td>
+<td>1.7</td></tr></tbody></table><pre><font size="2">(Attributed to Tony Mecham, it has too much alumina for 900oC).</font></pre>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Gold Lustre #4</th></tr>
+<tr>
+<td>Silica</td>
+<td>32</td></tr>
+<tr>
+<td>Gerstley borate</td>
+<td>26</td></tr>
+<tr>
+<td>Soda ash</td>
+<td>22</td></tr>
+<tr>
+<td>Grolleg kaolin</td>
+<td>12</td></tr>
+<tr>
+<td>Borax (decahydrate)</td>
+<td>8</td></tr>
+<tr>
+<td>Bismuth subnitrate</td>
+<td>1</td></tr>
+<tr>
+<td>Silver nitrate</td>
+<td>1</td></tr></tbody></table>
+<p><font size="2">(Tyler &amp; Hirsch, in "Raku", say this <a href="../glossary/crackle+glaze.html">crackle glaze</a> will yield iridescent highlights. It works best when fresh-mixed).</font></p>
+<p>The Gold lustres are both expensive and troublesome. They need a potter's full attention since silver nitrate is a hazardous chemical. Also, there is a limited dwell-time in a hot kiln before the bismuth and silver nitrates break down and evaporate off the piece. Moreover, if a pot is too heavily reduced, it may lose its gold metallic sheen.</p>
+<h2>Copper 80/20 Glaze</h2>
+<p>This high calcium oxide, high boron oxide glaze also lacks silica. If one can obtain colemanite locally then a simple addition of silica, approximately 17%, to the <a href="../glossary/base+glaze.html">base recipe</a> will provide a stable glaze. However, the percentages of the colourants in the mix will drop slightly. To keep them the same the recipe is revised to:</p>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Copper 80/20 revised #1</th></tr>
+<tr>
+<td>Colemanite</td>
+<td>65</td></tr>
+<tr>
+<td>Nepheline syenite</td>
+<td>16</td></tr>
+<tr>
+<td>Silica</td>
+<td>15</td></tr>
+<tr>
+<td>Copper carbonate</td>
+<td>10</td></tr>
+<tr>
+<td>Iron oxide, red</td>
+<td>5</td></tr></tbody></table>
+<p>This glaze-mix uses insolubles so it can be on the shelf. However, if colemanite is not available as is quite common, then one can use gerstley borate (recipe #2) or a mix of gerstley borate and borax (recipe #3) and fresh-mix the glaze just before use. The revised glaze is:</p>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Copper 80/20 #2</th></tr>
+<tr>
+<td>Gerstley borate</td>
+<td>73</td></tr>
+<tr>
+<td>Nepheline syenite</td>
+<td>13.5</td></tr>
+<tr>
+<td>Silica</td>
+<td>13.5</td></tr>
+<tr>
+<td>Copper carbonate</td>
+<td>10</td></tr>
+<tr>
+<td>Iron oxide, red</td>
+<td>5</td></tr></tbody></table>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Copper 80/20 #3</th></tr>
+<tr>
+<td>Borax (decahydrate)</td>
+<td>39</td></tr>
+<tr>
+<td>Gerstley borate</td>
+<td>37</td></tr>
+<tr>
+<td>Nepheline syenite</td>
+<td>12</td></tr>
+<tr>
+<td>Silica</td>
+<td>12</td></tr>
+<tr>
+<td>Copper carbonate</td>
+<td>10</td></tr>
+<tr>
+<td>Iron oxide, red</td>
+<td>5</td></tr></tbody></table>
+<p>The No. 3 mix contains much more sodium oxide which leads to a large increase in the expansion/contraction of the glaze, about one-third more, and the glaze may crackle on some bodies instead of providing a smooth surface.</p>
+<p>Another simple version of Copper 80/20 uses Potterycrafts frit P2957 for an insoluble mix, as follows:</p>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Copper 80/20 #4</th></tr>
+<tr>
+<td>Gerstley borate</td>
+<td>64</td></tr>
+<tr>
+<td>Potterycrafts P2957</td>
+<td>36</td></tr>
+<tr>
+<td>Copper carbonate</td>
+<td>10</td></tr>
+<tr>
+<td>Iron oxide, red</td>
+<td>5</td></tr></tbody></table>
+<p>or this version using Pemco frit 2201 to replace gerstley borate:</p>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Copper 80/20 #5</th></tr>
+<tr>
+<td>Pemco frit 2201</td>
+<td>64</td></tr>
+<tr>
+<td>Potterycrafts P2957</td>
+<td>14</td></tr>
+<tr>
+<td>Nepheline syenite</td>
+<td>11</td></tr>
+<tr>
+<td>Silica</td>
+<td>11</td></tr>
+<tr>
+<td>Copper carbonate</td>
+<td>10</td></tr>
+<tr>
+<td>Iron oxide, red</td>
+<td>5</td></tr></tbody></table>
+<p>Other batch recipes can be calculated for the Copper 80/20 glaze to use various frits including Ferro frits 3195, 3185 and 3819. An example is the following:</p>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Copper 80/20 #6</th></tr>
+<tr>
+<td>Gerstley borate</td>
+<td>67</td></tr>
+<tr>
+<td>Ferro frit 3195</td>
+<td>17</td></tr>
+<tr>
+<td>Silica</td>
+<td>10</td></tr>
+<tr>
+<td>Kaolin</td>
+<td>6</td></tr>
+<tr>
+<td>Copper carbonate</td>
+<td>10</td></tr>
+<tr>
+<td>Iron oxide, red</td>
+<td>5</td></tr></tbody></table>
+<p>I have mixed and tested this batch recipe with excellent results. The Copper 80/20 glaze, as revised, is an easy glaze to use since it has an adequately broad melting range and doesn't run, hence, over-firing is not a problem. Also, reduction can be heavy and lengthy and still yield a bright copper metal finish.</p>
+<h2>Copper Sand</h2>
+<p>The Copper Sand recipe is quite difficult to adjust because 1) the textured surface is a direct result of too much calcium phosphate (bone ash) in the mix. Phosphorus oxide competes with alumina and boria in the formation of silica-based glass; and 2) The original mix lacks alumina and silica.</p>
+<p>To achieve a stable glaze, one revises the Seger to match the firing temperature and then calculates a new batch recipe. To this mix one adds matting/texturing agents to open up a way to achieve both the reduction colours and the desired surface without weakening the glass. Possible versions include:</p>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Copper Sand (revised) #1</th></tr>
+<tr>
+<td>Gerstley borate</td>
+<td>32</td></tr>
+<tr>
+<td>Borax (decahydrate)</td>
+<td>30</td></tr>
+<tr>
+<td>Bone ash</td>
+<td>11</td></tr>
+<tr>
+<td>Silica</td>
+<td>18.5</td></tr>
+<tr>
+<td>Grolleg kaolin</td>
+<td>8.5</td></tr>
+<tr>
+<td>Copper carbonate</td>
+<td>5</td></tr>
+<tr>
+<td>Cobalt oxide</td>
+<td>2.5</td></tr></tbody></table>
+<p>Recipe #1 should be fresh mixed just before use whereas Nos. 2, 3 and 4 below could be on hand since the components are insoluble.</p>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Copper Sand #2</th></tr>
+<tr>
+<td>Gerstley borate</td>
+<td>56</td></tr>
+<tr>
+<td>Silica</td>
+<td>21</td></tr>
+<tr>
+<td>Bone ash</td>
+<td>14</td></tr>
+<tr>
+<td>Grolleg kaolin</td>
+<td>9</td></tr>
+<tr>
+<td>Copper carbonate</td>
+<td>5</td></tr>
+<tr>
+<td>Cobalt oxide</td>
+<td>2.5</td></tr></tbody></table>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Copper Sand #3</th></tr>
+<tr>
+<td>Ferro frit 3195</td>
+<td>63</td></tr>
+<tr>
+<td>Gerstley borate</td>
+<td>20</td></tr>
+<tr>
+<td>Bone ash</td>
+<td>14.5</td></tr>
+<tr>
+<td>Talc</td>
+<td>2.5</td></tr>
+<tr>
+<td>Copper carbonate</td>
+<td>5</td></tr>
+<tr>
+<td>Cobalt oxide</td>
+<td>2.5</td></tr></tbody></table>
+<p>This batch (No. 3) was mixed and tested twice. The first mix contained 5% zirconium spinel, tested, and then 2% alumina hydrate was added and retested. The mix did not reproduce the original dry finish when using 5% spinel as matting agent but rather yielded a semi-matt to glossy finish. The second test gave a more matt surface with glossy glints.</p>
+<table border="1" cellpadding="4">
+<tbody>
+<tr>
+<th colspan="2">Copper Sand #4</th></tr>
+<tr>
+<td>Gerstley borate</td>
+<td>43</td></tr>
+<tr>
+<td>Potterycrafts P2957</td>
+<td>39</td></tr>
+<tr>
+<td>Bone ash</td>
+<td>14</td></tr>
+<tr>
+<td>Silica</td>
+<td>4</td></tr>
+<tr>
+<td>Copper carbonate</td>
+<td>5</td></tr>
+<tr>
+<td>Cobalt oxide</td>
+<td>2.5</td></tr></tbody></table>
+<p><font size="2">There are several matting/texturing agents worth trying:</font></p>
+<p><font size="2">Colourless zirconium/zinc spinel, add 5%, or more;<br/>Other spinels (usually coloured), 3%, more or less;<br/>Molochite (fired china clay, finely ground), or aluminium hydrate powder, 50 to 60 mesh, 2 to 5%; and<br/>Kyanite, 35, 50 or 100 mesh, 3%, more or less.</font></p>
+<p>As available in North America, zirconium spinel is a very fine <a href="../glossary/glass+vs.+crystalline.html">crystalline</a> powder that melts at very high temperature, above 1500oC, and will not likely become an active glaze component until 1300°C. In a raku firing, the tiny crystals likely remain inert and float/disperse in the molten glaze; on cooling, the glaze will have a satin matt surface that doesn't hide the colour complexes. </p>
+<p>A natural, coloured spinel (those containing iron, zinc, chromium or manganese), if available locally, will likely behave in a similar fashion (I have yet to try such a spinel).</p>
+<p>Molochite (Al<sub>2</sub>O<sub>3</sub>.2SiO<sub>2</sub>), <a href="../material/951.html">kyanite</a> (Al<sub>2</sub>O<sub>3</sub>.SiO<sub>2</sub>) and aluminium hydrate are available as crystalline powders that melt above 1300°C. Either one will provide a matt surface but will also hide the reduction colours if too much is used.</p>
+<p>When using matting and texturing agents in a glaze mix, a successful result will increasingly depend how one fires and to what temperature; and also how quickly the pot is placed in reducing medium since the glaze must be molten to produce red from copper. On some bodies, the best result may come from a combination of agents. </p>
+<p><strong>Final note:</strong> Raku potters face a difficult task of making durable pots, especially when using high-borate, low-silica glazes. This article offers revisions to matt lustre glazes, and while I have not yet tested all the suggested revisions, I have formulated and tested at least one mix apiece of the above four glazes, with some success. Yet, the recipes above should be approached with hope and caution -- whatever the result, may we all gain a better understanding of <a href="../glossary/glaze+chemistry.html">glaze chemistry</a> and how it may be successfully applied to practical problems.</p>
+<p><em>Acknowledgements: Thanks to: Darlene Benner, fellow Guild member and raku artist, for firing up her kiln to help test the new glaze mixes; <a href="../glossary/tony+hansen.html">Tony Hansen</a>, of <a href="../glossary/digitalfire+reference+library.html">Digitalfire</a> Corp., Medicine Hat, Alberta, for permission to quote Insight's Limits Table and also for converting my original text into a form readable by Ceramic Review's computer(s); and Carol Desoer, my daughter, for photographing the test pots.</em></p>
+<h2>Appendix</h2>
+<p>Materials used for calculations have the following chemical composition, expressed in moles (number of molecular weights) and arranged so that the flux oxides quantities, where applicable, add up to unity:</p>
+<table border="1" cellpadding="5">
+<tbody>
+<tr>
+<td><strong>Material</strong></td>
+<td><strong>Mol. Wt. or Formula Wt.</strong></td>
+<td><strong>Seger formula</strong></td></tr>
+<tr>
+<td><font size="2">Bone ash</font></td>
+<td><font size="2">99.4</font></td>
+<td><font size="2">CaO-0.96, MgO-0.03, Na<sub>2</sub>O-0.01, P<sub>2</sub>O<sub>5</sub>-0.30, Al<sub>2</sub>O<sub>3</sub>-0.01, SiO<sub>2</sub>-0.01</font></td></tr>
+<tr>
+<td><font size="2">Borax 10H<sub>2</sub>O</font></td>
+<td><font size="2">381.5</font></td>
+<td><font size="2">Na<sub>2</sub>O-1.00, B<sub>2</sub>O<sub>3</sub>-2.00</font></td></tr>
+<tr>
+<td><font size="2">Boric acid (boracic acid)</font></td>
+<td><font size="2">61.8</font></td>
+<td><font size="2">B<sub>2</sub>O<sub>3</sub>-1.00</font></td></tr>
+<tr>
+<td><font size="2">Colemanite</font></td>
+<td><font size="2">197.9</font></td>
+<td><font size="2">CaO-0.91, MgO-0.09, <a href="../oxide/k2o.html">K<sub>2</sub>O</a> 0.01, B<sub>2</sub>O<sub>3</sub>-1.26, Al<sub>2</sub>O<sub>3</sub>-0.01, SiO<sub>2</sub>-0.15</font></td></tr>
+<tr>
+<td><font size="2">Ferro 3134</font></td>
+<td><font size="2">190.6</font></td>
+<td><font size="2">CaO-0.68, Na<sub>2</sub>O-0.32, B<sub>2</sub>O<sub>3</sub>-0.63, SiO<sub>2</sub>-1.48</font></td></tr>
+<tr>
+<td><font size="2">Ferro 3185</font></td>
+<td><font size="2">807.2</font></td>
+<td><font size="2">Na<sub>2</sub>O-1.00, B<sub>2</sub>O<sub>3</sub>-4.42, SiO<sub>2</sub>-7.26</font></td></tr>
+<tr>
+<td><font size="2">Ferro 3195</font></td>
+<td><font size="2">337.4</font></td>
+<td><font size="2">CaO-0.67, Na<sub>2</sub>O-0.33, B<sub>2</sub>O<sub>3</sub>-1.11, Al<sub>2</sub>O<sub>3</sub>-0.41, SiO<sub>2</sub>-2.67</font></td></tr>
+<tr>
+<td><font size="2">Ferro 3278</font></td>
+<td><font size="2">270.4</font></td>
+<td><font size="2">CaO-0.33, Na<sub>2</sub>O-0.67, B<sub>2</sub>O<sub>3</sub>-0.84, SiO<sub>2</sub>-2.53</font></td></tr>
+<tr>
+<td><font size="2">Ferro 3819</font></td>
+<td><font size="2">329.2</font></td>
+<td><font size="2">CaO-0.02, K<sub>2</sub>O-0.25, Na<sub>2</sub>O-0.69, ZnO-0.04, B<sub>2</sub>O<sub>3</sub>-0.79, Al<sub>2</sub>O<sub>3</sub>-0.41, SiO<sub>2</sub>-2.62</font></td></tr>
+<tr>
+<td><font size="2">Silica</font></td>
+<td><font size="2">60.0</font></td>
+<td><font size="2">SiO<sub>2</sub>-1.00</font></td></tr>
+<tr>
+<td><font size="2">Gerst.borate</font></td>
+<td><font size="2">206.9</font></td>
+<td><font size="2">CaO-0.66, MgO-0.18, Na<sub>2</sub>O-0.16, B<sub>2</sub>O<sub>3</sub>-0.84, Al<sub>2</sub>O<sub>3</sub>-0.03, SiO<sub>2</sub>-0.34</font></td></tr>
+<tr>
+<td><font size="2">Grolleg kao.</font></td>
+<td><font size="2">274.2</font></td>
+<td><font size="2">MgO-0.02, K<sub>2</sub>O-0.06, Fe<sub>2</sub>O<sub>3</sub>-0.01, Al<sub>2</sub>O<sub>3</sub>-1.00, SiO<sub>2</sub>-2.18</font></td></tr>
+<tr>
+<td><font size="2">Neph.Sy.1, Canada</font></td>
+<td><font size="2">446.4</font></td>
+<td><font size="2">CaO-0.06, MgO-0.01, K<sub>2</sub>O-0.22, Na<sub>2</sub>O-0.71, Al<sub>2</sub>O<sub>3</sub>-1.04, SiO<sub>2</sub>-4.53</font></td></tr>
+<tr>
+<td><font size="2">Neph.Sy.2, S.Africa</font></td>
+<td><font size="2">475.6</font></td>
+<td><font size="2">K<sub>2</sub>O-0.24, Na<sub>2</sub>O-0.76, Al<sub>2</sub>O<sub>3</sub>-1.11, SiO<sub>2</sub>-4.88</font></td></tr>
+<tr>
+<td><font size="2">Pemco 2201 (Fusion 309)</font></td>
+<td><font size="2">160.1</font></td>
+<td><font size="2">CaO-0.63, MgO-0.19, Na<sub>2</sub>O-0.18, B<sub>2</sub>O<sub>3</sub>-1.18, Al<sub>2</sub>O<sub>3</sub>-0.02, SiO<sub>2</sub>-0.35</font></td></tr>
+<tr>
+<td><font size="2">P2957, Potterycrafts </font></td>
+<td><font size="2">455.2</font></td>
+<td><font size="2">CaO-0.60, K<sub>2</sub>O-0.14, Na<sub>2</sub>O-0.26, B<sub>2</sub>O<sub>3</sub>-0.97, Al<sub>2</sub>O<sub>3</sub>-0.42, SiO<sub>2</sub>-4.70</font></td></tr>
+<tr>
+<td><font size="2">P2962, Potterycrafts</font></td>
+<td><font size="2">188.3</font></td>
+<td><font size="2">BaO-0.11, CaO-0.11, K<sub>2</sub>O-0.21, Na<sub>2</sub>O-0.58, B<sub>2</sub>O<sub>3</sub>-0.11, Al<sub>2</sub>O<sub>3</sub>-0.09, SiO<sub>2</sub>-1.65</font></td></tr>
+<tr>
+<td><font size="2">Soda ash</font></td>
+<td><font size="2">107.0</font></td>
+<td><font size="2">Na<sub>2</sub>O-1.00</font></td></tr></tbody></table>
+<h3>Zirconium/zinc spinel</h3>
+<p><font size="2">The molar formula (alumina unity) for zirconium/zinc spinel is: Al<sub>2</sub>O<sub>3</sub>, 1.00; SiO<sub>2</sub>, 1.77; <a href="../oxide/zro2.html">ZrO2</a>, 1.69; <a href="../oxide/zno.html">ZnO</a>, 1.25; and a trace of <a href="../oxide/tio2.html">TiO2</a>, 0.01--formula weight, 519.3. </font></p>
+<h3>Book list / references</h3>
+<ul>
+<li>Cooper's book of glaze recipes, E. Cooper, Batsford, London, 1987. 
+</li><li>Raku, C. Tyler &amp; R. Hirsch, Watson-Guptill, New York, 1975. 
+</li><li>Raku, art &amp; technique, H. Riegger, Van Nostrand Reinhold, New York, 1970. 
+</li><li>Raku pottery, R. E. Piepenberg, Macmillan, New York, 1972. 
+</li><li>Raku, a practical approach, S. Branfman, Chilton, Radnor, Pa, 1991. 
+</li><li>The Potter's Friend, F. Hamer, article in CR 146, Pp 8-13, 1994. 
+</li><li>The Magic of Fire, T. Hansen, Digitalfire Corp., Medicine Hat, Ab, Canada, 1992. 
+</li><li>FORESIGHT (beta) and INSIGHT ver 4.1k. </li></ul>
+<h4>Comments</h4>
+<p>I'm trying a simple glaze based on 3110 but using sodium hydroxide instead of soda ash. The substitution ratio is around 8 - 10 so you use less NaOH and it is totally soluble. This way I can increase the silica content and get a more stable glaze without the problems of crystals with soda ash. I wonder if there is a rapid test for rake to see if the luster will fade. Obviously it is oxidizing so how about some warm hydrogen peroxide? If the color stays perhaps the glaze is stable? <i>Steve Baxter</i></p><p style="clear:left"></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<br/><a href="../picture/475.html"><img class="flexleft50" loading="lazy" src="../media/images/cydhymekaj.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/475.html">click here</a> to see it.</p>
+<p>80/20 lustre glaze</p>
+<p style="clear:left"></p>
+<br/><a href="../picture/476.html"><img class="flexleft50" loading="lazy" src="../media/images/nihgyjozok.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/476.html">click here</a> to see it.</p>
+<p>Copper sand/copper 80/20 glaze</p>
+<p style="clear:left"></p>
+<br/><a href="../picture/477.html"><img class="flexleft50" loading="lazy" src="../media/images/gitgelyfir.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/477.html">click here</a> to see it.</p>
+<p>Glossy red lustre glaze #2</p>
+<p style="clear:left"></p>
+<br/><a href="../picture/478.html"><img class="flexleft50" loading="lazy" src="../media/images/latliwokys.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/478.html">click here</a> to see it.</p>
+<p>Glossy red lustre glaze #1</p>
+<p style="clear:left"></p>
+<br/><a href="../picture/479.html"><img class="flexleft50" loading="lazy" src="../media/images/lasgodumic.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/479.html">click here</a> to see it.</p>
+<p>Gold lustre glaze</p>
+<p style="clear:left"></p>
+<br/><a href="../picture/480.html"><img class="flexleft50" loading="lazy" src="../media/images/xujfudusij.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/480.html">click here</a> to see it.</p>
+<p>Matt red lustre glaze</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><p>By Tom Buck </p><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></div></body>
+</html>

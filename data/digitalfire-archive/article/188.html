@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Formulating Ash and Native-Material Glazes</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="How to have a volcanic ash analysed and them use ceramic chemistry to create a glaze that contains the maximum possible amount of the ash for the desired effect" name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item"><a class="nav-link" href="../material/list.html">Materials</a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item active" href="list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=article" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container"><p><a aria-controls="collapse1" aria-expanded="false" class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button">All Articles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a href="388.html" title="388">A ChatBot gives jaw-dropping glaze recipe advice - Jan 2025</a><br/><a href="244.html" title="244">A Low Cost Tester of Glaze Melt Fluidity</a><br/><a href="361.html" title="361">A One-speed Lab or Studio Slurry Mixer</a><br/><a href="353.html" title="353">A Textbook Cone 6 Matte Glaze With Problems</a><br/><a href="199.html" title="199">Adjusting Glaze Expansion by Calculation to Solve Shivering</a><br/><a href="251.html" title="251">Alberta Slip, 20 Years of Substitution for Albany Slip</a><br/><a href="273.html" title="273">An Overview of Ceramic Stains</a><br/><a href="37.html" title="37">Are You in Control of Your Production Process?</a><br/><a href="12.html" title="12">Are Your Glazes Food Safe or are They Leachable?</a><br/><a href="143.html" title="143">Attack on Glass: Corrosion Attack Mechanisms</a><br/><a href="204.html" title="204">Ball Milling Glazes, Bodies, Engobes</a><br/><a href="345.html" title="345">Binders for Ceramic Bodies</a><br/><a href="4.html" title="4">Bringing Out the Big Guns in Craze Control: MgO (G1215U)</a><br/><a href="381.html" title="381">Can We Help You Fix a Specific Problem?</a><br/><a href="124.html" title="124">Ceramic Glazes Today</a><br/><a href="208.html" title="208">Ceramic Material Nomenclature</a><br/><a href="336.html" title="336">Ceramic Tile Clay Body Formulation</a><br/><a href="217.html" title="217">Changing Our View of Glazes</a><br/><a href="22.html" title="22">Chemistry vs. Matrix Blending to Create Glazes from Native Materials</a><br/><a href="209.html" title="209">Concentrate on One Good Glaze</a><br/><a href="115.html" title="115">Copper Red Glazes</a><br/><a href="271.html" title="271">Crazing and Bacteria: Is There a Hazard?</a><br/><a href="190.html" title="190">Crazing in Stoneware Glazes: Treating the Causes, Not the Symptoms</a><br/><a href="97.html" title="97">Creating a Non-Glaze Ceramic Slip or Engobe</a><br/><a href="195.html" title="195">Creating Your Own Budget Glaze</a><br/><a href="36.html" title="36">Crystal Glazes: Understanding the Process and Materials</a><br/><a href="324.html" title="324">Deflocculants: A Detailed Overview</a><br/><a href="32.html" title="32">Demonstrating Glaze Fit Issues to Students</a><br/><a href="334.html" title="334">Diagnosing a Casting Problem at a Sanitaryware Plant</a><br/><a href="196.html" title="196">Drying Ceramics Without Cracks</a><br/><a href="187.html" title="187">Duplicating Albany Slip</a><br/><a href="45.html" title="45">Duplicating AP Green Fireclay</a><br/><a href="197.html" title="197">Electric Hobby Kilns: What You Need to Know</a><br/><a href="39.html" title="39">Fighting the Glaze Dragon</a><br/><a href="214.html" title="214">Firing Clay Test Bars</a><br/><a href="200.html" title="200">Firing: What Happens to Ceramic Ware in a Firing Kiln</a><br/><a href="113.html" title="113">First You See It Then You Don't: Raku Glaze Stability</a><br/><a href="316.html" title="316">Fixing a glaze that does not stay in suspension</a><br/><a href="338.html" title="338">Formulating a body using clays native to your area</a><br/><a href="191.html" title="191">Formulating a Clear Glaze Compatible with Chrome-Tin Stains</a><br/><a href="282.html" title="282">Formulating a Porcelain</a><br/><a href="188.html" title="188">Formulating Ash and Native-Material Glazes</a><br/><a href="114.html" title="114">G1214M Cone 5-7 20x5 glossy transparent glaze</a><br/><a href="121.html" title="121">G1214W Cone 6 transparent glaze</a><br/><a href="122.html" title="122">G1214Z Cone 6 matte glaze</a><br/><a href="226.html" title="226">G1916M Cone 06-04 transparent glaze</a><br/><a href="203.html" title="203">Getting the Glaze Color You Want: Working With Stains</a><br/><a href="342.html" title="342">Glaze and Body Pigments and Stains in the Ceramic Tile Industry</a><br/><a href="189.html" title="189">Glaze Chemistry Basics - Formula, Analysis, Mole%, Unity </a><br/><a href="358.html" title="358">Glaze chemistry using a frit of approximate analysis</a><br/><a href="123.html" title="123">Glaze Recipes: Formulate and Make Your Own Instead</a><br/><a href="343.html" title="343">Glaze Types, Formulation and Application in the Tile Industry</a><br/><a href="181.html" title="181">Having Your Glaze Tested for Toxic Metal Release</a><br/><a href="364.html" title="364">High Gloss Glazes</a><br/><a href="384.html" title="384">Hire Us for a 3D Printing Project</a><br/><a href="136.html" title="136">How a Material Chemical Analysis is Done</a><br/><a href="235.html" title="235">How desktop INSIGHT Deals With Unity, LOI and Formula Weight</a><br/><a href="331.html" title="331">How to Find and Test Your Own Native Clays</a><br/><a href="26.html" title="26">I have always done it this way!</a><br/><a href="344.html" title="344">Inkjet Decoration of Ceramic Tiles</a><br/><a href="279.html" title="279">Is Your Fired Ware Safe?</a><br/><a href="311.html" title="311">Leaching Cone 6 Glaze Case Study</a><br/><a href="206.html" title="206">Limit Formulas and Target Formulas</a><br/><a href="133.html" title="133">Low Budget Testing of Ceramic Glazes</a><br/><a href="333.html" title="333">Make Your Own Ball Mill Stand</a><br/><a href="347.html" title="347">Making Glaze Testing Cones</a><br/><a href="341.html" title="341">Monoporosa or Single Fired Wall Tiles</a><br/><a href="325.html" title="325">Organic Matter in Clays: Detailed Overview</a><br/><a href="105.html" title="105">Outdoor Weather Resistant Ceramics</a><br/><a href="27.html" title="27">Painting Glazes Rather Than Dipping or Spraying</a><br/><a href="212.html" title="212">Particle Size Distribution of Ceramic Powders</a><br/><a href="339.html" title="339">Porcelain Tile, Vitrified Tile</a><br/><a href="20.html" title="20">Rationalizing Conflicting Opinions About Plasticity</a><br/><a href="332.html" title="332">Ravenscrag Slip is Born</a><br/><a href="247.html" title="247">Recylcing Scrap Clay</a><br/><a href="101.html" title="101">Reducing the Firing Temperature of a Glaze From Cone 10 to 6</a><br/><a href="329.html" title="329">Setting up a Clay Testing Program in Your Company or Studio</a><br/><a href="211.html" title="211">Simple Physical Testing of Clays</a><br/><a href="350.html" title="350">Single Fire Glazing</a><br/><a href="326.html" title="326">Soluble Salts in Minerals: Detailed Overview</a><br/><a href="28.html" title="28">Some Keys to Dealing With Firing Cracks</a><br/><a href="249.html" title="249">Stoneware Casting Body Recipes</a><br/><a href="194.html" title="194">Substituting Cornwall Stone</a><br/><a href="274.html" title="274">Super-Refined Terra Sigillata</a><br/><a href="340.html" title="340">The Chemistry, Physics and Manufacturing of Glaze Frits</a><br/><a href="202.html" title="202">The Effect of Glaze Fit on Fired Ware Strength</a><br/><a href="125.html" title="125">The Four Levels on Which to View Ceramic Glazes</a><br/><a href="207.html" title="207">The Majolica Earthenware Process</a><br/><a href="43.html" title="43">The Potter's Prayer</a><br/><a href="359.html" title="359">The Right Chemistry for a Cone 6 Magnesia Matte</a><br/><a href="33.html" title="33">The Trials of Being the Only Technical Person in the Club</a><br/><a href="107.html" title="107">The Whining Stops Here: A Realistic Look at Clay Bodies</a><br/><a href="134.html" title="134">Those Unlabelled Bags and Buckets</a><br/><a href="16.html" title="16">Tiles and Mosaics for Potters</a><br/><a href="308.html" title="308">Toxicity of Firebricks Used in Ovens</a><br/><a href="379.html" title="379">Trafficking in Glaze Recipes</a><br/><a href="216.html" title="216">Understanding Ceramic Materials</a><br/><a href="210.html" title="210">Understanding Ceramic Oxides</a><br/><a href="130.html" title="130">Understanding Glaze Slurry Properties</a><br/><a href="213.html" title="213">Understanding the Deflocculation Process in Slip Casting</a><br/><a href="132.html" title="132">Understanding the Terra Cotta Slip Casting Recipes In North America</a><br/><a href="198.html" title="198">Understanding Thermal Expansion in Ceramic Glazes</a><br/><a href="313.html" title="313">Unwanted Crystallization in a Cone 6 Glaze</a><br/><a href="389.html" title="389">Using Dextrin, Glycerine and CMC Gum together</a><br/><a href="135.html" title="135">Volcanic Ash</a><br/><a href="201.html" title="201">What Determines a Glaze's Firing Temperature?</a><br/><a href="111.html" title="111">What is a Mole, Checking Out the Mole</a><br/><a href="38.html" title="38">What is the Glaze Dragon?</a><br/><a href="98.html" title="98">Where do I start in understanding glazes?</a><br/><a href="215.html" title="215">Why Textbook Glazes Are So Difficult</a><br/><a href="239.html" title="239">Working with children</a></div><h1>Formulating Ash and Native-Material Glazes</h1>
+<h4 class="text-muted">Description</h4><p class="text-muted font-italic">How to have a volcanic ash analysed and them use ceramic chemistry to create a glaze that contains the maximum possible amount of the ash for the desired effect</p><h4>Article</h4>
+<p>To most new potters, the idea of creating your own volcanic <a href="../glossary/wood+ash+glaze.html">ash glaze</a> is really quite romantic. Unfortunately, the actual job of trying to produce one that is reasonably <a href="../glossary/functional.html">functional</a> is not quite so exotic. </p>
+<p>Many textbooks supply recipes that employ volcanic ash, but the results of force fitting your ash into these could prove to be a real time waster. Even using a textbook recipe as a simple trial and error starting point, often ends up in blind allies that go nowhere. </p>
+<p>The most foolproof way to develop a <a href="../glossary/base+glaze.html">base glaze</a> is to use calculation, even for native materials like ash. When you view recipes as combinations of <a href="../glossary/ceramic+oxide.html">oxides</a>, and materials as "sources" of these oxides, suddenly there are an infinite number of material combinations (or recipes) that will yield a <a href="../glossary/limit+formula.html">target formula</a>. Each of these recipes will fire with subtle differences but in other respects they will be very similar. Having a formula for your ash will thus give it equal status with any other material you have. But where can you obtain the formula for your ash? It is true that some books list a range of ash formulas. "Electric Kiln Pottery" is an example, it has a dizzying list of ash formulas of incredible variation in oxide <a href="../glossary/glaze+chemistry.html">chemistry</a>. But picking one that closely matches your material is like playing roulette. Don't bother. If you bought the material, I recommend contacting the manufacturer to get the analysis. If not, spend the $50 and have the ash analysed at a lab. </p>
+<p>As a demonstration, I dug out a good-sized sample of volcanic ash from a six-inch thick seam at a local clay quarry (vintage Crater Lake volcanic eruption). I mixed the pile thoroughly with a shovel to assure easy sampling of a specimen which was representative of the entire supply. I sent a small amount of the material to a lab for a simple analysis to determine the amounts of each significant <a href="../glossary/ceramic+oxide.html">ceramic oxide</a>. Finally, I keyed this into INSIGHT and inserted it into the program's materials database, making it available for reference in future recipes entered. </p>
+<p><i>Following is a formula calculation report of the material.</i></p><pre>DETAIL PRINT - Oxide Analysis
+MATERIAL               PARTS  WEIGHT   CaO*   MgO*   K<sub>2</sub>O*  Na<sub>2</sub>O* Fe<sub>2</sub>O<sub>3</sub>*   <a href="../oxide/tio2.html">TiO2</a>   <a href="../oxide/p2o5.html">P<sub>2</sub>O<sub>5</sub></a>  <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a>   <a href="../oxide/sio2.html">SiO<sub>2</sub></a>
+WEIGHT OF EACH OXIDE                   56.1   40.3   94.2   62.0  160.0   79.7  142.0  102.0   60.1
+---------------------------------------------------------------------------------------------------  MATERIAL
+Expan OF EACH OXIDE                    0.15   0.03   0.33   0.39   0.13   0.14   0.00   0.06   0.04   Cost/kg
+---------------------------------------------------------------------------------------------------  -------
+ <a href="../oxide/cao.html">CaO</a>................    8.04   56.10   0.14                                                             0.15
+ <a href="../oxide/na2o.html">Na<sub>2</sub>O</a>...............    0.10   62.00                        0.00                                        0.39
+ <a href="../oxide/k2o.html">K<sub>2</sub>O</a>................    0.30   94.20                 0.00                                               0.33
+ TiO2...............    0.04   79.70                                      0.00                          0.14
+ <a href="../oxide/fe2o3.html">Fe<sub>2</sub>O<sub>3</sub></a>..............    1.00  160.00                               0.01                                 0.13
+ <a href="../oxide/mgo.html">MgO</a>................    0.72   40.30          0.02                                                      0.03
+ SiO<sub>2</sub>...............   72.84   60.10                                                           1.21     0.04
+ Al<sub>2</sub>O<sub>3</sub>..............    2.06  102.00                                                    0.02            0.06
+ P<sub>2</sub>O<sub>5</sub>...............    0.02  142.00                                             0.00                   0.00
+---------------------------------------------------------------------------------------------------  -------
+TOTAL                  85.12           0.14   0.02   0.00   0.00   0.01   0.00   0.00   0.02   1.21     0.05
+<a href="../glossary/unity+formula.html">UNITY FORMULA</a>                          0.83   0.10   0.02   0.01   0.04   0.00   0.00   0.12   7.04
+PER CENT BY WEIGHT                     8.09   0.72   0.30   0.10   1.01   0.04   0.02   2.07  73.27</pre><pre>Cost/kg  0.05
+ L.O.I. 14.38
+  <a href="../glossary/silica%3Aalumina+ratio.html">Si:Al</a> 60.01
+ SiB:Al 60.01
+  Expan  4.88</pre>
+<p>To use as much ash in the recipe as possible, I proceeded as follows: </p>
+<ul>
+<li>I consulted limit charts for Orton <a href="../glossary/cone+6.html">cone 6</a> <a href="../glossary/stoneware.html">stoneware</a> glazes in the INSIGHT help system. These show typical oxide proportions, providing a balanced target at which to aim. So the task was, clearly, to add the materials necessary to bring the <a href="../glossary/oxide+formula.html">oxide formula</a> of the ash in line with these limits. </li></ul>
+<blockquote>
+<table border="1" cellpadding="2">
+<tbody>
+<tr>
+<td colspan="4"><i>Cone 6 Limit Formulae</i> </td></tr>
+<tr>
+<td>CaO</td>
+<td>0.1-0.7</td>
+<td>Al<sub>2</sub>O<sub>3</sub></td>
+<td>0.2-0.35</td></tr>
+<tr>
+<td>ZnO</td>
+<td>-0.2</td>
+<td>B<sub>2</sub>O<sub>3</sub></td>
+<td>-0.45</td></tr>
+<tr>
+<td>BaO</td>
+<td>-0.3</td>
+<td>SiO<sub>2</sub></td>
+<td>2-3.5</td></tr>
+<tr>
+<td>MgO</td>
+<td>-0.3</td>
+<td> </td>
+<td> </td></tr>
+<tr>
+<td>KNaO</td>
+<td>0.1-0.5</td>
+<td> </td>
+<td> </td></tr></tbody></table></blockquote>
+<ul>
+<li>I wanted the glaze to <a href="../glossary/maturity.html">mature</a> in the cone 7-8 area so this called for aiming Al<sub>2</sub>O<sub>3</sub> and SiO<sub>2</sub> content at the high end of the limits. 
+</li><li>Looking at the formula of the ash (see "UNITY FORMULA" line), I noted that it was a little high in CaO, short on Al<sub>2</sub>O<sub>3</sub> , and high in SiO<sub>2</sub> . It seemed that I needed non-CaO fluxing materials containing no SiO<sub>2</sub> . This eliminated <a href="../material/310.html">feldspar</a> or <a href="../material/1070.html">nepheline syenite</a> type materials, since their SiO<sub>2</sub> would reduce the amount of ash I could use. <a href="../material/273.html">Dolomite</a> seemed a logical choice as it was inexpensive and supplied adequate MgO and no SiO<sub>2</sub> . I chose <a href="../material/925.html">kaolin</a> to supply Al<sub>2</sub>O<sub>3</sub> . True, it does yield some unwanted SiO<sub>2</sub> , but much less than a feldspar. A natural clay could have been used here, but again, its higher SiO<sub>2</sub> content would have reduced the ash percentage. </li></ul>
+<p>Following is the final recipe and its calculation. </p>
+<p><i>INSIGHT's interactive nature and instant calculation made it easy to juggle different amounts of dolomite and kaolin until the formula was right.</i> </p><pre>DETAIL PRINT - PUMICITE GLAZE TEST 1
+MATERIAL               PARTS  WEIGHT    CaO    MgO    K<sub>2</sub>O   Na<sub>2</sub>O  Fe<sub>2</sub>O<sub>3</sub>   TiO2   P<sub>2</sub>O<sub>5</sub>  Al<sub>2</sub>O<sub>3</sub>   SiO<sub>2</sub>
+WEIGHT OF EACH OXIDE                   56.1   40.3   94.2   62.0  160.0   79.7  142.0  102.0   60.1
+---------------------------------------------------------------------------------------------------  MATERIAL
+Expan OF EACH OXIDE                    0.15   0.03   0.33   0.39   0.13   0.14   0.00   0.06   0.04   Cost/kg
+---------------------------------------------------------------------------------------------------  -------
+ PUMICITE...........   60.00  577.23   0.09   0.01   0.00   0.00   0.00   0.00   0.00   0.01   0.73     0.00
+ DOLOMITE...........   20.00  184.00   0.11   0.11                                                      0.00
+ KAOLIN.............   20.00  258.14                                                    0.08   0.15     0.24
+---------------------------------------------------------------------------------------------------  -------
+TOTAL                 100.00           0.20   0.12   0.00   0.00   0.00   0.00   0.00   0.09   0.89     0.05
+UNITY FORMULA                          0.20   0.12   0.00   0.00   0.00   0.00   0.00   0.09   0.89
+PER CENT BY WEIGHT                    13.85   6.09   0.22   0.07   0.76   0.03   0.02  11.57  67.39
+Cost/kg  0.05
+  Si:Al  9.89
+ SiB:Al  9.89
+  Expan  5.50</pre>
+<p>The whole process took only a couple of minutes. The next step was mixing up the glaze and trying it. I soon found that the ash was very hard, and the glaze had to be <a href="../glossary/ball+milling.html">ball milled</a>. But once milled, its <a href="../glossary/thixotropy.html">thixotropic</a> consistency was beautiful and it applied to the ware very well. This was an unexpected bonus! I fired to cone 6, 7, 8, 9, and 10, and found it to be a beautiful crystal tan bamboo at cone 8-9.</p>
+<p>When a glaze is completed using this method, it has a balanced formula, one that is less likely to dissolve in acids, scratch on metal, chip on impact, or <a href="../trouble/glaze+crazing.html">craze</a> or <a href="../glossary/glaze+shivering.html">shiver</a> on heat shock. This volcanic ash glaze is perfectly suitable on the finest dinner ware and I can mix ten gallons for a few dollars! As a balanced base, it is just waiting for some trial and error mixtures with <a href="../glossary/opacifier.html">opacifiers</a>, crystal seeders, <a href="../glossary/colorant.html">colorants</a>, speckling agents, etc. While there are many ways to design a glaze, not too many meet with success on the very first trial the way this approach did. </p>
+<h2>Ball Mill</h2>
+<p>If you would like to really get into making glazes from your own materials, you will likely need a way to grind them. A <a href="../glossary/ball+milling.html">ball mill</a> is one of the best investments you can make. It will grind any glaze into a beautifully fine and silky <a href="../glossary/slurry.html">slurry</a> and will make it possible to use almost any material.  Milled glazes will melt better and be more consistent and they will have fewer surface defects.</p><p style="clear:left"></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/wood+ash.html">Wood Ash</a>
+<br/><i>For centuries, pottery glazes have been made from ash mostly mixed with clay and <a href="../material/310.html">feldspar</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/volcanic+ash.html">Volcanic Ash</a>
+<br/><i>Powdered volcanic ash is used to make ceramic glazes, some varieties have a <a href="../glossary/glaze+chemistry.html">chemistry</a> similar enough to glaze that high percentages can be employed.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="ball+milling+glazes%2c+bodies%2c+engobes.html">Ball Milling Glazes, Bodies, Engobes</a>
+<br/><i>Industries <a href="../glossary/ball+milling.html">ball mill</a> their glazes, <a href="../glossary/engobe.html">engobes</a> and even bodies as standard practice. Yet few potters even have a ball mill or know what one is.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="duplicating+albany+slip.html">Duplicating Albany Slip</a>
+<br/><i>How <a href="../material/32.html">Alberta Slip</a> was created by analysing and duplicating the physical and chemical properties of Albany Slip</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/native+clay.html">Native Clay</a>
+<br/><i>A clay that a potter finds, tests and learns to process and use himself. To reduce the costs of importing materials manufacturers, especially in Asia, often develop processes for clays mined in their locality.</i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></div></body>
+</html>

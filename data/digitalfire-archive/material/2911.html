@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Raw Umber</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="Digitalfire Reference Library (no ads)" name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item active"><a class="nav-link" href="list.html">Materials <span class="sr-only">(current)</span></a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=material" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container">
+<ul class="nav nav-tabs pt-1" id="myTab" role="tablist">
+<li class="nav-item">
+<a aria-controls="material" aria-selected="true" class="nav-link active" data-toggle="tab" href="#material" id="material-tab" role="tab">Materials for Ceramics</a>
+</li>
+</ul>
+<div class="tab-content mb-3" id="myTabContent" style="border-right:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #ddd; padding:10px;">
+<div aria-labelledby="material-tab" class="tab-pane fade show active" id="material" role="tabpanel">
+<a href="list_1-9.html">1-9</a> | <a href="list_A.html">A</a> | <a href="list_B.html">B</a> | <a href="list_C.html">C</a> | <a href="list_D.html">D</a> | <a href="list_E.html">E</a> | <a href="list_F.html">F</a> | <a href="list_Frits.html">Frits</a> | <a href="list_G.html">G</a> | <a href="list_H.html">H</a> | <a href="list_I.html">I</a> | <a href="list_J.html">J</a> | <a href="list_K.html">K</a> | <a href="list_L.html">L</a> | <a href="list_M.html">M</a> | <a href="list_N.html">N</a> | <a href="list_O.html">O</a> | <a href="list_P.html">P</a> | <a href="list_Q.html">Q</a> | <a href="list_R.html">R</a> | <a href="list_S.html">S</a> | <a href="list_T.html">T</a> | <a href="list_U.html">U</a> | <a href="list_V.html">V</a> | <a href="list_W.html">W</a> | <a href="list_X.html">X</a> | <a href="list_Y.html">Y</a> | <a href="list_Z.html">Z</a><br/>
+<nobr></nobr>
+</div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Raw Umber</h1>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/oxide.html">Oxide</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/analysis.html">Analysis</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Formula</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Tolerance</a></th>
+</tr></thead><tbody>
+<tr><td class="label"><a href="../oxide/cao.html">CaO</a></td>
+<td class="text-right">5.00%</td>
+<td class="text-right">
+0.64
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/mgo.html">MgO</a></td>
+<td class="text-right">2.00%</td>
+<td class="text-right">
+0.36
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/fe2o3.html">Fe2O3</a></td>
+<td class="text-right">51.00%</td>
+<td class="text-right">
+2.30
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/mno.html">MnO</a></td>
+<td class="text-right">13.00%</td>
+<td class="text-right">
+1.32
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/al2o3.html">Al2O3</a></td>
+<td class="text-right">3.00%</td>
+<td class="text-right">
+0.21
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/sio2.html">SiO2</a></td>
+<td class="text-right">13.00%</td>
+<td class="text-right">
+1.56
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/h2o.html">H2O</a></td>
+<td class="text-right">13.00%</td><td class="text-right">n/a</td></tr>
+<tr><td colspan="2">Oxide Weight</td><td class="text-right" colspan="2">
+627.01
+</td></tr>
+<tr><td class="text-right" colspan="2"><a href="../glossary/formula+weight.html">Formula Weight</a></td><td colspan="2" style="text-align:right">
+720.70
+</td></tr>
+</tbody></table>
+<h4>Notes</h4><p>Umber is a sedimentary high-iron oxide mineral containing significant manganese (e.g. 5-20%) and clay (also calcia, quartz). It is a brown earth pigment that is darker than the ochre.  It is highly valued as a permanent pigment both in the raw or burnt state. Umber is lightfast, insoluble in water, resistant to alkalis and weak acids and non-reactive with cement, solvents, oils, and most resins.<br/>
+<br/>
+The raw form of umber is preferable over <a href="151.html">burnt umber</a> in many ceramic applications because it is less expensive yet supplies the same metal oxide pigments. Burnt umber can be more suitable where its lower <a href="../glossary/loi.html">LOI</a> is advantageous (especially in glazes to avoid surface defects).<br/>
+<br/>
+Manufacturers of the raw material quote its hazards as that of common clay, they refer to it as "natural <a href="874.html">iron oxide</a> pigment". From a safety point-of-view that makes <a href="2911.html">raw umber</a> a much-preferred body colourant over manganese dioxide. The combination of iron and manganese natural to raw umber delivers dark color effectively while using a fraction the amount of <a href="../oxide/mno.html">MnO</a> that would be typical if pure manganese dioxide were employed. That being said, during firing the material can still generate manganese fumes if fired past <a href="../glossary/cone+6.html">cone 6</a>, these have their own hazards. However, put into perspective, a body having 10% raw umber contains only 1% MnO (if the umber contains 10% MnO) embedded into the matrix. Glazes, by contrast, are on the surface and routinely contain many times that percentage of pure MnO.<br/>
+<br/>
+Umber, when used as a <a href="../glossary/colorant.html">colorant</a> in <a href="../glossary/clay+body.html">clay bodies</a>, also acts as a <a href="../glossary/flux.html">flux</a>. 10% umber will convert a buff burning cone 10 <a href="../glossary/stoneware.html">stoneware</a> into a black burning cone 6 stoneware. Umber can also be used in <a href="../glossary/casting+slip.html">casting bodies</a>, even porcelains, as a source of color, it should not affect the <a href="../glossary/deflocculation.html">deflocculation</a> properties (in fact, it should improve it). In our testing, 10% umber in <a href="https://plainsmanclays.ca/data/index.php?product=12880">M370</a> produces a highly <a href="../glossary/vitreous.html">vitreous</a> almost black <a href="../glossary/porcelain.html">porcelain</a> (without evidence of <a href="../trouble/bloating.html">bloating</a>). Raw umber also increases the percentage of water needed for plastic bodies.<br/>
+<br/>
+Umber quality needs to be monitored for use in production, batches can have high concentrations of plus 100 mesh particles, these can produce fired specks that bleed up through glazes.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Raw Umber original container with occupational health advisories</h3>
+<br/><a href="../picture/2224.html"><img class="flexleft50" loading="lazy" src="../media/images/bqttvd3kpj.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2224.html">click here</a> to see it.</p>
+<p>Sold by Arlimin but made by New Riverside Ochre Company.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Raw Umber vs. Burnt Umber</h3>
+<br/><a href="../picture/2039.html"><img class="flexleft50" loading="lazy" src="../media/images/43kpaz17dm.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2039.html">click here</a> to see it.</p>
+<p>These are the same material, however the one on the right has been burnt to 600F. At this surprisingly low temperature the color transforms into a deep redish brown.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">The umber is bubbling the underglaze in these clay rocks</h3>
+<br/><a alt="Clay rocks with butterfly pattern" href="../picture/2764.html"><img alt="Clay rocks with butterfly pattern" class="flexleft50" loading="lazy" src="../media/images/qjufr1rj57.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2764.html">click here</a> to see it.</p>
+<p>The body is <a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12943">Coffee clay</a>, it is stained black with 10% <a href="2911.html">raw umber</a>. I painted <a href="https://digitalfire.com/url/3409">Amaco Velvet</a> white <a href="../glossary/underglaze.html">underglaze</a> over the black clay (in the <a href="../glossary/leather+hard.html">leather hard</a> state), then over-painted the colors. When they were dry enough to handle, I cut the black lines using a Kemper WS sgraffito tool. The rock on the left is fired at <a href="../glossary/cone+6.html">cone 6</a>, on the right to cone 4. Thus, at some point between cone 4 and 6, the body is starting to generate gases of <a href="../glossary/decomposition.html">decomposition</a> (likely from the raw umber). Glazes can bubble the gases through but this underglaze cannot. To continue working at cone 6 I made my own body by mixing Mason 6600 black stain into a <a href="../glossary/porcelain.html">porcelain</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">A cone 6 black-burning stoneware with a porcelain surface. How?</h3>
+<br/><a alt="A black stoneware mug" href="../picture/2059.html"><img alt="A black stoneware mug" class="flexleft50" loading="lazy" src="../media/images/gy4hscvune.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2059.html">click here</a> to see it.</p>
+<p>Black-burning bodies are popular with many potters. This one is stained by adding 10% <a href="2911.html">raw umber</a> to a buff-burning <a href="../glossary/stoneware.html">stoneware</a>. Umbers are powerful natural clay <a href="../glossary/colorant.html">colorants</a>, they have high iron and also contain some manganese oxide. Could a white <a href="../glossary/engobe.html">engobe</a> produce a porcelain-like surface on such a <a href="../glossary/clay+body.html">clay body</a>? Yes. <a href="../recipe/l3954b.html">L3954B</a> engobe was applied during <a href="../glossary/leather+hard.html">leather-hard</a> stage to this <a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12943">Coffee Clay</a> mug (on the inside and partway down the outside). After <a href="../glossary/bisque.html">bisque</a>, transparent <a href="../recipe/g2926b.html">G2926B</a> glaze was applied inside and <a href="../recipe/ga6-b.html">GA6-B</a> outside. Notice the <a href="https://plainsmanclays.ca/data/index.php?product=12944">GA6-B</a> over the engobe fires amber but over the black it produces a deep glossy brown. The engobe was mixed into a <a href="../glossary/thixotropy.html">thixotropic</a> <a href="../glossary/slurry.html">slurry</a>, as explained on the page at <a href="https://digitalfire.com/url/221">PlainsmanClays.com</a> (see link below), and applied in a relatively thin layer. This porcelain-like result is a testament to the covering power of a true engobe. It is no wonder they are so popular in the <a href="../glossary/ceramic+tile.html">ceramic tile</a> industry - a red-burning body can be turned white as a <a href="../glossary/porcelain.html">porcelain</a>, which enables all the marvellous glazing and decorating they can do.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">6% black stain vs 10% raw umber in a body</h3>
+<br/><a href="../picture/2880.html"><img class="flexleft50" loading="lazy" src="../media/images/sbrgrly4nj.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2880.html">click here</a> to see it.</p>
+<p>These bars were fired to <a href="../glossary/cone+5.html">cone 5</a>. Until we looked at the stained version of the body the umber version did look pretty dark in color. The unstained <a href="../glossary/stoneware.html">stoneware</a> already has about 2% iron but that does not seem to assist the umber in developing color nearly as much as it does the stain. Even at only 4%, the stained version is still darker. The umber generates some gases of <a href="../glossary/decomposition.html">decomposition</a> at <a href="../glossary/cone+6.html">cone 6</a> (affecting glazes), limiting its use there, with the stain that is not an issue.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Two shipments of raw umber - particles over 170 mesh</h3>
+<br/><a href="../picture/3070.html"><img class="flexleft50" loading="lazy" src="../media/images/1bnmeatzhx.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3070.html">click here</a> to see it.</p>
+<p>The newest shipment, right, has almost no larger particles at all. The previous one, on the left, had all of these <a href="../picture/3706.html">oversize particles</a> in only 100 grams of powder. These produced fired speckle that bled up through glazes on the black <a href="../glossary/clay+body.html">clay body</a> made using this material.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">A zircon-opacified glaze pinholes on a raw umber stained body</h3>
+<br/><a href="../picture/3076.html"><img class="flexleft50" loading="lazy" src="../media/images/kpojxosyse.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3076.html">click here</a> to see it.</p>
+<p>Umber generates significant gases here as certain particles within it <a href="../glossary/decomposition.html">decompose</a> on approach to <a href="../glossary/cone+6.html">cone 6</a>. While the gas escape enhances the appearance of <a href="../glossary/variegation.html">variegating</a> glazes that can heal the <a href="../glossary/pinholing.html">pinholes</a>, for stiff melt ones like this <a href="1722.html">zircon</a> white, the effect is somewhat of a disaster!</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/clt">Colorant</a>
+<br/><i>Metallic based materials that impart fired color to glazes and bodies.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="burnt+umber.html">Burnt Umber</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/3059">https://www.nrochre.com/products/natural-iron-oxide-pigments</a>
+<br/><i>About natural <a href="874.html">iron oxide</a> pigments: Ochre and Umber</i>
+<br/><i style="color:#888888;">Ochre (pronounced o’-ker) is a natural, mineral, earth pigment.  Chemically, it is a hydrated ferric oxide, chemical formulation:  FeO(OH).  Ochre is inorganic, chemically inert, non-reactive with cement, mortar or brick, and <a href="https://digitalfire.com/url/3517">non-toxic</a>. </i>
+</td>
+</tr>
+<tr>
+<td scope="row">Hazards</td>
+<td>
+<a href="../hazard/manganese+inorganic+compounds+toxicology.html">Manganese Inorganic Compounds Toxicology</a>
+<br/><i></i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></div></body>
+</html>

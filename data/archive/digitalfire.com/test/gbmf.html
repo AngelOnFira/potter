@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Glaze Melt Fluidity - Ball Test - GBMF</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="A test where a 10-gram ball of dried glaze is fired on a porcelain tile to study its melt flow, surface character, bubble retention and surface tension.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+March 2026: We are doing major upgrades to code here, please be patient regarding any issues. If any page is not working for a period of hours, please contact us. Thank you.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item active" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=test" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:center; vertical-align:top;">Feb 14-15, 2026 - <b>Major Server <a href="https://digitalfire.com">Upgrade</a> Done</b></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">Test Code-numbers</a> <a class="btn btn-primary"href="https://digitalfire.com/test/list" role="button" aria-expanded="false">All Tests</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a title="94 - +44 and +63 Micron Residue" href="https://digitalfire.com/test/44mr">44MR</a> |</nobr> <nobr><a title="38 - Apparent Porosity" href="https://digitalfire.com/test/appo">APPO</a> |</nobr> <nobr><a title="85 - Average Particle Size (Microns)" href="https://digitalfire.com/test/avps">AVPS</a> |</nobr> <nobr><a title="42 - Apparent Viscosity (cps)" href="https://digitalfire.com/test/avsc">AVSC</a> |</nobr> <nobr><a title="36 - Bulk Density g/cc (Packed)" href="https://digitalfire.com/test/bdgc">BDGC</a> |</nobr> <nobr><a title="23 - Bulk Density lbs/cu. ft. (Packed)" href="https://digitalfire.com/test/bdlb">BDLB</a> |</nobr> <nobr><a title="73 - Borate LOI" href="https://digitalfire.com/test/bloi">BLOI</a> |</nobr> <nobr><a title="89 - Boiling Water:Ice Water Glaze Fit Test" href="https://digitalfire.com/test/bwiw">BWIW</a> |</nobr> <nobr><a title="90 - Carbon content" href="https://digitalfire.com/test/ccon">CCON</a> |</nobr> <nobr><a title="62 - Drying Factor/Water Content/Solubles" href="https://digitalfire.com/test/cdry">CDRY</a> |</nobr> <nobr><a title="25 - CEC (meq/100g)" href="https://digitalfire.com/test/cec">CEC</a> |</nobr> <nobr><a title="47 - Clay Water Content - Powder, Plastic" href="https://digitalfire.com/test/clwc">CLWC</a> |</nobr> <nobr><a title="99 - Compressive Strength" href="https://digitalfire.com/test/cmst">CMST</a> |</nobr> <nobr><a title="10 - Co-efficient of Linear Expansion" href="https://digitalfire.com/test/cole">COLE</a> |</nobr> <nobr><a title="64 - Cold Over Boiled Porosity" href="https://digitalfire.com/test/covb">COVB</a> |</nobr> <nobr><a title="63 - Clay, Silt, Sand Sedimentation Test" href="https://digitalfire.com/test/csss">CSSS</a> |</nobr> <nobr><a title="1 - Density (Specific Gravity)" href="https://digitalfire.com/test/dens">DENS</a> |</nobr> <nobr><a title="46 - Drying Factor" href="https://digitalfire.com/test/dfac">DFAC</a> |</nobr> <nobr><a title="77 - Deflocculation Demand" href="https://digitalfire.com/test/dfdm">DFDM</a> |</nobr> <nobr><a title="105 - Dielectric Strength" href="https://digitalfire.com/test/diel">DIEL</a> |</nobr> <nobr><a title="8 - Density, loose packed (lbs/cu fut)" href="https://digitalfire.com/test/dnlp">DNLP</a> |</nobr> <nobr><a title="19 - Dry Strength (kgf/cm2)" href="https://digitalfire.com/test/ds">DS</a> |</nobr> <nobr><a title="51 - Drying Shrinkage" href="https://digitalfire.com/test/dshr">DSHR</a> |</nobr> <nobr><a title="59 - Dry Strenth (Round Bars)" href="https://digitalfire.com/test/dsrn">DSRN</a> |</nobr> <nobr><a title="60 - Dry Strength (Square Bars)" href="https://digitalfire.com/test/dstr">DSTR</a> |</nobr> <nobr><a title="13 - Decomposition Temperature" href="https://digitalfire.com/test/dtmp">DTMP</a> |</nobr> <nobr><a title="112 - Engobe Body Compatibility Test" href="https://digitalfire.com/test/ebct">EBCT</a> |</nobr> <nobr><a title="97 - Elastic Modulus, 20 degrees C" href="https://digitalfire.com/test/em20">EM20</a> |</nobr> <nobr><a title="96 - Frit Fusibility Test" href="https://digitalfire.com/test/frfu">FRFU</a> |</nobr> <nobr><a title="65 - Fired Strength Round Bars" href="https://digitalfire.com/test/frrd">FRRD</a> |</nobr> <nobr><a title="102 - Fracture Toughness" href="https://digitalfire.com/test/frtg">FRTG</a> |</nobr> <nobr><a title="21 - Firing Shrinkage" href="https://digitalfire.com/test/fshr">FSHR</a> |</nobr> <nobr><a title="66 - Fired Strength Square Bars" href="https://digitalfire.com/test/fstr">FSTR</a> |</nobr> <nobr><a title="113 - Glaze Body Bond Test" href="https://digitalfire.com/test/gbbt">GBBT</a> |</nobr> <nobr><a title="110 - Glaze Melt Fluidity - Ball Test" href="https://digitalfire.com/test/110"><button type="button" class="btn btn-dark">GBMF</button></a> |</nobr> <nobr><a title="27 - GE Brightness" href="https://digitalfire.com/test/gebr">GEBR</a> |</nobr> <nobr><a title="68 - Glaze Observations" href="https://digitalfire.com/test/glaz">GLAZ</a> |</nobr> <nobr><a title="58 - Glaze Melt Flow - Runway Test" href="https://digitalfire.com/test/glfl">GLFL</a> |</nobr> <nobr><a title="69 - Glaze Hardness" href="https://digitalfire.com/test/glhd">GLHD</a> |</nobr> <nobr><a title="70 - Glaze Leaching Test" href="https://digitalfire.com/test/glle">GLLE</a> |</nobr> <nobr><a title="14 - Frit Softening Point" href="https://digitalfire.com/test/gspt">GSPT</a> |</nobr> <nobr><a title="92 - Glass Transition Temperature" href="https://digitalfire.com/test/gttm">GTTM</a> |</nobr> <nobr><a title="100 - Hardness (Microindentation) Test" href="https://digitalfire.com/test/hdmi">HDMI</a> |</nobr> <nobr><a title="28 - Hegman Fineness" href="https://digitalfire.com/test/hegf">HEGF</a> |</nobr> <nobr><a title="91 - Heating Microscope Analysis for Frits" href="https://digitalfire.com/test/hma">HMA</a> |</nobr> <nobr><a title="95 - Heating Microscope Analysis" href="https://digitalfire.com/test/hman">HMAN</a> |</nobr> <nobr><a title="7 - Hardness (Moh)" href="https://digitalfire.com/test/hmoh">HMOH</a> |</nobr> <nobr><a title="88 - I.F.P. (celsius)" href="https://digitalfire.com/test/ifp">IFP</a> |</nobr> <nobr><a title="108 - 300F:Ice Water Crazing Test" href="https://digitalfire.com/test/iwct">IWCT</a> |</nobr> <nobr><a title="79 - % < 10 microns" href="https://digitalfire.com/test/l10m">L10M</a> |</nobr> <nobr><a title="81 - % < 1 micron" href="https://digitalfire.com/test/l1m">L1M</a> |</nobr> <nobr><a title="78 - % < 20 microns" href="https://digitalfire.com/test/l20m">L20M</a> |</nobr> <nobr><a title="80 - % < 2 microns" href="https://digitalfire.com/test/l2m">L2M</a> |</nobr> <nobr><a title="93 - % < 30 microns" href="https://digitalfire.com/test/l30m">L30M</a> |</nobr> <nobr><a title="17 - % < 5 microns" href="https://digitalfire.com/test/l5">L5</a> |</nobr> <nobr><a title="18 - % < 0.5 microns" href="https://digitalfire.com/test/l5m">L5M</a> |</nobr> <nobr><a title="49 - LOI/Density/Water Content" href="https://digitalfire.com/test/ldw">LDW</a> |</nobr> <nobr><a title="15 - LOI (100-1000C)" href="https://digitalfire.com/test/loi">LOI</a> |</nobr> <nobr><a title="30 - Liquid Limit" href="https://digitalfire.com/test/lqlm">LQLM</a> |</nobr> <nobr><a title="76 - Median Particle Size (Microns)" href="https://digitalfire.com/test/mdps">MDPS</a> |</nobr> <nobr><a title="57 - Frit Melting Range (C)" href="https://digitalfire.com/test/mlrg">MLRG</a> |</nobr> <nobr><a title="75 - Moisture Content - Powder" href="https://digitalfire.com/test/moip">MOIP</a> |</nobr> <nobr><a title="61 - Modulus of Rupture - Fired" href="https://digitalfire.com/test/mor">MOR</a> |</nobr> <nobr><a title="74 - Dry M.O.R. (50% Silica)" href="https://digitalfire.com/test/mor5">MOR5</a> |</nobr> <nobr><a title="12 - Modulus of Rupture - Dry" href="https://digitalfire.com/test/mord">MORD</a> |</nobr> <nobr><a title="5 - Oil Adsorption (Spatula)" href="https://digitalfire.com/test/olad">OLAD</a> |</nobr> <nobr><a title="107 - % Passing 200 Mesh Wet" href="https://digitalfire.com/test/p200">P200</a> |</nobr> <nobr><a title="32 - % Passing 325 Mesh Wet" href="https://digitalfire.com/test/p325">P325</a> |</nobr> <nobr><a title="71 - Pugged Body Properties Overview" href="https://digitalfire.com/test/pbpo">PBPO</a> |</nobr> <nobr><a title="11 - Pyrometric Cone Equivalent" href="https://digitalfire.com/test/pce">PCE</a> |</nobr> <nobr><a title="4 - pH (pugged clay)" href="https://digitalfire.com/test/phpg">pHPG</a> |</nobr> <nobr><a title="87 - pH for dry powder" href="https://digitalfire.com/test/phpw">pHPW</a> |</nobr> <nobr><a title="72 - Pyroplastic Deformation" href="https://digitalfire.com/test/ppd">PPD</a> |</nobr> <nobr><a title="98 - Poisson's Ratio" href="https://digitalfire.com/test/prsm">PRSM</a> |</nobr> <nobr><a title="6 - Particle Shape (1-7 microns)" href="https://digitalfire.com/test/pshp">PSHP</a> |</nobr> <nobr><a title="37 - Reheat Change" href="https://digitalfire.com/test/rc">RC</a> |</nobr> <nobr><a title="34 - Rheology of a Ceramic Slurry" href="https://digitalfire.com/test/rheo">RHEO</a> |</nobr> <nobr><a title="9 - Sieve Analysis Dry" href="https://digitalfire.com/test/sadr">SADR</a> |</nobr> <nobr><a title="16 - Surface Area (m2/gm)" href="https://digitalfire.com/test/samg">SAMG</a> |</nobr> <nobr><a title="84 - Simple Clay Evaluation" href="https://digitalfire.com/test/scle">SCLE</a> |</nobr> <nobr><a title="41 - Shrinkage/Absorption Test" href="https://digitalfire.com/test/shab">SHAB</a> |</nobr> <nobr><a title="48 - Sieve Analysis 35-325 Wet" href="https://digitalfire.com/test/siev">SIEV</a> |</nobr> <nobr><a title="35 - Solubility" href="https://digitalfire.com/test/slby">SLBY</a> |</nobr> <nobr><a title="45 - Soluble Salts" href="https://digitalfire.com/test/solu">SOLU</a> |</nobr> <nobr><a title="104 - Specific Heat Capacity" href="https://digitalfire.com/test/sphc">SPHC</a> |</nobr> <nobr><a title="83 - Simple Shrinkage/Absorption" href="https://digitalfire.com/test/ssab">SSAB</a> |</nobr> <nobr><a title="24 - Sieve Analysis Wet" href="https://digitalfire.com/test/svwt">SVWT</a> |</nobr> <nobr><a title="82 - TGA" href="https://digitalfire.com/test/tga">TGA</a> |</nobr> <nobr><a title="103 - Thermal Conductivity, 20 degrees C" href="https://digitalfire.com/test/thco">THCO</a> |</nobr> <nobr><a title="101 - Tensile Strength, 25 degrees C" href="https://digitalfire.com/test/tnst">TNST</a> |</nobr> <nobr><a title="26 - Trace Elements (ppm)" href="https://digitalfire.com/test/trel">TREL</a> |</nobr> <nobr><a title="33 - Trace Minerals" href="https://digitalfire.com/test/trmn">TRMN</a> |</nobr> <nobr><a title="111 - Thermal Shock Failure" href="https://digitalfire.com/test/tsfl">TSFL</a> |</nobr> <nobr><a title="40 - Ultimate Particle Size Distribution" href="https://digitalfire.com/test/upsd">UPSD</a> |</nobr> <nobr><a title="20 - Water absorption" href="https://digitalfire.com/test/wabs">WABS</a> |</nobr> <nobr><a title="43 - Water of Plasticity" href="https://digitalfire.com/test/wopl">WOPL</a> |</nobr> <nobr><a title="50 - Whole Rock Analysis" href="https://digitalfire.com/test/wra">WRA</a> |</nobr> <nobr><a title="86 - Wet Sieve Residue" href="https://digitalfire.com/test/wsr">WSR</a> |</nobr> <nobr><a title="3 - Index of Refraction" href="https://digitalfire.com/test/xref">XREF</a></nobr></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>GBMF - Glaze Melt Fluidity - Ball Test</h1>
+<p>Make the test balls by pouring a little glaze on a <a  href="https://digitalfire.com/glossary/plaster+table">plaster table</a>. It should dewater in a minute or two. Scrape it up using a rubber rib and flatten it down again (wet side down). Wait half a minute, scrape it up, and put it back down if still too soft. Continue this until it is stiff enough to roll into a ball that is not sticky.<br />
+<br />
+For fine powdered non-plastics (e.g. <a  href="https://digitalfire.com/glossary/frit">frits</a>) we mix 100g of powder, 3-4g Veegum, and 36g water (or for two balls 25g powder, 1g Veegum and 9g water). For powders containing coarser particles, more Veegum may be needed (however keep its percentage to a minimum since it does affect melting). Mixing can usually be done by stirring the powder and water in a cup or allowing it to sit in a zip-lock bag. These proportions will produce a plastic material that can be formed into balls.<br />
+<br />
+Weigh 12-gram specimens of the water/powder mix and roll each into a ball. Mark each. Dry them (make sure they are completely dry, do it under a heat lamp if needed).<br />
+<br />
+When firing multiple ones side-by-side use a sharp knife to trim off enough on the heavier ones so they are the same weight as the lightest one. Fire them on 2x2 inch thin <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> tiles.<br />
+<br />
+Take pictures of the fired balls and upload these to your <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">insight-live</a>.com account. Make additional notes about their dewatering rates, <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> and dry hardness also.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">VeeGum and CMC gum can plastify non-plastic powders for making melt-flow test balls</h3>
+<br /><a alt="Frit and veegum powder ready to mix with water" title="How to make melt flow test balls of frits" href="https://digitalfire.com/picture/2497"><img class="flexleft50" title="How to make melt flow test balls of frits"  alt="Frit and veegum powder ready to mix with water"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/zsgejdngba.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2497">click here</a> to see it.</p>
+<p>Fluxes used in <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a> are almost always non-plastic, they cannot be formed like clay - <a  href="https://digitalfire.com/glossary/frit">frits</a> and <a  href="https://digitalfire.com/material/310">feldspars</a> are good examples. And they don't dry hard. To make balls for use in the <a  href="https://digitalfire.com/test/gbmf">GBMF test</a> for <a  href="https://digitalfire.com/glossary/melt+fluidity">melt flow</a> a binder needs to be added. Traditionally we have used Veegum, however, it interacts with materials enough to affect melting - <a  href="https://digitalfire.com/material/228">CMC gum</a> does not. That being said, Veegum dries better (these balls can dry very slowly). When simply comparing <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> of two materials either is fine.<br />
+<br />
+Each ceramic powder responds differently to being water-mixed with a gum or <a  href="https://digitalfire.com/glossary/plasticity">plasticizer</a>. Some material-gum mixes uptake water so well that it can be worked in drops at a time until a plastic material is produced. Others require vigorous mixing into a <a  href="https://digitalfire.com/glossary/slurry">slurry</a> and then dewatering on a <a  href="https://digitalfire.com/material/1124">plaster</a> surface. We target 9g balls, they fit into the reservoir of the <a  href="https://digitalfire.com/picture/2350">melt flow tester</a>. To make one ball we start with 11 or 12g of powder (to allow for waste) and then form them into 12g (wet) balls - these dry them down to the 9g weight. We are almost always comparing the flow of two materials, in these cases it is only important that the two balls be the same weight - so we trim the heavier one down to the weight of the lighter one. Does cornstarch work? No, the mix is not plastic. Psyllium? Yes, but it has a flakey texture and demands more water.<br />
+<br />
+If you are testing a plastic material then a binder is not needed.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Forming a glaze into balls for melt fluidity testing</h3>
+<br /><a alt="The process of dewatering a glaze slurry and making balls" href="https://digitalfire.com/picture/1804"><img class="flexleft50" alt="The process of dewatering a glaze slurry and making balls"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/hbfhswpsjg.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1804">click here</a> to see it.</p>
+<p>The vast majority of glazes are somewhat plastic (but less than <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a>). They can thus be dewatered on a <a  href="https://digitalfire.com/material/1124">plaster</a> surface and formed. Why do this? To make 9-10 gram balls and fire them on flat tiles (or inclined flow testers) to see their melting characteristics. We call this the <a  href="https://digitalfire.com/test/gbmf">GBMF test</a>, it is surprising how much it can tell you about a glaze or melting material. To make the ball, mix the <a  href="https://digitalfire.com/glossary/slurry">slurry</a> well and pour a little on the plaster. It should dewater in less than 30 seconds (although there are exceptions e.g. glaze with <a  href="https://digitalfire.com/material/806">Gerstley Borate</a>). As soon as the water sheen is gone, scrape it up with a rubber rib, hand-knead it and flatten it back down to dry a little more if needed (leave it only for five or ten seconds and rework it. Repeat until it is stiff enough to form balls of about 12 grams. Stamp them with ID numbers and dry them.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Will a cone or ball flow out better in a melt flow test?</h3>
+<br /><a href="https://digitalfire.com/picture/1596"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/hudzimaguh.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1596">click here</a> to see it.</p>
+<p>This is <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a> <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> transparent glaze. I am developing a simple test procedure to produce an absolute measurable value for glaze <a  href="https://digitalfire.com/glossary/melt+fluidity">melt flow</a> and it appeared it would be worthwhile to create a mold to make these cone-shaped samples. But I was wrong. Both specimens are exactly 10 grams, but the simple ball flows better. This is likely because of better early heat penetration because there is only a small area of contact with the tile.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Various frits fired at 1850F</h3>
+<br /><a href="https://digitalfire.com/picture/2582"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/kaebhf9o2s.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2582">click here</a> to see it.</p>
+<p>16 GBMF tests on a slab of <a  href="https://digitalfire.com/glossary/grog">grogged</a> clay. Kiln fired at 108F/hr for last 100 degrees F and held for 15 minutes.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Various frits fired at 1950F</h3>
+<br /><a href="https://digitalfire.com/picture/2583"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/p9zduddty6.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2583">click here</a> to see it.</p>
+<p>These sixteen <a  href="https://digitalfire.com/test/gbmf">GBMF test</a> balls have melted down onto a slab of <a  href="https://digitalfire.com/glossary/grog">grogged</a> clay. Kiln fired at 108F/hr for the last 100 degrees F and held for 15 minutes. This demonstrates the comparison value of this test and how various <a  href="https://digitalfire.com/glossary/frit">frits</a> compare in their melting character.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Flat thin vitreous tiles being made for GMFA melt fluidity testing</h3>
+<br /><a href="https://digitalfire.com/picture/1599"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/tests/jejmusyfyf.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1599">click here</a> to see it.</p>
+<p>This is <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12881">Polar Ice</a> <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a>. It is plastic enough to be pulled very thin on a <a  href="https://digitalfire.com/glossary/plaster+table">plaster table</a>. I have cut it in a 2in by 2in grid. This porcelain is ideal for these testers because it has such a glassy surface, this produces minimum <a  href="https://digitalfire.com/glossary/surface+tension">surface tension</a> to resist the flow of the glaze.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Comparing glaze melt fluidity balls with their chemistries</h3>
+<br /><a alt="Three glaze balls melting down into a pool" href="https://digitalfire.com/picture/1594"><img class="flexleft50" alt="Three glaze balls melting down into a pool"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/duwdyjaxal.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1594">click here</a> to see it.</p>
+<p>Ten-gram <a  href="https://digitalfire.com/test/gbmf">GBMF test</a> balls of these three glazes were fired to <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> on <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> tiles. Notice the difference in the degree of melt? Why? You could just say glaze 2 has more <a  href="https://digitalfire.com/glossary/frit">frit</a> and <a  href="https://digitalfire.com/material/310">feldspar</a>. There is a better explanation, compare these yellow and blue numbers: Glaze 2 and 3 have much more <a  href="https://digitalfire.com/oxide/b2o3">B<sub>2</sub>O<sub>3</sub></a> (<a  href="https://digitalfire.com/glossary/borate">boron</a>, the key <a  href="https://digitalfire.com/glossary/flux">flux</a> for cone 6 glazes) and lower <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> (<a  href="https://digitalfire.com/material/1245">silica</a>, it is <a  href="https://digitalfire.com/glossary/refractory">refractory</a>). But notice that glaze 2 and 3 have the same <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a>, but 3 is melting more? Why? Because of the <a  href="https://digitalfire.com/glossary/mineralogy">mineralogy</a> of <a  href="https://digitalfire.com/material/806">Gerstley Borate</a>. It release its boron earlier in the firing, getting the melting started sooner. Notice it also <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a> the glaze amber, it is not as clean as the frit. Notice the calculated <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansions</a>: The greater melting of #2 and #3 comes at a cost, their thermal expansions are considerably higher, so they will be more likely to <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a>. Which of these is the best for <a  href="https://digitalfire.com/glossary/functional">functional</a> ware? #1, <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a> (left). Its high SiO<sub>2</sub> and enough-but-not-too-much B<sub>2</sub>O<sub>3</sub> make it more durable. And it runs less during firing. And does not craze.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Why fast fire glazes employ zinc - a melt fluidity test tells us</h3>
+<br /><a href="https://digitalfire.com/picture/1654"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/malrykujoj.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1654">click here</a> to see it.</p>
+<p>We are comparing the degree of <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> (10 gram <a  href="https://digitalfire.com/test/gbmf">GBMF test</a> balls melted down onto a tile) between two base clear glazes fired to <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> (top) and <a  href="https://digitalfire.com/glossary/cone+1">cone 1</a> (bottom).<br />
+Left: <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a> clear boron-fluxed (0.33 molar) clear <a  href="https://digitalfire.com/glossary/base+glaze">base glaze</a> sold by <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> Clays.<br />
+Right: <a  href="https://insight-live.com/insight/share.php?z=nB3JEnMhBi">G3814</a> zinc-fluxed (0.19 molar) clear base.<br />
+Two things are clear: Zinc is a powerful <a  href="https://digitalfire.com/glossary/flux">flux</a> (it only takes 5% in the recipe to yield the 0.19 molar). Zinc melts late: Notice that the boron-fluxed glaze is already flowing well at cone 1, whereas the zinc one has not even started. This is very good for fast fire because the unmelted glaze will pass more gases of <a  href="https://digitalfire.com/glossary/decomposition">decomposition</a> from the body before it melts, producing fewer glaze defects.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Glaze bubbles behaving badly!</h3>
+<h4 style="color:#888888; margin-top:0px;">We see it in a melt fluidity test.</h4>
+<br /><a href="https://digitalfire.com/picture/1623"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/fappokygal.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1623">click here</a> to see it.</p>
+<p>These melted-down-ten-gram <a  href="https://digitalfire.com/test/gbmf">GBMF test</a> balls of glaze demonstrate the different ways in which tiny bubbles disrupt <a  href="https://digitalfire.com/glossary/transparent+glazes">transparent glazes</a>. These bubbles are generated during firing as particles in the body and glaze <a  href="https://digitalfire.com/glossary/decomposition">decompose</a>. This test is a good way to compare bubble sizes and populations, they are a product of melt <a  href="https://digitalfire.com/glossary/viscosity">viscosity</a> and <a  href="https://digitalfire.com/glossary/surface+tension">surface tension</a>. The glaze on the top left is the clearest but has the largest bubbles, these are the type that are most likely to leave surface defects (you can see dimples). At the same time its lack of micro-bubbles will make it the most transparent in thinner layers. The one on the bottom right has so many tiny bubbles that it has turned white. Even though it is not flowing as much it will have less surface defects. The one on the top right has both large bubbles and tinier ones but no clouds of micro-bubbles.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Cone 6 glazes can seal the surface surprisingly early - melt flow balls reveal it</h3>
+<br /><a href="https://digitalfire.com/picture/1467"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/mixluxobok.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1467">click here</a> to see it.</p>
+<p>These are 10 gram balls of four different common <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> clear glazes fired to 1800F (<a  href="https://digitalfire.com/glossary/bisque">bisque</a> temperature). How dense are they? I measured the <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a> (by weighing, soaking, weighing again): <a  href="https://digitalfire.com/recipe/g2934">G2934</a> cone 6 matte - 21%. <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a> cone 6 glossy - 0%. <a  href="https://digitalfire.com/recipe/g2916f">G2916F</a> cone 6 glossy - 8%. <a  href="https://digitalfire.com/recipe/g1215u">G1215U</a> cone 6 <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">low expansion</a> glossy - 2%. The implications: <a  href="https://insight-live.com/insight/share.php?z=DEdcwWAZ6K">G2926B</a> is already sealing the surface at 1800F. If the gases of decomposing <a  href="https://digitalfire.com/oxide/organics">organics</a> in the body have not been fully expelled, how are they going to get through it? Pressure will build and as soon as the glaze is fluid enough, they will enter it en masse. Or, they will concentrate at discontinuities and defects in the surface and create <a  href="https://digitalfire.com/glossary/pinholing">pinholes</a> and <a  href="https://digitalfire.com/trouble/glaze+blisters">blisters</a>. Clearly, ware needs to be <a  href="https://digitalfire.com/glossary/bisque">bisque fired</a> higher than 1800F.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">At 1550F Gerstley Borate suddenly shrinks!</h3>
+<br /><a href="https://digitalfire.com/picture/1119"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/materials/rixfaluzed.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1119">click here</a> to see it.</p>
+<p>These <a  href="https://digitalfire.com/test/gbmf">GBMF test</a> balls were fired at 1550F and were the same size to start. The <a  href="https://digitalfire.com/material/806">Gerstley Borate</a> has suddenly shrunk dramatically in the last 40 degrees (and will shrink even more and then suddenly melt down flat within the next 50). The <a  href="https://digitalfire.com/material/1620">talc</a> is still <a  href="https://digitalfire.com/glossary/refractory">refractory</a>, the Ferro <a  href="https://digitalfire.com/material/350">Frit 3124</a> slowly softens across a wide temperature range. The <a  href="https://digitalfire.com/glossary/frit">frit</a> and Gerstley <a  href="https://digitalfire.com/glossary/borate">Borate</a> are always fluxes, the talc is a <a  href="https://digitalfire.com/glossary/flux">flux</a> under certain circumstances.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Stains added to a base glaze can change its melt fluidity. Adjust the base.</h3>
+<br /><a href="https://digitalfire.com/picture/2020"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/hmy1al53mc.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2020">click here</a> to see it.</p>
+<p>At the top is a <a  href="https://digitalfire.com/glossary/melt+fluidity">melt-flow</a> <a  href="https://digitalfire.com/test/gbmf">GBMF test</a> ball of a <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> satin <a  href="https://digitalfire.com/glossary/matte+glaze">matte glaze</a>, <a  href="https://digitalfire.com/recipe/g2934">G2934</a>. <br />
+Left bottom: 8% 6213 Mason Hemlock green stain added. The color is good but it is not melting as much and the surface is more matte. A solution is to adjust the base: employ a 90:10 or 80:20 matte:glossy blend to give it better fluidity. Right bottom: 8% 6385 Mason Pansy Purple stain added. The percentage of stain appears to be a little low and its surface is a little too matte. Again, blend a some glossy clear in the the matte base to shine it up a little.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">More carbon needs to burn out than you might think!</h3>
+<br /><a href="https://digitalfire.com/picture/1264"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/sukbivenyx.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1264">click here</a> to see it.</p>
+<p>Hard to believe, but this carbon is on ten-gram balls of <a  href="https://digitalfire.com/glossary/earthenware">low fire</a> glazes having 85% <a  href="https://digitalfire.com/glossary/frit">frit</a>. Yes, this is an extreme test because glazes are applied in thin layers, but glazes sit atop bodies much higher in carbon bearing materials. And the carbon is sticking around at temperatures much higher than it is supposed to (not yet burned away at 1500F)! The lower row is G1916J, the upper is <a  href="https://digitalfire.com/recipe/g1916q">G1916Q</a>. These balls were fired to determine the point at which the glazes densify enough that they will not pass gases being burned from the body below (around 1450F). Our firings of these glazes now soak at 1400F (on the way up). Not surpisingly, industrial manufacturers seek low carbon content materials.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Melting glaze balls at various temperatures to see when all carbon has been expelled</h3>
+<br /><a href="https://digitalfire.com/picture/1259"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/hyhcigaduw.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1259">click here</a> to see it.</p>
+<p><a  href="https://digitalfire.com/recipe/g1916q">G1916Q</a> and J <a  href="https://digitalfire.com/glossary/earthenware">low fire</a> ultra-clear glazes (contain Ferro <a  href="https://digitalfire.com/material/356">Frit 3195</a>, 3110 and clay) fired across the range of 1650 to 2000F (these were 10 gram <a  href="https://digitalfire.com/test/gbmf">GBMF test</a> balls that melted and flattened as they fired). Notice how they soften over a wide range, starting below cone 010 (1700F)! At the early stages carbon material is still visible (even though the glaze has lost 2% of its weight to this point), it is likely the source of the micro-bubbles that completely <a  href="https://digitalfire.com/glossary/opacifier">opacify</a> the matrix even at 1950F (<a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 04</a>). This is an 85% <a  href="https://digitalfire.com/glossary/frit">fritted</a> glaze, yet it still has carbon - think of what a raw glaze might have! Of course, these specimens test a very thick layer, so the bubbles are expected. But they still can be an issue, even in a thin glaze layer on a piece of ware. So to get the most transparent possible result it is wise to fire tests to find the point where the glaze starts to soften (in this case 1450F), then soak the kiln just below that (on the way up) to fire away as much of the carbon as possible. Of course, the glaze must have a low enough <a  href="https://digitalfire.com/glossary/surface+tension">surface tension</a> to release the bubbles, that is a separate issue.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Cooling speed affects opacity in G2934 matte glaze</h3>
+<br /><a alt="Cooling speed affects glaze opacity" href="https://digitalfire.com/picture/3117"><img class="flexleft50" alt="Cooling speed affects glaze opacity"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/5trfwmn23d.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3117">click here</a> to see it.</p>
+<p>These are <a  href="https://digitalfire.com/test/gbmf">GBMF test</a> balls, they dry to about 15mm diameter and melt down onto the tile during firing. These are the same glaze, <a  href="https://digitalfire.com/recipe/g2934">G2934</a>. The left one was fired using the <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> <a  href="https://digitalfire.com/schedule/plc6ds">PLC6DS</a> <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a>. The one on the right got the <a  href="https://digitalfire.com/schedule/c6dhsc">C6DHSC</a> schedule, it is the same but adds a slow cool to 1400F. The slow cool is creating phase differences, enabling <a  href="https://digitalfire.com/glossary/crystallization">crystallization</a>. This difference in <a  href="https://digitalfire.com/glossary/opacity">opacity</a> is also evident even when the glaze is used on ware, a special concern if it is employed over <a  href="https://digitalfire.com/glossary/underglaze">underglaze</a> decoration. </p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">These common Ferro frits have distinct uses in traditional ceramics</h3>
+<br /><a alt="Five melt frit balls" href="https://digitalfire.com/picture/1108"><img class="flexleft50" alt="Five melt frit balls"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/kutrupopak.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1108">click here</a> to see it.</p>
+<p>I used Veegum to form 10 gram <a  href="https://digitalfire.com/test/gbmf">GBMF test</a> balls and fired them at cone 08 (1700F). <a  href="https://digitalfire.com/glossary/frit">Frits</a> melt really well, they do have an <a  href="https://digitalfire.com/glossary/loi">LOI</a>  like raw materials. These contain <a  href="https://digitalfire.com/glossary/borate">boron</a> (<a  href="https://digitalfire.com/oxide/b2o3">B<sub>2</sub>O<sub>3</sub></a>), it is a <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">low expansion</a> super-melter that raw materials don’t have. <a  href="https://digitalfire.com/material/350">Frit 3124</a> (glossy) and 3195 (silky matte) are balanced-chemistry bases (just add 10-15% <a  href="https://digitalfire.com/material/925">kaolin</a> for a <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 04</a> glaze, or more silica+kaolin to go higher). Consider <a  href="https://digitalfire.com/material/349">Frit 3110</a> a man-made low-Al<sub>2</sub>O<sub>3</sub> super <a  href="https://digitalfire.com/material/310">feldspar</a>. Its high-sodium makes it high <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a>. It works really well in bodies and is great to make glazes that <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a>. The high-MgO <a  href="https://digitalfire.com/material/369">Frit 3249</a> (made for the abrasives industry) has a very-low expansion, it is great for fixing <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a> glazes. <a  href="https://digitalfire.com/material/351">Frit 3134</a> is similar to 3124 but without <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a>. Use it where the glaze does not need more Al<sub>2</sub>O<sub>3</sub> (e.g. already has enough clay). It is no accident that these are used by potters in North America, they complement each other well (equivalents are made around the world by others). The <a  href="https://digitalfire.com/material/806">Gerstley Borate</a> is a natural source of boron (with issues frits do not have).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">More copper can produce fewer bubbles!</h3>
+<br /><a href="https://digitalfire.com/picture/1663"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/tidhotedih.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1663">click here</a> to see it.</p>
+<p>The first glaze, <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a>, is a standard <a  href="https://digitalfire.com/glossary/functional">functional</a> transparent glaze with added copper. The other three are part of a project to find a copper blue (L3806B has the best color and the best compromise of flow and bubble-clearing ability).<br />
+<br />
+The GLFL testers for <a  href="https://digitalfire.com/glossary/melt+fluidity">melt flow</a> at the back, and the <a  href="https://digitalfire.com/test/gbmf">GBMF test</a> melt-down-balls contain 1% <a  href="https://digitalfire.com/material/236">copper carbonate</a>. The glazed samples in front have 2% copper carbonate. But why do the recipes containing half the amount of copper have far more bubbles? Because they are thinner? Not really, in use on ware, they also have fewer bubbles. Why? A small <a  href="https://digitalfire.com/oxide/cuo">CuO</a> addition can change where and how bubbles nucleate and how viscous <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> is. At some point between 1% and 2%, a threshold is crossed that affects nucleation and coalescence. For example, a little copper could encourage lots of tiny bubbles to form and stay trapped, while more changes the melt <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> enough that they coalesce and escape (or simply aren’t nucleated the same way). <a  href="https://digitalfire.com/glossary/phase+separation">Phase separation</a> could produce Cu-rich droplets that enable copper to be its own <a  href="https://digitalfire.com/glossary/fining+agent">fining agent</a>.<br />
+<br />
+</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">1700F Frit Melt-Off: Who is the winner? Not the lead bisilicate!</h3>
+<br /><a alt="Melted balls of 15 frits on a ceramic tile" href="https://digitalfire.com/picture/2556"><img class="flexleft50" alt="Melted balls of 15 frits on a ceramic tile"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/dd4bhzw2px.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2556">click here</a> to see it.</p>
+<p>These were 10g balls melted using our <a  href="https://digitalfire.com/test/gbmf">GBMF test</a>. We fired at a temperature far lower than typical <a  href="https://digitalfire.com/glossary/bisque">bisque</a>, notice how many of them are already melting well! <a  href="https://digitalfire.com/picture/2545">Frit 3602</a> is <a  href="https://digitalfire.com/material/645">lead bisilicate</a>. But it got "smoked" by the Fusion FZ-16 high-zinc, high-boron zero-alumina! Maybe you always thought lead was the best melter. That it produced the most transparent, crystal-clear glass. But that is not what we see here. That being said, notice the lead is not <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a> but the FZ-16 is crazing badly, that is a problem for many applications using this <a  href="https://digitalfire.com/glossary/frit">frit</a>, it relies on a high percentage of <a  href="https://digitalfire.com/picture/1775">KNaO</a>. Notice something else: Each frit has a distinctive melt fingerprint that makes it recognizable in tests like this. Want to get some of this frit for pottery? You can't, Fusion <a  href="https://digitalfire.com/glossary/ceramics">Ceramics</a> doesn't want to handle retail sales of smaller quantities.</p>
+<p style="clear:left"></p>
+<h2>Variables</h2>
+<b>CONE - Cone (V)</b><p style="margin-left:10px;">
+<p>It is of course important that the specimen be fired precisely, verify using actual cones.</p>
+</p>
+<b>DIA - Diameter (V)</b><p style="margin-left:10px;">
+<p>If the specimen is oval measure the widest and narrowest dimension and average them. Enter the number in millimeters.</p>
+</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<h3>Videos</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Media</td>
+<td>
+<a href="https://digitalfire.com/video/making+ceramic+glaze+flow+test+balls">Making ceramic glaze flow test balls</a>
+<br /><i>I will make 10 gram balls of a glaze and fire them on 2in by 2in tiles to evaluate their <a  href="https://digitalfire.com/glossary/melt+fluidity">melt flow</a>, glass surface and susceptibility to defects.</i>
+</td>
+</tr>
+</tbody></table>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/melt+fluidity">Melt Fluidity</a>
+<br /><i>Ceramic glazes melt and flow according to their <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a>, particle size and <a  href="https://digitalfire.com/glossary/mineralogy">mineralogy</a>. Observing and measuring the nature and amount of flow is important in understanding them.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/glaze+bubbles">Glaze Bubbles</a>
+<br /><i><a  href="https://digitalfire.com/glossary/suspension">Suspended</a> micro-bubbles in ceramic glazes affect their transparency and depth. Sometimes they add to to aesthetics. Often not. What causes them and what to do to remove them.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/a+low+cost+tester+of+glaze+melt+fluidity">A Low Cost Tester of Glaze Melt Fluidity</a>
+<br /><i>Use this novel device to compare the <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> of glazes and materials. Simple physical observations of the results provide a better understanding of the fired properties of your glaze (and problems you did not see before).</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/glfl">Glaze Melt Flow - Runway Test</a>
+<br /><i>A method of comparing the <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> of two ceramic materials or glazes by racing them down an inclined runway.</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

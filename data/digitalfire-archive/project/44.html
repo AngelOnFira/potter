@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Project: Using milk as a glaze</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="Don't just try this, go into it as a project with your eyes open to the issues you will meet." name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item"><a class="nav-link" href="../material/list.html">Materials</a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item active" href="list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=project" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container"><p><a aria-controls="collapse1" aria-expanded="false" class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button">All Projects</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a href="15.html" title="15">2019 Jiggering-Casting Project of Medalta 66 Mug</a><br/><a href="54.html" title="54">A cereal bowl jigger mold made using 3D printing</a><br/><a href="33.html" title="33">Beer Bottle Master Mold via 3D Printing</a><br/><a href="61.html" title="61">Better porosity for Brown Sugar Savers</a><br/><a href="48.html" title="48">Build a kiln monitoring device</a><br/><a href="69.html" title="69">Celebration Project</a><br/><a href="60.html" title="60">Coffee Mug Slip Casting Mold via 3D Printing</a><br/><a href="29.html" title="29">Comparing the Melt Fluidity of 16 Frits</a><br/><a href="52.html" title="52">Cookie Cutting clay with 3D printed cutters</a><br/><a href="41.html" title="41">Evaluating a clay's suitability for use in pottery</a><br/><a href="55.html" title="55">Make a mold for 4-gallon stackable calciners</a><br/><a href="49.html" title="49">Make Your Own Pyrometric Cones</a><br/><a href="47.html" title="47">Make your own sieve shaker to process ceramic slurries</a><br/><a href="40.html" title="40">Making a high quality ceramic tile</a><br/><a href="46.html" title="46">Making a Plaster Table</a><br/><a href="37.html" title="37">Making Bricks</a><br/><a href="50.html" title="50">Making our own kiln posts using a hand extruder</a><br/><a href="59.html" title="59">Medalta Ball Pitcher Slip Casting Mold via 3D Printing</a><br/><a href="34.html" title="34">Medalta Jug Master Mold Development</a><br/><a href="63.html" title="63">Mold Natches</a><br/><a href="32.html" title="32">Mother Nature's Porcelain - Plainsman 3B</a><br/><a href="66.html" title="66">Mug Handle Casting</a><br/><a href="39.html" title="39">Nursery plant pot mold via 3D printing</a><br/><a href="30.html" title="30">Pie-Crust Mug-Making Method</a><br/><a href="35.html" title="35">Plainsman 3D, Mother Nature's Porcelain/Stoneware</a><br/><a href="38.html" title="38">Project to Document a Shimpo Jiggering Attachment</a><br/><a href="36.html" title="36">Roll, Cut, Pull, Attach Handle-making Method</a><br/><a href="23.html" title="23">Slurry Mixing and Dewatering Your Own Clay Body</a><br/><a href="24.html" title="24">Testing a New Load of EP Kaolin</a><br/><button class="btn btn-dark" type="button">Using milk as a glaze</button></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Using milk as a glaze</h1>
+<p>Yes, this is real, ordinary cow's milk can be used as a glaze on pottery! As explained below, this works in the domain of low temperatures, typically <a href="../glossary/low+temperature+glaze.html">cone 04</a> on <a href="../glossary/terra+cotta.html">terra cotta</a> (<a href="../glossary/low+temperature+glaze.html">cone 06</a> is also possible but ware is not as strong).<br/>
+<br/>
+Milk is not a glaze in the normal sense. Contrary to what is stated elsewhere, we find that it does not seal the surface, so water will absorb into porous clay fired at low temperatures (and the milk won't bond well with <a href="../glossary/vitreous.html">vitreous</a> ware fired at higher temperatures). It is almost always most practical to use a terra cotta clay for this process, giving milk glazed ware all the benefits and limitations of any other terra cotta. It is thus not practical to put this type of ware in the <a href="../glossary/dishwasher+safe.html">dishwasher</a>. The absorption issue can be alleviated by dipping ware in a <a href="../picture/2848.html">silicone sealant</a> to cover milked areas.<br/>
+<br/>
+Although stated otherwise elsewhere, it is only logical and practical to glaze food surfaces, limiting the milk to the outsides of pieces (as decorative or a talking point). This is obviously more sanitary. Ware should be washed by hand with some effort to minimize waterlogging it. Extra attention must be given to using a glaze whose <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> is compatible with the body (it is not under tension and in danger of <a href="../trouble/glaze+crazing.html">crazing</a> and not under excessive compression in danger of <a href="../glossary/glaze+shivering.html">shivering</a>). Since the glaze must be under at least some compression to avoid crazing it is important that it not be applied too thickly, this minimizes the danger of shivering and <a href="../glossary/glaze+compression.html">glaze compression</a> issues. The <a href="../recipe/g1916q.html">G1916Q</a> recipe works well for this since it is thermal expansion adjustable.<br/>
+<br/>
+Firing. We have found that 610F works well (although we are doing tests at other temperatures to see how high it can go before burning off). Of course, pieces have already been <a href="../glossary/bisque.html">bisque fired</a> and glaze fired, so this is the third firing. I use no special schedule, just straight up at 350F/hr. That being said, since ware is already glazed inside, too rapid a rise in temperature has the potential of cracking pieces getting heated unevenly.</p><p style="clear:left"></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Milk as a glaze! How is that possible?</h3>
+<br/><a alt="Clay tiles, one unglazed, one carbon glazed" href="../picture/2683.html"><img alt="Clay tiles, one unglazed, one carbon glazed" class="flexleft50" loading="lazy" src="../media/images/r78jxfzwjr.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2683.html">click here</a> to see it.</p>
+<p>In the YouTube video (link below) a Karelian potter uses this technique to make cookware. He immerses pieces, while still hot from the <a href="../glossary/bisque.html">bisque</a> kiln, into a bucket of milk. After a few seconds, he withdraws them and they steam-dry quickly. I did not preheat these <a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12865">L210</a> pieces, they were just <a href="../glossary/bisque.html">bisque fired</a> to 1850F. The Russian potter claims to milk-fire his ware to 300-350 degrees, assuming that is celsius I fired these at 500F/hr to 612F (350C), then held for 10 minutes. The surface is smooth and pleasant-to-touch, it is odor-free. The potter claims it retains this surface over many years despite repeated oven use (my observation is that the surface will be lost in a <a href="../glossary/dishwasher+safe.html">dishwasher</a>). This <a href="../glossary/clay+body.html">clay body</a>, <a href="https://plainsmanclays.ca/data/index.php?product=12865">L210</a>, is well suited since it fires to a smooth unglazed surface. Indigenous cultures throughout history have learned how to prepare, cook and store food in <a href="../glossary/terra+cotta.html">terra cotta</a> clays like this, they withstand <a href="../glossary/thermal+shock.html">thermal shock</a> better than <a href="../glossary/vitrification.html">vitrified</a> stonewares and porcelains. And continue to service even if they do crack.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Milk glazing done wrong</h3>
+<br/><a href="../picture/2946.html"><img class="flexleft50" loading="lazy" src="../media/images/4etmdazjfp.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2946.html">click here</a> to see it.</p>
+<p>Left: <a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12866">L215</a> <a href="../glossary/terra+cotta.html">terra cotta</a> <a href="../glossary/bisque.html">bisque</a> and glaze fired at <a href="../glossary/low+temperature+glaze.html">cone 04</a> using the <a href="../recipe/g1916q.html">G1916Q</a> recipe. Right: <a href="https://plainsmanclays.ca/data/index.php?product=12866">L215</a> <a href="../glossary/bisque.html">bisque fired</a> to cone 04 and then glaze fired to cone 2 using the <a href="https://insight-live.com/insight/share.php?z=1RstCPvD3W">G1916V</a> recipe. While glazing ware only on the inside can create <a href="../glossary/glaze+compression.html">glaze compression</a> issues, that has not appeared to be an issue so far. I preheated both of the glazed mugs to 300F and quickly dipped each in milk (both steam-dried rapidly). I was careful not to touch the surface of either while they dried (since touch marks show up after fired). However, the one on the right did not work. While the milk did apply thickly enough to fire on normally, it has only created a film on the surface. After a couple of weeks in service, with repeated cold-to-hot and wash cycles the milk is shedding off! It thus appears the milk needs an absorbant body to form a bond, low fired terra cotta, like the mug on the left, appears to supply that best. Another issue is achieving a drip and bubble-free application, application using a milk-soaked sponge creates a variegated pattern, under more control.<br/>
+<br/>
+</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Milk as a glaze on terra cotta and buff burning low temperature bodies</h3>
+<br/><a href="../picture/2947.html"><img class="flexleft50" loading="lazy" src="../media/images/14jya5kvjs.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2947.html">click here</a> to see it.</p>
+<p>Both of these tiles have been <a href="../glossary/bisque.html">bisque fired</a> at <a href="../glossary/low+temperature+glaze.html">cone 04</a>. On the left is <a href="https://plainsmanclays.ca/data/index.php?product=12866">L215</a> and on the right is <a href="https://plainsmanclays.ca/data/index.php?product=12865">L210</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Milk-as-a-glaze goes on more evenly by sponge</h3>
+<br/><a alt="Milk glazed mugs" href="../picture/2954.html"><img alt="Milk glazed mugs" class="flexleft50" loading="lazy" src="../media/images/qqy6rieq16.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2954.html">click here</a> to see it.</p>
+<p>The milk was applied to inside-glazed <a href="https://plainsmanclays.ca/data/index.php?product=12865">L210</a> <a href="../glossary/terra+cotta.html">terracotta</a> ware (fired to <a href="../glossary/low+temperature+glaze.html">cone 06</a>) that I had preheated to 250F. This has not gone on as thick as usual so it appears it might be best to dip the pieces into milk and then pat them with a milk-damp sponge to break all the bubbles, remove the drips and even out the coverage.<br/>
+<br/>
+Since these are glazed only on the inside I had to be cautious to avoid <a href="../glossary/glaze+compression.html">glaze compression</a> issues. And tell users not to put these in the <a href="../glossary/dishwasher+safe.html">dishwasher</a> (or if they do tell them how to restore the surface in their own oven).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">This translucent porcelain and terra cotta share something amazing</h3>
+<br/><a alt="Two coffee low fire coffee mugs" href="../picture/2930.html"><img alt="Two coffee low fire coffee mugs" class="flexleft50" loading="lazy" src="../media/images/s4njib3uci.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2930.html">click here</a> to see it.</p>
+<p>The firing temperature: Both are fired at <a href="../glossary/low+temperature+glaze.html">cone 04</a>. Left: <a href="../glossary/zero4.html">Zero4</a> <a href="../glossary/porcelain.html">porcelain</a>, this <a href="../glossary/fritware.html">fritware</a> is totally dense and durable yet fired ten cones lower than typical. You can make it. As an appreciator of the process more than the product, just drinking out of this amazes me! Right: Milk glazed <a href="../glossary/earthenware.html">earthenware</a>. The inside glaze, <a href="../recipe/g1916q.html">G1916Q</a>, was fired onto <a href="https://plainsmanclays.ca/data/index.php?product=12866">L215</a> at cone 04. The 250F preheated mug was quickly dipped in milk after which it steam-dried. I then refired it at 610F to get this effect. To improve <a href="../glossary/glaze+durability.html">durability</a> I dipped the outside in <a href="../picture/2848.html">silicone sealant</a>. The surface looks and feels like leather, drinking coffee out of this is an amazing experience!</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/2657">https://www.youtube.com/watch?v=Q0r0tBHtH-I</a>
+<br/><i>Karelian potter produces glossy black pottery using milk as a glaze</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></div></body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>3B Clay</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="A fine-grained, tan burning, illitic stoneware with particulate and soluble salt impurities">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item active"><a class="nav-link" href="/material/list">Materials <span class="sr-only">(current)</span></a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=material" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"></td><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table>
+<ul class="nav nav-tabs pt-1" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="material-tab" data-toggle="tab" href="#material" role="tab" aria-controls="material" aria-selected="true">Materials for Ceramics</a>
+  </li>
+</ul>
+<div class="tab-content mb-3" id="myTabContent" style="border-right:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #ddd; padding:10px;">
+  <div class="tab-pane fade show active" id="material" role="tabpanel" aria-labelledby="material-tab">
+<a href="/material/list/1-9">1-9</a> | <a href="/material/list/A">A</a> | <a href="/material/list/B">B</a> | <a href="/material/list/C">C</a> | <a href="/material/list/D">D</a> | <a href="/material/list/E">E</a> | <a href="/material/list/F">F</a> | <a href="/material/list/Frits">Frits</a> | <a href="/material/list/G">G</a> | <a href="/material/list/H">H</a> | <a href="/material/list/I">I</a> | <a href="/material/list/J">J</a> | <a href="/material/list/K">K</a> | <a href="/material/list/L">L</a> | <a href="/material/list/M">M</a> | <a href="/material/list/N">N</a> | <a href="/material/list/O">O</a> | <a href="/material/list/P">P</a> | <a href="/material/list/Q">Q</a> | <a href="/material/list/R">R</a> | <a href="/material/list/S">S</a> | <a href="/material/list/T">T</a> | <a href="/material/list/U">U</a> | <a href="/material/list/V">V</a> | <a href="/material/list/W">W</a> | <a href="/material/list/X">X</a> | <a href="/material/list/Y">Y</a> | <a href="/material/list/Z">Z</a><br />
+<nobr></nobr>
+</div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>3B Clay</h1>
+<p><b>Alternate Names</b>: B, PR#3 B, B clay</p>
+<p><b>Description</b>: Buff firing highly vitreous, plastic, very smooth stoneware clay</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/oxide">Oxide</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/analysis">Analysis</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/formula">Formula</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/formula">Tolerance</a></th>
+</tr></thead><tbody>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/na2o">Na2O</a></td>
+<td class="text-right"">0.10%</td>
+<td class="text-right">
+0.01
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/al2o3">Al2O3</a></td>
+<td class="text-right"">17.70%</td>
+<td class="text-right">
+1.00
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/mgo">MgO</a></td>
+<td class="text-right"">0.60%</td>
+<td class="text-right">
+0.09
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/sio2">SiO2</a></td>
+<td class="text-right"">67.80%</td>
+<td class="text-right">
+6.50
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/k2o">K2O</a></td>
+<td class="text-right"">2.70%</td>
+<td class="text-right">
+0.17
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/cao">CaO</a></td>
+<td class="text-right"">0.24%</td>
+<td class="text-right">
+0.02
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/p2o5">P2O5</a></td>
+<td class="text-right"">0.02%</td>
+<td class="text-right">
+-
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/tio2">TiO2</a></td>
+<td class="text-right"">0.70%</td>
+<td class="text-right">
+0.05
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/fe2o3">Fe2O3</a></td>
+<td class="text-right"">1.30%</td>
+<td class="text-right">
+0.05
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/mno">MnO</a></td>
+<td class="text-right"">0.01%</td>
+<td class="text-right">
+-
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/loi">LOI</a></td>
+<td class="text-right">6.50%</td><td class="text-right">n/a</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/so3">SO3</a></td>
+<td class="text-right">0.10%</td><td class="text-right">n/a</td></tr>
+<tr><td colspan="2">Oxide Weight</td><td colspan="2" class="text-right">
+525.39
+</td></tr>
+<tr><td colspan="2" class="text-right"><a href="https://digitalfire.com/glossary/formula+weight">Formula Weight</a></td><td colspan="2" style="text-align:right">
+562.51
+</td></tr>
+</tbody></table>
+<h4>Notes</h4><p>A buff firing <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> clay that densifies to zero <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a> around <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> (or below). It is mined at <a  href="https://digitalfire.com/material/1178">Ravenscrag</a>, Saskatchewan, Canada by <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> Clays. It is part of the Whitemud formation. It has pottery <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> (suitable as-is for modelling or on a potter's wheel) and is can be processed to be exceptionally smooth. It makes up a significant percentage of many of the bodies produced by <a  href="http://rongetty.com/category/company/96">Plainsman Clays</a>.<br />
+<br />
+Online, you might see this referred to as <a  href="https://plainsmanclays.ca/data/index.php?product=12868">MNP</a> (Mother Nature's <a  href="https://digitalfire.com/glossary/porcelain">Porcelain</a>), this is a reference to how it can be processed (impurity particles removed) to be smooth and <a  href="https://digitalfire.com/glossary/vitreous">vitreous</a> (it does not fire white like porcelain, rather to a light tan). This processed form has extreme stability when fired to temperatures far higher than its initial <a  href="https://digitalfire.com/glossary/vitrification">vitrification</a> range. These properties also make it a good base for making <a  href="https://digitalfire.com/glossary/engobe">engobes</a> and <a  href="https://digitalfire.com/glossary/underglaze">underglazes</a>.<br />
+<br />
+This material can be synthesized using a 60:40 mix of <a  href="https://digitalfire.com/material/80">ball clay</a> and <a  href="https://digitalfire.com/material/1070">nepheline syenite</a> or <a  href="https://digitalfire.com/material/310">feldspar</a>. Tune the degree of fired <a  href="https://digitalfire.com/glossary/maturity">maturity</a> by adjusting that ratio.<br />
+<br />
+There is some argument about whether the <a  href="https://digitalfire.com/glossary/mineralogy">mineralogy</a> of <a  href="https://digitalfire.com/material/1144">3B</a> should be muscovite or illite. Here is the comment of one technician: "With regards to illite or muscovite, the only way to categorically differentiate between the two is to determine the layer charge (most easily by electron microscopy), which I didn't do.  In this sample, the mica component has no detectable expandability, which suggests a high-charge mica with very little depotassification typical of muscovites. Also, the x-ray scattering domain size is quite large with minimal disorder, which you seldom find in illite, but is expected for muscovite. However, the kaolinite in the sample is extremely fine as one would see in fireclays. 41% quartz in the sample is accurate. You can easily verify this from your <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> by checking the contributions of muscovite, kaolinite, smectite and K-spar to the total <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a>, and constraining potassium to muscovite and K-spar, and Mg to smectite. From my experience, a high plasticity and the apparent illitic properties that you see in the clay is most likely due to the discrete smectite content (8%).  Note that the activity of smectite is several orders of magnitude (up to 10 times) greater than the finest kaolinite or illite."<br />
+<br />
+Major trace elements:<br />
+424 Ba ppm<br />
+34 Sr pmm<br />
+24 Y ppm<br />
+10 Sc ppm<br />
+249 Zr ppm<br />
+1 Be ppm<br />
+65 V ppm</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Plainsman 3B fired bars</h3>
+<br /><a href="https://digitalfire.com/picture/3610"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/materials/bag6iwv4xw.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3610">click here</a> to see it.</p>
+<p>These show it to be very <a  href="https://digitalfire.com/glossary/vitreous">vitreous</a>, reaching zero <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a> shortly after cone 4. It is also very stable in firing, not melting or <a  href="https://digitalfire.com/trouble/bloating">bloating</a> all the way to cone 10. This is the raw <a  href="https://digitalfire.com/glossary/slaking">slaked</a> material so iron specks are visible, these blossom in <a  href="https://digitalfire.com/glossary/reduction+firing">reduction firing</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Mel Noble at Plainsman Clay's Ravenscrag, Saskatchewan quarry</h3>
+<br /><a alt="Whitemud formation layers" href="https://digitalfire.com/picture/2170"><img class="flexleft50" alt="Whitemud formation layers"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/zdbygf8nxm.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2170">click here</a> to see it.</p>
+<p>Six different sedimentary clays are extracted from this quarry. It was opened in the 1970s, the best location available at the time. These test bars were made by <a  href="https://digitalfire.com/glossary/slaking">slaking</a> select lumps from each layer (thus exhibiting their best performance). The left-most dried test bars show the layers (top to bottom). The <a  href="https://digitalfire.com/material/1141">A1</a> top layer is the most plastic and has the most iron contamination (it is used in our most speckled <a  href="https://digitalfire.com/glossary/reduction+firing">reduction firing</a> bodies). <a  href="https://plainsmanclays.ca/data/index.php?product=12899">A2</a>, the second one down, is a <a  href="https://digitalfire.com/material/80">ball clay</a> (similar to commercial products, although darker burning), it is very <a  href="https://digitalfire.com/glossary/refractory">refractory</a> and the base for <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://digitalfire.com/glossary/fireclay">Fireclay</a>. <a  href="https://plainsmanclays.ca/data/index.php?product=12900">A3</a>, third from top, is a complete buff high-temperature <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> (like <a  href="https://plainsmanclays.ca/data/index.php?product=12887">H550</a>), although sandy and over-mature at cone 10. <a  href="https://digitalfire.com/material/1144">3B</a>, third from bottom, is a smooth <a  href="https://digitalfire.com/glossary/medium+temperature">medium-temperature</a> stoneware; it contains significant natural <a  href="https://digitalfire.com/material/310">feldspar</a> (although fired color and particulate contamination are the most variable). The second from the bottom, <a  href="https://plainsmanclays.ca/data/index.php?product=12950">3C</a>. fires the whitest and is the most refractory (it is the base for <a  href="https://plainsmanclays.ca/data/index.php?product=12894">H441G</a>). The bottom one, 3D, the best product in the quarry. Although the least plastic and most silty, it is also very fine particled and the cleanest (consistently free of particulate impurities and sand), it pairs very well with a ball clay to make a <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> stoneware.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">When a DIY black underglaze makes sense</h3>
+<br /><a alt="Black underglazed bowl" href="https://digitalfire.com/picture/3376"><img class="flexleft50" alt="Black underglazed bowl"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/aivz3xiczh.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3376">click here</a> to see it.</p>
+<p>Black brushwork needs to go on thick enough in one brushstroke. Commercial products we have don't do that - thus my motivation to work on this. Another issue is that they try to cover too wide a firing range (thus they melt too much at the high end and not enough at the low end). I am experimenting on <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12881">Polar Ice</a> <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> <a  href="https://digitalfire.com/glossary/jiggering">jiggered</a> bowls using <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a> <a  href="https://digitalfire.com/glossary/dipping+glaze">dipping glaze</a>. The base <a  href="https://digitalfire.com/glossary/underglaze">underglaze</a> recipe here is a 90:10 <a  href="https://plainsmanclays.ca/data/index.php?product=12868">MNP</a>:nepheline syenite mix (you could use your own porcelain instead of <a  href="https://plainsmanclays.ca/data/index.php?product=12868">MNP</a> and <a  href="https://digitalfire.com/material/310">feldspar</a> instead of nepheline). To that, I add 15% black stain, 1.5% <a  href="https://digitalfire.com/material/228">CMC gum</a> and 5% <a  href="https://digitalfire.com/material/106">bentonite</a>. With the CMC gum and bentonite, and <a  href="https://digitalfire.com/glossary/blender+mixing">blender mixing</a>, a brushable consistency that stays put can be achieved at a fairly low <a  href="https://digitalfire.com/glossary/water+content">water content</a> compared to commercial products (enabling it to go on thicker in a single brush stroke). Assuming application at <a  href="https://digitalfire.com/glossary/leather+hard">leather hard</a> state, the drying and <a  href="https://digitalfire.com/glossary/firing+shrinkage">firing shrinkage</a> can be matched to the body by varying the <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> of the porcelain used (e.g. the percentage of bentonite it contains). And the percentage of stain can be tuned for enough color but no <a  href="https://digitalfire.com/trouble/bleeding+colors">bleeding</a>, bubble <a  href="https://digitalfire.com/glossary/glaze+bubbles">clouding</a> or <a  href="https://digitalfire.com/glossary/crystallization">crystallization</a>. And we can adjust the degree of <a  href="https://digitalfire.com/glossary/maturity">maturity</a> by varying the proportions of MNP and Nepheline (commercial <a  href="https://digitalfire.com/glossary/underglaze">underglazes</a> often melt too much by cone 6 and fade and diffuse as a result), this one stays opaque black.<br />
+<br />
+Underglazes suitable for making <a  href="https://digitalfire.com/glossary/silk+screen+printing">silk screen</a> transfers are another special case. The ideal one needs to cover well like this one. But it also needs to gel and harden enough to hang onto the paper but not so hard that it does not separate and transfer to the ware. Commercial products for brushing are unlikely to be optimal so it makes sense to mix your own and experiment with different amounts of gum.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Mother Nature's porcelain - From the Cretaceous period</h3>
+<br /><a alt="MNP pottery mug" href="https://digitalfire.com/picture/2205"><img class="flexleft50" alt="MNP pottery mug"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/lzpgahgkr4.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2205">click here</a> to see it.</p>
+<p>During a 6 week of mining in 2018 in <a  href="https://digitalfire.com/material/1178">Ravenscrag</a>, Saskatchewan we extracted marine sediment layers of the late Cretaceous period. The center portion of the "B layer", as we call it, is unbelievably fine particled (impossibly smooth, like a body that is pure <a  href="https://digitalfire.com/glossary/terra+sigilatta">terra sigillata</a>)! The <a  href="https://digitalfire.com/material/310">feldspar</a> and <a  href="https://digitalfire.com/material/1245">silica</a> are built-in, producing a glassy body surface, starting at cone 4 and lasting to cone 8. Despite this, pieces don't warp in firings! I have not glazed the outside of this mug for demo purposes. I got away with it this time because the <a  href="https://plainsmanclays.ca/data/index.php?product=12911">Ravenscrag</a> clear glaze <a  href="https://digitalfire.com/recipe/gr6-a">GR6-A</a> is very compatible (the <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> is high enough to avoid <a  href="https://digitalfire.com/glossary/glaze+compression">glaze compression</a> issues and low enough not to <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a>). With other less compatible glazes these mugs cracked when I poured in hot coffee. To make this body I am <a  href="https://digitalfire.com/glossary/slurry+up">slurrying it up</a> as a slip and processing it to <a  href="https://digitalfire.com/glossary/325+mesh">325 mesh</a> (using a <a  href="https://digitalfire.com/picture/2931">vibrating sieve</a>).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Calculating the highest % of 3B clay to create a glaze recipe</h3>
+<br /><a href="https://digitalfire.com/picture/3611"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/r9bcxgef6r.28.53 am.png" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3611">click here</a> to see it.</p>
+<p>In this screenshot I am comparing the chemistries of two recipes. The recipes are different but the chemistries are the same. On the left, <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://digitalfire.com/material/1144">3B</a> (also known as <a  href="https://plainsmanclays.ca/data/index.php?product=12868">MNP</a>) is being using to source almost all of the <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> (the red box) needed by the recipe (to match our standard <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10R</a> transparent <a  href="https://digitalfire.com/recipe/g1947u">G1947U</a>, on the right). The <a  href="https://digitalfire.com/picture/1775">KNaO</a> is being sourced from the <a  href="https://digitalfire.com/glossary/frit">frit</a> rather than <a  href="https://digitalfire.com/material/310">feldspar</a> (this is really good because it has almost no Al<sub>2</sub>O<sub>3</sub> so all of it can be sourced from the <a  href="https://plainsmanclays.ca/data/index.php?product=12901">3B</a> clay). Only <a  href="https://digitalfire.com/material/1245">silica</a> and <a  href="https://digitalfire.com/material/173">calcium carbonate</a> are needed to bring the <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> and <a  href="https://digitalfire.com/oxide/cao">CaO</a> up to match.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Incredible Mother Nature’s porcelain</h3>
+<br /><a alt="A hand-built mug made from 100% of a naturally occurring porcelain" title="A hand-built mug made from 100% of a naturally occurring porcelain" href="https://digitalfire.com/picture/2324"><img class="flexleft50" title="A hand-built mug made from 100% of a naturally occurring porcelain"  alt="A hand-built mug made from 100% of a naturally occurring porcelain"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/l3ho9en1hf.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2324">click here</a> to see it.</p>
+<p>This is made from 100% of a natural clay (<a  href="https://digitalfire.com/material/1144">3B</a>) from the Whitemud formation in <a  href="https://digitalfire.com/material/1178">Ravenscrag</a>, Saskatchewan. To make this body, which I call <a  href="https://plainsmanclays.ca/data/index.php?product=12868">MNP</a>, I <a  href="https://digitalfire.com/glossary/slaking">slake</a> and <a  href="https://digitalfire.com/glossary/slurry+up">slurry up</a> the raw clay lumps, <a  href="https://digitalfire.com/glossary/sieve">sieve</a> it to <a  href="https://digitalfire.com/glossary/200+mesh">200 mesh</a> and then dewater on a <a  href="https://digitalfire.com/glossary/plaster+table">plaster table</a>. I rolled the plastic clay into a thin layer, cut it into a cross-shape using a <a  href="https://digitalfire.com/glossary/3d-printing">3D printed</a> cookie-cutter, drape-molded it over a <a  href="https://digitalfire.com/material/1124">plaster</a> form and then slip-joined the seams. It fires very dense and strong (to zero <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a> like glass!). It holds together well and joins well with its own slip. Although not super plastic, it is smooth and fine-grained like a commercial <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> body. I add 1-2% <a  href="https://digitalfire.com/material/106">bentonite</a> to make it more plastic when needed. It can be rolled extremely thin and yet does not warp in the firing! This mug has a weight-to-volume ratio of 2.08 (the weight of water it will hold compared to its own weight).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Ravenscrag Saskatchewan clays fired at cone 10R</h3>
+<br /><a href="https://digitalfire.com/picture/800"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/vicbevejop.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/800">click here</a> to see it.</p>
+<p>Glazeless (top) and with glaze (bottom): <a  href="https://digitalfire.com/material/1141">A1</a> (bentonitic), <a  href="https://plainsmanclays.ca/data/index.php?product=12899">A2</a> (<a  href="https://digitalfire.com/material/80">ball clay</a>), <a  href="https://plainsmanclays.ca/data/index.php?product=12900">A3</a> (<a  href="https://digitalfire.com/glossary/stoneware">stoneware</a>), <a  href="https://digitalfire.com/material/1144">3B</a> (porcelains), <a  href="https://plainsmanclays.ca/data/index.php?product=12950">3C</a> (lignitic ball clay), 3D (silt). The bottom row has also shows <a  href="https://digitalfire.com/glossary/soluble+salts">soluble salts</a> (SOLU test).</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="https://digitalfire.com/mineral/quartz">Quartz</a>
+<br /><i>Quartz is the most abundant mineral on earth, it is the main <a  href="https://digitalfire.com/glossary/glass+vs.+crystalline">crystalline</a> mineral form of <a  href="https://digitalfire.com/material/1245">silica</a> (SiO</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="https://digitalfire.com/mineral/kaolinite">Kaolinite</a>
+<br /><i>The most fundamental clay mineral. This mineral is found in nature in its purest form as <a  href="https://digitalfire.com/material/925">kaolin</a>. How</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="https://digitalfire.com/mineral/smectite">Smectite</a>
+<br /><i>A highly plastic clay mineral related to montmorillonite (<a  href="https://digitalfire.com/material/106">bentonite</a>), more correctly, the name of th</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="https://digitalfire.com/mineral/muscovite">Muscovite</a>
+<br /><i>A form of mica often found as micro-flakes in processed raw clays. It can often be found in the mine</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="https://digitalfire.com/mineral/illite">Illite</a>
+<br /><i>A clay. A sedimentary weathered alteration of muscovite mica. Some <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> clays contain illite. I</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/86">https://plainsmanclays.com/data/index.php?product=12901</a>
+<br /><i>B Clay Data Sheet</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/a3+stoneware+clay">A3 Stoneware Clay</a>
+<br /><i>A buff burning, high temperature somewhat sandy <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> having ready-to-use <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/clo">Clay Other</a>
+<br /><i>Clays that are not kaolins, ball clays or bentonites. For example, <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> clays are mixtures of all of the above plus quartz, <a  href="https://digitalfire.com/material/310">feldspar</a>, mica and other minerals. There are also many clays that have high <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> like <a  href="https://digitalfire.com/material/106">bentonite</a> but are much different mineralogically.</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Encapsulated Stain</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="This is a type of stain manufacture that enables the use of metal oxides (like cadmium) under temperature conditions in which they would normally fail.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item active"><a class="nav-link" href="/glossary/list">Glossary <span class="sr-only">(current)</span></a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=glossary" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:center; vertical-align:top;">Feb 14-15, 2026 - <b>Major Server <a href="https://digitalfire.com">Upgrade</a> Done</b></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table>Error: API server returned an invalid response for glossary<p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Encapsulated Stain</h1>
+<p class="text-muted" style="margin-left:20px">This is a type of stain manufacture that enables the use of metal oxides (like cadmium) under temperature conditions in which they would normally fail.
+<p class="text-muted" style="margin-left:20px; font-style:italic; font-size:90%;"><b>Key phrases linking here:</b> encapsulated stain, inclusion stain
+ - <a href="https://digitalfire.com/home/linkmaker">Learn more</a></p>
+</h4>
+<h2>Details</h2>
+<p>Encapsulated <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a> (also called inclusion stains) are a special class of man-made pigments that enable bright and difficult-to-achieve colors in ceramic glazes (especially reds and oranges). Like regular stains, they are intended to be incorporated into <a  href="https://digitalfire.com/glossary/engobe">engobe</a> or <a  href="https://digitalfire.com/glossary/glaze+recipes">glaze recipes</a>, not used as a straight powder but in a <a  href="https://digitalfire.com/glossary/stain+medium">stain medium</a>. These are a recent development in glaze technology, and many companies that hesitated to use them in the past now use encapsulated stains in their best-selling products, even on <a  href="https://digitalfire.com/glossary/functional">functional</a> surfaces.<br />
+<br />
+These stains can strongly pigment a glaze in amounts as low as 5% (if everything is right, see below) but up to 20% or more is needed for some colors and glazes. Stain companies showcase products (on their sample boards) using a little <a  href="https://digitalfire.com/glossary/opacifier">opacifier</a> (e.g. 3%) in the glaze (this likely intensifies the color). These stains often work well in zinc glazes without losing color.<br />
+<br />
+Encapsulated stains are not, as the name suggests (and some misunderstand), a <a  href="https://digitalfire.com/material/1722">zircon</a> capsule around an otherwise unstable compound. Rather, they are manufactured by <a  href="https://digitalfire.com/glossary/sintering">sintering</a> to form a <a  href="https://digitalfire.com/glossary/glass+vs.+crystalline">crystalline</a> product (in a process called encapsulation). Mason colours, for example, describes a yellow stain they make as the “reaction product of high-temperature <a  href="https://digitalfire.com/glossary/calcination">calcination</a> in which Zirconium (IV) Oxide, Silicon (IV) Oxide, and Praseodymium (III, IV) Oxide (Pr6O11) in varying amounts are homogeneously and ionically interdiffused to form a crystalline matrix of zircon”.<br />
+<br />
+After sintering, they are ground, filter pressed and dried. In cadmium encapsulated stains, for example, the matrix between the zircon and cadmium is stable to 1220C and the selenide/selenium is released during combination. The stain is further rendered safer-to-use by washing with water or weak acid to remove any soluble uncombined compounds (e.g. cadmium or soluble impurities). This washing process does produce toxic byproducts that can only be tolerated in certain countries (e.g. India, China).<br />
+<br />
+Manufacturers have specific recommendations for each stain (for an example, click the link below for the Mason reference guide). These stains must not be <a  href="https://digitalfire.com/glossary/ball+milling">ball milled</a> (mill the rest of the glaze prior to adding the stain). Some suppliers may hesitate to publish specifics that might give away trade secrets of their products, even relating to the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> requirements in host glazes.<br />
+<br />
+Regardless of manufacturers' claims, detailed testing is needed to establish a firing curve and a compatible host glaze to get the best possible color. Encapsulated stains can cause <a  href="https://digitalfire.com/glossary/glaze+bubbles">bubbling</a> in specific glazes, even if the firing temperature is under the stability guideline. <br />
+<br />
+Although testing can discover combinations that perform outside stated boundaries (e.g. above 2300F or in glaze chemistries not recommended) it is best to follow directions. When the crystalline compounds are fired above recommended temperature they can release the toxic compound into the glaze (normally without volatilization unless the maximum temperature is greatly exceeded). Cadmium content and cadmium release are separate issues. The manufacturing process of these stains is designed to create a stable zircon compound from a parent metal that would otherwise be unstable (e.g. leachable <a  href="https://digitalfire.com/glossary/toxicity">toxicity</a>). Metal release tests must be done to monitor metal release.<br />
+<br />
+Other kinds of encapsulated stains besides cadmium are: Zircon Pr Yellow, Zircon Vanadium turquoise, Zircon Iron Coral, Zircon Vanadium Orange, Zircon Pr/Vanadium Green. The color depends on the sintering temperature.<p style="clear:left"></p></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">G2931K Transparent cone 03 with 15% inclusion stains</h3>
+<br /><a href="https://digitalfire.com/picture/2046"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/gwnwfxp8hh.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2046">click here</a> to see it.</p>
+<p>On <a  href="https://digitalfire.com/glossary/zero3">Zero3</a> <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a>. Between 10 and 15% stain with 2-3% Zirocpax (<a  href="https://digitalfire.com/material/1722">zircon</a>) added (to prevent <a  href="https://digitalfire.com/glossary/glaze+bubbles">bubbling</a>). The <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a> approached cone 03 (1950F) at 100F/hr for the final 100 degrees, held for 5 minutes, dropped to 1800 and held for 30 minutes.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">When using stains, customize the percentage, host glaze and firing schedule</h3>
+<br /><a alt="Mugs with red and purple glaze stains" href="https://digitalfire.com/picture/2187"><img class="flexleft50" alt="Mugs with red and purple glaze stains"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/rgaxa5s2cc.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2187">click here</a> to see it.</p>
+<p>These are <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a> clear glazes with <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a> added and fired at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>. The one on the left has 11% Mason 6021 encapsulated red. It is pebbling the surface (even with 2% <a  href="https://digitalfire.com/material/1722">zircon</a>), it may be at the upper end of its firing range. Possible solutions are faster firing up and down to give the stain less chance to <a  href="https://digitalfire.com/glossary/decomposition">decompose</a>. Or firing at <a  href="https://digitalfire.com/glossary/cone+5">cone 5</a> instead. Or a <a  href="https://digitalfire.com/glossary/drop-and-soak+firing">drop-and-hold</a> <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a>. Or a lower percentage, that could impart a bit of variation where it is thicker and thinner (like the purple one). A different host glaze, perhaps one with less <a  href="https://digitalfire.com/glossary/borate">boron</a>. The purple one has 10% Mason 6304, it is not affecting the <a  href="https://digitalfire.com/glossary/glossy+glaze">glossy glaze</a> surface. But the percentage needs to be higher to prevent the wash-out of color where it is applied thinner.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Transparent inner glaze over an encapsulated stained engobe</h3>
+<br /><a href="https://digitalfire.com/picture/1838"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/5or2xg2kcf.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1838">click here</a> to see it.</p>
+<p>Encapsulated <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a> can reach their limits in a glaze host at cone six and begin to dissolve and <a  href="https://digitalfire.com/glossary/decomposition">decompose</a>. That is an obvious problem on a food surface. But in a less fluid <a  href="https://digitalfire.com/glossary/underglaze">underglaze</a> they can survive longer. The bright orange color on the left was likely done this way. The transparent over glaze is isolating it from any contact with food or drink. However people are more wary of the risk of glazes <a  href="https://digitalfire.com/glossary/leaching">leaching</a> heavy metals and having bright colours on food surfaces may not send the right message.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">The covering power and opacity of an encapsulated stain</h3>
+<br /><a href="https://digitalfire.com/picture/2050"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/m6uxxnif47.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2050">click here</a> to see it.</p>
+<p>This <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> bowl has a black <a  href="https://digitalfire.com/glossary/engobe">engobe</a> inside and half way down the outside. This inside glaze is a transparent (<a  href="https://digitalfire.com/recipe/g2926b">G2926B</a>) but the outside is that same transparent with 11% added encapsulated red stain. Notice that the glaze is so opaque that you cannot see where the black engobe ends and the while porcelain body begins!</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">The varying power of different encapsulated stains</h3>
+<br /><a href="https://digitalfire.com/picture/2069"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/jjhfnnkt7h.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2069">click here</a> to see it.</p>
+<p>These mugs are fired at cone 03. The outside glazes are <a  href="https://digitalfire.com/recipe/g2931k">G2931K</a> transparent with added stain plus 3% <a  href="https://digitalfire.com/material/1724">Zircopax</a>. The left one contains 10% Mason 6021 red. The right one has 15% Cerdec 297497 red stain. The latter is an older product, obviously not as potent. Encapsulated <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a> are a revolution in <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a> but test the ones available. You could save money and get better color at the same time.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">The amount of encapsulated stain needed for intense color</h3>
+<br /><a href="https://digitalfire.com/picture/2043"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/7rysuk6jrf.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2043">click here</a> to see it.</p>
+<p>This is about 1/2 gallon of glaze with 150 grams of yellow stain ready to mix in. That stain retails for about $30 so its cost alone is about $60 for each gallon (in 2017). But the incredible color it produces cannot be done in any other practical way.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Want bright orange? Use a stain in your own base transparent recipe.</h3>
+<br /><a alt="Fired glaze tiles showing an orange promise, what actually came out and a better way" href="https://digitalfire.com/picture/2343"><img class="flexleft50" alt="Fired glaze tiles showing an orange promise, what actually came out and a better way"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/7m8p6fq5oy.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2343">click here</a> to see it.</p>
+<p>Orange is a very difficult color in <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>. Inclusion <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a> are the only reliable method, they universally used in industry. But you could ignore that and try a bunch of recipes online. When they are  presented on flashy web pages they can look tantalizing. But beware! Are the exotic materials you need to buy worth it. Will it actually fire orange? Will it <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a> or run or <a  href="https://digitalfire.com/trouble/glaze+blisters">blister</a> or leach or cutlery mark or <a  href="https://digitalfire.com/trouble/crawling">crawl</a> or settle like a rock in the bucket? It is much better to put an orange <a  href="https://digitalfire.com/glossary/encapsulated+stain">encapsulated stain</a> into a transparent glaze you already know works on your clay. Then just experiment with percentage to get the color you want. Or, how about trying a premixed orange at <a  href="https://digitalfire.com/glossary/earthenware">low fire</a>? Ware can be amazingly <a  href="https://digitalfire.com/glossary/functional">functional</a> at low temperatures (e.g. cone 03-02) and bright colours labelled for <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 06</a> mostly work fine in that range.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Industry can never make ware like a potter, right?</h3>
+<h4 style="color:#888888; margin-top:0px;">These souvenir mugs might make you reconsider!</h4>
+<br /><a alt="Alaska souvenir coffee mugs" href="https://digitalfire.com/picture/3543"><img class="flexleft50" alt="Alaska souvenir coffee mugs"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/yqdesxbcli.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3543">click here</a> to see it.</p>
+<p>These <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> mugs are sold at many tourist shops on the Alaskan cruise circuit. Made in China, of course. But their quality is astounding. It seems that almost anything a potter can do can now be done in industry. And, these teach them multiple lessons - great skill in the use of decals (even inside), meeting different glazes at the rims, evenness of application, layering, the use of wax resist, etc. They likely have a glossy and matte <a  href="https://digitalfire.com/glossary/base+glaze">base glaze</a> and add <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a> (to get the black, blue, red, white, green). Notice they have an <a  href="https://digitalfire.com/glossary/iron+red+glaze">iron red</a> (lower right) that is stable enough not to run and host an even more <a  href="https://digitalfire.com/glossary/fluid+melt+glazes">fluid melt</a> second layer. They also have a stony yet <a  href="https://digitalfire.com/glossary/functional">functional</a> matte white (bottom left). And they are using encapsulated stains to get that bright red (even on food surfaces). In the words of a reader: “It seems industry has adopted a parasitic role vis-a-vis the creative types, put up with it, and try to be better at marketing”.<br />
+<br />
+You can make <a  href="https://digitalfire.com/glossary/dipping+glaze">dipping glaze</a> versions of all of these:<br />
+Black glossy: <a  href="https://insight-live.com/insight/share.php?z=jxpSEPKSku">G3914A</a> and <a  href="https://insight-live.com/insight/share.php?z=bdwzQm6yQF">G2926BL</a><br />
+Black matte: <a  href="https://insight-live.com/insight/share.php?z=jxpSEPKSku">G2934BL</a><br />
+Iron Red: <a  href="https://insight-live.com/insight/share.php?z=6TesQXNkkA">G3948A</a><br />
+White stoney matte: <a  href="https://insight-live.com/insight/share.php?z=y9rvvqsPy4">G2934Y2</a><br />
+Glossy colors: Add stains to <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a><br />
+Matte colors: Add stains to <a  href="https://digitalfire.com/recipe/g2934">G2934</a><br />
+</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Glaze with an encapsulated stain is bubbling. It needs Zircopax.</h3>
+<br /><a alt="Glaze orange peel defect" href="https://digitalfire.com/picture/2049"><img class="flexleft50" alt="Glaze orange peel defect"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/u1ljkuemj8.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2049">click here</a> to see it.</p>
+<p>These two pieces are fired at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>. The <a  href="https://digitalfire.com/glossary/base+glaze">base transparent</a> glaze is the same - <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a> <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> transparent. The amount of encapsulated red stain is the same (11% Mason 6021 Dark Red). But two things are different. Number 1: 2% <a  href="https://digitalfire.com/material/1724">Zircopax</a> (<a  href="https://digitalfire.com/material/1722">zircon</a>) has been added to the upper glaze. The stain manufacturers recommend this, saying that it makes for a brighter color. However, that is not what we see here. What we do see is the particles of unmelting zircon acting as seeds and collection points for the bubbles (the larger ones produced are escaping). Number 2: The <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a>. The top one has been fired to approach cone 6 and 100F/hr, held for five minutes at <a  href="https://digitalfire.com/glossary/cone+6">2200F</a> (cone 6 as verified in our kiln by cones), dropped quickly to 2100F and held for 30 minutes.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">The glaze with less stain + 2% Zircopax is brighter than the one with more stain!</h3>
+<br /><a href="https://digitalfire.com/picture/2057"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/lqqfermk8t.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2057">click here</a> to see it.</p>
+<p>These are cone 03 porcelains with <a  href="https://digitalfire.com/recipe/g2931k">G2931K</a> clear glaze base plus Mason 6021 <a  href="https://digitalfire.com/glossary/encapsulated+stain">encapsulated stain</a> (which is very expensive). The one on the left has 15% stain added. The one on the right is slightly less dense red but has only 10% stain plus 2% <a  href="https://digitalfire.com/material/1722">zircon</a> (<a  href="https://digitalfire.com/material/1724">zircopax</a>). Notice the zircon has smoothed the surface also, this is a known benefit of using it with encapsulated <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a>. The 2% addition is not enough to <a  href="https://digitalfire.com/glossary/opacifier">opacify</a>, the color remains deep and <a  href="https://digitalfire.com/glossary/translucency">translucent</a>. But the surface is still not completely smooth and glassy as is the <a  href="https://digitalfire.com/glossary/base+glaze">base transparent</a> glaze on its own. This can be improved using a <a  href="https://digitalfire.com/glossary/drop-and-soak+firing">drop-and-hold</a> <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Red stain in matte and glossy bases. Which looks best?</h3>
+<br /><a href="https://digitalfire.com/picture/2161"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/1tuxw3rodf.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2161">click here</a> to see it.</p>
+<p>The silky matte. 11% Mason 6021 <a  href="https://digitalfire.com/glossary/encapsulated+stain">encapsulated stain</a> has been added to each. The one on the left is <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a> glossy base (it also has 2% <a  href="https://digitalfire.com/material/1724">zircopax</a> as a <a  href="https://digitalfire.com/glossary/fining+agent">fining agent</a> for the micro-bubbles). But in the matte base on the right, <a  href="https://digitalfire.com/recipe/g2934y">G2934Y</a>, no zircopax is necessary. It produces a stunning surface using this and other <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a> (including orange, yellow, black, purple), very pleasant to touch.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Zircopax as a fining agent to de-bubble a stained glaze</h3>
+<br /><a href="https://digitalfire.com/picture/2048"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/tsvmr6kxcr.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2048">click here</a> to see it.</p>
+<p>The cone 03 <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> cup on the left has 10% Cerdec <a  href="https://digitalfire.com/glossary/encapsulated+stain">encapsulated stain</a> 239416 in the <a  href="https://digitalfire.com/recipe/g2931k">G2931K</a> clear base. The surface is orange-peeled because the glass is full of micro-bubbles that developed during the firing. Notice that the insides of the cups are crystal-clear, no bubbles. So here they are a direct product of the presence of the stain. The glaze on the right has even more stain, 15%. But it also has a 3% addition of <a  href="https://digitalfire.com/material/1724">Zircopax</a> (<a  href="https://digitalfire.com/material/1722">zircon</a>). Suppliers of encapsulated <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a> recommend a zircon addition, but are often unclear about why. Here is the reason: It is a "<a  href="https://digitalfire.com/glossary/fining+agent">fining agent</a>".</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Encapsulated stains are firing with a mass of bubbles and pinholes</h3>
+<br /><a href="https://digitalfire.com/picture/2038"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/rkftrh65pb.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2038">click here</a> to see it.</p>
+<p>This is happening on five different <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a> at 8% concentrations. The body: A <a  href="https://digitalfire.com/glossary/frit">fritted</a> <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a>. Temperature: Cone 03. The glaze: 85% <a  href="https://digitalfire.com/glossary/frit">frit</a>. The solution? Documentation for inclusion <a  href="https://digitalfire.com/glossary/frit">frits</a> notes that adding 2-3% <a  href="https://digitalfire.com/material/1722">zircon</a> can brighten the color. Although this does not seem intuitive, we added 2% anyway and refired another sample. You can see the dramatic difference on that tile below. The color is brighter because the micro-bubble clouds that were diffusing it are gone! Of course, it is apparent that the percentage of stain also needs to be increased to get more intense color. What happened to the bubbles? It could be that the particles of zircon that float, unmelted in the glaze melt, act as seed-points for bubble <a  href="https://digitalfire.com/glossary/agglomeration">agglomeration</a> and the bigger bubbles then break the surface and it heals behind them. But where do the bubbles come from? I do not know.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A glaze incompatible with chrome-tin stains (but great with inclusion stains)</h3>
+<br /><a alt="A bright red matte glaze" href="https://digitalfire.com/picture/1023"><img class="flexleft50" alt="A bright red matte glaze"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/daszihigaw.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1023">click here</a> to see it.</p>
+<p>Left: A <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> <a  href="https://digitalfire.com/glossary/matte+glaze">matte glaze</a> (<a  href="https://digitalfire.com/recipe/g2934">G2934</a> with no <a  href="https://digitalfire.com/glossary/colorant">colorant</a>). Middle: 5% Mason 6006 chrome-tin red stain added. Right: 5% Mason 6021 encapsulated red stain added. Why is there absolutely no color in the center glaze? This host recipe does not have the needed <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> to develop the #6006 chrome-tin color (Mason specifies 10% minimum <a  href="https://digitalfire.com/oxide/cao">CaO</a>, this almost has enough at 9.8%, but it also has 5% <a  href="https://digitalfire.com/oxide/mgo">MgO</a> and that is killing the color). Yet this same glaze produces a good red with #6021 <a  href="https://digitalfire.com/glossary/encapsulated+stain">encapsulated stain</a> at only 5% (using 20% or more encapsulated stain is not unusual - so achieving this color with only 5% is amazing).</p>
+<p style="clear:left"></p>
+<h3>Inbound Photo Links</h3><table><tr>
+<td style="vertical-align:top; font-size:80%;">
+<br /><a href="https://digitalfire.com/picture/1221"><img style="margin:0px 10px 10px 0px; height:100px;" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/xudretikiz-100H.jpg" /></a><br />Pushing the limits of an encapsulated stain
+</td>
+</tr></table><br />
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/colorant">Colorant</a>
+<br /><i>In <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a> and pottery, <a  href="https://digitalfire.com/glossary/colorant">colorants</a> are added to glazes as <a  href="https://digitalfire.com/glossary/metal+oxides">metal oxides</a>, metal-oxide-containing raw materials or as manufactured <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/glass-ceramic+glazes">Glass-Ceramic Glazes</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/ceramic+stain">Ceramic Stain</a>
+<br /><i>Ceramic <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a> are manufactured powders. They are used as an alternative to employing metal oxide powders and have many advantages.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/food+safe">Food Safe</a>
+<br /><i>Be skeptical of claims of <a  href="https://digitalfire.com/glossary/food+safe">food safety</a> from potters who cannot explain or demonstrate why. Investigate the basis of manufacturer claims and labelling and the actual use to which their products are put.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/stain+medium">Stain Medium</a>
+<br /><i>It is a mistake to use pure <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a> for decorating ware. Stains need to be mixed with a ceramic carrier and a working medium to work and fire well.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/cadmium+oxide">Cadmium Oxide</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/red+stains">Red Stains</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/stain">Stain</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/mason+6021+red+stain">Mason 6021 Red Stain</a>
+<br /><i>An encapsulated red stain, it has proven better than any other red we have ever tried for glazes. And it works in bodies.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="https://digitalfire.com/oxide/cdo">CdO - Cadmium Oxide</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/glaze+and+body+pigments+and+stains+in+the+ceramic+tile+industry">Glaze and Body Pigments and Stains in the Ceramic Tile Industry</a>
+<br /><i>A complete discussion of how ceramic pigments and <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a> are manufactured and used in the tile industry. It includes theory, types, colors, <a  href="https://digitalfire.com/glossary/opacifier">opacification</a>, processing, particles size, testing information.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="https://digitalfire.com/project/stains">Stains</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1422">https://www.masoncolor.com/reference-guide</a>
+<br /><i>Mason Color Reference Guide</i>
+<br /><i style="color:#888888;">A large chart showing each stain. The rows are grouped according to type and each row has tags that references temperature capability and <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> requirement for the host glaze. There are also columns for each element and the rows have check marks for each contained.</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

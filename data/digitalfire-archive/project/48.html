@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Project: Build a kiln monitoring device</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="" name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item"><a class="nav-link" href="../material/list.html">Materials</a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item active" href="list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=project" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container"><p><a aria-controls="collapse1" aria-expanded="false" class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button">All Projects</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a href="15.html" title="15">2019 Jiggering-Casting Project of Medalta 66 Mug</a><br/><a href="54.html" title="54">A cereal bowl jigger mold made using 3D printing</a><br/><a href="33.html" title="33">Beer Bottle Master Mold via 3D Printing</a><br/><a href="61.html" title="61">Better porosity for Brown Sugar Savers</a><br/><button class="btn btn-dark" type="button">Build a kiln monitoring device</button><br/><a href="69.html" title="69">Celebration Project</a><br/><a href="60.html" title="60">Coffee Mug Slip Casting Mold via 3D Printing</a><br/><a href="29.html" title="29">Comparing the Melt Fluidity of 16 Frits</a><br/><a href="52.html" title="52">Cookie Cutting clay with 3D printed cutters</a><br/><a href="41.html" title="41">Evaluating a clay's suitability for use in pottery</a><br/><a href="55.html" title="55">Make a mold for 4-gallon stackable calciners</a><br/><a href="49.html" title="49">Make Your Own Pyrometric Cones</a><br/><a href="47.html" title="47">Make your own sieve shaker to process ceramic slurries</a><br/><a href="40.html" title="40">Making a high quality ceramic tile</a><br/><a href="46.html" title="46">Making a Plaster Table</a><br/><a href="37.html" title="37">Making Bricks</a><br/><a href="50.html" title="50">Making our own kiln posts using a hand extruder</a><br/><a href="59.html" title="59">Medalta Ball Pitcher Slip Casting Mold via 3D Printing</a><br/><a href="34.html" title="34">Medalta Jug Master Mold Development</a><br/><a href="63.html" title="63">Mold Natches</a><br/><a href="32.html" title="32">Mother Nature's Porcelain - Plainsman 3B</a><br/><a href="66.html" title="66">Mug Handle Casting</a><br/><a href="39.html" title="39">Nursery plant pot mold via 3D printing</a><br/><a href="30.html" title="30">Pie-Crust Mug-Making Method</a><br/><a href="35.html" title="35">Plainsman 3D, Mother Nature's Porcelain/Stoneware</a><br/><a href="38.html" title="38">Project to Document a Shimpo Jiggering Attachment</a><br/><a href="36.html" title="36">Roll, Cut, Pull, Attach Handle-making Method</a><br/><a href="23.html" title="23">Slurry Mixing and Dewatering Your Own Clay Body</a><br/><a href="24.html" title="24">Testing a New Load of EP Kaolin</a><br/><a href="44.html" title="44">Using milk as a glaze</a></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Build a kiln monitoring device</h1>
+<p>The actual <a href="../glossary/firing+schedule.html">firing schedule</a> experienced by ware in a kiln can be very different from the one programmed into the controller (e.g. heavily packed kilns may heat or cool slower than programmed). Many glazes depend on specific schedules, it is important to have a record of what happened in the kiln to diagnose any problems.<br/>
+<br/>
+In the process of this project to build a monitoring device we have hit a number of dead ends. But each, plus the rapid development of controllers, has made the potential of this device more evident. Our aim is to be able to log firing curves into an <a href="../glossary/digitalfire+insight-live.html">insight-live</a>.com account, accomplishing this by acting as an <a href="../glossary/digitalfire+api.html">API</a> waiting for temperature measurements from micro-controller devices. Thus, this is not a <a href="../glossary/kiln+controller.html">kiln controller</a>, it is a data logger (we are not disturbing the controller already on the kiln).<br/>
+<br/>
+The advent of ESP32 microcontrollers is a game changer. These are RISC-V processors with unbelievable power, many sell for $10 or even less. They have a wifi antenna, enabling interaction using any device with a browser. They do not have a conventional operating system that can be hacked from an external source. The device we want to make will only send data to the API at Insight-live.com, all user interaction will be done there, totally out-of-band. The complexity of this device will thus be kept to an absolute minimum, just enough to recognize the commencement of a firing and send measurement data at defined intervals.</p><p style="clear:left"></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Inside a kiln with a Bartlett Genesis controller</h3>
+<br/><a alt="A Bartlett Genesis kiln controller circuit board" href="../picture/3036.html"><img alt="A Bartlett Genesis kiln controller circuit board" class="flexleft50" loading="lazy" src="../media/images/pz4rayha1y.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3036.html">click here</a> to see it.</p>
+<p>The 220V enters lower left to a terminal block. That splits to a transformer (above) and relays (below that). The 4-07-6024  transformer supplies power to the SMT_3140 controller board (converting the 220V down to that needed by the circuit board). The controller is run by an MSP430 Texas Instruments microcontroller (lower left closeup). That controller has inputs from the <a href="../picture/3125.html">thermocouple</a> and a current monitor (yellow donut shape around the wires going to the elements). The board has outputs that connect to the relay, that relay in turn controls the flow of current to the elements. This is a simple device, but not something to be replaced lightly. <a href="../glossary/do-it-yourself.html">DIY</a> controller boards documented online look tempting but they are not CSA or UL approved (so fire insurance coverage is implicated). Commercial controllers focus on safety and liability over functionality, they handle intermittent thermocouple connections, bad thermocouple readings, stuck relays and shorted and weak elements - these are runaway conditions that could become meltdowns in a kiln controlled by a DIY device. This being said, these commercial products do have a weakness: The relays. They are mechanical devices and are the first thing to need replacement. <a href="../glossary/kiln+controller.html">Kiln controllers</a> thus need To be good at recognizing relay failure.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Kiln Firing monitor - Going in the wrong direction</h3>
+<br/><a href="../picture/2254.html"><img class="flexleft50" loading="lazy" src="../media/images/to2ygjiyyo.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2254.html">click here</a> to see it.</p>
+<p>So many glazes appear as they do because of the <a href="../glossary/firing+schedule.html">firing schedule</a> (especially the cooling curve). Imagine getting an awesome result out of a kiln and not knowing (or being able to replicate) the exact firing schedule that produced it. Or a bad result and being able to relate that to the firing schedule that actually occurred. This is not a <a href="../glossary/kiln+controller.html">kiln controller</a>, it simply reads and records the temperature once per minute. It is a <a href="../picture/3600.html">Raspberry Pi</a> computer with camera that reads the temperature display on the kiln (using machine vision). This seemed like a good idea at the time, but adding all the difficulties of reading the display turned out not to be worth the trouble when it is so easy to connect a dedicated <a href="../picture/3125.html">thermocouple</a>. Further, the device is too capable. Being an entire Linux computer it would be a vector for hacker intrusion into the host wifi network unless being constantly updated (a large Las Vegas casino was hacked recently, the vector into their network was an iOT aquarium thermometer). While it can be programmed as an access point, hosting its own wifi network, this is too much trouble to use, people are not going to want to constantly change their wifi connection. More problems: Its complexity means there are too many things to go wrong, it uses too much power for battery operation and is a hassle to plug in. Most importantly, the computer knowledge required is well beyond the ability of the average person to navigate.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Type of components needed to develop a kiln monitoring device</h3>
+<br/><a href="../picture/2995.html"><img class="flexleft50" loading="lazy" src="../media/images/weha977pgv.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2995.html">click here</a> to see it.</p>
+<p></p><p>These are all very inexpensive and easily available.</p>
+<ul>
+<li>2.4" 240x320 TFT Touch Display</li>
+<li>ESP32 controller (a wifi-equipped computer on a chip)</li>
+<li>MX6675 <a href="../picture/3125.html">thermocouple</a> <a href="../glossary/body+glaze+interface.html">interface</a> and thermocouple</li>
+<li>Prototyping breadboard with wire interconnects</li>
+<li>Breadboard Power Supply Module 3.3V/5V</li>
+</ul>
+<p>When the prototype is working we will incorporate the software into a ready-made, battery-powered device that uses this same controller chip. It is likely that the display will not be needed for logging operations, the device will simply watch for temperature rise and automatically begin recording when that happens.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">ESP32 devices with cases, screens and batteries</h3>
+<br/><a href="../picture/2996.html"><img class="flexleft50" loading="lazy" src="../media/images/snbcp2ggai.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2996.html">click here</a> to see it.</p>
+<p>There are many options like these for the packaging in the final logging device. The one with the larger screen here costs ~$50. The device with the small one has the same computation and communication abilities (but is much less expensive).<br/>
+<br/>
+The screen will likely be used for simple status information to assure the device is running and recording. Both devices have a button, it may be possible to use this to initiate recording of a firing. Both of these are available without a display, it may not be needed once we are assured of reliable operation (its absence would greatly extend battery life).</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/firing+schedule.html">Firing Schedule</a>
+<br/><i>Designing a good kiln <a href="../glossary/firing+schedule.html">firing schedule</a> for your ware is a very important, and often overlooked factor for obtained successful firings.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/drop-and-soak+firing.html">Drop-and-Soak Firing</a>
+<br/><i>A kiln <a href="../glossary/firing+schedule.html">firing schedule</a> where temperature is eased to the top, then dropped quickly and held at a temperature 100-200F lower.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/kiln+controller.html">Kiln Controller</a>
+<br/><i>In ceramic kilns the <a href="../glossary/firing+schedule.html">firing schedule</a> is typically managed automatically by an <a href="../glossary/kiln+controller.html">electronic controller</a>. But that may not mean that ware gets automatically fired to the correct temperature and atmosphere.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/kcd">Kiln Controller Device List</a>
+<br/><i>If you are aware of devices not listed here please contact us. We want to focus on those in active development. Devices supplied on manufactured kilns are usually relabelled, they are not actually made by the kiln manufacturer.</i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></div></body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Drying Factor - DFAC</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="The DFAC Drying Factor test visually displays a plastic clay's response to very uneven drying. It is beneficial to show the relative drying performance of different clays.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+March 2026: We are doing major upgrades to code here, please be patient regarding any issues. If any page is not working for a period of hours, please contact us. Thank you.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item active" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=test" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:center; vertical-align:top;">Feb 14-15, 2026 - <b>Major Server <a href="https://digitalfire.com">Upgrade</a> Done</b></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">Test Code-numbers</a> <a class="btn btn-primary"href="https://digitalfire.com/test/list" role="button" aria-expanded="false">All Tests</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a title="94 - +44 and +63 Micron Residue" href="https://digitalfire.com/test/44mr">44MR</a> |</nobr> <nobr><a title="38 - Apparent Porosity" href="https://digitalfire.com/test/appo">APPO</a> |</nobr> <nobr><a title="85 - Average Particle Size (Microns)" href="https://digitalfire.com/test/avps">AVPS</a> |</nobr> <nobr><a title="42 - Apparent Viscosity (cps)" href="https://digitalfire.com/test/avsc">AVSC</a> |</nobr> <nobr><a title="36 - Bulk Density g/cc (Packed)" href="https://digitalfire.com/test/bdgc">BDGC</a> |</nobr> <nobr><a title="23 - Bulk Density lbs/cu. ft. (Packed)" href="https://digitalfire.com/test/bdlb">BDLB</a> |</nobr> <nobr><a title="73 - Borate LOI" href="https://digitalfire.com/test/bloi">BLOI</a> |</nobr> <nobr><a title="89 - Boiling Water:Ice Water Glaze Fit Test" href="https://digitalfire.com/test/bwiw">BWIW</a> |</nobr> <nobr><a title="90 - Carbon content" href="https://digitalfire.com/test/ccon">CCON</a> |</nobr> <nobr><a title="62 - Drying Factor/Water Content/Solubles" href="https://digitalfire.com/test/cdry">CDRY</a> |</nobr> <nobr><a title="25 - CEC (meq/100g)" href="https://digitalfire.com/test/cec">CEC</a> |</nobr> <nobr><a title="47 - Clay Water Content - Powder, Plastic" href="https://digitalfire.com/test/clwc">CLWC</a> |</nobr> <nobr><a title="99 - Compressive Strength" href="https://digitalfire.com/test/cmst">CMST</a> |</nobr> <nobr><a title="10 - Co-efficient of Linear Expansion" href="https://digitalfire.com/test/cole">COLE</a> |</nobr> <nobr><a title="64 - Cold Over Boiled Porosity" href="https://digitalfire.com/test/covb">COVB</a> |</nobr> <nobr><a title="63 - Clay, Silt, Sand Sedimentation Test" href="https://digitalfire.com/test/csss">CSSS</a> |</nobr> <nobr><a title="1 - Density (Specific Gravity)" href="https://digitalfire.com/test/dens">DENS</a> |</nobr> <nobr><a title="46 - Drying Factor" href="https://digitalfire.com/test/46"><button type="button" class="btn btn-dark">DFAC</button></a> |</nobr> <nobr><a title="77 - Deflocculation Demand" href="https://digitalfire.com/test/dfdm">DFDM</a> |</nobr> <nobr><a title="105 - Dielectric Strength" href="https://digitalfire.com/test/diel">DIEL</a> |</nobr> <nobr><a title="8 - Density, loose packed (lbs/cu fut)" href="https://digitalfire.com/test/dnlp">DNLP</a> |</nobr> <nobr><a title="19 - Dry Strength (kgf/cm2)" href="https://digitalfire.com/test/ds">DS</a> |</nobr> <nobr><a title="51 - Drying Shrinkage" href="https://digitalfire.com/test/dshr">DSHR</a> |</nobr> <nobr><a title="59 - Dry Strenth (Round Bars)" href="https://digitalfire.com/test/dsrn">DSRN</a> |</nobr> <nobr><a title="60 - Dry Strength (Square Bars)" href="https://digitalfire.com/test/dstr">DSTR</a> |</nobr> <nobr><a title="13 - Decomposition Temperature" href="https://digitalfire.com/test/dtmp">DTMP</a> |</nobr> <nobr><a title="112 - Engobe Body Compatibility Test" href="https://digitalfire.com/test/ebct">EBCT</a> |</nobr> <nobr><a title="97 - Elastic Modulus, 20 degrees C" href="https://digitalfire.com/test/em20">EM20</a> |</nobr> <nobr><a title="96 - Frit Fusibility Test" href="https://digitalfire.com/test/frfu">FRFU</a> |</nobr> <nobr><a title="65 - Fired Strength Round Bars" href="https://digitalfire.com/test/frrd">FRRD</a> |</nobr> <nobr><a title="102 - Fracture Toughness" href="https://digitalfire.com/test/frtg">FRTG</a> |</nobr> <nobr><a title="21 - Firing Shrinkage" href="https://digitalfire.com/test/fshr">FSHR</a> |</nobr> <nobr><a title="66 - Fired Strength Square Bars" href="https://digitalfire.com/test/fstr">FSTR</a> |</nobr> <nobr><a title="113 - Glaze Body Bond Test" href="https://digitalfire.com/test/gbbt">GBBT</a> |</nobr> <nobr><a title="110 - Glaze Melt Fluidity - Ball Test" href="https://digitalfire.com/test/gbmf">GBMF</a> |</nobr> <nobr><a title="27 - GE Brightness" href="https://digitalfire.com/test/gebr">GEBR</a> |</nobr> <nobr><a title="68 - Glaze Observations" href="https://digitalfire.com/test/glaz">GLAZ</a> |</nobr> <nobr><a title="58 - Glaze Melt Flow - Runway Test" href="https://digitalfire.com/test/glfl">GLFL</a> |</nobr> <nobr><a title="69 - Glaze Hardness" href="https://digitalfire.com/test/glhd">GLHD</a> |</nobr> <nobr><a title="70 - Glaze Leaching Test" href="https://digitalfire.com/test/glle">GLLE</a> |</nobr> <nobr><a title="14 - Frit Softening Point" href="https://digitalfire.com/test/gspt">GSPT</a> |</nobr> <nobr><a title="92 - Glass Transition Temperature" href="https://digitalfire.com/test/gttm">GTTM</a> |</nobr> <nobr><a title="100 - Hardness (Microindentation) Test" href="https://digitalfire.com/test/hdmi">HDMI</a> |</nobr> <nobr><a title="28 - Hegman Fineness" href="https://digitalfire.com/test/hegf">HEGF</a> |</nobr> <nobr><a title="91 - Heating Microscope Analysis for Frits" href="https://digitalfire.com/test/hma">HMA</a> |</nobr> <nobr><a title="95 - Heating Microscope Analysis" href="https://digitalfire.com/test/hman">HMAN</a> |</nobr> <nobr><a title="7 - Hardness (Moh)" href="https://digitalfire.com/test/hmoh">HMOH</a> |</nobr> <nobr><a title="88 - I.F.P. (celsius)" href="https://digitalfire.com/test/ifp">IFP</a> |</nobr> <nobr><a title="108 - 300F:Ice Water Crazing Test" href="https://digitalfire.com/test/iwct">IWCT</a> |</nobr> <nobr><a title="79 - % < 10 microns" href="https://digitalfire.com/test/l10m">L10M</a> |</nobr> <nobr><a title="81 - % < 1 micron" href="https://digitalfire.com/test/l1m">L1M</a> |</nobr> <nobr><a title="78 - % < 20 microns" href="https://digitalfire.com/test/l20m">L20M</a> |</nobr> <nobr><a title="80 - % < 2 microns" href="https://digitalfire.com/test/l2m">L2M</a> |</nobr> <nobr><a title="93 - % < 30 microns" href="https://digitalfire.com/test/l30m">L30M</a> |</nobr> <nobr><a title="17 - % < 5 microns" href="https://digitalfire.com/test/l5">L5</a> |</nobr> <nobr><a title="18 - % < 0.5 microns" href="https://digitalfire.com/test/l5m">L5M</a> |</nobr> <nobr><a title="49 - LOI/Density/Water Content" href="https://digitalfire.com/test/ldw">LDW</a> |</nobr> <nobr><a title="15 - LOI (100-1000C)" href="https://digitalfire.com/test/loi">LOI</a> |</nobr> <nobr><a title="30 - Liquid Limit" href="https://digitalfire.com/test/lqlm">LQLM</a> |</nobr> <nobr><a title="76 - Median Particle Size (Microns)" href="https://digitalfire.com/test/mdps">MDPS</a> |</nobr> <nobr><a title="57 - Frit Melting Range (C)" href="https://digitalfire.com/test/mlrg">MLRG</a> |</nobr> <nobr><a title="75 - Moisture Content - Powder" href="https://digitalfire.com/test/moip">MOIP</a> |</nobr> <nobr><a title="61 - Modulus of Rupture - Fired" href="https://digitalfire.com/test/mor">MOR</a> |</nobr> <nobr><a title="74 - Dry M.O.R. (50% Silica)" href="https://digitalfire.com/test/mor5">MOR5</a> |</nobr> <nobr><a title="12 - Modulus of Rupture - Dry" href="https://digitalfire.com/test/mord">MORD</a> |</nobr> <nobr><a title="5 - Oil Adsorption (Spatula)" href="https://digitalfire.com/test/olad">OLAD</a> |</nobr> <nobr><a title="107 - % Passing 200 Mesh Wet" href="https://digitalfire.com/test/p200">P200</a> |</nobr> <nobr><a title="32 - % Passing 325 Mesh Wet" href="https://digitalfire.com/test/p325">P325</a> |</nobr> <nobr><a title="71 - Pugged Body Properties Overview" href="https://digitalfire.com/test/pbpo">PBPO</a> |</nobr> <nobr><a title="11 - Pyrometric Cone Equivalent" href="https://digitalfire.com/test/pce">PCE</a> |</nobr> <nobr><a title="4 - pH (pugged clay)" href="https://digitalfire.com/test/phpg">pHPG</a> |</nobr> <nobr><a title="87 - pH for dry powder" href="https://digitalfire.com/test/phpw">pHPW</a> |</nobr> <nobr><a title="72 - Pyroplastic Deformation" href="https://digitalfire.com/test/ppd">PPD</a> |</nobr> <nobr><a title="98 - Poisson's Ratio" href="https://digitalfire.com/test/prsm">PRSM</a> |</nobr> <nobr><a title="6 - Particle Shape (1-7 microns)" href="https://digitalfire.com/test/pshp">PSHP</a> |</nobr> <nobr><a title="37 - Reheat Change" href="https://digitalfire.com/test/rc">RC</a> |</nobr> <nobr><a title="34 - Rheology of a Ceramic Slurry" href="https://digitalfire.com/test/rheo">RHEO</a> |</nobr> <nobr><a title="9 - Sieve Analysis Dry" href="https://digitalfire.com/test/sadr">SADR</a> |</nobr> <nobr><a title="16 - Surface Area (m2/gm)" href="https://digitalfire.com/test/samg">SAMG</a> |</nobr> <nobr><a title="84 - Simple Clay Evaluation" href="https://digitalfire.com/test/scle">SCLE</a> |</nobr> <nobr><a title="41 - Shrinkage/Absorption Test" href="https://digitalfire.com/test/shab">SHAB</a> |</nobr> <nobr><a title="48 - Sieve Analysis 35-325 Wet" href="https://digitalfire.com/test/siev">SIEV</a> |</nobr> <nobr><a title="35 - Solubility" href="https://digitalfire.com/test/slby">SLBY</a> |</nobr> <nobr><a title="45 - Soluble Salts" href="https://digitalfire.com/test/solu">SOLU</a> |</nobr> <nobr><a title="104 - Specific Heat Capacity" href="https://digitalfire.com/test/sphc">SPHC</a> |</nobr> <nobr><a title="83 - Simple Shrinkage/Absorption" href="https://digitalfire.com/test/ssab">SSAB</a> |</nobr> <nobr><a title="24 - Sieve Analysis Wet" href="https://digitalfire.com/test/svwt">SVWT</a> |</nobr> <nobr><a title="82 - TGA" href="https://digitalfire.com/test/tga">TGA</a> |</nobr> <nobr><a title="103 - Thermal Conductivity, 20 degrees C" href="https://digitalfire.com/test/thco">THCO</a> |</nobr> <nobr><a title="101 - Tensile Strength, 25 degrees C" href="https://digitalfire.com/test/tnst">TNST</a> |</nobr> <nobr><a title="26 - Trace Elements (ppm)" href="https://digitalfire.com/test/trel">TREL</a> |</nobr> <nobr><a title="33 - Trace Minerals" href="https://digitalfire.com/test/trmn">TRMN</a> |</nobr> <nobr><a title="111 - Thermal Shock Failure" href="https://digitalfire.com/test/tsfl">TSFL</a> |</nobr> <nobr><a title="40 - Ultimate Particle Size Distribution" href="https://digitalfire.com/test/upsd">UPSD</a> |</nobr> <nobr><a title="20 - Water absorption" href="https://digitalfire.com/test/wabs">WABS</a> |</nobr> <nobr><a title="43 - Water of Plasticity" href="https://digitalfire.com/test/wopl">WOPL</a> |</nobr> <nobr><a title="50 - Whole Rock Analysis" href="https://digitalfire.com/test/wra">WRA</a> |</nobr> <nobr><a title="86 - Wet Sieve Residue" href="https://digitalfire.com/test/wsr">WSR</a> |</nobr> <nobr><a title="3 - Index of Refraction" href="https://digitalfire.com/test/xref">XREF</a></nobr></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>DFAC - Drying Factor Test</h1>
+<p>The <a  href="https://digitalfire.com/test/dfac">DFAC test</a> enables comparing the <a  href="https://digitalfire.com/glossary/drying+performance">drying performance</a> (resistance to cracking) of clays. It does this by speed-drying of a 12 cm by 5 mm thick rolled clay disk having a 6 cm metal disk placed on its center (the latter forces all water to migrate to the outer edge). Many factors related to the clay's <a  href="https://digitalfire.com/glossary/mineralogy">mineralogy</a>, <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a>, pugged integrity, <a  href="https://digitalfire.com/glossary/particle+size+distribution">particle size distribution</a>, <a  href="https://digitalfire.com/glossary/soluble+salts">soluble salts</a> content, etc. can be interpreted from the way and the degree to which the disc cracks, and the way its surface changes color during drying and firing.<br />
+<br />
+Generally, bodies having a high <a  href="https://digitalfire.com/glossary/drying+shrinkage">drying shrinkage</a>, e.g. ball clays, will score more poorly on this test. However, high drying strength mitigates cracking for a better score. This test is executed such that a typical body of good plasticity will crack the disk (type C crack). Calibration is done by tuning the temperature of drier or <a  href="https://digitalfire.com/picture/3383">dehydrator</a>. The crack width and number of cracks provide a way to score one body against another.<br />
+<br />
+It is best to combine the procedure for this test with the <a  href="https://digitalfire.com/test/ldw">LDW test</a> and <a  href="https://digitalfire.com/test/shab">SHAB test</a>, making the specimens for each at the same time. The specimens made during this test can also feed data to the SOLU test (for evaluating soluble salts).<br />
+<br />
+The DFAC test is a comparative, not an absolute, test. The results are rationalized against drying shrinkage and dry strength. For example, a clay of high dry strength that scores poorly here may actually perform well in use when ware is evenly dried.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Video: Making SHAB, DFAC, LDW clay body test bars</h3>
+<br /><a alt="Making clay test bars" href="https://digitalfire.com/picture/2749"><img class="flexleft50" alt="Making clay test bars"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/mtj2wppaxb.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2749">click here</a> to see it.</p>
+<p>One-minute video. It demonstrates how to make the test bars for measuring plastic <a  href="https://digitalfire.com/glossary/clay+body">clay body</a> (or clay material) drying and <a  href="https://digitalfire.com/glossary/firing+shrinkage">firing shrinkage</a>, fired absorption, a bar for measuring <a  href="https://digitalfire.com/glossary/water+content">water content</a> and loss-on-ignition and a disk for measuring <a  href="https://digitalfire.com/glossary/drying+performance">drying performance</a> and <a  href="https://digitalfire.com/glossary/soluble+salts">soluble salts</a> content. This method requires no expensive equipment and is within the reach of any technician.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">How to interpret the crack in a DFAC drying disk</h3>
+<br /><a href="https://digitalfire.com/picture/484"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/birgopaduc.png" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/484">click here</a> to see it.</p>
+<p>Drying disks used for the <a  href="https://digitalfire.com/test/dfac">DFAC test</a> are 12cm in diameter and 5mm thick (wet). A crack pattern develops in almost all common pottery clays as they shrink during drying. This happens because the center portion is covered and stays soft while the perimeter dries hard. This sets up a tug-of-war with the later-drying inner section pulling at the outer rigid perimeter and forcing a crack (starting from the center). If the clay has high <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> and dry strength it can pull so hard from the center that cracks appear at the outer dried edge to relieve the tension. Or, it can create cracks that run parallel to the outer edge but at the boundary between the inner and outer sections. The nature, number and width of the cracks are interpreted to produce a drying factor that can be recorded.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A typical DFAC drying disk of an iron stoneware clay</h3>
+<br /><a href="https://digitalfire.com/picture/461"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/articles/pyskycagor.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/461">click here</a> to see it.</p>
+<p>The center portion was of this <a  href="https://digitalfire.com/test/dfac">DFAC test</a> disk was covered and so it lagged behind during drying, setting up stresses that caused the disk to crack. This test is such that most pottery clays will exhibit a crack. The severity of the crack becomes a way to compare drying performances. Notice the test also shows <a  href="https://digitalfire.com/glossary/soluble+salts">soluble salts</a> concentrating around the outer perimeter, they migrated there from the center section because it was not exposed to the air. </p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Particle size drastically affects drying performance</h3>
+<br /><a href="https://digitalfire.com/picture/801"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/glossary/xupsyvimab.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/801">click here</a> to see it.</p>
+<p>These DFAC testers compare the <a  href="https://digitalfire.com/glossary/drying+performance">drying performance</a> of <a  href="https://digitalfire.com/material/1142">Plainsman A2</a> <a  href="https://digitalfire.com/material/80">ball clay</a> at 10 mesh (left) and <a  href="https://digitalfire.com/glossary/ball+milling">ball milled</a> (right). This test dries a flat disk that has the center section covered to delay its progress in comparison to the outer section (thus setting up stresses). Finer <a  href="https://digitalfire.com/glossary/particle+sizes">particle sizes</a> greatly increase shrinkage and this increases the number of cracks and the cracking pattern of this specimen. Notice it has also increased the amount of <a  href="https://digitalfire.com/glossary/soluble+salts">soluble salts</a> that have concentrated between the two zones, more is dissolving because of the increased particle <a  href="https://digitalfire.com/glossary/surface+area">surface area</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A bentonitic clay that takes a long time to dry</h3>
+<br /><a href="https://digitalfire.com/picture/1732"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/cifgogehoz.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1732">click here</a> to see it.</p>
+<p>I finally gave up trying to dry the inner section of this <a  href="https://digitalfire.com/test/dfac">DFAC test</a>. During that test the inner part of the disk is shielded from the air flow or heat lamp. This sets up a shrinkage gradient that encourages cracking of the sample. But with some clays drying can be so slow that it can take a days. Serious cracking and high <a  href="https://digitalfire.com/glossary/drying+shrinkage">drying shrinkage</a> almost always accompanies this phenomenon.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">An example of a DFAC drying test of a bentonitic clay</h3>
+<br /><a href="https://digitalfire.com/picture/931"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/minerals/wuksivicat.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/931">click here</a> to see it.</p>
+<p>This disk has dried under heat (with the center part protected) for many hours. During that process it curled upward badly (flattening back out later). It is very reluctant to give up its water in the central protected section. Obviously it shrinks alot during drying and forms a network of cracks. When there are this many cracks it is difficult to <a  href="https://digitalfire.com/glossary/characterization">characterize</a> it, so a picture is best.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">How a kaolin and ball clay compare in a dry performance test</h3>
+<br /><a title="Drying test for kaolin, ball clay" href="https://digitalfire.com/picture/798"><img class="flexleft50" title="Drying test for kaolin, ball clay"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/xitxomehic.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/798">click here</a> to see it.</p>
+<p>These are DFAC <a  href="https://digitalfire.com/glossary/drying+performance">drying performance</a> disks of a large-particle <a  href="https://digitalfire.com/material/925">kaolin</a> (<a  href="https://digitalfire.com/material/3115">OptiKast</a>) and a <a  href="https://digitalfire.com/material/80">ball clay</a> (<a  href="https://digitalfire.com/material/1142">Plainsman A2</a>). This test reveals a clay's response to uneven drying (these disks are dried with the center portion covered). The kaolin feels smoother yet its <a  href="https://digitalfire.com/glossary/ultimate+particles">ultimate particles</a> are ten to one hundred times bigger than a typical ball clay. Thus it shrinks much less. The ball clay has dramatically lower water <a  href="https://digitalfire.com/glossary/permeability">permeability</a>, water from the center protected portion resists migration to the outer edge during drying. When the inner section finally dried the outer was already rigid so it split the disk in two and pulled all the edge cracks. Most ball clays shrink more and crack worse than this (cracks concentric to the center also appear). So why use ball clay? This kaolin is so lacking in <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> it was barely possible to even make this disk. And it is so weak that it can easily break just by handling it. Still, it is useful to make <a  href="https://digitalfire.com/glossary/casting+slip">casting bodies</a>. But the ball clay, when used as a percentage of a body mix, can produce highly plastic bodies than can be dried without trouble if done evenly.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">High drying shrinkage of Plainsman A2 ball clay (DFAC disk)</h3>
+<br /><a href="https://digitalfire.com/picture/797"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/xemjovalyr.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/797">click here</a> to see it.</p>
+<p>This <a  href="https://digitalfire.com/test/dfac">DFAC test</a> disk shows the incredible <a  href="https://digitalfire.com/glossary/drying+shrinkage">drying shrinkage</a> that a <a  href="https://digitalfire.com/material/80">ball clay</a> can have. Obviously if too much of this is employed in a body recipe one can expect it to put stress on the body during drying. Nevertheless, the dry strength of this material far exceeds that of a <a  href="https://digitalfire.com/material/925">kaolin</a> and when used judiciously it can really improve the working properties of a body giving the added benefit of extra dry strength.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Albany Slip DFAC dried disk</h3>
+<br /><a href="https://digitalfire.com/picture/792"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/juxzycucag.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/792">click here</a> to see it.</p>
+<p>This shows the <a  href="https://digitalfire.com/glossary/soluble+salts">soluble salts</a> in the material and the characteristic cracking pattern of a <a  href="https://digitalfire.com/test/dfac">DFAC test</a> disk when made from a low <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> clay. Notice the edges have peeled badly during cutting, this is characteristic of very low plasticity clays.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A DFAC drying test disk of a terra cotta pottery clay from St. Ignacio, Sinaloa, Mexico</h3>
+<br /><a alt="A clay drying performance test" href="https://digitalfire.com/picture/793"><img class="flexleft50" alt="A clay drying performance test"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/zelfapavev.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/793">click here</a> to see it.</p>
+<p>This clay is used by traditional potters in the Mazatlan, Sinaloa, Mexico area. This <a  href="https://digitalfire.com/test/dfac">DFAC test</a> exhibits a very wide main crack and many edge cracks. These combine to indicate high shrinkage (a product of very high <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a>). Although the clay has some coarser grains that help channel water out, this is a very poor showing for <a  href="https://digitalfire.com/glossary/drying+performance">drying performance</a> - no large-scale manufacturer could tolerate this. But potters can and the Mexican craftsmen use it with success! How? By adapting their drying procedures. The high dry strength of this material is also a factor that helps prevent cracking. Almost any clay can be dried if the process is done evenly. And almost any can be cracked if done unevenly enough. This DFAC test is also a good indicator of the amount of <a  href="https://digitalfire.com/glossary/soluble+salts">soluble salts</a> present (the slightly darker band around the perimeter), this is minimal so not scumming should appear on fired products.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Do grog additions always produce better drying performance?</h3>
+<br /><a href="https://digitalfire.com/picture/986"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/byrfulemys.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/986">click here</a> to see it.</p>
+<p>This <a  href="https://digitalfire.com/test/dfac">DFAC test</a> for <a  href="https://digitalfire.com/glossary/drying+performance">drying performance</a> compares a typical white <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> body (left) and the same body with 10% added 50-80 mesh molochite <a  href="https://digitalfire.com/glossary/grog">grog</a>. The character of the crack changes somewhat, but otherwise, there is no improvement. While the grog addition reduces <a  href="https://digitalfire.com/glossary/drying+shrinkage">drying shrinkage</a> here by 0.5-0.75% it also cuts dry strength (as a result, the crack is jagged, not a clean line). The grog vents water to the surface better, notice the <a  href="https://digitalfire.com/glossary/soluble+salts">soluble salts</a> do not concentrate as much. Notice another issue: The jagged edges of the disk, it is more difficult to cut a clean line in the plastic clay.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">COSORI Food Dehydrator as a lab/studio drier</h3>
+<br /><a href="https://digitalfire.com/picture/3383"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/ajz5xmmemp.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3383">click here</a> to see it.</p>
+<p>We use this to dry our <a  href="https://digitalfire.com/test/shab">SHAB test</a> samples and <a  href="https://digitalfire.com/test/dfac">DFAC test</a> samples. It has many racks, heats to 165F, has a timer and is well suited for the drying factor test (and drying all sorts of things). By adjusting the heat setting it is possible to tune it to give a slight crack on our best drying clay (all other results are thus in relation to that). This oven is available on Amazon and is inexpensive.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Example of a lab drier with heating elements, fan and temperature indicator</h3>
+<br /><a href="https://digitalfire.com/picture/582"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/tests/mixmexugev.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/582">click here</a> to see it.</p>
+<p>These are invaluable for creating a consistent environment in which to perform drying and shrinkage tests.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Cutting the disk for a DFAC drying factor test</h3>
+<br /><a href="https://digitalfire.com/picture/1462"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/tests/gahhanuzos.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1462">click here</a> to see it.</p>
+<p>The plastic clay has been rolled to 3/16 inch thickness (using the metal rods and a rolling pin). The disk is cut to 12 cm diameter.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">DFAC disk under a heatlamp</h3>
+<br /><a href="https://digitalfire.com/picture/1469"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/wiwgemupol.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1469">click here</a> to see it.</p>
+<p>The heat lamp dries the out edge in minutes (this photo makes it appear hotter than it really is). The center section of the disk is protected by the glazed bowl and takes an hour or more to dry. This sets up stresses that cause the disk to crack. The nature and size of the cracks enable establishing a drying factor value for the clay.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Lab testing a clay for its physical properties</h3>
+<br /><a href="https://digitalfire.com/picture/1449"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/haftugomux.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1449">click here</a> to see it.</p>
+<p>It only takes a few minutes to make these. But you would be amazed at how much information they can give you about a clay! These are <a  href="https://digitalfire.com/test/shab">SHAB test</a> bars, an <a  href="https://digitalfire.com/test/ldw">LDW test</a> for <a  href="https://digitalfire.com/glossary/water+content">water content</a> and a <a  href="https://digitalfire.com/test/dfac">DFAC test</a> disk about to be put into a drier. The SHAB bars shrink during drying and firing, the length is measured at each stage. The LDW sample is weighed wet, dry and fired. The tin can prevents the inner portion of the DFAC disk from drying and this sets up stresses that cause it to crack. The nature of the cracking pattern and its magnitude are recorded as a Drying Factor. The numbers from all of these measurements are recorded in my account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a>. It can present a complete <a  href="https://digitalfire.com/glossary/physical+testing">physical properties</a> report that calculates things like <a  href="https://digitalfire.com/glossary/drying+shrinkage">drying shrinkage</a>, <a  href="https://digitalfire.com/glossary/firing+shrinkage">firing shrinkage</a>, water content and <a  href="https://digitalfire.com/glossary/loi">LOI</a> (from the measured values).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Grog does not always have the intended effect</h3>
+<br /><a href="https://digitalfire.com/picture/952"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/materials/bagwekunaw.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/952">click here</a> to see it.</p>
+<p>These <a  href="https://digitalfire.com/test/dfac">DFAC test</a> disks (<a  href="https://digitalfire.com/glossary/drying+performance">drying performance</a>) show that minor additions of <a  href="https://digitalfire.com/glossary/grog">grog</a> do not reduce the <a  href="https://digitalfire.com/glossary/firing+shrinkage">fired shrinkage</a> of this medium fire <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> much. Nor do they improve its drying performance. Even at 20% grog, although the addition has reduced <a  href="https://digitalfire.com/glossary/drying+shrinkage">drying shrinkage</a> and narrowed the crack somewhat, it is still there and even resembles the zero-grog version. A possible reason is that this body is coarse-particled, having a relatively small total particle <a  href="https://digitalfire.com/glossary/surface+area">surface area</a>. The addition of the grog has significantly increased the total area.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Measuring the length of an EPK test bar to get its drying shrinkage</h3>
+<br /><a alt="Measure an EPK test bar" href="https://digitalfire.com/picture/1322"><img class="flexleft50" alt="Measure an EPK test bar"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/project/wikkofizen.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1322">click here</a> to see it.</p>
+<p>A 10cm mark was made in the plastic bar during preparation (we dip the ends of the marker-tool into <a  href="https://digitalfire.com/material/1620">talc</a> powder, as a parting agent, to get a crisp mark). These bars are made from the same clay, a shipment of <a  href="https://digitalfire.com/material/291">EPK</a> <a  href="https://digitalfire.com/material/925">kaolin</a>, each bar is measured dry, fired at its assigned temperature and measured again (to supply data for the <a  href="https://digitalfire.com/test/shab">SHAB test</a>). As fired length numbers become available and are entered into the recipe record, <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a> is able to calculate and display more of the drying and fired shrinkages. Values for the <a  href="https://digitalfire.com/test/dfac">DFAC test</a> disk and the <a  href="https://digitalfire.com/test/ldw">LDW test</a> bar can also be assessed an entered at this time.</p>
+<p style="clear:left"></p>
+<h2>Variables</h2>
+<b>DFAC - Drying Factor (V)</b><p style="margin-left:10px;">
+<p>There are four major crack types:<br />
+A  No cracks<br />
+B  Hairline crack where no separation of the halves has occurred<br />
+C  Cracks across the center where two halves have separated<br />
+D  Secondary cracks running from the main and parallel to outer perimeter.<br />
+<br />
+The drying factor has four digits which are:<br />
+<br />
+Digit 1  Crack type<br />
+Digit 2  Total number of all cracks<br />
+Digit 3  Average mm at widest part of main crack (hairline = zero)<br />
+Digit 4  Number of hairline cracks from edge of sample coming in.<br />
+<br />
+I.E.  B624- means:<br />
+<br />
+Crack type B, 6 cracks, a little less than 2 mm wide main crack, 4 cracks coming in from outer edge, not counting main crack.</p>
+</p>
+<b>SOLD - Salts on Dry DFAC (V)</b><p style="margin-left:10px;">
+<p>The drying disk will develop soluble salts around the out exposed edge. Rate these as either Nil, VLight, Light, Medium, Heavy.</p>
+</p>
+<b>SOLW - Salts on Wet DFAC (V)</b><p style="margin-left:10px;">
+<p>Treat the same as dry disk.</p>
+</p>
+
+<h2>Procedure</h2>
+<p>1. <b>Purpose</b></p>
+<p>A test that visually displays a clay's response to uneven drying.</p>
+</p>
+<p>11. <b>Reference Documents</b></p>
+<p>The software will generate the following reports which are of assistance is carrying out this test:<br />
+<br />
+Test Definition Report<br />
+Test Procedure Report</p>
+</p>
+<p>12. <b>Reason for Re-issue</b></p>
+<p>Temp 1 Initial Draft<br />
+Temp 2 Spelling and Grammer check and minor revisions.<br />
+Temp 3 Adjustment in data collection process due to better data entry facilities in the software.</p>
+</p>
+<p>2. <b>Scope</b></p>
+<p>Make one disk from each standard production or test batch and record the results.</p>
+</p>
+<p>3. <b>Definitions</b></p>
+<p>1 QC - Quality Control department<br />
+2 DFAC - Drying Factor</p>
+</p>
+<p>4. <b>Responsibilities</b></p>
+<p>Responsibilities are transferred between departments as the test proceeds. These are outlined in section 5.0.</p>
+</p>
+<p>5. <b>Procedure</b></p>
+<p>1. If not already done, create a recipe record in your Insight-live.com group account and assign a code number (QC)<br />
+<br />
+2. Take or Make the Sample (Pugmill Operator, Test Sample Mixer)<br />
+2.1. Deliver the labelled sample to QC.<br />
+<br />
+3. Make the Disk (QC)<br />
+3.1. Take approximately 500 grams of the pugged material and knead it for 30 seconds. Roll the kneaded lump into a cylindrical mass about twice as long as its diameter.<br />
+3.2. Place the lump on a canvas board straddled by two round metal rods of 3/16" (4.7 mm diameter). Position the lump so that the center axis runs away from you and use a rolling pin to roll it to about 1/2 as thick. Peel it up and without flipping it over turn it 90 degrees and roll half as thick again. Repeat until the rolling pin runs on the metal rods.<br />
+3.3. Carefully lift the slab of clay from both ends to free it from the canvas board and turn it over.<br />
+3.4. Use a divider or compass to cut a 12 cm diameter disk. Turn it over again and place it on a bar board.<br />
+<br />
+4. Mark the Disk<br />
+4.1. In Insight-live determine the code number for the clay or mix being tested.<br />
+4.2. Prepare the stamp by setting it to stamp the code number and a specimen number of 1.<br />
+4.3. Press the stamp into the disk in two places (opposite each other across the centre point).<br />
+4.4. If multiple disks are being made (e.g. to assess drying performance for various custom stiffnesses in a run), then stamp successive specimen numbers to each.<br />
+<br />
+5. Dry the Disk<br />
+5.1. Within a few minutes after rolling the disk place it in an air-circulating 90-100C drying chamber. Put a 60 mm metal disk (or can filled with sand or plaster) on the center of each disk, leaving an even ring of exposed clay all around. Wait until completely dry.<br />
+5.2. Accumulate dried disks in preparation for evaluation. When ready bring them to the computer for the next step.<br />
+<br />
+6. Assign a Drying Factor<br />
+6.1. Enter it into Insight-live using the Testdata dialog (or write the factor in the disk or a record sheet for later entry).<br />
+<br />
+7. Souble Salts<br />
+If the SOLU test is being performed discard the specimen, otherwise:<br />
+7.1. Enter a value for the degree of discoloration on the dry disk.<br />
+7.2. Accumulate quarter-disks for firing and further recording of soluble salt discoloration.<br />
+<br />
+8. Equipment<br />
+8.1. Disk Making and Drying: The same tools are needed as for the SHAB test with the following exceptions<br />
+8.1.1. Bar width gauge, metal marking template and talc powder are not needed.<br />
+8.1.2. The thickness gauges must be 3/16 inch (4.75 mm).<br />
+8.1.3. A compass or divider which is suitable for cutting the 12 cm disk from the soft rolled clay is also needed.<br />
+8.2. Evaluation of Dried Disks<br />
+8.2.1. Vernier callipers.<br />
+8.2.2. Ceramic pencil for writing on dried specimens (preferably a dark color like black).<br />
+<br />
+9. Safety<br />
+9.1. Do not breathe clay dust unnecessarily.<br />
+<br />
+10. Workmanship<br />
+10.1. Clay Preparation<br />
+10.1.1. Same as for SHAB test.<br />
+10.2. Making Disks<br />
+10.2.1. It is important to roll the clay the same way each time to get consistent and comparable results.<br />
+10.2.2. Use a dry canvas board and peel the clay up frequently during rolling to make sure it does not stick to the board, making the back side of the specimens excessively rough and stretching the clay, thereby affecting the integrity of the test.<br />
+10.2.3. If the stamp does not produce a clean imprint press a little harder. If the clay lacks enough plasticity to make a readable imprint then write carefully with a needle tool.<br />
+10.2.4. When cutting the circular disk pay attention that the divider or compass does not change the setting. Also, before cutting a disk, verify that the compass or divider is set at 12 cm.<br />
+10.2.5. It is important that the disks suffer minimal edge cracks as a result of rolling and cutting as these will affect the final drying factor.<br />
+10.2.6. If you must write on a disk with a sharp pencil or needle tool do it so that it is clearly legible for later data entry. Write in small letters to minimize the chance that a crack will start at the written label.<br />
+10.3. Drying<br />
+10.3.1. Stamping the ID# on each disk twice is helpful because if a disk cracks across one the other will likely still be readable and its section can be used for possible SOLU evaluations.<br />
+10.3.2. When breaking one of the disk halves to make the quarter disk for further use in the SOLU test, make sure both exposed and non-exposed surface areas are preserved.</p>
+</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<h3>Videos</h3><table>
+<table class="table table-bordered"><tbody>
+</tbody></table>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/drying+ceramics+without+cracks">Drying Ceramics Without Cracks</a>
+<br /><i>Anything ceramic ware can be dried if it is done slowly and evenly enough. To dry faster optimize the body recipe, ware cross section, drying process and develop a good test to rate <a  href="https://digitalfire.com/glossary/drying+performance">drying performance</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/formulating+a+porcelain">Formulating a Porcelain</a>
+<br /><i>The principles behind formulating a <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> are quite simple. You just need to know the purpose of each material, a starting recipe and a testing regimen.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/how+to+find+and+test+your+own+native+clays">How to Find and Test Your Own Native Clays</a>
+<br /><i>Some of the key tests needed to really understand what a clay is and what it can be used for can be done with inexpensive equipment and simple procedures. These practical tests can give you a better picture than a data sheet full of numbers.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/setting+up+a+clay+testing+program+in+your+company+or+studio">Setting up a Clay Testing Program in Your Company or Studio</a>
+<br /><i>Set up a routine testing pipeline and start generating historical data that will enable your staff to understand your source materials and maintain, adjust and troubleshoot your <a  href="https://digitalfire.com/glossary/clay+body">clay body</a> recipes.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/cdry">Drying Factor/Water Content/Solubles</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/shab">Shrinkage/Absorption Test</a>
+<br /><i>SHAB Shrinkage and absorption test procedure for plastic <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a> and materials</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/solu">Soluble Salts</a>
+<br /><i>Evaluate and compare the solubles salts content in <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a> and materials</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/ldw">LOI/Density/Water Content</a>
+<br /><i>LDW <a  href="https://digitalfire.com/glossary/loi">LOI</a>, density and <a  href="https://digitalfire.com/glossary/water+content">water content</a> test procedure for plastic <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a> and porcelains</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/bdt">Body Tests</a>
+<br /><i>Tests conducted on bodies made from materials, as opposed to the materials themselves.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/grog">Grog</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/drying+performance">Drying Performance</a>
+<br /><i>In <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>, <a  href="https://digitalfire.com/glossary/drying+performance">drying performance</a> is very important to optimizing production. More plastic clays shrink more and crack more, but they are also better to work with.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/drying+crack">Drying Crack</a>
+<br /><i>During drying clays and porcelains shrink as they become rigid. When this occurs unevenly, cracks are the result.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1543">https://insight-live.com/insight/help/It+Starts+With+a+Lump+of+Clay-433.html</a>
+<br /><i>Case Study: Testing a <a  href="https://digitalfire.com/glossary/native+clay">Native Clay</a> Using <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-Live</a>.com</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

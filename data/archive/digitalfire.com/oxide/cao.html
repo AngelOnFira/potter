@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>CaO (Calcium Oxide, Calcia)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="The use of CaO in traditional ceramics, how its chemistry contributes to fired properties of glazes">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+March 2026: We are doing major upgrades to code here, please be patient regarding any issues. If any page is not working for a period of hours, please contact us. Thank you.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item active"><a class="nav-link" href="/oxide/list">Oxides <span class="sr-only">(current)</span></a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=oxide" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>! <b>No paywall</b>!</p></td><tr></table>
+<div style="margin:10px 0px 10px 0px;" class="accordion" id="accordionExample">
+ <div class="card">
+  <div class="card-header pl-0 py-0" id="heading1">
+   <h2 class="mb-0">
+    <button class="btn btn-link collapsed btn-lg" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">Common Ceramic Oxides</button>
+   </h2>
+  </div>
+  <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#accordionExample">
+   <div class="card-body">
+<a title="3" href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> | <a title="7" href="https://digitalfire.com/oxide/b2o3">B<sub>2</sub>O<sub>3</sub></a> | <a title="8" href="https://digitalfire.com/oxide/bao">BaO</a> | <a title="11" href="https://digitalfire.com/oxide/c">C</a> | <a title="13" href="https://digitalfire.com/oxide/13"><button type="button" class="btn btn-dark">CaO</button></a> | <a title="12" href="https://digitalfire.com/oxide/co2">CO<sub>2</sub></a> | <a title="16" href="https://digitalfire.com/oxide/coo">CoO</a> | <a title="17" href="https://digitalfire.com/oxide/cr2o3">Cr<sub>2</sub>O<sub>3</sub></a> | <a title="19" href="https://digitalfire.com/oxide/cu2o">Cu<sub>2</sub>O</a> | <a title="20" href="https://digitalfire.com/oxide/cuo">CuO</a> | <a title="25" href="https://digitalfire.com/oxide/fe2o3">Fe<sub>2</sub>O<sub>3</sub></a> | <a title="26" href="https://digitalfire.com/oxide/feo">FeO</a> | <a title="32" href="https://digitalfire.com/oxide/h2o">H<sub>2</sub>O</a> | <a title="38" href="https://digitalfire.com/oxide/k2o">K<sub>2</sub>O</a> | <a title="42" href="https://digitalfire.com/oxide/li2o">Li<sub>2</sub>O</a> | <a title="40" href="https://digitalfire.com/oxide/loi">LOI</a> | <a title="44" href="https://digitalfire.com/oxide/mgo">MgO</a> | <a title="46" href="https://digitalfire.com/oxide/mno">MnO</a> | <a title="47" href="https://digitalfire.com/oxide/mno2">MnO<sub>2</sub></a> | <a title="50" href="https://digitalfire.com/oxide/na2o">Na<sub>2</sub>O</a> | <a title="53" href="https://digitalfire.com/oxide/nio">NiO</a> | <a title="54" href="https://digitalfire.com/oxide/o">O</a> | <a title="97" href="https://digitalfire.com/oxide/organics">Organics</a> | <a title="56" href="https://digitalfire.com/oxide/p2o5">P<sub>2</sub>O<sub>5</sub></a> | <a title="59" href="https://digitalfire.com/oxide/pbo">PbO</a> | <a title="75" href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> | <a title="77" href="https://digitalfire.com/oxide/sno2">SnO<sub>2</sub></a> | <a title="70" href="https://digitalfire.com/oxide/so3">SO<sub>3</sub></a> | <a title="96" href="https://digitalfire.com/oxide/so4">SO<sub>4</sub></a> | <a title="78" href="https://digitalfire.com/oxide/sro">SrO</a> | <a title="83" href="https://digitalfire.com/oxide/tio2">TiO<sub>2</sub></a> | <a title="89" href="https://digitalfire.com/oxide/v2o5">V<sub>2</sub>O<sub>5</sub></a> | <a title="93" href="https://digitalfire.com/oxide/zno">ZnO</a> | <a title="94" href="https://digitalfire.com/oxide/zro">ZrO</a> | <a title="95" href="https://digitalfire.com/oxide/zro2">ZrO<sub>2</sub></a>
+   </div>
+  </div>
+ </div>
+ <div class="card">
+  <div class="card-header pl-0 py-0" id="heading2">
+   <h2 class="mb-0">
+    <button class="btn btn-link collapsed btn-lg" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">Uncommon Ceramic Oxides</button>
+   </h2>
+  </div>
+  <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordionExample">
+   <div class="card-body">
+<a title="102" href="https://digitalfire.com/oxide/ag2o">Ag<sub>2</sub>O</a> | <a title="104" href="https://digitalfire.com/oxide/alf3">AlF<sub>3</sub></a> | <a title="4" href="https://digitalfire.com/oxide/as2o3">As<sub>2</sub>O<sub>3</sub></a> | <a title="5" href="https://digitalfire.com/oxide/as4o6">As<sub>4</sub>O6</a> | <a title="6" href="https://digitalfire.com/oxide/au2o3">Au<sub>2</sub>O<sub>3</sub></a> | <a title="108" href="https://digitalfire.com/oxide/baf2">BaF<sub>2</sub></a> | <a title="9" href="https://digitalfire.com/oxide/beo">BeO</a> | <a title="10" href="https://digitalfire.com/oxide/bi2o3">Bi<sub>2</sub>O<sub>3</sub></a> | <a title="109" href="https://digitalfire.com/oxide/caf2">CaF<sub>2</sub></a> | <a title="14" href="https://digitalfire.com/oxide/cdo">CdO</a> | <a title="15" href="https://digitalfire.com/oxide/ceo2">CeO<sub>2</sub></a> | <a title="99" href="https://digitalfire.com/oxide/cl">Cl</a> | <a title="110" href="https://digitalfire.com/oxide/co">CO</a> | <a title="113" href="https://digitalfire.com/oxide/cro3">CrO<sub>3</sub></a> | <a title="18" href="https://digitalfire.com/oxide/cs2o">Cs<sub>2</sub>O</a> | <a title="101" href="https://digitalfire.com/oxide/cuco3">CuCO<sub>3</sub></a> | <a title="21" href="https://digitalfire.com/oxide/dy2o3">Dy<sub>2</sub>O<sub>3</sub></a> | <a title="22" href="https://digitalfire.com/oxide/er2o3">Er<sub>2</sub>O<sub>3</sub></a> | <a title="23" href="https://digitalfire.com/oxide/eu2o3">Eu<sub>2</sub>O<sub>3</sub></a> | <a title="24" href="https://digitalfire.com/oxide/f">F</a> | <a title="27" href="https://digitalfire.com/oxide/fr2o">Fr<sub>2</sub>O</a> | <a title="28" href="https://digitalfire.com/oxide/free sio2">Free SiO<sub>2</sub></a> | <a title="29" href="https://digitalfire.com/oxide/ga2o3">Ga<sub>2</sub>O<sub>3</sub></a> | <a title="30" href="https://digitalfire.com/oxide/gdo3">GdO<sub>3</sub></a> | <a title="31" href="https://digitalfire.com/oxide/geo2">GeO<sub>2</sub></a> | <a title="33" href="https://digitalfire.com/oxide/hfo2">HfO<sub>2</sub></a> | <a title="34" href="https://digitalfire.com/oxide/hgo">HgO</a> | <a title="35" href="https://digitalfire.com/oxide/ho2o3">Ho<sub>2</sub>O<sub>3</sub></a> | <a title="36" href="https://digitalfire.com/oxide/in2o3">In<sub>2</sub>O<sub>3</sub></a> | <a title="37" href="https://digitalfire.com/oxide/iro2">IrO<sub>2</sub></a> | <a title="107" href="https://digitalfire.com/oxide/kf">KF</a> | <a title="39" href="https://digitalfire.com/oxide/knao">KNaO</a> | <a title="41" href="https://digitalfire.com/oxide/la2o3">La<sub>2</sub>O<sub>3</sub></a> | <a title="43" href="https://digitalfire.com/oxide/lu2o3">Lu<sub>2</sub>O<sub>3</sub></a> | <a title="45" href="https://digitalfire.com/oxide/mn2o3">Mn<sub>2</sub>O<sub>3</sub></a> | <a title="48" href="https://digitalfire.com/oxide/moo3">MoO<sub>3</sub></a> | <a title="49" href="https://digitalfire.com/oxide/n2o5">N<sub>2</sub>O<sub>5</sub></a> | <a title="105" href="https://digitalfire.com/oxide/naf">NaF</a> | <a title="51" href="https://digitalfire.com/oxide/nb2o5">Nb<sub>2</sub>O<sub>5</sub></a> | <a title="52" href="https://digitalfire.com/oxide/nd2o3">Nd<sub>2</sub>O<sub>3</sub></a> | <a title="98" href="https://digitalfire.com/oxide/ni2o3">Ni<sub>2</sub>O<sub>3</sub></a> | <a title="55" href="https://digitalfire.com/oxide/oso2">OsO<sub>2</sub></a> | <a title="58" href="https://digitalfire.com/oxide/pa2o5">Pa<sub>2</sub>O<sub>5</sub></a> | <a title="106" href="https://digitalfire.com/oxide/pbf2">PbF<sub>2</sub></a> | <a title="60" href="https://digitalfire.com/oxide/pdo">PdO</a> | <a title="61" href="https://digitalfire.com/oxide/pmo3">PmO<sub>3</sub></a> | <a title="57" href="https://digitalfire.com/oxide/po4">PO<sub>4</sub></a> | <a title="62" href="https://digitalfire.com/oxide/pr2o3">Pr<sub>2</sub>O<sub>3</sub></a> | <a title="63" href="https://digitalfire.com/oxide/pro2">PrO<sub>2</sub></a> | <a title="64" href="https://digitalfire.com/oxide/pto2">PtO<sub>2</sub></a> | <a title="65" href="https://digitalfire.com/oxide/rao">RaO</a> | <a title="66" href="https://digitalfire.com/oxide/rb2o">Rb<sub>2</sub>O</a> | <a title="67" href="https://digitalfire.com/oxide/re2o7">Re<sub>2</sub>O7</a> | <a title="68" href="https://digitalfire.com/oxide/rho3">RhO<sub>3</sub></a> | <a title="69" href="https://digitalfire.com/oxide/ruo2">RuO<sub>2</sub></a> | <a title="71" href="https://digitalfire.com/oxide/sb2o3">Sb<sub>2</sub>O<sub>3</sub></a> | <a title="72" href="https://digitalfire.com/oxide/sb2o5">Sb<sub>2</sub>O<sub>5</sub></a> | <a title="73" href="https://digitalfire.com/oxide/sc2o3">Sc<sub>2</sub>O<sub>3</sub></a> | <a title="74" href="https://digitalfire.com/oxide/se">Se</a> | <a title="111" href="https://digitalfire.com/oxide/seo2">SeO<sub>2</sub></a> | <a title="76" href="https://digitalfire.com/oxide/sm2o3">Sm<sub>2</sub>O<sub>3</sub></a> | <a title="79" href="https://digitalfire.com/oxide/ta2o5">Ta<sub>2</sub>O<sub>5</sub></a> | <a title="80" href="https://digitalfire.com/oxide/tb2o3">Tb<sub>2</sub>O<sub>3</sub></a> | <a title="81" href="https://digitalfire.com/oxide/tc2o7">Tc<sub>2</sub>O7</a> | <a title="82" href="https://digitalfire.com/oxide/tho2">ThO<sub>2</sub></a> | <a title="84" href="https://digitalfire.com/oxide/tl2o">Tl<sub>2</sub>O</a> | <a title="85" href="https://digitalfire.com/oxide/tm2o3">Tm<sub>2</sub>O<sub>3</sub></a> | <a title="86" href="https://digitalfire.com/oxide/trace">Trace</a> | <a title="87" href="https://digitalfire.com/oxide/u3o8">U<sub>3</sub>O8</a> | <a title="88" href="https://digitalfire.com/oxide/uo2">UO<sub>2</sub></a> | <a title="90" href="https://digitalfire.com/oxide/wo3">WO<sub>3</sub></a> | <a title="91" href="https://digitalfire.com/oxide/y2o3">Y<sub>2</sub>O<sub>3</sub></a> | <a title="92" href="https://digitalfire.com/oxide/yb2o3">Yb<sub>2</sub>O<sub>3</sub></a>
+   </div>
+  </div>
+ </div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>CaO (Calcium Oxide, Calcia)</h1>
+<h3>Data</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<th scope="row"><a href="https://digitalfire.com/glossary/18">Co-efficient of Linear Expansion</a></th>
+<td>0.148</td>
+</tr>
+<tr>
+<th scope="row"><a href="https://digitalfire.com/test/14">Frit Softening Point</a></th>
+<td>2910C (From The Oxide Handbook We also have a figure of 2572?)</td>
+</tr>
+</tbody></table>
+<h4>Notes</h4><p><a  href="https://digitalfire.com/oxide/cao">CaO</a> is not found pure in nature but rather is contained in various abundant minerals (i.e. calcite, aragonite, limestone, marble), but vary greatly in their purity (impurities usually include magnesia, iron, alumina, <a  href="https://digitalfire.com/material/1245">silica</a>, sulfur). Of these iron and sulfur are most troublesome (i.e. where clarity is important in glass). Lime minerals vary in the degree of <a  href="https://digitalfire.com/glossary/crystallization">crystallization</a> and cohesion of the <a  href="https://digitalfire.com/glossary/glass+vs.+crystalline">crystalline</a> mass and the homogeneity of the matrix.<br />
+<br />
+-Together with <a  href="https://digitalfire.com/oxide/sro">SrO</a>, <a  href="https://digitalfire.com/oxide/bao">BaO</a>, and <a  href="https://digitalfire.com/oxide/mgo">MgO</a> it is considered one of the Alkaline Earth group of <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a>. It has a cubic crystal structure.<br />
+<br />
+-Quicklime is pure calcia, but it reacts with water to produce calcium hydroxide or <a  href="https://digitalfire.com/glossary/slaking">slaked</a> lime. Calcium oxide, on the other hand, is an extremely stable compound.<br />
+<br />
+-Calcia alone resists melting even at very high temperatures (an incredible 2600C). It can be smelted with <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> to produce <a  href="https://digitalfire.com/glossary/refractory">refractory</a> calcium aluminate cement (which can service to 2000C). But when soda and potash are added, CaO becomes a very active <a  href="https://digitalfire.com/glossary/flux">flux</a> in both oxidation and reduction. This synergy between CaO and other fluxes and differences in the <a  href="https://digitalfire.com/glossary/mechanism">mechanism</a> of its fluxing action generates some disagreement among experts regarding the nature of CaO (like MgO, it is not a 'stand-alone' flux).<br />
+<br />
+-At higher temperatures, CaO contributed by wollastonite is more readily fusible than that contributed by whiting (<a  href="https://digitalfire.com/material/173">calcium carbonate</a>). Stain manufacturers recommend adding the molecular equivalent of calcium oxide using wollastonite, for better uniformity. <br />
+<br />
+-Calcium oxide is the principal flux in medium and high temperature glazes, beginning its action (within the glaze) around 1100C. It must be used with care in high-fire bodies because its active fluxing action can produce a body that is too volatile (melting if slightly overfired).<br />
+<br />
+-Calcia usually hardens a glaze and makes it more scratch and acid-resistant. This is especially so in alkaline and <a  href="https://digitalfire.com/glossary/lead+in+ceramic+glazes">lead glazes</a>. However the increased hardness does not necessarily mean greater tensile strength. Its <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> is intermediate.<br />
+<br />
+-CaO is not effective below cone 4 as a flux in glazes but in small amounts (less than 10%) it can dissolve in <a  href="https://digitalfire.com/glossary/earthenware">earthenware</a> glaze melts, especially with lead, soda, potash) to add hardness and resistance to <a  href="https://digitalfire.com/glossary/leaching">leaching</a>. In non-lead mixes it can also help reduce <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a>. In larger amounts, it encourages the growth of crystals which can give decorative effects to glossy glazes and produce matteness (i.e. 30%).<br />
+<br />
+-High CaO glazes tend to <a  href="https://digitalfire.com/glossary/crystallization">devitrify</a> (crystallize). This occurs either because of the high <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> imparted by CaO at higher temperatures or because of the readiness with which CaO forms crystals. Fastfire glazes can contain more CaO because the quick cooling does not give the crystallization a chance to occur.<br />
+<br />
+-Calcia is a moderate flux in the cone 5-6 range, but a very active one at cone 10.<br />
+<br />
+-High calcia glazes tend to have good (although sometimes unexpected) color responses. For example, in oxidation iron glazes calcia likes to form yellow crystalline compounds with the <a  href="https://digitalfire.com/oxide/fe2o3">Fe<sub>2</sub>O<sub>3</sub></a>, producing a 'lime matte'. Without the calcia, glossy brown glazes are the norm. CaO can bleach or soften colors, especially with cobalt (pastel tones). That being said, CaO is relatively neutral with most pigments, not pushing or pulling color hues strongly. <br />
+<br />
+The term 'lime' encompasses several different minerals and manufactured products.<br />
+<br />
+-The term 'Whiting' traditionally refers to calcium carbonate produced by the grinding of chalk from the cliffs of England, Belgium and France. However this title also refers to any ground calcium carbonate material (i.e. those processed from marble and calcite ores).<br />
+<br />
+-Ground limestone and <a  href="https://digitalfire.com/glossary/calcination">calcined</a> limestone (burned lime) are used in the glass industry. Float and container glass have 10% CaO.<br />
+<br />
+-Dolomite (magnesium carbonate) is a mineral which supplies some magnesia in addition to its CaO complement. It is preferred in many situations because it more readily fluxes and the magnesia imparts desirable properties.<br />
+<br />
+-Wollastonite is a calcium silicate which is more expensive than other sources of calcium, but is used bodies, glaze, porcelains, enamels and <a  href="https://digitalfire.com/glossary/frit">frits</a> for its many superior properties.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Add 5% calcium carbonate to a tenmoku. What happens?</h3>
+<br /><a href="https://digitalfire.com/picture/663"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/dapsabifyh.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/663">click here</a> to see it.</p>
+<p>In the glaze on the left (90% <a  href="https://digitalfire.com/material/1178">Ravenscrag</a> Slip and 10% <a  href="https://digitalfire.com/material/874">iron oxide</a>) the iron is saturating <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> crystallizing out during cooling. <a  href="https://digitalfire.com/recipe/gr10-k1">GR10-K1</a>, on the right, is the same glaze but with 5% added <a  href="https://digitalfire.com/material/173">calcium carbonate</a>. This addition is enough to keep most of the iron in solution through cooling, so it contributes to the super-gloss deep <a  href="https://digitalfire.com/glossary/tenmoku">tenmoku</a> effect instead of precipitating out.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Comparing two glazes having different mechanisms for their matteness</h3>
+<br /><a href="https://digitalfire.com/picture/999"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/ruvdakafax.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/999">click here</a> to see it.</p>
+<p>These are two <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> matte glazes (shown side by side in an account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a>). <a  href="https://insight-live.com/insight/share.php?z=ZN33C1ZyqD">G1214Z</a> is high calcium and a high <a  href="https://digitalfire.com/glossary/silica%3Aalumina+ratio">silica:alumina ratio</a>. It crystallizes during cooling to make the matte effect and the degree of matteness is adjustable by trimming the <a  href="https://digitalfire.com/material/1245">silica</a> content (but notice how much it runs). The <a  href="https://digitalfire.com/recipe/g2928c">G2928C</a> has high <a  href="https://digitalfire.com/oxide/mgo">MgO</a> and it produces the classic silky matte by micro-wrinkling the surface, its matteness is adjustable by trimming the <a  href="https://digitalfire.com/glossary/calcination">calcined</a> <a  href="https://digitalfire.com/material/925">kaolin</a>. <a  href="https://digitalfire.com/oxide/cao">CaO</a> is a standard oxide that is in almost all glazes, 0.4 is not high for it. But you would never normally see more than 0.3 of MgO in a cone 6 glaze (if you do it will likely be unstable). The G2928C also has 5% tin, if that was not there it would be darker than the other one because <a  href="https://digitalfire.com/material/1178">Ravenscrag</a> Slip has a little iron. This was made by recalculating the Moore's Matte recipe to use as much <a  href="https://plainsmanclays.ca/data/index.php?product=12911">Ravenscrag</a> Slip as possible yet keep the overall <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> the same. This glaze actually has texture like a <a  href="https://digitalfire.com/material/273">dolomite</a> matte at <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10R</a>, it is great. And it has wonderful application properties. And it does not <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a>, on <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12880">M370</a> (it even survived a 300F-to-ice water <a  href="https://digitalfire.com/test/iwct">IWCT test</a>). This looks like it could be a great <a  href="https://digitalfire.com/glossary/liner+glaze">liner glaze</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">CaO is a strong flux but it can cause crazing</h3>
+<br /><a href="https://digitalfire.com/picture/893"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/recipes/vadlugyced.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/893">click here</a> to see it.</p>
+<p>2, 5, 10, 15% <a  href="https://digitalfire.com/material/173">calcium carbonate</a> added to <a  href="https://digitalfire.com/material/1178">Ravenscrag</a> Slip on a buff <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> fired at <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10R</a>. It gets progressively glossier toward 15%, <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a> starts at 10% (test by Kat Valenzuela). Adding a <a  href="https://digitalfire.com/glossary/flux">flux</a> only reduces the <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> and <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a>, this pushes the <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> upwards. 5% is actually sufficient. An alternative would be to use wollastonite, it supplies SiO<sub>2</sub> also.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">The difference between dolomite and calcium carbonate in a glaze</h3>
+<br /><a href="https://digitalfire.com/picture/1008"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/sassucumam.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1008">click here</a> to see it.</p>
+<p>These glaze cones are fired at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> (without slow cooling) and have the same recipe: 20 <a  href="https://digitalfire.com/material/351">Frit 3134</a>, 21 <a  href="https://digitalfire.com/material/291">EP Kaolin</a>, 27 <a  href="https://digitalfire.com/material/173">calcium carbonate</a>, 32 <a  href="https://digitalfire.com/material/1245">silica</a>. The difference: The one on the left uses <a  href="https://digitalfire.com/material/273">dolomite</a> instead of calcium carbonate. Notice how the <a  href="https://digitalfire.com/oxide/mgo">MgO</a> from the dolomite mattes the surface (without slow cooling) whereas the <a  href="https://digitalfire.com/oxide/cao">CaO</a> from the calcium carbonate produces a brilliant gloss (because it needs slow cooling).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Boron blue in low fire transparent glazes</h3>
+<br /><a href="https://digitalfire.com/picture/360"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/ypo7kqdeqb.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/360">click here</a> to see it.</p>
+<p>This high-boron high-CaOcone 04 glaze is generating calcium-borate crystals during cool down (called <a  href="https://digitalfire.com/glossary/boron+blue">boron-blue</a>). This is a common problem and a reason to control the <a  href="https://digitalfire.com/glossary/borate">boron</a> levels in transparent glazes; use just enough to melt it well. If more <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> is needed, decrease the percentage of <a  href="https://digitalfire.com/oxide/cao">CaO</a> in favor of a lower melting oxide, that will certainly help. There is a positive: For opaque glazes, this effect can actually enable the use of less <a  href="https://digitalfire.com/glossary/opacifier">opacifier</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Phase diagram of a SiO2:Al2O3:CaO:KNaO System</h3>
+<br /><a href="https://digitalfire.com/picture/697"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/glossary/gegpenegox.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/697">click here</a> to see it.</p>
+<p><a  href="https://digitalfire.com/glossary/phase+diagram">Phase diagram</a> and <a  href="https://digitalfire.com/glossary/stull+chart">stull chart</a> showing the SiO<sub>2</sub>-Al<sub>2</sub>O<sub>3</sub>-(0.7CaO+0.3KNaO) system.<br />
+Courtesy of Matthew Katz, Alfred University</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Glaze chemistry works best when changing material amounts, not material types</h3>
+<br /><a href="https://digitalfire.com/picture/293"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/materials/lesson7-7.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/293">click here</a> to see it.</p>
+<p>Two glazes, same <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a>, different materials. The glaze on the left is sourcing <a  href="https://digitalfire.com/oxide/cao">CaO</a> from wollastonite, the one on the right from <a  href="https://digitalfire.com/material/173">calcium carbonate</a>. Thus the oxide chemistry of the two is the same but the recipe of materials sourcing that chemistry is different. The difference in this <a  href="https://digitalfire.com/test/glfl">GLFL test</a> for <a  href="https://digitalfire.com/glossary/melt+fluidity">melt flow</a> is an expression of how choosing different mineral sources to source an oxide can produce melting patterns that go outside what the chemistry suggests. The difference here is not extreme, but it can be much more. <a  href="https://digitalfire.com/glossary/glaze+chemistry">Glaze chemistry</a> is relative, not absolute. It works best when you are changing material amounts, not material types. When you do introduce a very different mineral then you have a different system which has its own relative chemistry.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Stull chart showing the SiO2-Al2O3-(0.7CaO+0.3KNaO) system</h3>
+<br /><a href="https://digitalfire.com/picture/696"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/glossary/nenbuninux.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/696">click here</a> to see it.</p>
+<p>The original <a  href="https://digitalfire.com/glossary/stull+chart">Stull chart</a> - Chart 1 from Transactions of the American Ceramic Society, Vol. XIV (1912). Stull mapped test glazes by their <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a>:Al<sub>2</sub>O<sub>3</sub> molar ratio and identified the regions that predict surface quality.<br />
+<br />
+If you really want to "get into the weeds" of <a  href="https://digitalfire.com/glossary/glaze+chemistry">glaze chemistry</a>, the https://stullatlas.app tool, by Ryan Lack, takes Stull's insight and applies it to a modern dataset of real-world glazes, giving you an interactive map of the glaze <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> landscape. The primary dataset comes from <a  href="https://digitalfire.com/url/3759">Glazy</a>. It contains thousands of community-contributed recipes with calculated UMF values, cone temperatures, surface types, and firing atmospheres. Each point on the chart represents a real glaze recipe that someone has mixed, fired, and documented.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A glaze incompatible with chrome-tin stains (but great with inclusion stains)</h3>
+<br /><a alt="A bright red matte glaze" href="https://digitalfire.com/picture/1023"><img class="flexleft50" alt="A bright red matte glaze"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/daszihigaw.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1023">click here</a> to see it.</p>
+<p>Left: A <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> <a  href="https://digitalfire.com/glossary/matte+glaze">matte glaze</a> (<a  href="https://digitalfire.com/recipe/g2934">G2934</a> with no <a  href="https://digitalfire.com/glossary/colorant">colorant</a>). Middle: 5% Mason 6006 chrome-tin red stain added. Right: 5% Mason 6021 encapsulated red stain added. Why is there absolutely no color in the center glaze? This host recipe does not have the needed <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> to develop the #6006 chrome-tin color (Mason specifies 10% minimum <a  href="https://digitalfire.com/oxide/cao">CaO</a>, this almost has enough at 9.8%, but it also has 5% <a  href="https://digitalfire.com/oxide/mgo">MgO</a> and that is killing the color). Yet this same glaze produces a good red with #6021 <a  href="https://digitalfire.com/glossary/encapsulated+stain">encapsulated stain</a> at only 5% (using 20% or more encapsulated stain is not unusual - so achieving this color with only 5% is amazing).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Two stains. 4 colors. Will the guilty oxide please step forward.</h3>
+<br /><a alt="One stain produces clear in one glaze and red in another. Another stain blue and purple. Why?" title="The same stains are producing drastically different colors in different base glazes. Why?" href="https://digitalfire.com/picture/1030"><img class="flexleft50" title="The same stains are producing drastically different colors in different base glazes. Why?"  alt="One stain produces clear in one glaze and red in another. Another stain blue and purple. Why?"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/suskaledem.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1030">click here</a> to see it.</p>
+<p>These pairs are <a  href="https://digitalfire.com/recipe/g2934">G2934</a> matte and <a  href="https://digitalfire.com/recipe/g2916f">G2916F</a> glossy <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> base <a  href="https://digitalfire.com/glossary/glaze+recipes">glaze recipes</a>. The left pair has 5% maroon stain added, the right pair 5% purple stain. Why? The Mason Colorworks reference guide has the same precaution for both <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a>: the host glaze must be zincless and have 6.7-8.4% <a  href="https://digitalfire.com/oxide/cao">CaO</a> (this is a little unclear, it is actually expressing a minimum, the more the CaO the better). The matte recipe calculates to 11% CaO, the glossy to 9%. So there is enough CaO. The problem is <a  href="https://digitalfire.com/oxide/mgo">MgO</a> (it is the <a  href="https://digitalfire.com/glossary/mechanism">mechanism</a> of the matteness in the left two), it impedes the development of both colors (although not mentioned on the Mason docs).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Ceramic Oxide Periodic Table</h3>
+<a href="https://digitalfire.com/picture/1257"><img class="flexleft50" alt="Periodic table of ceramic oxides"  src="https://digitalfire.com/4sight/images/pictures/er5fytcakh.svg" /></a>
+<p>Pretty well all common traditional ceramic <a  href="https://digitalfire.com/glossary/base+glaze">base glazes</a> are made from less than a dozen elements (plus oxygen). Go to the full picture of this table and click or tap each of the <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> to learn more (on its page at <a  href="https://digitalfire.com/glossary/digitalfire+reference+library">digitalfire</a>.com). When materials melt, they <a  href="https://digitalfire.com/glossary/decomposition">decompose</a>, sourcing these elements in oxide form. The kiln builds the glaze from them, it does not care what material sources what oxide (assuming, of course, that all materials do melt or dissolve completely into <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> to release those oxides). Each of these oxides contributes specific properties to the glass. So, you can look at a formula and make a good prediction of the properties of the fired glaze. And know what specific oxide to increase or decrease to move a property in a given direction (e.g. melting behavior, hardness, <a  href="https://digitalfire.com/glossary/glaze+durability">durability</a>, <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a>, color, gloss, <a  href="https://digitalfire.com/glossary/crystallization">crystallization</a>). And know about how they interact (affecting each other). This is powerful. A lot of ceramic materials are available, hundreds - that is complicated when individual materials source multiple oxides. Viewing a glaze as a simple <a  href="https://digitalfire.com/glossary/unity+formula">unity formula</a> of ceramic oxides is just simpler.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/wollastonite">Wollastonite</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/calcium+carbonate">Calcium Carbonate</a>
+<br /><i>In <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>, <a  href="https://digitalfire.com/material/173">calcium carbonate</a> is primarily a source of <a  href="https://digitalfire.com/oxide/cao">CaO</a> in raw <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> and <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> glazes.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/calcium+feldspar">Calcium Feldspar</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/colemanite">Colemanite</a>
+<br /><i>A natural source of <a  href="https://digitalfire.com/glossary/borate">boron</a> that melts at a very low temperature.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/dolomite">Dolomite</a>
+<br /><i>An inexpensive source of <a  href="https://digitalfire.com/oxide/mgo">MgO</a> and <a  href="https://digitalfire.com/oxide/cao">CaO</a> for ceramic glazes, also a highly <a  href="https://digitalfire.com/glossary/refractory">refractory</a> material when fired in the absence of reactant fluxes.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/quicklime">Quicklime</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/calcium+aluminate+cement">Calcium Aluminate Cement</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/alkaline+earths">Alkaline Earths</a>
+<br /><i>Refers to a group of ceramic fluxing <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> that contribute similar properties to fired glazes. They contrast with the alkalis which are stronger fluxes.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/oxide+interaction">Oxide Interaction</a>
+<br /><i>In ceramic glazes each oxide generally makes a specific contributions to the melting and freezing behavior of the glaze. However interactions are also important.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/ceramic+oxide">Ceramic Oxide</a>
+<br /><i>In <a  href="https://digitalfire.com/glossary/glaze+chemistry">glaze chemistry</a>, the oxide is the basic unit of formulas and analyses. Knowledge of what materials supply an oxide and of how it affects the fired glass or glaze is a key to control.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/limit+formula">Limit Formula</a>
+<br /><i>A way of establishing guideline for each oxide in the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> for different ceramic glaze types. Understanding the roles of each oxide and the limits of this approach are a key to effectively using these guidelines.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/flux">Flux</a>
+<br /><i>Fluxes are the reason we can fire <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a> and glazes in common kilns, they make glazes melt and bodies vitrify at lower temperatures.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1283">http://en.wikipedia.org/wiki/CaO</a>
+<br /><i>Calcium Oxide on Wikipedia</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="https://digitalfire.com/oxide/mgo">MgO - Magnesium Oxide, Magnesia</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="https://digitalfire.com/mineral/limestone">Limestone</a>
+<br /><i>Limestone forms by sedimentation, of coral and shells (biological limestone) or by the precipitation</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="https://digitalfire.com/mineral/dolomite">Dolomite</a>
+<br /><i><a  href="https://digitalfire.com/material/273">Dolomite</a>, as a rock, is called "dolomitic limestone". It is a carbonate, similar to limestone, but h</i>
+</td>
+</tr>
+</tbody></table>
+<h3>Mechanisms</h3><table>
+<table class="table table-bordered"><tbody>
+<tr><th scope="row">Glaze Color</th><td>In oxidation, iron glazes calcia likes to form yellow crystalline compounds with the Fe2O3 producing a 'lime matte' even in an otherwise fluid glaze.</td></tr>
+<tr><th scope="row">Glaze Color</th><td>Calcia likes to form yellow crystalline compounds with Fe2O3 producing a 'lime matte', especially in fluid glazes. Thus iron glossy brown or black glazes should be low in CaO.</td></tr>
+<tr><th scope="row">Glaze Matteness</th><td>High molar amounts of calcia combined with adequate silica and preferably lower alumina will form a calcium silicate crystal matte (lime matte). The presence of zinc will increase the size of crystals.</td></tr>
+<tr><th scope="row">Glaze Variegation</th><td>CaO can mottle glaze surfaces at high temperatures if significant amounts are present, it is a very strong flux and can contribute to phase separation.</td></tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

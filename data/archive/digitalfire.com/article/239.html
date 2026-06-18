@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Working with children</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Go in with both eyes open if you are planning to work with clay with a group of children! A lot can go wrong but it can be unforgettable for them when it goes right.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+March 2026: We are doing major upgrades to code here, please be patient regarding any issues. If any page is not working for a period of hours, please contact us. Thank you.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item active" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=article" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:center; vertical-align:top;">Feb 14-15, 2026 - <b>Major Server <a href="https://digitalfire.com">Upgrade</a> Done</b></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Articles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a title="388" href="https://digitalfire.com/article/388">A ChatBot gives jaw-dropping glaze recipe advice - Jan 2025</a><br /><a title="244" href="https://digitalfire.com/article/244">A Low Cost Tester of Glaze Melt Fluidity</a><br /><a title="361" href="https://digitalfire.com/article/361">A One-speed Lab or Studio Slurry Mixer</a><br /><a title="353" href="https://digitalfire.com/article/353">A Textbook Cone 6 Matte Glaze With Problems</a><br /><a title="199" href="https://digitalfire.com/article/199">Adjusting Glaze Expansion by Calculation to Solve Shivering</a><br /><a title="251" href="https://digitalfire.com/article/251">Alberta Slip, 20 Years of Substitution for Albany Slip</a><br /><a title="273" href="https://digitalfire.com/article/273">An Overview of Ceramic Stains</a><br /><a title="37" href="https://digitalfire.com/article/37">Are You in Control of Your Production Process?</a><br /><a title="12" href="https://digitalfire.com/article/12">Are Your Glazes Food Safe or are They Leachable?</a><br /><a title="143" href="https://digitalfire.com/article/143">Attack on Glass: Corrosion Attack Mechanisms</a><br /><a title="204" href="https://digitalfire.com/article/204">Ball Milling Glazes, Bodies, Engobes</a><br /><a title="345" href="https://digitalfire.com/article/345">Binders for Ceramic Bodies</a><br /><a title="4" href="https://digitalfire.com/article/4">Bringing Out the Big Guns in Craze Control: MgO (G1215U)</a><br /><a title="381" href="https://digitalfire.com/article/381">Can We Help You Fix a Specific Problem?</a><br /><a title="124" href="https://digitalfire.com/article/124">Ceramic Glazes Today</a><br /><a title="208" href="https://digitalfire.com/article/208">Ceramic Material Nomenclature</a><br /><a title="336" href="https://digitalfire.com/article/336">Ceramic Tile Clay Body Formulation</a><br /><a title="217" href="https://digitalfire.com/article/217">Changing Our View of Glazes</a><br /><a title="22" href="https://digitalfire.com/article/22">Chemistry vs. Matrix Blending to Create Glazes from Native Materials</a><br /><a title="209" href="https://digitalfire.com/article/209">Concentrate on One Good Glaze</a><br /><a title="115" href="https://digitalfire.com/article/115">Copper Red Glazes</a><br /><a title="271" href="https://digitalfire.com/article/271">Crazing and Bacteria: Is There a Hazard?</a><br /><a title="190" href="https://digitalfire.com/article/190">Crazing in Stoneware Glazes: Treating the Causes, Not the Symptoms</a><br /><a title="97" href="https://digitalfire.com/article/97">Creating a Non-Glaze Ceramic Slip or Engobe</a><br /><a title="195" href="https://digitalfire.com/article/195">Creating Your Own Budget Glaze</a><br /><a title="36" href="https://digitalfire.com/article/36">Crystal Glazes: Understanding the Process and Materials</a><br /><a title="324" href="https://digitalfire.com/article/324">Deflocculants: A Detailed Overview</a><br /><a title="32" href="https://digitalfire.com/article/32">Demonstrating Glaze Fit Issues to Students</a><br /><a title="334" href="https://digitalfire.com/article/334">Diagnosing a Casting Problem at a Sanitaryware Plant</a><br /><a title="196" href="https://digitalfire.com/article/196">Drying Ceramics Without Cracks</a><br /><a title="187" href="https://digitalfire.com/article/187">Duplicating Albany Slip</a><br /><a title="45" href="https://digitalfire.com/article/45">Duplicating AP Green Fireclay</a><br /><a title="197" href="https://digitalfire.com/article/197">Electric Hobby Kilns: What You Need to Know</a><br /><a title="39" href="https://digitalfire.com/article/39">Fighting the Glaze Dragon</a><br /><a title="214" href="https://digitalfire.com/article/214">Firing Clay Test Bars</a><br /><a title="200" href="https://digitalfire.com/article/200">Firing: What Happens to Ceramic Ware in a Firing Kiln</a><br /><a title="113" href="https://digitalfire.com/article/113">First You See It Then You Don't: Raku Glaze Stability</a><br /><a title="316" href="https://digitalfire.com/article/316">Fixing a glaze that does not stay in suspension</a><br /><a title="338" href="https://digitalfire.com/article/338">Formulating a body using clays native to your area</a><br /><a title="191" href="https://digitalfire.com/article/191">Formulating a Clear Glaze Compatible with Chrome-Tin Stains</a><br /><a title="282" href="https://digitalfire.com/article/282">Formulating a Porcelain</a><br /><a title="188" href="https://digitalfire.com/article/188">Formulating Ash and Native-Material Glazes</a><br /><a title="114" href="https://digitalfire.com/article/114">G1214M Cone 5-7 20x5 glossy transparent glaze</a><br /><a title="121" href="https://digitalfire.com/article/121">G1214W Cone 6 transparent glaze</a><br /><a title="122" href="https://digitalfire.com/article/122">G1214Z Cone 6 matte glaze</a><br /><a title="226" href="https://digitalfire.com/article/226">G1916M Cone 06-04 transparent glaze</a><br /><a title="203" href="https://digitalfire.com/article/203">Getting the Glaze Color You Want: Working With Stains</a><br /><a title="342" href="https://digitalfire.com/article/342">Glaze and Body Pigments and Stains in the Ceramic Tile Industry</a><br /><a title="189" href="https://digitalfire.com/article/189">Glaze Chemistry Basics - Formula, Analysis, Mole%, Unity </a><br /><a title="358" href="https://digitalfire.com/article/358">Glaze chemistry using a frit of approximate analysis</a><br /><a title="123" href="https://digitalfire.com/article/123">Glaze Recipes: Formulate and Make Your Own Instead</a><br /><a title="343" href="https://digitalfire.com/article/343">Glaze Types, Formulation and Application in the Tile Industry</a><br /><a title="181" href="https://digitalfire.com/article/181">Having Your Glaze Tested for Toxic Metal Release</a><br /><a title="364" href="https://digitalfire.com/article/364">High Gloss Glazes</a><br /><a title="384" href="https://digitalfire.com/article/384">Hire Us for a 3D Printing Project</a><br /><a title="136" href="https://digitalfire.com/article/136">How a Material Chemical Analysis is Done</a><br /><a title="235" href="https://digitalfire.com/article/235">How desktop INSIGHT Deals With Unity, LOI and Formula Weight</a><br /><a title="331" href="https://digitalfire.com/article/331">How to Find and Test Your Own Native Clays</a><br /><a title="26" href="https://digitalfire.com/article/26">I have always done it this way!</a><br /><a title="344" href="https://digitalfire.com/article/344">Inkjet Decoration of Ceramic Tiles</a><br /><a title="279" href="https://digitalfire.com/article/279">Is Your Fired Ware Safe?</a><br /><a title="311" href="https://digitalfire.com/article/311">Leaching Cone 6 Glaze Case Study</a><br /><a title="206" href="https://digitalfire.com/article/206">Limit Formulas and Target Formulas</a><br /><a title="133" href="https://digitalfire.com/article/133">Low Budget Testing of Ceramic Glazes</a><br /><a title="333" href="https://digitalfire.com/article/333">Make Your Own Ball Mill Stand</a><br /><a title="347" href="https://digitalfire.com/article/347">Making Glaze Testing Cones</a><br /><a title="341" href="https://digitalfire.com/article/341">Monoporosa or Single Fired Wall Tiles</a><br /><a title="325" href="https://digitalfire.com/article/325">Organic Matter in Clays: Detailed Overview</a><br /><a title="105" href="https://digitalfire.com/article/105">Outdoor Weather Resistant Ceramics</a><br /><a title="27" href="https://digitalfire.com/article/27">Painting Glazes Rather Than Dipping or Spraying</a><br /><a title="212" href="https://digitalfire.com/article/212">Particle Size Distribution of Ceramic Powders</a><br /><a title="339" href="https://digitalfire.com/article/339">Porcelain Tile, Vitrified Tile</a><br /><a title="20" href="https://digitalfire.com/article/20">Rationalizing Conflicting Opinions About Plasticity</a><br /><a title="332" href="https://digitalfire.com/article/332">Ravenscrag Slip is Born</a><br /><a title="247" href="https://digitalfire.com/article/247">Recylcing Scrap Clay</a><br /><a title="101" href="https://digitalfire.com/article/101">Reducing the Firing Temperature of a Glaze From Cone 10 to 6</a><br /><a title="329" href="https://digitalfire.com/article/329">Setting up a Clay Testing Program in Your Company or Studio</a><br /><a title="211" href="https://digitalfire.com/article/211">Simple Physical Testing of Clays</a><br /><a title="350" href="https://digitalfire.com/article/350">Single Fire Glazing</a><br /><a title="326" href="https://digitalfire.com/article/326">Soluble Salts in Minerals: Detailed Overview</a><br /><a title="28" href="https://digitalfire.com/article/28">Some Keys to Dealing With Firing Cracks</a><br /><a title="249" href="https://digitalfire.com/article/249">Stoneware Casting Body Recipes</a><br /><a title="194" href="https://digitalfire.com/article/194">Substituting Cornwall Stone</a><br /><a title="274" href="https://digitalfire.com/article/274">Super-Refined Terra Sigillata</a><br /><a title="340" href="https://digitalfire.com/article/340">The Chemistry, Physics and Manufacturing of Glaze Frits</a><br /><a title="202" href="https://digitalfire.com/article/202">The Effect of Glaze Fit on Fired Ware Strength</a><br /><a title="125" href="https://digitalfire.com/article/125">The Four Levels on Which to View Ceramic Glazes</a><br /><a title="207" href="https://digitalfire.com/article/207">The Majolica Earthenware Process</a><br /><a title="43" href="https://digitalfire.com/article/43">The Potter's Prayer</a><br /><a title="359" href="https://digitalfire.com/article/359">The Right Chemistry for a Cone 6 Magnesia Matte</a><br /><a title="33" href="https://digitalfire.com/article/33">The Trials of Being the Only Technical Person in the Club</a><br /><a title="107" href="https://digitalfire.com/article/107">The Whining Stops Here: A Realistic Look at Clay Bodies</a><br /><a title="134" href="https://digitalfire.com/article/134">Those Unlabelled Bags and Buckets</a><br /><a title="16" href="https://digitalfire.com/article/16">Tiles and Mosaics for Potters</a><br /><a title="308" href="https://digitalfire.com/article/308">Toxicity of Firebricks Used in Ovens</a><br /><a title="379" href="https://digitalfire.com/article/379">Trafficking in Glaze Recipes</a><br /><a title="216" href="https://digitalfire.com/article/216">Understanding Ceramic Materials</a><br /><a title="210" href="https://digitalfire.com/article/210">Understanding Ceramic Oxides</a><br /><a title="130" href="https://digitalfire.com/article/130">Understanding Glaze Slurry Properties</a><br /><a title="213" href="https://digitalfire.com/article/213">Understanding the Deflocculation Process in Slip Casting</a><br /><a title="132" href="https://digitalfire.com/article/132">Understanding the Terra Cotta Slip Casting Recipes In North America</a><br /><a title="198" href="https://digitalfire.com/article/198">Understanding Thermal Expansion in Ceramic Glazes</a><br /><a title="313" href="https://digitalfire.com/article/313">Unwanted Crystallization in a Cone 6 Glaze</a><br /><a title="389" href="https://digitalfire.com/article/389">Using Dextrin, Glycerine and CMC Gum together</a><br /><a title="135" href="https://digitalfire.com/article/135">Volcanic Ash</a><br /><a title="201" href="https://digitalfire.com/article/201">What Determines a Glaze's Firing Temperature?</a><br /><a title="111" href="https://digitalfire.com/article/111">What is a Mole, Checking Out the Mole</a><br /><a title="38" href="https://digitalfire.com/article/38">What is the Glaze Dragon?</a><br /><a title="98" href="https://digitalfire.com/article/98">Where do I start in understanding glazes?</a><br /><a title="215" href="https://digitalfire.com/article/215">Why Textbook Glazes Are So Difficult</a><br /><a title="239" href="https://digitalfire.com/article/239">Working with children</a></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Working with children</h1>
+<h4 class="text-muted">Description</h4><p class="text-muted font-italic">Go in with both eyes open if you are planning to work with clay with a group of children! A lot can go wrong but it can be unforgettable for them when it goes right.</p><h4>Article</h4>
+<div class="flexright50"><img style="width:100%;" src="https://digitalfire.com/4sight/images/pictures/76ojwslgn3.jpg"></div>
+<h3>Clay is Dirt!</h3>
+<p>It dries, it does not set. So it does not harden like <a  href="https://digitalfire.com/material/1124">plaster</a>, if exposed to water it will turn back into mud. Wet clay is "plastic" (as opposed to "elastic", it willingly assumes a new shape). Clay particles are very tiny and flat, shaped like stop signs. They behave like water magnets because they are electrically charged opposite to water. Dried clay is not very strong. But when baked in a kiln it turns into a rock! <a  href="https://plainsmanclays.ca/data/index.php?product=12869">Buffstone</a> is an inexpensive clay and is good for beginners because it has added <a  href="https://digitalfire.com/material/106">bentonite</a> to slow down drying. Later students could progress to a white burning clay like <a  href="https://plainsmanclays.ca/data/index.php?product=12955">Snow</a> (glazes look better on it) or a <a  href="https://digitalfire.com/glossary/terra+cotta">terracotta</a> red burning one like <a  href="https://plainsmanclays.ca/data/index.php?product=12866">L215</a> (pieces are stronger).</p>
+
+<h3>Firing the Pieces</h3>
+<p>Potters make <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a>, they work at about 2200&deg;F (1200&degC). Potters measure temperatures by cone numbers, 2200&deg;F is <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>. Most schools make <a  href="https://digitalfire.com/glossary/earthenware">earthenware</a> and fire to about 1850&deg;F (1000&degC, that is <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 04</a>). Kilns last longer and fire much easier at earthenware temperatures. Although it is possible to paint glazes on pieces that are only dried, for children it is far better to do a <a  href="https://digitalfire.com/glossary/bisque">bisque firing</a> first.</p>
+<ul>
+<li>Make sure pieces are dry before firing (the kiln also needs to remove water you cannot see).</li>
+
+<li>Automatic firing in most kilns controllers can be too fast. It is best to <a  href="https://digitalfire.com/picture/2222">manually program</a> your kiln so you know how fast it is heating (kilns generally program in degrees F). Program it to heat up to about 250&deg;F and hold there for a few of hours, even overnight (to drive out all water) before continuing upward to 1850&deg;F at about 300F/hr.</li>
+
+<li>Bisque to cone 04 (1920F). Pieces can be stacked in <a  href="https://digitalfire.com/glossary/bisque">bisque</a> firings.</li>
+
+</ul>
+<div class="flexinline"><img style="width:100%;" src="https://digitalfire.com/4sight/images/pictures/xbiyywfhn6.jpeg"></div>
+
+<h3>Glazes</h3>
+<p>First decide if pieces need to be glazed. Glaze are mixes of powdered minerals, clays and glasses, they melt and produce a very durable surface. But if the children are just making decorative items it might be better to finish them using acryllic paint (after bisque firing).</p>
+
+<p>Glazes are water suspensions of inert powders, they are not toxic to use. Glazes can be freely mixed like paint. Bottled <a  href="https://digitalfire.com/glossary/brushing+glaze">brushing glazes</a> can be quite expensive (e.g. $20-30 per 1-pint jar). As you get more experienced you might consider buying the powders and making your own in a blender (we have instructions). It is also possible to make buckets for dipping (we also have instructions for that).</p>
+
+<p>Almost all glazes can be fired from <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 06</a> (1800&deg;F or 980&degC) to cone 04 (1920&deg;F) - and even higher (note that at earthenware temperatures the cone numbers count backward up to zero). We find it is easiest to fire both bisque and glaze at cone 04, in this way a firing can contain a mix of pieces.</p>
+
+<div class="flexright25"><img style="width:100%;" src="https://digitalfire.com/4sight/images/pictures/ebuaqqb7eh.jpg"><p style="color:#888888; font-style:italic; font-size:80%; margin:4px 0px 5px 0px;">A commercial clear brushing glaze</p></div>
+<ul>
+<li>Note instructions/cautions on the glaze label. Add water if needed (even newly opened jars can be too thick). Apply in coats and let dry for each. <a  href="https://digitalfire.com/glossary/bisque">Bisque-fired</a> pieces are absorbent, so the layers will dry fairly quickly. It is better to paint on more thin coats than fewer thick ones, this gives more even coverage. </li>
+<li>Don't glaze the bottoms of pieces or they will glue to the shelf during firing. Sponge off any glaze that gets on the foot.</li>
+<li>Almost all glazes can be fired from cone 06-04 (04 is hotter).</li>
+<li>Getting a glaze on too thick could cause it to run during firing.</li>
+</ul>
+
+<h3>Safety</h3>
+<p>The hazard label: Clay is <a  href="https://digitalfire.com/url/3517">non-toxic</a>, the label refers to <a  href="https://digitalfire.com/hazard/372">silicosis</a>. This happens when people breathe the dust over a period of many years (thus farmers, gardeners can get silicosis). Keep the floor clean.</p>
+<p>Glazes: Use white or <a  href="https://digitalfire.com/glossary/transparent+glazes">transparent glazes</a> on food surfaces, brightly colored elsewhere.</p>
+
+<h3>Clay Shrinks When It Dries</h3>
+<p>Most clays shrink about 6%. So if one part of a piece dries (and shrinks first) then when the other part shrinks a crack will occur. In addition, because clays shrink pieces cannot be built around an armature and expected to dry on it (unless the armature can be removed).</p>
+<ul>
+<li>Dry things evenly (slow down fast-drying sections or speed up slow-drying ones).</li>
+<li>Drying things slowly usually means they dry more evenly (e.g. put a piece on a small board, drape a cloth over it and wrap it under the board). In wet climates pieces will dry much more slowly and also experience less cracking.</li>
+<li>To work on a piece again the next day, put it on a board, drape a cloth over it, put the whole thing it in a plastic bag and twist and fold the bag mouth under.</li>
+<li>Encourage the kids not to make things that are too thick or heavy. The more even thickness a piece is the easier it will be to dry it without cracks.</li>
+<li>If something needs to be made hollow it might be necessary to let it stiffen a little, cut it in half with a wire, hollow it out, then glue it back together with slip (see below).</li>
+</ul>
+
+<h3>Rolling Out Clay</h3>
+<p>It is best to flatten the clay as much as possible by hand first before trying to use a rolling pin (google "rolling clay slabs" for examples). Don't fold the clay when flattening it, it will crack on the folds. If you are doing a project (e.g. wrapping a slab around a form to make a cup or bowl) the students likely need a good slab. However, younger kids won't be capable of making one, the instructor may need to make these ahead of time, stacking them with plastic between them. Clay can be sticky, especially if it gets wet. Work on an absorbent surface (e.g. particle board, canvas board), no water is needed (that will just make a big mess). </p>
+
+<h3>Joining</h3>
+<p>"Slip" is used to join things (don't use water, it will cause splits). Slip is just the clay with extra water so it can be painted. Make it by crushing some bone-dry scrap clay (into pieces smaller than marbles), then put this in water. It will <a  href="https://digitalfire.com/glossary/slaking">slake</a> and settle on the bottom in a few minutes. Pour off the water and stir it. The thicker and more creamy it is the better. Or, flatten some clay in a small bowl, put a little water into it and stir it around with a brush to work up a thick creamy consistency.</p>
+
+<h3>Clay Dries Out if You Work To Long</h3>
+<p>Teach the children to plan what they want to make first. Then use a deliberate set of steps to achieve that. If they do not do this the clay will dry out too much as they work on it too long. Let them know it is OK to attempt a piece multiple times before they get success. Consider watching a few Youtube videos on handbuilding before introducing the clay to the class.</p>
+
+<h3>Inspiration</h3>
+<p>Google pictures for "clay animals", "clay houses" or "clay hand building". It is often a good idea to help the children make something they can use (like a bowl, plate or cup). Consider watching videos about ceramic masters to inspire the class (e.g. google "korean pottery masters", "Indian village potters", "African pottery").</p>
+
+<h3>Cleanup</h3>
+<p>Clays and glazes are all water based, insoluble and non-toxic. Glazes are not like paint, they dry like clay and can be rewetted, so they are easy to clean. Avoid putting clay or glaze slurries down the drain as the particles can settle in pipes. It is better to have a couple of pails of water and wash tools and boards using them. The particles will settle to the bottom. Just pour off the water the next day and either dispose of the mud or let it dry out and dispose of that.</p><p style="clear:left"></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Using clay with children</h3>
+<br /><a alt="Children using clay" href="https://digitalfire.com/picture/3122"><img class="flexleft50" alt="Children using clay"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/76ojwslgn3.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3122">click here</a> to see it.</p>
+<p>It is often said: "No good deed goes unpunished"! This can happen when doing a clay session with children. So there is a need to enter, with "both eyes open" to avoid a negative experience. If you can succeed they will get a unique tactile experience in a social setting. And they will experience the anticipation of waiting to see what the kiln will do with their creation. If the kiln gifts them a brightly colored durable piece, especially one that they can drink or eat out of, the experience and the object can stay with them for a lifetime. If you are an instructor inheriting a kiln and clay program for kids it can seem overwhelming, especially if your technical knowledge is limited. But there are some simple things you can do to assess the condition of the kiln in your facility and whether it is practical to attempt some clay sessions with the children in your trust. Click the link below to learn more.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Do these kiln elements need replacing?</h3>
+<br /><a alt="Kiln elements need replacing" href="https://digitalfire.com/picture/3112"><img class="flexleft50" alt="Kiln elements need replacing"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/kjglpethop.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3112">click here</a> to see it.</p>
+<p>This 12 inch <a  href="https://digitalfire.com/picture/1293">test kiln</a> has done 910 firings. The element loops are laying down and nearly touching each other. If they are not changed soon the coils will touch the kiln will have hot spots. And the coils are expanding and getting tighter in the grooves, the longer we wait the more the grooves will be damaged when removing them. Although elements seem expensive, when costed on a per/firing basis they can be surprisingly inexpensive. Most hobby kilns service two elements with each relay and relays generally need to be replaced more often than elements. Consider, for example, replacing the elements on a Skutt 818. Being a smaller kiln it is well-powered in relation to size and elements can last up to 1000 firings (assuming 50:50 <a  href="https://digitalfire.com/glossary/bisque">bisque</a> and <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> firings). It has 4 elements and 2 relays (relays cost $65/ea, elements $95 each). The labor to replace is ~4 hours or $250 - total cost is about $750 (that is ~75&cent; per firing or 32&cent; per ft&sup3;). How about a larger kiln? An 8 ft&sup3; Model 1222 has 5 elements and 3 relays and replacement is ~$1100. But its elements are only likely to last 200 firings. That yields a per firing cost of ~$5 and per ft&sup3; of 65&cent;. But there is a much greater cost to consider: Old elements increase power consumption. An 818 uses 6.4 kwH and a 1222 uses 11.5 kwH - at our electricity cost of 14&cent;/kwH a firing costs ~$7 for the small kiln and ~$13 for the large one. But that is the cost when elements are new. When they need changing those numbers can more than double! An additional cost of old elements is ware consistency, the kiln cannot execute the <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a> in the time programmed and this will likely affect the appearance of bodies and glazes.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Are you using your expensive kiln like a pop-up toaster?</h3>
+<br /><a alt="A small controller-equipment kiln and views of programming it" href="https://digitalfire.com/picture/2171"><img class="flexleft50" alt="A small controller-equipment kiln and views of programming it"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/ojgpa8f7wa.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2171">click here</a> to see it.</p>
+<p>Put the pots in, select a cone, press start. It is time to rethink that approach! The Bartlett Genesis <a  href="https://digitalfire.com/glossary/kiln+controller">kiln controller</a> is standard equipment on hobby and production electric kilns now. It is not meant to be run like a toaster! Good glazes are about much more than recipes, they are about <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedules</a>. None of the built-in "toaster schedules" have hold times on any segments, <a  href="https://digitalfire.com/glossary/drop-and-soak+firing">drop-and-hold</a> sequences or controlled cools. Or even fire-to-cone accuracy. Yet such are a must for defect-free glazes, enhancing the effects of <a  href="https://digitalfire.com/glossary/reactive+glazes">reactive glazes</a> that must develop <a  href="https://digitalfire.com/glossary/crystallization">crystallization</a> or <a  href="https://digitalfire.com/glossary/reactive+glazes">variegation</a> or firing accurately. It is easy to program: Tap the blue edit button to edit a program, tap a column of any segment to edit its value. Tap a segment number to delete or duplicate it. Search "bartlett genesis controller" on YouTube for videos on creating and editing a schedule.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A modern electric test kiln, a marvel of utility</h3>
+<br /><a alt="A ConeArt 119 electric test kiln" href="https://digitalfire.com/picture/2513"><img class="flexleft50" alt="A ConeArt 119 electric test kiln"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/ehk4rk86cy.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2513">click here</a> to see it.</p>
+<p>This is a ConeArt 119D, 0.57 cu ft, 11"x9" cone 10 <a  href="https://digitalfire.com/picture/1293">test kiln</a>. While there is 120v model, don't take a chance, go with 220v (actually ours is 208v). Ours fires 1000 times on a set of elements, mostly in the cone 4-7 range. The old BX controller is shown here, it is $300 cheaper, but don’t even think about getting that! Do not use your electric like a pop-up toaster, make it a technological enabler of custom <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedules</a>, get the Genesis GX. Having good control of firing is a key to success, and this is superior for that. These kilns are economical to fire. Big enough for 5 mugs, but I typically fire a dozen clay and glaze test specimens. We make our own super-thin shelves. The controller holds about 20 schedules, even controllable remotely (it is Wi-Fi connected). We can fire <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 04</a> up and down in three hours! Of course, since this type of kiln can enable so much more testing, a <a  href="https://digitalfire.com/glossary/code+numbering">code numbering</a> system is needed - and a place to record and search all the results: An account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">insight-live</a>.com.<br />
+</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/electric+hobby+kilns%3a+what+you+need+to+know">Electric Hobby Kilns: What You Need to Know</a>
+<br /><i>Electric hobby kilns are certainly not up to the quality and capability of small industrial electric kilns, being aware of the limitations and keeping them in good repair is very important.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/where+do+i+start+in+understanding+glazes%3f">Where do I start in understanding glazes?</a>
+<br /><i>Break your addiction to online recipes that don't work or bottled expensive glazes that you could <a  href="https://digitalfire.com/glossary/do-it-yourself">DIY</a>. Learn why glazes fire as they do. Why each material is used. How to create perfect dipping and brushing properties. Even some <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a>.</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

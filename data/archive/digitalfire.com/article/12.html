@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Are Your Glazes Food Safe or are They Leachable?</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Many potters do not think about leaching, but times are changing. What is the chemistry of stability? There are simple ways to check for leaching, and fix crazing.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item active" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=article" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:center; vertical-align:top;">Feb 14-15, 2026 - <b>Major Server <a href="https://digitalfire.com">Upgrade</a> Done</b></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Articles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a title="388" href="https://digitalfire.com/article/388">A ChatBot gives jaw-dropping glaze recipe advice - Jan 2025</a><br /><a title="244" href="https://digitalfire.com/article/244">A Low Cost Tester of Glaze Melt Fluidity</a><br /><a title="361" href="https://digitalfire.com/article/361">A One-speed Lab or Studio Slurry Mixer</a><br /><a title="353" href="https://digitalfire.com/article/353">A Textbook Cone 6 Matte Glaze With Problems</a><br /><a title="199" href="https://digitalfire.com/article/199">Adjusting Glaze Expansion by Calculation to Solve Shivering</a><br /><a title="251" href="https://digitalfire.com/article/251">Alberta Slip, 20 Years of Substitution for Albany Slip</a><br /><a title="273" href="https://digitalfire.com/article/273">An Overview of Ceramic Stains</a><br /><a title="37" href="https://digitalfire.com/article/37">Are You in Control of Your Production Process?</a><br /><a title="12" href="https://digitalfire.com/article/12">Are Your Glazes Food Safe or are They Leachable?</a><br /><a title="143" href="https://digitalfire.com/article/143">Attack on Glass: Corrosion Attack Mechanisms</a><br /><a title="204" href="https://digitalfire.com/article/204">Ball Milling Glazes, Bodies, Engobes</a><br /><a title="345" href="https://digitalfire.com/article/345">Binders for Ceramic Bodies</a><br /><a title="4" href="https://digitalfire.com/article/4">Bringing Out the Big Guns in Craze Control: MgO (G1215U)</a><br /><a title="381" href="https://digitalfire.com/article/381">Can We Help You Fix a Specific Problem?</a><br /><a title="124" href="https://digitalfire.com/article/124">Ceramic Glazes Today</a><br /><a title="208" href="https://digitalfire.com/article/208">Ceramic Material Nomenclature</a><br /><a title="336" href="https://digitalfire.com/article/336">Ceramic Tile Clay Body Formulation</a><br /><a title="217" href="https://digitalfire.com/article/217">Changing Our View of Glazes</a><br /><a title="22" href="https://digitalfire.com/article/22">Chemistry vs. Matrix Blending to Create Glazes from Native Materials</a><br /><a title="209" href="https://digitalfire.com/article/209">Concentrate on One Good Glaze</a><br /><a title="115" href="https://digitalfire.com/article/115">Copper Red Glazes</a><br /><a title="271" href="https://digitalfire.com/article/271">Crazing and Bacteria: Is There a Hazard?</a><br /><a title="190" href="https://digitalfire.com/article/190">Crazing in Stoneware Glazes: Treating the Causes, Not the Symptoms</a><br /><a title="97" href="https://digitalfire.com/article/97">Creating a Non-Glaze Ceramic Slip or Engobe</a><br /><a title="195" href="https://digitalfire.com/article/195">Creating Your Own Budget Glaze</a><br /><a title="36" href="https://digitalfire.com/article/36">Crystal Glazes: Understanding the Process and Materials</a><br /><a title="324" href="https://digitalfire.com/article/324">Deflocculants: A Detailed Overview</a><br /><a title="32" href="https://digitalfire.com/article/32">Demonstrating Glaze Fit Issues to Students</a><br /><a title="334" href="https://digitalfire.com/article/334">Diagnosing a Casting Problem at a Sanitaryware Plant</a><br /><a title="196" href="https://digitalfire.com/article/196">Drying Ceramics Without Cracks</a><br /><a title="187" href="https://digitalfire.com/article/187">Duplicating Albany Slip</a><br /><a title="45" href="https://digitalfire.com/article/45">Duplicating AP Green Fireclay</a><br /><a title="197" href="https://digitalfire.com/article/197">Electric Hobby Kilns: What You Need to Know</a><br /><a title="39" href="https://digitalfire.com/article/39">Fighting the Glaze Dragon</a><br /><a title="214" href="https://digitalfire.com/article/214">Firing Clay Test Bars</a><br /><a title="200" href="https://digitalfire.com/article/200">Firing: What Happens to Ceramic Ware in a Firing Kiln</a><br /><a title="113" href="https://digitalfire.com/article/113">First You See It Then You Don't: Raku Glaze Stability</a><br /><a title="316" href="https://digitalfire.com/article/316">Fixing a glaze that does not stay in suspension</a><br /><a title="338" href="https://digitalfire.com/article/338">Formulating a body using clays native to your area</a><br /><a title="191" href="https://digitalfire.com/article/191">Formulating a Clear Glaze Compatible with Chrome-Tin Stains</a><br /><a title="282" href="https://digitalfire.com/article/282">Formulating a Porcelain</a><br /><a title="188" href="https://digitalfire.com/article/188">Formulating Ash and Native-Material Glazes</a><br /><a title="114" href="https://digitalfire.com/article/114">G1214M Cone 5-7 20x5 glossy transparent glaze</a><br /><a title="121" href="https://digitalfire.com/article/121">G1214W Cone 6 transparent glaze</a><br /><a title="122" href="https://digitalfire.com/article/122">G1214Z Cone 6 matte glaze</a><br /><a title="226" href="https://digitalfire.com/article/226">G1916M Cone 06-04 transparent glaze</a><br /><a title="203" href="https://digitalfire.com/article/203">Getting the Glaze Color You Want: Working With Stains</a><br /><a title="342" href="https://digitalfire.com/article/342">Glaze and Body Pigments and Stains in the Ceramic Tile Industry</a><br /><a title="189" href="https://digitalfire.com/article/189">Glaze Chemistry Basics - Formula, Analysis, Mole%, Unity </a><br /><a title="358" href="https://digitalfire.com/article/358">Glaze chemistry using a frit of approximate analysis</a><br /><a title="123" href="https://digitalfire.com/article/123">Glaze Recipes: Formulate and Make Your Own Instead</a><br /><a title="343" href="https://digitalfire.com/article/343">Glaze Types, Formulation and Application in the Tile Industry</a><br /><a title="181" href="https://digitalfire.com/article/181">Having Your Glaze Tested for Toxic Metal Release</a><br /><a title="364" href="https://digitalfire.com/article/364">High Gloss Glazes</a><br /><a title="384" href="https://digitalfire.com/article/384">Hire Us for a 3D Printing Project</a><br /><a title="136" href="https://digitalfire.com/article/136">How a Material Chemical Analysis is Done</a><br /><a title="235" href="https://digitalfire.com/article/235">How desktop INSIGHT Deals With Unity, LOI and Formula Weight</a><br /><a title="331" href="https://digitalfire.com/article/331">How to Find and Test Your Own Native Clays</a><br /><a title="26" href="https://digitalfire.com/article/26">I have always done it this way!</a><br /><a title="344" href="https://digitalfire.com/article/344">Inkjet Decoration of Ceramic Tiles</a><br /><a title="279" href="https://digitalfire.com/article/279">Is Your Fired Ware Safe?</a><br /><a title="311" href="https://digitalfire.com/article/311">Leaching Cone 6 Glaze Case Study</a><br /><a title="206" href="https://digitalfire.com/article/206">Limit Formulas and Target Formulas</a><br /><a title="133" href="https://digitalfire.com/article/133">Low Budget Testing of Ceramic Glazes</a><br /><a title="333" href="https://digitalfire.com/article/333">Make Your Own Ball Mill Stand</a><br /><a title="347" href="https://digitalfire.com/article/347">Making Glaze Testing Cones</a><br /><a title="341" href="https://digitalfire.com/article/341">Monoporosa or Single Fired Wall Tiles</a><br /><a title="325" href="https://digitalfire.com/article/325">Organic Matter in Clays: Detailed Overview</a><br /><a title="105" href="https://digitalfire.com/article/105">Outdoor Weather Resistant Ceramics</a><br /><a title="27" href="https://digitalfire.com/article/27">Painting Glazes Rather Than Dipping or Spraying</a><br /><a title="212" href="https://digitalfire.com/article/212">Particle Size Distribution of Ceramic Powders</a><br /><a title="339" href="https://digitalfire.com/article/339">Porcelain Tile, Vitrified Tile</a><br /><a title="20" href="https://digitalfire.com/article/20">Rationalizing Conflicting Opinions About Plasticity</a><br /><a title="332" href="https://digitalfire.com/article/332">Ravenscrag Slip is Born</a><br /><a title="247" href="https://digitalfire.com/article/247">Recylcing Scrap Clay</a><br /><a title="101" href="https://digitalfire.com/article/101">Reducing the Firing Temperature of a Glaze From Cone 10 to 6</a><br /><a title="329" href="https://digitalfire.com/article/329">Setting up a Clay Testing Program in Your Company or Studio</a><br /><a title="211" href="https://digitalfire.com/article/211">Simple Physical Testing of Clays</a><br /><a title="350" href="https://digitalfire.com/article/350">Single Fire Glazing</a><br /><a title="326" href="https://digitalfire.com/article/326">Soluble Salts in Minerals: Detailed Overview</a><br /><a title="28" href="https://digitalfire.com/article/28">Some Keys to Dealing With Firing Cracks</a><br /><a title="249" href="https://digitalfire.com/article/249">Stoneware Casting Body Recipes</a><br /><a title="194" href="https://digitalfire.com/article/194">Substituting Cornwall Stone</a><br /><a title="274" href="https://digitalfire.com/article/274">Super-Refined Terra Sigillata</a><br /><a title="340" href="https://digitalfire.com/article/340">The Chemistry, Physics and Manufacturing of Glaze Frits</a><br /><a title="202" href="https://digitalfire.com/article/202">The Effect of Glaze Fit on Fired Ware Strength</a><br /><a title="125" href="https://digitalfire.com/article/125">The Four Levels on Which to View Ceramic Glazes</a><br /><a title="207" href="https://digitalfire.com/article/207">The Majolica Earthenware Process</a><br /><a title="43" href="https://digitalfire.com/article/43">The Potter's Prayer</a><br /><a title="359" href="https://digitalfire.com/article/359">The Right Chemistry for a Cone 6 Magnesia Matte</a><br /><a title="33" href="https://digitalfire.com/article/33">The Trials of Being the Only Technical Person in the Club</a><br /><a title="107" href="https://digitalfire.com/article/107">The Whining Stops Here: A Realistic Look at Clay Bodies</a><br /><a title="134" href="https://digitalfire.com/article/134">Those Unlabelled Bags and Buckets</a><br /><a title="16" href="https://digitalfire.com/article/16">Tiles and Mosaics for Potters</a><br /><a title="308" href="https://digitalfire.com/article/308">Toxicity of Firebricks Used in Ovens</a><br /><a title="379" href="https://digitalfire.com/article/379">Trafficking in Glaze Recipes</a><br /><a title="216" href="https://digitalfire.com/article/216">Understanding Ceramic Materials</a><br /><a title="210" href="https://digitalfire.com/article/210">Understanding Ceramic Oxides</a><br /><a title="130" href="https://digitalfire.com/article/130">Understanding Glaze Slurry Properties</a><br /><a title="213" href="https://digitalfire.com/article/213">Understanding the Deflocculation Process in Slip Casting</a><br /><a title="132" href="https://digitalfire.com/article/132">Understanding the Terra Cotta Slip Casting Recipes In North America</a><br /><a title="198" href="https://digitalfire.com/article/198">Understanding Thermal Expansion in Ceramic Glazes</a><br /><a title="313" href="https://digitalfire.com/article/313">Unwanted Crystallization in a Cone 6 Glaze</a><br /><a title="389" href="https://digitalfire.com/article/389">Using Dextrin, Glycerine and CMC Gum together</a><br /><a title="135" href="https://digitalfire.com/article/135">Volcanic Ash</a><br /><a title="201" href="https://digitalfire.com/article/201">What Determines a Glaze's Firing Temperature?</a><br /><a title="111" href="https://digitalfire.com/article/111">What is a Mole, Checking Out the Mole</a><br /><a title="38" href="https://digitalfire.com/article/38">What is the Glaze Dragon?</a><br /><a title="98" href="https://digitalfire.com/article/98">Where do I start in understanding glazes?</a><br /><a title="215" href="https://digitalfire.com/article/215">Why Textbook Glazes Are So Difficult</a><br /><a title="239" href="https://digitalfire.com/article/239">Working with children</a></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Are Your Glazes Food Safe or are They Leachable?</h1>
+<h4 class="text-muted">Description</h4><p class="text-muted font-italic">Many potters do not think about leaching, but times are changing. What is the chemistry of stability? There are simple ways to check for leaching, and fix crazing.</p><h4>Article</h4>
+<p>We live in a 'no fault' world. People tend to blame others for things. For example, it is fashionable to blame alcoholism and criminal behavior on our genes now. However, if your pottery is <a  href="https://digitalfire.com/glossary/leaching">leaching</a> harmful compounds into food a drink, there is no one to blame but you. To be honest, you probably like to take the credit for your designs. Then you should also take responsibility. If you can calculate the <a  href="https://digitalfire.com/glossary/oxide+formula">oxide formula</a> of your glaze and do a couple of simple tests you will be in the best good position to defend your use of them.</p>
+
+<p>There is definitely a school-of-thought in both industrial and hobby <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a> that the 'leaching glaze' issue is totally overblown. Thus, if there is pottery leaching harmful compounds into food and drink, it is being produced both by companies and people that do not know any better and who have made a conscious choice to ignore the issue.</p>
+
+<p>The US FDA (Food and Drug Administration) tests ceramic ware extensively for leaching metals often with distressing results. After a meeting and lunch with their representative at the American Ceramic Society convention I was very encouraged by their position on this matter. While they are ready to take action against offenders, they are much more anxious to see initiatives by companies and potters to learn how to recognize leach-likely processes, materials, and formulations and learn how to fix the problems.</p>
+
+<p>There are lots of things we don't know about leaching in glazes. However what follows are some things we do know.</p>
+
+<p>Glazes are glass and we tend to think of them as timeless, indestructible. However all glass leaches to some extent when it comes into contact with even water. With acids, especially if the contact occurs over a period of time or the acid is hot, the effect is obviously greater. Vandals, for example, simply use sulfuric acid in bingo doppers to etch grafitti into windows. This is evident by a change in the gloss and texture of the glass surface over time. Glaze color can change also. As a demonstration try 33% <a  href="https://digitalfire.com/oxide/cao">CaO</a>, 42% <a  href="https://digitalfire.com/oxide/b2o3">B<sub>2</sub>O<sub>3</sub></a>, 6% <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> & 18% <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> at 950C. It should fizz and dissolve in vinegar within minutes even though it fires to a clear and apparently hard surface.</p>
+
+<p>If a glaze is made from harmless materials like <a  href="https://digitalfire.com/material/1245">silica</a>, <a  href="https://digitalfire.com/material/273">dolomite</a>, <a  href="https://digitalfire.com/material/925">kaolin</a>, <a  href="https://digitalfire.com/material/310">feldspar</a>, whiting, <a  href="https://digitalfire.com/material/80">ball clay</a>, etc. leaching is only a <a  href="https://digitalfire.com/glossary/functional">functional</a> and aesthetic issue. But if the glaze employs metallic <a  href="https://digitalfire.com/glossary/colorant">colorants</a> (other than iron) or other minerals containing lithium, barium, lead, chrome, etc. then safety and legal liability becomes a concern.</p>
+
+<p>The likelihood of leaching is not just a matter of whether the ingredients used to make a glaze are dangerous. The issue is complex, involving the ways in which the materials are prepared and fired and the formulations that are used. It is possible to use toxic materials safely and it is possible to compromise an otherwise safe glaze by unbalanced mixtures.</p>
+
+<p>If a customer claims injury from leaching of your ware you have to demonstrate that there was no reason for you to have been concerned about the hazard and that you were diligent in researching the subject. If you don't know how to appraise a glaze's safety then play it safe. For example, there are ways to use barium safely but if you don't know them then don't use barium on food surfaces.</p>
+
+<h2>Is the glaze <a  href="https://digitalfire.com/glossary/maturity">mature</a>?</h2>
+<p>If a glaze is not properly melted one cannot expect it to be resistant to leaching. While a simple visual inspection of a <a  href="https://digitalfire.com/glossary/glossy+glaze">glossy glaze</a> is usually sufficient to judge the degree of melt, it is especially difficult to tell if a <a  href="https://digitalfire.com/glossary/matte+glaze">matte glaze</a> is properly developed. This is because glazes can be matte because a network of surface crystals have developed, because the glaze has a surface texture imparted by incomplete mixing of <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> during <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a>, because high alumina affects the reflectivity or index of refraction of the glass, or simply because the glaze is not melted.</p>
+
+<p>If a glaze is not properly melted then it will be leachable. The simplest way to tell if this is the case is to fire the glaze at one and two cones higher and lower than your production temperature. Line up the samples and it should be obvious.</p>
+
+<h2>Is it balanced?</h2>
+
+<p>Glazes are leachable if they contain inadequate glass former and alumina. 'Flux saturated' glazes are very common because they develop interesting fired surfaces associated with non-homogeneous melts of more and less fluid components. However, for a glaze to be fluid, it needs to have lots of <a  href="https://digitalfire.com/glossary/flux">flux</a>. If it has lots of flux then it is very likely that the silica and alumina are lacking. A glaze with high feldspar (50%+) is a classic example (feldspar by itself is leachable). If inadequate glass and intermediate oxides are available, coloring oxides that might otherwise be securely held in the glass structure may be available for leaching. Calculating the formula of your glaze (i.e. with <A href="https://digitalfire.com">INSIGHT</A>) and comparing it with limit charts can be a good way to tell if adjustment is needed. Sometimes it is necessary to compromise a little of the visual character to produce a product more resistant to acid attack.</p>
+
+<p>Another simple thing you can check for is material amounts that do not seem normal. It is common, for example, to see 5% <a  href="https://digitalfire.com/material/1620">talc</a> in a glaze, but 30% is definitely not normal. Likewise more than 5% <a  href="https://digitalfire.com/material/975">lithium carbonate</a> or zinc is strange and needs explaining. Watch also for high amounts of <a  href="https://digitalfire.com/material/806">Gerstley borate</a> or <a  href="https://digitalfire.com/glossary/boron+frit">boron frit</a> (more than 10%) in high fire glazes, this is not normal. In addition, every glaze should have as much silica and kaolin as it can tolerate. High and middle temperature glazes with little or no silica or kaolin need an explanation. 
+<a  href="https://digitalfire.com/glossary/earthenware">Low fire</a> glazes must have lots of <a  href="https://digitalfire.com/glossary/borate">boron</a> sourcing material like <a  href="https://digitalfire.com/glossary/frit">frit</a> or they 
+simply will not melt. Many <a  href="https://digitalfire.com/glossary/frit">frits</a> are quite balanced as a low fire glaze (e.g. 
+Ferro <a  href="https://digitalfire.com/material/356">Frit 3195</a>), others are not (e.g. <a  href="https://digitalfire.com/material/351">Frit 3134</a>) and need more added silica and 
+kaolin.</p>
+
+<h2>Firing Temperature</h2>
+
+<p>Higher temperature glazes contain less flux and more silica and alumina. Since silica and alumina are so closely related to glaze stability it follows that high temperature glazes are intrinsicly more stable. However it is fairly easy to make unstable high temperature glazes also (fluid flux saturates are an example, they often contain little alumina). At high temperatures experimenters can mix a far greater range of materials and get a good melt because temperature is on their side. Thus it is easy to get 'sloppy' and adopt the attitude that if a glaze looks good it is also safe. Some potters even assume that any glaze is safe as long as it is fired at high temperature. It is common to see popular high fire recipes with very high metal oxide and barium contents. Matte glazes often contain abnormally large magnesia contents. These are destabilizing factors that temperature cannot counteract. With a knowledge of <a  href="https://digitalfire.com/glossary/glaze+chemistry">glaze chemistry</a> you can create stable glazes at low fire, without it you can make unstable ones at high temperatures.</p>
+
+<h2>Does it contain known carcinogens or poisons?</h2>
+
+<p>If a glaze recipe contains materials that are 'surrounded in controversy' it might be best to eliminate or reduce these if they are not necessary. Barium for example, is used for the development of certain blue colors and its ability to produce a matte surface. However there is no justification for barium in a glaze having neither of these properties. The matte effects of barium can also be produced with calcia. Other materials that you should be careful about are manganese, copper (it increases glaze solubility), frits that you don't have an analysis for (may contain lead), chrome and lithia. There are others. <a  href="https://digitalfire.com/glossary/ceramic+stain">Stains</a> can contain a wide range of toxic metals, but they are optimized chemically to produce the intended color and therefore tend to contain less toxic metals than would be needed if you tried to produce the same color using raw <a  href="https://digitalfire.com/glossary/metal+oxides">metal oxides</a>. In addition stains are smelted materials, they are mixtures of metals and stabilizers and are therefore inherently less soluble.</p>
+
+<h2>How do you apply on-glaze color on <a  href="https://digitalfire.com/glossary/earthenware">earthenware</a>? Consider <a  href="https://digitalfire.com/glossary/underglaze">under-glaze</a>.</h2>
+
+<p>If you apply pure stains or oxides on top of your glaze, there is a real danger than these might be soluble. It is best to mix metallic colors with a glaze (at least 50% glaze, but preferably a much higher glaze content). Do not mix on-glaze metallic colors with Gerstley <a  href="https://digitalfire.com/glossary/borate">Borate</a> alone (it is soluble) or unbalanced frits (e.g. Ferro 3134), these needs much more alumina and silica to be stable. Putting color on the ware as a slip and applying a transparent glaze over top is the safest method for food surfaces. However if there is a danger of the <a  href="https://digitalfire.com/glossary/overglaze">overglaze</a> <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a> be careful about using extremely concentrated colored under slips since the cracks will expose them to the liquid the container holds. In addition an absorbent body with a <a  href="https://digitalfire.com/trouble/glaze+crazing">crazed</a> glaze will waterlog over time and the internal moisture will saturate with metals.</p>
+
+<h2>A liner glaze</h2>
+
+<p>The best solution is to use a <a  href="https://digitalfire.com/glossary/liner+glaze">liner glaze</a> (see link to article on this) with no color on all surfaces that will be exposed to liquids. Liner glazes made from materials like kaolin, 
+ball clay, <a  href="https://digitalfire.com/material/106">bentonite</a>, silica, feldspar, whiting, wollastonite, dolomite, <a  href="https://digitalfire.com/material/1070">nepheline syenite</a>, Gerstley borate or boron frits (having only B<sub>2</sub>O<sub>3</sub>, <a  href="https://digitalfire.com/oxide/na2o">Na<sub>2</sub>O</a>, <a  href="https://digitalfire.com/oxide/k2o">K<sub>2</sub>O</a>, CaO, <a  href="https://digitalfire.com/oxide/mgo">MgO</a>, Al<sub>2</sub>O<sub>3</sub>, SiO<sub>2</sub>), talc, iron 
+oxide, <a  href="https://digitalfire.com/material/1204">rutile</a>, and <a  href="https://digitalfire.com/material/1722">zircon</a>, <a  href="https://digitalfire.com/material/1644">titanium</a> and tin <a  href="https://digitalfire.com/glossary/opacifier">opacifiers</a> are relatively safe. Frits are also safe as long as you know that they contain oxides common to the above materials (no lead, barium). We have base <a  href="https://digitalfire.com/glossary/glaze+recipes">glaze recipes</a> available for low, medium and high temperatures (see link to <i>"Concentrate on One Good Glaze"</i> below). Be sure that colored under slips or glazes are not diffusing metals up into the 
+liner glaze, especially where it might be thin. You can examine a broken cross section under a microscope to see if this is happening. If this is happening you will need to reduce the amount of flux in the <a  href="https://digitalfire.com/glossary/colorant">colorant</a> under layer.</p>
+
+<h2>Are your glazes crazing?</h2>
+
+<p>If your glazes <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a> and your ware is porous then there is a possibility you are creating a bacterial 'breeding ground'. If the craze lines are of adequate width then who knows what could live in there if the <a  href="https://digitalfire.com/glossary/clay+body">clay body</a> supplies absorbed moisture from below. While there are many factors involved and this could be argued, we must admit that the greater body <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a>, the wider the craze lines, and the less the ware is exposed to heat, the more this would be a threat. You can test if your ware is absorbing water by soaking it for a few days and putting an empty vessel in the microwave. If it gets hot (and it is not of a high iron clay or glaze) then it has absorbed water. Weighing a new piece before and after soaking will verify this. Remember also the matter of perception: Crazing dramatically weakens glazed ware. Over time it will lose its 'ring' and users will get the feeling that your ware is not good quality. As a result they may also question its other qualities, such as <a  href="https://digitalfire.com/glossary/food+safe">food safety</a>.</p>
+
+<p>Another factor to consider is this: Glazes craze because they have a high <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a>. Often high expansions are associated with low silica and alumina contents. Stability in glazes is almost always linked to the amount of silica and alumina, the more the better. Thus the crazing is often a tip-off that the glaze is potentially leachable.</p>
+
+<h2>Simple leaching tests you can do</h2>
+<p>All glass leaches to some extent when it comes into contact with acids or bases, especially if the contact occurs over a period of time or the acid is hot. This is evident by a change the gloss and texture of the glass surface over time. The ability of the glaze to pass two simple tests can be a good assurance that it will give trouble-free service. 
+<ul>
+<li><strong>Dishwasher Test</strong>: Take two identical items and put one in your cupboard and leave one in the <a  href="https://digitalfire.com/glossary/dishwasher+safe">dishwasher</a> for two months. Compare the surfaces of the two very closely. If the washed one looks any different, either in color, gloss, or texture then you have a glaze that is vulnerable to attack of bases. The strongest base that most people have access to is Drano so you could use it for a super-duper test.</li>
+ 
+<li><strong>Vinegar Test</strong>: Fill a glazed container half full of vinegar and leave it for several days. Dry the item and compare the color and surface character (e.g. lustre, gloss, texture) above and below the liquid line. Amazingly lemon juice is a stronger acid (but not as strong as stomach acid!). You can just leave a lemon slice against the glaze surface also. Any differences between the acid-exposed surface and the regular surface indicates that the glaze is subject to leaching in acids. There is also way that you can amplify the result: If your glaze is white or transparent add 5% cobalt and do a vinegar leaching test on it (if you are using a colored glaze, add enough of the colorant to get a bright color before doing the test). Excessively unstable glazes can easily turn white with an overnight vinegar leach.<BR>If you want to be a little more scientific you can send the vinegar leachate to a lab to test for the metal in question, then compare the result with its drinking water standards. This type of information is available by using a search engine on the Internet. For example, if you google <EM>"manganese drinking water standard"</EM> in google you will get 258,000 hits! Look around and you'll find that manganese has public drinking water standards of 0.01-0.05 mg/liter. Remember also that to be totally applicable someone would have to drink all their water from the same glazed container, and any metals already in the water, body weight, whether or not the body accumulates it, etc. would have to be taken into account.</li></ul>
+
+<p>These tests are not technical enough to guarantee that ware is going to be absolutely safe but they will certainly expose glazes that are obviously unsafe.</p>
+
+<h2>What to do if your glazes are soluble</h2>
+<p>If you find that your glazes are soluble, use ceramic calculations to increase the amount of silica and alumina and moderate the content of oxides that exist in inordinately large amounts. Test again to see if it worked. There is much information in the literature on this subject and often small changes that do not greatly impact the fired glass have significant effects of solubility.</p>
+
+<h2>The bottom line</h2>
+
+<ul>
+<li>Make sure your glazes melt well enough to form a good stable glass (enough flux).</li>
+<li>Use as much alumina and silica as your glazes will take and still melt well.</li>
+<li>Make sure glaze melts are not too runny, this indicates either too little alumina or too much flux, both are leaching hazards.</li>
+<li>If it contains an oxide that has a reputation for destabilizing a glaze against leaching (i.e. copper), have it tested.</li>
+<li>If any metallic oxide colorants are used, be wary of large percentages.</li>
+<li>Be wary of glazes with oxides that are known to have human effects (i.e. barium, lithium, manganese).</li>
+<li>Be wary of recipes that 'don't look right' (e.g. 60% feldspar is too much, glazes with no clay are very suspect, glazes that employ frits that you know nothing about).</li>
+<li>Use liner glazes.</li>
+</ul>
+
+<h2>Having your glaze lab-tested for metal release</h2>
+
+<p> Are you doing the simple tests? If not leave this till later. Please read the paragraph below before going this route. It is true that the only way to know for sure if your glaze is leaching is to have it tested at a credible lab. But think first about whether you able to interpret the results they give you?
+John Hesselberth, a potter who has made it his business in recent years to gather and evaluate information on <a  href="https://digitalfire.com/glossary/limit+formula">limit formulas</a> and glaze leaching, had this to say:
+<i>'You cannot predict leaching from limit formulas; although I believe a glaze within limits is more likely to be durable to leaching than one that is outside of limits--but being in limits is no guarantee.'</i>See the links below or search for the term "toxicology" or "safety" on this site to find articles on specific materials (there are many).</p>
+
+<h3>List of Testing Labs</h3>
+<p><a href="https://digitalfire.com/services/database.php?list=labs">https://digitalfire.com/services/database.php?list=labs</a></p>
+
+<h2>Being Realistic About Have Leach-testing Done at a Lab</h2>
+
+<p>The idea of alot of people making leaching tests in isolation from each other and expecting to compare their results with some arbitrary standards to approve or deny a glaze is unrealistic. This is a science and requires standards and a history of testing data. If the vast majority of people have not done the simple things they can do to reduce the likelihood and evaluate glaze leaching, are they ready for the complicated tests? The real value of lab testing would come from relating many measurements taken over the years to glazes known to be more or less prone to leaching (by other types of testing and rationalization). Over time it would be evident which glazes were best, then the lab numbers of these could become a benchmark against which to compare others (with limitations realized by the experience). Are you ready for this?</p><p style="clear:left"></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Copper can destabilize a glaze and make it soluble</h3>
+<br /><a href="https://digitalfire.com/picture/885"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/lokfawenuv.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/885">click here</a> to see it.</p>
+<p>A closeup of a glossy <a  href="https://digitalfire.com/glossary/cone+6">Cone 6</a> glaze having 4% added <a  href="https://digitalfire.com/material/236">copper carbonate</a>. The bottom section has <a  href="https://digitalfire.com/glossary/leaching">leached</a> in lemon juice after 24 hours. This photo has been adjusted to spread the color gamut to highlight the difference. The leached section is now matte.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Black ash glaze for 20% raw metal pigments: Suitable for functional ware?</h3>
+<br /><a alt="Saturated metal ash glaze" href="https://digitalfire.com/picture/3352"><img class="flexleft50" alt="Saturated metal ash glaze"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/akxpcsd6gw.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3352">click here</a> to see it.</p>
+<p>This glaze is 49% Wood Ash, 24% Soda <a  href="https://digitalfire.com/material/310">Feldspar</a> and 27% <a  href="https://digitalfire.com/material/80">Ball Clay</a>. 10 <a  href="https://digitalfire.com/material/236">copper carbonate</a> and 10 manganese dioxide are added to that. This beautiful <a  href="https://digitalfire.com/glossary/sculpture">sculpture</a> was made by Dan Ingersoll, aesthetically this glaze is perfect for it. But there are two red flags here. Significant manganese and copper metal fumes are certain to be generated at cone 10 (they are seriously not healthy) so anyone using this must be very careful. But there is something much more serious - this glaze is being used on <a  href="https://digitalfire.com/glossary/functional">functional</a> ware. Copper is well known to destabilize other metals in the fired glass. This 10:10 combination is a perfect storm for <a  href="https://digitalfire.com/glossary/leaching">leaching</a> heavy metal into food and drink. This is not an argument for the use of <a  href="https://digitalfire.com/glossary/commercial+hobby+brushing+glazes">commercial glazes</a>, it is one for common sense application of the concept of <a  href="https://digitalfire.com/glossary/limit+recipe">limit recipes</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Commercial glazes on decorative surfaces, your own on food surfaces</h3>
+<br /><a title="Pottery mugs with a liner glaze" href="https://digitalfire.com/picture/1461"><img class="flexleft50" title="Pottery mugs with a liner glaze"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/pakwikekaj.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1461">click here</a> to see it.</p>
+<p>These <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> mugs are hybrid. Three coats of a <a  href="https://digitalfire.com/glossary/commercial+hobby+brushing+glazes">commercial glaze</a> painted on the outside (Amaco PC-30) and my own <a  href="https://digitalfire.com/glossary/liner+glaze">liner glaze</a>, <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a>, poured in and out on the inside. When <a  href="https://digitalfire.com/glossary/commercial+hobby+brushing+glazes">commercial glazes</a> (made by one company) fit a <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> or porcelain (made by another company) it is by accident, neither company designed for the other! For inside food surfaces make or mix a liner glaze already proven to fit your <a  href="https://digitalfire.com/glossary/clay+body">clay body</a>, one that <a  href="https://digitalfire.com/glossary/limit+recipe">sanity-checks</a> well (as a <a  href="https://digitalfire.com/glossary/dipping+glaze">dipping glaze</a> or a <a  href="https://digitalfire.com/glossary/brushing+glaze">brushing glaze</a>). In your own recipes you can use quality materials that you know deliver no toxic compounds to the glass and that are proportioned to deliver a <a  href="https://digitalfire.com/glossary/limit+formula">balanced chemistry</a>. Read and watch our <a  href="https://digitalfire.com/glossary/liner+glazing">liner glazing step-by-step</a> and <a  href="https://digitalfire.com/picture/2964">liner glazing video</a> for details on how to make glazes meet at the rim like this.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">If you think one slip fits any body, think again</h3>
+<br /><a href="https://digitalfire.com/picture/1649"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/kudwabaxyn.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1649">click here</a> to see it.</p>
+<p>This flake shivered off the rim of a <a  href="https://digitalfire.com/glossary/earthenware">low fire</a> <a  href="https://digitalfire.com/glossary/terra+cotta">terra cotta</a> mug. It is Fishsauce slip. It is about 2 inches long and has razor sharp edges. This is not the sort of thing you would want to be falling into your coffee or food and then eating! This flake did give evidence that it was loosening so there was little danger of me consuming it, but smaller flakes can go unnoticed. Slips (or <a  href="https://digitalfire.com/glossary/engobe">engobes</a>) must be drying compatible, have the same <a  href="https://digitalfire.com/glossary/firing+shrinkage">firing shrinkage</a>, the same <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> and be <a  href="https://digitalfire.com/glossary/quartz+inversion">quartz inversion</a> compatible with the body. It is easy to ignore all that and pretend that it works, but the bond between <a  href="https://digitalfire.com/glossary/engobe">engobe</a> and body is fragile at low fire and easily compromised by the above incompatibilities. Slips must be fitted to the specific body, glaze and temperature; that involves a <a  href="https://digitalfire.com/article/329">testing program</a> and often a little <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a>. I have documented online how to I adapted this slip to <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> Terrastone 2 using my account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">insight-live</a>.com.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Liner glaze is coffee-staining and leaching after two years. Is it toxic?</h3>
+<br /><a alt="The white inside of a mug is coffee-staining" href="https://digitalfire.com/picture/2137"><img class="flexleft50" alt="The white inside of a mug is coffee-staining"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/syytxbra9l.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2137">click here</a> to see it.</p>
+<p>This is a <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 04</a> <a  href="https://digitalfire.com/glossary/terra+cotta">terra cotta</a> piece. The coffee stain cannot be removed because the coffee has also <a  href="https://digitalfire.com/glossary/leaching">leached</a> off the surface gloss. Glazes are glass. Glass is leachable if the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> is out-of-balance. So is this glaze poisoning the user? No, it has an insurance policy. It is transparent, made from a mix of two <a  href="https://digitalfire.com/glossary/frit">frits</a> (Ferro 3124, 3134) plus <a  href="https://digitalfire.com/material/925">kaolin</a> and <a  href="https://digitalfire.com/material/1245">silica</a>. The recipe contains no heavy metal <a  href="https://digitalfire.com/glossary/colorant">colorants</a> or pigments and no toxic fluxes like lithium or barium. But the body is red, how can the glaze be white? A white porcelain-like <a  href="https://digitalfire.com/glossary/engobe">engobe</a> layer was applied at the <a  href="https://digitalfire.com/glossary/leather+hard">leather hard</a> stage and it was clear-glazed after <a  href="https://digitalfire.com/glossary/bisque">bisque</a>. The fix: The predominant <a  href="https://digitalfire.com/glossary/frit">frit</a>, 3134, has almost no <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> (the oxide most important in producing <a  href="https://digitalfire.com/glossary/glaze+durability">durability</a>). So I increased the Al<sub>2</sub>O<sub>3</sub> (doing the chemistry in my <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a>.com account). I also began firing one cone higher, at cone 03.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Metal leaching from ceramic glazes: Lab report example and a better way</h3>
+<br /><a alt="Metal leaching from ceramic glazes: Lab report example" title="Metal leaching from ceramic glazes: Lab report example" href="https://digitalfire.com/picture/2506"><img class="flexleft50" title="Metal leaching from ceramic glazes: Lab report example"  alt="Metal leaching from ceramic glazes: Lab report example"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/7ggjnnkxjq.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2506">click here</a> to see it.</p>
+<p>This lab is certified by the US Department of Environmental Protection (DEP) for drinking water and wastewater analysis. They also provide pottery glaze <a  href="https://digitalfire.com/glossary/leaching">leaching</a> analyses (an acid solution is kept in contact with the glaze and then analysed for trace levels of specific metals). Each suspected metal to be tested for entails a separate charge ($30-60 in this case, could be less for you). That means that testing one glaze for several metals could cost $200. How to make sense of these numbers? Google the term: "heavy metals drinking water standards", and click "Images" to find charts with lots of data. Searching pages for this term will find books having detailed sections on each of the metals. Typically you are only interested in one metal in a specific glaze (often cobalt or manganese). There are ways to sleep better (about the likelihood your glazes are leaching metals) if you cannot do this: Do a simple <a  href="https://digitalfire.com/test/glle">GLLE test</a>. And avoid online <a  href="https://digitalfire.com/glossary/trafficking">trafficking</a> in hazardous recipes. Better to find a quality <a  href="https://digitalfire.com/glossary/base+glaze">base glaze</a> (matte and transparent) that works well on your <a  href="https://digitalfire.com/glossary/clay+body">clay body</a>. Then add <a  href="https://digitalfire.com/glossary/colorant">colorants</a>, <a  href="https://digitalfire.com/glossary/opacifier">opacifiers</a> and variegators; but doing so in a conservative manner. And use a <a  href="https://digitalfire.com/glossary/liner+glaze">liner glaze</a> on food surfaces.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Why would I use a heavily pigmented black glaze on a food surface?</h3>
+<br /><a alt="Two mugs, black glaze on the inside, red glaze on the outside" href="https://digitalfire.com/picture/2737"><img class="flexleft50" alt="Two mugs, black glaze on the inside, red glaze on the outside"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/fcdqdwjgwj.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2737">click here</a> to see it.</p>
+<p>These are actually two different <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> <a  href="https://digitalfire.com/glossary/base+glaze">base glazes</a> to which I add a black stain. I trust them because I know what is in them, I formulated and perfected them myself: <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a> clear and <a  href="https://digitalfire.com/recipe/ga6-b">GA6-B</a> <a  href="https://digitalfire.com/material/32">Alberta Slip</a> base. They are durable, fit my <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a>, melt well yet can host a stain without loss of gloss. I even know the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a>, both have plenty of <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> and <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a>, that is a hallmark of <a  href="https://digitalfire.com/glossary/glaze+durability">durability</a>. I fired these using the <a  href="https://digitalfire.com/schedule/plc6ds">PLC6DS</a> schedule. I add 5% black stain to the former and 4% to the latter, both yield a jet-black. The <a  href="https://plainsmanclays.ca/data/index.php?product=12944">GA6-B</a> requires <a  href="https://digitalfire.com/glossary/ball+milling">ball milling</a>. <a  href="https://digitalfire.com/glossary/ceramic+stain">Stains</a> are inherently much safer to use than raw metal oxide <a  href="https://digitalfire.com/glossary/colorant">colorants</a> because they are <a  href="https://digitalfire.com/glossary/sintering">sintered</a> as colorant/stabilizer blends. And much less is needed. Contrast that with raw <a  href="https://digitalfire.com/glossary/metal+oxides">metal oxides</a>, it is common to find black recipes containing up to 15% of blends of nickel, cobalt, iron and manganese! At times the manganese alone can be 8% or more! So, I feel relatively safe using these coloured glazes on a surface that will be exposed to hot and acidic liquids.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">It is possible to spot a leaching glaze just by looking at it!</h3>
+<br /><a alt="A matte black coffee mug with leaching glaze" href="https://digitalfire.com/picture/2743"><img class="flexleft50" alt="A matte black coffee mug with leaching glaze"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/figqc4os3e.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2743">click here</a> to see it.</p>
+<p>This glaze looks too matte, too metallic, too <a  href="https://digitalfire.com/glossary/glass+vs.+crystalline">crystalline</a>. This picture was sent to me by a worried person who had bought it and noticed it discolouring on the inside. The potter may very well have considered this safe just because it was fired to cone 10. It is common among potters to overload glazes with raw metal oxide blends, often 15% or more (e.g. manganese, copper, iron, nickel, cobalt). These percentages cannot be held in solution in <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> as it cools and solidifies, so they precipitate out and crystallize, especially if the glaze is not melting well or has insufficient <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a>. The crystalline forms of these metals might look nice to some people, but the glaze is likely to leach them. It is better to use a <a  href="https://digitalfire.com/glossary/ceramic+stain">ceramic stain</a> to create a black like this, adding it to a stable matte <a  href="https://digitalfire.com/glossary/base+glaze">base glaze</a> (one that melts well and has sufficient SiO<sub>2</sub> and <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> to create a durable glass). The concept of a <a  href="https://digitalfire.com/glossary/limit+recipe">limit recipe</a> is helpful in eyeballing recipes for their likelihood of <a  href="https://digitalfire.com/glossary/leaching">leaching</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Two black cone 6 glazes recipes. One leaches metals. Why?</h3>
+<br /><a alt="Black-glazed sample tiles showing leaching" href="https://digitalfire.com/picture/2775"><img class="flexleft50" alt="Black-glazed sample tiles showing leaching"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/3va8q49npi.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2775">click here</a> to see it.</p>
+<p>We tested susceptibility to <a  href="https://digitalfire.com/glossary/leaching">leaching</a> of a stained glaze (top two) and another colored with raw <a  href="https://digitalfire.com/glossary/metal+oxides">metal oxides</a> (bottom two) using the <a  href="https://digitalfire.com/test/glle">GLLE test</a> (they were left overnight in vinegar and lemon juice). All the samples were fired using the <a  href="https://digitalfire.com/schedule/c6dhsc">C6DHSC</a> <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a>. The top two are <a  href="https://insight-live.com/insight/share.php?z=bdwzQm6yQF">G3914A</a> (<a  href="https://digitalfire.com/recipe/ga6-b">GA6-B</a> <a  href="https://digitalfire.com/material/32">Alberta Slip</a> base with an addition of only 4% Mason 6600 black stain). There is no sign of leaching (Drano and bleach likewise did not affect it). The bottom two are <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a> transparent with 10% manganese dioxide and 5% <a  href="https://digitalfire.com/material/237">copper oxide</a> added (a common way to get black). The <a  href="https://insight-live.com/insight/share.php?z=FuGkW4GNms">G2926B</a> transparent base is proven, its surface shows no signs of gloss-loss in any testing we have done. But with manganese and copper added it is a very different story. Not only was this not nearly as black, but the vinegar and lemon juice matted and blued the top sections. Obviously, a <a  href="https://digitalfire.com/glossary/ceramic+stain">ceramic stain</a> added to the Alberta Slip <a  href="https://plainsmanclays.ca/data/index.php?product=12944">GA6-B</a> base is a far better way to make a leach-resistant black. Is it better than adding the black stain to <a  href="https://insight-live.com/insight/share.php?z=FuGkW4GNms">G2926B</a>? Yes, because far less is needed since the <a  href="https://plainsmanclays.ca/data/index.php?product=12944">GA6-B</a> base already has plenty of pigmentation.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/having+your+glaze+tested+for+toxic+metal+release">Having Your Glaze Tested for Toxic Metal Release</a>
+<br /><i>Having Your Glaze Tested for Metal Release</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/an+overview+of+ceramic+stains">An Overview of Ceramic Stains</a>
+<br /><i>Understanding the advantages of disadvantages of <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a> vs. oxide colors is the key to choosing the best approach</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/attack+on+glass%3a+corrosion+attack+mechanisms">Attack on Glass: Corrosion Attack Mechanisms</a>
+<br /><i>Max Richens outlines the various <a  href="https://digitalfire.com/glossary/mechanism">mechanisms</a> by which acids and bases can dissolve glass and glazes. He provides some information on stabilizing glazes against attack.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/crazing+and+bacteria%3a+is+there+a+hazard%3f">Crazing and Bacteria: Is There a Hazard?</a>
+<br /><i>A post to a discussion on the clayart group by Gavin Stairs regarding the <a  href="https://digitalfire.com/glossary/food+safe">food safety</a> of <a  href="https://digitalfire.com/trouble/glaze+crazing">crazed</a> ware.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/is+your+fired+ware+safe%3f">Is Your Fired Ware Safe?</a>
+<br /><i>Glazed ware can be a safety hazard to end users because it may leach metals into food and drink, it could harbor bacteria and it could flake of in knife-edged pieces.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/leaching+cone+6+glaze+case+study">Leaching Cone 6 Glaze Case Study</a>
+<br /><i>An example of how we can use INSIGHT software to determine of a glaze is likely to leach</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/concentrate+on+one+good+glaze">Concentrate on One Good Glaze</a>
+<br /><i>It is better to understand and have control of one good <a  href="https://digitalfire.com/glossary/base+glaze">base glaze</a> than be at the mercy of dozens of imported recipes that do not work. There is a lot more to being a good glaze than fired appearance.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/glle">Glaze Leaching Test</a>
+<br /><i>Simple tests to evaluate the stability of a ceramic or pottery glaze against <a  href="https://digitalfire.com/glossary/leaching">leaching</a> metals in food or drink.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Troubles</td>
+<td>
+<a href="https://digitalfire.com/trouble/glaze+crazing">Glaze Crazing</a>
+<br /><i>Ask the right questions to analyse the real cause of <a  href="https://digitalfire.com/glossary/glaze+crazing">glaze crazing</a>. Do not just treat the symptoms, the real cause is <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> mismatch with the body.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Hazards</td>
+<td>
+<a href="https://digitalfire.com/hazard/overview+of+material+safety+by+gavin+stairs">Overview of Material Safety by Gavin Stairs</a>
+<br /><i>Toxicology and ceramic materials is a complex subject, what materials and methods pose the greatest dangers, which are the safest?</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Hazards</td>
+<td>
+<a href="https://digitalfire.com/hazard/copper+oxide+and+carbonate">Copper Oxide and Carbonate</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/feldspar">Feldspar</a>
+<br /><i>In <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>, <a  href="https://digitalfire.com/material/310">feldspars</a> are used in glazes and <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a>. They vitrify stonewares and porcelains. They supply <a  href="https://digitalfire.com/picture/1775">KNaO</a> <a  href="https://digitalfire.com/glossary/flux">flux</a> to glazes to help them melt.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/leaching">Leaching</a>
+<br /><i>Ceramic glazes can leach heavy metals into food and drink. This subject is not complex, there are many things anyone can do to deal with this issue</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/toxicity">Toxicity</a>
+<br /><i>Common sense can be applied to the safe use of ceramic materials. The obvious dangers are breathing the dust and inhaling the fumes they produce during firing. Here is a round-up of various materials and their obvious hazards.
+</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="https://digitalfire.com/oxide/sm2o3">Sm2O3 - </a>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/lbs">Ceramic Testing Labs</a>
+<br /><i>There is much <a  href="https://digitalfire.com/glossary/physical+testing">physical testing</a> you can do using simple procedures and equipment (as described on this site) to compare ceramic bodies, glazes, <a  href="https://digitalfire.com/glossary/engobe">engobes</a>, etc. Such testing, for example, shows you that one clay is more plastic than another, one glaze has more <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> than another or one <a  href="https://digitalfire.com/glossary/engobe">engobe</a> has a higher <a  href="https://digitalfire.com/glossary/firing+shrinkage">firing shrinkage</a> than another. But if you want data to represent the absolute value of a specific property (e.g. coefficient of <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a>, chemical or mineralogical analysis) you may need the services of a testing lab. Most labs have grown over time and offer a wide array of services for many industries, so it can be difficult to locate the specific test you need. Effectively using their services is about knowing exactly what you want, finding their sample preparation instructions for the specific test needed and then following these closely to get the desired result at the expected cost. Having just one test done to answer one question is not typical, normally one has a specific test done on multiple samples, learning to interpret the data over time.
+
+If you want to test for <a  href="https://digitalfire.com/glossary/leaching">leaching</a> in a ceramic glaze consider carefully if you will be able to interpret the results they give you. There is a good chance they will give you a report full of numbers but decline to make any technical assessments or interpretation regarding it.
+
+Read our articles on this (listed below) for alternatives that may be more practical.</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

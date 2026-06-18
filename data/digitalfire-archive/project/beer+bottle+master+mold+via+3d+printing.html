@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Project: Beer Bottle Master Mold via 3D Printing</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="A project that took several years of failures and blind allies and is finally coming together - so much simpler than expected!" name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item"><a class="nav-link" href="../material/list.html">Materials</a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item active" href="list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=project" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container"><p><a aria-controls="collapse1" aria-expanded="false" class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button">All Projects</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a href="15.html" title="15">2019 Jiggering-Casting Project of Medalta 66 Mug</a><br/><a href="54.html" title="54">A cereal bowl jigger mold made using 3D printing</a><br/><a href="33.html" title="33">Beer Bottle Master Mold via 3D Printing</a><br/><a href="61.html" title="61">Better porosity for Brown Sugar Savers</a><br/><a href="48.html" title="48">Build a kiln monitoring device</a><br/><a href="69.html" title="69">Celebration Project</a><br/><a href="60.html" title="60">Coffee Mug Slip Casting Mold via 3D Printing</a><br/><a href="29.html" title="29">Comparing the Melt Fluidity of 16 Frits</a><br/><a href="52.html" title="52">Cookie Cutting clay with 3D printed cutters</a><br/><a href="41.html" title="41">Evaluating a clay's suitability for use in pottery</a><br/><a href="55.html" title="55">Make a mold for 4-gallon stackable calciners</a><br/><a href="49.html" title="49">Make Your Own Pyrometric Cones</a><br/><a href="47.html" title="47">Make your own sieve shaker to process ceramic slurries</a><br/><a href="40.html" title="40">Making a high quality ceramic tile</a><br/><a href="46.html" title="46">Making a Plaster Table</a><br/><a href="37.html" title="37">Making Bricks</a><br/><a href="50.html" title="50">Making our own kiln posts using a hand extruder</a><br/><a href="59.html" title="59">Medalta Ball Pitcher Slip Casting Mold via 3D Printing</a><br/><a href="34.html" title="34">Medalta Jug Master Mold Development</a><br/><a href="63.html" title="63">Mold Natches</a><br/><a href="32.html" title="32">Mother Nature's Porcelain - Plainsman 3B</a><br/><a href="66.html" title="66">Mug Handle Casting</a><br/><a href="39.html" title="39">Nursery plant pot mold via 3D printing</a><br/><a href="30.html" title="30">Pie-Crust Mug-Making Method</a><br/><a href="35.html" title="35">Plainsman 3D, Mother Nature's Porcelain/Stoneware</a><br/><a href="38.html" title="38">Project to Document a Shimpo Jiggering Attachment</a><br/><a href="36.html" title="36">Roll, Cut, Pull, Attach Handle-making Method</a><br/><a href="23.html" title="23">Slurry Mixing and Dewatering Your Own Clay Body</a><br/><a href="24.html" title="24">Testing a New Load of EP Kaolin</a><br/><a href="44.html" title="44">Using milk as a glaze</a></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Beer Bottle Master Mold via 3D Printing</h1>
+<p></p><div class="flexright33"><img src="../media/images/8balcp2gpv.jpg" style="width:100%;"/><p style="color:#888888; font-style:italic; font-size:80%; margin:4px 0px 5px 0px;">The bottle should be doing the talking! Glass bottles are just a container, ceramic bottles elevate beer, they bring sustainability and style to beer drinking. Ceramic bottles bring local craftsmen to your beer experience.</p></div>April 2024: Version 3 of this method is underway and promises to be simpler and better than #1 or #2. And no very expensive urethane or silicone rubber is needed! Stay tuned.<br/>
+May 2024: Version 4 is even better, <a href="../glossary/mold+natches.html">natches</a> are working, casting working molds directly from 3D prints.<br/>
+June 2024: Version 5 now has a separate bottom (three-piece mold) so there is no seam. This enables an embossed logo and variable heights using the same bottom piece.<br/>
+June 2025: v6 mold is done (for larger format printers, this makes it much easier).<br/>
+Dec 2025: <a href="../picture/3712.html">OnShape</a> version published (enabling one-click open of the drawing itself).<br/>
+<br/>
+This project is being done to demonstrate the amazing power that <a href="../glossary/3d-printing.html">3D printing</a> brings to potters who would like to adopt the <a href="../glossary/slip+casting.html">slip-casting</a> process for small-scale production.<br/>
+<br/>
+It is now possible to quickly draw 3D objects on a computer, <a href="../glossary/3d-printing.html">3D print</a> block or case molds and have working <a href="../material/1124.html">plaster</a> test molds within a couple of days. The more pieces a mold needs to have the better this system works. It is interesting to note the precision that is possible using this process, and that achieving that precision can be done by simple trial-and-error cycles. Additionally, a potter can create partial or small-scale molds to prototype and then make full-size rubber masters.<br/>
+<br/>
+Ceramic beer bottles were made historically. They are a very difficult shape for <a href="../glossary/jiggering.html">jiggering</a>, needing to be done in two parts and joined. Thus, many companies even had teams of potters making them by hand. For high volume production, <a href="../glossary/slip+casting.html">slip casting</a> using traditional mold-making techniques was never practical compared to the metal molds used in glass forming. That being said, ceramic bottles have some important advantages over glass - these include decoration and customization options, practicality for potters to make, flexibility to retool size and shapes, flexibility in glazes and colors and options for stamping and embossing. Ceramic glazes, especially <a href="../glossary/stoneware.html">stoneware</a>, also have the potential to be more durable. So it is easy to see why we are excited at how easy it now is for potters to take advantage of the ceramic process in ways industry cannot.<br/>
+<br/>
+This project is long and arduous. I had to make just about every mistake to learn better and better ways of doing things. The best ways are turning out to be the cheapest - using the equipment that I have. My ability to do whatever is needed in <a href="../glossary/3d+design.html">3D design</a> is the single most important key to the continued evolution of the process.<br/>
+<br/>
+The v6 pictures shows most dimensions. It links to the OnShape drawing, open it for detail on any dimension (and the ability to change them in the variables).<br/>
+<br/>
+I have included pictures of earlier stages to demonstrate some of the mistakes I made.<p style="clear:left"></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">v6 Beer Bottle Drawing
+</h3>
+<h4 style="color:#888888; margin-top:0px;">Fits standard swing top stoppers.</h4>
+<p style="margin-top:0px;"><b>Available</b> on the <a href="https://digitalfire.com/downloads/index.php?picture=3704" target="_blank">Downloads</a> page</p>
+<br/><a alt="3D printed case mold for making ceramic beer bottles" href="../picture/3704.html"><img alt="3D printed case mold for making ceramic beer bottles" class="flexleft50" loading="lazy" src="../media/images/9gjcmmtq4m.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3704.html">click here</a> to see it.</p>
+<p><a href="../glossary/3d-printing.html">3D print</a> this, pour in <a href="../material/1124.html">plaster</a> to make a <a href="../glossary/slip+casting.html">slip casting</a> mold! My previous work on this project assumed a smaller <a href="../glossary/3d+printer.html">3D printer</a> (making it necessary to print flanged <a href="../picture/3701.html">PLA</a> mold sections that clip together). But larger <a href="../glossary/3d+printer.html">3D printers</a> are now common, making the <a href="../glossary/3d+design.html">CAD</a> work much easier. This <a href="../picture/3712.html">OnShape</a> drawing is <a href="../picture/2550.html">parametric</a> for height, body diameter, wall and plaster thickness, and neck height (for the full bottle set body=160mm, neck=96). This uses my standard <a href="../picture/3716.html">natch system</a>. Neck vertices are proportional to height, so resizing works well. The top end is filleted to permit the longest possible mold on the print bed (diagonally). The bottom inside perimeter is chamfered, strengthening the default <a href="../glossary/0.8mm+thickness.html">0.8mm</a> side wall junction to the base (that being said, be careful not to flex it too much when removing it from the print bed). <br/>
+<br/>
+Doing this smaller size is for prototyping and testing. Casting plaster on a 3D print creates artifacts; these were not an issue. This PLA mold prints quickly, it has a hollow back side, permitting easy removal with a <a href="../picture/3729.html">heat gun</a>. There is no spare, it employs a <a href="../glossary/pour+spout.html">pour spout</a>, making the mold shorter and producing a better lip.<br/>
+<br/>
+Need a <a href="../glossary/stoneware.html">stoneware</a> slip casting recipe? <a href="https://insight-live.com/insight/share.php?z=35Tb8CCEe7">L4768E</a> or <a href="https://insight-live.com/insight/share.php?z=35Tb8CCEe7">L4768H</a> are a good choice. A glaze recipe? How about <a href="../recipe/ga6-b.html">GA6-B</a> (or similar)? Go full <a href="../glossary/do-it-yourself.html">DIY</a> with this, you will never turn back.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">v7 Classic beer bottle mold in OnShape
+</h3>
+<h4 style="color:#888888; margin-top:0px;">Make authentic-looking beer bottles that are better than glass</h4>
+<p style="margin-top:0px;"><b>Available</b> on the <a href="https://digitalfire.com/downloads/index.php?picture=3369" target="_blank">Downloads</a> page</p>
+<br/><a alt="Beer bottle mold in OnShape" href="../picture/3369.html"><img alt="Beer bottle mold in OnShape" class="flexleft50" loading="lazy" src="../media/images/vyfxawld99.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3369.html">click here</a> to see it.</p>
+<p>The <a href="../glossary/slip+casting.html">slip casting</a> process is so much more accessible than in the past because of <a href="../glossary/3d-printing.html">3D printing</a>. Why not start with this? This bottle has all the same dimensions as my v6 (done in <a href="../picture/2453.html">Fusion 360</a>). But, because this is done in <a href="../picture/3712.html">OnShape</a>, one click here opens it directly in a browser window with all the power of a professional <a href="../glossary/3d+design.html">CAD</a> system. If you have a free account there and are logged in, one more right-click can export it in <a href="../picture/3598.html">3MF</a> or <a href="../picture/3598.html">STL</a> format for 3D printing. Or a "Copy Workspace" menu choice will move it to your account to enable editing and setting variables, adjusting the shape, etc. This works in your browser, there is no software to install and OnShape is free for hobbyists. This mold works with my <a href="../glossary/pour+spout.html">pour spouts</a> (no spare is needed) and <a href="../picture/3716.html">natch system</a> (no registration keys are needed). So just insert the clips and <a href="../picture/3483.html">embeds</a>, pour in <a href="../material/1124.html">plaster</a>, remove the <a href="../picture/3701.html">PLA</a> plastic with a <a href="../picture/3729.html">heat gun</a> and you have a working mold. When dry, glue in the <a href="../glossary/mold+natches.html">natches</a>, attach a spout (using slip) and fill the mold with <a href="../glossary/casting+slip.html">casting slip</a>.<br/>
+<br/>
+Need a <a href="../glossary/stoneware.html">stoneware</a> slip casting recipe? <a href="https://insight-live.com/insight/share.php?z=35Tb8CCEe7">L4768E</a> or <a href="https://insight-live.com/insight/share.php?z=35Tb8CCEe7">L4768H</a> are a good choice. A glaze recipe? How about <a href="../recipe/ga6-b.html">GA6-B</a> (or similar)? Go full <a href="../glossary/do-it-yourself.html">DIY</a> with this, you will never turn back. Need a guided help to make this happen? Sign up for an <a href="../glossary/digitalfire+insight-live.html">Insight-live</a>.com group account and we can work together to make this happen for you.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Slip cast leather-hard full-sized beer bottle prototype</h3>
+<br/><a alt="Slip cast beer bottle" href="../picture/3385.html"><img alt="Slip cast beer bottle" class="flexleft50" loading="lazy" src="../media/images/fjazcyzxqh.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3385.html">click here</a> to see it.</p>
+<p>The commercial bottle on the right is 25cm high. These stopper <a href="../glossary/mechanism.html">mechanisms</a> are a commodity item, millions are made and a wide range of bottles work with them. They are easy to find online and go by a variety of names (e.g. "Grolsch style flip top stoppers", "Swingtop Grolsch style bottle cages", "<a href="../glossary/porcelain.html">Porcelain</a> <a href="../picture/2563.html">swing top</a> cap").<br/>
+<br/>
+The <a href="../glossary/slip+casting.html">slip cast</a> bottle is on the left - this one is <a href="../glossary/leather+hard.html">leather hard</a>, recently extracted from a mold. It is made using a black-burning <a href="../glossary/stoneware.html">stoneware</a>, the <a href="https://insight-live.com/insight/share.php?z=35Tb8CCEe7">L4768D</a> recipe. As a starting point, I used water/Darvan proptions outlined in the "Casting Recipe" section of the <a href="https://plainsmanclays.ca/data/index.php?product=12880">M370</a> data sheet. By the time this is fired it will be 10% smaller and will match the glass one on the right. The lugs are positioned to work well with swing-top stoppers.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">This GA6-B glaze is better than beer bottle glass</h3>
+<br/><a alt="Beer bottle glass vs stoneware glaze" href="../picture/3512.html"><img alt="Beer bottle glass vs stoneware glaze" class="flexleft50" loading="lazy" src="../media/images/rqcgwfqzrr.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3512.html">click here</a> to see it.</p>
+<p>Ceramic glazes, like this <a href="../recipe/ga6-b.html">GA6-B</a>, are actually just glass. But they are not like bottle glass. The latter is formulated to work well in forming machines (harden quickly), melt and stiffen quickly, have low melt <a href="../glossary/viscosity.html">viscosity</a> and resist milkiness and <a href="../glossary/crystallization.html">crystallization</a> on solidification. The chemistries to accomplish this have adequate resistance to <a href="../glossary/leaching.html">leaching</a> and adequate <a href="../glossary/glaze+durability.html">durability</a> for a few uses. A <a href="../glossary/stoneware.html">stoneware</a> glaze melt needs to be much more viscous (to stay put on vertical surfaces). And, it must have a lower <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> (to match common <a href="../glossary/clay+body.html">clay bodies</a>). And, it must resist crystallization much more (since it cools slowly). Fortunately, meeting these needs brings along big benefits: Greater durability, hardness and resistance to leaching. Stoneware glazes and bottle glass share a common trait: They have about the same amount of <a href="../oxide/sio2.html">SiO<sub>2</sub></a>. But the similarity ends there, stoneware glazes have:<br/>
+<br/>
+-High <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a>. Three to five times more! It is the key oxide for durable glass. And it stiffens <a href="../glossary/melt+fluidity.html">the melt</a> (that disqualifies high levels from bottle glass). <br/>
+-The same fluxes (<a href="../oxide/cao.html">CaO</a>, <a href="../oxide/mgo.html">MgO</a>, <a href="../oxide/k2o.html">K<sub>2</sub>O</a>, <a href="../oxide/na2o.html">Na<sub>2</sub>O</a>).  But they distribute very differently (half the CaO, half to one third the <a href="../picture/1775.html">KNaO</a>, much more MgO). Other fluxes like <a href="../oxide/sro.html">SrO</a>, <a href="../oxide/li2o.html">Li<sub>2</sub>O</a> are also common.<br/>
+-Low KNaO (which they call R2O). In glazes, it produces <a href="../trouble/glaze+crazing.html">crazing</a>, 5% is a typical maximum. But bottle glass can have double or triple that (the high thermal expansion is not an issue, and its cheap source materials supply lots of melting power).<br/>
+-B<sub>2</sub>O<sub>3</sub> melter. It is expensive but can be justified because the glaze is just a thin layer. Glazes at the low end of the stoneware range have 5% or more <a href="../glossary/borate.html">boron</a>.<br/>
+<br/>
+Far right: A glass bottle. Left: Small test bottles made from dark and light burning stonewares. Third: A production ceramic bottle. Notice how much the dark body darkens the <a href="https://plainsmanclays.ca/data/index.php?product=12944">GA6-B</a> glaze.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Making a mini bottle prototype mold</h3>
+<br/><a alt="Prototype plaster mold using 3D printing" href="../picture/3360.html"><img alt="Prototype plaster mold using 3D printing" class="flexleft50" loading="lazy" src="../media/images/73zh3wnyak.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3360.html">click here</a> to see it.</p>
+<p><a href="../picture/3701.html">PLA</a> is the most common filament used in consumer <a href="../glossary/3d+printer.html">3D printers</a>. Because this is just a quick trial <a href="../glossary/slip+casting.html">slip-casting</a> mold, it is practical to print two PLA case molds (lower right) with vertical sides (it is impossible to remove the <a href="../material/1124.html">plaster</a> mold from these without significant damage to the corners. But this is not a problem; PLA filament has a very low melting point so even hot water can soften it - I use a <a href="../picture/3729.html">heat gun</a> to peel it off. Making these confirms how accurate 3D printers are nowadays - the plaster mold halves mate precisely. Notice there are no <a href="../glossary/mold+natches.html">natches</a>, they are not needed for prototyping (lining up the outer edges perfectly positions the pieces). And there is no spare; I use a <a href="../glossary/pour+spout.html">pour spout</a> instead.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">A draining issue with a slip cast bottle
+</h3>
+<h4 style="color:#888888; margin-top:0px;">It is turning inside out!</h4>
+<br/><a alt="Slip casting bottle turning inside out" href="../picture/3414.html"><img alt="Slip casting bottle turning inside out" class="flexleft50" loading="lazy" src="../media/images/ss7aam29rb.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3414.html">click here</a> to see it.</p>
+<p>Why did this happen? There is a perfect storm of factors. Draining, during <a href="../glossary/slip+casting.html">slip casting</a>, creates suction and slip is heavy (1.8 times heavier than water). And this mold is tall with a narrow neck. So that creates a lot of suction. A slip having inadequate fluidity complicates draining. This round shape, even with printing <a href="../picture/3536.html">artifacts</a>, also releases well. How can this issue be avoided?<br/>
+<br/>
+-Draining the mold carefully, holding it near horizontal for much of the drain.<br/>
+-Use a well-deflocculated slip.<br/>
+-Add <a href="../material/106.html">bentonite</a> to the slip, perhaps 0.5%, to make it stickier and slow down release time (which also slows down the casting time).<br/>
+-At times, this will happen despite all efforts. In that case, if might be necessary to use a tube (e.g. 1/2 or 5/16”) to pump most of the liquid slip out of the bottle before inverting it. Adapt a <a href="../glossary/3d-printing.html">3D printed</a> <a href="../glossary/pour+spout.html">pour spout</a> to keep the tube centered, at least near the mouth of the bottle.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Calibrating the fit for the swing stopper assembly 
+</h3>
+<h4 style="color:#888888; margin-top:0px;">Three iterations to derive the measurements</h4>
+<br/><a href="../picture/3378.html"><img class="flexleft50" loading="lazy" src="../media/images/vaf2jrjt1j.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3378.html">click here</a> to see it.</p>
+<p>There is no substitute for firing tests pieces to <a href="../glossary/cone+6.html">cone 6</a> to test the fit for the swing assembly. In <a href="../picture/2453.html">Fusion 360</a> I sliced off the top of the bottle and formed a small box around it to be able to quickly <a href="../glossary/3d-printing.html">3D print</a> a test <a href="../picture/3728.html">case mold</a> of just the upper neck (I cast two <a href="../material/1124.html">plaster</a> mold halves from them). In the freshly cast <a href="../glossary/leather+hard.html">leather hard</a> pieces, making a hole in the middle of the lug mounts was easy. Although the wire is 2.8mm dia, testing cycles indicated that an 11/64" (4.3mm) drill bit is required. Simply twisting it to create a hole in the center takes seconds. After two more iterations, I ended up with a pad size at 10x10mm and the flat pad surface at 18mm from center. Of course, your <a href="../glossary/casting+slip.html">casting body</a> may shrink more or less than mine, so be ready to adjust these values.<br/>
+<br/>
+The link below links to a step-by-step in Fusion 360 of how to save a temporary copy of the mold drawing and modify it to isolate just the top portion of the neck.<br/>
+</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">How to draw a case mold for slip casting using Fusion 360</h3>
+<br/><a alt="3D print a beer bottle mold" href="../picture/3363.html"><img alt="3D print a beer bottle mold" class="flexleft50" loading="lazy" src="../media/images/bknkcjjud9.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3363.html">click here</a> to see it.</p>
+<p>Drawing your objects in <a href="../glossary/3d+design.html">CAD</a> software is the most difficult step in leveraging <a href="../glossary/3d-printing.html">3D printing</a> for <a href="../glossary/slip+casting.html">slip-casting</a>. In this 11 minute step-by-step video, we will draw a <a href="../picture/3728.html">case mold</a>, using <a href="../picture/2453.html">Fusion 360</a>. It can be <a href="../glossary/3d-printing.html">3D printed</a> and <a href="../material/1124.html">plaster</a> poured in to make a working mold. Mold soap is not even needed. This method of quickly making a pilot mold is within the reach of almost any potter.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Making the Stopper Holes on a Leather Hard Beer Bottle</h3>
+<br/><a href="../picture/3370.html"><img class="flexleft50" loading="lazy" src="../media/images/tgyz9c71c2.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3370.html">click here</a> to see it.</p>
+<p>I use an 11/64" drill bit to make the pivot holes in the lugs (at the <a href="../glossary/leather+hard.html">leather hard</a> stage after extraction from the mold). Of course, they must be centered and deep enough to hold the swing <a href="../glossary/mechanism.html">mechanism</a> (but not so deep they punch through the wall). I find that pressing a pea-sized ball of clay into the lugs (inside the neck), held in place by slip, thickens the wall sufficiently. The wall thickness shown here was sufficient to make the holes without thinkening the lugs, but it results in a bottle that is too heavy. If you find a way to automate this process, please let me know.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Printing my own version 1 block mold in two pieces</h3>
+<br/><a alt="PLA 3D printed beer bottle block mold" href="../picture/3384.html"><img alt="PLA 3D printed beer bottle block mold" class="flexleft50" loading="lazy" src="../media/images/swmm3cn17d.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3384.html">click here</a> to see it.</p>
+<p>Of course, this is far too large to print in one piece on my Prusa <a href="../picture/3489.html">MK4</a> printer so I sliced it in two and added <a href="../glossary/mold+shell+flange.html">flanges</a> to clamp the halves together. There is quite a bit of stair-stepping <a href="../picture/3536.html">artifacts</a> on the <a href="../glossary/3d-printing.html">3D printed</a> surface, I did not worry about smoothing it and it did not prevent casting two <a href="../material/1124.html">plaster</a> molds. No mold soap was even needed, the plaster molds came out using compressed air. The long <a href="../glossary/side+rails.html">side rails</a> did require some stabilization (they were flexing with the weight of the plaster).<br/>
+<br/>
+Again, this method was only needed because I did not have a printer big enough to print the mold in one piece. Later, I did get one.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Finished cast v1 stoneware beer bottles</h3>
+<br/><a alt="Cast ceramic beer bottles" href="../picture/3396.html"><img alt="Cast ceramic beer bottles" class="flexleft50" loading="lazy" src="../media/images/nx8xx7sz6u.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3396.html">click here</a> to see it.</p>
+<p>The center bottle is a standard glass one, the other two are ceramic, cast out of my version 1 <a href="../material/1124.html">plaster</a> mold. The stopper fits perfectly. The clay is <a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12880">M370</a> + 10% <a href="../material/2911.html">raw umber</a>, it fires black. The glaze is <a href="../recipe/ga6-b.html">GA6-B</a>, an amber transparent that produces a deep glass-like effect over the dark burning body. They were fired using the <a href="../schedule/c6dhsc.html">C6DHSC</a> <a href="../glossary/firing+schedule.html">firing schedule</a>. These bottles are a testament to how <a href="../glossary/3d-printing.html">3D printing</a> and <a href="../glossary/3d+design.html">3D design</a> now make it possible for even casual potters to make pieces never before practical or even possible.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Version 2 Ceramic Beer Bottle Mold
+</h3>
+<h4 style="color:#888888; margin-top:0px;">Making a rubber case master mold</h4>
+<br/><a alt="Casting a rubber case mold for the beer bottle" href="../picture/3397.html"><img alt="Casting a rubber case mold for the beer bottle" class="flexleft50" loading="lazy" src="../media/images/piulrls4j1.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3397.html">click here</a> to see it.</p>
+<p>This time I printed the block mold, rather than the <a href="../picture/3728.html">case mold</a>, in six pieces on my consumer <a href="../glossary/3d+printer.html">3D printer</a>. <br/>
+Top: I printed the two halves upright (creating them in <a href="../glossary/3d+slicer.html">the slicer</a> rather than <a href="../picture/2453.html">Fusion 360</a>). Because the print lines run concentric the quality is so much better than the previous version printed flat. The ribbing inside made the halves strong so they did not go out of shape when filled with <a href="../material/1124.html">plaster</a> (to give them weight). <br/>
+Second: The mold halves were simply laid against each other - they mated perfectly (and stayed in place because they are full of plaster). The four rails were then clamped in place. <br/>
+Third: The <a href="../picture/3701.html">PLA</a> was soaped (using Murphy's <a href="https://digitalfire.com/url/3534">Oil Soap</a>) and rubber poured in (Smooth-On <a href="https://digitalfire.com/url/3533">PMC-746</a>). The next day it easily pulled out. <br/>
+Fourth: The finished rubber case mold. The sides are pretty flabby so I make them rigid using the four rails (placed upside down).<br/>
+Right: Using a plaster mold created from this rubber case mold I slip-casted a bottle using my <a href="https://insight-live.com/insight/share.php?z=35Tb8CCEe7">L4768D</a> recipe, glazed it with <a href="../recipe/ga6-b.html">GA6-B</a> and fired it at <a href="../glossary/cone+6.html">cone 6</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">v3 Ceramic Beer Bottle Mold Drawing Obsoletes Previous</h3>
+<br/><a alt="Ceramic beer bottle mold drawing" href="../picture/3441.html"><img alt="Ceramic beer bottle mold drawing" class="flexleft50" loading="lazy" src="../media/images/tre9a7y35v.36.30 pm.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3441.html">click here</a> to see it.</p>
+<p>Something I love about 3D <a href="../picture/2550.html">parametric</a> <a href="../glossary/3d+design.html">CAD</a> is how a drawing can evolve to be both simpler and better. While my version 2 drawing had about 20 steps, this one is down to nine. No more ribs, no offsets or mirrors in the sketches, no double-revolves and no seams across the mount ads. Printing will be dramatically faster. The quality of the <a href="../glossary/side+rails.html">side rails</a> is now the key factor in final mold accuracy (these stabilize it while filling with <a href="../material/1124.html">plaster</a> from the back).<br/>
+<br/>
+I now draw the simplest repeatable shape: A one-quarter slice. Step 5 cuts the bottle profile from the solid block extruded in step 4. The preceding steps were a sketch of the bottle and block outline and a plane and sketch for the pad. Steps 6 and 7 are the extrusion and corner rounding of the pad cutout (near the rim). The last two steps mirror this quarter upward to create the block and then shell it to hollow the back side.<br/>
+<br/>
+The drawing is now fully parametrically resizable, I have taken advantage of that to make a stubby bottle test. Neck spline points are now spaced vertically as a percentage of the neck height parameter - set at "70" here. The body and neck heights are separately set now so the full height is now a driven dimension - it is 146 here.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Pouring the v4 Plaster Beer Bottle Mold</h3>
+<br/><a alt="Pouring plaster beer bottle molds" href="../picture/3442.html"><img alt="Pouring plaster beer bottle molds" class="flexleft50" loading="lazy" src="../media/images/mwdyzenfb3.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3442.html">click here</a> to see it.</p>
+<p>This project is a testament to my wife's patience with me using her kitchen as a mold-making shop. Most of the tools I need are there. A nice stable table to run two <a href="../glossary/3d+printer.html">3D printers</a>, lots of room and plugins, electrical appliances, utensils and supplies of every type, good lighting. And pleasant company!<br/>
+<br/>
+I have already poured <a href="https://digitalfire.com/url/3533">PMC-746</a> rubber into <a href="../glossary/3d-printing.html">3D printed</a> block molds and have printed and put in place stabilizers to hold the rubber in place. <a href="../picture/3483.html">Embeds</a> are in place on both the bottle base and bottom mold (upper right). The flexibility of this rubber is amazing, it makes possible extraction of the <a href="../material/1124.html">plaster</a> base, although with difficulty. It also preserves the embossed logo on the foot. This is version 4 (version 5 will have a shallow base piece and modified sliding <a href="../glossary/mold+natches.html">natches</a>).<br/>
+<br/>
+The $5 garage sale mixer does not pull bubbles to the surface so I just pull them up by counter-stirring with a serving spoon. A common sense workflow (never pouring any down the sink, cleaning everything in a <a href="../glossary/suspension.html">settling</a> bucket) makes this no problem in the kitchen.</p>
+<p style="clear:left"></p>
+<h3>Inbound Photo Links</h3><table><tr>
+<td style="vertical-align:top; font-size:80%;">
+<br/><a alt="3D printed plaster mold master" href="../picture/3456.html"><img alt="3D printed plaster mold master" loading="lazy" src="../media/images/azodwpphah-100H.jpg" style="margin:0px 10px 10px 0px; height:100px;"/></a><br/>Why 3D design and printing is a better way to make slip casting molds
+</td>
+<td style="vertical-align:top; font-size:80%;">
+<br/><a href="../picture/3511.html"><img loading="lazy" src="../media/images/8balcp2gpv-100H.jpg" style="margin:0px 10px 10px 0px; height:100px;"/></a><br/>The bottle is more important than the beer!
+</td>
+<td style="vertical-align:top; font-size:80%;">
+<br/><a alt="Ceramic beer bottle in a case with glass ones" href="../picture/3532.html"><img alt="Ceramic beer bottle in a case with glass ones" loading="lazy" src="../media/images/xnqrqqldke-100H.jpg" style="margin:0px 10px 10px 0px; height:100px;"/></a><br/>Regular bottles of beer looking humble beside the ceramic one
+</td>
+<td style="vertical-align:top; font-size:80%;">
+<br/><a alt="Medalta classic beer bottle mold for slip casting" href="../picture/3709.html"><img alt="Medalta classic beer bottle mold for slip casting" loading="lazy" src="../media/images/zsmeztyoe9-100H.jpg" style="margin:0px 10px 10px 0px; height:100px;"/></a><br/>Classic Medalta Potteries Beer Bottle
+Make this mold using OnShape and Fusion 360
+</td>
+</tr></table><br/>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Media</td>
+<td>
+<a href="../video/make+a+precision+plaster+mold+for+slip+casting+using+fusion+360+and+3d+printing.html">Make a precision plaster mold for slip casting using Fusion 360 and 3D Printing</a>
+<br/><i>In 11 minutes you will learn a new way to make complex <a href="../material/1124.html">plaster</a> molds for <a href="../glossary/slip+casting.html">slip casting</a> - faster and more precise than ever before. Anyone can do this.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Media</td>
+<td>
+<a href="../video/3d+print+a+test+of+the+beer+bottle+neck.html">3D Print a Test of the Beer Bottle Neck</a>
+<br/><i>In 4 minutes you will learn how to modify a copy of the existing drawing to print only a narrower part of the top 8cm</i>
+</td>
+</tr>
+<tr>
+<td>Video<br/><img src="../media/images/PourBeerBottle.jpg" style="width:200px;"/></td>
+<td>
+<a href="../video/slip+cast+a+stoneware+beer+bottle.html">Slip cast a stoneware beer bottle</a>
+<br/><i>I will mix the <a href="../glossary/slurry.html">slurry</a>, assemble the mold, attach the <a href="../glossary/3d-printing.html">3D-printed</a> pour spot, pour in the slip, pour it out, remove the spout, trim the lip, split the mold, extract the bottle and drill the holes for the swing-top stoppers.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Media</td>
+<td>
+<a href="../video/design+a+triangular+pottery+plate+block+mold+in+fusion+360.html">Design a Triangular Pottery Plate Block Mold in Fusion 360</a>
+<br/><i>Lilly will take you step-by-step through the process of parametrically drawing a triangular plate with curved sides and rounded corners, for <a href="../glossary/3d-printing.html">3D printing</a> to pour a <a href="../material/1124.html">plaster</a> working mold.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="medalta+ball+pitcher+slip+casting+mold+via+3d+printing.html">Medalta Ball Pitcher Slip Casting Mold via 3D Printing</a>
+<br/><i>A project to make a reproduction of a <a href="https://rongetty.com/category/company/27">Medalta Potteries</a> piece that was done during the 1940s. This is the smallest of the three sizes they made.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="nursery+plant+pot+mold+via+3d+printing.html">Nursery plant pot mold via 3D printing</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/3d+design.html">3D Design</a>
+<br/><i><a href="../glossary/3d+design.html">3D Design</a> software is used to create dimensionally accurate objects by sketching 2D geometry and transforming it using tools to rotate, extrude, sweep, etc. The software generates the polygon surface.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/3mm">Mold making using 3D printing</a>
+<br/><i>An ordinary consumer <a href="../glossary/3d+printer.html">3D printer</a> has many exciting possibilities for making many types of molds, it is a place where people having both artistic and mechanical abilities can get a double the dopamine!</i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></div></body>
+</html>

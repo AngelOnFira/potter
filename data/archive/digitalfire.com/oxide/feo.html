@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>FeO (Ferrous Oxide)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="The use of FeO in traditional ceramics, how its chemistry contributes to fired properties of glazes">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+March 2026: We are doing major upgrades to code here, please be patient regarding any issues. If any page is not working for a period of hours, please contact us. Thank you.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item active"><a class="nav-link" href="/oxide/list">Oxides <span class="sr-only">(current)</span></a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=oxide" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:center; vertical-align:top;">Feb 14-15, 2026 - <b>Major Server <a href="https://digitalfire.com">Upgrade</a> Done</b></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table>
+<div style="margin:10px 0px 10px 0px;" class="accordion" id="accordionExample">
+ <div class="card">
+  <div class="card-header pl-0 py-0" id="heading1">
+   <h2 class="mb-0">
+    <button class="btn btn-link collapsed btn-lg" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">Common Ceramic Oxides</button>
+   </h2>
+  </div>
+  <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#accordionExample">
+   <div class="card-body">
+<a title="3" href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> | <a title="7" href="https://digitalfire.com/oxide/b2o3">B<sub>2</sub>O<sub>3</sub></a> | <a title="8" href="https://digitalfire.com/oxide/bao">BaO</a> | <a title="11" href="https://digitalfire.com/oxide/c">C</a> | <a title="13" href="https://digitalfire.com/oxide/cao">CaO</a> | <a title="12" href="https://digitalfire.com/oxide/co2">CO<sub>2</sub></a> | <a title="16" href="https://digitalfire.com/oxide/coo">CoO</a> | <a title="17" href="https://digitalfire.com/oxide/cr2o3">Cr<sub>2</sub>O<sub>3</sub></a> | <a title="19" href="https://digitalfire.com/oxide/cu2o">Cu<sub>2</sub>O</a> | <a title="20" href="https://digitalfire.com/oxide/cuo">CuO</a> | <a title="25" href="https://digitalfire.com/oxide/fe2o3">Fe<sub>2</sub>O<sub>3</sub></a> | <a title="26" href="https://digitalfire.com/oxide/26"><button type="button" class="btn btn-dark">FeO</button></a> | <a title="32" href="https://digitalfire.com/oxide/h2o">H<sub>2</sub>O</a> | <a title="38" href="https://digitalfire.com/oxide/k2o">K<sub>2</sub>O</a> | <a title="42" href="https://digitalfire.com/oxide/li2o">Li<sub>2</sub>O</a> | <a title="40" href="https://digitalfire.com/oxide/loi">LOI</a> | <a title="44" href="https://digitalfire.com/oxide/mgo">MgO</a> | <a title="46" href="https://digitalfire.com/oxide/mno">MnO</a> | <a title="47" href="https://digitalfire.com/oxide/mno2">MnO<sub>2</sub></a> | <a title="50" href="https://digitalfire.com/oxide/na2o">Na<sub>2</sub>O</a> | <a title="53" href="https://digitalfire.com/oxide/nio">NiO</a> | <a title="54" href="https://digitalfire.com/oxide/o">O</a> | <a title="97" href="https://digitalfire.com/oxide/organics">Organics</a> | <a title="56" href="https://digitalfire.com/oxide/p2o5">P<sub>2</sub>O<sub>5</sub></a> | <a title="59" href="https://digitalfire.com/oxide/pbo">PbO</a> | <a title="75" href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> | <a title="77" href="https://digitalfire.com/oxide/sno2">SnO<sub>2</sub></a> | <a title="70" href="https://digitalfire.com/oxide/so3">SO<sub>3</sub></a> | <a title="96" href="https://digitalfire.com/oxide/so4">SO<sub>4</sub></a> | <a title="78" href="https://digitalfire.com/oxide/sro">SrO</a> | <a title="83" href="https://digitalfire.com/oxide/tio2">TiO<sub>2</sub></a> | <a title="89" href="https://digitalfire.com/oxide/v2o5">V<sub>2</sub>O<sub>5</sub></a> | <a title="93" href="https://digitalfire.com/oxide/zno">ZnO</a> | <a title="94" href="https://digitalfire.com/oxide/zro">ZrO</a> | <a title="95" href="https://digitalfire.com/oxide/zro2">ZrO<sub>2</sub></a>
+   </div>
+  </div>
+ </div>
+ <div class="card">
+  <div class="card-header pl-0 py-0" id="heading2">
+   <h2 class="mb-0">
+    <button class="btn btn-link collapsed btn-lg" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">Uncommon Ceramic Oxides</button>
+   </h2>
+  </div>
+  <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordionExample">
+   <div class="card-body">
+<a title="102" href="https://digitalfire.com/oxide/ag2o">Ag<sub>2</sub>O</a> | <a title="104" href="https://digitalfire.com/oxide/alf3">AlF<sub>3</sub></a> | <a title="4" href="https://digitalfire.com/oxide/as2o3">As<sub>2</sub>O<sub>3</sub></a> | <a title="5" href="https://digitalfire.com/oxide/as4o6">As<sub>4</sub>O6</a> | <a title="6" href="https://digitalfire.com/oxide/au2o3">Au<sub>2</sub>O<sub>3</sub></a> | <a title="108" href="https://digitalfire.com/oxide/baf2">BaF<sub>2</sub></a> | <a title="9" href="https://digitalfire.com/oxide/beo">BeO</a> | <a title="10" href="https://digitalfire.com/oxide/bi2o3">Bi<sub>2</sub>O<sub>3</sub></a> | <a title="109" href="https://digitalfire.com/oxide/caf2">CaF<sub>2</sub></a> | <a title="14" href="https://digitalfire.com/oxide/cdo">CdO</a> | <a title="15" href="https://digitalfire.com/oxide/ceo2">CeO<sub>2</sub></a> | <a title="99" href="https://digitalfire.com/oxide/cl">Cl</a> | <a title="110" href="https://digitalfire.com/oxide/co">CO</a> | <a title="113" href="https://digitalfire.com/oxide/cro3">CrO<sub>3</sub></a> | <a title="18" href="https://digitalfire.com/oxide/cs2o">Cs<sub>2</sub>O</a> | <a title="101" href="https://digitalfire.com/oxide/cuco3">CuCO<sub>3</sub></a> | <a title="21" href="https://digitalfire.com/oxide/dy2o3">Dy<sub>2</sub>O<sub>3</sub></a> | <a title="22" href="https://digitalfire.com/oxide/er2o3">Er<sub>2</sub>O<sub>3</sub></a> | <a title="23" href="https://digitalfire.com/oxide/eu2o3">Eu<sub>2</sub>O<sub>3</sub></a> | <a title="24" href="https://digitalfire.com/oxide/f">F</a> | <a title="27" href="https://digitalfire.com/oxide/fr2o">Fr<sub>2</sub>O</a> | <a title="28" href="https://digitalfire.com/oxide/free sio2">Free SiO<sub>2</sub></a> | <a title="29" href="https://digitalfire.com/oxide/ga2o3">Ga<sub>2</sub>O<sub>3</sub></a> | <a title="30" href="https://digitalfire.com/oxide/gdo3">GdO<sub>3</sub></a> | <a title="31" href="https://digitalfire.com/oxide/geo2">GeO<sub>2</sub></a> | <a title="33" href="https://digitalfire.com/oxide/hfo2">HfO<sub>2</sub></a> | <a title="34" href="https://digitalfire.com/oxide/hgo">HgO</a> | <a title="35" href="https://digitalfire.com/oxide/ho2o3">Ho<sub>2</sub>O<sub>3</sub></a> | <a title="36" href="https://digitalfire.com/oxide/in2o3">In<sub>2</sub>O<sub>3</sub></a> | <a title="37" href="https://digitalfire.com/oxide/iro2">IrO<sub>2</sub></a> | <a title="107" href="https://digitalfire.com/oxide/kf">KF</a> | <a title="39" href="https://digitalfire.com/oxide/knao">KNaO</a> | <a title="41" href="https://digitalfire.com/oxide/la2o3">La<sub>2</sub>O<sub>3</sub></a> | <a title="43" href="https://digitalfire.com/oxide/lu2o3">Lu<sub>2</sub>O<sub>3</sub></a> | <a title="45" href="https://digitalfire.com/oxide/mn2o3">Mn<sub>2</sub>O<sub>3</sub></a> | <a title="48" href="https://digitalfire.com/oxide/moo3">MoO<sub>3</sub></a> | <a title="49" href="https://digitalfire.com/oxide/n2o5">N<sub>2</sub>O<sub>5</sub></a> | <a title="105" href="https://digitalfire.com/oxide/naf">NaF</a> | <a title="51" href="https://digitalfire.com/oxide/nb2o5">Nb<sub>2</sub>O<sub>5</sub></a> | <a title="52" href="https://digitalfire.com/oxide/nd2o3">Nd<sub>2</sub>O<sub>3</sub></a> | <a title="98" href="https://digitalfire.com/oxide/ni2o3">Ni<sub>2</sub>O<sub>3</sub></a> | <a title="55" href="https://digitalfire.com/oxide/oso2">OsO<sub>2</sub></a> | <a title="58" href="https://digitalfire.com/oxide/pa2o5">Pa<sub>2</sub>O<sub>5</sub></a> | <a title="106" href="https://digitalfire.com/oxide/pbf2">PbF<sub>2</sub></a> | <a title="60" href="https://digitalfire.com/oxide/pdo">PdO</a> | <a title="61" href="https://digitalfire.com/oxide/pmo3">PmO<sub>3</sub></a> | <a title="57" href="https://digitalfire.com/oxide/po4">PO<sub>4</sub></a> | <a title="62" href="https://digitalfire.com/oxide/pr2o3">Pr<sub>2</sub>O<sub>3</sub></a> | <a title="63" href="https://digitalfire.com/oxide/pro2">PrO<sub>2</sub></a> | <a title="64" href="https://digitalfire.com/oxide/pto2">PtO<sub>2</sub></a> | <a title="65" href="https://digitalfire.com/oxide/rao">RaO</a> | <a title="66" href="https://digitalfire.com/oxide/rb2o">Rb<sub>2</sub>O</a> | <a title="67" href="https://digitalfire.com/oxide/re2o7">Re<sub>2</sub>O7</a> | <a title="68" href="https://digitalfire.com/oxide/rho3">RhO<sub>3</sub></a> | <a title="69" href="https://digitalfire.com/oxide/ruo2">RuO<sub>2</sub></a> | <a title="71" href="https://digitalfire.com/oxide/sb2o3">Sb<sub>2</sub>O<sub>3</sub></a> | <a title="72" href="https://digitalfire.com/oxide/sb2o5">Sb<sub>2</sub>O<sub>5</sub></a> | <a title="73" href="https://digitalfire.com/oxide/sc2o3">Sc<sub>2</sub>O<sub>3</sub></a> | <a title="74" href="https://digitalfire.com/oxide/se">Se</a> | <a title="111" href="https://digitalfire.com/oxide/seo2">SeO<sub>2</sub></a> | <a title="76" href="https://digitalfire.com/oxide/sm2o3">Sm<sub>2</sub>O<sub>3</sub></a> | <a title="79" href="https://digitalfire.com/oxide/ta2o5">Ta<sub>2</sub>O<sub>5</sub></a> | <a title="80" href="https://digitalfire.com/oxide/tb2o3">Tb<sub>2</sub>O<sub>3</sub></a> | <a title="81" href="https://digitalfire.com/oxide/tc2o7">Tc<sub>2</sub>O7</a> | <a title="82" href="https://digitalfire.com/oxide/tho2">ThO<sub>2</sub></a> | <a title="84" href="https://digitalfire.com/oxide/tl2o">Tl<sub>2</sub>O</a> | <a title="85" href="https://digitalfire.com/oxide/tm2o3">Tm<sub>2</sub>O<sub>3</sub></a> | <a title="86" href="https://digitalfire.com/oxide/trace">Trace</a> | <a title="87" href="https://digitalfire.com/oxide/u3o8">U<sub>3</sub>O8</a> | <a title="88" href="https://digitalfire.com/oxide/uo2">UO<sub>2</sub></a> | <a title="90" href="https://digitalfire.com/oxide/wo3">WO<sub>3</sub></a> | <a title="91" href="https://digitalfire.com/oxide/y2o3">Y<sub>2</sub>O<sub>3</sub></a> | <a title="92" href="https://digitalfire.com/oxide/yb2o3">Yb<sub>2</sub>O<sub>3</sub></a>
+   </div>
+  </div>
+ </div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>FeO (Ferrous Oxide)</h1>
+
+<h4>Notes</h4><p>-Fe<sub>2</sub>O<sub>3</sub> is easy to reduce to the <a  href="https://digitalfire.com/oxide/feo">FeO</a> state with a light <a  href="https://digitalfire.com/glossary/reduction+firing">reduction firing</a> as follows:<br />
+<br />
+ <a  href="https://digitalfire.com/oxide/fe2o3">Fe<sub>2</sub>O<sub>3</sub></a> + CO -> 2FeO + <a  href="https://digitalfire.com/oxide/co2">CO2</a><br />
+<br />
+-Some suppliers quote iron in its reduced form as part of a materials formula.<br />
+<br />
+-In clays and glazes, firing in reducing conditions, or with clays containing significant organic matter, the Fe<sub>2</sub>O<sub>3</sub> converts to FeO as early as 900C. FeO is a very powerful <a  href="https://digitalfire.com/glossary/flux">flux</a>. Once iron has been reduced and becomes active in glass forming, it is difficult to reoxidize it again. For this reason, reduction firings for iron effects should be light throughout to reduce the iron early before glaze melts. They should then be fired slowly through the 250-500C range to provide adequate time for <a  href="https://digitalfire.com/oxide/organics">organics</a> to burn away. A period of clearing in oxidation at the end of a firing does not affect the color of iron in the molten glass.<br />
+<br />
+-FeO is so active as a flux that it can often be introduced by substituting for other fluxes like lead and calcium oxide.<br />
+<br />
+-Most glazes will dissolve more iron in <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> than they can incorporate in the cooled glass. Thus extra iron precipitates out during cooling to form crystals. This behavior is true of oxidation but doubly so of reduction. For example, a typical high-temperature fluid glaze with 15% iron will freeze to a sparkling rust colored mesh of crystals.<br />
+<br />
+-Many popular iron glazes and slips for pottery are based on clays highly stained with iron. For example, <a  href="https://digitalfire.com/material/31">Albany slip</a> was used for many years to produce a wide variety of glazes which exploited its unique blend of high iron, low melting point, moderate <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a>, low <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a>, low cost and unique character. For example, using <a  href="https://digitalfire.com/material/32">Alberta Slip</a> (an Albany substitute) one can make a <a  href="https://digitalfire.com/glossary/tenmoku">tenmoku</a> glaze with 90% Alberta slip and a little added iron and <a  href="https://digitalfire.com/material/310">feldspar</a>.<br />
+<br />
+-If clay is not allowed to oxidize thoroughly through the 700-900C range during firing, carbon present within will rob the Fe<sub>2</sub>O<sub>3</sub> of its oxygen and escape as CO2 leaving the FeO as an active flux within the body to break it down from within. This is called black coring.<br />
+<br />
+-Iron bearing clays fire much darker in reduction than oxidation. In addition, <a  href="https://digitalfire.com/glossary/reduction+firing">reduction fired</a> iron bodies experience sudden color changes from red or tan to dark brown across a narrow temperature range characteristic to each formulation. Classic iron reduction <a  href="https://digitalfire.com/glossary/mottled">mottled</a> effects are created by firing to the transition point where color is just changing producing light and dark patching of color as the darker color invades the surface.<br />
+<br />
+-In reduction firings it can produce greens and blues (i.e. celadons), and yellows and maroons (i.e. mustard, oatmeal glazes). In higher amounts it saturates to produce <a  href="https://digitalfire.com/glossary/glass+vs.+crystalline">crystalline</a> deep brown and black effects (i.e. tenmoku 10-13% and <a  href="https://digitalfire.com/glossary/kaki">kaki</a> 13%+).<br />
+<br />
+-Iron pyrite and similar minerals often contaminate stonewares and fireclays; and they are responsible for the popular speckling effects in reduction fired stonewares.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Iron oxide powder is available in many colors. Here are three.</h3>
+<br /><a href="https://digitalfire.com/picture/681"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/glossary/bewwixyret.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/681">click here</a> to see it.</p>
+<p>How can there be so many colors? Because iron and oxygen can combine in many ways. In <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a> we know <a  href="https://digitalfire.com/oxide/fe2o3">Fe<sub>2</sub>O<sub>3</sub></a> as red iron and Fe3O<sub>4</sub> as black iron (the latter being the more concentrated form). But would you believe there are 6 others (one is Fe<sub>13</sub>O<sub>19</sub>!). And four phases of Fe<sub>2</sub>O<sub>3</sub>. Plus more iron hydroxides (yellow iron is Fe(OH)3).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Here is what can happen with iron-oxide-based overglazes</h3>
+<br /><a href="https://digitalfire.com/picture/650"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/xivcudukyj.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/650">click here</a> to see it.</p>
+<p>Since <a  href="https://digitalfire.com/material/874">iron oxide</a> is a strong <a  href="https://digitalfire.com/glossary/flux">flux</a> in reduction, iron-based pigments can run badly if applied too thickly.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">FeO (iron oxide) is a very powerful flux in reduction</h3>
+<br /><a href="https://digitalfire.com/picture/678"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/glossary/dirpenefan.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/678">click here</a> to see it.</p>
+<p>This <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10R</a> glaze, a <a  href="https://digitalfire.com/glossary/tenmoku">tenmoku</a> with about 12% <a  href="https://digitalfire.com/material/874">iron oxide</a>, demonstrates how iron turns to a <a  href="https://digitalfire.com/glossary/flux">flux</a>, converting from <a  href="https://digitalfire.com/oxide/fe2o3">Fe<sub>2</sub>O<sub>3</sub></a> to <a  href="https://digitalfire.com/oxide/feo">FeO</a>, in <a  href="https://digitalfire.com/glossary/reduction+firing">reduction firing</a> and produces a glaze melt that is much more fluid. In oxidation, iron is <a  href="https://digitalfire.com/glossary/refractory">refractory</a> and does not melt well (this glaze would be completely stable on the ware in an <a  href="https://digitalfire.com/glossary/oxidation+firing">oxidation firing</a> at the same temperature, and much lighter in color).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Iron-Red high temperature reduction fired glaze</h3>
+<br /><a href="https://digitalfire.com/picture/321"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/materials/reductionironred.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/321">click here</a> to see it.</p>
+<p>This recipe, our code <a  href="https://insight-live.com/insight/share.php?z=pZQroM9Jsy">77E14A</a>, contains 6% red <a  href="https://digitalfire.com/material/874">iron oxide</a> and 4% tricalcium phosphate. But the color is a product of the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a>. The glaze is high <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> (from 45 <a  href="https://digitalfire.com/material/310">feldspar</a> and 20 <a  href="https://digitalfire.com/material/925">kaolin</a>) and low in <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> (the recipe has zero <a  href="https://digitalfire.com/material/1245">silica</a>). This calculates to a 4:1 Al<sub>2</sub>O<sub>3</sub>:SiO<sub>2</sub> ratio, very low and normally indicative of a matte surface. The iron oxide content of this is half of what is typical in a beyond-tenmoku iron crystal glaze (those having enough iron to saturate <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> and precipitate as crystals during cooling). The color of this is also a product of some sort of iron <a  href="https://digitalfire.com/glossary/crystallization">crystallization</a>, but it is occuring in a low-silica, high-alumina melt with phosphate and alkalis present. Reducing the iron percentage to 4% produces a yellow mustard color (we thus named this "Red Mustard").</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Reduction high temperature iron crystal glaze</h3>
+<br /><a href="https://digitalfire.com/picture/377"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/browncrystal.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/377">click here</a> to see it.</p>
+<p>This is what about 10% iron and some <a  href="https://digitalfire.com/material/1644">titanium</a> and <a  href="https://digitalfire.com/material/1204">rutile</a> can do in a transparent base <a  href="https://digitalfire.com/glossary/glossy+glaze">glossy glaze</a> (e.g. <a  href="https://digitalfire.com/recipe/g1947u">G1947U</a>) with slow cooling at <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10R</a> on a refined <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Ceramic Oxide Periodic Table</h3>
+<a href="https://digitalfire.com/picture/1257"><img class="flexleft50" alt="Periodic table of ceramic oxides"  src="https://digitalfire.com/4sight/images/pictures/er5fytcakh.svg" /></a>
+<p>Pretty well all common traditional ceramic <a  href="https://digitalfire.com/glossary/base+glaze">base glazes</a> are made from less than a dozen elements (plus oxygen). Go to the full picture of this table and click or tap each of the <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> to learn more (on its page at <a  href="https://digitalfire.com/glossary/digitalfire+reference+library">digitalfire</a>.com). When materials melt, they <a  href="https://digitalfire.com/glossary/decomposition">decompose</a>, sourcing these elements in oxide form. The kiln builds the glaze from them, it does not care what material sources what oxide (assuming, of course, that all materials do melt or dissolve completely into <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> to release those oxides). Each of these oxides contributes specific properties to the glass. So, you can look at a formula and make a good prediction of the properties of the fired glaze. And know what specific oxide to increase or decrease to move a property in a given direction (e.g. melting behavior, hardness, <a  href="https://digitalfire.com/glossary/glaze+durability">durability</a>, <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a>, color, gloss, <a  href="https://digitalfire.com/glossary/crystallization">crystallization</a>). And know about how they interact (affecting each other). This is powerful. A lot of ceramic materials are available, hundreds - that is complicated when individual materials source multiple oxides. Viewing a glaze as a simple <a  href="https://digitalfire.com/glossary/unity+formula">unity formula</a> of ceramic oxides is just simpler.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Close up of black coring: Is it carbon? Nope. Is it always bad? Nope.</h3>
+<br /><a alt="Closeup of black coring in a pottery shard" href="https://digitalfire.com/picture/3120"><img class="flexleft50" alt="Closeup of black coring in a pottery shard"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/efpa8m8w5k.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3120">click here</a> to see it.</p>
+<p>This is a closeup of a shard from the wall of a <a  href="https://digitalfire.com/glossary/throwing">thrown</a> vessel. The clay is an iron <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a>, <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://digitalfire.com/material/315">Fire-Red</a> with added <a  href="https://digitalfire.com/material/310">feldspar</a>, fired in reduction at cone 10. The reduction was not heavy, the kiln was fired with enough air to burn almost all the gas leaving only a slight yellow (but mostly blue) flame at the damper. Is this black color carbon? Consider the following. Carbon is <a  href="https://digitalfire.com/glossary/refractory">refractory</a>, this is glassy. During <a  href="https://digitalfire.com/glossary/bisque">bisquit firing</a> the carbon was burned out of this. These black zones have a hole at their centers. This is black iron, a strong <a  href="https://digitalfire.com/glossary/flux">flux</a>. The iron is coming from large particles (20-40 mesh) of iron pyrite. In the reduction atmosphere, the natural <a  href="https://digitalfire.com/oxide/fe2o3">Fe<sub>2</sub>O<sub>3</sub></a> is being robbed of oxygen (from both the <a  href="https://digitalfire.com/glossary/decomposition">decomposition</a> of neighboring particles and the atmosphere of the kiln) and converting to <a  href="https://digitalfire.com/oxide/feo">FeO</a>. That is melting and interacting with the feldspar to soak into the surrounding matrix. Contrary to what most people think this does not weaken the clay, it strengthens ware (provided the feldspar is present). Once the black has permeated the entire matrix of a piece it becomes very strong (even with a hammer it was unexpectedly difficult to break ware to get these shards). Note the right side is not glaze-covered, if it had been the entire matrix would be black. But still strong.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A cone 10R high iron glaze has run off the vase during firing. And crystallized.</h3>
+<br /><a alt="An high iron glaze has melted too much run" href="https://digitalfire.com/picture/2534"><img class="flexleft50" alt="An high iron glaze has melted too much run"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/xg3k712pl6.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2534">click here</a> to see it.</p>
+<p>Iron, in the <a  href="https://digitalfire.com/oxide/feo">FeO</a> form, is among the most powerful of fluxes in <a  href="https://digitalfire.com/glossary/reduction+firing">reduction firing</a>. That fluxing action, dependent on the percentage of <a  href="https://digitalfire.com/material/874">iron oxide</a> in the recipe, produces two obvious consequences: Running (depending on the degree of reduction) and <a  href="https://digitalfire.com/glossary/crystallization">crystallization</a> (depending on the speed of cooling and the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> of the glaze hosting the iron). This piece was <a  href="https://digitalfire.com/picture/761">slow-cooled</a> during firing, resulting in total crystallization of the surface. The crystals are larger and densely packed at the neck. Their presence, as a thin surface layer, has completely matted it. And, because of the fluxing power of the FeO (present because of the reduction atmosphere in the kiln) enough glaze ran downward off the piece that it was left sitting in a pool of molten glass.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/iron+oxide+black">Iron Oxide Black</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="https://digitalfire.com/oxide/fe2o3">Fe2O3 - Iron Oxide, Ferric Oxide</a>
+</td>
+</tr>
+</tbody></table>
+<h3>Mechanisms</h3><table>
+<table class="table table-bordered"><tbody>
+<tr><th scope="row">Glaze Color</th><td>When 1-5% iron is used in a transparent reduction glaze which has some calcia and potash (barium also helps) celadon glazes are produced. 'Celadon' glazes are glossy shades of green which exhibit depth of color due to suspended micro-bubbles in the glass.</td></tr>
+<tr><th scope="row">Glaze Color</th><td>A typical high-temperature fluid reduction glaze with 15% iron will freeze to a sparkling rust colored mesh of crystals. Alkaline glazes work best. Barium can impede this effect.</td></tr>
+<tr><th scope="row">Glaze Color</th><td>Saturated reduction iron glazes normally firing to black in reduction will move toward brown if alumina is high, toward blue if alumina is low.</td></tr>
+<tr><th scope="row">Glaze Color</th><td>The presence of phosphorous pentoxide, lithia and soda also encourage blue in both normal and saturation conditions in reduction firing.
+Iron glazes will move toward blue if alumina is low.</td></tr>
+<tr><th scope="row">Glaze Color</th><td>Classic reduction black-breaking-to-brown tenmoku glazes are made with 8-12% iron.</td></tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

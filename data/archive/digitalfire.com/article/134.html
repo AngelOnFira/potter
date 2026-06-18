@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Those Unlabelled Bags and Buckets</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Mike Bailey and David Hewitt provide detailed information on how to identify materials from the properties of their powders">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item active" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=article" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:center; vertical-align:top;">Feb 14-15, 2026 - <b>Major Server <a href="https://digitalfire.com">Upgrade</a> Done</b></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Articles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a title="388" href="https://digitalfire.com/article/388">A ChatBot gives jaw-dropping glaze recipe advice - Jan 2025</a><br /><a title="244" href="https://digitalfire.com/article/244">A Low Cost Tester of Glaze Melt Fluidity</a><br /><a title="361" href="https://digitalfire.com/article/361">A One-speed Lab or Studio Slurry Mixer</a><br /><a title="353" href="https://digitalfire.com/article/353">A Textbook Cone 6 Matte Glaze With Problems</a><br /><a title="199" href="https://digitalfire.com/article/199">Adjusting Glaze Expansion by Calculation to Solve Shivering</a><br /><a title="251" href="https://digitalfire.com/article/251">Alberta Slip, 20 Years of Substitution for Albany Slip</a><br /><a title="273" href="https://digitalfire.com/article/273">An Overview of Ceramic Stains</a><br /><a title="37" href="https://digitalfire.com/article/37">Are You in Control of Your Production Process?</a><br /><a title="12" href="https://digitalfire.com/article/12">Are Your Glazes Food Safe or are They Leachable?</a><br /><a title="143" href="https://digitalfire.com/article/143">Attack on Glass: Corrosion Attack Mechanisms</a><br /><a title="204" href="https://digitalfire.com/article/204">Ball Milling Glazes, Bodies, Engobes</a><br /><a title="345" href="https://digitalfire.com/article/345">Binders for Ceramic Bodies</a><br /><a title="4" href="https://digitalfire.com/article/4">Bringing Out the Big Guns in Craze Control: MgO (G1215U)</a><br /><a title="381" href="https://digitalfire.com/article/381">Can We Help You Fix a Specific Problem?</a><br /><a title="124" href="https://digitalfire.com/article/124">Ceramic Glazes Today</a><br /><a title="208" href="https://digitalfire.com/article/208">Ceramic Material Nomenclature</a><br /><a title="336" href="https://digitalfire.com/article/336">Ceramic Tile Clay Body Formulation</a><br /><a title="217" href="https://digitalfire.com/article/217">Changing Our View of Glazes</a><br /><a title="22" href="https://digitalfire.com/article/22">Chemistry vs. Matrix Blending to Create Glazes from Native Materials</a><br /><a title="209" href="https://digitalfire.com/article/209">Concentrate on One Good Glaze</a><br /><a title="115" href="https://digitalfire.com/article/115">Copper Red Glazes</a><br /><a title="271" href="https://digitalfire.com/article/271">Crazing and Bacteria: Is There a Hazard?</a><br /><a title="190" href="https://digitalfire.com/article/190">Crazing in Stoneware Glazes: Treating the Causes, Not the Symptoms</a><br /><a title="97" href="https://digitalfire.com/article/97">Creating a Non-Glaze Ceramic Slip or Engobe</a><br /><a title="195" href="https://digitalfire.com/article/195">Creating Your Own Budget Glaze</a><br /><a title="36" href="https://digitalfire.com/article/36">Crystal Glazes: Understanding the Process and Materials</a><br /><a title="324" href="https://digitalfire.com/article/324">Deflocculants: A Detailed Overview</a><br /><a title="32" href="https://digitalfire.com/article/32">Demonstrating Glaze Fit Issues to Students</a><br /><a title="334" href="https://digitalfire.com/article/334">Diagnosing a Casting Problem at a Sanitaryware Plant</a><br /><a title="196" href="https://digitalfire.com/article/196">Drying Ceramics Without Cracks</a><br /><a title="187" href="https://digitalfire.com/article/187">Duplicating Albany Slip</a><br /><a title="45" href="https://digitalfire.com/article/45">Duplicating AP Green Fireclay</a><br /><a title="197" href="https://digitalfire.com/article/197">Electric Hobby Kilns: What You Need to Know</a><br /><a title="39" href="https://digitalfire.com/article/39">Fighting the Glaze Dragon</a><br /><a title="214" href="https://digitalfire.com/article/214">Firing Clay Test Bars</a><br /><a title="200" href="https://digitalfire.com/article/200">Firing: What Happens to Ceramic Ware in a Firing Kiln</a><br /><a title="113" href="https://digitalfire.com/article/113">First You See It Then You Don't: Raku Glaze Stability</a><br /><a title="316" href="https://digitalfire.com/article/316">Fixing a glaze that does not stay in suspension</a><br /><a title="338" href="https://digitalfire.com/article/338">Formulating a body using clays native to your area</a><br /><a title="191" href="https://digitalfire.com/article/191">Formulating a Clear Glaze Compatible with Chrome-Tin Stains</a><br /><a title="282" href="https://digitalfire.com/article/282">Formulating a Porcelain</a><br /><a title="188" href="https://digitalfire.com/article/188">Formulating Ash and Native-Material Glazes</a><br /><a title="114" href="https://digitalfire.com/article/114">G1214M Cone 5-7 20x5 glossy transparent glaze</a><br /><a title="121" href="https://digitalfire.com/article/121">G1214W Cone 6 transparent glaze</a><br /><a title="122" href="https://digitalfire.com/article/122">G1214Z Cone 6 matte glaze</a><br /><a title="226" href="https://digitalfire.com/article/226">G1916M Cone 06-04 transparent glaze</a><br /><a title="203" href="https://digitalfire.com/article/203">Getting the Glaze Color You Want: Working With Stains</a><br /><a title="342" href="https://digitalfire.com/article/342">Glaze and Body Pigments and Stains in the Ceramic Tile Industry</a><br /><a title="189" href="https://digitalfire.com/article/189">Glaze Chemistry Basics - Formula, Analysis, Mole%, Unity </a><br /><a title="358" href="https://digitalfire.com/article/358">Glaze chemistry using a frit of approximate analysis</a><br /><a title="123" href="https://digitalfire.com/article/123">Glaze Recipes: Formulate and Make Your Own Instead</a><br /><a title="343" href="https://digitalfire.com/article/343">Glaze Types, Formulation and Application in the Tile Industry</a><br /><a title="181" href="https://digitalfire.com/article/181">Having Your Glaze Tested for Toxic Metal Release</a><br /><a title="364" href="https://digitalfire.com/article/364">High Gloss Glazes</a><br /><a title="384" href="https://digitalfire.com/article/384">Hire Us for a 3D Printing Project</a><br /><a title="136" href="https://digitalfire.com/article/136">How a Material Chemical Analysis is Done</a><br /><a title="235" href="https://digitalfire.com/article/235">How desktop INSIGHT Deals With Unity, LOI and Formula Weight</a><br /><a title="331" href="https://digitalfire.com/article/331">How to Find and Test Your Own Native Clays</a><br /><a title="26" href="https://digitalfire.com/article/26">I have always done it this way!</a><br /><a title="344" href="https://digitalfire.com/article/344">Inkjet Decoration of Ceramic Tiles</a><br /><a title="279" href="https://digitalfire.com/article/279">Is Your Fired Ware Safe?</a><br /><a title="311" href="https://digitalfire.com/article/311">Leaching Cone 6 Glaze Case Study</a><br /><a title="206" href="https://digitalfire.com/article/206">Limit Formulas and Target Formulas</a><br /><a title="133" href="https://digitalfire.com/article/133">Low Budget Testing of Ceramic Glazes</a><br /><a title="333" href="https://digitalfire.com/article/333">Make Your Own Ball Mill Stand</a><br /><a title="347" href="https://digitalfire.com/article/347">Making Glaze Testing Cones</a><br /><a title="341" href="https://digitalfire.com/article/341">Monoporosa or Single Fired Wall Tiles</a><br /><a title="325" href="https://digitalfire.com/article/325">Organic Matter in Clays: Detailed Overview</a><br /><a title="105" href="https://digitalfire.com/article/105">Outdoor Weather Resistant Ceramics</a><br /><a title="27" href="https://digitalfire.com/article/27">Painting Glazes Rather Than Dipping or Spraying</a><br /><a title="212" href="https://digitalfire.com/article/212">Particle Size Distribution of Ceramic Powders</a><br /><a title="339" href="https://digitalfire.com/article/339">Porcelain Tile, Vitrified Tile</a><br /><a title="20" href="https://digitalfire.com/article/20">Rationalizing Conflicting Opinions About Plasticity</a><br /><a title="332" href="https://digitalfire.com/article/332">Ravenscrag Slip is Born</a><br /><a title="247" href="https://digitalfire.com/article/247">Recylcing Scrap Clay</a><br /><a title="101" href="https://digitalfire.com/article/101">Reducing the Firing Temperature of a Glaze From Cone 10 to 6</a><br /><a title="329" href="https://digitalfire.com/article/329">Setting up a Clay Testing Program in Your Company or Studio</a><br /><a title="211" href="https://digitalfire.com/article/211">Simple Physical Testing of Clays</a><br /><a title="350" href="https://digitalfire.com/article/350">Single Fire Glazing</a><br /><a title="326" href="https://digitalfire.com/article/326">Soluble Salts in Minerals: Detailed Overview</a><br /><a title="28" href="https://digitalfire.com/article/28">Some Keys to Dealing With Firing Cracks</a><br /><a title="249" href="https://digitalfire.com/article/249">Stoneware Casting Body Recipes</a><br /><a title="194" href="https://digitalfire.com/article/194">Substituting Cornwall Stone</a><br /><a title="274" href="https://digitalfire.com/article/274">Super-Refined Terra Sigillata</a><br /><a title="340" href="https://digitalfire.com/article/340">The Chemistry, Physics and Manufacturing of Glaze Frits</a><br /><a title="202" href="https://digitalfire.com/article/202">The Effect of Glaze Fit on Fired Ware Strength</a><br /><a title="125" href="https://digitalfire.com/article/125">The Four Levels on Which to View Ceramic Glazes</a><br /><a title="207" href="https://digitalfire.com/article/207">The Majolica Earthenware Process</a><br /><a title="43" href="https://digitalfire.com/article/43">The Potter's Prayer</a><br /><a title="359" href="https://digitalfire.com/article/359">The Right Chemistry for a Cone 6 Magnesia Matte</a><br /><a title="33" href="https://digitalfire.com/article/33">The Trials of Being the Only Technical Person in the Club</a><br /><a title="107" href="https://digitalfire.com/article/107">The Whining Stops Here: A Realistic Look at Clay Bodies</a><br /><a title="134" href="https://digitalfire.com/article/134">Those Unlabelled Bags and Buckets</a><br /><a title="16" href="https://digitalfire.com/article/16">Tiles and Mosaics for Potters</a><br /><a title="308" href="https://digitalfire.com/article/308">Toxicity of Firebricks Used in Ovens</a><br /><a title="379" href="https://digitalfire.com/article/379">Trafficking in Glaze Recipes</a><br /><a title="216" href="https://digitalfire.com/article/216">Understanding Ceramic Materials</a><br /><a title="210" href="https://digitalfire.com/article/210">Understanding Ceramic Oxides</a><br /><a title="130" href="https://digitalfire.com/article/130">Understanding Glaze Slurry Properties</a><br /><a title="213" href="https://digitalfire.com/article/213">Understanding the Deflocculation Process in Slip Casting</a><br /><a title="132" href="https://digitalfire.com/article/132">Understanding the Terra Cotta Slip Casting Recipes In North America</a><br /><a title="198" href="https://digitalfire.com/article/198">Understanding Thermal Expansion in Ceramic Glazes</a><br /><a title="313" href="https://digitalfire.com/article/313">Unwanted Crystallization in a Cone 6 Glaze</a><br /><a title="389" href="https://digitalfire.com/article/389">Using Dextrin, Glycerine and CMC Gum together</a><br /><a title="135" href="https://digitalfire.com/article/135">Volcanic Ash</a><br /><a title="201" href="https://digitalfire.com/article/201">What Determines a Glaze's Firing Temperature?</a><br /><a title="111" href="https://digitalfire.com/article/111">What is a Mole, Checking Out the Mole</a><br /><a title="38" href="https://digitalfire.com/article/38">What is the Glaze Dragon?</a><br /><a title="98" href="https://digitalfire.com/article/98">Where do I start in understanding glazes?</a><br /><a title="215" href="https://digitalfire.com/article/215">Why Textbook Glazes Are So Difficult</a><br /><a title="239" href="https://digitalfire.com/article/239">Working with children</a></div><h1>Those Unlabelled Bags and Buckets</h1>
+<h4 class="text-muted">Description</h4><p class="text-muted font-italic">Mike Bailey and David Hewitt provide detailed information on how to identify materials from the properties of their powders</p><h4>Article</h4>
+<p><em>By Mike Bailey and David Hewitt.</em></p>
+<p>There can't be many potteries without the odd bag or two of unidentified material tucked away in some dusty corner and even in the best organised set-ups materials can get put in the wrong bins and their labels lost (by someone else, of course). Suddenly a well tried and tested glaze goes wrong - was it weighed out correctly?, has a supply source changed?, is the bin labeled 'whiting' supposed to have a pale blue powder in it? Many of us will have been in this situation - chaos reigns and it never, ever happens at a convenient time. Is there anything that we can do when it does occur? Well, fortunately for potters, apart from making various observations of the suspect material, there is a potentially very useful diagnostic tool readily to hand for identifying materials; their kiln!</p>
+<p>Of course, the only sure way is to send some of the material to a laboratory for an analysis. You will have to suggest which <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> to look for and, more importantly, be prepared to pay for the work, usually between £30 and £100. Naturally most of us would wish to avoid the 'paying' part of this process. Here we describe an approach where some observations and simple fired tests should be helpful in giving a diagnosis. This involves looking at; the colour and texture of the material, a fired 'button' test and a loss on ignition test. In case you haven't got time to do a fired test then a bulk density test could help identify some materials, especially if you've got some 'known' material to compare it with. All these parameters are summarised in Table 1. and we've also given a description of the fired results which acts as a basic diagnostic key.</p>
+<p>While this article is aimed at the problem of the unlabelled bag, the methods detailed can equally be used to check that a new supply is what it says it is on the label.</p>
+<h3><b><u>Colour and Texture</u></b></h3>
+<p>This is one of the first things that you can look at and most potters will have a good working knowledge in this area. One may also be fortunate enough to have a correctly labeled bag with which to compare it. To say a material is white is over simplifying the matter. There is white and there is white so look closely for a start. There are obvious ones like Cornish Stone which has a blue tinge and <a  href="https://digitalfire.com/material/273">Dolomite</a> which is usually buff coloured. In fact many of the other minerals such as the <a  href="https://digitalfire.com/material/310">feldspars</a> and clays also have a characteristic slightly off white tinge. Colouring oxides, too, will often have more distinctive colouring although there are, admittedly, some where the shades of black are very close. <a  href="https://digitalfire.com/material/236">Copper Carbonate</a> and <a  href="https://digitalfire.com/material/218">Chrome Oxide</a> are both green but most potters would instantly recognise the difference.</p>
+<p>Next you can look at the particle size. <a  href="https://digitalfire.com/material/1620">Talc</a>, for example, is a very fine powder, Flint and Quartz are often lumpy as they are supplied damp. With the addition of water clays will make up into a plastic ball, whereas other materials are short and crumbly. Add these observations to the colour and you will certainly have narrowed down the field. .</p>
+<h3><b><u>The Fired Button Test </u></b></h3>
+<p>This is probably the most useful test that you can do and it can be done very quickly. Just mix a teaspoonful of the unidentified or suspect material with water into a thin paste. Try and get it to the consistency of a glaze. Put a blob of it on to a tile or chard and smooth it out with the back of the spoon getting some variation in thickness from a thin smear to a thicker 3mm+ area. Then fire it on the <a  href="https://digitalfire.com/glossary/clay+body">clay body</a> in regular use and to your normal <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a>, so that it can be readily compared with known fired samples which you have previously made. Obviously the clay body and the firing will have some effect on the colour of the fired button tests and so the samples shown below have been done on a white body and a darker body, and both oxidised and reduced, to indicate this. For the individual it is obviously best to use your normal clay body and firing for comparative purposes</p>
+<h3><b><u>Loss on Ignition Test</u></b></h3>
+<p>It can be quite amazing just how much weight some materials can lose during a firing. We've listed this in Table 1 as the % lost. For mathematical convenience put 100gms of <u>dried</u> material into a bowl and fire with your next <a  href="https://digitalfire.com/glossary/bisque">bisque</a>. This drying is very important as you don't want to weigh absorbed atmospheric moisture, or the water added to <a  href="https://digitalfire.com/material/1245">silica</a> products to keep down the dust. A classic example is whiting when 100gms fired in a 1,000<SUP>O</SUP>C bisque loses 44gms of CO<SUB>2</SUB> and comes out weighing 56 gms! . One could certainly use this information to tell the difference, for example, between a <a  href="https://digitalfire.com/material/80">ball clay</a> which will have some L.O.I. and <a  href="https://digitalfire.com/material/310">feldspar</a> which will have virtually none. For some materials the L.O.I. test is also helpful diagnostically because they melt at 1,000<SUP>O</SUP>C! Hence it's sensible to use a spare bowl.</p>
+<h3><b><u>Underglaze Colour Test</u></b></h3>
+<p>This is also a very quick test to do and is particularly helpful at identifying the black powder forms of Cobalt, Copper, Iron, Manganese and Nickel. The material is painted on to a bisqued pot, or shard, with a consistency that is a bit thicker than a water-colour wash but not as thick as gouache or poster paints. This is then glazed and fired, ideally using either an <a  href="https://digitalfire.com/glossary/earthenware">earthenware</a> or <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> clear glaze, which will show the colour to its full effect.</p>
+<h3><b><u>A Comparative Test Using Bulk Density</u></b></h3>
+<p>We did wonder if the <a  href="https://digitalfire.com/glossary/specific+gravity">Specific Gravity</a> of a material would be of any use as a diagnostic aid. After all, the Specific Gravity values are given in the reference books, e.g. in Frank and Janet Hamer's, "Potter's Dictionary of Materials and Techniques. Specific Gravity is the ratio of the weight of a substance with an equal volume of water. In the laboratory this is measured with a special flask filled with water at a set temperature. A known weight of the substance is added and some water is displaced. The displaced water is collected and weighed and so the SG ratio is calculated. The average potter is not really equipped for such a test and we found it difficult to get any degree of accuracy using 'kitchen' equipment, so the SG figures are rather academic in this context. However, we did have a bit more success using Bulk Density.</p>
+<p>We all know from picking up bags of different materials that they appear to vary quite a lot in their density. Some appear to be relatively heavy and others relatively light. What we are experiencing is Bulk Density and which one would express as gram/ cubic cm. A little experimentation will quickly show that measuring this is not as simple as it might sound. The materials are easily aerated and may have lumps in them, so that trying to measure a volume and weighing it can give variable results. It is however a measure that is routinely used in industry and the key to its use is to have a standard test method which is reproduced exactly each time it is used. 
+The <A href="#BULK DENSITY">Fig 1</A> shows one such method based on ASTM E153-59T and used for <a  href="https://digitalfire.com/glossary/calcination">Calcined</a> Clay. The main idea is that you are controlling the filling up of the measure. </p>
+<p>The funnel is placed at a set distance from the top of the measuring pot (we found a 100 cc volume to be convenient). A finger is held under the funnel which is then filled with the material. Funnily enough most fine pottery powders don't suddenly run out of the funnel when your finger is removed and one has to gently coax the material by poking it with a pencil. The measuring pot is allowed to fill to overflowing and a knife is then gently drawn across the top of it. The contents are then weighed and the weight calculated per cm<SUP>3</SUP> (which in this case just means moving the decimal point two places). It's best to do at least 5 measurements and take the average. </p>
+<p>If, therefore, in the process of identifying this unlabelled bag you have come to the point of hazarding a guess at what it might be from the other observed factors, and/or not having time to do the fired tests, then comparing its bulk density with a known material might just clinch the matter. Your figures probably won't be the same as ours although they should be in the same sort of order. Certainly the <a  href="https://digitalfire.com/glossary/alkaline+earths">alkaline earths</a>, some <a  href="https://digitalfire.com/glossary/frit">frits</a> and <a  href="https://digitalfire.com/glossary/metal+oxides">metal oxides</a> stand out as being significantly heavier, and the clays lighter, than the average.</p>
+<h3><b><u>Diagnostic key: </u></b></h3>
+<p>Below is a key based on the button test and which then links in with the other factors that we've been discussing. Of course, what you are looking at is not just how this mineral or oxide looks when fired on its own, but how it reacts at these high temperatures with clay. In general, the materials we think of as 'fluxes' form some sort of bonding or melt, feldspars a stiff melt and frits a very shiny melt. </p>
+<p><u>1. Button test forms a very (too) shiny, clear transparent melt.</u></p>
+<p>This probably means that you've got a <a  href="https://digitalfire.com/glossary/frit">frit</a> or an earthenware glaze. The frits come as pure white powders and if you've tried a L.O.I. test at 1,000<SUP>O</SUP>C. the material will have fused. Their similar bulk density figures don't help but the degrees of <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a> and brown halo can narrow the field.</p>
+<p><u>2. Button test forms a satiny rather stiff greyish semi transluscent to transparent melt. (Almost a glaze.)</u></p>
+<p>This fired description matches most feldspars. Unfortunately L.O.I. and bulk density figures are similar for all and therefore aren't much help.</p>
+<p><u>Cornish Stone and Petalite.</u> A slightly stiffer melt compared with other feldspars. Unfired powder usually has a bluish tinge.</p>
+<p><u>Potash and Soda Feldspars.</u> Hard to tell apart in the button test but can often be used interchangeably anyway! Potash often has a pink/buff tone in the dry state.</p>
+<p><u>FFF Feldspar and <a  href="https://digitalfire.com/material/1070">Nepheline Syenite</a>.</u> These are usually the most <a  href="https://digitalfire.com/glossary/flux">fluxed</a> of the feldspars. FFF often has a pinky buff tinge as a powder and the Nepheline Syenite button test usually develops a brown halo. </p>
+<p><u>Wollastonite</u> also falls into this category where thin, but is rougher and less fused where thick as in 4 below.</p>
+<p>Or, of course, it could be a mixed, very quiet glaze in its own right!</p>
+<p><u>3. Button test forms a corrosive, greeny-brown glaze large brown halo.</u></p>
+<p>Probably one of the alkalis, lithium or soda. Soda ash is soluble in water, both melt in the L.O.I. test.</p>
+<p><u>4. Button test forms a corrosive, greeny brown glaze, opaque matt when thicker with only a slight brown halo.</u></p>
+<p>Probably one of the alkaline earths containing; barium, calcium or magnesia. The colour of the powder may be helpful, <u>Barium Carbonate</u> is a purer white, <u>Dolomite</u> usually has a buff colour and <u>Whiting</u> is a greyish off-white. <u>Plasters</u> would also come into this category. Their low L.O.I. and, of course, setting properties would be diagnostic.</p>
+<p><u>5. Button test forms a very stiff, matt coat.</u></p>
+<p>If tinged greyish or tan could be a <u>Ball Clay</u>, <u>Bentonite</u> usually has a cracked fired surface. If fairly white is either <u>China Clay</u> or one of the less reactive fluxes. Here the colour of the powder, comparative bulk density or L.O.I may help. Clays will mix to a plastic ball.</p>
+<p><u>6. Button test unfused, little reaction with the clay surface. </u></p>
+<p>Indicates a <a  href="https://digitalfire.com/glossary/refractory">refractory</a> <a  href="https://digitalfire.com/glossary/flux">flux</a> containing magnesia; magnesium carbonate/oxide or talc.</p>
+<p><u>7.. Button test remains unfused, flakes off easily.</u></p>
+<p>The material is probably a purer form of alumina or silica. </p>
+<p><u>Flint/quartz</u>. No loss on ignition, middle range bulk density. Nowadays is often supplied damp and lumpy.</p>
+<p><u>Alumina.</u> High L.O.I. if alumina hydrate, high bulk density.</p>
+<hR>
+
+<h2 align=left><A name="BULK DENSITY"><font size=5>BULK DENSITY TEST PROCEDURE</font></A></h2>
+
+<p><font size=3>The important thing for the user is to be able to repeat the tests using the same equipment, funnel, cylinder, distance between end of funnel and top of cylinder and to follow the same filling procedure on each occasion.</font></p>
+<p><font size=3>1. Place the tared, calibrated cylinder directly below (3.8 cm) the powder funnel.</font></p>
+<p><font size=3>2. Block the bottom of the cylinder and pour in approximately 150 ml of sample.</font></p>
+<p><font size=3>3. Quickly remove the blockage and allow sample to flow (use of a small saptula may be needed to obtain flow).</font></p>
+<p><font size=3>4. Allow the cylinder to over fill by a samll amount.</font></p>
+<p><font size=3>5. Use spatula to scrape the sample off even with the top of the cylinder.</font></p>
+<p><font size=3>6. Wipe the cylinder off and reweigh to obtain the weight of sample contained in the cylinder.</font></p>
+<p><font size=3>Bulk Density (gram/cm cubed) = grams in cylinder / 100</font></p>
+<p> </p>
+<table cellSpacing=0 cellPadding=2 width=595 border=1>
+<tbody>
+<tr>
+<td width="88%" colSpan=6 height=16>
+<p><font color=#000000 size=5><STRONG>POTTERY MATERIAL IDENTIFICATION</STRONG></font></p></td></tr>
+<tr>
+<th align=left width="26%" height=16>
+<p><font color=#000000 size=2>RAW MATERIAL</font></p></th>
+<th align=left width="17%" height=16>
+<p><font color=#000000 size=2>Unfired Colour</font></p></th>
+<th align=left width="11%" height=16>
+<p><font color=#000000 size=2>Specific Gravity</font></p></th>
+<th align=left width="11%" height=16>
+<p><font color=#000000 size=2>Bulk Density</font></p></th>
+<th width="11%" height=16>
+<p><font color=#000000 size=2>% Loss on Ign.</font></p></th>
+<th align=left width="11%" height=16><font color=#000000 size=2>Oxidised fired colour and description</font></th></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Alumina Hydrate</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>white</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>3.8</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>1.15</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>33</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Refractory, remains white, powdery.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Ball Clay AT</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>light tan</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>2.6</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.59</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>9</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Greyish buff, very matt.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Ball Clay HVAR</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>off white</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>2.5</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.44</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>7</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Greyish buff, very matt.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Ball Clay TWVA</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>grey</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>2.5</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.49</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>13</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Creamy buff, very matt.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Ball Clay HYPLAS 71</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>cream</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>2.5</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.58</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>5</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Greyish buff, very matt.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Barium Carbonate</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>white</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>4.4</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.68</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>0</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Grey green satin to unfused white matt,slight brown halo.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Bentonite</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>off white/brown</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>2.5</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.67</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>14</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Buff, very matt, cracked surface.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Bone Ash</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>white</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>3.1</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.61</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>0</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Grey green satin to unfused white matt,slight brown halo.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>China Clay N50</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>creamy white</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>2.5</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.33</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>12</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>White, very matt.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Colemanite</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>off white/grey</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>2.3</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.65</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>melts</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Clear, very shiny.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Cornish Stone W/G</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>pale blue</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>2.6</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.68</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>0</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Grey, satin matt.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Dolomite</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>off white/buff</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>2.8</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.82</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>46</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Grey green satin to unfused buff matt,slight brown halo.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>FFF Feldspar</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>off white/pink</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>2.6</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.59</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>0</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Grey, semi-transluscent, shiny/satin.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Flint</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>white</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>2.6</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.69</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>0</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Refractory, remains white, powdery.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Lithium Carbonate</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>very white</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>2.1</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.49</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>melts</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Grey green, satin, reactive with large brown halo.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Magnesium Carbonate</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>white</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>4.5</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.64</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>52</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Refractory, remains white, can be scraped off.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Nepheline Syenite</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>off white</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>2.6</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.6</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>0</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Pinky grey, semi-transluscent, shiny, often slight halo.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Petalite</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>white</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>2.4</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.62</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>0</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Grey, semi-transluscent, shiny/satin.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Potters Plaster</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>white</font></p></td>
+<td width="11%" height=16> </td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.74</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>61</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Grey green satin to unfused white matt,slight brown halo.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Potash Feldspar</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>off white</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>2.6</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.62</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>0</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Grey, semi-transluscent, shiny/satin.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Quartz</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>white</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>2.7</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.68</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>0</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Refractory, remains white, powdery.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Soda Feldspar</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>white</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>2.6</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.62</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>0</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Grey, semi-transluscent, shiny/satin.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Talc</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>white</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>2.7</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.57</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>7</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Refractory, remains white, can be scraped off.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Whiting</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>off white</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>2.8</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.81</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>43</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Grey green satin to unfused white matt,slight brown halo.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Wollastonite</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>white</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>2.8</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.74</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>0</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Grey, semi-transluscent.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Zinc Oxide</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>white</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>5.7</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.51</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>0</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Greyish white, matt.</font></td></tr>
+<tr>
+<td width="87%" colSpan=6 height=16><font color=#000000 size=4><STRONG>FRITS</STRONG></font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Lead Borosilicate</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>white</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>3.1</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.74</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>fuses</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Clear, shiny.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Calcium <a  href="https://digitalfire.com/glossary/borate">Borate</a> Frit</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>white</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>2.5</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.74</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>fuses</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Clear, shiny.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>High Alk. Frit</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>white</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>2.5</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.67</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>fuses</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Clear, shiny, large brown halo.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Standard Borax</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>white</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>2.5</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.68</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>fuses</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Clear, shiny, brown halo.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Standard Alkaline</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>white</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>2.5</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.67</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>fuses</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Clear, shiny, large brown halo.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>P2955 'J' Frit</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>white</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>2.5</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.69</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>fuses</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Clear, shiny, brown halo.</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Lead Bisilicate</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>white</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>4.5</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.901</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>fuses</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Clear, shiny.</font></td></tr>
+<tr>
+<td width="76%" colSpan=5 height=16><font color=#000000 size=4><STRONG>COLOURING OXIDES</STRONG></font></td>
+<td width="11%" height=16><font color=#000000 size=2>IN GLAZE</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Antimony Oxide</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>white</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>5.5</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.82</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>0</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>White</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Chromium Oxide</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>green</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>5.2</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.72</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>0</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Green</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Cobalt Carbonate</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>mauve</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>4.1</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.85</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>37</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Dark blue</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Cobalt Oxide</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>black</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>6.1</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>1.15</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>0</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Dark Blue</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Copper Oxide</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>black</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>6.4</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>1.41</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>0</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Green</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Copper Carbonate</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>green</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>5.1</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.91</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>36</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Green</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Ilmenite</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>black</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>4.8</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>1.1</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>0</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Brown</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Iron Oxide Black</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>black</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>5.7</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.72</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>0</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Dark Brown</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Iron Oxide Red</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>red</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>5.3</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.62</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>0</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Dark brown</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Manganese Dioxide</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>black</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>4.9</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>1.08</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>0</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>brown</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Nickel Oxide</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>black</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>6.7</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>1.95</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>0</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Brown</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Rutile</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>brown</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>4.3</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>1.32</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>0</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>Tan</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Tin Oxide</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>white</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>6.8</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.42</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>0</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>White</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Titanium Oxide</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>white</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>4.2</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.44</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>0</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>white</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Vanadium Pentoxide</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>ochre</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>3.4</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.73</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>0</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>brown/grey</font></td></tr>
+<tr>
+<td width="26%" height=16>
+<p><font color=#000000 size=2>Zirconium Silicate</font></p></td>
+<td width="17%" height=16>
+<p><font color=#000000 size=2>White</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>4.8</font></p></td>
+<td width="11%" height=16>
+<p align=right><font color=#000000 size=2>0.77</font></p></td>
+<td align=middle width="11%" height=16>
+<p align=center><font color=#000000 size=2>0</font></p></td>
+<td width="11%" height=16><font color=#000000 size=2>White</font></td></tr></tbody></table>
+<p>Note from a reader: An awesome way to help narrow down possible choices of materials is adding a few drops of dilute hydrochloric acid or 
+vinegar to a sample of the dry powder. Fizzling (effervescence) indicates that it is a carbonate; the amount it fizzles can also lead you to which 
+carbonate it is. For example dolomite will not fizzle as violently as whiting.</p><p style="clear:left"></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1642">http://aqua-calc.com/calculate/volume-to-weight</a>
+<br /><i>Mineral volume-to-weight calculator</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+</tbody></table><p>By David Hewitt <br />Mike Bailey </p><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

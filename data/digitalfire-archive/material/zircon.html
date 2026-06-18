@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Zircon</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="Alternate names: Zirconium Silicate - Digitalfire Reference Library (no ads)" name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item active"><a class="nav-link" href="list.html">Materials <span class="sr-only">(current)</span></a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=material" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container">
+<ul class="nav nav-tabs pt-1" id="myTab" role="tablist">
+<li class="nav-item">
+<a aria-controls="material" aria-selected="true" class="nav-link active" data-toggle="tab" href="#material" id="material-tab" role="tab">Materials for Ceramics</a>
+</li>
+</ul>
+<div class="tab-content mb-3" id="myTabContent" style="border-right:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #ddd; padding:10px;">
+<div aria-labelledby="material-tab" class="tab-pane fade show active" id="material" role="tabpanel">
+<a href="list_1-9.html">1-9</a> | <a href="list_A.html">A</a> | <a href="list_B.html">B</a> | <a href="list_C.html">C</a> | <a href="list_D.html">D</a> | <a href="list_E.html">E</a> | <a href="list_F.html">F</a> | <a href="list_Frits.html">Frits</a> | <a href="list_G.html">G</a> | <a href="list_H.html">H</a> | <a href="list_I.html">I</a> | <a href="list_J.html">J</a> | <a href="list_K.html">K</a> | <a href="list_L.html">L</a> | <a href="list_M.html">M</a> | <a href="list_N.html">N</a> | <a href="list_O.html">O</a> | <a href="list_P.html">P</a> | <a href="list_Q.html">Q</a> | <a href="list_R.html">R</a> | <a href="list_S.html">S</a> | <a href="list_T.html">T</a> | <a href="list_U.html">U</a> | <a href="list_V.html">V</a> | <a href="list_W.html">W</a> | <a href="list_X.html">X</a> | <a href="list_Y.html">Y</a> | <a href="list_Z.html">Z</a><br/>
+<nobr></nobr>
+</div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Zircon</h1>
+<p><b>Alternate Names</b>: Zirconium Silicate</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/oxide.html">Oxide</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/analysis.html">Analysis</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Formula</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Tolerance</a></th>
+</tr></thead><tbody>
+<tr><td class="label"><a href="../oxide/zro2.html">ZrO2</a></td>
+<td class="text-right">67.21%</td>
+<td class="text-right">
+1.00
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/sio2.html">SiO2</a></td>
+<td class="text-right">32.79%</td>
+<td class="text-right">
+1.00
+</td><td class="text-right">
+</td></tr>
+<tr><td colspan="2">Oxide Weight</td><td class="text-right" colspan="2">
+183.34
+</td></tr>
+<tr><td class="text-right" colspan="2"><a href="../glossary/formula+weight.html">Formula Weight</a></td><td colspan="2" style="text-align:right">
+183.34
+</td></tr>
+</tbody></table>
+<h4>Notes</h4><p>Zirconium silicate (or <a href="1722.html">zircon</a>) is extremely stable (<a href="../glossary/refractory.html">refractory</a>, hard, dense). Large quantities of zircon are used by the tile, <a href="../glossary/sanitary+ware.html">sanitaryware</a> and tableware industries (to <a href="../glossary/opacifier.html">opacify</a> glazes). Zircon sand (which is milled to produce zirconium silicate powders), is a major source for the production of <a href="1720.html">zirconia</a> <a href="../oxide/zro2.html">ZrO2</a>. <br/>
+<br/>
+Individual zircon particles are angular, very hard and refractory and amazingly, they do not readily dissolve into glaze melts even when <a href="../glossary/ball+milling.html">ball milled</a> to exceedingly small <a href="../glossary/particle+sizes.html">particle sizes</a>. Manufacturers differentiate products by different methods of grinding and purifying the sand (particle size, shape, distribution, removal of impurities). Their equipment is able to process product, in quantity, down to 5 micron particle size and enough uniformity to prevent issues like <a href="../glossary/agglomeration.html">agglomeration</a>. A consequence of this is that high-energy mixing of glaze slurries is required to separate the particles. <a href="../glossary/325+mesh.html">325 mesh</a> is considered a coarse grade, not suitable to opacify glazes (although in glaze <a href="../glossary/frit.html">frits</a> it can be suitable).<br/>
+<br/>
+Zircon is the generic name for zirconium silicate, the trade names are different (for example, <a href="1724.html">Zircopax</a>, Zircosil, Ultrox, ). The refractive index of zircon is high (particularly with micronized zircon, sized less than 5 microns). Notwithstanding this, some sources list Zircon as a source of <a href="../oxide/sio2.html">SiO<sub>2</sub></a> in glazes (meaning that it does <a href="../glossary/decomposition.html">decompose</a>). This view is plausible since smaller amounts of zircon do not opacify glazes, in fact they are purposely added to raise refractive index to encourage transparency and high gloss. That means it dissolves when percentages are low and precipitates to opacify when they are higher. Interestingly, it dissolves so well at low percentages that it is sometimes added to clear glazes to make them more transparent (because it has a high refractive index).<br/>
+<br/>
+Zircon is normally used in glazes for <a href="../glossary/opacifier.html">opacification</a> (converting a transparent glaze to an opaque). The silicate form or zirconium does not matte glazes (like pure zirconium oxide, actually, zirconium dioxide, does). The exact amount needed varies between different glaze types. 10-12% is normal, but up to 20% may be required to opacify some <a href="../glossary/transparent+glazes.html">transparent glazes</a>. When the saturation point is achieved <a href="../glossary/crystallization.html">crystallization</a> begins to occur. It is most effective at low temperatures. <a href="1642.html">Tin oxide</a> can be a more effective <a href="../glossary/opacifier.html">opacifier</a> than zircon (it has various advantages and disadvantages).<br/>
+<br/>
+High amounts of zircon opacifier can cause <a href="../glossary/cutlery+marking.html">cutlery marking</a> (because of abrading angular micro-particles projecting from the glaze surface).<br/>
+<br/>
+As a glaze opacifier, the white color produced by zirconium silicate is often characterized as 'toilet bowl white'. Tin oxide, by contrast can produce more of a blue-white, but tin is subject to alteration of the color (toward pink) if there is any chrome in the kiln atmosphere. If the shade of white is too harsh, it can be toned by shifting part of the opacification burden to tin or by adding a tiny amount of stain (e.g. blue, brown, grey).<br/>
+<br/>
+The <a href="../glossary/co-efficient+of+thermal+expansion.html">low expansion</a> or zircon will tend to reduce <a href="../trouble/glaze+crazing.html">crazing</a> in glazes. In a non-crazed glaze, the presence of sufficient zircon can reduce <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> enough that there is a danger of <a href="../glossary/glaze+shivering.html">shivering</a> (the glaze formulation may need to be adjusted to accommodate, e.g. more Zircon lowers glaze thermal expansion). It is best to <b>exclude the <a href="../glossary/glaze+chemistry.html">chemistry</a> of the zircon materials from participation in glaze chemistry</b> calculations, treating it simply as an addition (then take into consideration its effect on glaze properties on a physical rather than chemical level).<br/>
+<br/>
+Zircon stiffens the glaze melt (increases <a href="../glossary/surface+tension.html">surface tension</a>) and this often needs to be taken into account (even though the chemistry might suggest it is sufficiently fluid). Glazes lacking <a href="../glossary/melt+fluidity.html">melt fluidity</a> can experience problems with <a href="../trouble/crawling.html">crawling</a>, <a href="../trouble/glaze+blisters.html">blistering</a> and <a href="../glossary/pinholing.html">pinholing</a> since they have less ability to heal disruptions. Adjustment of the <a href="../glossary/glaze+chemistry.html">glaze chemistry</a> may be needed (increasing the <a href="../glossary/flux.html">flux</a> content while maintaining the SiO<sub>2</sub>:Al<sub>2</sub>O<sub>3</sub>, for example).<br/>
+<br/>
+Because of its high thermal stability, zircon is also employed in making various hi-tech refractories, <a href="../glossary/porcelain.html">porcelain</a> bodies, coatings and materials, even dentures. <a href="41.html">Calcined alumina</a> is an alternative in fabricating super refractories but it has much higher thermal expansion and greater heat conductivity.<br/>
+<br/>
+Zircon has become so expensive that major manufacturers are considering, or are already diluting their products with other materials (like <a href="925.html">kaolin</a>). So 'heads up' if your glaze is not as opacified as it was before! Also, use care in pretesting zircon materials, they vary in quality. Some companies are marketing their materials as "zirconium substitutes" whereas the material is just zirconium silicate.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">How do you turn a transparent glaze into a white?</h3>
+<br/><a href="../picture/815.html"><img class="flexleft50" loading="lazy" src="../media/images/wawlufofex.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/815.html">click here</a> to see it.</p>
+<p>Right: <a href="1178.html">Ravenscrag</a> <a href="../recipe/gr6-a.html">GR6-A</a> transparent <a href="../glossary/base+glaze.html">base glaze</a>. Left: It has been opacified (turned opaque) by adding 10% <a href="1724.html">Zircopax</a>. This <a href="../glossary/opacifier.html">opacification</a> <a href="../glossary/mechanism.html">mechanism</a> can be transplanted into almost any transparent glaze. It can also be employed in colored transparents, it will convert their coloration to a pastel shade, lightening it. <a href="1722.html">Zircon</a> works well in oxidation and reduction. <a href="1642.html">Tin oxide</a> is another <a href="../glossary/opacifier.html">opacifier</a>, it is much more expensive and only works in <a href="../glossary/oxidation+firing.html">oxidation firing</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">The action of Zircopax vs Tin Oxide at cone 10R</h3>
+<br/><a href="../picture/844.html"><img class="flexleft50" loading="lazy" src="../media/images/wogsuxyhiz.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/844.html">click here</a> to see it.</p>
+<p>On <a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12886">H443</a> iron <a href="../glossary/stoneware.html">stoneware</a> in <a href="../glossary/reduction+firing.html">reduction firing</a>. Notice Tin does not work. Also notice that between 7.5 and 10% <a href="1724.html">Zircopax</a> provides as much <a href="../glossary/opacity.html">opacity</a> as does 15% (<a href="1722.html">Zircon</a> is very expensive).<br/>
+</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Adding Zircopax to G2571A dolomite matte</h3>
+<br/><a href="../picture/1045.html"><img class="flexleft50" loading="lazy" src="../media/images/matzakykut.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1045.html">click here</a> to see it.</p>
+<p>On the left: <a href="../recipe/g2571a.html">G2571A</a> <a href="273.html">dolomite</a> matte fired at <a href="../glossary/reduction+firing.html">cone 10R</a>. Right: 10% <a href="1724.html">Zircopax</a> has been added. Both are on a buff <a href="../glossary/stoneware.html">stoneware</a> (<a href="https://plainsmanclays.ca/data/index.php?product=12887">H550</a> from <a href="../glossary/plainsman+clays.html">Plainsman</a> Clays).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Zircon glazes cover well but they have a problem</h3>
+<br/><a href="../picture/1770.html"><img class="flexleft50" loading="lazy" src="../media/images/ridxudufyh.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1770.html">click here</a> to see it.</p>
+<p>This <a href="../glossary/sanitary+ware.html">sanitary ware</a> tank lid was made in China. Notice how thick the white glaze is being applied to cover the iron containing body below. This is a testament to how opaque a <a href="1722.html">zircon</a> opacified glaze can be. Zircon often causes <a href="../trouble/crawling.html">crawling</a> (likely due to a combination of the effects of its fine particle size on drying properties and its tendency to stiffen <a href="../glossary/melt+fluidity.html">the melt</a>). Extra measures and constant attention to detail (e.g. <a href="../glossary/glaze+thickness.html">glaze thickness</a>, <a href="../glossary/slurry.html">slurry</a> <a href="../glossary/rheology.html">rheology</a>, avoidance of sharp contours on ware) are needed with such glazes. </p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">The difference between vitrified and sintered</h3>
+<br/><a href="../picture/1510.html"><img class="flexleft50" loading="lazy" src="../media/images/gevbihifok.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1510.html">click here</a> to see it.</p>
+<p>The top fired bar is a <a href="../glossary/translucency.html">translucent</a> <a href="../glossary/porcelain.html">porcelain</a> (made from <a href="925.html">kaolin</a>, <a href="1245.html">silica</a> and <a href="310.html">feldspar</a>). It has zero <a href="../glossary/clay+body+porosity.html">porosity</a> and is very hard and strong at room temperature (because fibrous <a href="1054.html">mullite</a> crystals have developed around the quartz and kaolinite grains and feldspar silicate glass has flowed within to cement the matrix together securely). That is what <a href="../glossary/vitrification.html">vitrified</a> means. But it has a high <a href="../glossary/firing+shrinkage.html">fired shrinkage</a>, poor <a href="../glossary/thermal+shock.html">thermal shock</a> resistance and little stability at above red-heat temperatures. The bar below is zirconium silicate plus 3% binder (VeeGum), all that cements <a href="1722.html">zircon</a> <a href="../glossary/ceramics.html">ceramics</a> together is sinter-bonds between closely packed particles (there is some glass development from the Veegum here). Yet it is surprisingly strong, it cannot be scratched with metal. It has low fired shrinkage, low <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> and maintains its strength and hardness at very high temperatures.<br/>
+</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">White spots and blisters in a high zircon glaze at cone 6</h3>
+<br/><a href="../picture/1695.html"><img class="flexleft50" loading="lazy" src="../media/images/terdyrabud.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1695.html">click here</a> to see it.</p>
+<p>This is also a common problem at <a href="../glossary/earthenware.html">low fire</a> on <a href="../glossary/earthenware.html">earthenware</a> clay (but can also appear on a buff stonewares). Those white spots you see on the beetle also cover the entire glaze surface (although not visible). They are sites of gas escaping (from particles decomposing in the body). The spots likely percolate during soaking at top temperate. Some of them, notably on the almost vertical inner walls of this bowl, having not smoothed over during cool down.<br/>
+<br/>
+What can you do? Use the highest possible <a href="../glossary/bisque.html">bisque</a> temperature, even cone 02 (make the glaze <a href="../glossary/thixotropy.html">thixotropic</a> so it will hang on to the denser body, see the link below about this). Adjust the <a href="../glossary/glaze+chemistry.html">glaze chemistry</a> to melt later after gassing has finished (more zinc, less <a href="../glossary/borate.html">boron</a>). Apply a thinner glaze layer (more <a href="../glossary/thixotropy.html">thixotropy</a> and lower <a href="../glossary/specific+gravity.html">specific gravity</a> will enable a more even coverage with less thickness). Instead of soaking at temperature, drop 100 degrees and soak there instead (gassing is much less and the increasing <a href="../glossary/viscosity.html">viscosity</a> of <a href="../glossary/melt+fluidity.html">the melt</a> overcomes the <a href="../glossary/surface+tension.html">surface tension</a>). Use a body not having any large particles that <a href="../glossary/decomposition.html">decompose</a> (and gas) on firing. Use cones to verify the temperature your <a href="../glossary/kiln+controller.html">electronic controller</a> reports.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Increasing zircon percentages in a transparent glaze on a brick clay body</h3>
+<br/><a href="../picture/1783.html"><img class="flexleft50" loading="lazy" src="../media/images/runpasujig.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1783.html">click here</a> to see it.</p>
+<p>These are fired around cone 8. On the far right is 15% <a href="1724.html">zircopax</a> (left has none). <a href="1722.html">Zircon</a> is however very expensive and its use on bricks has to be rationalized, or at least minimized. In this case a white <a href="../glossary/engobe.html">engobe</a> applied first would greatly reduce the zircon percentage needed.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">3% and 2% Zircopax added to G2926B cone 6 clear. Why?</h3>
+<br/><a href="../picture/2060.html"><img class="flexleft50" loading="lazy" src="../media/images/ghpikxcigg.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2060.html">click here</a> to see it.</p>
+<p>If you are interested in the most <a href="../glossary/functional.html">functional</a> possible surface, consider a 2% <a href="1722.html">zircon</a> addition to your transparent glaze recipe (the outside glaze on these mugs is a copper blue, but that is not the one we are interested in). The clear glaze on the insides of these two identical <a href="../glossary/cone+6.html">cone 6</a> <a href="../glossary/porcelain.html">porcelain</a> mugs has 3% and 2% zircon added. It is not being added to <a href="../glossary/opacifier.html">opacify</a>, it is being added to toughen the surface and reduce the <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a>. The presence of the 2% zircon has not affected the gloss or transparency of the glaze on the right. However, the 3% on the left has opacified it just slightly and made the surface a little silky. So that is too much for this glaze (although it might be OK if the <a href="../glossary/melt+fluidity.html">melt fluidity</a> was higher). <br/>
+</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Zircopax as a fining agent to de-bubble a stained glaze</h3>
+<br/><a href="../picture/2048.html"><img class="flexleft50" loading="lazy" src="../media/images/tsvmr6kxcr.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2048.html">click here</a> to see it.</p>
+<p>The cone 03 <a href="../glossary/porcelain.html">porcelain</a> cup on the left has 10% Cerdec <a href="../glossary/encapsulated+stain.html">encapsulated stain</a> 239416 in the <a href="../recipe/g2931k.html">G2931K</a> clear base (this is not an <a href="../glossary/underglaze.html">underglaze</a> with a transparent over it). The surface is badly orange-peeled because the glass is full of <a href="../glossary/glaze+bubbles.html">micro-bubbles</a> that developed during the firing. Notice that the insides of the cups are crystal-clear, no bubbles. So here, they are a direct product of the presence of the stain. The glaze on the right has even more stain, 15%. Why isn't it even worse? It also has a 3% addition of <a href="1724.html">Zircopax</a> (<a href="1722.html">zircon</a>), which acts as a <a href="../picture/2702.html">fining agent</a>. As you can see, this makes a dramatic difference. Suppliers of encapsulated <a href="../glossary/ceramic+stain.html">stains</a> even recommend a zircon addition, but are often unclear about why. This is the reason.<br/>
+<br/>
+The yellow on the right could be improved further with a slow-cool or <a href="../glossary/drop-and-soak+firing.html">drop-and-hold</a> firing. And if the glaze was reformulated to use a later melting <a href="../glossary/frit.html">frit</a> (so fewer bubbles even get trapped).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">G2934 Cone 6 Matte with 10% Zircopax and 5% tin oxide</h3>
+<br/><a href="../picture/2377.html"><img class="flexleft50" loading="lazy" src="../media/images/qnqmug6ldp.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2377.html">click here</a> to see it.</p>
+<p>The body is <a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12876">M390</a>. The <a href="../glossary/firing+schedule.html">firing schedule</a> is Plainsman <a href="../schedule/plc6ds.html">PLC6DS</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">5% titanium dioxide in G2934Y matte, G1214Z1 matte, G2926B glossy</h3>
+<br/><a href="../picture/2378.html"><img class="flexleft50" loading="lazy" src="../media/images/kq27pwsb81.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2378.html">click here</a> to see it.</p>
+<p>The body is <a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12876">M390</a>. The <a href="../glossary/firing+schedule.html">firing schedule</a> is Plainsman <a href="../schedule/plc6ds.html">PLC6DS</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">G1214Z1 at cone 6 with 10% Zircopax and 5% tin oxide</h3>
+<br/><a href="../picture/2376.html"><img class="flexleft50" loading="lazy" src="../media/images/3x2pw6ktw6.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2376.html">click here</a> to see it.</p>
+<p>The body is <a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12876">M390</a>. The <a href="../glossary/firing+schedule.html">firing schedule</a> is Plainsman <a href="../schedule/plc6ds.html">PLC6DS</a>. The tin is on the right.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">G2926B cone 6 transparent with 10% Zircopax and 5% tin oxide</h3>
+<br/><a href="../picture/2375.html"><img class="flexleft50" loading="lazy" src="../media/images/p89rxapqmb.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2375.html">click here</a> to see it.</p>
+<p>The body is <a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12876">M390</a>. The <a href="../glossary/firing+schedule.html">firing schedule</a> is Plainsman <a href="../schedule/plc6ds.html">PLC6DS</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">The glaze with less stain + 2% Zircopax is brighter than the one with more stain!</h3>
+<br/><a href="../picture/2057.html"><img class="flexleft50" loading="lazy" src="../media/images/lqqfermk8t.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2057.html">click here</a> to see it.</p>
+<p>These are cone 03 porcelains with <a href="../recipe/g2931k.html">G2931K</a> clear glaze base plus Mason 6021 <a href="../glossary/encapsulated+stain.html">encapsulated stain</a> (which is very expensive). The one on the left has 15% stain added. The one on the right is slightly less dense red but has only 10% stain plus 2% <a href="1722.html">zircon</a> (<a href="1724.html">zircopax</a>). Notice the zircon has smoothed the surface also, this is a known benefit of using it with encapsulated <a href="../glossary/ceramic+stain.html">stains</a>. The 2% addition is not enough to <a href="../glossary/opacifier.html">opacify</a>, the color remains deep and <a href="../glossary/translucency.html">translucent</a>. But the surface is still not completely smooth and glassy as is the <a href="../glossary/base+glaze.html">base transparent</a> glaze on its own. This can be improved using a <a href="../glossary/drop-and-soak+firing.html">drop-and-hold</a> <a href="../glossary/firing+schedule.html">firing schedule</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Zircopax, tin oxide, titanium as opacifiers in four base glazes</h3>
+<br/><a alt="A grid of fired glaze test samples showing opacifiers perform in four glazes" href="../picture/2588.html"><img alt="A grid of fired glaze test samples showing opacifiers perform in four glazes" class="flexleft50" loading="lazy" src="../media/images/yd6lm1rk8s.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2588.html">click here</a> to see it.</p>
+<p>The body is <a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12876">M390</a>. Firing is the <a href="../glossary/cone+6.html">cone 6</a> <a href="../schedule/plc6ds.html">PLC6DS</a> schedule. Each horizontal row is a commonly-used <a href="../glossary/base+glaze.html">base glaze</a>. The top one is a <a href="../glossary/magnesia+matte.html">magnesia matte</a>, the next one down is a <a href="../glossary/calcia+matte.html">calcia matte</a>, row 3 is <a href="../recipe/g2926b.html">G2926B</a> glossy and row 4 is <a href="1178.html">Ravenscrag</a> Slip+frit. The two mattes behave very differently from each other with the additions of <a href="../glossary/opacifier.html">opacifier</a>. Thickly applying an opacified glaze will obviously affect visual character (column 4). <a href="1642.html">Tin oxide</a> fires whiter than <a href="1722.html">zircon</a> (e.g. <a href="1724.html">Zircopax</a>). If you like the <a href="../recipe/g2934.html">G2934</a> recipe, consider the <a href="../recipe/g2934y.html">G2934Y</a> variant for better melting.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/107">http://mineral.galleries.com/minerals/silicate/zircon/zircon.htm</a>
+<br/><i>The Mineral Zircon</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1332">http://en.wikipedia.org/wiki/Zircon</a>
+<br/><i><a href="1722.html">Zircon</a> at Wikipedia</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ultrox.html">Ultrox</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="zirconium+dioxide.html">Zirconium Dioxide</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="opax.html">Opax</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="calcined+alumina.html">Calcined Alumina</a>
+<br/><i>A high-purity <a href="../oxide/al2o3.html">Al2O3</a> used in technical <a href="../glossary/ceramics.html">ceramics</a>, refractories, glazes, and bodies for its extreme hardness, high-temperature strength, and chemical stability.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="magnesium+zirconium+silicate.html">Magnesium Zirconium Silicate</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="zircopax.html">Zircopax</a>
+<br/><i>Zirconium silicate, its principle use in <a href="../glossary/ceramics.html">ceramics</a> is as an <a href="../glossary/opacifier.html">opacifier</a> in glazes. It is an expensive material, but less so than <a href="1642.html">tin oxide</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="zirconium+spinel.html">Zirconium Spinel</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="superpax.html">Superpax</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="calcium+zircon+silicate.html">Calcium Zircon Silicate</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="tin+oxide.html">Tin Oxide</a>
+<br/><i>Its principle use in <a href="../glossary/ceramics.html">ceramics</a> is as an <a href="../glossary/opacifier.html">opacifier</a> in glazes. It is very expensive.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="zircopax+plus.html">Zircopax Plus</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Hazards</td>
+<td>
+<a href="../hazard/zirconium+compounds+toxicity.html">Zirconium Compounds Toxicity</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/opa">Opacifier</a>
+<br/><i><a href="../glossary/opacifier.html">Opacifiers</a> are powders that turn <a href="../glossary/transparent+glazes.html">transparent glazes</a> opaque by various chemical and physical <a href="../glossary/mechanism.html">mechanisms</a> (and combinations of mechanisms).</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/lem">Low Expansion Material</a>
+<br/><i>Materials used to make bodies requiring <a href="../glossary/co-efficient+of+thermal+expansion.html">low expansion</a> (e.g. <a href="../glossary/flameware.html">flameware</a>, refractories). The individual particles of these materials have low expansion. Some of theme even expand at certain temperature ranges.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/gnm">Generic Material</a>
+<br/><i>Generic materials are those with no brand name. Normally they are theoretical, the <a href="../glossary/glaze+chemistry.html">chemistry</a> portrays what a specimen would be if it had no contamination. Generic materials are helpful in educational situations where students need to study material theory (later they graduate to dealing with real world materials). They are also helpful where the chemistry of an actual material is not known. Often the accuracy of calculations is sufficient using generic materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/zro.html">ZrO - Zirconium Oxide, Zirconia</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/zro2.html">ZrO2 - Zirconium Dioxide</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/opacity.html">Opacity</a>
+<br/><i><a href="../glossary/opacity.html">Opacity</a> of <a href="../glossary/ceramics.html">ceramics</a> glazes is normally achieved by adding an <a href="../glossary/opacifier.html">opacifier</a> like <a href="1642.html">tin oxide</a> or <a href="1722.html">zircon</a>. However, there are chemical profiles that can turn <a href="../glossary/transparent+glazes.html">transparent glazes</a> milky and make it cheaper to <a href="../glossary/opacifier.html">opacify</a> them.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/refractory.html">Refractory</a>
+<br/><i>In the ceramic industry, <a href="../glossary/refractory.html">refractory</a> materials are those that can withstand a high temperature without deforming or melting. Or can be <a href="../glossary/sintering.html">sintered</a> into super materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/crucible.html">Crucible</a>
+<br/><i>In <a href="../glossary/ceramics.html">ceramics</a>, potters make <a href="../picture/1479.html">crucibles</a> to melt <a href="../glossary/frit.html">frits</a>, <a href="../glossary/ceramic+stain.html">stains</a> and other materials. Crucibles are made from <a href="../glossary/refractory.html">refractory</a> materials that are stable against the material being melted in them.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/variegation.html">Variegation</a>
+<br/><i>Ceramic glaze <a href="../glossary/reactive+glazes.html">variegation</a> refers to its visual character. This is an overview of the various <a href="../glossary/mechanism.html">mechanisms</a> to make glazes dance with color, crystals, highlights, speckles, rivulets, etc.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Temperatures</td>
+<td>
+<a href="../temperature/60.html">Zircon melts, slowly dissolves (1550-)</a>
+</td>
+</tr>
+</tbody></table>
+<h3>Data</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<th scope="row">Hardness (Moh)</th>
+<td>7.5</td>
+</tr>
+<tr>
+<th scope="row"><a href="../test/14.html">Frit Softening Point</a></th>
+<td>2700C</td>
+</tr>
+<tr>
+<th scope="row">Solubility</th>
+<td>Insoluble in water, weakly soluble in acids</td>
+</tr>
+<tr>
+<th scope="row">Density (Specific Gravity)</th>
+<td>4.3-4.7</td>
+</tr>
+<tr>
+<th scope="row">Density (Specific Gravity)</th>
+<td>4.56</td>
+</tr>
+</tbody></table>
+<h3>Mechanisms</h3><table>
+<table class="table table-bordered"><tbody>
+<tr><th scope="row">Body Thermal Expansion</th><td>A very low expansion material.</td></tr>
+<tr><th scope="row">Glaze Opacifier</th><td>Zirconium silicate is by far the most popular opacifier in glazes. It is available from many manufacturers. Opax, Ultrox, Zircopax and Superpax are examples of trade names of zirconium silicate and zirconium oxide products. The finer the milling of the material the better the opacity and the cleaner the color that will be produced.</td></tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></table></table></div></body>
+</html>

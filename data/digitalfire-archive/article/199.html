@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Adjusting Glaze Expansion by Calculation to Solve Shivering</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="This page demonstrates how you might use INSIGHT software to do calculations that will help you increase the thermal expansion of a glaze while having minimal impact on other properties." name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item"><a class="nav-link" href="../material/list.html">Materials</a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item active" href="list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=article" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container"><p><a aria-controls="collapse1" aria-expanded="false" class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button">All Articles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a href="388.html" title="388">A ChatBot gives jaw-dropping glaze recipe advice - Jan 2025</a><br/><a href="244.html" title="244">A Low Cost Tester of Glaze Melt Fluidity</a><br/><a href="361.html" title="361">A One-speed Lab or Studio Slurry Mixer</a><br/><a href="353.html" title="353">A Textbook Cone 6 Matte Glaze With Problems</a><br/><a href="199.html" title="199">Adjusting Glaze Expansion by Calculation to Solve Shivering</a><br/><a href="251.html" title="251">Alberta Slip, 20 Years of Substitution for Albany Slip</a><br/><a href="273.html" title="273">An Overview of Ceramic Stains</a><br/><a href="37.html" title="37">Are You in Control of Your Production Process?</a><br/><a href="12.html" title="12">Are Your Glazes Food Safe or are They Leachable?</a><br/><a href="143.html" title="143">Attack on Glass: Corrosion Attack Mechanisms</a><br/><a href="204.html" title="204">Ball Milling Glazes, Bodies, Engobes</a><br/><a href="345.html" title="345">Binders for Ceramic Bodies</a><br/><a href="4.html" title="4">Bringing Out the Big Guns in Craze Control: MgO (G1215U)</a><br/><a href="381.html" title="381">Can We Help You Fix a Specific Problem?</a><br/><a href="124.html" title="124">Ceramic Glazes Today</a><br/><a href="208.html" title="208">Ceramic Material Nomenclature</a><br/><a href="336.html" title="336">Ceramic Tile Clay Body Formulation</a><br/><a href="217.html" title="217">Changing Our View of Glazes</a><br/><a href="22.html" title="22">Chemistry vs. Matrix Blending to Create Glazes from Native Materials</a><br/><a href="209.html" title="209">Concentrate on One Good Glaze</a><br/><a href="115.html" title="115">Copper Red Glazes</a><br/><a href="271.html" title="271">Crazing and Bacteria: Is There a Hazard?</a><br/><a href="190.html" title="190">Crazing in Stoneware Glazes: Treating the Causes, Not the Symptoms</a><br/><a href="97.html" title="97">Creating a Non-Glaze Ceramic Slip or Engobe</a><br/><a href="195.html" title="195">Creating Your Own Budget Glaze</a><br/><a href="36.html" title="36">Crystal Glazes: Understanding the Process and Materials</a><br/><a href="324.html" title="324">Deflocculants: A Detailed Overview</a><br/><a href="32.html" title="32">Demonstrating Glaze Fit Issues to Students</a><br/><a href="334.html" title="334">Diagnosing a Casting Problem at a Sanitaryware Plant</a><br/><a href="196.html" title="196">Drying Ceramics Without Cracks</a><br/><a href="187.html" title="187">Duplicating Albany Slip</a><br/><a href="45.html" title="45">Duplicating AP Green Fireclay</a><br/><a href="197.html" title="197">Electric Hobby Kilns: What You Need to Know</a><br/><a href="39.html" title="39">Fighting the Glaze Dragon</a><br/><a href="214.html" title="214">Firing Clay Test Bars</a><br/><a href="200.html" title="200">Firing: What Happens to Ceramic Ware in a Firing Kiln</a><br/><a href="113.html" title="113">First You See It Then You Don't: Raku Glaze Stability</a><br/><a href="316.html" title="316">Fixing a glaze that does not stay in suspension</a><br/><a href="338.html" title="338">Formulating a body using clays native to your area</a><br/><a href="191.html" title="191">Formulating a Clear Glaze Compatible with Chrome-Tin Stains</a><br/><a href="282.html" title="282">Formulating a Porcelain</a><br/><a href="188.html" title="188">Formulating Ash and Native-Material Glazes</a><br/><a href="114.html" title="114">G1214M Cone 5-7 20x5 glossy transparent glaze</a><br/><a href="121.html" title="121">G1214W Cone 6 transparent glaze</a><br/><a href="122.html" title="122">G1214Z Cone 6 matte glaze</a><br/><a href="226.html" title="226">G1916M Cone 06-04 transparent glaze</a><br/><a href="203.html" title="203">Getting the Glaze Color You Want: Working With Stains</a><br/><a href="342.html" title="342">Glaze and Body Pigments and Stains in the Ceramic Tile Industry</a><br/><a href="189.html" title="189">Glaze Chemistry Basics - Formula, Analysis, Mole%, Unity </a><br/><a href="358.html" title="358">Glaze chemistry using a frit of approximate analysis</a><br/><a href="123.html" title="123">Glaze Recipes: Formulate and Make Your Own Instead</a><br/><a href="343.html" title="343">Glaze Types, Formulation and Application in the Tile Industry</a><br/><a href="181.html" title="181">Having Your Glaze Tested for Toxic Metal Release</a><br/><a href="364.html" title="364">High Gloss Glazes</a><br/><a href="384.html" title="384">Hire Us for a 3D Printing Project</a><br/><a href="136.html" title="136">How a Material Chemical Analysis is Done</a><br/><a href="235.html" title="235">How desktop INSIGHT Deals With Unity, LOI and Formula Weight</a><br/><a href="331.html" title="331">How to Find and Test Your Own Native Clays</a><br/><a href="26.html" title="26">I have always done it this way!</a><br/><a href="344.html" title="344">Inkjet Decoration of Ceramic Tiles</a><br/><a href="279.html" title="279">Is Your Fired Ware Safe?</a><br/><a href="311.html" title="311">Leaching Cone 6 Glaze Case Study</a><br/><a href="206.html" title="206">Limit Formulas and Target Formulas</a><br/><a href="133.html" title="133">Low Budget Testing of Ceramic Glazes</a><br/><a href="333.html" title="333">Make Your Own Ball Mill Stand</a><br/><a href="347.html" title="347">Making Glaze Testing Cones</a><br/><a href="341.html" title="341">Monoporosa or Single Fired Wall Tiles</a><br/><a href="325.html" title="325">Organic Matter in Clays: Detailed Overview</a><br/><a href="105.html" title="105">Outdoor Weather Resistant Ceramics</a><br/><a href="27.html" title="27">Painting Glazes Rather Than Dipping or Spraying</a><br/><a href="212.html" title="212">Particle Size Distribution of Ceramic Powders</a><br/><a href="339.html" title="339">Porcelain Tile, Vitrified Tile</a><br/><a href="20.html" title="20">Rationalizing Conflicting Opinions About Plasticity</a><br/><a href="332.html" title="332">Ravenscrag Slip is Born</a><br/><a href="247.html" title="247">Recylcing Scrap Clay</a><br/><a href="101.html" title="101">Reducing the Firing Temperature of a Glaze From Cone 10 to 6</a><br/><a href="329.html" title="329">Setting up a Clay Testing Program in Your Company or Studio</a><br/><a href="211.html" title="211">Simple Physical Testing of Clays</a><br/><a href="350.html" title="350">Single Fire Glazing</a><br/><a href="326.html" title="326">Soluble Salts in Minerals: Detailed Overview</a><br/><a href="28.html" title="28">Some Keys to Dealing With Firing Cracks</a><br/><a href="249.html" title="249">Stoneware Casting Body Recipes</a><br/><a href="194.html" title="194">Substituting Cornwall Stone</a><br/><a href="274.html" title="274">Super-Refined Terra Sigillata</a><br/><a href="340.html" title="340">The Chemistry, Physics and Manufacturing of Glaze Frits</a><br/><a href="202.html" title="202">The Effect of Glaze Fit on Fired Ware Strength</a><br/><a href="125.html" title="125">The Four Levels on Which to View Ceramic Glazes</a><br/><a href="207.html" title="207">The Majolica Earthenware Process</a><br/><a href="43.html" title="43">The Potter's Prayer</a><br/><a href="359.html" title="359">The Right Chemistry for a Cone 6 Magnesia Matte</a><br/><a href="33.html" title="33">The Trials of Being the Only Technical Person in the Club</a><br/><a href="107.html" title="107">The Whining Stops Here: A Realistic Look at Clay Bodies</a><br/><a href="134.html" title="134">Those Unlabelled Bags and Buckets</a><br/><a href="16.html" title="16">Tiles and Mosaics for Potters</a><br/><a href="308.html" title="308">Toxicity of Firebricks Used in Ovens</a><br/><a href="379.html" title="379">Trafficking in Glaze Recipes</a><br/><a href="216.html" title="216">Understanding Ceramic Materials</a><br/><a href="210.html" title="210">Understanding Ceramic Oxides</a><br/><a href="130.html" title="130">Understanding Glaze Slurry Properties</a><br/><a href="213.html" title="213">Understanding the Deflocculation Process in Slip Casting</a><br/><a href="132.html" title="132">Understanding the Terra Cotta Slip Casting Recipes In North America</a><br/><a href="198.html" title="198">Understanding Thermal Expansion in Ceramic Glazes</a><br/><a href="313.html" title="313">Unwanted Crystallization in a Cone 6 Glaze</a><br/><a href="389.html" title="389">Using Dextrin, Glycerine and CMC Gum together</a><br/><a href="135.html" title="135">Volcanic Ash</a><br/><a href="201.html" title="201">What Determines a Glaze's Firing Temperature?</a><br/><a href="111.html" title="111">What is a Mole, Checking Out the Mole</a><br/><a href="38.html" title="38">What is the Glaze Dragon?</a><br/><a href="98.html" title="98">Where do I start in understanding glazes?</a><br/><a href="215.html" title="215">Why Textbook Glazes Are So Difficult</a><br/><a href="239.html" title="239">Working with children</a></div><h1>Adjusting Glaze Expansion by Calculation to Solve Shivering</h1>
+<h4 class="text-muted">Description</h4><p class="text-muted font-italic">This page demonstrates how you might use INSIGHT software to do calculations that will help you increase the thermal expansion of a glaze while having minimal impact on other properties.</p><h4>Article</h4>
+<p>Shivering and <a href="../trouble/glaze+crazing.html">crazing</a> are probably the two most common glazing problems in industry and hobby <a href="../glossary/ceramics.html">ceramics</a>. When one becomes familiar with some thermal expansion theory and how easily crazing can be dealt with, it becomes a mystery why others seem puzzled by the problem. I have watched people who are in love with one touchy glaze try a myriad of different bodies, alter firing curves in every possible way, and yet, achieve only limited success. And then, there are the "snake oil" remedies. "Just add some <a href="../material/1245.html">silica</a> to stop crazing and take some out to stop <a href="../glossary/glaze+shivering.html">shivering</a>" it says in many textbooks. This sounds fine at first but as already discussed, you will likely upset the oxide balance and probably kill its surface character if you add enough to fix the problem. Each glaze has its own personality and complexities, a "one solution fits all" method will not work. </p>
+<p>Until now, calculating glaze formulas and their expansion values has been a little tedious to say the least. INSIGHT and similar software changed that, providing instant expansion results for any formula or recipe. </p>
+<p>Below is a set of source figures I have chosen to use. As you will see, using the calculation approach is an exercise in relating one glaze to another, one oxide to another. It is not necessary to know what a crazing glaze's expansion is; all we really need to know is whether and adjustment to its recipe will give it a lower expansion to make it fit better onto the body. While we could get into the units of these numbers, this is not really important, their relationship to each other is the key. </p>
+<table cellpadding="2">
+<caption align="top"><i>Expansion Values</i></caption>
+<tbody>
+<tr>
+<td>BaO </td>
+<td>0.13</td>
+<td>K<sub>2</sub>O </td>
+<td>0.33</td>
+<td>MnO </td>
+<td align="right">-0.09 </td></tr>
+<tr>
+<td>CaO </td>
+<td>0.15</td>
+<td>Na<sub>2</sub>O </td>
+<td>0.39</td>
+<td>TiO2</td>
+<td align="right">0.14 </td></tr>
+<tr>
+<td>PbO </td>
+<td>0.08</td>
+<td>ZnO </td>
+<td>0.09</td>
+<td>B<sub>2</sub>O<sub>3</sub> </td>
+<td align="right">0.03 </td></tr>
+<tr>
+<td>MgO </td>
+<td>0.03</td>
+<td>Fe<sub>2</sub>O<sub>3</sub> </td>
+<td>0.13</td>
+<td>Al<sub>2</sub>O<sub>3</sub> </td>
+<td align="right">0.06 </td></tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>SiO<sub>2</sub> </td>
+<td align="right">0.04 </td></tr></tbody></table>
+<p>From the numbers above, it becomes obvious why the addition of silica has a lowering effect on a glaze's expansion (although not to the degree you might think). One also begins to appreciate why <a href="../glossary/high+temperature+glaze.html">high-temperature glazes</a> (which have so much more <a href="../oxide/sio2.html">SiO<sub>2</sub></a> and <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a>) are much easier to fit to <a href="../glossary/clay+body.html">clay bodies</a> without crazing. Yes, SiO<sub>2</sub> has a very <a href="../glossary/co-efficient+of+thermal+expansion.html">low expansion</a>, so glazes containing plenty of it will tend to have a low expansion also and thus resist crazing. However there is a caveat to this: Even high silica glazes will <a href="../trouble/glaze+crazing.html">craze</a> if they contain significant amounts of <a href="../oxide/na2o.html">Na<sub>2</sub>O</a> and <a href="../oxide/k2o.html">K<sub>2</sub>O</a> (from <a href="../material/310.html">feldspar</a>, for example).</p>
+<p>Let's look at a shivering problem that occurred in one studio. Below is an INSIGHT report of the original shivering glaze.</p><pre>DETAIL PRINT - Matte White Glaze
+MATERIAL               PARTS  WEIGHT   CaO*   MgO*   K<sub>2</sub>O*  Na<sub>2</sub>O*   <a href="../oxide/zro2.html">ZrO2</a> Fe<sub>2</sub>O<sub>3</sub>*   <a href="../oxide/tio2.html">TiO2</a>  Al<sub>2</sub>O<sub>3</sub>   SiO<sub>2</sub>
+WEIGHT OF EACH OXIDE                   56.1   40.3   94.2   62.0  123.2  160.0   79.7  102.0   60.1
+-- -------------------------------------------------------------------------------------------------  MATERIAL
+Expan OF EACH OXIDE                    0.15   0.03   0.33   0.39   0.02   0.13   0.14   0.06   0.04   Cost/kg
+---------------------------------------------------------------------------------------------------  -------
+ <a href="../material/253.html">CUSTER FELDSPAR</a>....   52.50  617.10   0.00          0.06   0.03          0.00          0.09   0.60     0.00
+ <a href="../material/925.html">KAOLIN</a>.............   15.00  258.14                                                    0.06   0.12     0.24
+ FLINT..............   14.50   60.00                                                           0.24     0.19
+ WHITING............    9.50  100.00   0.09                                                             0.12
+ <a href="../material/1620.html">TALC</a>...............    5.00  126.23          0.04                                             0.05     0.25
+ SUPERPAX...........    1.50  183.00                               0.01                        0.01     0.00
+ <a href="../material/106.html">BENTONITE</a>..........    2.00  489.48   0.00   0.00   0.00                 0.00   0.00   0.00   0.02     0.00
+---------------------------------------------------------------------------------------------------  -------
+TOTAL                 100.00           0.10   0.04   0.06   0.03   0.01   0.00   0.00   0.15   1.04     0.09
+<a href="../glossary/unity+formula.html">UNITY FORMULA</a>                          0.44   0.18   0.26   0.11   0.04   0.01   0.00   0.68   4.70
+PER CENT BY WEIGHT                     5.87   1.76   5.72   1.69   1.08   0.22   0.00  16.45  67.20</pre><pre>Cost/kg  0.09
+  <a href="../glossary/silica%3Aalumina+ratio.html">Si:Al</a>  6.93
+ SiB:Al  6.93
+  Expan  6.90</pre>
+<p>Notice that the expansion is calculated based on the figures shown under each oxide column title. It is very clear which <a href="../glossary/ceramic+oxide.html">oxides</a> need to be increased to move the expansion up. Shivering is much less common than crazing, so it is not likely that too much change is needed. It should be possible to leave the SiO<sub>2</sub> and Al<sub>2</sub>O<sub>3</sub> alone and thereby minimize fired property changes associated with disruptions in the overall balance. </p>
+<p>If exotic color compatibility is not at issue (it depends on the absence or presence of certain fluxes), a conservative starting point is to redistribute the fluxes, increasing one at the expense of another. As noted, sodium has the highest expansion, so it is logical to increase it at the expense lower ones like <a href="../oxide/cao.html">CaO</a> and <a href="../oxide/mgo.html">MgO</a>. You have probably noticed that high sodium glazes (ones with plenty of <a href="../material/1070.html">nepheline syenite</a> and soda feldspar) tend to craze. However Na<sub>2</sub>O contributes properties much more similar to K<sub>2</sub>O, therefore I will first try to remove Na<sub>2</sub>O and replace with an equal amount of K<sub>2</sub>O.</p>
+<p>A common sodium sourcing material, as mentioned, is nepheline syenite. Using INSIGHT, I made a quick substitution for potash feldspar, then juggled remaining material amounts to compensate for the differences in these two materials. Here is the result.</p><pre>DETAIL PRINT - Matte White Glaze
+MATERIAL               PARTS  WEIGHT    CaO    MgO    K<sub>2</sub>O   Na<sub>2</sub>O   ZrO2  <a href="../oxide/fe2o3.html">Fe<sub>2</sub>O<sub>3</sub></a>   TiO2  Al<sub>2</sub>O<sub>3</sub>   SiO<sub>2</sub>
+WEIGHT OF EACH OXIDE                   56.1   40.3   94.2   62.0  123.2  160.0   79.7  102.0   60.1
+---------------------------------------------------------------------------------------------------  MATERIAL
+Expan OF EACH OXIDE                    0.15   0.03   0.33   0.39   0.02   0.13   0.14   0.06   0.04   Cost/kg
+---------------------------------------------------------------------------------------------------  -------
+ NEPHELINE SYENITE..   49.30  446.40   0.01   0.00   0.02   0.08                        0.11   0.50     0.33
+ KAOLIN.............   10.81  258.14                                                    0.04   0.08     0.24
+ FLINT..............   22.70   60.00                                                           0.38     0.19
+ WHITING............    9.00  100.00   0.09                                                             0.12
+ TALC...............    4.60  126.23          0.04                                             0.05     0.25
+ SUPERPAX...........    1.50  183.00                               0.01                        0.01     0.00
+ BENTONITE..........    2.00  489.48   0.00   0.00   0.00                 0.00   0.00   0.00   0.02     0.00
+---------------------------------------------------------------------------------------------------  -------
+TOTAL                  99.92           0.10   0.04   0.02   0.08   0.01   0.00   0.00   0.16   1.04     0.25
+UNITY FORMULA                          0.10   0.04   0.02   0.08   0.01   0.00   0.00   0.16   1.04
+PER CENT BY WEIGHT                     5.74   1.66   2.49   5.18   1.07   0.08   0.00  17.41  66.37</pre><pre>Cost/kg  0.25
+  Si:Al  6.47
+ SiB:Al  6.47
+  Expan  7.17</pre>
+<p>Notice that the calculated expansion is up modestly to 7.2 (from about 7.0). The relative amounts of the fluxing oxides (refer to the "UNITY FORMULA" line) have altered somewhat, but the SiO<sub>2</sub> and Al<sub>2</sub>O<sub>3</sub> remain unchanged as a result of the compensatory recipe adjustments I did. </p>
+<p>It is possible that this change in expansion might not be enough. There is still room for more movement. The obvious target is the <a href="../glossary/flux.html">flux</a> MgO, it has the lowest expansion by far. I am going to remove some of it in favor of CaO, this should have a greater effect on overall glaze expansion than the above change (note however that it is possible that the glaze depends partly on the magnesia (MgO) for its silky appearance, substituting CaO for MgO is more likely to preserve this than Na<sub>2</sub>O for MgO). </p>
+<h4><i>Following is a calculation where I have eliminated the MgO sourced by talc, and added CaO.</i></h4><pre>DETAIL PRINT - Matte White Glaze
+MATERIAL               PARTS  WEIGHT   CaO*   MgO*   K<sub>2</sub>O*  Na<sub>2</sub>O*   ZrO2 Fe<sub>2</sub>O<sub>3</sub>*   TiO2  Al<sub>2</sub>O<sub>3</sub>   SiO<sub>2</sub>
+WEIGHT OF EACH OXIDE                   56.1   40.3   94.2   62.0  123.2  160.0   79.7  102.0   60.1
+---------------------------------------------------------------------------------------------------  MATERIAL
+Expan OF EACH OXIDE                    0.15   0.03   0.33   0.39   0.02   0.13   0.14   0.06   0.04   Cost/kg
+---------------------------------------------------------------------------------------------------  -------
+ NEPHELINE SYENITE..   47.71  446.40   0.01   0.00   0.02   0.08                        0.11   0.48     0.33
+ KAOLIN.............   10.75  258.14                                                    0.04   0.08     0.24
+ FLINT..............   25.42   60.00                                                           0.42     0.19
+ WHITING............   12.61  100.00   0.13                                                             0.12
+ SUPERPAX...........    1.50  183.00                               0.01                        0.01     0.00
+ BENTONITE..........    2.00  489.48   0.00   0.00   0.00                 0.00   0.00   0.00   0.02     0.00
+---------------------------------------------------------------------------------------------------  -------
+TOTAL                  99.99           0.13   0.00   0.02   0.08   0.01   0.00   0.00   0.16   1.02     0.25
+UNITY FORMULA                          0.56   0.01   0.10   0.32   0.03   0.00   0.00   0.67   4.34
+PER CENT BY WEIGHT                     7.98   0.10   2.44   5.08   1.09   0.08   0.00  17.22  66.01</pre><pre>Cost/kg  0.25
+  Si:Al  6.51
+ SiB:Al  6.51
+  Expan  7.39</pre>
+<p>As you can see, the expansion has increased much more this time; possibly it was not necessary to remove all the talc. A line blend of this adjustment with the original recipe would determine some intermediate compromise mixture. A simple three-interval line blend is done by mixing the trial 75:25, 50:50 and 25:75 with the original. An easy way to do this is described in the section about altering glaze temperature. </p>
+<p>I am going to try one more change.</p>
+<p><i>I will go back to the original recipe again, leave the potash feldspar alone, remove the talc, and adjust the rest of the recipe ingredients to preserve the SiO<sub>2</sub> : Al<sub>2</sub>O<sub>3</sub> ratio.</i></p><pre>DETAIL PRINT - Matte White Glaze
+MATERIAL               PARTS  WEIGHT   CaO*   MgO*   K<sub>2</sub>O*  Na<sub>2</sub>O*   ZrO2 Fe<sub>2</sub>O<sub>3</sub>*   TiO2  Al<sub>2</sub>O<sub>3</sub>   SiO<sub>2</sub>
+WEIGHT OF EACH OXIDE                   56.1   40.3   94.2   62.0  123.2  160.0   79.7  102.0   60.1
+---------------------------------------------------------------------------------------------------  MATERIAL
+Expan OF EACH OXIDE                    0.15   0.03   0.33   0.39   0.02   0.13   0.14   0.06   0.04   Cost/kg
+---------------------------------------------------------------------------------------------------  -------
+ CUSTER FELDSPAR....   49.75  617.10   0.00          0.05   0.02          0.00          0.08   0.57     0.00
+ KAOLIN.............   16.50  258.14                                                    0.06   0.13     0.24
+ FLINT..............   15.75   60.00                                                           0.26     0.19
+ WHITING............   14.50  100.00   0.14                                                             0.12
+ SUPERPAX...........    1.50  183.00                               0.01                        0.01     0.00
+ BENTONITE..........    2.00  489.48   0.00   0.00   0.00                 0.00   0.00   0.00   0.02     0.00
+---------------------------------------------------------------------------------------------------  -------
+TOTAL                 100.00           0.15   0.00   0.05   0.02   0.01   0.00   0.00   0.15   0.99     0.09
+UNITY FORMULA                          0.65   0.01   0.24   0.11   0.04   0.01   0.00   0.67   4.35
+PER CENT BY WEIGHT                     9.07   0.05   5.56   1.64   1.11   0.22   0.00  16.97  65.37</pre><pre>Cost/kg  0.09
+  Si:Al  6.54
+ SiB:Al  6.54
+  Expan  7.23</pre>
+<p>The expansion has moved from 7.0, for the original, to 7.23 with this modest change. Again, it is possible that the optimum recipe is a mixture of this and the original as determined by a line blend. </p>
+<p>Notice that throughout this calculation process, I kept the total recipe amount at 100. Also, I rounded recipe amounts on each calculation to avoid accuracy overkill. Since the Superpax and bentonite are added for non-chemical purposes of melt <a href="../glossary/opacity.html">opacity</a> and <a href="../glossary/slurry.html">slurry</a> <a href="../glossary/suspension.html">suspension</a>, as a final step I recalculated the recipe total to 96.5 and restored the superpax to 1.5 and the bentonite to 2.0. </p>
+<p>You probably want to know whether this really worked! Well, it performed perfectly! All three trials had a surface quality that is almost identical to the original. The first two high sodium tests made the glaze a little less opaque, requiring the addition of more Superpax. A little work with the three in production indicated the best one. </p>
+<h3>Dealing with Crazing</h3>
+<p>In actual practice, it is not that common to find a glaze that shivers and requires the kind of adjustment just done (except perhaps at low temperatures using high talc bodies). Middle and high temperature glazes naturally tend toward crazing, it seems it is always a challenge to keep the expansion low enough. The process is simply the opposite of that shown above, the best strategy is to reduce Na<sub>2</sub>O and K20 in favor of MgO and CaO or to add <a href="../glossary/borate.html">boron</a> which enables increasing the silica and alumina.</p><p style="clear:left"></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="../test/cole.html">Co-efficient of Linear Expansion</a>
+<br/><i>In <a href="../glossary/ceramics.html">ceramics</a>, glazes expand with increasing temperature. Being brittle materials, they must be expansion-compatible with the body they are on.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="the+effect+of+glaze+fit+on+fired+ware+strength.html">The Effect of Glaze Fit on Fired Ware Strength</a>
+<br/><i>The fit between body and glaze is like a marriage, if is is strong the marriage can survive problems. Likewise ceramic ware with well fitting glaze is much stronger than you think it might be, and vice versa.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Troubles</td>
+<td>
+<a href="../trouble/glaze+crazing.html">Glaze Crazing</a>
+<br/><i>Ask the right questions to analyse the real cause of <a href="../glossary/glaze+crazing.html">glaze crazing</a>. Do not just treat the symptoms, the real cause is <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> mismatch with the body.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Troubles</td>
+<td>
+<a href="../trouble/glaze+shivering.html">Glaze Shivering</a>
+<br/><i>Ask the right questions to analyse the real cause of <a href="../glossary/glaze+shivering.html">glaze shivering</a>. Do not just treat the symptoms, the real cause is <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> mismatch with the body.</i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></div></body>
+</html>

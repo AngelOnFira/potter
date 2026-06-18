@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>PLC6DS Firing Schedule</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="The standard drop-and-hold cone 6 oxidation firing schedule in use at Plainsman Clays" name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item"><a class="nav-link" href="../material/list.html">Materials</a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item active" href="list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=schedule" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container"><p><a aria-controls="collapse1" aria-expanded="false" class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button">All Firing Schedules</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a href="03dsff.html" title="119">03DSFF - Cone 03 Fast Fire</a><br/><a href="04dsdh.html" title="118">04DSDH - Low Temperature Drop-and-Hold</a><br/><a href="bq1000.html" title="113">BQ1000 - Plainsman Electric Bisque Firing Schedule</a><br/><a href="brtf05.html" title="125">BRTF05 - Bartlett Fast Glaze Cone 05</a><br/><a href="brtf6.html" title="126">BRTF6 - Bartlett Fast Glaze Cone 6</a><br/><a href="brts6.html" title="127">BRTS6 - Bartlett Slow Glaze Cone 6</a><br/><a href="btfb04.html" title="121">BTFB04 - Bartlett Fast Bisque Cone 04</a><br/><a href="btsb04.html" title="128">BTSB04 - Bartlett Slow Bisque Cone 04</a><br/><a href="btsg05.html" title="120">BTSG05 - Bartlett Slow Glaze Cone 05</a><br/><a href="c04pltp.html" title="94">C04PLTP - Plainsman Low Temperature Drop-and-hold</a><br/><a href="c10rpl.html" title="93">C10RPL - Plainsman Cone 10R Firing</a><br/><a href="c5dhsc.html" title="122">C5DHSC - Plainsman Cone 5 Drop-and-Hold Slow-Cool</a><br/><a href="c6dhsc.html" title="115">C6DHSC - Plainsman Cone 6 Drop-and-hold, Slow Cool</a><br/><a href="c6ired.html" title="124">C6IRED - Cone 6 Iron Reds</a><br/><a href="c6msgl1.html" title="83">C6MSGL1 - Mastering Glazes Cone 6</a><br/><a href="c6plst.html" title="114">C6PLST - Plainsman Cone 6 Electric Standard</a><br/><a href="fscg1.html" title="98">FSCG1 - Shimbo Crystal Schedule 1</a><br/><a href="fscgb1.html" title="99">FSCGB1 - Shimbo Crystal Holding Pattern 2</a><br/><a href="fscgcl.html" title="95">FSCGCL - Shimbo Crystal Celestite Schedule</a><br/><a href="fscgwm.html" title="97">FSCGWM - Wollast-O-Matte Fara Shimbo Crystalline Glaze</a><br/><a href="fscrgl.html" title="101">FSCRGL - GC106 Base for Crystalline Glazes</a><br/><a href="fshp1.html" title="110">FSHP1 - Shimbo Crystal Holding Pattern 1</a><br/><a href="fshp3.html" title="112">FSHP3 - Shimbo Crystal Holding Pattern 3</a><br/><a href="fsnm5.html" title="96">FSNM5 - Fa's Number Five</a><br/><a href="mddcl.html" title="123">MDDCL - Medalta Decal Firing</a><br/><a href="plc6cr.html" title="116">PLC6CR - Cone 6 Crystal Glaze Plainsman</a><br/><a href="plc6ds.html" title="117">PLC6DS - Cone 6 Drop-and-Soak Firing Schedule</a><br/><a href="qica.html" title="129">QICA - Quartz Inversion Cracking Avoider</a></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>"PLC6DS" Firing Schedule</h1><h2>Cone 6 Drop-and-Soak Firing Schedule</h2>
+<p>For the reasons explained here this schedule is much superior to those built into <a href="../glossary/kiln+controller.html">kiln controllers</a> (they have no holds, no controlled cooling).<br/>
+<br/>
+We use this, instead of the <a href="c6dhsc.html">C6DHSC</a> schedule, when firing variations of <a href="../recipe/g2934.html">G2934</a> (slow cooling makes our versions too matte). We do not generally fire large or densely-packed kiln loads (which slow-cool naturally), in our test kilns this cools fairly quickly. An advantage of this schedule is that it takes less time, firings closed in an afternoon are ready to open in the morning.<br/>
+<br/>
+-Step 1. Drying needs to be complete because the next step proceeds rapidly. Extend the soaking time if your ware is thick or heavy or the kiln is densely loaded. 250F, although above boiling point, is not enough to fracture ware, but needed to completely dry it.<br/>
+<br/>
+-Step 2 climbs quickly, your kiln may or may not be able to maintain the rate. If it can, consider increasing it to 400F/hr. The optional soak is to even out the heat distribution in the ware and enable the micro-bubble clouds of escaping gases of <a href="../glossary/decomposition.html">decomposition</a> to combine and escape before the final push to top temperature (with a lower bubble population during that push). To simply heal <a href="../trouble/glaze+blisters.html">blisters</a>, the soak part of this step is not needed.<br/>
+<br/>
+-Step 3: The push to the final temperature. Include a <a href="../picture/2223.html">self-supporting cone</a> 6 frequently in firings to monitor the accuracy of your controller. Adjust this step to correspond to where the tip of <a href="../glossary/cone+6.html">cone 6</a> falls even with the top of the base (see picture below). We use this 10-minute hold for a small <a href="../picture/1293.html">test kiln</a>, larger kilns will need a longer hold to stabilize temperature within the chamber.<br/>
+<br/>
+- Step 4: Free-fall 100F and hold. The reason: Bubbles often just percolate during soaks at top temperature, becoming blisters in the fired ware. Holding at the lower temperature imposes a melt <a href="../glossary/viscosity.html">viscosity</a> sufficient to overcome <a href="../glossary/surface+tension.html">surface tension</a> and burst the bubbles but still has enough fluidity to heal them. You may need to customize this temperature for your kiln, ware and glazes. For example, if glazes are more fluid and reactive, drop lower, perhaps 200F down. Do not go too low or the glaze could crystallize during the soak.<br/>
+<br/>
+You must program your firing manually, there is no built-in schedule even remotely similar to this. Don't have a <a href="../glossary/kiln+controller.html">kiln controller</a>? By a little experimentation, you can develop a switching pattern to approximate this.</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<th class="text-left" scope="col">Step</th>
+<th class="text-center" scope="col">°C</th>
+<th class="text-center" scope="col">°F</th>
+<th class="text-left" scope="col">Hold</th>
+<th class="text-right" scope="col">Time</th>
+<th></th>
+</thead><tbody>
+<tr>
+<td class="text-left">1</td>
+<td class="text-left">60°C/hr to 121C </td>
+<td class="text-left">108°F/hr to 250F </td>
+<td class="text-left">60min</td>
+<td class="text-right">2:37</td>
+<td class="text-left">Longer soak if bisque ware is waterlogged and heavy</td>
+</tr>
+<tr>
+<td class="text-left">2</td>
+<td class="text-left">194°C/hr to 1148C </td>
+<td class="text-left">350°F/hr to 2100F </td>
+<td class="text-left">0</td>
+<td class="text-right">7:54</td>
+<td class="text-left">Optionally soak here 30 minutes to clear bubble clouds</td>
+</tr>
+<tr>
+<td class="text-left">3</td>
+<td class="text-left">60°C/hr to 1204C </td>
+<td class="text-left">108°F/hr to 2200F </td>
+<td class="text-left">10min</td>
+<td class="text-right">8:59</td>
+<td class="text-left">Slow this rise or extend hold if the kiln is very densely loaded</td>
+</tr>
+<tr>
+<td class="text-left">4</td>
+<td class="text-left">500°C/hr to 1148C </td>
+<td class="text-left">900°F/hr to 2100F </td>
+<td class="text-left">30min</td>
+<td class="text-right">9:36</td>
+<td class="text-left">This step heals blisters, clears more bubbles</td>
+</tr>
+</tbody></table>
+<div style="margin:0px 0px 20px 0px; font-style:italic; font-size:80%;">Start temperature assumed: 25°C or 75°F<br/>
+			"Fahrenheit degrees" is not the same as "degrees Fahrenheit". 
+			A 100° reading on a Fahrenheit thermometer is equal to a 37° reading on a Celcius thermometer. 
+			But "100 Fahrenheit degrees of temperature change" is equivalent "55 Celsius degrees of change". 
+			That is an important distinction to understand the above temperature conversions.</div>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Manually programming a Bartlett V6-CF hobby kiln controller</h3>
+<br/><a href="../picture/1554.html"><img class="flexleft50" loading="lazy" src="../media/images/jykmyzuvav.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1554.html">click here</a> to see it.</p>
+<p>I document programs in my account at <a href="../glossary/digitalfire+insight-live.html">insight-live</a>.com, then print them out and enter them into the controller. This controller can hold six, it calls them Users. The one I last edited is the one that runs when I press "Start". When I press the "Enter Program" button it asks which User: I key in "2" (for my <a href="../glossary/cone+6.html">cone 6</a> lab tests). It asks how many segments: I press Enter to accept the 3 (remember, I am editing the program). After that it asks questions about each step (rows 2, 3, 4): the Ramp "rA" (degrees F/hr), the Temperature to go to (°F) to and the Hold time in minutes (HLdx). In this program I am heating at 300F/hr to 240F  and holding 60 minutes, then 400/hr to 2095 and holding zero minutes, then at 108/hr to 2195 and holding 10 minutes. The last step is to set a temperature where an alarm should start sounding (I set 9999 so it will never sound). When complete it reads "Idle". Then I press the "Start" button to begin. If I want to change it I press the "Stop" button. Those ten other buttons? Don't use them, automatic firing is not accurate. One more thing: If it is not responding to "Enter Program" press the Stop button first.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Program your firings manually 
+</h3>
+<h4 style="color:#888888; margin-top:0px;">Calibrate the final temperature using cones</h4>
+<br/><a href="../picture/2222.html"><img class="flexleft50" loading="lazy" src="../media/images/ka89ngvbse.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2222.html">click here</a> to see it.</p>
+<p>Here is an example of our lab <a href="../glossary/firing+schedule.html">firing schedule</a> for cone 10 oxidation (which the cone-fire mode does not do correctly). To actually go to cone 10 we need to manually create a program that fires higher than the built-in cone-fire one. Determining how high to go is a matter of repeated firings verified using a <a href="../picture/2223.html">self-supporting cone</a> (regular cones are not accurate). I keep notes in the schedule record in an account at <a href="../glossary/digitalfire+insight-live.html">insight-live</a>.com. And we have a chart on the wall showing the latest temperature for each of the cones we fire to. What about <a href="../glossary/cone+6.html">cone 6</a>? Controllers fire it to 2235, we put down a cone at 2200!</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">How many degrees between these cone positions?</h3>
+<br/><a alt="Two orton cones, one bent to 6 oclock, the other 4 oclock." href="../picture/2399.html" title="One of these orton cones is bent the right amount, the other is not."><img alt="Two orton cones, one bent to 6 oclock, the other 4 oclock." class="flexleft50" loading="lazy" src="../media/images/ex629d6s81.jpg" title="One of these orton cones is bent the right amount, the other is not."/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2399.html">click here</a> to see it.</p>
+<p>I was consistently getting the cone on the left when using a custom-programmed <a href="../glossary/firing+schedule.html">firing schedule</a> to 2204F (for <a href="../glossary/cone+6.html">cone 6</a> with ten minute hold). However Orton recommends that the tip of the self supporting cone should be even with the top of the base (they consider the indicating part of the cone to be the part above the base). So I adjusted the program to finish at <a href="../glossary/cone+6.html">2200F</a> and got the cone on the right. But note: This applies to that kiln at that point in time (with that pyrometer and that firing schedule). Our other <a href="../picture/1293.html">test kiln</a> bends the cone to 5 o'clock at 2195F. Since <a href="../glossary/kiln+controller.html">kiln controllers</a> fire cone 6 at 2230 (for the built-in one-button firings) your kiln is almost certainly over firing!</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Glaze with an encapsulated stain is bubbling. It needs Zircopax.</h3>
+<br/><a alt="Glaze orange peel defect" href="../picture/2049.html"><img alt="Glaze orange peel defect" class="flexleft50" loading="lazy" src="../media/images/u1ljkuemj8.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2049.html">click here</a> to see it.</p>
+<p>These two pieces are fired at <a href="../glossary/cone+6.html">cone 6</a>. The <a href="../glossary/base+glaze.html">base transparent</a> glaze is the same - <a href="../recipe/g2926b.html">G2926B</a> <a href="../glossary/plainsman+clays.html">Plainsman</a> transparent. The amount of encapsulated red stain is the same (11% Mason 6021 Dark Red). But two things are different. Number 1: 2% <a href="../material/1724.html">Zircopax</a> (<a href="../material/1722.html">zircon</a>) has been added to the upper glaze. The stain manufacturers recommend this, saying that it makes for a brighter color. However, that is not what we see here. What we do see is the particles of unmelting zircon acting as seeds and collection points for the bubbles (the larger ones produced are escaping). Number 2: The <a href="../glossary/firing+schedule.html">firing schedule</a>. The top one has been fired to approach cone 6 and 100F/hr, held for five minutes at <a href="../glossary/cone+6.html">2200F</a> (cone 6 as verified in our kiln by cones), dropped quickly to 2100F and held for 30 minutes.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">One fired flawless, the other dimpled and pinholed.
+</h3>
+<h4 style="color:#888888; margin-top:0px;">These are the same glaze/body.  Why?</h4>
+<br/><a href="../picture/2304.html"><img class="flexleft50" loading="lazy" src="../media/images/jyrxciismr.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2304.html">click here</a> to see it.</p>
+<p>The difference is a slow-cool firing. Both mugs are <a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12875">M340</a> and have the <a href="../recipe/l3954b.html">L3954B</a> black <a href="../glossary/engobe.html">engobe</a> inside and partway down on the outside. Both were <a href="../glossary/dipping+glaze.html">dip-glazed</a> with the <a href="../recipe/ga6-b.html">GA6-B</a> amber transparent and fired to <a href="../glossary/cone+6.html">cone 6</a>. The one on the right was fired using the <a href="plc6ds.html">PLC6DS</a> <a href="../glossary/drop-and-soak+firing.html">drop-and-hold</a> schedule. That eliminated any <a href="../trouble/glaze+blisters.html">blisters</a>, but some <a href="../glossary/pinholing.html">pinholes</a> remained. The one on the left was fired using the <a href="c6dhsc.html">C6DHSC</a> slow-cool schedule. That differs in one way: It cools at 150F/hr from 2100F to 1400F (as opposed to a free-fall). It is amazing how much this improves the brilliance and surface quality (not fully indicated by this photo, the mug on the left is much better).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Blisters in a highly melt-fluid cone 6 sculpture glaze</h3>
+<br/><a alt="A copper sculpture glaze is blistering" href="../picture/2713.html"><img alt="A copper sculpture glaze is blistering" class="flexleft50" loading="lazy" src="../media/images/hm8pklypcw.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2713.html">click here</a> to see it.</p>
+<p>Why are these happening (on this piece by Paul Briggs)? It is not completely clear. The glaze has plenty of carbonates, including copper, enough for over 20% <a href="../glossary/loi.html">LOI</a>. But these normally produce high populations of small <a href="../trouble/glaze+blisters.html">blisters</a>, this is the opposite. <a href="../glossary/melt+fluidity.html">The melt</a> appears to have enough <a href="../glossary/surface+tension.html">surface tension</a> that the bubbles survive and endure top-temperature-soaking. And they don't pop until the temperature has dropped so far that insufficient melt-mobility remains to heal them. The glaze has an unconventionally low <a href="../oxide/sio2.html">SiO<sub>2</sub></a> content, that makes it flow vigorously, well enough that the melt is moving and collecting in surface contours. The glaze recipe is quite unconventional, any effort to "improve" its adherence to limits would likely lose the visual aesthetic. A <a href="../glossary/drop-and-soak+firing.html">drop-and-hold</a> <a href="../glossary/firing+schedule.html">firing schedule</a> is likely the key to alleviating this. </p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">6% rutile is too much in this cone 6 oxidation glaze</h3>
+<br/><a href="../picture/647.html"><img class="flexleft50" loading="lazy" src="../media/images/bubzybulol.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/647.html">click here</a> to see it.</p>
+<p><a href="../material/1204.html">Rutile</a> variegates glaze surfaces. But it also opacifies at higher percentages. The blue effect is a product of <a href="../glossary/crystallization.html">crystallization</a> that occurs during cooling, it is thus dependent on a slower cooling cycle, especially above 1400F. This is <a href="../recipe/ga6-c.html">GA6-C</a> <a href="../material/32.html">Alberta Slip</a> glaze with 4, 5 and 6% rutile. At 6% the rutile crystallization has advanced to the point of completely opacifying the glaze. At 5% the blue is still strong, even on a buff burning body. The loss of color occurs suddenly, somewhere between 5 and 6 percent. Rutile <a href="../glossary/glaze+chemistry.html">chemistry</a> varies from batch to batch. The blue develops differently on different bodies. So do you want to play "at the edge", with 5% in the glaze, in view of these other factors and the finicky firing curve needed. Change in any of which could push it into the blueless zone?</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Old-style hobby kilns with a sitter are usable if you become "the controller"!</h3>
+<br/><a alt="A hobby kiln with kiln sitter shutoff" href="../picture/3124.html"><img alt="A hobby kiln with kiln sitter shutoff" class="flexleft50" loading="lazy" src="../media/images/2fd4amahjl.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3124.html">click here</a> to see it.</p>
+<p>Yes. This kiln has a Dawson LT-3 <a href="../picture/3124.html">kiln sitter</a> (new ones have electronic controllers). It is a mechanical device with a safety timer and triggered latch on the external housing. A ceramic tube extends into the chamber where a <a href="../glossary/pyrometric+cone.html">pyrometric cone</a> sits on supports with a rod on the top center. As the cone softens and bends the rod drops with it and eventually releases the shut-off latch. The utility of this depends on careful placement of the cone, sitter adjustment and keeping the rods and supports in good condition. Although not shown, these kilns had a pyrometer and one or more <a href="../picture/3125.html">thermocouples</a> (temperature gauge and heat sensing probes). Is a kiln like this useable today? Yes - if you become "the controller"! Learning to use a kiln like this involves monitoring cones on each shelf (self-supporting cones are recommended). By "babysitting" the switch settings (low, medium, high) during firings and creating paper logs (and graphs) to track the kiln's temperature against time over multiple firings you can evolve a schedule of switch-setting, from low-to-medium-to-high. It is possible to get the desired climb, even heat distribution, achieve the final temperature accurately and even implement <a href="../glossary/drop-and-soak+firing.html">drop-and-hold</a> and slow cool firings. Vigilance of changes in the firing speed can be balanced by adjustments to the switch-change times.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Troubles</td>
+<td>
+<a href="../trouble/glaze+blisters.html">Glaze Blisters</a>
+<br/><i>Questions and suggestions to help you reason out the real cause of ceramic glaze <a href="../trouble/glaze+blisters.html">blistering</a> and <a href="../glossary/glaze+bubbles.html">bubbling</a> problems and work out a solution</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Recipes</td>
+<td>
+<a href="../recipe/g2934.html">G2934 - Matte Glaze Base for Cone 6</a>
+<br/><i>A base <a href="../oxide/mgo.html">MgO</a> <a href="../glossary/matte+glaze.html">matte glaze</a> recipe fires to a hard utilitarian surface and has very good working properties. Blend in the glossy if it is too matte.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Recipes</td>
+<td>
+<a href="../recipe/g2926b.html">G2926B - Cone 6 Whiteware/Porcelain transparent glaze</a>
+<br/><i>A <a href="../glossary/base+glaze.html">base transparent</a> glaze recipe created by <a href="../glossary/tony+hansen.html">Tony Hansen</a>, it fires high gloss and ultra clear with low melt mobility.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/ulexite.html">Ulexite</a>
+<br/><i>A natural source of <a href="../glossary/borate.html">boron</a>, it melts at a very low temperature to a clear glass.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/glaze+blisters.html">Glaze Blisters</a>
+<br/><i><a href="../trouble/glaze+blisters.html">Blistering</a> is a common surface defect that occurs with ceramic glazes. The problem emerges from the kiln and can occur erratically in production. And be difficult to solve.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/drop-and-soak+firing.html">Drop-and-Soak Firing</a>
+<br/><i>A kiln <a href="../glossary/firing+schedule.html">firing schedule</a> where temperature is eased to the top, then dropped quickly and held at a temperature 100-200F lower.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/rutile+blue+glazes.html">Rutile Blue Glazes</a>
+<br/><i>A type of ceramic glaze in which the surface variegates and crystallizes on cooling in the presence of <a href="../material/1644.html">titanium</a> and iron (usually sourced by <a href="../material/1204.html">rutile</a>)</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/glaze+bubbles.html">Glaze Bubbles</a>
+<br/><i><a href="../glossary/suspension.html">Suspended</a> <a href="../glossary/glaze+bubbles.html">micro-bubbles</a> in ceramic glazes affect their transparency and depth. Sometimes they add to to aesthetics. Often not. What causes them and what to do to remove them.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Firing Schedules</td>
+<td>
+<a href="c6dhsc.html">Plainsman Cone 6 Drop-and-hold, Slow Cool</a>
+<br/><i>350F/hr to 2100F, 108/hr to 2200, hold 10 minutes, fastdrop to 2100, hold 30 minutes, 150/hr to 1400</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Firing Schedules</td>
+<td>
+<a href="brtf6.html">Bartlett Fast Glaze Cone 6</a>
+<br/><i>570F/hr to 1982F, 200/hr to 2232, no holds, no control cool</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Firing Schedules</td>
+<td>
+<a href="brts6.html">Bartlett Slow Glaze Cone 6</a>
+<br/><i>400F/hr to 1982F, 120F/hr to 2232, no holds or controlled cool</i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></div></body>
+</html>

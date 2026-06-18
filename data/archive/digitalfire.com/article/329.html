@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Setting up a Clay Testing Program in Your Company or Studio</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Set up a routine testing pipeline and start generating historical data that will enable your staff to understand your source materials and maintain, adjust and troubleshoot your clay body recipes.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+May 2026: We are continuing a major code rewrite. Please contact us if you find issues. Thank you.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item active" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=article" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Articles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a title="388" href="https://digitalfire.com/article/388">A ChatBot gives jaw-dropping glaze recipe advice - Jan 2025</a><br /><a title="244" href="https://digitalfire.com/article/244">A Low Cost Tester of Glaze Melt Fluidity</a><br /><a title="361" href="https://digitalfire.com/article/361">A One-speed Lab or Studio Slurry Mixer</a><br /><a title="353" href="https://digitalfire.com/article/353">A Textbook Cone 6 Matte Glaze With Problems</a><br /><a title="199" href="https://digitalfire.com/article/199">Adjusting Glaze Expansion by Calculation to Solve Shivering</a><br /><a title="251" href="https://digitalfire.com/article/251">Alberta Slip, 20 Years of Substitution for Albany Slip</a><br /><a title="273" href="https://digitalfire.com/article/273">An Overview of Ceramic Stains</a><br /><a title="37" href="https://digitalfire.com/article/37">Are You in Control of Your Production Process?</a><br /><a title="12" href="https://digitalfire.com/article/12">Are Your Glazes Food Safe or are They Leachable?</a><br /><a title="143" href="https://digitalfire.com/article/143">Attack on Glass: Corrosion Attack Mechanisms</a><br /><a title="204" href="https://digitalfire.com/article/204">Ball Milling Glazes, Bodies, Engobes</a><br /><a title="345" href="https://digitalfire.com/article/345">Binders for Ceramic Bodies</a><br /><a title="4" href="https://digitalfire.com/article/4">Bringing Out the Big Guns in Craze Control: MgO (G1215U)</a><br /><a title="381" href="https://digitalfire.com/article/381">Can We Help You Fix a Specific Problem?</a><br /><a title="124" href="https://digitalfire.com/article/124">Ceramic Glazes Today</a><br /><a title="208" href="https://digitalfire.com/article/208">Ceramic Material Nomenclature</a><br /><a title="336" href="https://digitalfire.com/article/336">Ceramic Tile Clay Body Formulation</a><br /><a title="217" href="https://digitalfire.com/article/217">Changing Our View of Glazes</a><br /><a title="22" href="https://digitalfire.com/article/22">Chemistry vs. Matrix Blending to Create Glazes from Native Materials</a><br /><a title="209" href="https://digitalfire.com/article/209">Concentrate on One Good Glaze</a><br /><a title="115" href="https://digitalfire.com/article/115">Copper Red Glazes</a><br /><a title="271" href="https://digitalfire.com/article/271">Crazing and Bacteria: Is There a Hazard?</a><br /><a title="190" href="https://digitalfire.com/article/190">Crazing in Stoneware Glazes: Treating the Causes, Not the Symptoms</a><br /><a title="97" href="https://digitalfire.com/article/97">Creating a Non-Glaze Ceramic Slip or Engobe</a><br /><a title="195" href="https://digitalfire.com/article/195">Creating Your Own Budget Glaze</a><br /><a title="36" href="https://digitalfire.com/article/36">Crystal Glazes: Understanding the Process and Materials</a><br /><a title="324" href="https://digitalfire.com/article/324">Deflocculants: A Detailed Overview</a><br /><a title="32" href="https://digitalfire.com/article/32">Demonstrating Glaze Fit Issues to Students</a><br /><a title="334" href="https://digitalfire.com/article/334">Diagnosing a Casting Problem at a Sanitaryware Plant</a><br /><a title="196" href="https://digitalfire.com/article/196">Drying Ceramics Without Cracks</a><br /><a title="187" href="https://digitalfire.com/article/187">Duplicating Albany Slip</a><br /><a title="45" href="https://digitalfire.com/article/45">Duplicating AP Green Fireclay</a><br /><a title="197" href="https://digitalfire.com/article/197">Electric Hobby Kilns: What You Need to Know</a><br /><a title="39" href="https://digitalfire.com/article/39">Fighting the Glaze Dragon</a><br /><a title="214" href="https://digitalfire.com/article/214">Firing Clay Test Bars</a><br /><a title="200" href="https://digitalfire.com/article/200">Firing: What Happens to Ceramic Ware in a Firing Kiln</a><br /><a title="113" href="https://digitalfire.com/article/113">First You See It Then You Don't: Raku Glaze Stability</a><br /><a title="316" href="https://digitalfire.com/article/316">Fixing a glaze that does not stay in suspension</a><br /><a title="338" href="https://digitalfire.com/article/338">Formulating a body using clays native to your area</a><br /><a title="191" href="https://digitalfire.com/article/191">Formulating a Clear Glaze Compatible with Chrome-Tin Stains</a><br /><a title="282" href="https://digitalfire.com/article/282">Formulating a Porcelain</a><br /><a title="188" href="https://digitalfire.com/article/188">Formulating Ash and Native-Material Glazes</a><br /><a title="114" href="https://digitalfire.com/article/114">G1214M Cone 5-7 20x5 glossy transparent glaze</a><br /><a title="121" href="https://digitalfire.com/article/121">G1214W Cone 6 transparent glaze</a><br /><a title="122" href="https://digitalfire.com/article/122">G1214Z Cone 6 matte glaze</a><br /><a title="226" href="https://digitalfire.com/article/226">G1916M Cone 06-04 transparent glaze</a><br /><a title="203" href="https://digitalfire.com/article/203">Getting the Glaze Color You Want: Working With Stains</a><br /><a title="342" href="https://digitalfire.com/article/342">Glaze and Body Pigments and Stains in the Ceramic Tile Industry</a><br /><a title="189" href="https://digitalfire.com/article/189">Glaze Chemistry Basics - Formula, Analysis, Mole%, Unity </a><br /><a title="358" href="https://digitalfire.com/article/358">Glaze chemistry using a frit of approximate analysis</a><br /><a title="123" href="https://digitalfire.com/article/123">Glaze Recipes: Formulate and Make Your Own Instead</a><br /><a title="343" href="https://digitalfire.com/article/343">Glaze Types, Formulation and Application in the Tile Industry</a><br /><a title="181" href="https://digitalfire.com/article/181">Having Your Glaze Tested for Toxic Metal Release</a><br /><a title="364" href="https://digitalfire.com/article/364">High Gloss Glazes</a><br /><a title="384" href="https://digitalfire.com/article/384">Hire Us for a 3D Printing Project</a><br /><a title="136" href="https://digitalfire.com/article/136">How a Material Chemical Analysis is Done</a><br /><a title="235" href="https://digitalfire.com/article/235">How desktop INSIGHT Deals With Unity, LOI and Formula Weight</a><br /><a title="331" href="https://digitalfire.com/article/331">How to Find and Test Your Own Native Clays</a><br /><a title="26" href="https://digitalfire.com/article/26">I have always done it this way!</a><br /><a title="344" href="https://digitalfire.com/article/344">Inkjet Decoration of Ceramic Tiles</a><br /><a title="279" href="https://digitalfire.com/article/279">Is Your Fired Ware Safe?</a><br /><a title="311" href="https://digitalfire.com/article/311">Leaching Cone 6 Glaze Case Study</a><br /><a title="206" href="https://digitalfire.com/article/206">Limit Formulas and Target Formulas</a><br /><a title="133" href="https://digitalfire.com/article/133">Low Budget Testing of Ceramic Glazes</a><br /><a title="333" href="https://digitalfire.com/article/333">Make Your Own Ball Mill Stand</a><br /><a title="347" href="https://digitalfire.com/article/347">Making Glaze Testing Cones</a><br /><a title="341" href="https://digitalfire.com/article/341">Monoporosa or Single Fired Wall Tiles</a><br /><a title="325" href="https://digitalfire.com/article/325">Organic Matter in Clays: Detailed Overview</a><br /><a title="105" href="https://digitalfire.com/article/105">Outdoor Weather Resistant Ceramics</a><br /><a title="27" href="https://digitalfire.com/article/27">Painting Glazes Rather Than Dipping or Spraying</a><br /><a title="212" href="https://digitalfire.com/article/212">Particle Size Distribution of Ceramic Powders</a><br /><a title="339" href="https://digitalfire.com/article/339">Porcelain Tile, Vitrified Tile</a><br /><a title="20" href="https://digitalfire.com/article/20">Rationalizing Conflicting Opinions About Plasticity</a><br /><a title="332" href="https://digitalfire.com/article/332">Ravenscrag Slip is Born</a><br /><a title="247" href="https://digitalfire.com/article/247">Recylcing Scrap Clay</a><br /><a title="101" href="https://digitalfire.com/article/101">Reducing the Firing Temperature of a Glaze From Cone 10 to 6</a><br /><a title="329" href="https://digitalfire.com/article/329">Setting up a Clay Testing Program in Your Company or Studio</a><br /><a title="211" href="https://digitalfire.com/article/211">Simple Physical Testing of Clays</a><br /><a title="350" href="https://digitalfire.com/article/350">Single Fire Glazing</a><br /><a title="326" href="https://digitalfire.com/article/326">Soluble Salts in Minerals: Detailed Overview</a><br /><a title="28" href="https://digitalfire.com/article/28">Some Keys to Dealing With Firing Cracks</a><br /><a title="249" href="https://digitalfire.com/article/249">Stoneware Casting Body Recipes</a><br /><a title="194" href="https://digitalfire.com/article/194">Substituting Cornwall Stone</a><br /><a title="274" href="https://digitalfire.com/article/274">Super-Refined Terra Sigillata</a><br /><a title="340" href="https://digitalfire.com/article/340">The Chemistry, Physics and Manufacturing of Glaze Frits</a><br /><a title="202" href="https://digitalfire.com/article/202">The Effect of Glaze Fit on Fired Ware Strength</a><br /><a title="125" href="https://digitalfire.com/article/125">The Four Levels on Which to View Ceramic Glazes</a><br /><a title="207" href="https://digitalfire.com/article/207">The Majolica Earthenware Process</a><br /><a title="43" href="https://digitalfire.com/article/43">The Potter's Prayer</a><br /><a title="359" href="https://digitalfire.com/article/359">The Right Chemistry for a Cone 6 Magnesia Matte</a><br /><a title="33" href="https://digitalfire.com/article/33">The Trials of Being the Only Technical Person in the Club</a><br /><a title="107" href="https://digitalfire.com/article/107">The Whining Stops Here: A Realistic Look at Clay Bodies</a><br /><a title="134" href="https://digitalfire.com/article/134">Those Unlabelled Bags and Buckets</a><br /><a title="16" href="https://digitalfire.com/article/16">Tiles and Mosaics for Potters</a><br /><a title="308" href="https://digitalfire.com/article/308">Toxicity of Firebricks Used in Ovens</a><br /><a title="379" href="https://digitalfire.com/article/379">Trafficking in Glaze Recipes</a><br /><a title="216" href="https://digitalfire.com/article/216">Understanding Ceramic Materials</a><br /><a title="210" href="https://digitalfire.com/article/210">Understanding Ceramic Oxides</a><br /><a title="130" href="https://digitalfire.com/article/130">Understanding Glaze Slurry Properties</a><br /><a title="213" href="https://digitalfire.com/article/213">Understanding the Deflocculation Process in Slip Casting</a><br /><a title="132" href="https://digitalfire.com/article/132">Understanding the Terra Cotta Slip Casting Recipes In North America</a><br /><a title="198" href="https://digitalfire.com/article/198">Understanding Thermal Expansion in Ceramic Glazes</a><br /><a title="313" href="https://digitalfire.com/article/313">Unwanted Crystallization in a Cone 6 Glaze</a><br /><a title="389" href="https://digitalfire.com/article/389">Using Dextrin, Glycerine and CMC Gum together</a><br /><a title="135" href="https://digitalfire.com/article/135">Volcanic Ash</a><br /><a title="201" href="https://digitalfire.com/article/201">What Determines a Glaze's Firing Temperature?</a><br /><a title="111" href="https://digitalfire.com/article/111">What is a Mole, Checking Out the Mole</a><br /><a title="38" href="https://digitalfire.com/article/38">What is the Glaze Dragon?</a><br /><a title="98" href="https://digitalfire.com/article/98">Where do I start in understanding glazes?</a><br /><a title="215" href="https://digitalfire.com/article/215">Why Textbook Glazes Are So Difficult</a><br /><a title="239" href="https://digitalfire.com/article/239">Working with children</a></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Setting up a Clay Testing Program in Your Company or Studio</h1>
+<h4 class="text-muted">Description</h4><p class="text-muted font-italic">Set up a routine testing pipeline and start generating historical data that will enable your staff to understand your source materials and maintain, adjust and troubleshoot your clay body recipes.</p><h4>Article</h4>
+<p><div class="flexright25"><img style="width:100%;" src="https://digitalfire.com/4sight/images/pictures/abr7uj2ktg.jpg"><p style="color:#888888; font-style:italic; font-size:80%; margin:4px 0px 5px 0px;">A routine testing pipeline is essential, not just to maintaining the properties of your products, but to you understanding the materials you use and products you make from them</p></div><br />
+This page is for technicians charged with quality control, formulation and adjustment of <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a> (generally plastic or casting) being sold for use by others. The matters discussed are also applicable to glaze or <a  href="https://digitalfire.com/glossary/engobe">engobe</a> production. Our method involves:<br />
+<br />
+* A group account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-Live</a>.com where data is collected (this is about accumulating data and managing a lot of it).<br />
+* Insight-live is “recipe centric”, production runs and even materials being tests are initially entered as recipes.<br />
+* Testing bodies need testing below, above and at service temperature.<br />
+* Procedures are defined for testing bodies and materials being used (e.g. <a  href="https://digitalfire.com/material/310">feldspar</a>, <a  href="https://digitalfire.com/material/925">kaolin</a>, <a  href="https://digitalfire.com/material/80">ball clay</a>, fire clay, <a  href="https://digitalfire.com/material/1620">talc</a>, <a  href="https://digitalfire.com/material/106">bentonite</a>).<br />
+* Firings each day to handle a pipeline of specimens coming from routine and development testing.<br />
+* A photo stream into the system to support measurements.<br />
+* A <a  href="https://digitalfire.com/glossary/code+numbering">code numbering</a> scheme so that every specimen can be marked and associated with its testing data.<br />
+<br />
+Equipment needed:<br />
+* Internet-connected computer(s) in the lab and office.<br />
+* A <a  href="https://digitalfire.com/picture/1293">test kiln</a> (or kilns) with cones and schedules for many temperatures, staging area for specimens awaiting firing.<br />
+* A <a  href="https://digitalfire.com/glossary/propeller+mixer">propeller mixer</a> (lab <a  href="https://digitalfire.com/glossary/pugmill">pugmill</a> not needed, <a  href="https://digitalfire.com/glossary/propeller+mixer">propeller mixing</a> and dewatering on <a  href="https://digitalfire.com/material/1124">plaster</a> outdoes any pugmill).<br />
+* Workbenches, <a  href="https://digitalfire.com/glossary/plaster+table">plaster table</a>, tools for slabbing, cutting, marking clay.<br />
+* Tools needing for the <a  href="https://digitalfire.com/test/shab">SHAB test</a>, <a  href="https://digitalfire.com/test/siev">SIEV test</a>, <a  href="https://digitalfire.com/test/dfac">DFAC test</a>, <a  href="https://digitalfire.com/test/ldw">LDW test</a>.<br />
+* <a  href="https://digitalfire.com/picture/2350">Melt fluidity testers</a>.<br />
+* A flexible adhesive label maker (everything ever done needs a <a  href="https://digitalfire.com/glossary/code+numbering">code number</a> label).<br />
+<br />
+Companies must deal with the reality that material supplies can be inconsistent and unreliable. Testing that accurately conveys body properties (e.g. fired color, fired <a  href="https://digitalfire.com/glossary/maturity">maturity</a>, <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a>, <a  href="https://digitalfire.com/glossary/glaze+fit">glaze fit</a> and <a  href="https://digitalfire.com/glossary/particle+size+distribution">particle size distribution</a>) enables comparing current data with historical and adjusting recipes so customers don’t see variations.<br />
+<br />
+Sampling: If you are running thousands of boxes of a run of clay, it is your decision how often to sample it for testing. Likewise, when truckloads of material are received, whether each pallet needs to be tested and what tests need to be run depends on the properties the material adds to your product and your experience with its reliability.<br />
+<br />
+Insight-live enables having hundreds of test bars and specimens “in progress”. With proper code and specimen numbering nothing gets lost. Side-by-side comparison of anything with anything is possible (e.g. past runs with current, test recipes with a production run, production runs with master recipes), this is the "secret weapon" of Insight-live.<p style="clear:left"></p></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A modern electric test kiln, a marvel of utility</h3>
+<br /><a alt="A ConeArt 119 electric test kiln" href="https://digitalfire.com/picture/2513"><img class="flexleft50" alt="A ConeArt 119 electric test kiln"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/ehk4rk86cy.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2513">click here</a> to see it.</p>
+<p>This is a ConeArt 119D, 0.57 cu ft, 11"x9" cone 10 <a  href="https://digitalfire.com/picture/1293">test kiln</a>. While there is 120v model, don't take a chance, go with 220v (actually ours is 208v). Ours fires 1000 times on a set of elements, mostly in the cone 4-7 range. The old BX controller is shown here, it is $300 cheaper, but don’t even think about getting that! Do not use your electric like a pop-up toaster, make it a technological enabler of custom <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedules</a>, get the Genesis GX. Having good control of firing is a key to success, and this is superior for that. These kilns are economical to fire. Big enough for 5 mugs, but I typically fire a dozen clay and glaze test specimens. We make our own super-thin shelves. The controller holds about 20 schedules, even controllable remotely (it is Wi-Fi connected). We can fire <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 04</a> up and down in three hours! Of course, since this type of kiln can enable so much more testing, a <a  href="https://digitalfire.com/glossary/code+numbering">code numbering</a> system is needed - and a place to record and search all the results: An account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">insight-live</a>.com.<br />
+</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Stamp used for stamping information onto clay test bars</h3>
+<br /><a alt="12 digit rolling stamp" href="https://digitalfire.com/picture/491"><img class="flexleft50" alt="12 digit rolling stamp"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/3plasc21t1._ac_ul640_ql65_.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/491">click here</a> to see it.</p>
+<p><a  href="https://digitalfire.com/glossary/code+numbering">Code numbering</a> is an essential part of any <a  href="https://digitalfire.com/article/329">testing program</a>. This type of stamp is ideal for stamping <a  href="https://digitalfire.com/glossary/code+numbering">code numbers</a> and other information on plastic clay test specimens (e.g. <a  href="https://digitalfire.com/test/shab">SHAB test</a> bars). Set up the run or recipe number on the left and the specimen number on the right. You can find these stamps on Amazon by searching "12 digit rolling alphabet symbol number stamp".</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">COSORI Food Dehydrator as a lab/studio drier</h3>
+<br /><a href="https://digitalfire.com/picture/3383"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/ajz5xmmemp.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3383">click here</a> to see it.</p>
+<p>We use this to dry our <a  href="https://digitalfire.com/test/shab">SHAB test</a> samples and <a  href="https://digitalfire.com/test/dfac">DFAC test</a> samples. It has many racks, heats to 165F, has a timer and is well suited for the drying factor test (and drying all sorts of things). By adjusting the heat setting it is possible to tune it to give a slight crack on our best drying clay (all other results are thus in relation to that). This oven is available on Amazon and is inexpensive.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Routine SHAB testing creates valuable historical drying and firing data</h3>
+<br /><a alt="SHAB test bars for casting" href="https://digitalfire.com/picture/3476"><img class="flexleft50" alt="SHAB test bars for casting"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/b4dvryhppc.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3476">click here</a> to see it.</p>
+<p>Suddenly, ware is coming out of your production kiln warped or cracked or off color. Unless the answer is obvious, the first action should be to compare its drying and firing test data with past runs. If you are doing that as a routine, then <a  href="https://digitalfire.com/test/shab">SHAB test</a> bars (and the test result data they bring) will already be available. These bars are tests of slip <a  href="https://digitalfire.com/glossary/casting+slip">casting bodies</a>, they can be made in a <a  href="https://digitalfire.com/material/1124">plaster</a> mold and length-marked as shown. That data is a <a  href="https://digitalfire.com/glossary/characterization">characterization</a> of the <a  href="https://digitalfire.com/glossary/clay+body">clay body</a>. The value of this kind of data-gathering becomes evident when a disaster happens (or better yet, is prevented). <a  href="https://digitalfire.com/glossary/clay+body">Clay bodies</a> have <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a>, dry performance, dry strength, fired density, <a  href="https://digitalfire.com/glossary/firing+shrinkage">fired shrinkage</a>, <a  href="https://digitalfire.com/glossary/fired+strength">fired strength</a>, etc. If you have historical data (accompanied by <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedules</a>, recipes, etc), you have an invaluable tool. Where does one gather the data? In spreadsheets? No, in a database. An account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a>.com is specifically intended for this.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Fired clay test bars ready for measuring</h3>
+<br /><a href="https://digitalfire.com/picture/1072"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/wogzatilog.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1072">click here</a> to see it.</p>
+<p>SHAB (Shrinkage, Absorption) test bars ready to unload. These are measured for length after drying and firing and for weight after firing and boiling. This data is plugged into my account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">insight-live</a>.com and it calculates shrinkage and <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a> numbers. If you fire bars of a clay to a range of temperatures you can <a  href="https://digitalfire.com/glossary/characterization">characterize</a> key properties of a clay very effectively.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Test bars from recent kiln firings</h3>
+<h4 style="color:#888888; margin-top:0px;">Here is how to enter the data into Insight-live</h4>
+<br /><a alt="Test bars for entry into Insight-live" href="https://digitalfire.com/picture/1330"><img class="flexleft50" alt="Test bars for entry into Insight-live"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/wakgerudib.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1330">click here</a> to see it.</p>
+<p>Multiple batches of fired test bars, organized by temperature, have already been weighed and measured (the weights and lengths are written on the sides of the bars). Each batch is accompanied by the cones from the firing in the <a  href="https://digitalfire.com/picture/1293">test kiln</a> (these influence how the temperature is recorded and adjustments to kiln <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedules</a>). Since we are working on many runs, tests and projects at any given time, these tests pile up rapidly. And they generate a lot of <a  href="https://digitalfire.com/test/shab">SHAB test</a> data that needs to be input into your <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a>.com account promptly.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">How many simultaneous testing projects can you manage at once?</h3>
+<br /><a href="https://digitalfire.com/picture/1678"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/niwnecekon.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1678">click here</a> to see it.</p>
+<p>This two-inch pile of lab test body and glaze mix tickets is about half of what I have tested in the past year. I have added thousands of pictures too (using my smartphone). I just realized why I am doing a lot more testing. It is so much easier to organize the <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">record keeping</a> in my <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a>.com account. I can manage so many separate testing projects. I have so much more of a sense that I am progressing. And it feels great to build such an organized set of records that I can refer back to.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Throwing a clay body is an invaluable physical test</h3>
+<h4 style="color:#888888; margin-top:0px;">But pieces need to be code numbered for tracking</h4>
+<br /><a href="https://digitalfire.com/picture/2247"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/nksfmewrzt.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2247">click here</a> to see it.</p>
+<p><a  href="https://digitalfire.com/glossary/throwing">Throwing</a> a clay on a potters wheel gives immediate feedback on the <a  href="https://digitalfire.com/glossary/physical+testing">physical properties</a> (e.g. texture, <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a>, degree of softness, tendency to split, etc). A fancy report full of numbers gathered from expensive testing equipment takes a lot more time and is not likely to be as valuable as this. If you are doing testing, and everyone should be testing body and glaze variations, then all tests need to be identified. Do that with a <a  href="https://digitalfire.com/glossary/code+numbering">code number</a> that cross-references into your account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a>.com.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">880 bags of kaolin arrive. First step: Record the date code.</h3>
+<br /><a href="https://digitalfire.com/picture/1291"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/wogtifijoj.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1291">click here</a> to see it.</p>
+<p>A shipment <a  href="https://digitalfire.com/material/291">EP Kaolin</a> has arrived for use in some of our production <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> and <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> bodies. Of course, this needs to be tested before being put into product. But how? The first step is to create a new recipe record in my <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-Live</a> account, and find their production date code stamp on the bag. Hmmm. It does not have one! OK, then I need to record the date on which we received it. We need to save a bag on every pallet and <a  href="https://digitalfire.com/glossary/sieve">sieve</a> 50 grams through 100 mesh (to spot contamination). Then we'll make test bars (of all the samples mixed) to fire across a range of temperatures (to compare fired <a  href="https://digitalfire.com/glossary/maturity">maturity</a> with past shipments). We do a <a  href="https://digitalfire.com/glossary/drying+performance">drying performance</a> disk also to assess <a  href="https://digitalfire.com/glossary/soluble+salts">soluble salts</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">In clay body testing it is about the data.</h3>
+<h4 style="color:#888888; margin-top:0px;">It reveals how a 20% feldspar addition affects this clay</h4>
+<br /><a alt="Fired bars of foundry hill creme clay" href="https://digitalfire.com/picture/2833"><img class="flexleft50" alt="Fired bars of foundry hill creme clay"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/nfjjfy6rb6.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2833">click here</a> to see it.</p>
+<p>Foundry Hill Creme (FHC) is used in North America as a <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> body base or addition. It fires like a <a  href="https://digitalfire.com/material/80">ball clay</a> but it is less plastic. How much <a  href="https://digitalfire.com/material/310">feldspar</a> would it take to make it into a <a  href="https://digitalfire.com/glossary/vitreous">vitreous</a> <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> stoneware? We fired <a  href="https://digitalfire.com/test/shab">SHAB test</a> bars from cone 4 to 10 (bottom to top) and 10R (the <a  href="https://digitalfire.com/glossary/soluble+salts">soluble salts</a> discolor it in reduction). The data collected (in our <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a>.com group account) produces <a  href="https://digitalfire.com/glossary/firing+shrinkage">firing shrinkage</a> and absorption data that calculates to the red columns (and plots to the blue lines). Notice how the <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a> drops steadily from cone 3 to 10 (the firing shrinkage rises steadily over the same period). A 20% <a  href="https://digitalfire.com/material/1070">nepheline syenite</a> addition plots to the orange lines. Notice <a  href="https://digitalfire.com/glossary/cone+6">2200F</a> (cone 6): The porosity drops from 8% to vitreous (zero) while the firing shrinkage increases 2%. The FHC <a  href="https://digitalfire.com/glossary/drying+shrinkage">drying shrinkage</a> (the first DSHR red column) averages 0.3% lower than the mix, this is counterintuitive but a pleasant surprise. While the mix did have a higher <a  href="https://digitalfire.com/glossary/water+content">water content</a> (which would increase drying shrinkage) another factor appears to be how well this clay hosts the feldspar addition without compromising its own <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Can you afford to completely trust supplier body quality control reports?</h3>
+<br /><a href="https://digitalfire.com/picture/1780"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/memhetuhyf.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1780">click here</a> to see it.</p>
+<p>This body is used in the <a  href="https://digitalfire.com/glossary/sanitary+ware">sanitary ware</a> industry in China, the supplier sends this report with each shipment. The <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> and assorted values for <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a>, shrinkage, particle size are provided. The factory receiving this report accepts it as gospel and goes into production. However engineers at the plant need to think twice about such reports. These tests are being done at one temperature, they say nothing about what that body is doing above and below that temperature. Is it being employed in a volatile range of the porosity or <a  href="https://digitalfire.com/glossary/firing+shrinkage">firing shrinkage</a> curves? Zero porosity bodies of this type are best when fired to a point near where the porosity curve descends to reach the x-axis. However that curve remains at zero while the shrinkage one tops out and reverses direction. At some point the porosity curve sharply rises. Only by firing and testing at a range of temperatures in your own lab can you where your body is on the curve.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Setting up a Clay Testing Program</h3>
+<br /><a alt="Testing program for clay bodies" href="https://digitalfire.com/picture/3635"><img class="flexleft50" alt="Testing program for clay bodies"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/epjpojhlwe.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3635">click here</a> to see it.</p>
+<p>It is time to start managing quality control of the <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a> you manufacture for customers. A good program ensures that your technicians are keenly aware of the variability of material supplies (both in <a  href="https://digitalfire.com/glossary/physical+testing">physical properties</a> and simple availability). But your customers are blissfully unaware, all they will see are consistent products because of the compensatory measures you take! These measures are enabled by visibility into <a  href="https://digitalfire.com/glossary/clay+body">clay body</a> properties that only data can give. Structured procedures, a robust <a  href="https://digitalfire.com/glossary/code+numbering">code-numbering</a> system and our onboarding help can empower your staff to get started now on accumulating a history of testing data. We are practical. The supplies and equipment you need are within the each reach of any company or even individual. This is not boring lab work, our approach makes it exciting! Your group will be able to track a pipeline with hundreds of specimens going in and analyze a river of measurement data coming out.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Protect your reputation as a clay body manufacturer.</h3>
+<h4 style="color:#888888; margin-top:0px;">Unready Freddie is not monitoring incoming clays!</h4>
+<br /><a alt="Ready Freddie lab tech has Insight-live" href="https://digitalfire.com/picture/3689"><img class="flexleft50" alt="Ready Freddie lab tech has Insight-live"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/6ql1ozjkz2.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3689">click here</a> to see it.</p>
+<p>A <a  href="https://digitalfire.com/material/925">kaolin</a> shipment just came in. "UnReady Freddie" is panicking. He thinks he remembers that products made with the last shipment were lacking <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> and the fired color was off. He is going to have to come up with different lame excuses for complaining customers this time.<br />
+<br />
+"Ready Freddie" has <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-Live</a> and has collected years of data on incoming shipments in one searchable place. He knows what to check on each and has fired bars, in-mix tests, particle size checks, data sheets, lots of pictures, notes, etc. He also has traceability - he knows what material batch went into what product.  He works with production to do material lot tracking and with purchasing to keep suppliers aware he is testing. Because Ready Freddie knows how materials vary he can compensate recipes and processes so customers see a consistent product.<br />
+<br />
+UnReady Freddie has a few spreadsheets somewhere. But he is busy with other things. Who do you want in charge of product consistency (and company reputation)? Here is what to do next: Have your technician study the page "Testing a New Load of <a  href="https://digitalfire.com/material/291">EP Kaolin</a>" (link below). You will be hearing from him/her soon.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Is your clay supplier testing incoming materials?</h3>
+<h4 style="color:#888888; margin-top:0px;">Monitoring the properties of clay bodies they sell?</h4>
+<br /><a href="https://digitalfire.com/picture/3695"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/4e9k8n3d57.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3695">click here</a> to see it.</p>
+<p>A <a  href="https://digitalfire.com/material/925">kaolin</a> shipment just came in. "UnReady Freddie" is panicking. Customers have been complaining about bodies containing this. He doesn't know what to do because he has poor records. But he has a new excuse when you complain this time.<br />
+<br />
+"Ready Freddie" has <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-Live</a> and has collected years of data on incoming material shipments in one searchable place. He knows what to check on each and has fired bars, in-mix tests, particle size checks, data sheets, lots of pictures, notes, etc. He works with production to do material lot tracking so he knows what materials went into the <a  href="https://digitalfire.com/glossary/code+numbering">code numbered</a> boxes you bought. And he keeps suppliers aware he is testing. He leverages the data to compensate recipes and processes so you see a consistent product despite material variations.<br />
+<br />
+If you want more consistent <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a> from your supplier ask about their <a  href="https://digitalfire.com/article/329">testing program</a>. Ask if they know about <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Digitalfire Insight-live</a>.com. Give them a link to this page.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/shab">Shrinkage/Absorption Test</a>
+<br /><i>SHAB Shrinkage and absorption test procedure for plastic <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a> and materials</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/dfac">Drying Factor</a>
+<br /><i>The DFAC Drying Factor test visually displays a plastic clay's response to very uneven drying. It is beneficial to show the relative <a  href="https://digitalfire.com/glossary/drying+performance">drying performance</a> of different clays.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/siev">Sieve Analysis 35-325 Wet</a>
+<br /><i>A measure of <a  href="https://digitalfire.com/glossary/particle+size+distribution">particle size distribution</a> by washing a powdered or <a  href="https://digitalfire.com/glossary/slaking">slaked</a> sample through a series of successively finer sieves</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/ldw">LOI/Density/Water Content</a>
+<br /><i>LDW <a  href="https://digitalfire.com/glossary/loi">LOI</a>, density and <a  href="https://digitalfire.com/glossary/water+content">water content</a> test procedure for plastic <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a> and porcelains</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/simple+physical+testing+of+clays">Simple Physical Testing of Clays</a>
+<br /><i>Learn to test your <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a> and clay materials and record the results in an organized way, understanding the purpose of each test and how to relate its results to changes that need to be made in process, recipe and materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/how+to+find+and+test+your+own+native+clays">How to Find and Test Your Own Native Clays</a>
+<br /><i>Some of the key tests needed to really understand what a clay is and what it can be used for can be done with inexpensive equipment and simple procedures. These practical tests can give you a better picture than a data sheet full of numbers.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/slurry+up">Slurry Up</a>
+<br /><i>The process of <a  href="https://digitalfire.com/glossary/slurry">slurrying</a> a <a  href="https://digitalfire.com/glossary/clay+body">clay body</a> powder and dewatering it on a plastic slab or table.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/physical+testing">Physical Testing</a>
+<br /><i>In <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>, glazes, <a  href="https://digitalfire.com/glossary/engobe">engobes</a> and bodies have chemistries and <a  href="https://digitalfire.com/glossary/physical+testing">physics</a>. Your formulation and quality control most likely need to focus on the <a  href="https://digitalfire.com/glossary/physical+testing">physical properties</a>.</i>
+</td>
+</tr>
+<tr>
+<td>Video<br /><img src="https://cdn.digitalfire.com/MakeBars.jpg" style="width:200px;" /></td>
+<td>
+<a href="https://digitalfire.com/video/making+test+bars+for+the+shab%2c+ldw+and+dfac+tests">Making test bars for the SHAB, LDW and DFAC tests</a>
+<br /><i>We will make bars of a <a  href="https://digitalfire.com/glossary/clay+body">clay body</a> for the <a  href="https://digitalfire.com/test/shab">SHAB test</a> (for shrinkage and absorption), a specimen for weighing wet, dry and then fired (to get <a  href="https://digitalfire.com/glossary/water+content">water content</a> and <a  href="https://digitalfire.com/glossary/loi">LOI</a>) and a drying disk to measure <a  href="https://digitalfire.com/glossary/drying+performance">drying performance</a> and soluble salt content.</i>
+</td>
+</tr>
+<tr>
+<td>Video<br /><img src="https://cdn.digitalfire.com/EnterData.jpg" style="width:200px;" /></td>
+<td>
+<a href="https://digitalfire.com/video/entering+testdata+into+insight-live">Entering TestData Into Insight-Live</a>
+<br /><i>How to enter <a  href="https://digitalfire.com/glossary/physical+testing">physical testing</a> results into your group account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">insight-live</a>.com. We will enter data from shrinkage/absorption bars, the drying factor disk and an LOI/water content tester. </i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="/images/PayPalDonate.png" style="height:66px; padding-right:20px;"><br /><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br />Just organized, concise information constantly updated and improved.<br />Was this helpful? Consider supporting me.</td><tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.
+All Projects
+2019 Jiggering-Casting Project of Medalta 66 Mug
+A cereal bowl jigger mold made using 3D printing
+Beer Bottle Master Mold via 3D Printing
+Better porosity for Brown Sugar Savers
+Build a kiln monitoring device
+Celebration Project
+Coffee Mug Slip Casting Mold via 3D Printing
+Comparing the Melt Fluidity of 16 Frits
+Cookie Cutting clay with 3D printed cutters
+Evaluating a clay's suitability for use in pottery
+Make a mold for 4-gallon stackable calciners
+Make Your Own Pyrometric Cones
+Make your own sieve shaker to process ceramic slurries
+Making a high quality ceramic tile
+Making a Plaster Table
+Making Bricks
+Making our own kiln posts using a hand extruder
+Medalta Ball Pitcher Slip Casting Mold via 3D Printing
+Medalta Jug Master Mold Development
+Mold Natches
+Mother Nature's Porcelain - Plainsman 3B
+Mug Handle Casting
+Nursery plant pot mold via 3D printing
+Pie-Crust Mug-Making Method
+Plainsman 3D, Mother Nature's Porcelain/Stoneware
+Project to Document a Shimpo Jiggering Attachment
+Roll, Cut, Pull, Attach Handle-making Method
+Slurry Mixing and Dewatering Your Own Clay Body
+Testing a New Load of EP Kaolin
+Using milk as a glaze
+Build a kiln monitoring device
+The actual
+firing schedule
+experienced by ware in a kiln can be very different from the one programmed into the controller (e.g. heavily packed kilns may heat or cool slower than programmed). Many glazes depend on specific schedules, it is important to have a record of what happened in the kiln to diagnose any problems.
+In the process of this project to build a monitoring device we have hit a number of dead ends. But each, plus the rapid development of controllers, has made the potential of this device more evident. Our aim is to be able to log firing curves into an
+insight-live
+.com account, accomplishing this by acting as an
+API
+waiting for temperature measurements from micro-controller devices. Thus, this is not a
+kiln controller
+, it is a data logger (we are not disturbing the controller already on the kiln).
+The advent of ESP32 microcontrollers is a game changer. These are RISC-V processors with unbelievable power, many sell for $10 or even less. They have a wifi antenna, enabling interaction using any device with a browser. They do not have a conventional operating system that can be hacked from an external source. The device we want to make will only send data to the API at Insight-live.com, all user interaction will be done there, totally out-of-band. The complexity of this device will thus be kept to an absolute minimum, just enough to recognize the commencement of a firing and send measurement data at defined intervals.
+Related Information
+Inside a kiln with a Bartlett Genesis controller
+This picture has its own page with more detail,
+click here
+to see it.
+The 220V enters lower left to a terminal block. That splits to a transformer (above) and relays (below that). The 4-07-6024  transformer supplies power to the SMT_3140 controller board (converting the 220V down to that needed by the circuit board). The controller is run by an MSP430 Texas Instruments microcontroller (lower left closeup). That controller has inputs from the
+thermocouple
+and a current monitor (yellow donut shape around the wires going to the elements). The board has outputs that connect to the relay, that relay in turn controls the flow of current to the elements. This is a simple device, but not something to be replaced lightly.
+DIY
+controller boards documented online look tempting but they are not CSA or UL approved (so fire insurance coverage is implicated). Commercial controllers focus on safety and liability over functionality, they handle intermittent thermocouple connections, bad thermocouple readings, stuck relays and shorted and weak elements - these are runaway conditions that could become meltdowns in a kiln controlled by a DIY device. This being said, these commercial products do have a weakness: The relays. They are mechanical devices and are the first thing to need replacement.
+Kiln controllers
+thus need To be good at recognizing relay failure.
+Kiln Firing monitor - Going in the wrong direction
+This picture has its own page with more detail,
+click here
+to see it.
+So many glazes appear as they do because of the
+firing schedule
+(especially the cooling curve). Imagine getting an awesome result out of a kiln and not knowing (or being able to replicate) the exact firing schedule that produced it. Or a bad result and being able to relate that to the firing schedule that actually occurred. This is not a
+kiln controller
+, it simply reads and records the temperature once per minute. It is a
+Raspberry Pi
+computer with camera that reads the temperature display on the kiln (using machine vision). This seemed like a good idea at the time, but adding all the difficulties of reading the display turned out not to be worth the trouble when it is so easy to connect a dedicated
+thermocouple
+. Further, the device is too capable. Being an entire Linux computer it would be a vector for hacker intrusion into the host wifi network unless being constantly updated (a large Las Vegas casino was hacked recently, the vector into their network was an iOT aquarium thermometer). While it can be programmed as an access point, hosting its own wifi network, this is too much trouble to use, people are not going to want to constantly change their wifi connection. More problems: Its complexity means there are too many things to go wrong, it uses too much power for battery operation and is a hassle to plug in. Most importantly, the computer knowledge required is well beyond the ability of the average person to navigate.
+Type of components needed to develop a kiln monitoring device
+This picture has its own page with more detail,
+click here
+to see it.
+These are all very inexpensive and easily available.
+2.4" 240x320 TFT Touch Display
+ESP32 controller (a wifi-equipped computer on a chip)
+MX6675
+thermocouple
+interface
+and thermocouple
+Prototyping breadboard with wire interconnects
+Breadboard Power Supply Module 3.3V/5V
+When the prototype is working we will incorporate the software into a ready-made, battery-powered device that uses this same controller chip. It is likely that the display will not be needed for logging operations, the device will simply watch for temperature rise and automatically begin recording when that happens.
+ESP32 devices with cases, screens and batteries
+This picture has its own page with more detail,
+click here
+to see it.
+There are many options like these for the packaging in the final logging device. The one with the larger screen here costs ~$50. The device with the small one has the same computation and communication abilities (but is much less expensive).
+The screen will likely be used for simple status information to assure the device is running and recording. Both devices have a button, it may be possible to use this to initiate recording of a firing. Both of these are available without a display, it may not be needed once we are assured of reliable operation (its absence would greatly extend battery life).
+Links
+Glossary
+Firing Schedule
+Designing a good kiln
+firing schedule
+for your ware is a very important, and often overlooked factor for obtained successful firings.
+Glossary
+Drop-and-Soak Firing
+A kiln
+firing schedule
+where temperature is eased to the top, then dropped quickly and held at a temperature 100-200F lower.
+Glossary
+Kiln Controller
+In ceramic kilns the
+firing schedule
+is typically managed automatically by an
+electronic controller
+. But that may not mean that ware gets automatically fired to the correct temperature and atmosphere.
+Typecodes
+Kiln Controller Device List
+If you are aware of devices not listed here please contact us. We want to focus on those in active development. Devices supplied on manufactured kilns are usually relabelled, they are not actually made by the kiln manufacturer.
+PayPal
+No
+tracking,
+No
+ads,
+No
+paywall,
+No
+transient content!
+Just organized, concise information constantly updated and improved.
+Was this helpful? Consider supporting me.
+By
+Tony Hansen
+Follow me on
+Got a Question?
+Buy me a coffee and we can talk
+https://digitalfire.com
+, All Rights Reserved
+Privacy Policy

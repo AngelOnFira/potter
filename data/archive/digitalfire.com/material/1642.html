@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Tin Oxide</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Its principle use in ceramics is as an opacifier in glazes. It is very expensive.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item active"><a class="nav-link" href="/material/list">Materials <span class="sr-only">(current)</span></a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=material" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table>
+<ul class="nav nav-tabs pt-1" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="material-tab" data-toggle="tab" href="#material" role="tab" aria-controls="material" aria-selected="true">Materials for Ceramics</a>
+  </li>
+</ul>
+<div class="tab-content mb-3" id="myTabContent" style="border-right:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #ddd; padding:10px;">
+  <div class="tab-pane fade show active" id="material" role="tabpanel" aria-labelledby="material-tab">
+<a href="/material/list/1-9">1-9</a> | <a href="/material/list/A">A</a> | <a href="/material/list/B">B</a> | <a href="/material/list/C">C</a> | <a href="/material/list/D">D</a> | <a href="/material/list/E">E</a> | <a href="/material/list/F">F</a> | <a href="/material/list/Frits">Frits</a> | <a href="/material/list/G">G</a> | <a href="/material/list/H">H</a> | <a href="/material/list/I">I</a> | <a href="/material/list/J">J</a> | <a href="/material/list/K">K</a> | <a href="/material/list/L">L</a> | <a href="/material/list/M">M</a> | <a href="/material/list/N">N</a> | <a href="/material/list/O">O</a> | <a href="/material/list/P">P</a> | <a href="/material/list/Q">Q</a> | <a href="/material/list/R">R</a> | <a href="/material/list/S">S</a> | <a href="/material/list/T">T</a> | <a href="/material/list/U">U</a> | <a href="/material/list/V">V</a> | <a href="/material/list/W">W</a> | <a href="/material/list/X">X</a> | <a href="/material/list/Y">Y</a> | <a href="/material/list/Z">Z</a><br />
+<nobr></nobr>
+</div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Tin Oxide</h1>
+<p><b>Alternate Names</b>: Stannic Oxide, Tin(IV) Oxide, Tin Dioxide, SnO2</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/oxide">Oxide</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/analysis">Analysis</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/formula">Formula</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/formula">Tolerance</a></th>
+</tr></thead><tbody>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/sno2">SnO2</a></td>
+<td class="text-right"">100.00%</td>
+<td class="text-right">
+1.00
+</td><td class="text-right">
+
+</td></tr>
+<tr><td colspan="2">Oxide Weight</td><td colspan="2" class="text-right">
+150.71
+</td></tr>
+<tr><td colspan="2" class="text-right"><a href="https://digitalfire.com/glossary/formula+weight">Formula Weight</a></td><td colspan="2" style="text-align:right">
+150.71
+</td></tr>
+</tbody></table>
+<h4>Notes</h4><p><a  href="https://digitalfire.com/material/1642">Tin oxide</a> is a white or off-white powder produced by oxidizing molten high-grade tin metal. It is typically quite pure, some manufacturers have grades up to 99.999% purity. Tin oxide powder is very fine-grained and it <a  href="https://digitalfire.com/glossary/agglomeration">agglomerates</a>, so glazes containing it need to be sieved to break down the small lumps (even a high-speed <a  href="https://digitalfire.com/glossary/propeller+mixer">propeller mixer</a> often won't do it).<br />
+<br />
+Tin oxide has long been used to <a  href="https://digitalfire.com/glossary/opacifier">opacify</a> glazes in oxidation (make transparents opaque) at all temperatures. Hand-decorated tin-glazed <a  href="https://digitalfire.com/glossary/earthenware">earthenware</a> of the 1700s/1800s is the most famous use of tin in glazes (delftware-England, faience-France, maiolica-Italy). While many potters are keeping this tradition alive today, most now use zircon-based <a  href="https://digitalfire.com/glossary/opacifier">opacifiers</a> instead. Thus any discussion about the use of tin oxide as an <a  href="https://digitalfire.com/glossary/opacifier">opacifier</a> ends up comparing it with <a  href="https://digitalfire.com/material/1722">zircon</a> products:<br />
+<br />
+-Twice as much zircon is required to produce the same level of <a  href="https://digitalfire.com/glossary/opacity">opacity</a>.<br />
+-Like zircon, tin melts at very high temperatures and thus does not go into solution in typical glaze melts.<br />
+-Zircon will stiffen the glaze melt more than tin.<br />
+-Zircon will produces a harder glaze surface, but that surface can have <a  href="https://digitalfire.com/glossary/cutlery+marking">cutlery marking</a> issues.<br />
+-Zircon will reduce the <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> of the glaze more than tin.<br />
+-The quality of the white color is different (tin tends to be more of a blue white, zircon a yellowish white).<br />
+-Tin is very expensive. That being said, it has double the potency and tin glazes can be applied thinner, these two factors can even out the cost.<br />
+-Zircon tends to have less of an effect on the development of metal oxide colors (e.g. tin reacts with chrome to make pink).<br />
+-Tin can often produce and maintain better gloss.<br />
+-While there are other products that produce varying degrees of opacity, none are as neutral and non-reactive as tin and zircon. Other opacifiers also tend to <a  href="https://digitalfire.com/glossary/variegation">variegate</a> the glaze.<br />
+-Tin does not normally opacify in reduction firings.<br />
+<br />
+Tin is also a player in the development of ceramic colors, for example, chrome tin pinks and maroons. Tin with iron in oxidation makes a warmer shade of brown than zirconium does.<br />
+<br />
+Tin oxide is also a variegator. For example, tin can react with <a  href="https://digitalfire.com/material/1644">titanium</a> and <a  href="https://digitalfire.com/material/1204">rutile</a> to completely transform the color and character of a glaze. Although tin is expensive, very little is required to produce stunning effects in many colored glazes.<br />
+<br />
+Some claim that a little tin (not enough to opacify) will add extra smoothness and shine to many glazes.<br />
+<br />
+Tin oxide is also used (in high percentages) to make semi-conduction glazes in <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> insulators.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">An original container bag of Tin Oxide</h3>
+<br /><a href="https://digitalfire.com/picture/1553"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/f5xiozt5e2.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1553">click here</a> to see it.</p>
+<p>Made in Italy by Oximet Srl.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Partially and fully opacified cone 6 G1214Z1 matte glaze</h3>
+<br /><a href="https://digitalfire.com/picture/2356"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/btkngglpaj.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2356">click here</a> to see it.</p>
+<p>This is the <a  href="https://digitalfire.com/recipe/g1214z1">G1214Z1</a> <a  href="https://digitalfire.com/glossary/calcia+matte">calcia matte</a> base (as opposed to the <a  href="https://digitalfire.com/glossary/magnesia+matte">magnesia matte</a> <a  href="https://digitalfire.com/recipe/g2934">G2934</a>). The clay is <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12876">M390</a>. 5% <a  href="https://digitalfire.com/material/1724">Zircopax</a> was added on the left (normally 10% or more is needed to get full <a  href="https://digitalfire.com/glossary/opacity">opacity</a>, the partially opaque effect highlight contours well). 5% <a  href="https://digitalfire.com/material/1642">tin oxide</a> was added to the one on the right (tin is a more effective, albeit expensive <a  href="https://digitalfire.com/glossary/opacifier">opacifier</a> in oxidation). The <a  href="https://digitalfire.com/schedule/plc6ds">PLC6DS</a> <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a> was used.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Don't waste expensive tin oxide, propeller mix glazes well</h3>
+<br /><a alt="Tin oxide in glaze needs thorough mixing" href="https://digitalfire.com/picture/2362"><img class="flexleft50" alt="Tin oxide in glaze needs thorough mixing"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/rqjqjowknr.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2362">click here</a> to see it.</p>
+<p>This is a <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 04</a> glaze on a <a  href="https://digitalfire.com/glossary/terra+cotta">terra cotta</a> body. Two 300-gram test batches were made. Both have 5% <a  href="https://digitalfire.com/material/1642">tin oxide</a> added to a <a  href="https://digitalfire.com/glossary/base+glaze">base transparent</a>, <a  href="https://digitalfire.com/recipe/g1916q">G1916Q</a>. The one on the left was high-speed propeller-mixed for 10 seconds. That was not enough, small <a  href="https://digitalfire.com/glossary/agglomeration">agglomerates</a> appear as tiny white specks floating in the glass. The one on the right was <a  href="https://digitalfire.com/glossary/blender+mixing">blender mixed</a> for 60 seconds. Now the incredibly small tin particles have been dispersed and can do their job of opacifying the glaze. Would <a  href="https://digitalfire.com/glossary/sieve">sieving</a> the <a  href="https://digitalfire.com/glossary/slurry">slurry</a> have worked? No, the particle agglomerates can be far smaller than the openings in an 80-mesh <a  href="https://digitalfire.com/glossary/sieve">sieve</a> (individual particles could be 1000 times smaller!). The thorough dispersion of the expensive tin oxide particles has real benefit: It enables making an accurate assessment of whether the 5% addition is enough. In this case it isn't, more is needed.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">G2934 Cone 6 Matte with 10% Zircopax and 5% tin oxide</h3>
+<br /><a href="https://digitalfire.com/picture/2377"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/qnqmug6ldp.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2377">click here</a> to see it.</p>
+<p>The body is <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12876">M390</a>. The <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a> is Plainsman <a  href="https://digitalfire.com/schedule/plc6ds">PLC6DS</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">5% titanium dioxide in G2934Y matte, G1214Z1 matte, G2926B glossy</h3>
+<br /><a href="https://digitalfire.com/picture/2378"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/kq27pwsb81.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2378">click here</a> to see it.</p>
+<p>The body is <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12876">M390</a>. The <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a> is Plainsman <a  href="https://digitalfire.com/schedule/plc6ds">PLC6DS</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">G1214Z1 at cone 6 with 10% Zircopax and 5% tin oxide</h3>
+<br /><a href="https://digitalfire.com/picture/2376"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/3x2pw6ktw6.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2376">click here</a> to see it.</p>
+<p>The body is <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12876">M390</a>. The <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a> is Plainsman <a  href="https://digitalfire.com/schedule/plc6ds">PLC6DS</a>. The tin is on the right.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">G2926B cone 6 transparent with 10% Zircopax and 5% tin oxide</h3>
+<br /><a href="https://digitalfire.com/picture/2375"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/p89rxapqmb.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2375">click here</a> to see it.</p>
+<p>The body is <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12876">M390</a>. The <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a> is Plainsman <a  href="https://digitalfire.com/schedule/plc6ds">PLC6DS</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">The action of Zircopax vs Tin Oxide at cone 10R</h3>
+<br /><a href="https://digitalfire.com/picture/844"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/glossary/wogsuxyhiz.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/844">click here</a> to see it.</p>
+<p>On <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12886">H443</a> iron <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> in <a  href="https://digitalfire.com/glossary/reduction+firing">reduction firing</a>. Notice Tin does not work. Also notice that between 7.5 and 10% <a  href="https://digitalfire.com/material/1724">Zircopax</a> provides as much <a  href="https://digitalfire.com/glossary/opacity">opacity</a> as does 15% (<a  href="https://digitalfire.com/material/1722">Zircon</a> is very expensive).<br />
+</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Testing two brands of tin oxide in a melt flow tester</h3>
+<br /><a alt="Tin oxide opacified glaze in a melt fluidity tester" href="https://digitalfire.com/picture/995"><img class="flexleft50" alt="Tin oxide opacified glaze in a melt fluidity tester"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/muxtamofuk.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/995">click here</a> to see it.</p>
+<p>This <a  href="https://digitalfire.com/picture/2350">melt fluidity tester</a> compares two different tin <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> in a <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> transparent glaze (<a  href="https://digitalfire.com/recipe/g2926b">G2926B</a>). <a  href="https://digitalfire.com/glossary/opacifier">Opacifiers</a> affect not just <a  href="https://digitalfire.com/glossary/opacity">opacity</a> in glazes, but also liquid properties of <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a>. The length, surface character, opacity and color of these flows provide an excellent indication of how similar the two materials are. This is the <a  href="https://digitalfire.com/test/glfl">GLFL test</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">5% tin oxide in a transparent boron cone 6 glaze</h3>
+<br /><a href="https://digitalfire.com/picture/668"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/materials/fixbezyceb.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/668">click here</a> to see it.</p>
+<p>This is a 45:27:28 <a  href="https://digitalfire.com/material/806">Gerstley Borate</a>:Kaolin:Silica base on a dark firing <a  href="https://digitalfire.com/glossary/clay+body">clay body</a>. But <a  href="https://digitalfire.com/material/1642">tin oxide</a> will do that in almost any <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> clear glaze (use one that fits your clay body).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">What tin oxide does to this Floating Blue cone 6 glaze</h3>
+<br /><a href="https://digitalfire.com/picture/669"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/nyhporiraz.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/669">click here</a> to see it.</p>
+<p>These two are the same <a  href="https://digitalfire.com/material/32">Alberta Slip</a> glaze, <a  href="https://digitalfire.com/recipe/ga6-c">GA6-C</a>, except the one on the right has 4% tin added (to the base which is Alberta Slip 80, <a  href="https://digitalfire.com/material/351">Frit 3134</a> 20, <a  href="https://digitalfire.com/material/1204">Rutile</a> 4).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Difference between oxidation and reduction! GR10-C matte on Plainsman H443</h3>
+<br /><a href="https://digitalfire.com/picture/926"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/glossary/wodxaruhuj.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/926">click here</a> to see it.</p>
+<p>Same body, same glaze. Left is cone 10 oxidation, right is <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10 reduction</a>. What a difference! This is a Ravenscrag-Slip-based recipe on a high-fire iron <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a>. In reduction, the <a  href="https://digitalfire.com/material/874">iron oxide</a> in the body and glaze darkens (especially the body) and melts much more. The behavior of the <a  href="https://digitalfire.com/material/1642">tin oxide</a> <a  href="https://digitalfire.com/glossary/opacifier">opacifier</a> is also much different (having very little opacifying effect in reduction).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">How do you turn a transparent glaze into a white?</h3>
+<br /><a href="https://digitalfire.com/picture/815"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/wawlufofex.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/815">click here</a> to see it.</p>
+<p>Right: <a  href="https://digitalfire.com/material/1178">Ravenscrag</a> <a  href="https://digitalfire.com/recipe/gr6-a">GR6-A</a> transparent <a  href="https://digitalfire.com/glossary/base+glaze">base glaze</a>. Left: It has been opacified (turned opaque) by adding 10% <a  href="https://digitalfire.com/material/1724">Zircopax</a>. This <a  href="https://digitalfire.com/glossary/opacifier">opacification</a> <a  href="https://digitalfire.com/glossary/mechanism">mechanism</a> can be transplanted into almost any transparent glaze. It can also be employed in colored transparents, it will convert their coloration to a pastel shade, lightening it. <a  href="https://digitalfire.com/material/1722">Zircon</a> works well in oxidation and reduction. <a  href="https://digitalfire.com/material/1642">Tin oxide</a> is another <a  href="https://digitalfire.com/glossary/opacifier">opacifier</a>, it is much more expensive and only works in <a  href="https://digitalfire.com/glossary/oxidation+firing">oxidation firing</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A tin oxide addition improves the visual character of a cone 10R bamboo</h3>
+<br /><a href="https://digitalfire.com/picture/639"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/cecvywoxyl.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/639">click here</a> to see it.</p>
+<p>This is the <a  href="https://digitalfire.com/recipe/g2571a">G2571A</a> base <a  href="https://digitalfire.com/material/273">dolomite</a> matte recipe. The specimen on the left adds 4% tin and 1% <a  href="https://digitalfire.com/material/874">iron oxide</a>. The one on the right has 4% <a  href="https://digitalfire.com/material/1642">tin oxide</a> and 0.5% iron oxide.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Tin oxide can stop the rutile variegation effect dead in its tracks!</h3>
+<br /><a href="https://digitalfire.com/picture/724"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/xecfubyban.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/724">click here</a> to see it.</p>
+<p>This is <a  href="https://digitalfire.com/material/32">Alberta Slip</a> (GA6C) on the left. Added <a  href="https://digitalfire.com/glossary/frit">frit</a> is melting the Alberta Slip clay to it flows well at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> and added <a  href="https://digitalfire.com/material/1204">rutile</a> is creating the blue variegated effect (in the absence of expensive cobalt). However GA6D (right) is the same glaze with added <a  href="https://digitalfire.com/material/1642">Tin Oxide</a>. The tin completely immobilizes the <a  href="https://digitalfire.com/glossary/rutile+blue+glazes">rutile blue</a> effect, it brings out the color of the iron (from the rutile and the body).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Tin oxide stops crystallization in GA6-A Alberta Slip base glaze</h3>
+<br /><a href="https://digitalfire.com/picture/1711"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/nifrepyxat.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1711">click here</a> to see it.</p>
+<p>Both of these mugs were soaked 15 minutes at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> (<a  href="https://digitalfire.com/glossary/cone+6">2200F</a>), then cooled at 100F per hour to 2100F and soaked for 30 minutes and then cooled at 200F/hour to 1500F. This <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a> was done to eliminate glaze defects like <a  href="https://digitalfire.com/glossary/pinholing">pinholes</a> and <a  href="https://digitalfire.com/trouble/glaze+blisters">blisters</a>. Normally the <a  href="https://digitalfire.com/recipe/ga6-a">GA6-A</a> glaze crystallizes (devitrifies) heavily with this type of firing, but an addition of 1% <a  href="https://digitalfire.com/material/1642">tin oxide</a> to the one on the left has prevented this behavior.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Zircopax, tin oxide, titanium as opacifiers in four base glazes</h3>
+<br /><a alt="A grid of fired glaze test samples showing opacifiers perform in four glazes" href="https://digitalfire.com/picture/2588"><img class="flexleft50" alt="A grid of fired glaze test samples showing opacifiers perform in four glazes"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/yd6lm1rk8s.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2588">click here</a> to see it.</p>
+<p>The body is <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12876">M390</a>. Firing is the <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> <a  href="https://digitalfire.com/schedule/plc6ds">PLC6DS</a> schedule. Each horizontal row is a commonly-used <a  href="https://digitalfire.com/glossary/base+glaze">base glaze</a>. The top one is a <a  href="https://digitalfire.com/glossary/magnesia+matte">magnesia matte</a>, the next one down is a <a  href="https://digitalfire.com/glossary/calcia+matte">calcia matte</a>, row 3 is <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a> glossy and row 4 is <a  href="https://digitalfire.com/material/1178">Ravenscrag</a> Slip+frit. The two mattes behave very differently from each other with the additions of <a  href="https://digitalfire.com/glossary/opacifier">opacifier</a>. Thickly applying an opacified glaze will obviously affect visual character (column 4). <a  href="https://digitalfire.com/material/1642">Tin oxide</a> fires whiter than <a  href="https://digitalfire.com/material/1722">zircon</a> (e.g. <a  href="https://digitalfire.com/material/1724">Zircopax</a>). If you like the <a  href="https://digitalfire.com/recipe/g2934">G2934</a> recipe, consider the <a  href="https://digitalfire.com/recipe/g2934y">G2934Y</a> variant for better melting.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">4-7% tin oxide in a clear glaze - is this better than Zircopax?</h3>
+<br /><a title="Gazed test tiles have 4, 5, 6, 7% tin oxide opacifier" href="https://digitalfire.com/picture/2677"><img class="flexleft50" title="Gazed test tiles have 4, 5, 6, 7% tin oxide opacifier"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/tomav9dbb7.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2677">click here</a> to see it.</p>
+<p>These samples illustrate 4, 5, 6 & 7% <a  href="https://digitalfire.com/material/1642">tin oxide</a> added to a transparent. Tin is super expensive (<a  href="https://digitalfire.com/material/1724">Zircopax</a> costs five times less at time of writing). But consider some advantages of tin. It creates a whiter glaze. A tin-opacified glaze may only need to be half as thick as a zircon-opacified one. Only half the percentage is required in recipes. Tin does not reduce the glaze's <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> as much. On these samples, the higher percentages of tin seem to produce an even better glossy surface. Tin is less likely to cause <a  href="https://digitalfire.com/trouble/crawling">crawling</a>, a classic issue with high-zircon glazes (it impedes <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a>, that is what holds super thickly applied <a  href="https://digitalfire.com/glossary/majolica">majolica</a> glazes on the ware). Tin is the opposite; even though this recipe is high in strontium, and thus has a high <a  href="https://digitalfire.com/glossary/surface+tension">surface tension</a>, there is no indication of crawling with the tin addition. A final issue is <a  href="https://digitalfire.com/glossary/cutlery+marking">cutlery marking</a>, a common problem with zircon-opacified glazes. But not with tin oxide.<br />
+</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">5% tin oxide vs 9% Zircopax in a cone 6 transparent glaze</h3>
+<br /><a alt="Melt flow test comparing tin and zircon" href="https://digitalfire.com/picture/2812"><img class="flexleft50" alt="Melt flow test comparing tin and zircon"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/2dag54w6et.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2812">click here</a> to see it.</p>
+<p>The glaze is <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a>, our standard <a  href="https://digitalfire.com/glossary/base+glaze">base transparent</a>. The <a  href="https://digitalfire.com/material/1724">Zircopax</a> (<a  href="https://digitalfire.com/material/1722">zircon</a>) is Ultrox Z+. We made a range of test pieces and found these two versions remarkably similar. The <a  href="https://digitalfire.com/material/1642">tin oxide</a> version is a little bluer for some pieces, on others it was difficult to distinguish them. We even tried the two glazes on a jet-black <a  href="https://digitalfire.com/glossary/engobe">engobe</a>, the <a  href="https://digitalfire.com/glossary/opacifier">opacification</a> was similar there also. The cost? $8/kg for the tin version, $5.25 for the zircon version (current retail pricing in our area). But a critical issue is <a  href="https://digitalfire.com/trouble/crawling">crawling</a>, high zircon whites are notorious for this. We thus now use mix of tin and zircon (3% and 5%) for tableware. <a  href="https://digitalfire.com/glossary/sanitary+ware">Sanitaryware</a> industry would not likely be able to justify this expense so they are motivated to investigate other options (e.g. adjust <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> <a  href="https://digitalfire.com/glossary/surface+tension">surface tension</a> by <a  href="https://digitalfire.com/glossary/glaze+chemistry">glaze chemistry</a> or compensate by better <a  href="https://digitalfire.com/glossary/glaze+laydown">laydown</a> and dry adhesion).</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/106">http://mineral.galleries.com/minerals/oxides/cassiter/cassiter.htm</a>
+<br /><i>The Mineral Cassiterite</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/429">http://en.wikipedia.org/wiki/Tin_dioxide</a>
+<br /><i><a  href="https://digitalfire.com/material/1642">Tin Oxide</a> at Wikipedia</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/zirconium+dioxide">Zirconium Dioxide</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/zircopax">Zircopax</a>
+<br /><i>Zirconium silicate, its principle use in <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a> is as an <a  href="https://digitalfire.com/glossary/opacifier">opacifier</a> in glazes. It is an expensive material, but less so than <a  href="https://digitalfire.com/material/1642">tin oxide</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/zircopax+plus">Zircopax Plus</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/zircon">Zircon</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/gnm">Generic Material</a>
+<br /><i>Generic materials are those with no brand name. Normally they are theoretical, the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> portrays what a specimen would be if it had no contamination. Generic materials are helpful in educational situations where students need to study material theory (later they graduate to dealing with real world materials). They are also helpful where the chemistry of an actual material is not known. Often the accuracy of calculations is sufficient using generic materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/opa">Opacifier</a>
+<br /><i><a  href="https://digitalfire.com/glossary/opacifier">Opacifiers</a> are powders that turn <a  href="https://digitalfire.com/glossary/transparent+glazes">transparent glazes</a> opaque by various chemical and physical <a  href="https://digitalfire.com/glossary/mechanism">mechanisms</a> (and combinations of mechanisms).</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/opacifier">Opacifier</a>
+<br /><i>Glaze <a  href="https://digitalfire.com/glossary/opacity">opacity</a> refers to the degree to which it is opaque. <a  href="https://digitalfire.com/glossary/opacifier">Opacifiers</a> are powders added to transparent ceramic glazes to make them opaque.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/metal+oxides">Metal Oxides</a>
+<br /><i>Metal oxide powders are used in <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a> to produce color. But a life time is not enough to study the complexities of their use and potential in glazes, <a  href="https://digitalfire.com/glossary/engobe">engobes</a>, bodies and enamels.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/variegation">Variegation</a>
+<br /><i>Ceramic glaze <a  href="https://digitalfire.com/glossary/reactive+glazes">variegation</a> refers to its visual character. This is an overview of the various <a  href="https://digitalfire.com/glossary/mechanism">mechanisms</a> to make glazes dance with color, crystals, highlights, speckles, rivulets, etc.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="https://digitalfire.com/oxide/sno2">SnO2 - Tin Oxide, Stannic Oxide</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="https://digitalfire.com/mineral/cassiterite">Cassiterite</a>
+<br /><i><a  href="https://digitalfire.com/material/1642">Tin oxide</a> mineral.</i>
+</td>
+</tr>
+</tbody></table>
+<h3>Mechanisms</h3><table>
+<table class="table table-bordered"><tbody>
+<tr><th scope="row">Glaze Opacifier</th><td>As little as 4-7% can produce brilliant white, although it is more typical to use 8-10% for full opacity. However, be aware that even tiny amounts of chrome in the kiln will volatilize and combine with the tin to produce pink shades.</td></tr>
+<tr><th scope="row">Glaze Variegation</th><td>Tin reacts with iron in fluid glazes to produce variegated surfaces. A good example is the Albany Slip 85, Tin 4, Lithium 11 glaze for cone 6.</td></tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

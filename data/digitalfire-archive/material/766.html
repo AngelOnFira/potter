@@ -1,0 +1,5736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Frit</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="Frits are made by melting mixes of raw materials, quenching the melt in water, grinding the pebbles into a powder. Frits have chemistries raw materials cannot." name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item active"><a class="nav-link" href="list.html">Materials <span class="sr-only">(current)</span></a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=material" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container">
+<ul class="nav nav-tabs pt-1" id="myTab" role="tablist">
+<li class="nav-item">
+<a aria-controls="material" aria-selected="true" class="nav-link active" data-toggle="tab" href="#material" id="material-tab" role="tab">Materials for Ceramics</a>
+</li>
+</ul>
+<div class="tab-content mb-3" id="myTabContent" style="border-right:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #ddd; padding:10px;">
+<div aria-labelledby="material-tab" class="tab-pane fade show active" id="material" role="tabpanel">
+<a href="list_1-9.html">1-9</a> | <a href="list_A.html">A</a> | <a href="list_B.html">B</a> | <a href="list_C.html">C</a> | <a href="list_D.html">D</a> | <a href="list_E.html">E</a> | <a href="list_F.html">F</a> | <a href="list_Frits.html">Frits</a> | <a href="list_G.html">G</a> | <a href="list_H.html">H</a> | <a href="list_I.html">I</a> | <a href="list_J.html">J</a> | <a href="list_K.html">K</a> | <a href="list_L.html">L</a> | <a href="list_M.html">M</a> | <a href="list_N.html">N</a> | <a href="list_O.html">O</a> | <a href="list_P.html">P</a> | <a href="list_Q.html">Q</a> | <a href="list_R.html">R</a> | <a href="list_S.html">S</a> | <a href="list_T.html">T</a> | <a href="list_U.html">U</a> | <a href="list_V.html">V</a> | <a href="list_W.html">W</a> | <a href="list_X.html">X</a> | <a href="list_Y.html">Y</a> | <a href="list_Z.html">Z</a><br/>
+<nobr></nobr>
+</div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Frit</h1>
+<p><b>Alternate Names</b>: Ceramic Frits</p>
+<p><b>Description</b>: Frit master</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/oxide.html">Oxide</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/analysis.html">Analysis</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Formula</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Tolerance</a></th>
+</tr></thead><tbody>
+<h4>Notes</h4><p><a href="../glossary/frit.html">Frits</a> are made by melting mixes of raw materials in special kilns, then pouring the molten mix into water and finally grinding it into a fine powder. <a href="../glossary/frit.html">Frit</a> suppliers refer to the use of their frits in 'partially <a href="../glossary/frit.html">fritted</a>' and 'all-fritted' glazes. The latter generally refers to glazes with 90% or more frit, the former to 90%.<br/>
+<br/>
+Although the fritting process is expensive there are many advantages to using frits in glazes, enamels, etc. The frit topic in the glossary section itemizes the many reasons why frits are so useful. Many things that are impossible with raw materials can be done with frits (the converse can also be true), demonstrating that we must consider more than just <a href="../glossary/glaze+chemistry.html">chemistry</a> when evaluating why glazes fire the way they do.<br/>
+<br/>
+The Frit market is driven by large customers (especially tile) who use recipes given to them by the prepared glaze industry, the engineers at these companies work at the recipe level and often do not even know all the details of the chemistry of the frits they use. The availability of smaller quantities of frits is generally determined by what industry is using. The frit market changes with time. Frit companies make many more products than what their literature or websites display, these are legacy formulations or custom mixes.<br/>
+<br/>
+Some frit companies provide the chemistry of their products, others did in the past but do not do so now. Some provide approximate analyses. In the eyes of someone interested in the chemistry of the glazes they make, this practice or non-disclosure partially defeats a key purpose of using frits, namely, having control of chemistry. In fact, the lack of chemistry is a key disadvantage of using certain brand names. For example, the frit manufacturer might recommend substituting part of one frit for another in a recipe to solve a specific problem (like <a href="../trouble/glaze+crazing.html">crazing</a>). The problem with this is that the new frit might have a chemistry that is hostile to the pigments being used, the degree of gloss, the hardness, resistance to devritification, etc. Without the chemistry, the new frit can be a bit of a pandora's box. The lack of frit chemistry information works against the general trend of using ceramic calculations to take control of glaze properties. Another factor is the general ignorance of how to use ceramic chemistry software to manipulate recipes to target or maintain a specific chemistry. But this is changing and we are sure that pressure will come to bear on manufacturers as expertise improves. <br/>
+<br/>
+Admittedly, each manufacturer makes specialized frits (i.e. strontium, lithium compounds) that they invest heavily in R&amp;D to develop. Keeping the makeup of these a secret protects against the formulations being copied by other manufacturers. Even though powdered samples of these frits could be analyzed by competitors to deduce their approximate makeup, the tightly controlled chemistry required to achieve the intended effect may not be competely evident. Thus the actual production of a duplicate can be a more elusive goal than it at first seems.<br/>
+<br/>
+One other factor to consider is the old principle: 'You get what you pay for'. Two frits may appear equal, being pure white powders having a given chemistry. Like any other industry, some companies, especially in developing countries, take shortcuts that affect their adherence to the stated chemistry, the homogeneity of the mix, solubility, particle size or the presence of impurities and unmelted particles.<br/>
+<br/>
+<a href="../oxide/bao.html">BaO</a>, <a href="../oxide/sro.html">SrO</a>, <a href="../oxide/li2o.html">Li<sub>2</sub>O</a>, <a href="../oxide/zno.html">ZnO</a> special purpose frits are commonly used in industry (in middle and <a href="../glossary/low+temperature+glaze.html">low-temperature glazes</a>) however potters focus on glazes that employ only the typical <a href="../picture/1775.html">KNaO</a>, <a href="../oxide/cao.html">CaO</a> and <a href="../oxide/mgo.html">MgO</a>. This is because they find the raw materials that source the former are either toxic, troublesome to use or cause firing faults. While they are more expensive than typical <a href="../glossary/borate.html">boron</a> frits, using them you can produce glazes with better fit, melting, surface, brightness, color, clarity and with fewer firing faults.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Two glazes of the same chemistry: 
+</h3>
+<h4 style="color:#888888; margin-top:0px;">But supplied by different sets of materials</h4>
+<br/><a href="../picture/1803.html"><img class="flexleft50" loading="lazy" src="../media/images/avhhmvxtip.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1803.html">click here</a> to see it.</p>
+<p>These two specimens are the same <a href="../glossary/terra+cotta.html">terracotta</a> clay fired at cone 03 in the same kiln. The glaze on the left combines 30% <a href="../glossary/frit.html">frit</a> with five other materials. The one on the right mixes 90% frit with one other material (<a href="925.html">kaolin</a>). <a href="1660.html">Ulexite</a> is the main source of <a href="../glossary/borate.html">boron</a> in #1, it decomposes during firing, expelling 30% of its weight as gases, mostly <a href="../oxide/co2.html">CO2</a>, forming <a href="../glossary/glaze+bubbles.html">micro-bubbles</a>. Each of the six materials in that recipe has its own melting characteristics; their interaction creates a non-homogeneous glass containing <a href="../glossary/phase+separation.html">phase separations</a> (discontinuities) that affect the fired surface. In the <a href="../glossary/frit.html">fritted</a> glaze, by contrast, all the particles soften and melt in unison and produce no gas. Notice that it has also interacted with the body, fluxing and darkening it (thus forming a better <a href="../glossary/body+glaze+interface.html">interface</a>). And it has passed (and healed) more of the bubbles from the body.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Frits melt so much better than raw materials</h3>
+<br/><a alt="Frits, talc, feldspar melting" href="../picture/1115.html"><img alt="Frits, talc, feldspar melting" class="flexleft50" loading="lazy" src="../media/images/fuxrucugaz.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1115.html">click here</a> to see it.</p>
+<p><a href="310.html">Feldspar</a> and <a href="1620.html">talc</a> are both <a href="../glossary/flux.html">flux</a> sources (glaze melters), they are common in all types of <a href="../glossary/stoneware.html">stoneware</a> glazes. But their fluxing <a href="../glossary/ceramic+oxide.html">oxides</a>, <a href="../oxide/na2o.html">Na<sub>2</sub>O</a> and <a href="../oxide/mgo.html">MgO</a>, are locked in crystal structures that neither melt early or supply other oxides with which they like to interact. The pure feldspar is only beginning to soften at <a href="../glossary/cone+6.html">cone 6</a>. Yet the soda <a href="../glossary/frit.html">frit</a> is already very active at <a href="../glossary/low+temperature+glaze.html">cone 06</a>! As high as cone 6, talc (the best source of MgO) shows no signs of melting activity at all. But a high-MgO frit is melting beautifully at cone 06! The <a href="../glossary/frit.html">frits</a> progressively soften, starting from low temperatures, both because they have been premelted and have significant <a href="../glossary/borate.html">boron</a> content. In both, the Na<sub>2</sub>O and MgO are free to impose themselves as fluxes, actively participating in the softening process.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">These common Ferro frits have distinct uses in traditional ceramics</h3>
+<br/><a alt="Five melt frit balls" href="../picture/1108.html"><img alt="Five melt frit balls" class="flexleft50" loading="lazy" src="../media/images/kutrupopak.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1108.html">click here</a> to see it.</p>
+<p>I used Veegum to form 10 gram <a href="../test/gbmf.html">GBMF test</a> balls and fired them at cone 08 (1700F). <a href="../glossary/frit.html">Frits</a> melt really well, they do have an <a href="../glossary/loi.html">LOI</a>  like raw materials. These contain <a href="../glossary/borate.html">boron</a> (<a href="../oxide/b2o3.html">B<sub>2</sub>O<sub>3</sub></a>), it is a <a href="../glossary/co-efficient+of+thermal+expansion.html">low expansion</a> super-melter that raw materials don’t have. <a href="350.html">Frit 3124</a> (glossy) and 3195 (silky matte) are balanced-chemistry bases (just add 10-15% <a href="925.html">kaolin</a> for a <a href="../glossary/low+temperature+glaze.html">cone 04</a> glaze, or more silica+kaolin to go higher). Consider <a href="349.html">Frit 3110</a> a man-made low-Al<sub>2</sub>O<sub>3</sub> super <a href="310.html">feldspar</a>. Its high-sodium makes it high <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a>. It works really well in bodies and is great to make glazes that <a href="../trouble/glaze+crazing.html">craze</a>. The high-MgO <a href="369.html">Frit 3249</a> (made for the abrasives industry) has a very-low expansion, it is great for fixing <a href="../trouble/glaze+crazing.html">crazing</a> glazes. <a href="351.html">Frit 3134</a> is similar to 3124 but without <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a>. Use it where the glaze does not need more Al<sub>2</sub>O<sub>3</sub> (e.g. already has enough clay). It is no accident that these are used by potters in North America, they complement each other well (equivalents are made around the world by others). The <a href="806.html">Gerstley Borate</a> is a natural source of boron (with issues frits do not have).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Frits work much better in glaze chemistry</h3>
+<br/><a href="../picture/295.html"><img class="flexleft50" loading="lazy" src="../media/images/gotpydimif.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/295.html">click here</a> to see it.</p>
+<p>The same glaze with <a href="../oxide/mgo.html">MgO</a> sourced from a <a href="../glossary/frit.html">frit</a> (left) and from <a href="1620.html">talc</a> (right). The glaze is 1215U. Notice how much more the <a href="../glossary/frit.html">fritted</a> one melts, even though they have the same <a href="../glossary/glaze+chemistry.html">chemistry</a>. <a href="../glossary/frit.html">Frits</a> are predictable when using <a href="../glossary/glaze+chemistry.html">glaze chemistry</a>, it is more absolute and less relative. Mineral sources of <a href="../glossary/ceramic+oxide.html">oxides</a> impose their own melting patterns and when one is substituted for another to supply an oxide in a glaze a different system with its own relative chemistry is entered. But when changing form one frit to another to supply an oxide or set of oxides, the melting properties stay within the same system and are predictable.<br/>
+</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">LOI horse race with surprising winners</h3>
+<br/><a alt="A chart showing weight-loss vs firing temperature for common ceramic materials" href="../picture/1114.html" title="A chart showing weight-loss vs firing temperature for common ceramic materials"><img alt="A chart showing weight-loss vs firing temperature for common ceramic materials" class="flexleft50" loading="lazy" src="../media/images/r7o6o9pqpg.jpg" title="A chart showing weight-loss vs firing temperature for common ceramic materials"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1114.html">click here</a> to see it.</p>
+<p>This chart compares the decompositional off-gassing (% weight Loss on Ignition) behavior of six glaze materials as they are heated through the range 500-1700F. It is amazing how much weight some can lose on firing - for example, 100 grams of <a href="173.html">calcium carbonate</a> generates 45 grams of <a href="../oxide/co2.html">CO2</a>! This chart is a reminder that some late <a href="../glossary/loi.html">gassers</a> overlap early melters. That is a problem. The <a href="../glossary/loi.html">LOI</a> of these materials can affect glazes (causing bubbles, <a href="../trouble/glaze+blisters.html">blisters</a>, <a href="../glossary/pinholing.html">pinholes</a>, <a href="../trouble/crawling.html">crawling</a>). <a href="1620.html">Talc</a> is an example: It is not finished gassing until 1650F, yet many <a href="../glossary/frit.html">fritted</a> glazes have already begun melting by then. Even <a href="806.html">Gerstley Borate</a>, a raw material, begins to melt while talc is barely finished gassing. <a href="273.html">Dolomite</a> and calcium carbonate Other materials also create gases as they <a href="../glossary/decomposition.html">decompose</a> during glaze melting (e.g. clays, carbonates, dioxides).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Frit shards from the smelting furnace</h3>
+<br/><a href="../picture/3198.html"><img class="flexleft50" loading="lazy" src="../media/images/sjbfb1xi2x.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3198.html">click here</a> to see it.</p>
+<p><a href="../glossary/frit.html">Frits</a> are made by melting mixes of raw materials in a special furnace, then pouring the molten mix into water. That produces these shards of glass. These are ground to the white powder I use to make glazes.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fl-42.html">Fusion Frit FL-42</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3211.html">Ferro Frit 3211</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="blyth+frit+3104.html">Blyth Frit 3104</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+1081.html">Ferro Frit 1081</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="bps+calcium+borate+frit.html">BPS Calcium Borate Frit</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="bps+high+alkaline+frit.html">BPS High Alkaline Frit</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="bps+low+expansion+frit.html">BPS Low Expansion Frit</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="bps+standard+borax+frit.html">BPS Standard Borax Frit</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="matthey+calcium+borate+frit.html">Matthey Calcium Borate Frit</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+13.html">Hommel Frit 13</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+14.html">Hommel Frit 14</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+160.html">Hommel Frit 160</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+1817.html">Frit 1817</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+1818.html">Frit 1818</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="matthey+frit+20126.html">Matthey Frit 20126</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="matthey+frit+20306g.html">Matthey Frit 20306G</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="matthey+frit+21065g.html">Matthey Frit 21065g</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+a+2120.html">Frit A 2120</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+22.html">Hommel Frit 22</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potclays+frit+2261.html">Potclays Frit 2261</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potclays+frit+2263.html">Potclays Frit 2263</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potclays+frit+2279.html">Potclays Frit 2279</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+24.html">Hommel Frit 24</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+240.html">Hommel Frit 240</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+242.html">Hommel Frit 242</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+266.html">Hommel Frit 266</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+267.html">Hommel Frit 267</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+268-d.html">Frit 268-D</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+282-b.html">Frit 282-b</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+285.html">Hommel Frit 285</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+288-b.html">Frit 288-B</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="james+kent+frit+2917x0.html">James Kent Frit 2917X0</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+2gf176d.html">Hommel Frit 2GF176D</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3110.html">Ferro Frit 3110</a>
+<br/><i>High sodium, high <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> low <a href="../glossary/boron+frit.html">boron frit</a>. A super-feldspar in <a href="../glossary/clay+body.html">clay bodies</a>. Melts a very low temperatures.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3134.html">Ferro Frit 3134</a>
+<br/><i>A <a href="../glossary/frit.html">frit</a> with 23% <a href="../oxide/b2o3.html">B2O3</a>. The most common of <a href="../glossary/frit.html">frits</a> used in pottery in North America. Around the world, other companies make frits of equivalent <a href="../glossary/glaze+chemistry.html">chemistry</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-316.html">Pemco Frit Pb-316</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3185.html">Ferro Frit 3185</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3191.html">Ferro Frit 3191</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3193.html">Ferro Frit 3193</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3221.html">Ferro Frit 3221</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3223.html">Ferro Frit 3223</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3224.html">Ferro Frit 3224</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3225.html">Ferro Frit 3225</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3226.html">Ferro Frit 3226</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3227.html">Ferro Frit 3227</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3230.html">Ferro Frit 3230</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3234.html">Ferro Frit 3234</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3240.html">Ferro Frit 3240</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3247.html">Ferro Frit 3247</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3248.html">Ferro Frit 3248</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3249.html">Ferro Frit 3249</a>
+<br/><i>A magnesia <a href="../glossary/borosilicate.html">borosilicate</a> <a href="../glossary/frit.html">frit</a>. Very low <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> and melting point. Invaluable in pottery to increase the <a href="../oxide/mgo.html">MgO</a> in glazes and thereby prevent <a href="../trouble/glaze+crazing.html">crazing</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3264.html">Ferro Frit 3264</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3269.html">Ferro Frit 3269</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3270.html">Ferro Frit 3270</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+4171.html">Ferro Frit 4171</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3275.html">Ferro Frit 3275</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3276.html">Ferro Frit 3276</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3278.html">Ferro Frit 3278</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3280.html">Ferro Frit 3280</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3281.html">Ferro Frit 3281</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3284.html">Ferro Frit 3284</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3286.html">Ferro Frit 3286</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3288.html">Ferro Frit 3288</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3291.html">Ferro Frit 3291</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3292.html">Ferro Frit 3292</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3293.html">Ferro Frit 3293</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+33.html">Hommel Frit 33</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3300.html">Ferro Frit 3300</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3302-d.html">Ferro Frit 3302-D</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3304.html">Ferro Frit 3304</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3327.html">Ferro Frit 3327</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3336.html">Ferro Frit 3336</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3377.html">Ferro Frit 3377</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3379.html">Ferro Frit 3379</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3386.html">Ferro Frit 3386</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3396.html">Ferro Frit 3396</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3403.html">Ferro Frit 3403</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3417.html">Ferro Frit 3417</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3419.html">Ferro Frit 3419</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3435.html">Ferro Frit 3435</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+344.html">Hommel Frit 344</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3447.html">Ferro Frit 3447</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3453.html">Ferro Frit 3453</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3454.html">Ferro Frit 3454</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3457.html">Ferro Frit 3457</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3458.html">Ferro Frit 3458</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3463.html">Ferro Frit 3463</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3465.html">Ferro Frit 3465</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3466.html">Ferro Frit 3466</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3467.html">Ferro Frit 3467</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3470.html">Ferro Frit 3470</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3471.html">Ferro Frit 3471</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3476.html">Ferro Frit 3476</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3481.html">Ferro Frit 3481</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3482.html">Ferro Frit 3482</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3485.html">Ferro Frit 3485</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3487.html">Ferro Frit 3487</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3489.html">Ferro Frit 3489</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+349.html">Ferro Frit 349</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3490.html">Ferro Frit 3490</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3493.html">Ferro Frit 3493</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3496.html">Ferro Frit 3496</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3497.html">Ferro Frit 3497</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3498.html">Ferro Frit 3498</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3509.html">Ferro Frit 3509</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3516.html">Ferro Frit 3516</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3519.html">Ferro Frit 3519</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3548.html">Ferro Frit 3548</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3552.html">Ferro Frit 3552</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3560.html">Ferro Frit 3560</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3563.html">Ferro Frit 3563</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3565.html">Ferro Frit 3565</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3576.html">Ferro Frit 3576</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3600.html">Ferro Frit 3600</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3602.html">Ferro Frit 3602</a>
+<br/><i>A <a href="645.html">lead bisilicate</a> <a href="../glossary/frit.html">frit</a> with 2.5% alumina oxide.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3626.html">Ferro Frit 3626</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+373.html">Hommel Frit 373</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3814.html">Ferro Frit 3814</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3819.html">Ferro Frit 3819</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3820.html">Ferro Frit 3820</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3824.html">Ferro Frit 3824</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3831.html">Ferro Frit 3831</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3833.html">Ferro Frit 3833</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3834.html">Ferro Frit 3834</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3838.html">Ferro Frit 3838</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3846.html">Ferro Frit 3846</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3851.html">Ferro Frit 3851</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+389.html">Hommel Frit 389</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+3gf61a.html">Hommel Frit 3GF61A</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+4064.html">Ferro Frit 4064</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+4124.html">Ferro Frit 4124</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+4346.html">Ferro Frit 4346</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+4364.html">Ferro Frit 4364</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+437.html">Hommel Frit 437</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+441.html">Hommel Frit 441</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+442.html">Hommel Frit 442</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+448.html">Hommel Frit 448</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+450.html">Hommel Frit 450</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+45301.html">Frit 45301</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+4616.html">Ferro Frit 4616</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+4712.html">Ferro Frit 4712</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+493.html">Hommel Frit 493</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+494.html">Hommel Frit 494</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+497.html">Hommel Frit 497</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+5151.html">Frit 5151</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+529.html">Hommel Frit 529</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+5301.html">Ferro Frit 5301</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+5325.html">Fusion Frit 5325</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+550.html">Hommel Frit 550</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+584.html">Hommel Frit 584</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+595.html">Hommel Frit 595</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+630.html">Hommel Frit 630</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+642.html">Hommel Frit 642</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+698.html">Hommel Frit 698</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+71.html">Hommel Frit 71</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-83.html">Pemco Frit P-83</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+90.html">Hommel Frit 90</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+938.html">Ferro Frit 938</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ceraflux.html">Ceraflux</a>
+<br/><i>An alumina <a href="645.html">lead bisilicate</a> from Hammond Lead Products in Indiana. The data sheet claims it is safe and insoluble in stomach acid.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cc-233.html">Ferro Frit CC-233</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cc-250.html">Ferro Frit CC-250</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cc-251.html">Ferro Frit CC-251</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cc-252.html">Ferro Frit CC-252</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cc-253.html">Ferro Frit CC-253</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cc-254.html">Ferro Frit CC-254</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cc-257.html">Ferro Frit CC-257</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cc-257-2.html">Ferro Frit CC-257-2</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cc-263.html">Ferro Frit CC-263</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cc-265.html">Ferro Frit CC-265</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cc-266.html">Ferro Frit CC-266</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cc-270.html">Ferro Frit CC-270</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cc-277.html">Ferro Frit CC-277</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cc-657.html">Ferro Frit CC-657</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cm-943.html">Ferro Frit CM-943</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cm-944.html">Ferro Frit CM-944</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cz-105.html">Ferro Frit CZ-105</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="james+kent+frit+d9991.html">James Kent Frit D9991</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="james+kent+frit+dr1327.html">James Kent Frit DR1327</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="james+kent+frit+dr1328.html">James Kent Frit DR1328</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-10.html">Fusion Frit F-10</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-102.html">Fusion Frit F-102</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-105.html">Fusion Frit F-105</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-12.html">Fusion Frit F-12</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-125.html">Fusion Frit F-125</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-13.html">Fusion Frit F-13</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-15.html">Fusion Frit F-15</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-175.html">Fusion Frit F-175</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-18.html">Fusion Frit F-18</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-19.html">Fusion Frit F-19</a>
+<br/><i>A commonly available calcium <a href="../glossary/borosilicate.html">borosilicate</a> <a href="../glossary/frit.html">frit</a> having a similar <a href="../glossary/glaze+chemistry.html">chemistry</a> to Ferro <a href="350.html">Frit 3124</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-215.html">Fusion Frit F-215</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-237.html">Fusion Frit F-237</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-245.html">Fusion Frit F-245</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-280.html">Fusion Frit F-280</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-300.html">Fusion Frit F-300</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-304.html">Fusion Frit F-304</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-309.html">Fusion Frit F-309</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-310.html">Fusion Frit F-310</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-34.html">Fusion Frit F-34</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-367.html">Fusion Frit F-367</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-38.html">Fusion Frit F-38</a>
+<br/><i>High strontium low alumina <a href="../glossary/borosilicate.html">borosilicate</a> <a href="../glossary/flux.html">flux</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-380.html">Fusion Frit F-380</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-390.html">Fusion Frit F-390</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-395.html">Fusion Frit F-395</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-403.html">Fusion Frit F-403</a>
+<br/><i>For ceramic glazes this is a higher quality and safer source of <a href="../oxide/bao.html">BaO</a> than <a href="86.html">barium carbonate</a>. It contains 35% BaO.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-43.html">Fusion Frit F-43</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-49.html">Fusion Frit F-49</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-492.html">Fusion Frit F-492</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-493.html">Fusion Frit F-493</a>
+<br/><i>This <a href="../glossary/frit.html">frit</a> is very valuable for one simple reason: It is a higher-quality source of <a href="../oxide/li2o.html">Li2O</a> for glazes than raw <a href="975.html">lithium carbonate</a>. It contains 11% Li2O.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-495.html">Fusion Frit F-495</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-496.html">Fusion Frit F-496</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-499.html">Fusion Frit F-499</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-506.html">Fusion Frit F-506</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-520b.html">Fusion Frit F-520B</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-541.html">Fusion Frit F-541</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-60.html">Fusion Frit F-60</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-69.html">Fusion Frit F-69</a>
+<br/><i>A magnesia <a href="../glossary/borosilicate.html">borosilicate</a> <a href="../glossary/frit.html">frit</a> having very low <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> and melting point. Commonly used as a substitute for Ferro <a href="369.html">frit 3249</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-71.html">Fusion Frit F-71</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-74.html">Fusion Frit F-74</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-75.html">Fusion Frit F-75</a>
+<br/><i>High sodium, high <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> low <a href="../glossary/boron+frit.html">boron frit</a>. An equivalent of Ferro <a href="349.html">Frit 3110</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-76.html">Fusion Frit F-76</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-77.html">Fusion Frit F-77</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-79.html">Fusion Frit F-79</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-95.html">Fusion Frit F-95</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="james+kent+frit+f12.html">James Kent Frit F12</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fz-16.html">Fusion Frit FZ-16</a>
+<br/><i>The champion in our <a href="../glossary/frit.html">frit</a> melt-off competitition. This frit showcases the amazing fluxing power of <a href="../glossary/borate.html">boron</a> and zinc working together. It is 15.5% <a href="../oxide/zno.html">ZnO</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+fb-145-g.html">Ferro Frit FB-145-G</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+fb-149b.html">Ferro Frit FB-149B</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+fb-179-g.html">Ferro Frit FB-179-G</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+fb-250-l.html">Ferro Frit FB-250-L</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+fb-258-a.html">Ferro Frit FB-258-A</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+fb-276-p.html">Ferro Frit FB-276-P</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+fb-280-l.html">Ferro Frit FB-280-L</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+fb-282-b.html">Ferro Frit FB-282-B</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+fb-282-o.html">Ferro Frit FB-282-O</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+fb-284-m.html">Ferro Frit FB-284-M</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+fb-285-d.html">Ferro Frit FB-285-D</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+fb-288-d.html">Ferro Frit FB-288-D</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fl-1.html">Fusion Frit FL-1</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fl-17.html">Fusion Frit FL-17</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fl-28.html">Fusion Frit FL-28</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fl-308.html">Fusion Frit FL-308</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fl-31.html">Fusion Frit FL-31</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fl-4.html">Fusion Frit FL-4</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fl-43.html">Fusion Frit FL-43</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fl-46.html">Fusion Frit FL-46</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fl-55.html">Fusion Frit FL-55</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+fr-170a.html">Frit FR-170A</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fz-10.html">Fusion Frit FZ-10</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fz-14.html">Fusion Frit FZ-14</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fz-164.html">Fusion Frit FZ-164</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fz-22.html">Fusion Frit FZ-22</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fz-23.html">Fusion Frit FZ-23</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fz-24.html">Fusion Frit FZ-24</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fz-241.html">Fusion Frit FZ-241</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fz-276.html">Fusion Frit FZ-276</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fz-284.html">Fusion Frit FZ-284</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fz-30.html">Fusion Frit FZ-30</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fz-35.html">Fusion Frit FZ-35</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fz-376.html">Fusion Frit FZ-376</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fz-376a.html">Fusion Frit FZ-376A</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fz-390.html">Fusion Frit FZ-390</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fz-430.html">Fusion Frit FZ-430</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fz-557.html">Fusion Frit FZ-557</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fz-6.html">Fusion Frit FZ-6</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fz-84.html">Fusion Frit FZ-84</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fz-9.html">Fusion Frit FZ-9</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+g-23.html">Frit G-23</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+g-24.html">Frit G-24</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+g-26.html">Hommel Frit G-26</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-100.html">General Frit GF-100</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-103.html">General Frit GF-103</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-104.html">General Frit GF-104</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-106.html">General Frit GF-106</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-109.html">General Frit GF-109</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-110.html">General Frit GF-110</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-111.html">General Frit GF-111</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-112.html">General Frit GF-112</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-113.html">General Frit GF-113</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-115.html">General Frit GF-115</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-118.html">General Frit GF-118</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-125.html">General Frit GF-125</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-126.html">General Frit GF-126</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-127.html">General Frit GF-127</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-129.html">General Frit GF-129</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-134.html">General Frit GF-134</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-136.html">General Frit GF-136</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-14.html">General Frit GF-14</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-140.html">General Frit GF-140</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-141.html">General Frit GF-141</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-143.html">General Frit GF-143</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-144.html">General Frit GF-144</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-146.html">General Frit GF-146</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-15.html">General Frit GF-15</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-150.html">General Frit GF-150</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-154.html">General Frit GF-154</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-156.html">General Frit GF-156</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-160.html">General Frit GF-160</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-18.html">General Frit GF-18</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-20.html">General Frit GF-20</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-25.html">General Frit GF-25</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-27.html">General Frit GF-27</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-42.html">General Frit GF-42</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-8.html">General Frit GF-8</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-9.html">General Frit GF-9</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+k-3.html">Hommel Frit K-3</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+4110.html">Ferro Frit 4110</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="lead+bisilicate+frit.html">Lead Bisilicate Frit</a>
+<br/><i>A standard <a href="../glossary/frit.html">frit</a> of 1 molar part of <a href="../oxide/pbo.html">PbO</a> and 2 of <a href="../oxide/sio2.html">SiO2</a>. It is considered stable and non-leachable.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+lp891.html">Frit LP891</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="johnson+matthey+frit+623.html">Johnson Matthey Frit 623</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+mok+1.html">Frit MOK 1</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="james+kent+frit+n4129.html">James Kent Frit N4129</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-1000.html">Pemco Frit P-1000</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-1090.html">Pemco Frit P-1090</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-1225.html">Pemco Frit P-1225</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-1409.html">Pemco Frit P-1409</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-1413.html">Pemco Frit P-1413</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-1701.html">Pemco Frit P-1701</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-1733.html">Pemco Frit P-1733</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-1836.html">Pemco Frit P-1836</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-1855.html">Pemco Frit P-1855</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-1a43.html">Pemco Frit P-1A43</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-1a44.html">Pemco Frit P-1A44</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-1f07.html">Pemco Frit P-1F07</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-1j81.html">Pemco Frit P-1J81</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-1n72.html">Pemco Frit P-1N72</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-1r63.html">Pemco Frit P-1R63</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-1t27.html">Pemco Frit P-1T27</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-1v04.html">Pemco Frit P-1V04</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-1v31.html">Pemco Frit P-1V31</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-2201.html">Pemco Frit P-2201</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-238.html">Pemco Frit P-238</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-239.html">Pemco Frit P-239</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-283.html">Pemco Frit P-283</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-2d27.html">Pemco Frit P-2D27</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-2g63.html">Pemco Frit P-2G63</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-2j57.html">Pemco Frit P-2J57</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-2v25.html">Pemco Frit P-2V25</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-311.html">Pemco Frit P-311</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-318.html">Pemco Frit P-318</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-3e12.html">Pemco Frit P-3E12</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-3k51.html">Pemco Frit P-3K51</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-3t928.html">Pemco Frit P-3T928</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-404.html">Pemco Frit P-404</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-4d79.html">Pemco Frit P-4D79</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-4k05.html">Pemco Frit P-4K05</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-4k47.html">Pemco Frit P-4K47</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-4n57.html">Pemco Frit P-4N57</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-54.html">Pemco Frit P-54</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-545.html">Pemco Frit Pb-545</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-586.html">Pemco Frit P-586</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-609.html">Pemco Frit P-609</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-626.html">Pemco Frit P-626</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-64.html">Pemco Frit P-64</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-658.html">Pemco Frit P-658</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-67.html">Pemco Frit P-67</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-688.html">Pemco Frit P-688</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-760.html">Pemco Frit P-760</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-786.html">Pemco Frit P-786</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-802.html">Pemco Frit P-802</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-827.html">Pemco Frit P-827</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-830.html">Pemco Frit P-830</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-878.html">Pemco Frit P-878</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-926.html">Pemco Frit P-926</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-930.html">Pemco Frit P-930</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-941.html">Pemco Frit P-941</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-991.html">Pemco Frit P-991</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potterycrafts+frit+p2950.html">PotteryCrafts Frit P2950</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potterycrafts+frit+p2952.html">PotteryCrafts Frit P2952</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potterycrafts+frit+p2953.html">PotteryCrafts Frit P2953</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potterycrafts+frit+p2954.html">PotteryCrafts Frit P2954</a>
+<br/><i>A calcium <a href="../glossary/borate.html">borate</a> <a href="../glossary/frit.html">frit</a> (with extremely high <a href="../glossary/borate.html">boron</a>).</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potterycrafts+frit+p2955.html">PotteryCrafts Frit P2955</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potterycrafts+frit+p2960.html">PotteryCrafts Frit P2960</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potterycrafts+frit+p2962.html">PotteryCrafts Frit P2962</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-1038.html">Pemco Frit Pb-1038</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-1041.html">Pemco Frit Pb-1041</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-106.html">Pemco Frit Pb-106</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-1114.html">Pemco Frit Pb-1114</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-113.html">Pemco Frit Pb-113</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-1151.html">Pemco Frit Pb-1151</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-1241.html">Pemco Frit Pb-1241</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-1279.html">Pemco Frit Pb-1279</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-1307.html">Pemco Frit Pb-1307</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-1325.html">Pemco Frit Pb-1325</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-1421.html">Pemco Frit Pb-1421</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-1492.html">Pemco Frit Pb-1492</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-1951.html">Pemco Frit Pb-1951</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-197.html">Pemco Frit Pb-197</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-1b20.html">Pemco Frit Pb-1B20</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-1k75.html">Pemco Frit Pb-1K75</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-1m90.html">Pemco Frit Pb-1M90</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-1n84.html">Pemco Frit Pb-1N84</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-1n86.html">Pemco Frit Pb-1N86</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-1r40.html">Pemco Frit Pb-1R40</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-1r99.html">Pemco Frit Pb-1R99</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-1v48.html">Pemco Frit PB-1V48</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-2c52.html">Pemco Frit Pb-2C52</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-2f35.html">Pemco Frit Pb-2F35</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-2g30.html">Pemco Frit Pb-2G30</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-2v93.html">Pemco Frit Pb-2V93</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-349.html">Pemco Frit Pb-349</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-41.html">Pemco Frit Pb-41</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-461.html">Pemco Frit Pb-461</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-589.html">Pemco Frit Pb-589</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-63.html">Pemco Frit Pb-63</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-674.html">Pemco Frit Pb-674</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-700.html">Pemco Frit Pb-700</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-704.html">Pemco Frit Pb-704</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-716.html">Pemco Frit Pb-716</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-723.html">Pemco Frit Pb-723</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-740.html">Pemco Frit Pb-740</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-742.html">Pemco Frit Pb-742</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-83.html">Pemco Frit Pb-83</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-906.html">Pemco Frit Pb-906</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-943.html">Pemco Frit Pb-943</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+pc-4c-74.html">Frit PC-4C-74</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="james+kent+frit+sn121.html">James Kent Frit SN121</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="james+kent+frit+sn70.html">James Kent Frit SN70</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="james+kent+frit+sn72.html">James Kent Frit SN72</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="james+kent+frit+sn97.html">James Kent Frit SN97</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+6004.html">Frit 6004</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+xf-150.html">Frit XF-150</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+1214.html">Frit 1214</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="roudnice+frit+02291.html">Roudnice Frit 02291</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+1213.html">Frit 1213</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+1212.html">Ferro Frit 1212</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+1210.html">Frit 1210</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+1209.html">Frit 1209</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+1203.html">Frit 1203</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+1202.html">Frit 1202</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+1201.html">Frit 1201</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+25.html">Hommel Frit 25</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-225.html">Fusion Frit F-225</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+1843.html">Frit 1843</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+4396.html">Ferro Frit 4396</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3043.html">Ferro Frit 3043</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+3221.html">Frit 3221</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+1510.html">Frit 1510</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+2963.html">Frit 2963</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potterycrafts+frit+p2958.html">Potterycrafts Frit P2958</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+1451.html">Frit 1451</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+rcg+2430.html">Frit RCG 2430</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-1084.html">Pemco Frit P-1084</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+4112.html">Ferro Frit 4112</a>
+<br/><i>A calcium <a href="../glossary/borate.html">borate</a> <a href="../glossary/frit.html">frit</a> (with extremely high <a href="../glossary/borate.html">boron</a>).</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="mok+3+borax+frit.html">MOK 3 Borax frit</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+fno+143.html">Frit FNO 143</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="r76+frit.html">R76 Frit</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="1048+frit.html">1048 Frit</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potclays+frit+2275.html">Potclays Frit 2275</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="h19+frit.html">H19 Frit</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="p29+frit.html">P29 Frit</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potclays+frit+2262.html">Potclays Frit 2262</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+1047.html">Frit 1047</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potclays+frit+2270.html">Potclays Frit 2270</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potclays+frit+2268.html">Potclays Frit 2268</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+a3249%2fp.html">Frit A3249/p</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="colorobia+frit+f4.html">Colorobia Frit F4</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="colorobia+frit+f5.html">Colorobia Frit F5</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="matthey+frit+3701f.html">Matthey Frit 3701F</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3464.html">Ferro Frit 3464</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="solargil+frit+fr1.html">Solargil Frit FR1</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="solargil+frit+fr2.html">Solargil Frit FR2</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="solargil+frit+fr4.html">Solargil Frit FR4</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="solargil+frit+fr5.html">Solargil Frit FR5</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="solargil+frit+fr6.html">Solargil Frit FR6</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="solargil+frit+fr8.html">Solargil Frit FR8</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="solargil+frit+fr9.html">Solargil Frit FR9</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="solargil+frit+fr10.html">Solargil Frit FR10</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="solargil+frit+fr7.html">Solargil Frit FR7</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="solargil+frit+fr3.html">Solargil Frit FR3</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cc-262.html">Ferro Frit CC-262</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3257.html">Ferro Frit 3257</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+4108.html">Ferro Frit 4108</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3494.html">Ferro Frit 3494</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3480.html">Ferro Frit 3480</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-757.html">Pemco Frit P-757</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-801.html">Pemco Frit Pb-801</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="johnson+matthey+frit+169+.html">Johnson Matthey Frit 169 </a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+j.html">Frit J</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fz-583.html">Fusion Frit FZ-583</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fz-647.html">Fusion Frit FZ-647</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-413.html">Fusion Frit F-413</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="bayer+frit+j-239-p.html">Bayer Frit J-239-P</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f644.html">Fusion Frit F644</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="mondre+and+manz+frit+4067.html">Mondre and Manz Frit 4067</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-1r41.html">Pemco Frit P-1R41</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3545.html">Ferro Frit 3545</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+290.html">Hommel Frit 290</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+j-22.html">Pemco Frit J-22</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+383.html">Hommel Frit 383</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3456.html">Ferro Frit 3456</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+571.html">Hommel Frit 571</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3442.html">Ferro Frit 3442</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+487.html">Hommel Frit 487</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf152e.html">Hommel Frit 4GF152E</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+446.html">Hommel Frit 446</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+579.html">Hommel Frit 579</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+385.html">Hommel Frit 385</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+3gf84c.html">Hommel Frit 3GF84C</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+69.html">Hommel Frit 69</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+2gf56a.html">Hommel Frit 2GF56A</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+28f198.html">Hommel Frit 28F198</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+2gf27d.html">Hommel Frit 2GF27D</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+634.html">Hommel Frit 634</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+220.html">Hommel Frit 220</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3438.html">Ferro Frit 3438</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-1154.html">Pemco Frit P-1154</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+2gf64a.html">Hommel Frit 2GF64A</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-1492.html">Pemco Frit P-1492</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+1006.html">Hommel Frit 1006</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fl-39.html">Fusion Frit FL-39</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+28.html">Hommel Frit 28</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3898.html">Ferro Frit 3898</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+2gf56c.html">Hommel Frit 2GF56C</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+2gf6k.html">Hommel Frit 2GF6K</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3878.html">Ferro Frit 3878</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3541.html">Ferro Frit 3541</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-967.html">Pemco Frit Pb-967</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3499.html">Ferro Frit 3499</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-1r-43.html">Pemco Frit Pb-1R-43</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+2106.html">Hommel Frit 2106</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3528.html">Ferro Frit 3528</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+2gf37c.html">Hommel Frit 2GF37C</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+j-239.html">Pemco Frit J-239</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+j-43.html">Pemco Frit J-43</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fl-51.html">Fusion Frit FL-51</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+259.html">Hommel Frit 259</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-25.html">Pemco Frit P-25</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-114.html">General Frit GF-114</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fz-25.html">Fusion Frit FZ-25</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+27.html">Hommel Frit 27</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+468.html">Hommel Frit 468</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-349.html">Pemco Frit P-349</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+378.html">Hommel Frit 378</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+381.html">Hommel Frit 381</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-134.html">Fusion Frit F-134</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+399.html">Hommel Frit 399</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3195.html">Ferro Frit 3195</a>
+<br/><i>A commonly used <a href="../glossary/boron+frit.html">boron frit</a>, it is a balanced glaze all along at cone 06-02 (with the addition of 10-15% <a href="925.html">kaolin</a>). Not fully glossy.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-2.html">Fusion Frit F-2</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+400.html">Hommel Frit 400</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3289.html">Ferro Frit 3289</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-65.html">Fusion Frit F-65</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-2f-35.html">Pemco Frit Pb-2F-35</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3532.html">Ferro Frit 3532</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-1931.html">Pemco Frit Pb-1931</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+472.html">Hommel Frit 472</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+474.html">Hommel Frit 474</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-1k-75.html">Pemco Frit Pb-1K-75</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+477.html">Hommel Frit 477</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+509.html">Hommel Frit 509</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+fb-208-l.html">Ferro Frit FB-208-L</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+j-241.html">Pemco Frit J-241</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+520.html">Hommel Frit 520</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+566.html">Hommel Frit 566</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3210.html">Ferro Frit 3210</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+j-224.html">Pemco Frit J-224</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+576.html">Hommel Frit 576</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3451.html">Ferro Frit 3451</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+574.html">Hommel Frit 574</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+fl-99.html">Fusion Frit FL-99</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+71.html">Hommel Frit 71</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3620.html">Ferro Frit 3620</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+367.html">Hommel Frit 367</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-71.html">Pemco Frit Pb-71</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+rw238e.html">Hommel Frit RW238E</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="general+frit+gf-509.html">General Frit GF-509</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+t-206.html">Hommel Frit T-206</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3441.html">Ferro Frit 3441</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+t-88.html">Hommel Frit T-88</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3455.html">Ferro Frit 3455</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+3gf13c.html">Hommel Frit 3GF13C</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+3gf132e.html">Hommel Frit 3GF132E</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+1005.html">Hommel Frit 1005</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+3gf272c.html">Hommel Frit 3GF272C</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+3gf276c.html">Hommel Frit 3GF276C</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+p-1941.html">Pemco Frit P-1941</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf156b.html">Hommel Frit 4GF156B</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+3185.html">Pemco Frit 3185</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+542.html">Hommel Frit 542</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+3191.html">Pemco Frit 3191</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+276.html">Hommel Frit 276</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+3211.html">Pemco Frit 3211</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+3gf272b.html">Hommel Frit 3GF272B</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+j-394.html">Pemco Frit J-394</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf65b.html">Hommel Frit 4GF65B</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf154d.html">Hommel Frit 4GF154D</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3337.html">Ferro Frit 3337</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+64b.html">Hommel Frit 64B</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+536.html">Hommel Frit 536</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+2gf65e.html">Hommel Frit 2GF65E</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+555.html">Hommel Frit 555</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+581.html">Hommel Frit 581</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf135e.html">Hommel Frit 4GF135E</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+294.html">Fusion Frit 294</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf148e.html">Hommel Frit 4GF148E</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+j-344.html">Pemco Frit J-344</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf151b.html">Hommel Frit 4GF151B</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf153a.html">Hommel Frit 4GF153A</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf40e.html">Hommel Frit 4GF40E</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3446.html">Ferro Frit 3446</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf45c.html">Hommel Frit 4GF45C</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+1030.html">Hommel Frit 1030</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf56e.html">Hommel Frit 4GF56E</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf57b.html">Hommel Frit 4GF57B</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+1021.html">Hommel Frit 1021</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf137c.html">Hommel Frit 4GF137C</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf79d.html">Hommel Frit 4GF79D</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf95d.html">Hommel Frit 4GF95D</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3536.html">Ferro Frit 3536</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf48b.html">Hommel Frit 4GF48B</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf63a.html">Hommel Frit 4GF63A</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cm-887.html">Ferro Frit CM-887</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf71d.html">Hommel Frit 4GF71D</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+221-201.html">Ferro Frit 221-201</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf93e.html">Hommel Frit 4GF93E</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+114.html">Ferro Frit 114</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf113a.html">Hommel Frit 4GF113A</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf137a.html">Hommel Frit 4GF137A</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cm-895.html">Ferro Frit CM-895</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+3gf267c.html">Hommel Frit 3GF267C</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+fb-286-d.html">Ferro Frit FB-286-D</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+3gf238b.html">Hommel Frit 3GF238B</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+z-119.html">Ferro Frit Z-119</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+3gf222a.html">Hommel Frit 3GF222A</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3462.html">Ferro Frit 3462</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+3gf195b.html">Hommel Frit 3GF195B</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+fb-288-a.html">Ferro Frit FB-288-A</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf164e.html">Hommel Frit 4GF164E</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cz-102.html">Ferro Frit CZ-102</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+2gf11c.html">Hommel Frit 2GF11C</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+2gf241a.html">Hommel Frit 2GF241A</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+2gf188.html">Hommel Frit 2GF188</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+2gf145c.html">Hommel Frit 2GF145C</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+fb-175-l.html">Ferro Frit FB-175-L</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+2gf128b.html">Hommel Frit 2GF128B</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+465.html">Hommel Frit 465</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cz-106.html">Ferro Frit CZ-106</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf52a.html">Hommel Frit 4GF52A</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cl-408.html">Ferro Frit CL-408</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+1020.html">Hommel Frit 1020</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf53c.html">Hommel Frit 4GF53C</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cc-411.html">Ferro Frit CC-411</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf63d.html">Hommel Frit 4GF63D</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+1007.html">Hommel Frit 1007</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf171b.html">Hommel Frit 4GF171B</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pb-40.html">Pemco Frit Pb-40</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf175b.html">Hommel Frit 4GF175B</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hommel+frit+4gf173d.html">Hommel Frit 4GF173D</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potclays+frit+2265.html">Potclays Frit 2265</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potclays+frit+2266.html">Potclays Frit 2266</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="heraeus+schauer+frit+k+1325.html">Heraeus Schauer Frit K 1325</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="heraeus+schauer+frit+k+1562.html">Heraeus Schauer Frit K 1562</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="heraeus+schauer+frit+k+3066.html">Heraeus Schauer Frit K 3066</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="mondre+and+manz+frit+1233.html">Mondre and Manz Frit 1233</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potterycrafts+frit+p3110.html">PotteryCrafts Frit P3110</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+4113.html">Ferro Frit 4113</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+4193.html">Ferro Frit 4193</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+4101.html">Ferro Frit 4101</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+4144.html">Ferro Frit 4144</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+4125.html">Ferro Frit 4125</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+530.html">Ferro Frit 530</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+1078.html">Frit 1078</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+1057.html">Ferro Frit 1057</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+1085.html">Ferro Frit 1085</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+9146.html">Ferro Frit 9146</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+9102.html">Ferro Frit 9102</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+2244.html">Ferro Frit 2244</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+2954.html">Ferro Frit 2954</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+1077.html">Ferro Frit 1077</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+4103.html">Ferro Frit 4103</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+1012.html">Ferro Frit 1012</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+5325p.html">Ferro Frit 5325P</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+4194.html">Ferro Frit 4194</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potterycrafts+frit+p2963.html">PotteryCrafts Frit P2963</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potterycrafts+frit+p3124.html">PotteryCrafts Frit P3124</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potterycrafts+frit+p3134.html">PotteryCrafts Frit P3134</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potterycrafts+frit+p3195.html">PotteryCrafts Frit P3195</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potclays+frit+2269.html">Potclays Frit 2269</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potclays+frit+2272.html">Potclays Frit 2272</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potclays+frit+2273.html">Potclays Frit 2273</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potclays+frit+2281.html">Potclays Frit 2281</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ceradel+frit+c+1249.html">Ceradel Frit C 1249</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ceradel+frit+c+1250.html">Ceradel Frit C 1250</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ceradel+frit+c+1251.html">Ceradel Frit C 1251</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="alkaliborsilikat+f+37025.html">Alkaliborsilikat F 37025</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ceradel+frit+c+1254.html">Ceradel Frit C 1254</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ceradel+frit+c+1252.html">Ceradel Frit C 1252</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ceradel+frit+c+1253.html">Ceradel Frit C 1253</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ceradel+frit+c+1255.html">Ceradel Frit C 1255</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ceradel+frit+c+1256.html">Ceradel Frit C 1256</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cc-263-2.html">Ferro Frit CC-263-2</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cc-250-2.html">Ferro Frit CC-250-2</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cc-272.html">Ferro Frit CC-272</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cc-274.html">Ferro Frit CC-274</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+cc-279-3+%28approx%29.html">Ferro Frit CC-279-3 (approx)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+fa-233-2+%28approx%29.html">Frit FA-233-2 (approx)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+fb-276-p-2+%28approx%29.html">Ferro Frit FB-276-P-2 (approx)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="solargil+frit+fr11.html">Solargil Frit FR11</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+a+3021.html">Frit A 3021</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+a+3032.html">Frit A 3032</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+a+3069.html">Frit A 3069</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+a+3158.html">Frit A 3158</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+a+3360.html">Frit A 3360</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+a+3382.html">Frit A 3382</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+a+4015.html">Frit A 4015</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+a+4040.html">Frit A 4040</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+a+4043.html">Frit A 4043</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+a+8962.html">Frit A 8962</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+vo+6134.html">Frit VO 6134</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+vo+6170.html">Frit VO 6170</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+vo+6205.html">Frit VO 6205</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+vo+6259.html">Frit VO 6259</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+vo+6270.html">Frit VO 6270</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+a+2912.html">Frit A 2912</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+a+3334.html">Frit A 3334</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+a+62.html">Frit A 62</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+a+3363.html">Frit A 3363</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+a+3364.html">Frit A 3364</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+a+3367.html">Frit A 3367</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+a+3368.html">Frit A 3368</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+a+3323.html">Frit A 3323</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+vo+6079.html">Frit VO 6079</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+vo+6200.html">Frit VO 6200</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+vo+6257.html">Frit VO 6257</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+vo+6255.html">Frit VO 6255</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+a+1561.html">Frit A 1561</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+a+3128.html">Frit A 3128</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+a+3129.html">Frit A 3129</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+a+3383.html">Frit A 3383</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+a+4018.html">Frit A 4018</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+vo+6086.html">Frit VO 6086</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+vo+6104.html">Frit VO 6104</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+vo+6147.html">Frit VO 6147</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+vo+6160.html">Frit VO 6160</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+vo+6253.html">Frit VO 6253</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+a+2010.html">Frit A 2010</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+ce+vtr+29.html">Ferro Frit CE VTR 29</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+da4193.html">Ferro Frit DA4193</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="podmore+frit+p2250.html">Podmore Frit P2250</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+3271.html">Ferro Frit 3271</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+richoux+frit+21+c001.html">Ferro Richoux Frit 21 C001</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+richoux+frit+21+c002.html">Ferro Richoux Frit 21 C002</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+richoux+frit+21+c003.html">Ferro Richoux Frit 21 C003</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+richoux+frit+21+c004.html">Ferro Richoux Frit 21 C004</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+richoux+frit+21+c005.html">Ferro Richoux Frit 21 C005</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+richoux+frit+21+c006.html">Ferro Richoux Frit 21 C006</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+richoux+frit+21+c007.html">Ferro Richoux Frit 21 C007</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potterycrafts+frit+p2959.html">PotteryCrafts Frit P2959</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="potterycrafts+frit+p2951.html">PotteryCrafts Frit P2951</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pemco+frit+pc-4x63.html">Pemco Frit PC-4X63</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+fsb697.html">Frit Fsb697</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+fsb510%2f866.html">Frit Fsb510/866</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+fsb656.html">Frit Fsb656</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+fsb571.html">Frit Fsb571</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+fsb518%2ff40.html">Frit Fsb518/F40</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+fsb508.html">Frit Fsb508</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+fsb757+094.html">Frit Fsb757 094</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-563.html">Fusion Frit F-563</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+kgf4131.html">Ferro Frit KGF4131</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+kgf4106.html">Ferro Frit KGF4106</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="keramikos+fritte+32.21.html">Keramikos Fritte 32.21</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="keramikos+fritte+10.01.html">Keramikos Fritte 10.01</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="keramikos+fritte+10.05.html">Keramikos Fritte 10.05</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="keramikos+fritte+14.51.html">Keramikos Fritte 14.51</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="keramikos+fritte+15.10.html">Keramikos Fritte 15.10</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="keramikos+fritte+32.22.html">Keramikos Fritte 32.22</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="keramikos+bariumzink+fritte.html">Keramikos Bariumzink Fritte</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="keramikos+aardalkaliboor+fritte.html">Keramikos Aardalkaliboor Fritte</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="keramikos+fritte+15.11.html">Keramikos Fritte 15.11</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="keramikos+fritte+31.10.html">Keramikos Fritte 31.10</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="keramikos+fritte+m1.html">Keramikos Fritte M1</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="keramikos+fritte+v15098.html">Keramikos Fritte V15098</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="mondre+and+manz+frit+m9358.html">Mondre and Manz Frit M9358</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="frit+m-130.html">Frit M-130</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="mondre+and+manz+frit+v15098.html">Mondre and Manz Frit V15098</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="glass+cullet.html">Glass Cullet</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ferro+frit+90710f.html">Ferro Frit 90710F</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/frt">Frit</a>
+<br/><i>A <a href="../glossary/frit.html">frit</a> is the powdered form a man-made glass. <a href="../glossary/frit.html">Frits</a> are premelted, then ground to a glass. They have tightly controlled chemistries, they are available for glazes of all types.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/gnm">Generic Material</a>
+<br/><i>Generic materials are those with no brand name. Normally they are theoretical, the <a href="../glossary/glaze+chemistry.html">chemistry</a> portrays what a specimen would be if it had no contamination. Generic materials are helpful in educational situations where students need to study material theory (later they graduate to dealing with real world materials). They are also helpful where the chemistry of an actual material is not known. Often the accuracy of calculations is sufficient using generic materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/k2o.html">K2O - Potassium Oxide</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/na2o.html">Na2O - Sodium Oxide, Soda</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/li2o.html">Li2O - Lithium Oxide, Lithia</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/mgo.html">MgO - Magnesium Oxide, Magnesia</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/pbo.html">PbO - Lead Oxide</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/sro.html">SrO - Strontium Oxide, Strontia</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/zno.html">ZnO - Zinc Oxide</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/cdo.html">CdO - Cadmium Oxide</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/sb2o3.html">Sb2O3 - Antimony Oxide</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="../test/mlrg.html">Frit Melting Range (C)</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/frit.html">Frit</a>
+<br/><i><a href="../glossary/frit.html">Frits</a> are used in ceramic glazes for a wide range of reasons. They are man-made glass powders of controlled <a href="../glossary/glaze+chemistry.html">chemistry</a> with many advantages over raw materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="../project/comparing+the+melt+fluidity+of+16+frits.html">Comparing the Melt Fluidity of 16 Frits</a>
+<br/><i></i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></tbody></table></div></body>
+</html>

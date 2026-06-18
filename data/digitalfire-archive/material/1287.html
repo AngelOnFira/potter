@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Spodumene</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="Spodumene is a lithium sourcing feldspar, an alternative to lithium carbonate to supply Li2O to ceramic glazes. Contains up to about 8% Li2O." name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item active"><a class="nav-link" href="list.html">Materials <span class="sr-only">(current)</span></a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=material" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container">
+<ul class="nav nav-tabs pt-1" id="myTab" role="tablist">
+<li class="nav-item">
+<a aria-controls="material" aria-selected="true" class="nav-link active" data-toggle="tab" href="#material" id="material-tab" role="tab">Materials for Ceramics</a>
+</li>
+</ul>
+<div class="tab-content mb-3" id="myTabContent" style="border-right:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #ddd; padding:10px;">
+<div aria-labelledby="material-tab" class="tab-pane fade show active" id="material" role="tabpanel">
+<a href="list_1-9.html">1-9</a> | <a href="list_A.html">A</a> | <a href="list_B.html">B</a> | <a href="list_C.html">C</a> | <a href="list_D.html">D</a> | <a href="list_E.html">E</a> | <a href="list_F.html">F</a> | <a href="list_Frits.html">Frits</a> | <a href="list_G.html">G</a> | <a href="list_H.html">H</a> | <a href="list_I.html">I</a> | <a href="list_J.html">J</a> | <a href="list_K.html">K</a> | <a href="list_L.html">L</a> | <a href="list_M.html">M</a> | <a href="list_N.html">N</a> | <a href="list_O.html">O</a> | <a href="list_P.html">P</a> | <a href="list_Q.html">Q</a> | <a href="list_R.html">R</a> | <a href="list_S.html">S</a> | <a href="list_T.html">T</a> | <a href="list_U.html">U</a> | <a href="list_V.html">V</a> | <a href="list_W.html">W</a> | <a href="list_X.html">X</a> | <a href="list_Y.html">Y</a> | <a href="list_Z.html">Z</a><br/>
+<nobr></nobr>
+</div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Spodumene</h1>
+<p><b>Description</b>: Lithium sourcing feldspar</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/oxide.html">Oxide</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/analysis.html">Analysis</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Formula</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Tolerance</a></th>
+</tr></thead><tbody>
+<tr><td class="label"><a href="../oxide/li2o.html">Li2O</a></td>
+<td class="text-right">8.01%</td>
+<td class="text-right">
+1.00
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/al2o3.html">Al2O3</a></td>
+<td class="text-right">27.41%</td>
+<td class="text-right">
+1.00
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/sio2.html">SiO2</a></td>
+<td class="text-right">64.59%</td>
+<td class="text-right">
+4.00
+</td><td class="text-right">
+</td></tr>
+<tr><td colspan="2">Oxide Weight</td><td class="text-right" colspan="2">
+372.07
+</td></tr>
+<tr><td class="text-right" colspan="2"><a href="../glossary/formula+weight.html">Formula Weight</a></td><td colspan="2" style="text-align:right">
+372.07
+</td></tr>
+</tbody></table>
+<h4>Notes</h4><p>The name is from the Greek spodos, meaning burnt to ash. <a href="1287.html">Spodumene</a> is a silicate mineral often referred to as lithium <a href="310.html">feldspar</a>. Its mineral form is characterized by hard needle-like grains of brilliant white color. It is used in <a href="../glossary/ceramics.html">ceramics</a> as a source of lithia.<br/>
+<br/>
+In ceramics, lithia is a very powerful <a href="../glossary/flux.html">flux</a>, especially when used in conjunction with potash and soda <a href="310.html">feldspars</a>. As one of only a few natural lithium source materials, spodumene is a valuable component in glass and ceramic/enamel glazes (<a href="../oxide/li2o.html">Li<sub>2</sub>O</a> reduces <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a>, <a href="../glossary/melting+temperature.html">melting temperature</a> and <a href="../glossary/viscosity.html">viscosity</a> of the glaze melt). It was also used in huge quantities to make <a href="../glossary/pyroceramics.html">Corning Ware</a>.<br/>
+<br/>
+Spodumene is only slightly soluble (in contrast to <a href="975.html">lithium carbonate</a>). Because spodumene is a natural combination of <a href="1245.html">silica</a>, alumina and lithia it melts better than a chemically equivalent mixture of lithium carbonate, <a href="925.html">kaolin</a> and silica. Since almost all raw glazes contain kaolin and silica it is normally fairly easy to juggle recipe ingredients, using <a href="../glossary/glaze+chemistry.html">glaze chemistry</a>, to replace lithium carbonate with spodumene (provided, of course, that the lithium carbonate percentage is not too high). Spodumene can also be substituted for part of the feldspar complement in a recipe without disturbing overall <a href="../glossary/glaze+chemistry.html">chemistry</a> too much (other than substituting Li<sub>2</sub>O for <a href="../picture/1775.html">KNaO</a>).<br/>
+<br/>
+That being said, the price of spodumene is increasing rapidly as industry learns to extract the lithium from it. This is being done via <a href="../glossary/calcination.html">calcination</a> to convert the crystal structure from monoclinic alpha (a-form) to tetragonal beta (β-form). Calcination is then further employed in the acid <a href="../glossary/calcination.html">roasting</a> of spodumene, so that lithium can be extracted as water-soluble lithium sulfate. <br/>
+<br/>
+Some types of spodumene do contribute to the formation of bubbles in the glaze <a href="../glossary/slurry.html">slurry</a>. You can wash spodumene before use to alleviate this issue (mix it well in plenty of hot water, allow to settle overnight, pour off the water the next day and dry it).<br/>
+<br/>
+Spodumene is a little more readily fusible than petalite since it is higher in lithium. It is considered a better source of Li<sub>2</sub>O for <a href="../glossary/frit.html">frits</a>. Some sources quote the percentage of Li<sub>2</sub>O in molar percent rather than weight percent (resulting in a much higher figure).<br/>
+<br/>
+Spodumene powder, although heavy, dusts easily and is very unpleasant to smell or breathe. And it sticks to tools, scoops and containers. Good ventilation equipment is essential when working with it.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Spodumene ore</h3>
+<br/><a href="../picture/923.html"><img class="flexleft50" loading="lazy" src="../media/images/jufnuhofol.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/923.html">click here</a> to see it.</p>
+<p></p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Spodumene ore: Typically refiners want 6% or more LiO2 content.</h3>
+<br/><a href="../picture/153.html"><img class="flexleft50" loading="lazy" src="../media/images/gysnosuwej.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/153.html">click here</a> to see it.</p>
+<p></p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Li2O from spodumene instead of lithium carbonate: 
+</h3>
+<h4 style="color:#888888; margin-top:0px;">It's good chemistry, but bad physics</h4>
+<br/><a alt="Two very melt fluid glazes" href="../picture/2301.html"><img alt="Two very melt fluid glazes" class="flexleft50" loading="lazy" src="../media/images/f9ontmwsyh.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2301.html">click here</a> to see it.</p>
+<p><a href="975.html">Lithium carbonate</a> is now ultra-expensive. Yet the <a href="../glossary/reactive+glazes.html">reactive glaze</a> on the left needs it. <a href="1287.html">Spodumene</a> has a high enough <a href="../oxide/li2o.html">Li<sub>2</sub>O</a> concentration to be a possible source here. It also has a complex <a href="../glossary/glaze+chemistry.html">chemistry</a>, but the other <a href="../glossary/ceramic+oxide.html">oxides</a> it contains are those common to glazes anyway. Using my account at <a href="../glossary/digitalfire+insight-live.html">insight-live</a>.com, I did the calculations on a recipe rescue and got a pretty good match in the formulas (lower section in the green boxes). Then I made 10-gram balls and did a <a href="../test/glfl.html">GLFL test</a> at <a href="../glossary/cone+6.html">2200F</a> (notice the long crystals in the glass pools below the runways). Not surprisingly, this recipe is very runny; that's why the tiny yellow crystals grow during cooling. The new version fires very similarly, perhaps better. Our calculated cost to mix this recipe in 2022 was $17.84/kg vs. $10.40/kg. But there is a practical cost: Poor <a href="../glossary/slurry.html">slurry</a> properties. The spodumene sources so much <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a> that 70% <a href="32.html">Alberta Slip</a> had to be dropped to accommodate it! How does one use this type of glaze without ruining kiln shelves? Using a <a href="../glossary/catch+glaze.html">catcher glaze</a> is one answer.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Example of a commercial spodumene 2022</h3>
+<br/><a href="../picture/2977.html"><img class="flexleft50" loading="lazy" src="../media/images/krhdkrm49t.37.00 pm.png"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2977.html">click here</a> to see it.</p>
+<p>Our theoretical <a href="../glossary/glaze+chemistry.html">chemistry</a> is fairly close to this (notice these numbers are not precise, they indicate a range or minimum).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Spodumene can bubble when mixed with water.</h3>
+<br/><a href="../picture/980.html"><img class="flexleft50" loading="lazy" src="../media/images/zezfydysox.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/980.html">click here</a> to see it.</p>
+<p>This is what happens when some spodumenes are mixed with water. They generate foam and bubbles. This is disruptive in glazes and can be alleviated by washing and drying the powder before use. Or calcining at 500-600F.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Spodumene glaze with natural ironstone concretion speckle</h3>
+<br/><a href="../picture/372.html"><img class="flexleft50" loading="lazy" src="../media/images/l3362a.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/372.html">click here</a> to see it.</p>
+<p>L3362A speckle test <a href="../glossary/reduction+firing.html">cone 10R</a> (<a href="../recipe/g2240.html">G2240</a> <a href="1287.html">spodumene</a>) using ground <a href="../picture/692.html">ironstone concretions</a> (50% 70-100 mesh, 35% 50-70 mesh, 15% 40-50 mesh) at 0.5%, 0.3%, 0.1% (left to right).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Adding spodumene to this floating blue tones down the white patches</h3>
+<br/><a href="../picture/855.html"><img class="flexleft50" loading="lazy" src="../media/images/xwcgjidsdg.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/855.html">click here</a> to see it.</p>
+<p><a href="../recipe/ga6-c.html">GA6-C</a> (left) and GA6-E (right) at <a href="../glossary/cone+6.html">cone 6</a> oxidation. The E version adds 4% <a href="1287.html">spodumene</a> onto the 4% <a href="1204.html">rutile</a> in the C (the base is 80% <a href="32.html">Alberta Slip</a> and 20% <a href="351.html">frit 3134</a>). The spodumene eliminate the overly whitish areas that can appear. This glaze requires the "Slow Cool (<a href="../glossary/reactive+glazes.html">Reactive Glazes</a>)" <a href="../glossary/firing+schedule.html">firing schedule</a>. It looks the best on dark bodies.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">A problem with spodumene fluxed glazes: bubbles, surface dimples</h3>
+<br/><a href="../picture/1931.html"><img class="flexleft50" loading="lazy" src="../media/images/ku64q3u32v.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1931.html">click here</a> to see it.</p>
+<p>This is a closeup of <a href="https://insight-live.com/insight/share.php?z=kM4EdoTzp1">G3813B</a>, a recipe with 11% <a href="1287.html">spodumene</a>. Although the glaze is very glossy, its surface is marred by tiny dimples, the remnant of broken and partially healed bubbles escapes. These bubbles were in the <a href="../glossary/glaze+laydown.html">laydown</a> and dried in place (the spodumene generates these in the <a href="../glossary/slurry.html">slurry</a> itself, making it frothy). This can be reduced by <a href="../glossary/drop-and-soak+firing.html">drop-and-hold</a> firing techniques, but a better answer is to find a <a href="../glossary/frit.html">frit</a> to source the <a href="../oxide/li2o.html">Li<sub>2</sub>O</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Here is why Spodumene powder glistens in the light</h3>
+<br/><a alt="Why Spodumene powder glistens in the light" href="../picture/3150.html" title="+100 mesh Spodumene crystals"><img alt="Why Spodumene powder glistens in the light" class="flexleft50" loading="lazy" src="../media/images/k7psyvmujp.jpg" title="+100 mesh Spodumene crystals"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3150.html">click here</a> to see it.</p>
+<p><a href="1287.html">Spodumene</a> ceramic grade, used in glazes, is a <a href="../glossary/200+mesh.html">200 mesh</a> material. How could the particles be big enough to glisten in the light? This is a micrograph of some of the particles from the 0.6% plus 100 mesh material that I extracted in a <a href="../glossary/particle+size+distribution.html">particle size distribution</a> test. And 8% is plus 200 mesh. And all that material is flakey like this, millions of tiny mirrors. This also explains why the material becomes airborne so easily and why it is really really not good to breathe this stuff in.<br/>
+</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Here is why Petalite and Spodumene will seldom substitute for Lithium Carbonate</h3>
+<br/><a alt="Lithium carbonate vs petalite vs spodumene" href="../picture/3333.html"><img alt="Lithium carbonate vs petalite vs spodumene" class="flexleft50" loading="lazy" src="../media/images/8mrwx5a3ib.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3333.html">click here</a> to see it.</p>
+<p>Of course, if a recipe only calls for 1-5% <a href="975.html">lithium carbonate</a> either of these might be candidates to supply the <a href="../oxide/li2o.html">Li<sub>2</sub>O</a>. However, Petalite is eight times less and <a href="1287.html">Spodumene</a> five times less concentrated than lithium carbonate so to make either worthwhile the prices would need to be eight and five times cheaper. But if a recipe calls for more there is another problem: Petalite is extremely high in <a href="1245.html">silica</a>, which means supplying the needed Li<sub>2</sub>O from it is almost certainly going to oversupply <a href="../oxide/sio2.html">SiO<sub>2</sub></a>. Spodumene will likely do the same. Both are also high in <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a> and likely to oversupply that (or at minimum supply the bulk preventing the presence of <a href="925.html">kaolin</a> in the recipe).</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/108">https://www.talisonlithium.com/lithium</a>
+<br/><i>Technical Information about <a href="1287.html">Spodumene</a> from Talison website</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/336">http://en.wikipedia.org/wiki/Spodumene</a>
+<br/><i><a href="1287.html">Spodumene</a> at Wikipedia</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1337">http://www.talisonlithium.com/</a>
+<br/><i>Talison Lithium website</i>
+<br/><i style="color:#888888;">Talison Lithium Pty Ltd mines and produces lithium minerals at its Greenbushes operations in the South West of Western Australia in the Shire of Bridgetown-Greenbushes. The site is comprised of a number of open cut mining pits for <a href="1287.html">spodumene</a> mineral and lithium concentrate production facilities.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/3375">https://en.wikipedia.org/wiki/Lithium_mining_in_Australia</a>
+<br/><i>Lithium Mining in Australia at Wikipedia</i>
+<br/><i style="color:#888888;">Western Australia has large deposits of hard rock <a href="1287.html">spodumene</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/696">https://corelithium.com.au/</a>
+<br/><i>Core Lithium <a href="1287.html">spodumene</a> project in Australia</i>
+<br/><i style="color:#888888;">As of 2022 they are developing a <a href="1287.html">spodumene</a> lithium project near Darwin Port in the Northern Territory, Australia.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/3408">https://www.thecanadianencyclopedia.ca/en/article/spodumene</a>
+<br/><i><a href="1287.html">Spodumene</a> at The Canadian Encyclopedia</i>
+<br/><i style="color:#888888;">The Tantalum Mining Corporation (Tanco) extracts from an LCT pegmatite deposit (Lithium, Cesium and Tantalum), it has been in commercial operation since the 1970s.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="lithium+carbonate.html">Lithium Carbonate</a>
+<br/><i>A powerful melter very valuable in ceramic glazes. It is 40% <a href="../oxide/li2o.html">Li2O</a> and has an <a href="../glossary/loi.html">LOI</a> of 60% (lost as <a href="../oxide/co2.html">CO2</a> on firing). This material in now incredibly expensive.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="petalite.html">Petalite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="amblygonite.html">Amblygonite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="lepidolite.html">Lepidolite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="triphylite.html">Triphylite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="montebrasite+concentrate.html">Montebrasite Concentrate</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="spodumene+concentrate.html">Spodumene Concentrate</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="foote+spodumene.html">Foote Spodumene</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="australian+spodumene.html">Australian Spodumene</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="sc+1.1+spodumene.html">SC 1.1 Spodumene</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="cgs+3.1+spodumene.html">CGS 3.1 Spodumene</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="sc+1.2+spodumene.html">SC 1.2 Spodumene</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ugs+spodumene.html">UGS Spodumene</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fsc+2.1+spodumene.html">FSC 2.1 Spodumene</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="feldspar.html">Feldspar</a>
+<br/><i>In <a href="../glossary/ceramics.html">ceramics</a>, <a href="310.html">feldspars</a> are used in glazes and <a href="../glossary/clay+body.html">clay bodies</a>. They vitrify stonewares and porcelains. They supply <a href="../picture/1775.html">KNaO</a> <a href="../glossary/flux.html">flux</a> to glazes to help them melt.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="sc7.0+spodumene.html">SC7.0 Spodumene</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="fusion+frit+f-493.html">Fusion Frit F-493</a>
+<br/><i>This <a href="../glossary/frit.html">frit</a> is very valuable for one simple reason: It is a higher-quality source of <a href="../oxide/li2o.html">Li2O</a> for glazes than raw <a href="975.html">lithium carbonate</a>. It contains 11% Li2O.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="laguna+spodumene+substitute.html">Laguna Spodumene Substitute</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Temperatures</td>
+<td>
+<a href="../temperature/1.html">Spodumene converts to beta phase (1082-)</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Temperatures</td>
+<td>
+<a href="../temperature/2.html">Spodumene melts (1418-1428)</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Hazards</td>
+<td>
+<a href="../hazard/feldspar.html">Feldspar</a>
+<br/><i><a href="310.html">Feldspars</a> are abundant and varied in nature. They contain small amounts of quartz (while <a href="1070.html">nepheline syenite</a> does not).</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Hazards</td>
+<td>
+<a href="../hazard/lithium+toxicology.html">Lithium Toxicology</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/gnm">Generic Material</a>
+<br/><i>Generic materials are those with no brand name. Normally they are theoretical, the <a href="../glossary/glaze+chemistry.html">chemistry</a> portrays what a specimen would be if it had no contamination. Generic materials are helpful in educational situations where students need to study material theory (later they graduate to dealing with real world materials). They are also helpful where the chemistry of an actual material is not known. Often the accuracy of calculations is sufficient using generic materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/fel">Feldspar</a>
+<br/><i>The most common source of fluxes for high and <a href="../glossary/medium+temperature.html">medium temperature</a> glazes and bodies.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/pyroceramics.html">Pyroceramics</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/li2o.html">Li2O - Lithium Oxide, Lithia</a>
+</td>
+</tr>
+</tbody></table>
+<h3>Data</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<th scope="row"><a href="../test/14.html">Frit Softening Point</a></th>
+<td>1421C M</td>
+</tr>
+<tr>
+<th scope="row">Density (Specific Gravity)</th>
+<td>2.60</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></table></div></body>
+</html>

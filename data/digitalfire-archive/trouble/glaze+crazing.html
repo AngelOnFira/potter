@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Glaze Crazing</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="Ask the right questions to analyse the real cause of glaze crazing. Do not just treat the symptoms, the real cause is thermal expansion mismatch with the body." name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item"><a class="nav-link" href="../material/list.html">Materials</a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item active" href="list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=trouble" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container"><p><a aria-controls="collapse1" aria-expanded="false" class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button">All Troubles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a href="black+coring.html" title="29">Black Coring</a></nobr><br/><nobr><a href="bleeding+colors.html" title="30">Bleeding Colors</a></nobr><br/><nobr><a href="bloating.html" title="11">Bloating</a></nobr><br/><nobr><a href="casting+slip+problems.html" title="13">Casting Slip Problems</a></nobr><br/><nobr><a href="chrome+flashing+in+ceramic+glazes.html" title="7">Chrome Flashing in Ceramic Glazes</a></nobr><br/><nobr><a href="clouding+in+ceramic+glazes.html" title="23">Clouding in Ceramic Glazes</a></nobr><br/><nobr><a href="cracking+of+clays+during+drying.html" title="10">Cracking of Clays During Drying</a></nobr><br/><nobr><a href="crawling.html" title="1">Crawling</a></nobr><br/><nobr><a href="dunting+and+cracking+of+clay+bodies+during+firing.html" title="9">Dunting and Cracking of Clay Bodies During Firing</a></nobr><br/><nobr><a href="foaming+of+ceramicd+glaze+slurries.html" title="19">Foaming of Ceramicd Glaze Slurries</a></nobr><br/><nobr><a href="glaze+blisters.html" title="3">Glaze Blisters</a></nobr><br/><nobr><a href="2.html" title="2"><button class="btn btn-dark" type="button">Glaze Crazing</button></a></nobr><br/><nobr><a href="glaze+is+off-color.html" title="6">Glaze is Off-Color</a></nobr><br/><nobr><a href="glaze+marks+or+scratches.html" title="8">Glaze Marks or Scratches</a></nobr><br/><nobr><a href="glaze+peeling+on+drying.html" title="22">Glaze peeling on drying</a></nobr><br/><nobr><a href="glaze+pinholes%2C+pitting.html" title="5">Glaze Pinholes, Pitting</a></nobr><br/><nobr><a href="glaze+shivering.html" title="18">Glaze Shivering</a></nobr><br/><nobr><a href="glaze+slurry+is+difficult+to+use+or+settling.html" title="14">Glaze Slurry is Difficult to Use or Settling</a></nobr><br/><nobr><a href="leaking+of+fired+ceramics.html" title="26">Leaking of Fired Ceramics</a></nobr><br/><nobr><a href="lime+popping.html" title="28">Lime Popping</a></nobr><br/><nobr><a href="orange+peel+surface.html" title="27">Orange Peel Surface</a></nobr><br/><nobr><a href="over+firing+of+ceramic+glazes+and+bodies.html" title="21">Over Firing of Ceramic Glazes and Bodies</a></nobr><br/><nobr><a href="powdering%2C+cracking+and+settling+glazes.html" title="4">Powdering, Cracking and Settling Glazes</a></nobr><br/><nobr><a href="runny+ceramic+glazes.html" title="25">Runny Ceramic Glazes</a></nobr><br/><nobr><a href="specking+on+ceramic+ware.html" title="17">Specking on Ceramic Ware</a></nobr><br/><nobr><a href="splitting+at+the+plastic+stage.html" title="15">Splitting at the Plastic Stage</a></nobr><br/><nobr><a href="staining+of+fired+ceramic+glazes.html" title="24">Staining of Fired Ceramic Glazes</a></nobr><br/><nobr><a href="uneven+glaze+coverage.html" title="20">Uneven Glaze Coverage</a></nobr><br/><nobr><a href="warping.html" title="12">Warping</a></nobr></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Glaze Crazing</h1>
+<p class="text-muted" style="margin-left:20px">Ask the right questions to analyse the real cause of glaze crazing. Do not just treat the symptoms, the real cause is thermal expansion mismatch with the body.
+</p><h2>Details</h2>
+<p>The fired glaze exhibits a network of fine cracks. These may be visible after firing or may need enhancement with ink. <a href="glaze+crazing.html">Crazing</a> may also appear after some time or after ware has been exposed to <a href="../glossary/thermal+shock.html">thermal shock</a>.</p>
+<p>Crazing <b>profoundly affects ware strength</b>. <a href="../glossary/ceramics.html">Ceramics</a> are brittle, when cracks start they propagate, especially in <a href="../glossary/vitreous.html">vitreous</a> ware. <a href="glaze+crazing.html">Crazed</a> ware, out of the kiln, is thus pre-cracked and ready to fail. This is an inherent weakness because the cracks provide failure initiation sites, when ware is subjected to stress they jump into action. The author has measured 300-400% reductions in the strength of freshly fired ware with crazed glazes. A cone 01 piece having a well-fitted glaze will be stronger than a cone 10 one with a poorly fitted glaze!</p>
+<p>The <a href="../glossary/glaze+chemistry.html">chemistry</a> profile that creates the most crazing can also be <b>inherently more leachable</b> (e.g. the high <a href="../picture/1775.html">KNaO</a> and very low <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a> common in crackle glazes make them susceptible to <a href="../glossary/leaching.html">leaching</a> of added metallic <a href="../glossary/colorant.html">colorants</a>).</p>
+<p>If the clay under a crazing glaze is porous and soaks up water then <b>safety could also be a concern</b>. The cracks and their access to a possibly porous body below can create a bacteria zoo, requiring extra care in cleaning and sterilizing ware. Containers used to store food are a special concern since a small colony in a crack can become a large culture in the food. If you have any doubt whether this is an important issue ask a commercial food service inspector about the subject. Consider also that the chemistry profile that creates the most crazing is also inherently more leachable (e.g. the high KNaO and very low Al<sub>2</sub>O<sub>3</sub>). While most crazed glazes are white or clear, it is common in crackle to add metallic colorants to them, these would be released into food and drink.</p>
+<h2>Is the crazing due to a <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> mismatch between body and glaze?</h2>
+<p>This is by far the most common cause of crazing and solution strategies are case studies in <a href="../glossary/glaze+chemistry.html">glaze chemistry</a>. Often by just looking at a recipe it is obvious it will <a href="glaze+crazing.html">craze</a> (because it violates common sense <a href="../glossary/limit+recipe.html">recipe limits</a>). Fired ceramic expands and contracts as it is heated. If the fired glaze has a significantly higher coefficient of expansion than the body then no amount of careful firing or thin glazing will avoid the inevitable crazing. If even only one piece crazes (assuming it has reached <a href="../glossary/maturity.html">maturity</a>) it is often a sign that all the other ware in that kiln will eventually craze. Such glazes usually need drastic changes since crazing is a visible manifestation of a fit problem that has already greatly reduced ware strength. Lower temperatures are more sensitive in this respect - there is a narrower range within which a glaze and body will be compatible.</p>
+<p><b>Options to improve <a href="../glossary/glaze+fit.html">glaze fit</a> that do not involve knowing about chemistry.</b></p>
+<ul>
+<li>Perhaps the best option is to switch to <a href="../glossary/325+mesh.html">325 mesh</a> <a href="../material/1245.html">silica</a>, it dissolves into <a href="../glossary/melt+fluidity.html">the melt</a> much better than 200# silica (this can be surprisingly effective when the percentage of silica in the recipe is significant e.g. 20-35%).
+
+</li><li> Transplant the color/opacity/variegator <a href="../glossary/mechanism.html">mechanisms</a> of the glaze into a <a href="../glossary/base+glaze.html">base recipe</a> that already works on your <a href="../glossary/clay+body.html">clay bodies</a>. This most often works, but when not it is because the <a href="../glossary/mechanism.html">mechanism</a> percentage is high enough to contribute to crazing or it is not compatible with the chemistry of the new host</li>
+<li>Adjust the <a href="../glossary/clay+body.html">clay body</a> to give it higher expansion and thereby greater contraction, thus putting glazes under compression. At low temperatures, this can be done by adding <a href="../material/1620.html">talc</a> or <a href="../material/273.html">dolomite</a>, but it takes a lot. The former has health implications, the latter greatly increases <a href="../glossary/clay+body+porosity.html">porosity</a>. At high fire, adding silica works but this is tricky because more <a href="../material/310.html">feldspar</a> is required to maintain maturity. This brings a bigger problem: Those increases necessitate a drop in clay content, thus less <a href="../glossary/plasticity.html">plasticity</a>, possibly much less. Another side effect: Greater susceptibility to cracking when heat-shocked by hot liquids in use. So this approach is often a non-starter.</li>
+<li>If a glaze is melting well and it is a gloss increasing the silica by 5 or 10% might help (this will only assist if the craze lines are far apart or crazing is delayed).</li>
+<li>Zirconium <a href="../glossary/opacifier.html">opacifiers</a> are also useful in transparent glazes; they have a threshold amount under which they do not normally <a href="../glossary/opacifier.html">opacify</a>. Thus it might be possible to add as much as 3% to make the glaze both more durable and reduce its expansion a little.</li>
+<li>Substituting a <a href="../glossary/frit.html">frit</a> for one of lower expansion can be very effective, especially if the frit percentage is significant (e.g. 30%+). This is best for transparent, opacified white or stained glazes (since effects on color, texture and <a href="../glossary/reactive+glazes.html">variegation</a> are less likely). But for mattes and glazes have mechanisms involving <a href="../material/1204.html">rutile</a> or <a href="../material/1644.html">titanium</a>, frit changes are highly likely to change visual appearance.</li>
+</ul>
+<p>Glaze thermal expansion is a product of its chemistry (provided it is completely melted). So being able to do the chemistry enables employing by far the most effective method to adjust expansion:</p>
+<ul>
+<li>Reduce the amount of <a href="../glossary/co-efficient+of+thermal+expansion.html">high-expansion</a> <a href="../glossary/ceramic+oxide.html">oxides</a> (like sodium and potassium) and replace them with oxides having similar function but of lower thermal expansion (e.g. <a href="../oxide/mgo.html">MgO</a>, <a href="../oxide/cao.html">CaO</a>, <a href="../oxide/zno.html">ZnO</a>).</li>
+<li>Introduce <a href="../glossary/borate.html">boron</a> at the expense of some of the <a href="../glossary/flux.html">flux</a> (since <a href="../oxide/b2o3.html">B<sub>2</sub>O<sub>3</sub></a> contributes to both glass development and melting).</li>
+<li>If a glaze is glossy and well-melted: Increase the <a href="../oxide/sio2.html">SiO<sub>2</sub></a>.</li>
+<li>The glaze is matte consider its mechanism and adjust with that in mind. For example, MgO mattes can often tolerate more MgO (which reduces expansion). Or CaO mattes may tolerate adding MgO. Alumina mattes, if well melted, might tolerate more Al<sub>2</sub>O<sub>3</sub>.</li>
+<li>Add more flux to enable adding more SiO<sub>2</sub> and Al<sub>2</sub>O<sub>3</sub> (the latter are both very <a href="../glossary/co-efficient+of+thermal+expansion.html">low expansion</a>). A small <a href="../oxide/li2o.html">Li<sub>2</sub>O</a>, ZnO or B<sub>2</sub>O<sub>3</sub> addition is an example.</li>
+</ul>
+<p>Consider also the elasticity of the glaze as even relatively well-fitted ones 
+can craze if exposed to radical temperature changes. High levels of sodium, 
+potassium and calcium can make the glaze more brittle (the former also increase 
+thermal expansion). Boric oxide is known to improve elasticity.</p>
+<p>If the body expansion is too low (i.e. <a href="../glossary/ovenware.html">ovenware</a> and <a href="../glossary/flameware.html">flameware</a> bodies) it can be very difficult to fit a glaze that has the desired visual characteristics. Lithium can dramatically reduce the thermal expansion of glazes, but its use requires a lot of testing since its contribution is not linear and it introduces other dynamics that must be considered. </p>
+<h2>Is ware crazing days or even months after firing?</h2>
+<p>If you are cooling your kiln very slowly to prevent ware from crazing it is likely the glaze does not fit. While it may be true that slower firing seems to solve the problem, time will bring out the crazing that the kiln did not. In fact, if you must slow cool to prevent crazing it is a virtual certainty that your glaze needs to have its thermal expansion reduced.</p>
+<h2>Could the coloring oxides in the glaze be involved?</h2>
+<p>Generally increased additions of iron and <a href="../material/237.html">copper oxide</a> to a glaze will reduce crazing (e.g. beyond 1 or 2 percent). Cobalt could have a moderate lowering effect, but since so little is typically used in glazes it will not be significant.</p>
+<h2>Is the crazing a result an under-fired body?</h2>
+<p>Underfired low-temperature bodies may contain uncombined <a href="../glossary/alkali.html">alkali</a> or <a href="../glossary/alkaline+earths.html">alkaline earths</a> that can react with water and cause the body to expand slightly. Check if crazing occurs in a glazed sample after several hours in a pressure cooker (or put a shard into an autoclave). <a href="../material/173.html">Calcium carbonate</a> is added to talc bodies to minimize moisture expansion. To avoid this it is best to leave a minimum of unglazed body surface and plug that with <a href="../picture/2848.html">silicone sealant</a>. Body formulations also often include a small percentage of calcium carbonate which is said to help prevent this phenomenon. <a href="../glossary/porcelain.html">Porcelain</a> bodies also often craze glazes if not <a href="../glossary/vitrification.html">vitrified</a> enough.</p>
+<h2>Is the crazing a result of sloppy manufacture?</h2>
+<p>Normally a glaze/body combination with compatible expansion characteristics will withstand considerable firing and usage abuse without displaying signs of crazing. However, in some cases, a glaze that otherwise 'fits' will craze if applied very thick. </p>
+<p>Also, if the kiln is cooled very quickly or unevenly, especially if ware is thicker, the severe stresses can produce crazing. However, remember that a glaze's ability to withstand normal or even quick kiln cooling is an indicator of its ability to resist crazing in normal use.</p>
+<h2>Is it a result of mistreatment of ware during use?</h2>
+<p>If pieces must survive considerable thermal shock during use, then both ware and glaze need to have a low and linear thermal expansion curve and they must be compatible. This is difficult to achieve in <a href="../glossary/earthenware.html">low-fire</a> ware because little <a href="../material/1054.html">mullite</a> or other <a href="../glossary/co-efficient+of+thermal+expansion.html">low-expansion</a> silicate minerals develop during firing. If your low-fire body contains significant talc, reduce or eliminate it (also adjust glazes to have a lower expansion so they continue to fit the body). If your high-fire body develops non-linear expanding <a href="../glossary/cristobalite.html">cristobalite</a> during firing, find a way to reduce this.</p>
+<h2>Is it a result of inappropriate choice of manufacturing method or materials?</h2>
+<p> High-temperature firing is by far the best for the production of low-expansion ware. Many more minerals are available for both body and glaze mixes and higher temperatures produce low-expansion silicates and aluminates that give tough glaze and body matrixes capable of withstanding forces that might otherwise cause crazing. </p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">This is crazing. On functional ware. Not good.</h3>
+<br/><a alt="A crazing glaze on a porcelain mug" href="../picture/2109.html"><img alt="A crazing glaze on a porcelain mug" class="flexleft50" loading="lazy" src="../media/images/zcnj9ibxyq.jpg"/></a><span style="margin-top:0px; padding-top:0px; font-style:italic; font-size:70%;">AI generated with the prompt: A crazed glaze on a stoneware pottery mug.</span><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2109.html">click here</a> to see it.</p>
+<p>This glaze is "stretched" on the clay so it cracks. When the lines are close together like this it is more serious. If the effect is intended, it is called "crackle" (but no one should intend this on <a href="../glossary/functional.html">functional</a> ware). Potters, hobbyists and artists invariably bump into this issue whether using <a href="../glossary/commercial+hobby+brushing+glazes.html">commercial glazes</a> or making their own.<br/>
+<br/>
+"Art language" solutions don't work, at least some technical words are needed to understand it. <a href="glaze+crazing.html">Crazing</a> is a mismatch in the <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansions</a> of glaze and body. Most <a href="../glossary/ceramics.html">ceramics</a> expand slightly on heating and contract on cooling. The amount of change is very small, but ceramics are brittle and  glazes are rigidly attached. If they are stretched on the ware cracks will occur to relieve the stress (usually during cooling in the firing but sometimes much later). All glaze and body manufacturers advise against crazing on functional ware.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">No crazing out of the kiln. But an ice-water test did this.</h3>
+<br/><a alt="Crazing mug" href="../picture/1206.html"><img alt="Crazing mug" class="flexleft50" loading="lazy" src="../media/images/wyhlolufal.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1206.html">click here</a> to see it.</p>
+<p>The side of this white <a href="../glossary/porcelain.html">porcelain</a> test mug is glazed with varying thicknesses of V.C. 71 (a popular silky matte used by potters), then fired to <a href="../glossary/cone+6.html">cone 6</a>. Out of the kiln, there was no <a href="glaze+crazing.html">crazing</a>, and it felt silky and wonderful. But after a 300F/icewater IWCT this happened (it was felt-pen marked and cleaned with acetone). The glaze was apparently elastic enough to handle the gradual cooling in the kiln. However, the recipe has 40% <a href="../material/310.html">feldspar</a> and low <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a> and <a href="../oxide/sio2.html">SiO<sub>2</sub></a>, in a cone 6 glaze these are red flags for crazing.<br/>
+<br/>
+No matter what anyone tells you, <a href="../glossary/glaze+fit.html">glaze fit</a> can rarely be fixed by firing differently (that just delays it). If someone needs to cool their kiln slowly to prevent crazing it simply means the glaze does not fit - its needs to be adjusted to reduce its <a href="../glossary/co-efficient+of+thermal+expansion.html">co-efficient of thermal expansion</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Delayed crazing is a RED LIGHT. Pay attention!</h3>
+<br/><a href="../picture/1168.html"><img class="flexleft50" loading="lazy" src="../media/images/gybwupodyr.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1168.html">click here</a> to see it.</p>
+<p><a href="glaze+crazing.html">Crazing</a> is a disaster for a production potter. Consider what one said: "I have just recently been contacted by a customer due to small lines in her bowl. I am now terrified residual crazing could be happening to lots of <a href="../glossary/functional.html">functional</a> pieces I have sold! Nightmare! I have a terrible feeling in my stomach. Could anyone tell me if it is the glaze and if there is anything I can do to alter the recipe?"<br/>
+<br/>
+Don’t let this happen to you. Commercial brushing and <a href="../glossary/dipping+glaze.html">dipping glazes</a> are just as likely to <a href="glaze+crazing.html">craze</a> as ones you mix.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">The ultimate example of delayed crazing: 90 years!
+</h3>
+<h4 style="color:#888888; margin-top:0px;">Glaze chemistry is the key to understanding it</h4>
+<br/><a href="../picture/3775.html"><img class="flexleft50" loading="lazy" src="../media/images/gevfnmyagh.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3775.html">click here</a> to see it.</p>
+<p>A restoration project faced a tile-matching challenge. At installation in a bathroom 90 years ago, the tiles were not <a href="glaze+crazing.html">crazed</a>. But between then and now it happened (shown inset upper right). Now, a restoration specialist is tasked with duplicating the aged effect (one unsuccessful attempt is shown here). The shade, <a href="../glossary/opacity.html">opacity</a>, degree of matteness, bubble-free matrix and surface character of the original are all real challenges. Duplicating the <a href="glaze+crazing.html">crazing</a> is even more difficult. Why? Matching "time-crazing" with a <a href="../glossary/crackle+glaze.html">crackle glaze</a> pattern will be temporary (it will <a href="glaze+crazing.html">craze</a> much more after installation). <br/>
+<br/>
+The reason why <a href="../glossary/functional.html">functional</a> mattes seldom craze can be seen in the <a href="../glossary/glaze+chemistry.html">chemistry</a>. This chart compares the <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansions</a> of the <a href="../glossary/ceramic+oxide.html">oxides</a> that combine to form the fired glaze matrix. ~80%+ of the makeup of almost all common <a href="../glossary/base+glaze.html">base glazes</a> (without <a href="../glossary/colorant.html">colorants</a>, <a href="../glossary/opacifier.html">opacifiers</a>) is <a href="../oxide/sio2.html">SiO<sub>2</sub></a> and <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a> (orange bars). Mattes almost always need a low <a href="../glossary/silica%3Aalumina+ratio.html">Si:Al</a> ratio (e.g. below 6:1). The rest is fluxing oxides to melt them (the blue bars + <a href="../oxide/b2o3.html">B<sub>2</sub>O<sub>3</sub></a>). Here is the problem with making a crazing matte: Almost all crazing is caused by high levels of <a href="../oxide/k2o.html">K<sub>2</sub>O</a> and/or <a href="../oxide/na2o.html">Na<sub>2</sub>O</a> (the top two bars on the graph). But they produce high gloss (as can be seen in this test tile). The main matting fluxes and agents are <a href="../oxide/mgo.html">MgO</a>, <a href="../oxide/cao.html">CaO</a>, <a href="../oxide/sro.html">SrO</a>, BaO; they have a low <a href="../glossary/co-efficient+of+thermal+expansion.html">COE</a> (and don't craze glazes). Further, both <a href="../material/1722.html">zircon</a> and <a href="../material/1642.html">tin oxide</a>, the opacifiers needed, also have low thermal expansions!<br/>
+<br/>
+Other possibilities of making crazed matte:<br/>
+-A <a href="../glossary/matte+glaze.html">matte glaze</a> can have a high SiO<sub>2</sub>:Al<sub>2</sub>O<sub>3</sub> ratio and craze if it is very melt fluid (containing lots of <a href="../picture/1775.html">KNaO</a>) and cooled slowly so that micro-crystals cover the surface. The downside is unpleasantness to the touch.<br/>
+-Glossy glazes can be matted by the addition of micron-fine alumina (e.g. 800 mesh, this is done in the tile industry).<br/>
+-A <a href="../glossary/co-efficient+of+thermal+expansion.html">low expansion</a> body with no <a href="../material/80.html">ball clay</a> or <a href="../material/1245.html">silica</a> (e.g. just <a href="../material/925.html">kaolin</a> and <a href="../material/310.html">feldspar</a> with enough <a href="../material/106.html">bentonite</a> to get the needed <a href="../glossary/plasticity.html">plasticity</a>) will craze most glazes. Adding pyrophyllite will further lower its COE.<br/>
+-Print the lines on the tile (using <a href="../glossary/ceramic+transfer.html">ceramic transfers</a>) and use a <a href="../glossary/translucency.html">translucent</a> matte glaze (like <a href="../recipe/g2934.html">G2934</a>).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">ChatGPT was completely wrong about the cause of glaze crazing in 2023!</h3>
+<br/><a alt="A ChatGPT answer to a question about crazing" href="../picture/3159.html"><img alt="A ChatGPT answer to a question about crazing" class="flexleft50" loading="lazy" src="../media/images/fmf4krbymy.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3159.html">click here</a> to see it.</p>
+<p><a href="https://digitalfire.com/url/3403">ChatGPT</a> was parroting common wrong suggestions about the cause and solution of the serious issue of <a href="glaze+crazing.html">crazing</a>. Yet it trained on thousands of internet pages about the subject! <a href="glaze+crazing.html">Crazed</a> <a href="../glossary/functional.html">functional</a> ware is defective, and customers will return it. So fixing the problem is serious business, we need correct answers. Consider its suggestions: #1 is wrong. There is no such thing as an "incompatible mix" of ceramic materials. Crazing is an incompatibility in <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansions</a> of glaze and body, almost always a result of excessive levels of <a href="../glossary/co-efficient+of+thermal+expansion.html">high-expansion</a> <a href="../oxide/k2o.html">K<sub>2</sub>O</a> and <a href="../oxide/na2o.html">Na<sub>2</sub>O</a> in the <a href="../glossary/glaze+chemistry.html">chemistry</a> of the glaze. The solution is reducing them in favor of other fluxes (the amount per the degree of <a href="../glossary/co-efficient+of+thermal+expansion.html">COE</a> mismatch). #2 is wrong, firing changes don't fix the incompatibility of thermal expansions. #3 is wrong, refiring makes the crazing go away but not the stress of the mismatch, it will for sure return. #4 is completely wrong. Firing higher takes more quartz grains into solution in <a href="../glossary/melt+fluidity.html">the melt</a> and should reduce the COE (and <a href="../glossary/maturity.html">mature</a> the body more which often improves fit). And <a href="../glossary/melt+fluidity.html">melt fluidity</a> has nothing to do with crazing. Furthermore, if a glaze does not run off the ware, it is not overfired. Of course, this is the worst it will ever be, expect better in future.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">A down side of high feldspar glazes: Crazing!</h3>
+<br/><a alt="A runny, amber, crazed glaze" href="../picture/659.html"><img alt="A runny, amber, crazed glaze" class="flexleft50" loading="lazy" src="../media/images/dungibojot.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/659.html">click here</a> to see it.</p>
+<p>This reduction celadon is <a href="glaze+crazing.html">crazing</a>. Why? High <a href="../material/310.html">feldspar</a>. Feldspar supplies the <a href="../glossary/ceramic+oxide.html">oxides</a> <a href="../oxide/k2o.html">K<sub>2</sub>O</a> and <a href="../oxide/na2o.html">Na<sub>2</sub>O</a>, they contribute the brilliant gloss and great color but the price is very high <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a>. Scores of recipes being traded online are high-feldspar, some more than 50%! There are ways to tolerate the <a href="../glossary/co-efficient+of+thermal+expansion.html">high expansion</a> of <a href="../picture/1775.html">KNaO</a>, but the vast majority are crazing on all but high quartz bodies. Crazing is a plague for potters. Ware strength suffers dramatically, pieces leak, the glaze can harbor bacteria and customers return pieces. The simplest fix is to transplant the color and <a href="../glossary/opacity.html">opacity</a> <a href="../glossary/mechanism.html">mechanism</a> into a better transparent, one that fits your ware (in this glaze, for example, the mechanism is simply an iron addition). Fixing the recipe may also be practical. A 2:1 mix of <a href="../material/1245.html">silica</a>:kaolin has the same <a href="../glossary/silica%3Aalumina+ratio.html">Si:Al</a> ratio as most glossy glazes, this glaze could possibly tolerate 10% of that. That would reduce running, improve fit and increase <a href="../glossary/glaze+durability.html">durability</a>. Failing that, the next step is to substitute some of the <a href="../glossary/co-efficient+of+thermal+expansion.html">high-expansion</a> KNaO, the <a href="../glossary/flux.html">flux</a>, for the <a href="../glossary/co-efficient+of+thermal+expansion.html">low-expansion</a> <a href="../oxide/mgo.html">MgO</a>, that requires doing some <a href="../glossary/glaze+chemistry.html">glaze chemistry</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Craze city: Feldspar and Nepheline Syenite on cone 10R porcelain bodies</h3>
+<br/><a href="../picture/1901.html"><img class="flexleft50" loading="lazy" src="../media/images/6vwwiaqz4c.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1901.html">click here</a> to see it.</p>
+<p>These were applied to the <a href="../glossary/bisque.html">bisque</a> as a <a href="../glossary/slurry.html">slurry</a> (<a href="../glossary/suspension.html">suspended</a> by gelling with powdered or dissolved <a href="../material/292.html">Epsom salts</a>). On the left is <a href="../material/253.html">Custer feldspar</a>, the right is Covia <a href="../material/1070.html">Nepheline Syenite</a>. Notice the <a href="glaze+crazing.html">crazing</a> (<a href="../material/310.html">feldspars</a>, and nepheline syenite, always <a href="glaze+crazing.html">craze</a> because they are high in <a href="../oxide/k2o.html">K<sub>2</sub>O</a> and <a href="../oxide/na2o.html">Na<sub>2</sub>O</a>, these <a href="../glossary/ceramic+oxide.html">oxides</a> have by far the highest <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansions</a>).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Cone 10 mug is crazing after a year. That's OK because it's high-fire, right?</h3>
+<br/><a alt="Crazed cone 10R mug" href="../picture/1006.html"><img alt="Crazed cone 10R mug" class="flexleft50" loading="lazy" src="../media/images/xejnybakuc.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1006.html">click here</a> to see it.</p>
+<p>Wrong. This <a href="../glossary/reduction+firing.html">cone 10R</a> grey <a href="../glossary/stoneware.html">stoneware</a>, <a href="https://plainsmanclays.ca/data/index.php?product=12887">H550</a>, is OK if the glaze fits. But this <a href="../picture/1960.html">high </a><a href="../material/310.html">feldspar</a> glaze on the inside has begun to <a href="glaze+crazing.html">craze</a> after a year. The greyer coloration around the craze lines indicates that water is soaking into the slightly porous body. And, this mug has lost the ring it had out of the kiln. Imagine your customers returning these pieces! Could they be refired to be as good as new? Perhaps. But they would return to this condition. The practical solution is to reformulate this glaze to reduce its <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">This feldspar melts by itself to be a glaze, but crazes badly</h3>
+<br/><a href="../picture/1113.html"><img class="flexleft50" loading="lazy" src="../media/images/costogybuc.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1113.html">click here</a> to see it.</p>
+<p>Pure MinSpar <a href="../material/310.html">feldspar</a> fired at <a href="../glossary/cone+6.html">cone 6</a> on <a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12880">M370</a> <a href="../glossary/porcelain.html">porcelain</a>. Although it is melting, the <a href="glaze+crazing.html">crazing</a> is extreme! And expected. <a href="../material/310.html">Feldspars</a> contain a high percentage of <a href="../oxide/k2o.html">K<sub>2</sub>O</a> and <a href="../oxide/na2o.html">Na<sub>2</sub>O</a> (<a href="../picture/1775.html">KNaO</a>), these two <a href="../glossary/ceramic+oxide.html">oxides</a> have the highest <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> of any oxide. By far! Thus, glazes high in feldspar (e.g. 50%) are likely to <a href="glaze+crazing.html">craze</a>. Using a little <a href="../glossary/glaze+chemistry.html">glaze chemistry</a>, it is often possible to substitute some of the KNaO for another fluxing oxide having a lower thermal expansion.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Crazing due to moisture expansion in a porous low fire body</h3>
+<br/><a href="../picture/2081.html"><img class="flexleft50" loading="lazy" src="../media/images/43azjmqptf.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2081.html">click here</a> to see it.</p>
+<p>The clear glaze on this cone 03 mug survived a 300F-to-ice-water <a href="../glossary/thermal+shock.html">thermal shock</a> without <a href="glaze+crazing.html">crazing</a> (<a href="../test/iwct.html">IWCT test</a>). However, in the process, water was absorbed by the bare <a href="../glossary/foot+ring.html">foot ring</a> and dispersed into the porous matrix of the lower part of the mug. Moisture expansion occurred as a result and produced the crazing. Over continued use (and rewetting of the base) the entire piece would eventually <a href="glaze+crazing.html">craze</a>. <a href="../material/173.html">Calcium carbonate</a> is often added to <a href="../glossary/earthenware.html">low fire</a> bodies to prevent this expansion.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Substituting alumina in a clay body dramatically lowered thermal expansion</h3>
+<br/><a href="../picture/1117.html"><img class="flexleft50" loading="lazy" src="../media/images/lyhhefyveg.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1117.html">click here</a> to see it.</p>
+<p>These are glazed test bars of two <a href="../glossary/frit.html">fritted</a> white <a href="../glossary/clay+body.html">clay bodies</a> fired at cone 03. The difference: The one on the right contains 13% <a href="../glossary/200+mesh.html">200 mesh</a> quartz, the one on the left substitutes that for 13% 200 mesh <a href="../material/41.html">calcined alumina</a>. Quartz has the highest <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> of any traditional <a href="../glossary/ceramic+material.html">ceramic material</a>. As a result the alumina body does not "squeeze" the glaze (put it under some compression). The result is <a href="glaze+crazing.html">crazing</a>. There is one other big difference: The <a href="../material/1245.html">silica</a> body has 3% <a href="../glossary/clay+body+porosity.html">porosity</a> at cone 03, the alumina one has 10%!</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Same body, glaze, thickness, firing. Same thermal shock. Only the tile crazed?</h3>
+<br/><a href="../picture/1686.html"><img class="flexleft50" loading="lazy" src="../media/images/nylsexuxeb.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1686.html">click here</a> to see it.</p>
+<p>Why did the glaze on the tile <a href="glaze+crazing.html">craze</a>? It is double the thickness of the walls of the mug. Thus, when quenched in ice water (<a href="../test/bwiw.html">BWIW test</a>), a greater gradient occurs between the hot interior of the clay and the rapidly cooling surface.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Why did this piece come out of a decal firing crazed?</h3>
+<br/><a alt="Crazing mug after decal fire" href="../picture/1460.html"><img alt="Crazing mug after decal fire" class="flexleft50" loading="lazy" src="../media/images/xarduwasem.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1460.html">click here</a> to see it.</p>
+<p>This Cone 10 matte mug has been refired to attach decals. The fired matrix of the body is now brittle and dense and contains millions of quartz grains of many sizes. During the <a href="../glossary/refiring+ceramics.html">refire</a> up through quartz and <a href="../glossary/cristobalite.html">cristobalite</a> inversions each of them experiences sudden volume increases. This does not happen in the glaze because its quartz particles were dissolved in <a href="../glossary/melt+fluidity.html">the melt</a> and converted to silicates during the previous glaze firing. The suddenness of the expansion depends on the rate of temperature increase and its extent depends on the size of the quartz particles. The body's passage through these two zones stretched the glaze and cracked it. Had the <a href="../glossary/glaze+fit.html">glaze fit</a> been better (under some compression) it would likely have been able to survive.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">The same liner glaze crazes on the porcelain but not the stoneware</h3>
+<br/><a href="../picture/1847.html"><img class="flexleft50" loading="lazy" src="../media/images/rhaxehd7hh.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1847.html">click here</a> to see it.</p>
+<p>The <a href="../glossary/stoneware.html">stoneware</a> is made from sedimentary clays mined in a in southwestern Saskatchewan quarry, they have a higher quartz grain content and enough natural <a href="../material/310.html">feldspar</a> to produce <a href="../glossary/functional.html">functional</a> density (the practical <a href="../glossary/clay+body+porosity.html">porosity</a> is about 2.5%). The <a href="../glossary/porcelain.html">porcelain</a> on the right is a 45:35:20 <a href="../material/925.html">kaolin</a>:feldspar:silica blend (there is enough feldspar for about 0.5% porosity). The stoneware has more quartz particles to impose their high <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> because fewer are taken into solution by the feldspar. That means that the body has a whole can put the squeeze on the glaze to prevent it from <a href="glaze+crazing.html">crazing</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Why are these crazing lines dark like this?</h3>
+<br/><a href="../picture/402.html"><img class="flexleft50" loading="lazy" src="../media/images/rybtepamuk.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/402.html">click here</a> to see it.</p>
+<p>This is an example of serious <a href="glaze+crazing.html">crazing</a> in a glaze. The lines have gotten darker with use of the bowl! That means the color is organic, from food. This cannot be healthy.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Crazing kills ware strength: These two commercial brushing glazes prove it.</h3>
+<br/><a alt="Amaco glazes crazing" href="../picture/2241.html"><img alt="Amaco glazes crazing" class="flexleft50" loading="lazy" src="../media/images/y2a4mcxb3q.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2241.html">click here</a> to see it.</p>
+<p>These are Amaco bottled glazes, a transparent and a decorative on a <a href="../glossary/porcelain.html">porcelain</a> at <a href="../glossary/cone+6.html">cone 6</a>. The <a href="../glossary/glaze+fit.html">glaze fit</a> is poor, severely weakening the piece. I tapped this lightly with a spoon about 2 cm below the rim. It sounded like I was hitting a wet sack of rocks! And the handle fell off! Another few taps and the piece broke like auto-glass. This type of <a href="../glossary/functional.html">functional</a> ware is entirely unacceptable. The <a href="../test/iwct.html">IWCT test</a>, which anyone can do, can help assess the risk.<br/>
+<br/>
+If you buy commercial bottled <a href="../glossary/brushing+glaze.html">brushing glazes</a> then there is nothing you can do to adjust the recipe. When they fit a <a href="../glossary/clay+body.html">clay body</a> (without <a href="glaze+crazing.html">crazing</a>) it is just by accident (since the clay body and glaze manufacturer do not cooperate to ensure fit). Unfortunately, it is common for them to <a href="glaze+crazing.html">craze</a>. </p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Two matte mechanisms: One crazes, the other does not</h3>
+<br/><a alt="A matte glaze crazing badly" href="../picture/2116.html"><img alt="A matte glaze crazing badly" class="flexleft50" loading="lazy" src="../media/images/3bbrroyspe.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2116.html">click here</a> to see it.</p>
+<p>These two glazes look the same, they are both <a href="../glossary/cone+6.html">cone 6</a> satin mattes. On the same <a href="../glossary/porcelain.html">porcelain</a>. But the matteness "<a href="../glossary/mechanism.html">mechanism</a>" of the one on the left, VC71, is a low <a href="../glossary/silica%3Aalumina+ratio.html">Si:Al</a> ratio melted by zinc and sodium. The mechanism of the one on the right, <a href="../recipe/g2934.html">G2934</a>, is high <a href="../oxide/mgo.html">MgO</a> melted by enough <a href="../glossary/borate.html">boron</a> to also have plenty of <a href="../oxide/sio2.html">SiO<sub>2</sub></a> and <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a>. The "baggage" of the mechanism on the left is high <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> and <a href="glaze+crazing.html">crazing</a> (drastically reducing strength and providing a space for a germ zoo). If your ware develops this your customers will bring it back for replacement. No change in firing will fix this, the body and glaze are not expansion compatible. Period.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Salt glazed pieces often craze</h3>
+<br/><a href="../picture/881.html"><img class="flexleft50" loading="lazy" src="../media/images/lotgowugih.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/881.html">click here</a> to see it.</p>
+<p><a href="glaze+crazing.html">Crazing</a> in glazes is common in this type of ware but since the body is fired well into <a href="../glossary/vitrification.html">vitrification</a> this is not considered a problem (the unique aesthetics of this type of ware trump such issues). Salt glazes, by their very nature, are high in sodium. Since <a href="../oxide/na2o.html">Na<sub>2</sub>O</a> has such high <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> pieces are almost guaranteed to <a href="glaze+crazing.html">craze</a>. This was from kiln at the Medalta artist in residence program</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Match calculated COE to dilatometer-measured body COE? No!</h3>
+<br/><a href="../picture/2095.html"><img class="flexleft50" loading="lazy" src="../media/images/wurs5pvfwn.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2095.html">click here</a> to see it.</p>
+<p>Why? Firing temperature, schedule and atmosphere affect the result. Dilatometers are only useful when manufacturers monitor bodies AND glazes over time and in the same firing conditions. Calculated values for glazes are only relative (not absolute). The best way to fit glazes to your <a href="../glossary/clay+body.html">clay bodies</a> is by testing, evaluation, adjustment and retesting. For example, if a glaze crazes, adjust its recipe to bring the expansion down (your account at <a href="../glossary/digitalfire+insight-live.html">Insight-live</a> has the tools and guides to do this). Then fire a glazed piece and thermal stress it (300F-to-ice-water <a href="../test/iwct.html">IWCT test</a>). If it still crazes, move it further. If you have a base <a href="../glossary/glossy+glaze.html">glossy glaze</a> that fits (and made of the same materials), try comparing its calculated expansion as a guide. Can you calculate body expansion from oxide <a href="../glossary/glaze+chemistry.html">chemistry</a>? Definitely not, because bodies do not melt.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Use a low silica porcelain to craze test your glazes</h3>
+<br/><a href="../picture/994.html"><img class="flexleft50" loading="lazy" src="../media/images/karfydejac.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/994.html">click here</a> to see it.</p>
+<p><a href="../glossary/cone+6.html">Cone 6</a> transparent glaze testing to fit <a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12880">M370</a>: Left and right: Perkins Studio Clear. The far left one is a very thick application. Center: Kittens Clear. The <a href="../glossary/porcelain.html">porcelain</a> for all is Plainsman <a href="https://plainsmanclays.ca/data/index.php?product=12879">P300</a>. Why? Because <a href="https://plainsmanclays.ca/data/index.php?product=12879">P300</a> is much more likely to <a href="glaze+crazing.html">craze</a> the glaze because it has a lower <a href="../material/1245.html">silica</a> content (about 17% and only <a href="../material/925.html">kaolin</a> whereas <a href="https://plainsmanclays.ca/data/index.php?product=12880">M370</a> has 24% silica plus the free quartz that comes with the 20% <a href="../material/80.html">ball clay</a> it also contains). If a thick layer works on P300 it is a shoe-in to fit M370. If it also passes the oven:icewater test.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">You cannot fix this crazing with a process or firing change</h3>
+<br/><a href="../picture/1494.html"><img class="flexleft50" loading="lazy" src="../media/images/tylzivuzyd.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1494.html">click here</a> to see it.</p>
+<p>This is severe <a href="glaze+crazing.html">crazing</a> (at <a href="../glossary/reduction+firing.html">cone 10R</a>). It is happening because of the <a href="../glossary/glaze+chemistry.html">chemistry</a> of the glaze, not the firing. The first option to check when fixing crazing is: Can the glaze accept an addition of <a href="../oxide/sio2.html">SiO<sub>2</sub></a>? This glaze is an excellent candidate for that because <a href="../glossary/melt+fluidity.html">the melt</a> is highly fluid, it will surely be able to dissolve extra SiO<sub>2</sub>. But it could also accept <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a> because it is highly glossy (a little extra Al<sub>2</sub>O<sub>3</sub> will not matte it and would also reduce expansion and increase fired hardness and <a href="../glossary/glaze+durability.html">durability</a>). What to do then? I would start with a 10% addition of a mix of two parts <a href="../material/1245.html">silica</a> to one part <a href="../material/925.html">kaolin</a> (this mix has a 10:1 SiO<sub>2</sub>:Al<sub>2</sub>O<sub>3</sub> ratio, about the same as most glossy glazes).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Adding silica will fix crazing, right? Not here.</h3>
+<br/><a alt="Thee porcelain mugs, the glaze on two are crazed" href="../picture/1544.html"><img alt="Thee porcelain mugs, the glaze on two are crazed" class="flexleft50" loading="lazy" src="../media/images/hoskyfyfag.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1544.html">click here</a> to see it.</p>
+<p><a href="../recipe/g2926b.html">G2926B</a> (center and right) is a clear <a href="../glossary/cone+6.html">cone 6</a> glaze created by simply adding 10% <a href="../material/1245.html">silica</a> to Perkins Studio clear (a glaze that had a slight tendency delay-craze on common porcelains we use). Amazingly that glaze tolerated the silica addition very well, continuing to fire to an ultra gloss crystal clear. That change eliminated the <a href="glaze+crazing.html">crazing</a> issues on most of our bodies. The cup on the right is one of them, that body is <a href="../glossary/vitreous.html">vitreous</a>, near-zero-porosity, and fits most glazes. Why? Because it has 24% silica in the recipe. The center <a href="../glossary/porcelain.html">porcelain</a> is also dense and vitreous, but it only has 17% silica, that is why it is crazing this glaze. Then I added 5% more silica to the glaze, it continued to produce an ultra smooth glossy, and applied it to the 17% body on the left. Why did not fix the crazing? That silica addition to the glaze only reduces the calculated expansion from 6.0 to 5.9, clearly not enough to fix the problem. So, the obvious solution seems to be use the porcelain on the right. Are you wondering why adding silica to a body raises its <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a>, and adding it to a glaze lowers it? <a href="../glossary/mineralogy.html">Mineralogy</a> is the reason.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">The unexpected reason for this crazing can be seen in the chemistry</h3>
+<br/><a alt="Glaze chemistry explains the crazing" href="../picture/859.html"><img alt="Glaze chemistry explains the crazing" class="flexleft50" loading="lazy" src="../media/images/dajxomafop.png"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/859.html">click here</a> to see it.</p>
+<p>The glaze is 10% <a href="../material/173.html">calcium carbonate</a> added to <a href="../material/1178.html">Ravenscrag</a> slip. <a href="https://plainsmanclays.ca/data/index.php?product=12911">Ravenscrag Slip</a> does not <a href="glaze+crazing.html">craze</a> when used by itself as a glaze at <a href="../glossary/reduction+firing.html">cone 10R</a> on this body, so why would adding a relatively <a href="../glossary/co-efficient+of+thermal+expansion.html">low expansion</a> <a href="../glossary/flux.html">flux</a> like <a href="../oxide/cao.html">CaO</a> make it craze? This is an excellent example of the value of looking at the <a href="../glossary/glaze+chemistry.html">chemistry</a> (the three are shown side-by-side in my account at <a href="../glossary/digitalfire+insight-live.html">Insight-live</a>.com). The added CaO pushes the very-low-expansion <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a> and <a href="../oxide/sio2.html">SiO<sub>2</sub></a> down by 30% (in the <a href="../glossary/unity+formula.html">unity formula</a>), so the much higher expansion of all the others drives the <a href="../glossary/co-efficient+of+thermal+expansion.html">COE</a> of the whole way up. And <a href="../material/1620.html">talc</a>? It contains SiO<sub>2</sub> (so the SiO<sub>2</sub> is not driven down nearly as much) and its <a href="../oxide/mgo.html">MgO</a> has a much lower expansion than CaO does.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">How to make a ceramic time-bomb</h3>
+<br/><a href="../picture/945.html"><img class="flexleft50" loading="lazy" src="../media/images/kudjocuhir.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/945.html">click here</a> to see it.</p>
+<p>This mug is pinging loudly and literally self-destructing in front of my eyes! Why? The glaze is under so much compression (the inside is pushing outward, the outside inward). Spiral cracks are developing all the way up the side. Small razor-sharp flakes are <a href="../glossary/glaze+shivering.html">shivering</a> off convex contours. Why? I accidentally fired a low-temperate <a href="../glossary/artware.html">talc body</a> at <a href="../glossary/cone+6.html">cone 6</a> (the glaze is the <a href="../material/32.html">Alberta Slip</a> base cone 6 glossy). The <a href="../glossary/clay+body.html">clay body</a> is not overly <a href="../glossary/maturity.html">mature</a>, but it just has an extremely high <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> (<a href="../material/1620.html">talc</a> is added to increase the expansion to fit <a href="../glossary/earthenware.html">low fire</a> <a href="../glossary/commercial+hobby+brushing+glazes.html">commercial glazes</a>, they would <a href="glaze+crazing.html">craze</a> without it). Shivering is serious, it is a mismatch of thermal expansion between body and glaze. It can happen at any temperature.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">High feldspar glazes craze. 
+</h3>
+<h4 style="color:#888888; margin-top:0px;">Don't put up with it. Fix them.</h4>
+<br/><a href="../picture/3546.html"><img class="flexleft50" loading="lazy" src="../media/images/svjajzgeww.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3546.html">click here</a> to see it.</p>
+<p>This glaze, "Bamboo Cone 10%", contains 50% potash <a href="../material/310.html">feldspar</a>, so it certainly qualifies as a high-feldspar glaze. <a href="../oxide/k2o.html">K<sub>2</sub>O</a> and <a href="../oxide/na2o.html">Na<sub>2</sub>O</a> are thus oversupplied. They have the highest <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansions</a> of all <a href="../glossary/ceramic+oxide.html">oxides</a>, by far. These are needed and valuable, but when grossly oversupplied the result is <a href="glaze+crazing.html">crazing</a>. This glaze used to work on this body, <a href="https://plainsmanclays.ca/data/index.php?product=12887">H550</a>. The previous version of <a href="https://plainsmanclays.ca/data/index.php?product=12887">H550</a> was firing near the <a href="bloating.html">bloating</a> point of the body, about 1% <a href="../glossary/clay+body+porosity.html">porosity</a>, so the recipe had to be changed to provide more margin for error. The new recipe has a more practical 2.0-2.5% porosity; it has no danger of bloating or warping and still has excellent <a href="../glossary/maturity.html">maturity</a> and strength. This glaze was crazing before, and pieces did not leak because the body was dense enough - so they were still watertight. But now it does not work. The solution is to do something that should have been done before: Use a silky matte <a href="../glossary/base+glaze.html">base recipe</a> that does not <a href="glaze+crazing.html">craze</a>. I recommend the <a href="../recipe/g2571a.html">G2571A</a> base (below right) - the <a href="../material/1724.html">Zircopax</a>, <a href="../material/1204.html">rutile</a>, and <a href="../material/874.html">iron oxide</a> in the original can be added to it instead.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/demonstrating+glaze+fit+issues+to+students.html">Demonstrating Glaze Fit Issues to Students</a>
+<br/><i>Glaze and body can both be adjusted to solve <a href="glaze+crazing.html">crazing</a> and <a href="../glossary/glaze+shivering.html">shivering</a> problems. This describes a simple project to create body glaze combinations guaranteed to <a href="glaze+crazing.html">craze</a> and <a href="../glossary/glaze+shivering.html">shiver</a> to demonstrate the principles involved.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/crazing+in+stoneware+glazes%3a+treating+the+causes%2c+not+the+symptoms.html">Crazing in Stoneware Glazes: Treating the Causes, Not the Symptoms</a>
+<br/><i>Band-aid solutions to <a href="glaze+crazing.html">crazing</a> are often recommended by authors, but these do not get at the root cause of the problem, a <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> mismatch between glaze and body.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/understanding+thermal+expansion+in+ceramic+glazes.html">Understanding Thermal Expansion in Ceramic Glazes</a>
+<br/><i>Understanding <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> is the key to dealing with <a href="glaze+crazing.html">crazing</a> or <a href="../glossary/glaze+shivering.html">shivering</a>. There is a rich mans and poor mans way to fit glazes, the latter might be better.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/adjusting+glaze+expansion+by+calculation+to+solve+shivering.html">Adjusting Glaze Expansion by Calculation to Solve Shivering</a>
+<br/><i>This page demonstrates how you might use INSIGHT software to do calculations that will help you increase the <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> of a glaze while having minimal impact on other properties.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/the+effect+of+glaze+fit+on+fired+ware+strength.html">The Effect of Glaze Fit on Fired Ware Strength</a>
+<br/><i>The fit between body and glaze is like a marriage, if is is strong the marriage can survive problems. Likewise ceramic ware with well fitting glaze is much stronger than you think it might be, and vice versa.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/g1916m+cone+06-04+transparent+glaze.html">G1916M Cone 06-04 transparent glaze</a>
+<br/><i>This is a <a href="../glossary/frit.html">frit</a> based <a href="../glossary/borate.html">boron</a> glaze that is easily adjustable in <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a>, a good base for color and a starting point to go on to more specialized glazes.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/is+your+fired+ware+safe%3f.html">Is Your Fired Ware Safe?</a>
+<br/><i>Glazed ware can be a safety hazard to end users because it may leach metals into food and drink, it could harbor bacteria and it could flake of in knife-edged pieces.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/are+your+glazes+food+safe+or+are+they+leachable%3f.html">Are Your Glazes Food Safe or are They Leachable?</a>
+<br/><i>Many potters do not think about <a href="../glossary/leaching.html">leaching</a>, but times are changing. What is the <a href="../glossary/glaze+chemistry.html">chemistry</a> of stability? There are simple ways to check for leaching, and fix <a href="glaze+crazing.html">crazing</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/crazing+and+bacteria%3a+is+there+a+hazard%3f.html">Crazing and Bacteria: Is There a Hazard?</a>
+<br/><i>A post to a discussion on the clayart group by Gavin Stairs regarding the <a href="../glossary/food+safe.html">food safety</a> of <a href="glaze+crazing.html">crazed</a> ware.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/feldspar.html">Feldspar</a>
+<br/><i>In <a href="../glossary/ceramics.html">ceramics</a>, <a href="../material/310.html">feldspars</a> are used in glazes and <a href="../glossary/clay+body.html">clay bodies</a>. They vitrify stonewares and porcelains. They supply <a href="../picture/1775.html">KNaO</a> <a href="../glossary/flux.html">flux</a> to glazes to help them melt.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/glaze+crazing.html">Glaze Crazing</a>
+<br/><i><a href="glaze+crazing.html">Crazed</a> ceramic glazes have a network of cracks. Understanding the causes is the most practical way to solve it. 95% of the time the solution is to adjust the <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> of the glaze.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/co-efficient+of+thermal+expansion.html">Co-efficient of Thermal Expansion</a>
+<br/><i>The <a href="../glossary/co-efficient+of+thermal+expansion.html">co-efficient of thermal expansion</a> of ceramic bodies and glazes determines how well they fit each other and their ability to survive sudden heating and cooling without cracking.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/glaze+shivering.html">Glaze shivering</a>
+<br/><i><a href="../glossary/glaze+shivering.html">Shivering</a> is a ceramic glaze defect that results in tiny flakes of glaze <a href="../picture/3594.html">peeling</a> off edges of ceramic ware. It happens because the <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> of the body is too much higher than the glaze.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/calculated+thermal+expansion.html">Calculated Thermal Expansion</a>
+<br/><i>The <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> of a glaze can be predicted (relatively) and adjusted using simple <a href="../glossary/glaze+chemistry.html">glaze chemistry</a>. Body expansion cannot be calculated.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Troubles</td>
+<td>
+<a href="glaze+shivering.html">Glaze Shivering</a>
+<br/><i>Ask the right questions to analyse the real cause of <a href="../glossary/glaze+shivering.html">glaze shivering</a>. Do not just treat the symptoms, the real cause is <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> mismatch with the body.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Media</td>
+<td>
+<a href="../video/a+broken+glaze+meets+insight-live+and+a+magic+material.html">A Broken Glaze Meets Insight-Live and a Magic Material</a>
+<br/><i>Use <a href="../glossary/digitalfire+insight-live.html">Insight-Live</a>.com to do major surgery on a <a href="../material/310.html">feldspar</a> saturated <a href="../glossary/reduction+firing.html">cone 10R</a> glaze recipe with multiple issues: <a href="glaze+blisters.html">blistering</a>, <a href="../glossary/pinholing.html">pinholing</a>, <a href="glaze+crazing.html">crazing</a>, <a href="../glossary/suspension.html">settling</a>, dusting and possibly <a href="../glossary/leaching.html">leaching</a>!</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Media</td>
+<td>
+<a href="../video/analysing+a+crazing%2c+cutlery-marking+glaze+using+insight-live.html">Analysing a Crazing, Cutlery-marking Glaze Using Insight-Live</a>
+<br/><i>A high-nepheline, zero-silica cone 8 silky matte pottery glaze is <a href="../glossary/cutlery+marking.html">cutlery marking</a> and <a href="glaze+crazing.html">crazing</a>. Let's take a closer look and determine why?</i>
+</td>
+</tr>
+<tr>
+<td>Video<br/><img src="../media/images/G2926B.jpg" style="width:200px;"/></td>
+<td>
+<a href="../video/how+i+developed+the+g2926b+cone+6+transparent+base+glaze.html">How I Developed the G2926B Cone 6 Transparent Base Glaze</a>
+<br/><i>How I found a pottery glaze recipe on Facebook, substituted a <a href="../glossary/frit.html">frit</a> for the <a href="../material/806.html">Gerstley Borate</a> (using <a href="../glossary/glaze+chemistry.html">glaze chemistry</a>), compared using a <a href="../picture/2350.html">melt flow tester</a>, added as much extra <a href="../oxide/sio2.html">SiO2</a> as it would tolerate, and got a durable and easy-to-use <a href="../glossary/cone+6.html">cone 6</a> clear.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1378">http://www.astm.org/Standards/C424.htm</a>
+<br/><i>ASTM C424 - 93(2012) Standard Test Method for <a href="glaze+crazing.html">Crazing</a> Resistance</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1379">http://www.astm.org/Standards/C554.htm</a>
+<br/><i>ASTM C554 - <a href="../glossary/thermal+shock.html">Thermal Shock</a> Test Method for <a href="glaze+crazing.html">Crazing</a> Resistance</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/3380">https://ceramicartsnetwork.org/ceramics-monthly/ceramics-monthly-article/Techno-File-Dirty-Dishes#</a>
+<br/><i>Bacterial survival studies done on <a href="glaze+crazing.html">crazed</a> glazes had surprising results. But also oversights.</i>
+<br/><i style="color:#888888;">This article, Techno File: Dirty Dishes, argues that the dangers presented by <a href="../glossary/micro+organisms.html">microbes</a> on <a href="glaze+crazing.html">crazed</a> glazes are over-blown and unwarranted. And that pores and surface irregularities in even uncrazed glazes could also harbour bacteria if surfaces are not cleaned. But, it fails to address a number of factors.
+-The possible presence of a porous body below (that could harbour pathogens).
+-Regulatory bodies regard it as a compromise of the integrity of the glaze and the ability to clean the surface properly.
+-A dramatic reduction in ware strength accompanies <a href="glaze+crazing.html">crazing</a>.
+-No commercial hobby glaze manufacturer recommends the use of crazed glazes on food surfaces.
+-That it is usually easy to fix.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="../test/iwct.html">300F:Ice Water Crazing Test</a>
+<br/><i>Ceramic glazes that <a href="../glossary/glaze+fit.html">do not fit</a> the body often do not <a href="glaze+crazing.html">craze</a> until later. This progressively stresses the fit until failure point, thus giving it a score</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="../test/bwiw.html">Boiling Water:Ice Water Glaze Fit Test</a>
+<br/><i>Ceramic glazes that <a href="../glossary/glaze+fit.html">do not fit</a> the body often do not <a href="glaze+crazing.html">craze</a> until later. This test stresses the fit, thus revealing if it is likely to craze later.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/na2o.html">Na2O - Sodium Oxide, Soda</a>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></div></body>
+</html>

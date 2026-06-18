@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Specking on Ceramic Ware</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Specking, or speckling, can be both a fault or feature in fired ceramic ware - caused or produced by metal-bearing contaminants to metallic additives">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item active" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=trouble" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"></td><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Troubles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a title="29" href="https://digitalfire.com/trouble/black+coring">Black Coring</a></nobr><br /><nobr><a title="30" href="https://digitalfire.com/trouble/bleeding+colors">Bleeding Colors</a></nobr><br /><nobr><a title="11" href="https://digitalfire.com/trouble/bloating">Bloating</a></nobr><br /><nobr><a title="13" href="https://digitalfire.com/trouble/casting+slip+problems">Casting Slip Problems</a></nobr><br /><nobr><a title="7" href="https://digitalfire.com/trouble/chrome+flashing+in+ceramic+glazes">Chrome Flashing in Ceramic Glazes</a></nobr><br /><nobr><a title="23" href="https://digitalfire.com/trouble/clouding+in+ceramic+glazes">Clouding in Ceramic Glazes</a></nobr><br /><nobr><a title="10" href="https://digitalfire.com/trouble/cracking+of+clays+during+drying">Cracking of Clays During Drying</a></nobr><br /><nobr><a title="1" href="https://digitalfire.com/trouble/crawling">Crawling</a></nobr><br /><nobr><a title="9" href="https://digitalfire.com/trouble/dunting+and+cracking+of+clay+bodies+during+firing">Dunting and Cracking of Clay Bodies During Firing</a></nobr><br /><nobr><a title="19" href="https://digitalfire.com/trouble/foaming+of+ceramicd+glaze+slurries">Foaming of Ceramicd Glaze Slurries</a></nobr><br /><nobr><a title="3" href="https://digitalfire.com/trouble/glaze+blisters">Glaze Blisters</a></nobr><br /><nobr><a title="2" href="https://digitalfire.com/trouble/glaze+crazing">Glaze Crazing</a></nobr><br /><nobr><a title="6" href="https://digitalfire.com/trouble/glaze+is+off-color">Glaze is Off-Color</a></nobr><br /><nobr><a title="8" href="https://digitalfire.com/trouble/glaze+marks+or+scratches">Glaze Marks or Scratches</a></nobr><br /><nobr><a title="22" href="https://digitalfire.com/trouble/glaze+peeling+on+drying">Glaze peeling on drying</a></nobr><br /><nobr><a title="5" href="https://digitalfire.com/trouble/glaze+pinholes%2C+pitting">Glaze Pinholes, Pitting</a></nobr><br /><nobr><a title="18" href="https://digitalfire.com/trouble/glaze+shivering">Glaze Shivering</a></nobr><br /><nobr><a title="14" href="https://digitalfire.com/trouble/glaze+slurry+is+difficult+to+use+or+settling">Glaze Slurry is Difficult to Use or Settling</a></nobr><br /><nobr><a title="26" href="https://digitalfire.com/trouble/leaking+of+fired+ceramics">Leaking of Fired Ceramics</a></nobr><br /><nobr><a title="28" href="https://digitalfire.com/trouble/lime+popping">Lime Popping</a></nobr><br /><nobr><a title="27" href="https://digitalfire.com/trouble/orange+peel+surface">Orange Peel Surface</a></nobr><br /><nobr><a title="21" href="https://digitalfire.com/trouble/over+firing+of+ceramic+glazes+and+bodies">Over Firing of Ceramic Glazes and Bodies</a></nobr><br /><nobr><a title="4" href="https://digitalfire.com/trouble/powdering%2C+cracking+and+settling+glazes">Powdering, Cracking and Settling Glazes</a></nobr><br /><nobr><a title="25" href="https://digitalfire.com/trouble/runny+ceramic+glazes">Runny Ceramic Glazes</a></nobr><br /><nobr><a title="17" href="https://digitalfire.com/trouble/17"><button type="button" class="btn btn-dark">Specking on Ceramic Ware</button></a></nobr><br /><nobr><a title="15" href="https://digitalfire.com/trouble/splitting+at+the+plastic+stage">Splitting at the Plastic Stage</a></nobr><br /><nobr><a title="24" href="https://digitalfire.com/trouble/staining+of+fired+ceramic+glazes">Staining of Fired Ceramic Glazes</a></nobr><br /><nobr><a title="20" href="https://digitalfire.com/trouble/uneven+glaze+coverage">Uneven Glaze Coverage</a></nobr><br /><nobr><a title="12" href="https://digitalfire.com/trouble/warping">Warping</a></nobr></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Specking on Ceramic Ware</h1>
+<p class="text-muted" style="margin-left:20px">Specking, or speckling, can be both a fault or feature in fired ceramic ware - caused or produced by metal-bearing contaminants to metallic additives
+<h2>Details</h2>
+<p>A common surface defect in fired <a  href="https://digitalfire.com/glossary/whiteware">whiteware</a> and <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>: Fired specks mar an otherwise clean surface. Not to be confused with speckle, a term that usually describes when the effect is desired.<br />
+<br />
+This is normally occurs where materials are contaminated with natural iron minerals (e.g. iron stone concretions) or by iron from the refining process. Porcelain manufacturers must be especially careful to avoid this problem. One tiny black speck can ruin an entire large fired porcelain item.<br />
+<br />
+Although most industrial minerals state on their data sheets the particle size specifications they adhere to, almost all whiteware and porcelain ceramic product manufacturers test the materials they use for contamination that might contribute to specking in fired ware. Typically, any iron-containing particle remaining on a 150 mesh screen is a threat to most white burning bodies, glazes or <a  href="https://digitalfire.com/glossary/engobe">engobes</a>. But most must go further. Dry clay powder cannot be physically sieved beyond about 50 mesh (the screens blind), the only way is air separation or <a  href="https://digitalfire.com/glossary/slurry">slurrying</a> and screening. Thus many product manufacturers <a  href="https://digitalfire.com/glossary/slurry">slurry</a>, <a  href="https://digitalfire.com/glossary/sieve">sieve</a>, filter press and then pug their bodies; this tremendous effort is the only way to assure a speck-free fired surface. Manufacturers of <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a> for potters are unable to adhere to this same level of care (for cost reasons). All they can do is monitor incoming materials and employ magnetic separation somewhere in the powder flow (users of their porcelains must learn to tolerate some fine specking).<br />
+<br />
+If you are using a gas kiln and have experienced increasing levels of specking in fired ware, consider disassembling and cleaning your burners (they may have iron or oxide dust buildup inside).</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Cone 6 glaze speckling mechanism</h3>
+<br /><a href="https://digitalfire.com/picture/635"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/murhubyxib.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/635">click here</a> to see it.</p>
+<p>This <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> white opacified glaze has an addition pigment-bearing granular mineral to create speckle (e.g. illmenite, <a  href="https://digitalfire.com/material/1009">manganese granular</a>, <a  href="https://digitalfire.com/picture/692">ironstone concretions</a>). This speckling <a  href="https://digitalfire.com/glossary/mechanism">mechanism</a> can be transplanted into almost any glaze. Unfortunately, the metallic particles that produce the speck are often heavy and settle quickly in the glaze <a  href="https://digitalfire.com/glossary/slurry">slurry</a>. This can be prevented somewhat by <a  href="https://digitalfire.com/glossary/flocculation">flocculating</a> the slurry.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">An ironstone concretion found in a quarry in southern Saskatchewan</h3>
+<br /><a href="https://digitalfire.com/picture/692"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/jptcfs8hp2.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/692">click here</a> to see it.</p>
+<p>These are very hard and high in <a  href="https://digitalfire.com/material/874">iron oxide</a>. They are found in the Battle Formation across Saskatchewan. <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> Clays extracts the bottom part of the Battle layers, just above the Whitemud Formation layers, about 1-2' thick, and stockpiles it as the material <a  href="https://digitalfire.com/material/1141">A1</a> (that clay is added to <a  href="https://digitalfire.com/glossary/reduction+firing">reduction fired</a> bodies to impart speckle, color and <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a>). The <a  href="https://plainsmanclays.ca/data/index.php?product=12963">A1</a> contains thousands of these concretions, ranging in size from lemons to toasters. When first mined they are hard and very difficult to break with a hammer. But upon aging in the sun they dehydrate slowly and crumble into small lumps. These layers are the same as those in which the worlds largest T.Rex was found (learn more at the <a  href="https://digitalfire.com/picture/2741">T.rex Discovery Centre</a>).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Iron oxide particle agglomerates produce heavy specking</h3>
+<br /><a href="https://digitalfire.com/picture/699"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/materials/gyklunagof.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/699">click here</a> to see it.</p>
+<p>5 different brand names of <a  href="https://digitalfire.com/material/874">iron oxide</a> at 4% in <a  href="https://digitalfire.com/recipe/g1214w">G1214W</a> <a  href="https://digitalfire.com/glossary/cone+5">cone 5</a> transparent glaze. The specks are not due to particle size, but differences in <a  href="https://digitalfire.com/glossary/agglomeration">agglomeration</a> of particles. Glazes employing these iron <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> obviously need to be sieved to break down the clumps.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Comparing the fired glaze specks from different iron oxide brands</h3>
+<br /><a href="https://digitalfire.com/picture/700"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/materials/fizkobicyj.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/700">click here</a> to see it.</p>
+<p>Five different brand names of <a  href="https://digitalfire.com/material/874">iron oxide</a> at 4% in <a  href="https://digitalfire.com/recipe/g1214w">G1214W</a> <a  href="https://digitalfire.com/glossary/cone+5">cone 5</a> transparent glaze. The glazes have been sieved to 100 mesh but remaining specks are still due to <a  href="https://digitalfire.com/glossary/agglomeration">agglomeration</a> of particles, not particle size differences.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">This is how much iron particulate bar magnets can pull from a clay conveyor</h3>
+<br /><a href="https://digitalfire.com/picture/829"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/troubleshooting/zajpegasor.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/829">click here</a> to see it.</p>
+<p>These are two strong bar magnets that are <a  href="https://digitalfire.com/glossary/suspension">suspended</a> below the chamber of a hammermilll that grinds <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> clays. This iron they hold is both natural in the clays and from wearing of the hammers during grinding. </p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Could these bentonite particles cause specking in a porcelain?</h3>
+<br /><a href="https://digitalfire.com/picture/767"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/nucdivanyn.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/767">click here</a> to see it.</p>
+<p>The stated particle size of a material and fired appearance can both be misleading. For example, these are Volclay 325 <a  href="https://digitalfire.com/material/106">bentonite</a> particles fired to cone 8 oxidation. They are from a water washed <a  href="https://digitalfire.com/glossary/sieve">sieve</a> analysis test, the <a  href="https://digitalfire.com/picture/3706">oversize particles</a> from a <a  href="https://digitalfire.com/glossary/325+mesh">325 mesh</a> screen (left) make up 2% of the total and 1% are from the <a  href="https://digitalfire.com/glossary/200+mesh">200 mesh</a> screen (right). Although the 325 particles appear ominously dark, individually they are likely to small to produce apparent fired specks in a <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a>. However 200 mesh sizes can produce visible fired specks, but that fraction of oversize does not have nearly as high iron or <a  href="https://digitalfire.com/glossary/flux">flux</a> content. Still, the finer darker particles could <a  href="https://digitalfire.com/glossary/agglomeration">agglomerate</a>, it might be better to use a cleaner bentonite to <a  href="https://digitalfire.com/glossary/plasticity">plasticize</a> a porcelain.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Sponging and fired specks</h3>
+<br /><a href="https://digitalfire.com/picture/1622"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/jegfexyjyh.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1622">click here</a> to see it.</p>
+<p>The left half of this <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> buff burning native-clay <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> (<a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12875">M340</a>) was sponged at the dry stage. That exposed iron-bearing particles that are normally pushed under the surface. The result is a denser population of fired specks. While not usually a problem on flat surfaces, this can be an issue when rims of <a  href="https://digitalfire.com/glossary/functional">functional</a> pieces are sponged and glazes stretch thin there during firing.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Surface treatment affects glaze speck development in jiggered stoneware</h3>
+<br /><a href="https://digitalfire.com/picture/1799"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/bnhdzqpj9i.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1799">click here</a> to see it.</p>
+<p>Notice the inside of this large transparent glazed <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> bowl. There is a concentration of specks on one part because that area was sponged at the <a  href="https://digitalfire.com/glossary/leather+hard">leather hard</a> and dry stages to smooth surface problems that happened during the <a  href="https://digitalfire.com/glossary/jiggering">jiggering</a> process. These specks are normally driven below the surface during forming.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Ball Clays differ in the amount of particulate carbon</h3>
+<br /><a href="https://digitalfire.com/picture/1792"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/jovy4rjhq6.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1792">click here</a> to see it.</p>
+<p>This is the plus 100 mesh particulate from 50 grams of two different ball clays. Most of the particles are carbon, they will burn out and possibly cause glaze defects. If any of them are metallic, they will produce fired specks.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Watch out for iron particles in ball clays</h3>
+<br /><a href="https://digitalfire.com/picture/1036"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/tests/ryhcezanek.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1036">click here</a> to see it.</p>
+<p>These are the <a  href="https://digitalfire.com/picture/3706">oversize particles</a> (from the 70, 100, 140 and <a  href="https://digitalfire.com/glossary/200+mesh">200 mesh</a> sieves) from 100 grams of a commercial <a  href="https://digitalfire.com/material/80">ball clay</a>. They have been fired to <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10 reduction</a>. As you can see, this material is a potential cause of specking, especially in <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> bodies. It is not only wise to check for oversize particles in clays, but firing these particles will reveaal if they contain iron. A 200 mesh screen would be a good start for this test, it would catch all of these.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Oversize particles in a typical manufactured porcelain body</h3>
+<br /><a href="https://digitalfire.com/picture/1268"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/voljuderyj.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1268">click here</a> to see it.</p>
+<p>Example of the <a  href="https://digitalfire.com/picture/3706">oversize particles</a> from a 100 gram wet <a  href="https://digitalfire.com/glossary/sieve">sieve</a> analysis test of a powdered sample of a <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> body made from North American refined materials. Although these materials are sold as <a  href="https://digitalfire.com/glossary/200+mesh">200 mesh</a>, that designation does not mean that there are no particles coarser than 200 mesh. Here, there are significant numbers of particles on the 100 and even 70 mesh screens. These contain some darker particles that could produce fired specks (if they are iron and not lignite); thank goodness in this case they do not. Oversize particlate is a fact of life in bodies made from refined materials and used by potters and hobbyists. Industrial manufacturers (e.g. tile, tableware, <a  href="https://digitalfire.com/glossary/sanitary+ware">sanitaryware</a>) commonly process the materials further, <a  href="https://digitalfire.com/glossary/slurry">slurrying</a> them and screening or ball milling; this is done to guarantee defect-free glazed surfaces.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Working with Polar Ice translucent porcelain requires impeccable cleanliness</h3>
+<br /><a href="https://digitalfire.com/picture/1706"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/sibpydonih.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1706">click here</a> to see it.</p>
+<p>Using stonewares it is easy to get pretty sloppy in the studio because a particle of iron or cobalt in a glaze or body is no big deal. But on a ice white, <a  href="https://digitalfire.com/glossary/translucency">translucent</a>, transparent-glazed piece it is a really big deal. These specks are particles of cobalt that were trapped in my <a  href="https://digitalfire.com/glossary/sieve">80 mesh</a> glaze screen from previous use. I use a soft brush to coax the glaze through the screen faster, but even that was enough to dislodge some of the cobalt particles. The lesson: I need a dedicated glaze screen for use with this transparent glaze, it gets used for nothing else.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Same glaze, same M340 clay, same firing. Why is one more speckled?</h3>
+<br /><a href="https://digitalfire.com/picture/1798"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/29je77vkgn.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1798">click here</a> to see it.</p>
+<p>These are <a  href="https://digitalfire.com/glossary/jiggering">jiggered</a> lids made from <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12875">M340</a> <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>  <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a>. The one on the right was sponged in the dry stage to smooth issues that occurred during <a  href="https://digitalfire.com/glossary/jiggering">jiggering</a>. That has exposed speck-producing particles that were under the surface. However that is not the only possible factor. This body is made from quarried materials that are ground to <a  href="https://digitalfire.com/glossary/42+mesh">42 mesh</a>. So speckle variation can be expected because it is derived from natural iron pyrites in the clay (they can vary in concentration, hardness and color intensity).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Fired specks in gas-fired porcelain. Where is the contamination from?</h3>
+<br /><a href="https://digitalfire.com/picture/1966"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/m95qeubcba.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1966">click here</a> to see it.</p>
+<p>The materials and body were clean. The problem was very strange because the specks only appeared on the insides of the ware. The problem turned out to be iron powder in the burners (shown in the overlay in this photo). Disassembling and cleaning them solved most of the issue. The rest? Disassembling and cleaning them better!</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Screened to 80 mesh and feels absolutely smooth, but still speckles in reduction</h3>
+<br /><a href="https://digitalfire.com/picture/2369"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/yntnypzusa.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2369">click here</a> to see it.</p>
+<p>The reduction was fairly heavy and this piece went to cone 11. The tiny <a  href="https://digitalfire.com/picture/692">ironstone concretion</a> particles melted vigorously and flowed. This is why clean firing results requires <a  href="https://digitalfire.com/glossary/200+mesh">200 mesh</a> materials!</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A high speed grinder from Amazon. Does it work to remove fired defects?</h3>
+<br /><a alt="A battery-powered mini grinding pen that can grind ceramic" href="https://digitalfire.com/picture/2593"><img class="flexleft50" alt="A battery-powered mini grinding pen that can grind ceramic"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/emyz2rmkdz.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2593">click here</a> to see it.</p>
+<p>Yes. I paid $70 US to get a good one. It runs at a very high speed. It is battery powered and has many ends. It uses the 18650 lithium ion battery (also used to make power packs for laptops, power tools, even bikes and cars). I got this one on Ebay, it was listed as "Electric Mini Chargeable Engraving Pen Machine For Carving Grinding Metalworking". It is good quality and came with many unexpected accessories. It easily ground through the glaze and into the <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> far enough to remove the speck. Then I just needed to fill up the hole with glaze and <a  href="https://digitalfire.com/glossary/refiring+ceramics">refire</a>. This could also be used to remove burrs and nicks that might make a piece unsaleable. Can you engrave (e.g. text) into a glaze or porcelain? No. Even though there are heads intended to do this, the spinning motion gives the tool a mind-of-its-own about where it wants to go. And it hops. A lettering template might help but it would still be very difficult to get a deep enough scratch into the surface to be visible.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/reduction+speckle">Reduction Speckle</a>
+<br /><i>A sought-after visual effect that occurs in <a  href="https://digitalfire.com/glossary/reduction+firing">reduction fired</a> <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a>. Particles of iron pyrite that occur naturally in the clay melt and blossom up through the glaze</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/ceramic+glaze+defects">Ceramic Glaze Defects</a>
+<br /><i><a  href="https://digitalfire.com/glossary/ceramic+glaze+defects">Ceramic glaze defects</a> include things like <a  href="https://digitalfire.com/glossary/pinholing">pinholes</a>, <a  href="https://digitalfire.com/trouble/glaze+blisters">blisters</a>, <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a>, <a  href="https://digitalfire.com/glossary/glaze+shivering">shivering</a>, <a  href="https://digitalfire.com/glossary/leaching">leaching</a>, <a  href="https://digitalfire.com/trouble/crawling">crawling</a>, <a  href="https://digitalfire.com/glossary/cutlery+marking">cutlery marking</a>, <a  href="https://digitalfire.com/glossary/glaze+bubbles">clouding</a> and color problems.</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

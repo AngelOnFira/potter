@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Staining of Fired Ceramic Glazes</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Ceramic glazes are glass. That means they are always easy to clean, right? Wrong - because the surface is not always glassy.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+March 2026: We are doing major upgrades to code here, please be patient regarding any issues. If any page is not working for a period of hours, please contact us. Thank you.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item active" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=trouble" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:center; vertical-align:top;">Feb 14-15, 2026 - <b>Major Server <a href="https://digitalfire.com">Upgrade</a> Done</b></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Troubles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a title="29" href="https://digitalfire.com/trouble/black+coring">Black Coring</a></nobr><br /><nobr><a title="30" href="https://digitalfire.com/trouble/bleeding+colors">Bleeding Colors</a></nobr><br /><nobr><a title="11" href="https://digitalfire.com/trouble/bloating">Bloating</a></nobr><br /><nobr><a title="13" href="https://digitalfire.com/trouble/casting+slip+problems">Casting Slip Problems</a></nobr><br /><nobr><a title="7" href="https://digitalfire.com/trouble/chrome+flashing+in+ceramic+glazes">Chrome Flashing in Ceramic Glazes</a></nobr><br /><nobr><a title="23" href="https://digitalfire.com/trouble/clouding+in+ceramic+glazes">Clouding in Ceramic Glazes</a></nobr><br /><nobr><a title="10" href="https://digitalfire.com/trouble/cracking+of+clays+during+drying">Cracking of Clays During Drying</a></nobr><br /><nobr><a title="1" href="https://digitalfire.com/trouble/crawling">Crawling</a></nobr><br /><nobr><a title="9" href="https://digitalfire.com/trouble/dunting+and+cracking+of+clay+bodies+during+firing">Dunting and Cracking of Clay Bodies During Firing</a></nobr><br /><nobr><a title="19" href="https://digitalfire.com/trouble/foaming+of+ceramicd+glaze+slurries">Foaming of Ceramicd Glaze Slurries</a></nobr><br /><nobr><a title="3" href="https://digitalfire.com/trouble/glaze+blisters">Glaze Blisters</a></nobr><br /><nobr><a title="2" href="https://digitalfire.com/trouble/glaze+crazing">Glaze Crazing</a></nobr><br /><nobr><a title="6" href="https://digitalfire.com/trouble/glaze+is+off-color">Glaze is Off-Color</a></nobr><br /><nobr><a title="8" href="https://digitalfire.com/trouble/glaze+marks+or+scratches">Glaze Marks or Scratches</a></nobr><br /><nobr><a title="22" href="https://digitalfire.com/trouble/glaze+peeling+on+drying">Glaze peeling on drying</a></nobr><br /><nobr><a title="5" href="https://digitalfire.com/trouble/glaze+pinholes%2C+pitting">Glaze Pinholes, Pitting</a></nobr><br /><nobr><a title="18" href="https://digitalfire.com/trouble/glaze+shivering">Glaze Shivering</a></nobr><br /><nobr><a title="14" href="https://digitalfire.com/trouble/glaze+slurry+is+difficult+to+use+or+settling">Glaze Slurry is Difficult to Use or Settling</a></nobr><br /><nobr><a title="26" href="https://digitalfire.com/trouble/leaking+of+fired+ceramics">Leaking of Fired Ceramics</a></nobr><br /><nobr><a title="28" href="https://digitalfire.com/trouble/lime+popping">Lime Popping</a></nobr><br /><nobr><a title="27" href="https://digitalfire.com/trouble/orange+peel+surface">Orange Peel Surface</a></nobr><br /><nobr><a title="21" href="https://digitalfire.com/trouble/over+firing+of+ceramic+glazes+and+bodies">Over Firing of Ceramic Glazes and Bodies</a></nobr><br /><nobr><a title="4" href="https://digitalfire.com/trouble/powdering%2C+cracking+and+settling+glazes">Powdering, Cracking and Settling Glazes</a></nobr><br /><nobr><a title="25" href="https://digitalfire.com/trouble/runny+ceramic+glazes">Runny Ceramic Glazes</a></nobr><br /><nobr><a title="17" href="https://digitalfire.com/trouble/specking+on+ceramic+ware">Specking on Ceramic Ware</a></nobr><br /><nobr><a title="15" href="https://digitalfire.com/trouble/splitting+at+the+plastic+stage">Splitting at the Plastic Stage</a></nobr><br /><nobr><a title="24" href="https://digitalfire.com/trouble/24"><button type="button" class="btn btn-dark">Staining of Fired Ceramic Glazes</button></a></nobr><br /><nobr><a title="20" href="https://digitalfire.com/trouble/uneven+glaze+coverage">Uneven Glaze Coverage</a></nobr><br /><nobr><a title="12" href="https://digitalfire.com/trouble/warping">Warping</a></nobr></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Staining of Fired Ceramic Glazes</h1>
+<p class="text-muted" style="margin-left:20px">Ceramic glazes are glass. That means they are always easy to clean, right? Wrong - because the surface is not always glassy.
+<h2>Details</h2>
+<p>Ceramic glazes are glass and thus should be micro-smooth. If they are not then <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a> can be left by various substances. Susceptibility to staining can be caused by insufficient melting, over melting (with micro-crystallization), micro-bubbles leaving tiny cavities, or particles of <a  href="https://digitalfire.com/glossary/refractory">refractory</a> material remaining unmelted at the surface. Rough surfaces can thus trap particles and be difficult or impossible to clean, even though it is glass. The causes that lead to issues with staining also often produce <a  href="https://digitalfire.com/glossary/cutlery+marking">cutlery marking</a>. Glazes fire the way they do because of their <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a>, <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a>, mixing and application process and thickness. They need enough <a  href="https://digitalfire.com/glossary/flux">flux</a> to melt, enough <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> to develop a good glass and enough <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> to be hard and durable. Glazes also need a <a  href="https://digitalfire.com/picture/761">cooling rate</a> in the firing that will create a non-devritified glass. By comparing the chemistry and recipes of glazes that do and do not stain (in your account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">insight-live</a>.com) you can develop an understanding of how to resolve this issue in your recipe(s).<br />
+<br />
+We are discussing glazes intended for <a  href="https://digitalfire.com/glossary/functional">functional</a> ware. Of course, certain decorative ones depend entirely on NOT melting completely or crystallizing profusely. Others develop <a  href="https://digitalfire.com/glossary/crystallization">crystallization</a> during cooling, these affect surface smoothness also. Susceptibility to staining is not just important for tableware, and even <a  href="https://digitalfire.com/glossary/sanitary+ware">sanitary ware</a>, but also for <a  href="https://digitalfire.com/glossary/ceramic+tile">ceramic tile</a>. Technicians test with timed exposures to common household items like red wine, coffee, ketchup, various oils and inks, and more.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Staining of a sanitaryware glaze after years of use</h3>
+<br /><a alt="Staining of sanitaryware glazes" href="https://digitalfire.com/picture/3548"><img class="flexleft50" alt="Staining of sanitaryware glazes"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/fdenxngtyd.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3548">click here</a> to see it.</p>
+<p>This problem typically happens after some years of use. Here are some questions to answer:<br />
+A glaze may look smooth visually, but is it really? If the surface has micro-cavities and surface disruptions this could give <a  href="https://digitalfire.com/oxide/organics">organics</a> a place to attach and build up. Firing curves need to take into account the <a  href="https://digitalfire.com/glossary/loi">LOI</a> of glaze materials (which can affect the microsurface), materials like calcium and <a  href="https://digitalfire.com/material/86">barium carbonate</a>, <a  href="https://digitalfire.com/material/273">dolomite</a>, <a  href="https://digitalfire.com/material/1620">talc</a> and even clay.<br />
+Has the mirco-surface of the glaze changed? Many labs offer surface analysis services so it is possible to have a surface compared with one known to be good.<br />
+Is the glaze subject to <a  href="https://digitalfire.com/glossary/leaching">leaching</a>? This could happen if the fired matrix has excessive <a  href="https://digitalfire.com/glossary/phase+separation">phase changes</a>, possibly due to poor mixing, <a  href="https://digitalfire.com/glossary/frit">frit</a> quality issues or materials of excessive particle size (e.g. use 400 mesh <a  href="https://digitalfire.com/material/1245">silica</a> instead of 200 or 300). A change in the flow of a routine <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> test can alert you to changes in materials or <a  href="https://digitalfire.com/glossary/slurry">slurry</a> preparation.<br />
+<a  href="https://digitalfire.com/material/1722">Zircon</a> is implicated in <a  href="https://digitalfire.com/glossary/cutlery+marking">cutlery marking</a>, if your glaze is marking this puts suspicion on the zircon as at least part of the problem. What grade of zircon do you use? It should be 5 micron. Are you using high-energy mixing to separate the zircon <a  href="https://digitalfire.com/glossary/agglomeration">agglomerates</a>?<br />
+Is your glaze fired at the temperature to produce optimum hardness and <a  href="https://digitalfire.com/glossary/glaze+durability">durability</a>? Fire it higher and lower than the production temperature and test surface properties and <a  href="https://digitalfire.com/glossary/melt+fluidity">melt flow</a>. If you determine, for example, that it is under-firing, then add <a  href="https://digitalfire.com/glossary/flux">flux</a> to melt it a little more. If it is under-fired, add <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> or <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> or reduce flux (<a  href="https://digitalfire.com/picture/1775">KNaO</a>, <a  href="https://digitalfire.com/oxide/mgo">MgO</a> or <a  href="https://digitalfire.com/oxide/cao">CaO</a>).</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">The bamboo matte on the left is better:</h3>
+<h4 style="color:#888888; margin-top:0px;">It does not stain and does not craze.</h4>
+<br /><a alt="A pottery mug has a glaze the stains easily" href="https://digitalfire.com/picture/2175"><img class="flexleft50" alt="A pottery mug has a glaze the stains easily"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/8te3jqfuda.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2175">click here</a> to see it.</p>
+<p>These mugs are <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12886">H443</a>. The <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10R</a> <a  href="https://digitalfire.com/material/273">dolomite</a> matte <a  href="https://digitalfire.com/glossary/bamboo+glaze">bamboo glaze</a> on the left (A) has 3.5% <a  href="https://digitalfire.com/material/1204">rutile</a> and 10% <a  href="https://digitalfire.com/material/1724">Zircopax</a> added to our base <a  href="https://digitalfire.com/recipe/g2571a">G2571A</a> dolomite matte. The one on the right (B) has the same addition but in a base having less CaO/MgO and much more <a  href="https://digitalfire.com/picture/1775">KNaO</a>. This gives it a craze-prone <a  href="https://digitalfire.com/glossary/calculated+thermal+expansion">calculated thermal expansion</a> of 7.9 (vs 6.7 for ours). B also <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a> badly (as can be seen from the felt marker residue that could not be removed using lacquer thinner). Why does A stain only slightly? It has an additional 4% <a  href="https://digitalfire.com/material/806">Gerstley Borate</a>, a powerful <a  href="https://digitalfire.com/glossary/flux">flux</a> that develops the glass surface better (giving a slightly less matte surface).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Adding calcined alumina to a ceramic glaze until it stains</h3>
+<br /><a alt="Calcined alumina added to matte a glaze" href="https://digitalfire.com/picture/3304"><img class="flexleft50" alt="Calcined alumina added to matte a glaze"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/vosacob9yj.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3304">click here</a> to see it.</p>
+<p>The glaze is <a  href="https://digitalfire.com/recipe/g2934">G2934</a> <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> matte base. Because it was not firing matte enough additions of 2, 4, 6 and 8% super fine <a  href="https://digitalfire.com/material/41">calcined alumina</a> were tested (<a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> is the key to matteness and this material is a pure source, if <a  href="https://digitalfire.com/material/925">kaolin</a> were added it would also source <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> and require much more). Each addition made it progressively more matte. But with the mattness comes increasing susceptibility to <a  href="https://digitalfire.com/glossary/cutlery+marking">cutlery marking</a> and staining. To test the latter we marked each using a felt pen and then cleaned off the black ink using Acetone. The only one with noticeable staining is the 8% addition (the 6% addition has a slight stain also). The testing also showed no obvious <a  href="https://digitalfire.com/glossary/cutlery+marking">cutlery marked</a> on any of them. The results are reassuring since only 2% or less alumina is needed to achieve the degree of matteness desired so no danger of either problem is indicated. In addition, the integrity of the fired glass suggests that the alumina is dissolving in <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> - that means it is likely contributing to increased surface hardness and <a  href="https://digitalfire.com/glossary/glaze+durability">durability</a>.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/cutlery+marking">Cutlery Marking</a>
+<br /><i>Ceramic glazes that mark from cutlery are either not properly melted (lack <a  href="https://digitalfire.com/glossary/flux">flux</a>), melted too much (lacking <a  href="https://digitalfire.com/oxide/sio2">SiO2</a> and <a  href="https://digitalfire.com/oxide/al2o3">Al2O3</a>), or have a micro-abrasive surface that abrades metal from cutlery.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/ceramic+glaze+defects">Ceramic Glaze Defects</a>
+<br /><i><a  href="https://digitalfire.com/glossary/ceramic+glaze+defects">Ceramic glaze defects</a> include things like <a  href="https://digitalfire.com/glossary/pinholing">pinholes</a>, <a  href="https://digitalfire.com/trouble/glaze+blisters">blisters</a>, <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a>, <a  href="https://digitalfire.com/glossary/glaze+shivering">shivering</a>, <a  href="https://digitalfire.com/glossary/leaching">leaching</a>, <a  href="https://digitalfire.com/trouble/crawling">crawling</a>, <a  href="https://digitalfire.com/glossary/cutlery+marking">cutlery marking</a>, <a  href="https://digitalfire.com/glossary/glaze+bubbles">clouding</a> and color problems.</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

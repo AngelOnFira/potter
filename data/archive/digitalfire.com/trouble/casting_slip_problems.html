@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Casting Slip Problems</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Casting slips are deflocculated in order to reduce water content. It is important to understand this phenomenon and know how to assess a slurry to know what it needs.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item active" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=trouble" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Troubles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a title="29" href="https://digitalfire.com/trouble/black+coring">Black Coring</a></nobr><br /><nobr><a title="30" href="https://digitalfire.com/trouble/bleeding+colors">Bleeding Colors</a></nobr><br /><nobr><a title="11" href="https://digitalfire.com/trouble/bloating">Bloating</a></nobr><br /><nobr><a title="13" href="https://digitalfire.com/trouble/13"><button type="button" class="btn btn-dark">Casting Slip Problems</button></a></nobr><br /><nobr><a title="7" href="https://digitalfire.com/trouble/chrome+flashing+in+ceramic+glazes">Chrome Flashing in Ceramic Glazes</a></nobr><br /><nobr><a title="23" href="https://digitalfire.com/trouble/clouding+in+ceramic+glazes">Clouding in Ceramic Glazes</a></nobr><br /><nobr><a title="10" href="https://digitalfire.com/trouble/cracking+of+clays+during+drying">Cracking of Clays During Drying</a></nobr><br /><nobr><a title="1" href="https://digitalfire.com/trouble/crawling">Crawling</a></nobr><br /><nobr><a title="9" href="https://digitalfire.com/trouble/dunting+and+cracking+of+clay+bodies+during+firing">Dunting and Cracking of Clay Bodies During Firing</a></nobr><br /><nobr><a title="19" href="https://digitalfire.com/trouble/foaming+of+ceramicd+glaze+slurries">Foaming of Ceramicd Glaze Slurries</a></nobr><br /><nobr><a title="3" href="https://digitalfire.com/trouble/glaze+blisters">Glaze Blisters</a></nobr><br /><nobr><a title="2" href="https://digitalfire.com/trouble/glaze+crazing">Glaze Crazing</a></nobr><br /><nobr><a title="6" href="https://digitalfire.com/trouble/glaze+is+off-color">Glaze is Off-Color</a></nobr><br /><nobr><a title="8" href="https://digitalfire.com/trouble/glaze+marks+or+scratches">Glaze Marks or Scratches</a></nobr><br /><nobr><a title="22" href="https://digitalfire.com/trouble/glaze+peeling+on+drying">Glaze peeling on drying</a></nobr><br /><nobr><a title="5" href="https://digitalfire.com/trouble/glaze+pinholes%2C+pitting">Glaze Pinholes, Pitting</a></nobr><br /><nobr><a title="18" href="https://digitalfire.com/trouble/glaze+shivering">Glaze Shivering</a></nobr><br /><nobr><a title="14" href="https://digitalfire.com/trouble/glaze+slurry+is+difficult+to+use+or+settling">Glaze Slurry is Difficult to Use or Settling</a></nobr><br /><nobr><a title="26" href="https://digitalfire.com/trouble/leaking+of+fired+ceramics">Leaking of Fired Ceramics</a></nobr><br /><nobr><a title="28" href="https://digitalfire.com/trouble/lime+popping">Lime Popping</a></nobr><br /><nobr><a title="27" href="https://digitalfire.com/trouble/orange+peel+surface">Orange Peel Surface</a></nobr><br /><nobr><a title="21" href="https://digitalfire.com/trouble/over+firing+of+ceramic+glazes+and+bodies">Over Firing of Ceramic Glazes and Bodies</a></nobr><br /><nobr><a title="4" href="https://digitalfire.com/trouble/powdering%2C+cracking+and+settling+glazes">Powdering, Cracking and Settling Glazes</a></nobr><br /><nobr><a title="25" href="https://digitalfire.com/trouble/runny+ceramic+glazes">Runny Ceramic Glazes</a></nobr><br /><nobr><a title="17" href="https://digitalfire.com/trouble/specking+on+ceramic+ware">Specking on Ceramic Ware</a></nobr><br /><nobr><a title="15" href="https://digitalfire.com/trouble/splitting+at+the+plastic+stage">Splitting at the Plastic Stage</a></nobr><br /><nobr><a title="24" href="https://digitalfire.com/trouble/staining+of+fired+ceramic+glazes">Staining of Fired Ceramic Glazes</a></nobr><br /><nobr><a title="20" href="https://digitalfire.com/trouble/uneven+glaze+coverage">Uneven Glaze Coverage</a></nobr><br /><nobr><a title="12" href="https://digitalfire.com/trouble/warping">Warping</a></nobr></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Casting Slip Problems</h1>
+<p class="text-muted" style="margin-left:20px">Casting slips are deflocculated in order to reduce water content. It is important to understand this phenomenon and know how to assess a slurry to know what it needs.
+<h2>Details</h2>
+<p>Assuming that the <a  href="https://digitalfire.com/glossary/casting+slip">casting slip</a> recipe passes a <a  href="https://digitalfire.com/glossary/limit+recipe">sanity check</a> for its type (e.g. contains enough clay or the right degree of <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> and does not contain <a  href="https://digitalfire.com/glossary/soluble+salts">soluble salts</a>) the issue when problems arise is almost always over or under <a  href="https://digitalfire.com/glossary/deflocculation">deflocculation</a> of the <a  href="https://digitalfire.com/glossary/slurry">slurry</a>. Recipes of % water and deflocculant are fluid, amounts have to be adjusted to deal with changing materials. It is thus important to be able to measure <a  href="https://digitalfire.com/glossary/specific+gravity">specific gravity</a>, assess <a  href="https://digitalfire.com/glossary/viscosity">viscosity</a> and <a  href="https://digitalfire.com/glossary/thixotropy">thixotropy</a> and know what to do when any of them is not within the expected measurement.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Here is how vigorously a deflocculated ceramic slurry should be mixed</h3>
+<video class="flexleft50"width="640" controls="controls" preload="none" autoplay="false" poster="https://digitalfire.com/4sight/images/pictures/divvysipoj.jpg">
+<source src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/divvysipoj.mp4" type="video/mp4">Your browser does not support MP4 video.
+</video>
+<p>A video of the kind of agitation needed from a <a  href="https://digitalfire.com/glossary/propeller+mixer">propeller mixer</a> to get the best properties out of a <a  href="https://digitalfire.com/glossary/deflocculation">deflocculated</a> <a  href="https://digitalfire.com/glossary/slurry">slurry</a>. This is <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12881">Polar Ice</a> mixing in a 5-gallon pail. Although it is quite plastic compared to industrial casting slips, it has a <a  href="https://digitalfire.com/glossary/specific+gravity">specific gravity</a> of 1.76, is very fluid and casts well in the hands of a potter. These properties are a product of, not just the recipe, but the mixer and its ability to put high energy into the slurry.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">New Zealand kaolin based slip casts at 1mm thickness. How?</h3>
+<br /><a alt="A very thin walled porcelain bowl" href="https://digitalfire.com/picture/991"><img class="flexleft50" alt="A very thin walled porcelain bowl"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/kyhdozalyt.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/991">click here</a> to see it.</p>
+<p>This is <a  href="https://plainsmanclays.ca/data/index.php?product=12881">Polar Ice</a> casting, a New Zealand Halloysite based <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> <a  href="https://digitalfire.com/glossary/translucency">translucent</a> <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a>. The base body recipe would never have enough plastic strength to pull itself from this mold without tearing. But the addition of 1% Veegum gives it amazing strength. This dried cast bowl measures 130mm in diameter and 85mm deep, it only weighs 89 gm! The slip was in the mold for only 1 minute before pour-out. Of course, there is a price to pay for adding the Veegum: Increased casting time and more difficult <a  href="https://digitalfire.com/glossary/deflocculation">deflocculation</a>. Regular <a  href="https://digitalfire.com/material/106">bentonite</a> can be used in most bodies, but for super-whites like this, Veegum (or equivalent) is the choice. Testing is needed to determine what percentage gives the needed strength yet does not increase the casting time too much. The <a  href="https://plainsmanclays.ca/data/index.php?product=12881">polar ice</a> information page at <a  href="https://digitalfire.com/url/221">plainsmanclays.com</a> has very good information, under the heading “Casting Recipe”, about the challenges and trade-offs of using this <a  href="https://digitalfire.com/material/925">kaolin</a> in <a  href="https://digitalfire.com/glossary/casting+slip">casting bodies</a>.<br />
+</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Over-deflocculated ceramic slurry forms a skin</h3>
+<br /><a href="https://digitalfire.com/picture/814"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/articles/dyjpojonih.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/814">click here</a> to see it.</p>
+<p>In this instance, the <a  href="https://digitalfire.com/glossary/slurry">slurry</a> forms a skin a few minutes after the mixer has stopped. Casting recipes do not travel well. Over-deflocculation is a danger when simply using the percentage of water and deflocculant shown. Variables in water electrolytes, solubles in materials, mixing equipment and procedures, temperature and production requirements (and other factors) necessitate adapting recipes of others to your circumstances. Add less than the recommended deflocculant to try and reach the <a  href="https://digitalfire.com/glossary/specific+gravity">specific gravity</a> you want. If the slurry is too viscous (after vigorous mixing), then add more deflocculant. At times, more than what is recommended in your recipe will be needed. After all of this you will be in a position to lock-down a recipe for your production. However flexibility is still needed (for changing materials, water, seasons, etc).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Over deflocculated vs. under deflocculated ceramic slurry</h3>
+<br /><a href="https://digitalfire.com/picture/2426"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/xbs6drdnrs.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2426">click here</a> to see it.</p>
+<p>The slip on the right has way too much <a  href="https://digitalfire.com/material/260">Darvan</a> deflocculant. Because the new recipe substitutes a large-particle <a  href="https://digitalfire.com/material/925">kaolin</a> for the original fine-particled material, it only requires about half the amount of Darvan. Underestimating that fact, I put in three-quarters of the amount. The over-deflocculated <a  href="https://digitalfire.com/glossary/slurry">slurry</a> cast too thin, is not releasing from the mold (therefore cracking) and the surface is dusty and grainy even though the clay is still very damp. On my second attempt I under-supplied the Darvan. That slurry gelled, did not drain well at all and it cast too thick. On the third attempt I hit the jackpot! Not only does it have 1.8 <a  href="https://digitalfire.com/glossary/specific+gravity">specific gravity</a> (SG), but the slurry flowed really well, cast quickly, drained perfectly and the piece released from the mold in five minutes. Interestingly, on a fourth mix I made an error, putting in too much water, getting 1.6SG. The casting behavior was similar to the over-deflocculated slip (even though the Darvan content was much lower). A good <a  href="https://digitalfire.com/glossary/casting+slip">casting slip</a> is a combination of a good recipe, the right SG and the correct level of <a  href="https://digitalfire.com/glossary/deflocculation">deflocculation</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Over deflocculated slip causes instability in toilet tank</h3>
+<br /><a href="https://digitalfire.com/picture/1747"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/cehbesaryh.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1747">click here</a> to see it.</p>
+<p><a  href="https://digitalfire.com/glossary/sanitary+ware">Sanitary ware</a> factories optimize their slips to have the lowest possible <a  href="https://digitalfire.com/glossary/specific+gravity">specific gravity</a> for production volume reasons. Potters would be happy with 1.7 SG whereas numbers approaching 1.9 SG are common in factories. They often teeter on the edge of issues like this (sections softening causing localize warping) and inexperienced technicians can be unaware of the critical balances needed to prevent loss in production.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Even slight over-deflocculation of casting slips can be a problem</h3>
+<br /><a alt="A plastic mold with a freshly cast mug about to be extracted" href="https://digitalfire.com/picture/2608"><img class="flexleft50" alt="A plastic mold with a freshly cast mug about to be extracted"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/gblkoqqlsq.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2608">click here</a> to see it.</p>
+<p>This is the L3798E <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> buff-burning <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> slip (it is 35% KT1-4 <a  href="https://digitalfire.com/material/80">ball clay</a>, 25% <a  href="https://digitalfire.com/material/1245">silica</a>, 12% nepheline, 15% <a  href="https://digitalfire.com/material/291">EPK</a>, 13% <a  href="https://digitalfire.com/material/1191">Redart</a>). This recipe was easy to <a  href="https://digitalfire.com/glossary/deflocculation">deflocculate</a> to 1.8 <a  href="https://digitalfire.com/glossary/specific+gravity">specific gravity</a> and yet it was very thin and runny. It pours nicely and does not gel. The former recipe was using a plastic ball clay and this switches it to a larger particle ball clay intended for casting. Thus the amount of deflocculant needed is less. But we did not reduce it, that's why it is so fluid. While not fluid enough to settle out or have poor draining properties, it is nevertheless, slightly over <a  href="https://digitalfire.com/glossary/deflocculation">deflocculated</a>. Although pieces can be extracted from the mold quickly, casting time is longer than it should be (for this one 15 minutes for a 2mm thick wall). Another issue is the inside surface: It should feel soapy and smooth in the <a  href="https://digitalfire.com/glossary/leather+hard">leather hard</a> state, but it feels sandy! This underscores the need for controlled <a  href="https://digitalfire.com/glossary/flocculation">flocculation</a> (using less deflocculant) to maintain at a slightly more viscous fluidity so that it has <a  href="https://digitalfire.com/glossary/thixotropy">thixotropy</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">The casting slip did not drain well when pouring this mug</h3>
+<br /><a alt="The inside view of a fired mug showing uneven wall thickness" href="https://digitalfire.com/picture/2619"><img class="flexleft50" alt="The inside view of a fired mug showing uneven wall thickness"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/ray9tbytz7.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2619">click here</a> to see it.</p>
+<p>The <a  href="https://digitalfire.com/glossary/slurry">slurry</a> contained insufficient Davan deflocculant. During casting it gelled excessively in the mold. Even shaking the piece while pouring out the slip was not enough to loosen it up and get a good drain. If slurry <a  href="https://digitalfire.com/glossary/rheology">rheology</a> is not right the quality of ware produced is affected like this.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">A draining issue with a slip cast bottle</h3>
+<h4 style="color:#888888; margin-top:0px;">It is turning inside out!</h4>
+<br /><a alt="Slip casting bottle turning inside out" href="https://digitalfire.com/picture/3414"><img class="flexleft50" alt="Slip casting bottle turning inside out"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/ss7aam29rb.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3414">click here</a> to see it.</p>
+<p>Why did this happen? There is a perfect storm of factors. Draining, during <a  href="https://digitalfire.com/glossary/slip+casting">slip casting</a>, creates suction and slip is heavy (1.8 times heavier than water). And this mold is tall with a narrow neck. So that creates a lot of suction. A slip having inadequate fluidity complicates draining. This round shape, even with printing <a  href="https://digitalfire.com/picture/3536">artifacts</a>, also releases well. How can this issue be avoided?<br />
+<br />
+-Draining the mold carefully, holding it near horizontal for much of the drain.<br />
+-Use a well-deflocculated slip.<br />
+-Add <a  href="https://digitalfire.com/material/106">bentonite</a> to the slip, perhaps 0.5%, to make it stickier and slow down release time (which also slows down the casting time).<br />
+-At times, this will happen despite all efforts. In that case, if might be necessary to use a tube (e.g. 1/2 or 5/16”) to pump most of the liquid slip out of the bottle before inverting it. Adapt a <a  href="https://digitalfire.com/glossary/3d-printing">3D printed</a> <a  href="https://digitalfire.com/glossary/pour+spout">pour spout</a> to keep the tube centered, at least near the mouth of the bottle.</p>
+<p style="clear:left"></p><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

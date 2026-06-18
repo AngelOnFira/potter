@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Low Budget Testing of Ceramic Glazes</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="There is more to glazes than their visual character, they have other physical properties like hardness, thermal expansion, leachability, chemistry and they exhibit many defects. Here are some simple tests.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item active" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=article" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Articles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a title="388" href="https://digitalfire.com/article/388">A ChatBot gives jaw-dropping glaze recipe advice - Jan 2025</a><br /><a title="244" href="https://digitalfire.com/article/244">A Low Cost Tester of Glaze Melt Fluidity</a><br /><a title="361" href="https://digitalfire.com/article/361">A One-speed Lab or Studio Slurry Mixer</a><br /><a title="353" href="https://digitalfire.com/article/353">A Textbook Cone 6 Matte Glaze With Problems</a><br /><a title="199" href="https://digitalfire.com/article/199">Adjusting Glaze Expansion by Calculation to Solve Shivering</a><br /><a title="251" href="https://digitalfire.com/article/251">Alberta Slip, 20 Years of Substitution for Albany Slip</a><br /><a title="273" href="https://digitalfire.com/article/273">An Overview of Ceramic Stains</a><br /><a title="37" href="https://digitalfire.com/article/37">Are You in Control of Your Production Process?</a><br /><a title="12" href="https://digitalfire.com/article/12">Are Your Glazes Food Safe or are They Leachable?</a><br /><a title="143" href="https://digitalfire.com/article/143">Attack on Glass: Corrosion Attack Mechanisms</a><br /><a title="204" href="https://digitalfire.com/article/204">Ball Milling Glazes, Bodies, Engobes</a><br /><a title="345" href="https://digitalfire.com/article/345">Binders for Ceramic Bodies</a><br /><a title="4" href="https://digitalfire.com/article/4">Bringing Out the Big Guns in Craze Control: MgO (G1215U)</a><br /><a title="381" href="https://digitalfire.com/article/381">Can We Help You Fix a Specific Problem?</a><br /><a title="124" href="https://digitalfire.com/article/124">Ceramic Glazes Today</a><br /><a title="208" href="https://digitalfire.com/article/208">Ceramic Material Nomenclature</a><br /><a title="336" href="https://digitalfire.com/article/336">Ceramic Tile Clay Body Formulation</a><br /><a title="217" href="https://digitalfire.com/article/217">Changing Our View of Glazes</a><br /><a title="22" href="https://digitalfire.com/article/22">Chemistry vs. Matrix Blending to Create Glazes from Native Materials</a><br /><a title="209" href="https://digitalfire.com/article/209">Concentrate on One Good Glaze</a><br /><a title="115" href="https://digitalfire.com/article/115">Copper Red Glazes</a><br /><a title="271" href="https://digitalfire.com/article/271">Crazing and Bacteria: Is There a Hazard?</a><br /><a title="190" href="https://digitalfire.com/article/190">Crazing in Stoneware Glazes: Treating the Causes, Not the Symptoms</a><br /><a title="97" href="https://digitalfire.com/article/97">Creating a Non-Glaze Ceramic Slip or Engobe</a><br /><a title="195" href="https://digitalfire.com/article/195">Creating Your Own Budget Glaze</a><br /><a title="36" href="https://digitalfire.com/article/36">Crystal Glazes: Understanding the Process and Materials</a><br /><a title="324" href="https://digitalfire.com/article/324">Deflocculants: A Detailed Overview</a><br /><a title="32" href="https://digitalfire.com/article/32">Demonstrating Glaze Fit Issues to Students</a><br /><a title="334" href="https://digitalfire.com/article/334">Diagnosing a Casting Problem at a Sanitaryware Plant</a><br /><a title="196" href="https://digitalfire.com/article/196">Drying Ceramics Without Cracks</a><br /><a title="187" href="https://digitalfire.com/article/187">Duplicating Albany Slip</a><br /><a title="45" href="https://digitalfire.com/article/45">Duplicating AP Green Fireclay</a><br /><a title="197" href="https://digitalfire.com/article/197">Electric Hobby Kilns: What You Need to Know</a><br /><a title="39" href="https://digitalfire.com/article/39">Fighting the Glaze Dragon</a><br /><a title="214" href="https://digitalfire.com/article/214">Firing Clay Test Bars</a><br /><a title="200" href="https://digitalfire.com/article/200">Firing: What Happens to Ceramic Ware in a Firing Kiln</a><br /><a title="113" href="https://digitalfire.com/article/113">First You See It Then You Don't: Raku Glaze Stability</a><br /><a title="316" href="https://digitalfire.com/article/316">Fixing a glaze that does not stay in suspension</a><br /><a title="338" href="https://digitalfire.com/article/338">Formulating a body using clays native to your area</a><br /><a title="191" href="https://digitalfire.com/article/191">Formulating a Clear Glaze Compatible with Chrome-Tin Stains</a><br /><a title="282" href="https://digitalfire.com/article/282">Formulating a Porcelain</a><br /><a title="188" href="https://digitalfire.com/article/188">Formulating Ash and Native-Material Glazes</a><br /><a title="114" href="https://digitalfire.com/article/114">G1214M Cone 5-7 20x5 glossy transparent glaze</a><br /><a title="121" href="https://digitalfire.com/article/121">G1214W Cone 6 transparent glaze</a><br /><a title="122" href="https://digitalfire.com/article/122">G1214Z Cone 6 matte glaze</a><br /><a title="226" href="https://digitalfire.com/article/226">G1916M Cone 06-04 transparent glaze</a><br /><a title="203" href="https://digitalfire.com/article/203">Getting the Glaze Color You Want: Working With Stains</a><br /><a title="342" href="https://digitalfire.com/article/342">Glaze and Body Pigments and Stains in the Ceramic Tile Industry</a><br /><a title="189" href="https://digitalfire.com/article/189">Glaze Chemistry Basics - Formula, Analysis, Mole%, Unity </a><br /><a title="358" href="https://digitalfire.com/article/358">Glaze chemistry using a frit of approximate analysis</a><br /><a title="123" href="https://digitalfire.com/article/123">Glaze Recipes: Formulate and Make Your Own Instead</a><br /><a title="343" href="https://digitalfire.com/article/343">Glaze Types, Formulation and Application in the Tile Industry</a><br /><a title="181" href="https://digitalfire.com/article/181">Having Your Glaze Tested for Toxic Metal Release</a><br /><a title="364" href="https://digitalfire.com/article/364">High Gloss Glazes</a><br /><a title="384" href="https://digitalfire.com/article/384">Hire Us for a 3D Printing Project</a><br /><a title="136" href="https://digitalfire.com/article/136">How a Material Chemical Analysis is Done</a><br /><a title="235" href="https://digitalfire.com/article/235">How desktop INSIGHT Deals With Unity, LOI and Formula Weight</a><br /><a title="331" href="https://digitalfire.com/article/331">How to Find and Test Your Own Native Clays</a><br /><a title="26" href="https://digitalfire.com/article/26">I have always done it this way!</a><br /><a title="344" href="https://digitalfire.com/article/344">Inkjet Decoration of Ceramic Tiles</a><br /><a title="279" href="https://digitalfire.com/article/279">Is Your Fired Ware Safe?</a><br /><a title="311" href="https://digitalfire.com/article/311">Leaching Cone 6 Glaze Case Study</a><br /><a title="206" href="https://digitalfire.com/article/206">Limit Formulas and Target Formulas</a><br /><a title="133" href="https://digitalfire.com/article/133">Low Budget Testing of Ceramic Glazes</a><br /><a title="333" href="https://digitalfire.com/article/333">Make Your Own Ball Mill Stand</a><br /><a title="347" href="https://digitalfire.com/article/347">Making Glaze Testing Cones</a><br /><a title="341" href="https://digitalfire.com/article/341">Monoporosa or Single Fired Wall Tiles</a><br /><a title="325" href="https://digitalfire.com/article/325">Organic Matter in Clays: Detailed Overview</a><br /><a title="105" href="https://digitalfire.com/article/105">Outdoor Weather Resistant Ceramics</a><br /><a title="27" href="https://digitalfire.com/article/27">Painting Glazes Rather Than Dipping or Spraying</a><br /><a title="212" href="https://digitalfire.com/article/212">Particle Size Distribution of Ceramic Powders</a><br /><a title="339" href="https://digitalfire.com/article/339">Porcelain Tile, Vitrified Tile</a><br /><a title="20" href="https://digitalfire.com/article/20">Rationalizing Conflicting Opinions About Plasticity</a><br /><a title="332" href="https://digitalfire.com/article/332">Ravenscrag Slip is Born</a><br /><a title="247" href="https://digitalfire.com/article/247">Recylcing Scrap Clay</a><br /><a title="101" href="https://digitalfire.com/article/101">Reducing the Firing Temperature of a Glaze From Cone 10 to 6</a><br /><a title="329" href="https://digitalfire.com/article/329">Setting up a Clay Testing Program in Your Company or Studio</a><br /><a title="211" href="https://digitalfire.com/article/211">Simple Physical Testing of Clays</a><br /><a title="350" href="https://digitalfire.com/article/350">Single Fire Glazing</a><br /><a title="326" href="https://digitalfire.com/article/326">Soluble Salts in Minerals: Detailed Overview</a><br /><a title="28" href="https://digitalfire.com/article/28">Some Keys to Dealing With Firing Cracks</a><br /><a title="249" href="https://digitalfire.com/article/249">Stoneware Casting Body Recipes</a><br /><a title="194" href="https://digitalfire.com/article/194">Substituting Cornwall Stone</a><br /><a title="274" href="https://digitalfire.com/article/274">Super-Refined Terra Sigillata</a><br /><a title="340" href="https://digitalfire.com/article/340">The Chemistry, Physics and Manufacturing of Glaze Frits</a><br /><a title="202" href="https://digitalfire.com/article/202">The Effect of Glaze Fit on Fired Ware Strength</a><br /><a title="125" href="https://digitalfire.com/article/125">The Four Levels on Which to View Ceramic Glazes</a><br /><a title="207" href="https://digitalfire.com/article/207">The Majolica Earthenware Process</a><br /><a title="43" href="https://digitalfire.com/article/43">The Potter's Prayer</a><br /><a title="359" href="https://digitalfire.com/article/359">The Right Chemistry for a Cone 6 Magnesia Matte</a><br /><a title="33" href="https://digitalfire.com/article/33">The Trials of Being the Only Technical Person in the Club</a><br /><a title="107" href="https://digitalfire.com/article/107">The Whining Stops Here: A Realistic Look at Clay Bodies</a><br /><a title="134" href="https://digitalfire.com/article/134">Those Unlabelled Bags and Buckets</a><br /><a title="16" href="https://digitalfire.com/article/16">Tiles and Mosaics for Potters</a><br /><a title="308" href="https://digitalfire.com/article/308">Toxicity of Firebricks Used in Ovens</a><br /><a title="379" href="https://digitalfire.com/article/379">Trafficking in Glaze Recipes</a><br /><a title="216" href="https://digitalfire.com/article/216">Understanding Ceramic Materials</a><br /><a title="210" href="https://digitalfire.com/article/210">Understanding Ceramic Oxides</a><br /><a title="130" href="https://digitalfire.com/article/130">Understanding Glaze Slurry Properties</a><br /><a title="213" href="https://digitalfire.com/article/213">Understanding the Deflocculation Process in Slip Casting</a><br /><a title="132" href="https://digitalfire.com/article/132">Understanding the Terra Cotta Slip Casting Recipes In North America</a><br /><a title="198" href="https://digitalfire.com/article/198">Understanding Thermal Expansion in Ceramic Glazes</a><br /><a title="313" href="https://digitalfire.com/article/313">Unwanted Crystallization in a Cone 6 Glaze</a><br /><a title="389" href="https://digitalfire.com/article/389">Using Dextrin, Glycerine and CMC Gum together</a><br /><a title="135" href="https://digitalfire.com/article/135">Volcanic Ash</a><br /><a title="201" href="https://digitalfire.com/article/201">What Determines a Glaze's Firing Temperature?</a><br /><a title="111" href="https://digitalfire.com/article/111">What is a Mole, Checking Out the Mole</a><br /><a title="38" href="https://digitalfire.com/article/38">What is the Glaze Dragon?</a><br /><a title="98" href="https://digitalfire.com/article/98">Where do I start in understanding glazes?</a><br /><a title="215" href="https://digitalfire.com/article/215">Why Textbook Glazes Are So Difficult</a><br /><a title="239" href="https://digitalfire.com/article/239">Working with children</a></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Low Budget Testing of Ceramic Glazes</h1>
+<h4 class="text-muted">Description</h4><p class="text-muted font-italic">There is more to glazes than their visual character, they have other physical properties like hardness, thermal expansion, leachability, chemistry and they exhibit many defects. Here are some simple tests.</p><h4>Article</h4>
+<P>What if you could greatly increase the quality of your fired ware by only small changes? Would you do it? Testing it thoroughly is a key ingredient. But mention the idea of testing a glaze and 99% of us think in terms of dipping a test tile and firing it to see how it looks. Many have learned that there is often little correlation between how a glaze looks on a little test tile compared with how it looks when used on ware, thus they tend to put little effort into testing. However if you already have a glaze in production, or have made an adjustment to an existing one, you are likely willing to expend much more effort to evaluate it fully.</P>
+<P>Raw and fired glazes exhibit many properties that both production and end users are knowingly or unknowingly concerned with. These include <a  href="https://digitalfire.com/glossary/slurry">slurry</a> properties, dry hardness, behavior of <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a>, freezing characteristics, hardness and scratch resistance of the fired glass, compatibility of host glaze and added <a  href="https://digitalfire.com/glossary/colorant">colorants</a>, leach resistance, <a  href="https://digitalfire.com/glossary/glaze+fit">glaze fit</a> with the body, clarity of the fired glass, etc. Certain factors such susceptibility to material change and varying firing conditions are more difficult to measure.</P>
+<P>Most people and companies do not have fancy glaze testing equipment to evaluate these properties. It is to these that this article is directed, there is much you can do to greatly increase your confidence in the true 'quality' of your product. Testing your glaze thoroughly is doubly important if you are using one or two <a  href="https://digitalfire.com/glossary/base+glaze">base glazes</a> because, in a sense, you have all your 'quality eggs in one basket'. We 'hoot' a lot about the advantages of focusing your efforts on one base glossy and matte recipe and altering these to make whatever you want. Thus the following tests all assume and depend on the fact that you are testing the transparent base without any colorants, <a  href="https://digitalfire.com/glossary/opacifier">opacifiers</a>, or other additives. Remember that improving the base improves every recipe that is based on it.</P>
+<P>Here are some tests you should consider: 
+<UL>
+<LI><BIG><STRONG>Slurry Properties<BR></STRONG></BIG>Mix a small pail of the glaze and bring it to the proper consistency (I am assuming you are glazing <a  href="https://digitalfire.com/glossary/bisque">bisque</a> ware). Most glazes work best when there is enough water to make them fluid and not so much that they do not gel. Typically you should be able to stir a glaze with a stick, pull the stick out, and the slurry should remain in motion only for 2-4 seconds. Measure its <a  href="https://digitalfire.com/glossary/specific+gravity">specific gravity</a> and record this amount. If in future the glaze gels, settles, or runs excessively check its specific gravity. If it is correct then you need to investigate changes in your water supply or dry materials that could flocculate or <a  href="https://digitalfire.com/glossary/deflocculation">deflocculate</a> the slurry.<BR>Let the container of glaze sit overnight and check it the next day for any tendency to settle or gel excessively. If it settles incorporate some <a  href="https://digitalfire.com/material/106">bentonite</a> in the recipe. If it gels to the point that remixing does not thin it out then replace materials known to be soluble (i.e. <a  href="https://digitalfire.com/material/806">Gerstley Borate</a>, <a  href="https://digitalfire.com/material/1070">Nepheline Syenite</a>) or use distilled water.<BR>
+<LI><BIG><STRONG>Application Properties<BR></STRONG></BIG>Dip your dry finger into the slurry and pull it out. Only one or two drips should fall and a good layer of glaze should hold itself in place. For glazes intended for application to bisque ware, dip a thick test tile (2 cm thick) all the way in for two seconds, pull it out and turn it over and watch for any tendency to run and drip. Note how quick it dries. When dry dip it again half way and hold it in for several seconds. Set it out to dry and note any tendency of the glaze cover to crack during drying (this is an indication of too much clay or too plastic clay in the recipe). When the specimen is completely dry note its tendency to 'powder off' in your hands. Will it accept <a  href="https://digitalfire.com/glossary/overglaze">overglaze</a> painted decoration without turning to mud or will wax resist paint on and hang on well (if not the clay content is either too low or not plastic enough).<BR>Dip a thin test tile also (5mm thick or less) and apply thick and thin layers as above (the tile should be thin enough so that the clay becomes waterlogged and the glaze thus dries slowly). Note any tendency of the glaze to bubble as it dries, this indicates that the specific gravity of the glaze may be too low.<BR>
+<LI><BIG><STRONG>Crystallization, Clarity, Crawling</STRONG></BIG><BR>Fire the thick and thin test specimens made above. The thick one will cool slower, note any tendency for it to <a  href="https://digitalfire.com/glossary/crystallization">devitrify</a> (develop crystals) compared to the thin one. Note any tendency toward <a  href="https://digitalfire.com/trouble/crawling">crawling</a> on the thickly glazed sections of the specimens, especially near edges. Note any tendency of the glaze to cloud with bubbles in the thicker areas.<BR>
+<LI><STRONG><BIG>Stain Compatibility</BIG></STRONG><BR>Using a small brush paint stain ID numbers and color swatches on a flat tile of the target <a  href="https://digitalfire.com/glossary/clay+body">clay body</a>. Glaze the whole tile over with a transparent version of the <a  href="https://digitalfire.com/glossary/base+glaze">base glaze</a> you are testing and fire. Note colors that are off and research the required <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> to explain why.<BR>
+<LI><BIG><STRONG>Leaching</STRONG></BIG><BR>Add a <a  href="https://digitalfire.com/glossary/colorant">colorant</a> like cobalt to a transparent version of the glaze being test, make and fire a bowl, fill it with vinegar and leave it in a warm place for twenty four hours. Note any fading of color, reformulate and test again till no <a  href="https://digitalfire.com/glossary/leaching">leaching</a> occurs.<BR>
+<LI><BIG><STRONG>Hardness</STRONG></BIG><BR>Take a sharp concrete nail and attempt to scratch the glaze. Compare its performance against a benchmark glaze that has proven to be durable. Or use a hardened steel file to attempt to remove glaze on the lip or corner of a piece.<BR>
+<LI><STRONG><BIG>Cutlery Marking</BIG></STRONG><BR>Using the edge of a stainless spoon or fork attempt to mark the surface of the glaze. If it marks attempt to rub or clean the mark off. If you cannot consider reformulating the glaze to develop a smoother surface or fewer crystals, <a  href="https://digitalfire.com/glossary/flux">flux</a> it to melt more, or fire it higher.<BR>
+<LI><STRONG><BIG>Crazing, Shivering</BIG></STRONG><BR>Cycle a thin glazed shard of your body-glaze combination between three-minute immersions in boiling water and ice water. Do it three times. Use a black marker to color an area of the surface. Clean the ink off using methyl hydrate. Note any <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a> lines highlighted by the ink. Note any areas near edges that may be flaking off (<a  href="https://digitalfire.com/glossary/glaze+shivering">shivering</a>). Reformulate the glaze to reduce its <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> (increase it for shivering), fire, and test again.<BR>
+<LI><STRONG><BIG>Glaze Over Solubles</BIG></STRONG><BR>Prepare a 12cm diameter disk 5mm thick from your clay and dry it under a fan with the center 6 cm covered. Any <a  href="https://digitalfire.com/glossary/soluble+salts">soluble salts</a> in your clay body will be amplified on the outer 3cm ring. Break the disk in half, glaze half, and support and fire it resting on the flat. Note any reaction between the soluble salts in your clay and the glaze (i.e. <a  href="https://digitalfire.com/trouble/glaze+blisters">blistering</a>, <a  href="https://digitalfire.com/trouble/orange+peel+surface">orange peeling</a>).<BR>
+<LI><STRONG><BIG>Flow</BIG></STRONG><BR>Check the flow of the melt using a flow tester.<BR>
+<LI><STRONG><BIG>Fired Volatility</BIG><BR></STRONG>Many glazes work well at one temperature but if fired slightly higher or lower they can have a much different surface. This type of behavior is normally only tolerated in very special purpose glazes. Thus you should prepare sample tiles for firing one cone higher and lower than you working temperature. This will help you spot possible trouble in future if kiln firings are not totally consistent.<BR>
+<LI><BIG><STRONG>Microscope</STRONG></BIG><BR>Using a $20 30X Lightscope (available at hardware stores) look carefully at the glaze surface for any signs of poor melting (especially in matte glazes) or surface pits that could harbor bacteria. Identify any tiny specks as either impurities or the first stages of crystals. Break a shard and check for a good <a  href="https://digitalfire.com/glossary/body+glaze+interface">interface</a> between glaze and clay. Examine any scratches you were able to make with the concrete nail.<BR>
+<LI><STRONG><BIG>Make <a  href="https://digitalfire.com/glossary/functional">Functional</a> Ware</BIG></STRONG><BR>Mix a couple of gallons of the base glaze and make a variety of functional ceramic shapes, glaze, and fire them. Note any problems like <a  href="https://digitalfire.com/glossary/pinholing">pinholing</a>, crawling, <a  href="https://digitalfire.com/glossary/glaze+bubbles">bubbling</a>, <a  href="https://digitalfire.com/glossary/crystallization">devitrification</a>, and blistering. </LI></UL><p style="clear:left"></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Feldspars, the primary high temperature flux, melt less than you think.</h3>
+<br /><a alt="Feldspar melt flows at cone 8 and 11" href="https://digitalfire.com/picture/431"><img class="flexleft50" alt="Feldspar melt flows at cone 8 and 11"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/materials/4feldspars.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/431">click here</a> to see it.</p>
+<p>Our <a  href="https://digitalfire.com/picture/2350">melt fluidity tester</a> is being used to compare cone 8 melt fluidities of Custer, G-200 and i-Minerals high soda and high potassium <a  href="https://digitalfire.com/material/310">feldspars</a>. Notice how little the pure materials are moving (bottom), even though they are fired to cone 11. In addition, the sodium feldspars move better than the potassium ones. But feldspars do their real fluxing work when they can interact with other materials. As a demonstration of that, note how well they flow with only 10% <a  href="https://digitalfire.com/glossary/frit">frit</a> added (top), even though fired three cones lower.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Confirming slip viscosity using a paint-measuring device</h3>
+<br /><a alt="Measuring ceramic slip viscosity using a Ford cup - When is it practical?" href="https://digitalfire.com/picture/1094"><img class="flexleft50" alt="Measuring ceramic slip viscosity using a Ford cup - When is it practical?"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/joxbugigow.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1094">click here</a> to see it.</p>
+<p>A <a  href="https://digitalfire.com/picture/1094">Ford Cup</a> is being using to measure the <a  href="https://digitalfire.com/glossary/viscosity">viscosity</a> of a <a  href="https://digitalfire.com/glossary/casting+slip">casting slip</a>. These are available at paint supply stores. This is a #4 (4.25mm opening), it holds 100ml and drains water in 10 seconds. This casting slip has a <a  href="https://digitalfire.com/glossary/specific+gravity">specific gravity</a> of 1.79. Having made it many times, our experience indicates 40-seconds as a drain target (after high energy mixing). In production situations, the seconds-value this test produces enables an audit-trail for quality control and problem solving. When first mixing a <a  href="https://digitalfire.com/glossary/slurry">slurry</a>, under-deflocculating and eye-balling the viscosity is typical, during that period the slurry gels while draining and Ford cup measurements are not valid. When the mixing process has been perfected and viscosity stabilized the Ford Cup becomes practical.<br />
+<br />
+Don’t overthink this type of measurement or the type of cup or opening size (you can even make your own cup). You must still determine the optimal flow rate based on experience with your process. This technique is more about maintaining to ongoing adherence to a standard you define.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A batch of fired clay test bars in the Plainsman Clays lab</h3>
+<br /><a href="https://digitalfire.com/picture/1238"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/cifvurujin.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1238">click here</a> to see it.</p>
+<p>A batch of fired test bars that have just been boiled and weighed, from these we get <a  href="https://digitalfire.com/glossary/drying+shrinkage">dry shrinkage</a>, <a  href="https://digitalfire.com/glossary/firing+shrinkage">fired shrinkage</a> and <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a>. Each pile is a different mix, fired to various temperatures. Test runs are on the left, production runs on the right. Each bar is stamped with a <a  href="https://digitalfire.com/glossary/code+numbering">code number</a> and specimen number (the different specimens are the different temperatures). The measurements have all been entered into our group account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">insight-live</a>.com. Now I have to lay out and photograph each pile and upload the picture into the code-numbered record. Upon doing so I compare color and tests results to make decisions on what to do next (documenting these in insight-live).</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/limit+formulas+and+target+formulas">Limit Formulas and Target Formulas</a>
+<br /><i>Glaze chemistries for each type of glaze have a typical look to them that enables us to spot ones that are non-typical. Limit and target formulas are useful to us if we keep in perspective their proper use.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/a+low+cost+tester+of+glaze+melt+fluidity">A Low Cost Tester of Glaze Melt Fluidity</a>
+<br /><i>Use this novel device to compare the <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> of glazes and materials. Simple physical observations of the results provide a better understanding of the fired properties of your glaze (and problems you did not see before).</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="https://digitalfire.com/project/tests">Tests</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="https://digitalfire.com/project/frits">Frits</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Troubles</td>
+<td>
+<a href="https://digitalfire.com/trouble/glaze+marks+or+scratches">Glaze Marks or Scratches</a>
+<br /><i>Questions to ask and strategies to try to deal with glaze <a  href="https://digitalfire.com/glossary/cutlery+marking">cutlery marking</a>, that is, glazes that are too easily scatched by metal.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/characterization">Characterization</a>
+<br /><i>In <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>, this normally refers to the process of doing physical or chemical testing on a raw material to accurately describe it in terms of similar ones.</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

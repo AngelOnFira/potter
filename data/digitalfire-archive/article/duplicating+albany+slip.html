@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Duplicating Albany Slip</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="How Alberta Slip was created by analysing and duplicating the physical and chemical properties of Albany Slip" name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item"><a class="nav-link" href="../material/list.html">Materials</a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item active" href="list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=article" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container"><p><a aria-controls="collapse1" aria-expanded="false" class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button">All Articles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a href="388.html" title="388">A ChatBot gives jaw-dropping glaze recipe advice - Jan 2025</a><br/><a href="244.html" title="244">A Low Cost Tester of Glaze Melt Fluidity</a><br/><a href="361.html" title="361">A One-speed Lab or Studio Slurry Mixer</a><br/><a href="353.html" title="353">A Textbook Cone 6 Matte Glaze With Problems</a><br/><a href="199.html" title="199">Adjusting Glaze Expansion by Calculation to Solve Shivering</a><br/><a href="251.html" title="251">Alberta Slip, 20 Years of Substitution for Albany Slip</a><br/><a href="273.html" title="273">An Overview of Ceramic Stains</a><br/><a href="37.html" title="37">Are You in Control of Your Production Process?</a><br/><a href="12.html" title="12">Are Your Glazes Food Safe or are They Leachable?</a><br/><a href="143.html" title="143">Attack on Glass: Corrosion Attack Mechanisms</a><br/><a href="204.html" title="204">Ball Milling Glazes, Bodies, Engobes</a><br/><a href="345.html" title="345">Binders for Ceramic Bodies</a><br/><a href="4.html" title="4">Bringing Out the Big Guns in Craze Control: MgO (G1215U)</a><br/><a href="381.html" title="381">Can We Help You Fix a Specific Problem?</a><br/><a href="124.html" title="124">Ceramic Glazes Today</a><br/><a href="208.html" title="208">Ceramic Material Nomenclature</a><br/><a href="336.html" title="336">Ceramic Tile Clay Body Formulation</a><br/><a href="217.html" title="217">Changing Our View of Glazes</a><br/><a href="22.html" title="22">Chemistry vs. Matrix Blending to Create Glazes from Native Materials</a><br/><a href="209.html" title="209">Concentrate on One Good Glaze</a><br/><a href="115.html" title="115">Copper Red Glazes</a><br/><a href="271.html" title="271">Crazing and Bacteria: Is There a Hazard?</a><br/><a href="190.html" title="190">Crazing in Stoneware Glazes: Treating the Causes, Not the Symptoms</a><br/><a href="97.html" title="97">Creating a Non-Glaze Ceramic Slip or Engobe</a><br/><a href="195.html" title="195">Creating Your Own Budget Glaze</a><br/><a href="36.html" title="36">Crystal Glazes: Understanding the Process and Materials</a><br/><a href="324.html" title="324">Deflocculants: A Detailed Overview</a><br/><a href="32.html" title="32">Demonstrating Glaze Fit Issues to Students</a><br/><a href="334.html" title="334">Diagnosing a Casting Problem at a Sanitaryware Plant</a><br/><a href="196.html" title="196">Drying Ceramics Without Cracks</a><br/><a href="187.html" title="187"><button class="btn btn-dark" type="button">Duplicating Albany Slip</button></a><br/><a href="45.html" title="45">Duplicating AP Green Fireclay</a><br/><a href="197.html" title="197">Electric Hobby Kilns: What You Need to Know</a><br/><a href="39.html" title="39">Fighting the Glaze Dragon</a><br/><a href="214.html" title="214">Firing Clay Test Bars</a><br/><a href="200.html" title="200">Firing: What Happens to Ceramic Ware in a Firing Kiln</a><br/><a href="113.html" title="113">First You See It Then You Don't: Raku Glaze Stability</a><br/><a href="316.html" title="316">Fixing a glaze that does not stay in suspension</a><br/><a href="338.html" title="338">Formulating a body using clays native to your area</a><br/><a href="191.html" title="191">Formulating a Clear Glaze Compatible with Chrome-Tin Stains</a><br/><a href="282.html" title="282">Formulating a Porcelain</a><br/><a href="188.html" title="188">Formulating Ash and Native-Material Glazes</a><br/><a href="114.html" title="114">G1214M Cone 5-7 20x5 glossy transparent glaze</a><br/><a href="121.html" title="121">G1214W Cone 6 transparent glaze</a><br/><a href="122.html" title="122">G1214Z Cone 6 matte glaze</a><br/><a href="226.html" title="226">G1916M Cone 06-04 transparent glaze</a><br/><a href="203.html" title="203">Getting the Glaze Color You Want: Working With Stains</a><br/><a href="342.html" title="342">Glaze and Body Pigments and Stains in the Ceramic Tile Industry</a><br/><a href="189.html" title="189">Glaze Chemistry Basics - Formula, Analysis, Mole%, Unity </a><br/><a href="358.html" title="358">Glaze chemistry using a frit of approximate analysis</a><br/><a href="123.html" title="123">Glaze Recipes: Formulate and Make Your Own Instead</a><br/><a href="343.html" title="343">Glaze Types, Formulation and Application in the Tile Industry</a><br/><a href="181.html" title="181">Having Your Glaze Tested for Toxic Metal Release</a><br/><a href="364.html" title="364">High Gloss Glazes</a><br/><a href="384.html" title="384">Hire Us for a 3D Printing Project</a><br/><a href="136.html" title="136">How a Material Chemical Analysis is Done</a><br/><a href="235.html" title="235">How desktop INSIGHT Deals With Unity, LOI and Formula Weight</a><br/><a href="331.html" title="331">How to Find and Test Your Own Native Clays</a><br/><a href="26.html" title="26">I have always done it this way!</a><br/><a href="344.html" title="344">Inkjet Decoration of Ceramic Tiles</a><br/><a href="279.html" title="279">Is Your Fired Ware Safe?</a><br/><a href="311.html" title="311">Leaching Cone 6 Glaze Case Study</a><br/><a href="206.html" title="206">Limit Formulas and Target Formulas</a><br/><a href="133.html" title="133">Low Budget Testing of Ceramic Glazes</a><br/><a href="333.html" title="333">Make Your Own Ball Mill Stand</a><br/><a href="347.html" title="347">Making Glaze Testing Cones</a><br/><a href="341.html" title="341">Monoporosa or Single Fired Wall Tiles</a><br/><a href="325.html" title="325">Organic Matter in Clays: Detailed Overview</a><br/><a href="105.html" title="105">Outdoor Weather Resistant Ceramics</a><br/><a href="27.html" title="27">Painting Glazes Rather Than Dipping or Spraying</a><br/><a href="212.html" title="212">Particle Size Distribution of Ceramic Powders</a><br/><a href="339.html" title="339">Porcelain Tile, Vitrified Tile</a><br/><a href="20.html" title="20">Rationalizing Conflicting Opinions About Plasticity</a><br/><a href="332.html" title="332">Ravenscrag Slip is Born</a><br/><a href="247.html" title="247">Recylcing Scrap Clay</a><br/><a href="101.html" title="101">Reducing the Firing Temperature of a Glaze From Cone 10 to 6</a><br/><a href="329.html" title="329">Setting up a Clay Testing Program in Your Company or Studio</a><br/><a href="211.html" title="211">Simple Physical Testing of Clays</a><br/><a href="350.html" title="350">Single Fire Glazing</a><br/><a href="326.html" title="326">Soluble Salts in Minerals: Detailed Overview</a><br/><a href="28.html" title="28">Some Keys to Dealing With Firing Cracks</a><br/><a href="249.html" title="249">Stoneware Casting Body Recipes</a><br/><a href="194.html" title="194">Substituting Cornwall Stone</a><br/><a href="274.html" title="274">Super-Refined Terra Sigillata</a><br/><a href="340.html" title="340">The Chemistry, Physics and Manufacturing of Glaze Frits</a><br/><a href="202.html" title="202">The Effect of Glaze Fit on Fired Ware Strength</a><br/><a href="125.html" title="125">The Four Levels on Which to View Ceramic Glazes</a><br/><a href="207.html" title="207">The Majolica Earthenware Process</a><br/><a href="43.html" title="43">The Potter's Prayer</a><br/><a href="359.html" title="359">The Right Chemistry for a Cone 6 Magnesia Matte</a><br/><a href="33.html" title="33">The Trials of Being the Only Technical Person in the Club</a><br/><a href="107.html" title="107">The Whining Stops Here: A Realistic Look at Clay Bodies</a><br/><a href="134.html" title="134">Those Unlabelled Bags and Buckets</a><br/><a href="16.html" title="16">Tiles and Mosaics for Potters</a><br/><a href="308.html" title="308">Toxicity of Firebricks Used in Ovens</a><br/><a href="379.html" title="379">Trafficking in Glaze Recipes</a><br/><a href="216.html" title="216">Understanding Ceramic Materials</a><br/><a href="210.html" title="210">Understanding Ceramic Oxides</a><br/><a href="130.html" title="130">Understanding Glaze Slurry Properties</a><br/><a href="213.html" title="213">Understanding the Deflocculation Process in Slip Casting</a><br/><a href="132.html" title="132">Understanding the Terra Cotta Slip Casting Recipes In North America</a><br/><a href="198.html" title="198">Understanding Thermal Expansion in Ceramic Glazes</a><br/><a href="313.html" title="313">Unwanted Crystallization in a Cone 6 Glaze</a><br/><a href="389.html" title="389">Using Dextrin, Glycerine and CMC Gum together</a><br/><a href="135.html" title="135">Volcanic Ash</a><br/><a href="201.html" title="201">What Determines a Glaze's Firing Temperature?</a><br/><a href="111.html" title="111">What is a Mole, Checking Out the Mole</a><br/><a href="38.html" title="38">What is the Glaze Dragon?</a><br/><a href="98.html" title="98">Where do I start in understanding glazes?</a><br/><a href="215.html" title="215">Why Textbook Glazes Are So Difficult</a><br/><a href="239.html" title="239">Working with children</a></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Duplicating Albany Slip</h1>
+<h4 class="text-muted">Description</h4><p class="text-muted font-italic">How Alberta Slip was created by analysing and duplicating the physical and chemical properties of Albany Slip</p><h4>Article</h4>
+<p>Albany slip has long been a "standard" within the North American
+pottery community. It has proven invaluable for the production of craze-free
+earth tone glazes, and many potteries use some in most of their glaze formulas.
+In the late 1980's after increasing difficulties in mining the product, the
+Hamill and Gillespie Co. discontinued it. Many companies have been working on a
+substitute, with limited success.</p>
+<p>As luck would have it, I had access to a material called "Redearth",
+which burns somewhat similar to <a href="../material/31.html">Albany slip</a>. The task seemed to be to calculate
+the recipe of ceramic minerals that when combined with Redearth would chemically
+duplicate Albany slip. The result turned out to be "<a href="../material/32.html">Alberta Slip</a>".</p>
+<p>I came to recognize early that there are some limiting factors to consider to
+maintain a realistic view of calculation and make the best use of the
+information it provides:</p>
+<ul>
+<li>It is important to have a "<a href="../glossary/representative+sample.html">representative sample</a>" of any native
+    materials used in development, so that testing work can later be reproduced
+    in production. Obtaining a proper specimen is usually a matter of sampling a
+    stockpile in many places.</li>
+</ul>
+<ul>
+<li>It is important to have a "reliable analysis" of the
+    "representative sample". Make sure that a lab with applicable
+    experience does the tests, or have them do it twice to verify. If possible,
+    calculate your own percent weight loss on ignition (<a href="../glossary/loi.html">LOI</a>) by weighing a bone
+    dry sample, firing to cone 02, and weighing again. If the lab's percentage
+    plus your <a href="../oxide/loi.html">LOI</a> figure do not total somewhere between 98 and 102, then find
+    out why. They may tell you to adjust the LOI or <a href="../oxide/sio2.html">SiO<sub>2</sub></a> , retotal, or they may
+    repeat it.</li>
+</ul>
+<p><i>Here is Redearth and Albany calculated alone after adding the former to
+INSIGHT's materials database.</i></p>
+<table border="0" cellpadding="2" cellspacing="1">
+<tbody>
+<tr>
+<th align="left" colspan="3">REDEARTH</th>
+<th align="left" width="20"></th>
+<th align="left" colspan="3">ALBANY</th>
+</tr>
+<tr>
+<td>*CaO</td>
+<td align="right">.08</td>
+<td align="right">.50%</td>
+<td width="20"></td>
+<td>*CaO</td>
+<td align="right">.40</td>
+<td align="right">5.86%</td>
+</tr>
+<tr>
+<td>*MgO</td>
+<td align="right">.26</td>
+<td align="right">1.14%</td>
+<td width="20"></td>
+<td>*MgO</td>
+<td align="right">.25</td>
+<td align="right">2.65%</td>
+</tr>
+<tr>
+<td>*K<sub>2</sub>O</td>
+<td align="right">.32</td>
+<td align="right">3.29%</td>
+<td width="20"></td>
+<td>*K<sub>2</sub>O</td>
+<td align="right">.13</td>
+<td align="right">3.29%</td>
+</tr>
+<tr>
+<td>*Na<sub>2</sub>O</td>
+<td align="right">.11</td>
+<td align="right">.73%</td>
+<td width="20"></td>
+<td>*Na<sub>2</sub>O</td>
+<td align="right">.11</td>
+<td align="right">1.83%</td>
+</tr>
+<tr>
+<td>*Fe<sub>2</sub>O<sub>3</sub></td>
+<td align="right">.22</td>
+<td align="right">3.84%</td>
+<td width="20"></td>
+<td>*Fe<sub>2</sub>O<sub>3</sub></td>
+<td align="right">.11</td>
+<td align="right">4.67%</td>
+</tr>
+<tr>
+<td>TiO2</td>
+<td align="right">.07</td>
+<td align="right">.63%</td>
+<td width="20"></td>
+<td>Al<sub>2</sub>O<sub>3</sub></td>
+<td align="right">.55</td>
+<td align="right">14.82%</td>
+</tr>
+<tr>
+<td>Al<sub>2</sub>O<sub>3</sub></td>
+<td align="right">1.34</td>
+<td align="right">14.76%</td>
+<td width="20"></td>
+<td>SiO<sub>2</sub></td>
+<td align="right">3.69</td>
+<td align="right">58.47%</td>
+</tr>
+<tr>
+<td>SiO<sub>2</sub></td>
+<td align="right">10.73</td>
+<td align="right">69.41%</td>
+<td width="20"></td>
+<td>L.O.I.</td>
+<td> </td>
+<td align="right">8.40%</td>
+</tr>
+<tr>
+<td>L.O.I.</td>
+<td> </td>
+<td align="right">5.70%</td>
+<td width="20"></td>
+<td></td><td></td><td></td>
+</tr>
+<tr>
+<td>RATIO</td>
+<td align="right">7.99</td>
+<td> </td>
+<td width="20"></td>
+<td>RATIO</td>
+<td align="right">6.71</td>
+<td> </td>
+</tr>
+<tr>
+<td>WEIGHT</td>
+<td align="right">927.74</td>
+<td> </td>
+<td width="20"></td>
+<td>WEIGHT</td>
+<td align="right">378.93</td>
+<td> </td>
+</tr>
+</tbody>
+</table>
+<p>I have set unity with the fluxes, since the material will be used in glazes,
+and will be compared to Albany, which is a flux-dominant material. The LOI
+figure shown was derived as described above.</p>
+<p>Since Albany slip has a reputation for being somewhat inconsistent, obtaining
+a representative analysis of it proved elusive. I finally decided on an
+arbitrary textbook analysis. This source did not include a loss on ignition, so
+it was necessary to fire my own sample in the kiln (yielding an 8.4% figure). I
+added the Albany formula, with unity set to the fluxes, to the materials
+definition table in INSIGHT and a standard formula report is shown above beside
+the Redearth. Notice that this formula does not appear very similar to that of
+Redearth, but you may be surprised to find out how little material had to be
+added to convert Redearth to a close chemical duplicate of Albany.</p>
+<p>It is important to note that I did not know how well the sample of Albany
+slip clay I had matched this formula, nor did I know whether this formula could
+be considered representative of "normal" Albany clay. I was attempting
+to duplicate Albany clay on two levels, chemically and physically. The first
+step of the plan was to duplicate it chemically "on paper".</p>
+<p>Firing and <a href="../glossary/physical+testing.html">physical properties</a> tests would indicate further changes
+        necessary to mimic the physical properties (like apparent <a href="../glossary/plasticity.html">plasticity</a>,
+        smoothness, dry strength, shrinkage, raw color), firing properties (like
+        shrinkage, absorption, strength, fusibility, melt <a href="../glossary/viscosity.html">viscosity</a>), and
+        glazing properties (like its effect on physical viscosity, drying
+        shrinkage, application characteristics, etc.). I could not, however,
+        duplicate the material's mineralogically, that is, produce a substitute
+        that would have the same proportions of the same clay minerals.
+        Mineralogical analyses were not available but this was okay since Albany
+        clay is used mostly in glazes where the kiln fires break down all
+        minerals into their <a href="../glossary/basic+oxides.html">basic oxides</a>.</p>
+<p>The next step was to set up the Albany analysis as a reference in the formula
+window of INSIGHT. I then entered a recipe with 100 Redearth and calculated to
+compare. It was just a matter of introducing materials to source <a href="../glossary/ceramic+oxide.html">oxides</a> that are
+lacking in Redearth, one at a time, until the Albany formula was duplicated
+using the highest amount of Redearth possible. The process is an oxide juggling
+act, but one develops an aptitude for it quite quickly. Even by beginner's
+trial and error, it doesn't take more than a few minutes.</p>
+<p>Following is a detail report of the first calculated mix of materials to
+produce a substitute. Take special note of the "<a href="../glossary/unity+formula.html">UNITY FORMULA</a>" totals
+line near the bottom.</p>
+<p>Notice that I duplicated the Albany formula goal almost exactly (disregard
+the second redundant decimal on any numbers).</p>
+<pre>DETAIL PRINT - <a href="https://plainsmanclays.ca/data/index.php?product=12910">ALBERTA SLIP</a> #1
+MATERIAL               PARTS  WEIGHT    <a href="../oxide/cao.html">CaO</a>    <a href="../oxide/mgo.html">MgO</a>    <a href="../oxide/k2o.html">K<sub>2</sub>O</a>   <a href="../oxide/na2o.html">Na<sub>2</sub>O</a>  <a href="../oxide/fe2o3.html">Fe<sub>2</sub>O<sub>3</sub></a>   <a href="../oxide/tio2.html">TiO2</a>  <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a>   SiO<sub>2</sub>
+WEIGHT OF EACH OXIDE                   56.1   40.3   94.2   62.0  160.0   79.7  102.0   60.1
+-- ------------------------------------------------------------------------------------------  MATERIAL
+Expan OF EACH OXIDE                    0.15   0.03   0.33   0.39   0.13   0.14   0.06   0.04   Cost/kg
+--------------------------------------------------------------------------------------------  -------
+ Redearth...........   68.00  936.47   0.01   0.02   0.02   0.01   0.02   0.01   0.10   0.79     0.00
+ WHITING............    5.00  100.00   0.05                                                      0.12
+ <a href="../material/273.html">DOLOMITE</a>...........    8.75  184.00   0.05   0.05                                               0.00
+ <a href="../material/1070.html">NEPHELINE SYENITE</a>..   13.50  446.40   0.00   0.00   0.01   0.02                 0.03   0.14     0.33
+ <a href="../material/925.html">KAOLIN</a>.............    3.00  258.14                                             0.01   0.02     0.24
+ <a href="../material/874.html">IRON OXIDE</a> RED.....    1.75  160.00                               0.01                          2.90
+--------------------------------------------------------------------------------------------  -------
+TOTAL                 100.00           0.11   0.07   0.03   0.03   0.03   0.01   0.14   0.95     0.11
+UNITY FORMULA                          0.11   0.07   0.03   0.03   0.03   0.01   0.14   0.95
+PER CENT BY WEIGHT                     6.05   2.77   2.91   1.88   4.44   0.42  14.78  58.36</pre>
+<pre>Cost/kg  0.11
+ L.O.I.  8.40
+  <a href="../glossary/silica%3Aalumina+ratio.html">Si:Al</a>  6.70
+ SiB:Al  6.70
+  Expan  6.82</pre>
+<p>The next step was to mix a batch of this to compare with pure Albany. I did
+the comparison by treating each as a glaze and applying it to test tiles at a
+variety of thicknesses and fired at a range of temperatures. Disappointingly,
+the substitute had a very coarse and relatively rough surface compared to the
+smooth and silky nature of the Albany. It seemed obvious then, that the
+substitute mix needed to be ground to a finer particle size. I milled for an
+hour, redid the test tiles, and made <a href="../picture/2350.html">melt flow tester</a> samples. The substitute
+fired very close to Albany slip in character, but about 1-2 cones less <a href="../glossary/maturity.html">mature</a>
+and it was a little lighter in fired color.</p>
+<p>The next step was to change the recipe of the substitute in such a way that I
+did not diverge too much from the <a href="../glossary/limit+formula.html">target formula</a>, but still moved closer to the
+physical firing characteristics of Albany. Here is what I decided to do:</p>
+<ul>
+<li>Drop dolomite from the recipe and supply magnesia with <a href="../material/1620.html">talc</a> instead. This
+    would allow the use of more magnesia to achieve better fluxing and retain
+    Albany's <a href="../glossary/co-efficient+of+thermal+expansion.html">low expansion</a>. Had I increased dolomite to source more magnesia,
+    it would have resulted in unwanted extra calcia.
+  </li><li>Drop the Al<sub>2</sub>O<sub>3</sub> slightly to improve <a href="../glossary/maturity.html">maturity</a> and flow.
+  </li><li>Increase the black iron oxide to give more color to the raw material.</li>
+</ul>
+<pre>ALBERTA SLIP #2
+===============
+ Redearth............   67.50  67.50%
+ WHITING.............    9.50   9.50%
+ TALC................    7.00   7.00%
+ NEPHELINE SYENITE...   14.00  14.00%
+ IRON OXIDE RED......    2.00   2.00%
+                     ========
+                       100.00</pre>
+<pre>                    CaO  0.10   5.92%
+                    MgO  0.07   3.10%
+                    K<sub>2</sub>O  0.03   2.92%
+                   Na<sub>2</sub>O  0.03   1.94%
+                  Fe<sub>2</sub>O<sub>3</sub>  0.03   4.69%
+                   TiO2  0.01   0.42%
+                  Al<sub>2</sub>O<sub>3</sub>  0.13  13.66%
+                   SiO<sub>2</sub>  1.00  61.65%</pre>
+<pre>                Cost/kg  0.13
+                 L.O.I.  5.70
+                  Si:Al  7.66
+                 SiB:Al  7.66
+                  Expan  6.72</pre>
+<p>I ended up diverging slightly from the Albany formula goal; however, the mix
+fired out, in most cases, identical to my Albany slip specimen. On the <a href="../glossary/melt+fluidity.html">melt flow</a>
+tests, the two were identical at cone 9 but at cone 7, the Albany fused slightly
+better, probably because of a finer particle size.</p>
+<p>The
+final test of compatibility was to put the two materials into a flow tester and
+a glaze and compare.</p>
+<p>I chose a recipe with a high percentage of Albany as follows</p>
+<pre>GLAZE A                   GLAZE B 
+<a href="../glossary/batch+recipe.html">BATCH RECIPE</a>              BATCH RECIPE 
+------------              ------------
+ALBANY........... 85.0    <a href="https://plainsmanclays.ca/data/index.php?product=12910">ALBERTA SLIP</a>..... 85.0 
+<a href="../material/975.html">LITHIUM CARBONATE</a> 11.0    LITHIUM CARBONATE 11.0 
+*TIN OXIDE........ 4.0    *TIN OXIDE........ 4.0
+
+FORMULA &amp; ANALYSIS    FORMULA &amp; ANALYSIS 
+------------------    ------------------- 
+*CaO    .24  6.05%   *CaO     .23  5.86% 
+*Li<sub>2</sub>O   .39  5.31%   *Li<sub>2</sub>O    .40  5.38% 
+*MgO    .15  2.74%   *MgO     .17  3.11% 
+*K<sub>2</sub>O    .08  3.41%   *K<sub>2</sub>O     .07  3.18% 
+*Na<sub>2</sub>O   .07  1.89%   *Na<sub>2</sub>O    .07  1.87% 
+*Fe<sub>2</sub>O<sub>3</sub>  .07  4.82%   *Fe<sub>2</sub>O<sub>3</sub>   .07  4.74% 
+Al<sub>2</sub>O<sub>3</sub>   .33 15.33%   Al<sub>2</sub>O<sub>3</sub>    .30 13.82% 
+SiO<sub>2</sub>   2.23 60.45%   SiO<sub>2</sub>    2.25 61.60%
+</pre>
+<pre>RATIO 6.71 RATIO 7.58 EXPAN 6.22 EXPAN 6.47 </pre>
+<p>Following are some encouraging things I found after using these glazes:</p>
+<ul>
+<li>Both shivered on my <a href="../glossary/clay+body.html">clay body</a> as evidenced by the fired glaze flaking off
+    at the rims of pottery pieces. Albany is well known as a non-crazing
+    material and this <a href="../glossary/glaze+shivering.html">shivering</a> confirms it. Alberta slip shivers at least as
+    much, possibly more. It is very encouraging to see this important property
+    of Albany duplicated.
+  </li><li>Both glazes blistered in some fast firings, so the evolution of gases,
+    glaze melt viscosity, bubble passage characteristics, etc. of the two seem
+    similar.
+  </li><li>The Alberta slip seems to show a little better color when highlighting
+    thin edges on the pieces (e.g. on <a href="../glossary/incised+decoration.html">incised</a> designs).
+  </li><li>Alberta slip is more plastic than Albany and this tends to cause the glaze
+    to crack when it is drying on the piece.
+  </li><li>Alberta slip is not as inherently fine as Albany, and therefore, might
+    require <a href="../glossary/ball+milling.html">ball milling</a> in many glazes. This does not seem to be the case with
+    highly <a href="../glossary/flux.html">fluxed</a> glazes, but could be true in others.</li>
+</ul>
+<p>Alberta slip tends to flocculate a little when added to a glaze in large
+amounts, so it is necessary to add some deflocculant to thin it out. Even after
+the deflocculant was added (I used Allied Colloids #311 sodium polyacrylate
+dispersant), the glaze tended to gel after sitting for a while but as soon as it
+was stirred it loosened up and flowed well. This might be an advantage, since it
+prevents the glaze from <a href="../glossary/suspension.html">settling</a> out and most people would sooner stir a glaze
+to "loosen it up" rather than try to re-mix one with <a href="../glossary/suspension.html">settled</a> solids.</p>
+<p>In general, True Albany seems to fuse a little better at lower temperatures
+than the current version of Alberta slip, so its glazes flow a little more at
+<a href="../glossary/cone+5.html">cone 5</a>. I attribute this to the fact that Albany is finer. At cone 9 the Alberta
+slip glaze is actually more fluid, and at cone 7 the difference is very small.
+Certainly, it is possible to <a href="../glossary/flux.html">flux</a> Alberta slip to fuse more at lower
+temperatures (possibly <a href="../glossary/borate.html">boron</a> for magnesia). The True Albany glaze has a tendency
+to de-vitrify more than the Alberta slip material. The added CaO was supplied by
+whiting, but one could easily source it from another material that tends to seed
+crystals better (e.g. wollastonite). However, this might increase the cost or
+reduce the amount of Redearth that could be used. One real advantage of Alberta
+slip is that Redearth deposits of raw clay are extremely large and very
+consistent. From a purely "visual appeal" point of view, Alberta slip
+produces a more appealing glaze in my tests.</p>
+<p>Alberta Slip is available from <a href="http://plainsmanclays.com">plainsmanclays.com</a>.</p><p style="clear:left"></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Melt fluidity of Albany Slip vs. Alberta Slip at cone 10R</h3>
+<br/><a alt="Albany vs Alberta Slip melt" href="../picture/526.html"><img alt="Albany vs Alberta Slip melt" class="flexleft50" loading="lazy" src="../media/images/vmj7kunfqa.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/526.html">click here</a> to see it.</p>
+<p>This is a <a href="../test/glfl.html">GLFL test</a>, it employs a slipcast <a href="../picture/2350.html">melt flow tester</a> to show the flow patterns of two glazes (or materials), side-by-side. <a href="../material/31.html">Albany Slip</a> was a pure mined silty clay that, by itself, melted to a glossy dark brown glaze at <a href="../glossary/reduction+firing.html">cone 10R</a>. By itself it was a <a href="../glossary/tenmoku.html">Tenmoku</a> glaze at high temperatures. <a href="../material/32.html">Alberta Slip</a> is a recipe of mined clays with added refined minerals that give it a similar <a href="../glossary/glaze+chemistry.html">chemistry</a>, firing behavior and raw physical appearance. As you can see, the <a href="../glossary/melt+fluidity.html">melt fluidity</a> is very similar.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Alberta Slip as-a-glaze at cone 10R</h3>
+<br/><a href="../picture/1042.html"><img class="flexleft50" loading="lazy" src="../media/images/gqfrbpv7pa.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1042.html">click here</a> to see it.</p>
+<p>This is 100% <a href="../material/32.html">Alberta Slip</a> (outside) on a buff <a href="../glossary/stoneware.html">stoneware</a> (left) and iron stoneware (right) fired to <a href="../glossary/reduction+firing.html">cone 10R</a>. The glaze is made using a blend of roast and raw (as instructed at the <a href="https://digitalfire.com/url/221">PlainsmanClays.com</a> product page). <a href="https://plainsmanclays.ca/data/index.php?product=12910">Alberta Slip</a> was originally formulated during the 1980s (using Insight software) as a chemical duplicate of <a href="../material/31.html">Albany Slip</a>. The inside: G2947U transparent. The intensity of the color depends on firing, add a little <a href="../material/874.html">iron oxide</a> (e.g. 1%) if needed.</p>
+<p style="clear:left"></p>
+<br/><a href="../picture/365.html"><img class="flexleft50" loading="lazy" src="../media/images/altaslip2plusfrit3134.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/365.html">click here</a> to see it.</p>
+<p><a href="../material/32.html">Alberta slip</a> melts well with very little <a href="../glossary/frit.html">frit</a> at cone 6</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Alberta Slip with 3% iron oxide added. It crystallizes.</h3>
+<br/><a href="../picture/353.html"><img class="flexleft50" loading="lazy" src="../media/images/altalsipplus3iron10r.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/353.html">click here</a> to see it.</p>
+<p>This is fired in <a href="../glossary/reduction+firing.html">cone 10R</a>. The effect becomes more intense by 5%. To achieve this same effect using <a href="../material/1178.html">Ravenscrag</a>, which has much less natural iron content, 10% added iron is needed (which is, of course, much messier to work with).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">How runs of Alberta Slip are compared in production testing</h3>
+<br/><a href="../picture/355.html"><img class="flexleft50" loading="lazy" src="../media/images/ygzbhspq74.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/355.html">click here</a> to see it.</p>
+<p>These are two runs of <a href="../material/32.html">Alberta slip</a> (plus 20% <a href="../material/351.html">frit 3134</a>) in a <a href="../test/glfl.html">GLFL test</a> to compare <a href="../glossary/melt+fluidity.html">melt flow</a> at <a href="../glossary/cone+6.html">cone 6</a>.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/alberta+slip.html">Alberta Slip</a>
+<br/><i><a href="../material/31.html">Albany Slip</a> successor - a plastic clay that melts to dark brown glossy at <a href="../glossary/reduction+firing.html">cone 10R</a>, with a <a href="../glossary/frit.html">frit</a> addition it can also host a wide range of glazes at <a href="../glossary/cone+6.html">cone 6</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="formulating+ash+and+native-material+glazes.html">Formulating Ash and Native-Material Glazes</a>
+<br/><i>How to have a volcanic ash analysed and them use ceramic <a href="../glossary/glaze+chemistry.html">chemistry</a> to create a glaze that contains the maximum possible amount of the ash for the desired effect</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="alberta+slip%2c+20+years+of+substitution+for+albany+slip.html">Alberta Slip, 20 Years of Substitution for Albany Slip</a>
+<br/><i><a href="../material/32.html">Alberta Slip</a> makes a great base for glazes because not only is it almost a complete glaze by itself but it has low <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a>, it works well with <a href="../glossary/frit.html">frits</a> and <a href="../glossary/slurry.html">slurry</a> properties can be adjusted.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="ravenscrag+slip+is+born.html">Ravenscrag Slip is Born</a>
+<br/><i>The story of how <a href="../material/1178.html">Ravenscrag</a> Slip was discovered and developed might help you to recognize the potential in clays that you have access to.</i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></div></body>
+</html>

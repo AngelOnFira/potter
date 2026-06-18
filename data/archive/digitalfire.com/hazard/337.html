@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Cryolite and Ceramics</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Digitalfire Reference Library: Practical material hazards information in the traditional ceramic industry">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item active" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=hazard" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:center; vertical-align:top;">Feb 14-15, 2026 - <b>Major Server <a href="https://digitalfire.com">Upgrade</a> Done</b></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Hazards</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a title="341" href="https://digitalfire.com/hazard/341">Alumina Toxicology</a> |</nobr> <nobr><a title="333" href="https://digitalfire.com/hazard/333">Ammonia and Latex Toxicity</a> |</nobr> <nobr><a title="16" href="https://digitalfire.com/hazard/16">Antimony Oxide</a> |</nobr> <nobr><a title="412" href="https://digitalfire.com/hazard/412">Are colored porcelains hazardous?</a> |</nobr> <nobr><a title="18" href="https://digitalfire.com/hazard/18">Arsenic Oxide</a> |</nobr> <nobr><a title="19" href="https://digitalfire.com/hazard/19">Asbestos Toxicity</a> |</nobr> <nobr><a title="22" href="https://digitalfire.com/hazard/22">Ball Clay</a> |</nobr> <nobr><a title="321" href="https://digitalfire.com/hazard/321">BARIUM and COMPOUNDS Toxicology</a> |</nobr> <nobr><a title="367" href="https://digitalfire.com/hazard/367">Barium Carbonate in Clay Bodies</a> |</nobr> <nobr><a title="26" href="https://digitalfire.com/hazard/26">Barium Carbonate in Glazes</a> |</nobr> <nobr><a title="31" href="https://digitalfire.com/hazard/31">Bentonite Toxicity</a> |</nobr> <nobr><a title="33" href="https://digitalfire.com/hazard/33">Beryllium Monoxide Toxicology</a> |</nobr> <nobr><a title="352" href="https://digitalfire.com/hazard/352">Bismuth Trioxide Toxicology</a> |</nobr> <nobr><a title="326" href="https://digitalfire.com/hazard/326">Boron Compounds and Their Toxicity</a> |</nobr> <nobr><a title="1" href="https://digitalfire.com/hazard/1">Brown Stain</a> |</nobr> <nobr><a title="335" href="https://digitalfire.com/hazard/335">Cadmium Toxicity</a> |</nobr> <nobr><a title="343" href="https://digitalfire.com/hazard/343">Calcium Carbonate Toxicology</a> |</nobr> <nobr><a title="334" href="https://digitalfire.com/hazard/334">Carbon Monoxide Toxicity</a> |</nobr> <nobr><a title="353" href="https://digitalfire.com/hazard/353">Cesium Toxicology</a> |</nobr> <nobr><a title="330" href="https://digitalfire.com/hazard/330">Chromium Compounds Toxicology</a> |</nobr> <nobr><a title="146" href="https://digitalfire.com/hazard/146">Clay Toxicity</a> |</nobr> <nobr><a title="73" href="https://digitalfire.com/hazard/73">Cobalt Oxide and Carbonate</a> |</nobr> <nobr><a title="331" href="https://digitalfire.com/hazard/331">Cobalt Toxicology</a> |</nobr> <nobr><a title="329" href="https://digitalfire.com/hazard/329">Copper Compounds Toxicology</a> |</nobr> <nobr><a title="78" href="https://digitalfire.com/hazard/78">Copper Oxide and Carbonate</a> |</nobr> <nobr><a title="84" href="https://digitalfire.com/hazard/84">Cristobalite Toxicity</a> |</nobr> <nobr><a title="337" href="https://digitalfire.com/hazard/337"><button type="button" class="btn btn-dark">Cryolite and Ceramics</button></a> |</nobr> <nobr><a title="372" href="https://digitalfire.com/hazard/372">Dealing With Dust in Ceramics</a> |</nobr> <nobr><a title="351" href="https://digitalfire.com/hazard/351">Diatomaceous Earth Toxicology</a> |</nobr> <nobr><a title="323" href="https://digitalfire.com/hazard/323">Dioxins in Clays</a> |</nobr> <nobr><a title="95" href="https://digitalfire.com/hazard/95">Epsom Salts</a> |</nobr> <nobr><a title="348" href="https://digitalfire.com/hazard/348">Eye Injuries Due to Radiation</a> |</nobr> <nobr><a title="222" href="https://digitalfire.com/hazard/222">Feldspar</a> |</nobr> <nobr><a title="320" href="https://digitalfire.com/hazard/320">Fighting Micro-Organisms in Ceramics</a> |</nobr> <nobr><a title="108" href="https://digitalfire.com/hazard/108">Fluorine Gas</a> |</nobr> <nobr><a title="413" href="https://digitalfire.com/hazard/413">Fumes from gas kilns</a> |</nobr> <nobr><a title="354" href="https://digitalfire.com/hazard/354">Gallium Oxide Toxicology</a> |</nobr> <nobr><a title="342" href="https://digitalfire.com/hazard/342">Hafnium Oxide Toxicty</a> |</nobr> <nobr><a title="345" href="https://digitalfire.com/hazard/345">Hydrofluoric Acid Toxicity</a> |</nobr> <nobr><a title="350" href="https://digitalfire.com/hazard/350">Iron oxide and Hematite</a> |</nobr> <nobr><a title="169" href="https://digitalfire.com/hazard/169">Lead Chromate</a> |</nobr> <nobr><a title="368" href="https://digitalfire.com/hazard/368">Lead in Ceramic Glazes</a> |</nobr> <nobr><a title="328" href="https://digitalfire.com/hazard/328">Lead Toxicology</a> |</nobr> <nobr><a title="174" href="https://digitalfire.com/hazard/174">Lithium Carbonate Toxicity</a> |</nobr> <nobr><a title="349" href="https://digitalfire.com/hazard/349">Lithium Toxicology</a> |</nobr> <nobr><a title="322" href="https://digitalfire.com/hazard/322">Man-Made Vitreous Fibers (MMVF) Toxicology</a> |</nobr> <nobr><a title="410" href="https://digitalfire.com/hazard/410">Man-Made Vitreous Fibers Safety Update</a> |</nobr> <nobr><a title="406" href="https://digitalfire.com/hazard/406">Manganese and Parkinsons by Jane Watkins</a> |</nobr> <nobr><a title="187" href="https://digitalfire.com/hazard/187">Manganese in Clay Bodies</a> |</nobr> <nobr><a title="317" href="https://digitalfire.com/hazard/317">Manganese Inorganic Compounds Toxicology</a> |</nobr> <nobr><a title="409" href="https://digitalfire.com/hazard/409">Manganese Toxicity by Elke Blodgett</a> |</nobr> <nobr><a title="407" href="https://digitalfire.com/hazard/407">Manganese: Creativity and Illness by Dierdre O'Reilly</a> |</nobr> <nobr><a title="332" href="https://digitalfire.com/hazard/332">Molybdenum Compounds Toxicology</a> |</nobr> <nobr><a title="327" href="https://digitalfire.com/hazard/327">Nickel Compounds Toxicity</a> |</nobr> <nobr><a title="314" href="https://digitalfire.com/hazard/314">Niobium Oxide Toxicity</a> |</nobr> <nobr><a title="318" href="https://digitalfire.com/hazard/318">Occupational Dermatoses</a> |</nobr> <nobr><a title="370" href="https://digitalfire.com/hazard/370">Overview of Material Safety by Gavin Stairs</a> |</nobr> <nobr><a title="364" href="https://digitalfire.com/hazard/364">Paraffin Toxicology</a> |</nobr> <nobr><a title="216" href="https://digitalfire.com/hazard/216">Perlite Toxicity</a> |</nobr> <nobr><a title="238" href="https://digitalfire.com/hazard/238">Plant Ash Toxicity</a> |</nobr> <nobr><a title="346" href="https://digitalfire.com/hazard/346">Potassium Carbonate Toxicity</a> |</nobr> <nobr><a title="365" href="https://digitalfire.com/hazard/365">Pregnancy and Ceramics</a> |</nobr> <nobr><a title="355" href="https://digitalfire.com/hazard/355">Propane Toxicology</a> |</nobr> <nobr><a title="251" href="https://digitalfire.com/hazard/251">Quartz Toxicity</a> |</nobr> <nobr><a title="369" href="https://digitalfire.com/hazard/369">Quartz Toxicity on Clayart</a> |</nobr> <nobr><a title="336" href="https://digitalfire.com/hazard/336">Rare Earth Compounds Toxicity</a> |</nobr> <nobr><a title="366" href="https://digitalfire.com/hazard/366">Rubidium and Cesium Toxicology</a> |</nobr> <nobr><a title="356" href="https://digitalfire.com/hazard/356">Rutile Toxicology</a> |</nobr> <nobr><a title="324" href="https://digitalfire.com/hazard/324">Silicosis and Screening</a> |</nobr> <nobr><a title="357" href="https://digitalfire.com/hazard/357">Silver Compounds Toxicology</a> |</nobr> <nobr><a title="358" href="https://digitalfire.com/hazard/358">Sodium Azide Toxicology</a> |</nobr> <nobr><a title="359" href="https://digitalfire.com/hazard/359">Sodium Carbonate Toxicology</a> |</nobr> <nobr><a title="360" href="https://digitalfire.com/hazard/360">Sodium Silicate Powder Toxicology</a> |</nobr> <nobr><a title="315" href="https://digitalfire.com/hazard/315">Stannous Chloride Toxicity</a> |</nobr> <nobr><a title="316" href="https://digitalfire.com/hazard/316">Strontium Carbonate Toxicity Note</a> |</nobr> <nobr><a title="347" href="https://digitalfire.com/hazard/347">Sulfur Dioxide Toxicity</a> |</nobr> <nobr><a title="3" href="https://digitalfire.com/hazard/3">Talc Hazards Overview</a> |</nobr> <nobr><a title="361" href="https://digitalfire.com/hazard/361">Talc Toxicology</a> |</nobr> <nobr><a title="362" href="https://digitalfire.com/hazard/362">Thallium Oxide Toxicology</a> |</nobr> <nobr><a title="344" href="https://digitalfire.com/hazard/344">Thorium Dioxide Toxicity</a> |</nobr> <nobr><a title="338" href="https://digitalfire.com/hazard/338">Tin Inorganic Compounds</a> |</nobr> <nobr><a title="339" href="https://digitalfire.com/hazard/339">Titanium Dioxide Toxicology</a> |</nobr> <nobr><a title="313" href="https://digitalfire.com/hazard/313">Toxicological Assessment of Zeolites</a> |</nobr> <nobr><a title="363" href="https://digitalfire.com/hazard/363">Tungsten Compounds Toxicology</a> |</nobr> <nobr><a title="371" href="https://digitalfire.com/hazard/371">Understanding Acronyms on MSDS's</a> |</nobr> <nobr><a title="325" href="https://digitalfire.com/hazard/325">Uranium and Ceramics</a> |</nobr> <nobr><a title="319" href="https://digitalfire.com/hazard/319">Vanadium and Compounds Toxicology</a> |</nobr> <nobr><a title="411" href="https://digitalfire.com/hazard/411">Vermiculite</a> |</nobr> <nobr><a title="340" href="https://digitalfire.com/hazard/340">Zinc Compounds Toxicology</a> |</nobr> <nobr><a title="373" href="https://digitalfire.com/hazard/373">Zirconium Compounds Toxicity</a> |</nobr> <nobr><a title="234" href="https://digitalfire.com/hazard/234">Zirconium Encapsulated Stains Toxicity</a></nobr></div><h1>Cryolite and Ceramics</h1>
+<DL> 
+<DT><CENTER><I><FONT COLOR="#004080">Etymology: From the Greek 
+words "kryos", cold, and "lithos", stone.</FONT></I></CENTER> 
+    
+<DT><CENTER><I><FONT COLOR="#004080">An allusion to its glare 
+close to that of ice</FONT></I></CENTER> 
+    
+<DD><CENTER><I> </I></CENTER> 
+    
+<DT><FONT COLOR="#004080">Year of discovery : 1799</FONT><I><FONT 
+COLOR="#004080"> </FONT></I> 
+    
+<DD><CENTER><I> </I></CENTER> 
+    
+<DT><B><FONT COLOR="#004080">Cryolite : </FONT></B><FONT 
+COLOR="#004080">Sodium Hexafluoaluminate (Molecular formula 
+ALF6NA3, contains 32.9% Na, 12.8% Al, 54.3% F) can also contain 
+traces of Fe and Ca. </FONT> 
+    
+<DD>  
+    
+<DT><FONT COLOR="#004080">Main deposits : Cryolite of the Ivitgut 
+complex (Greenland) </FONT> 
+    
+<DT><FONT COLOR="#004080">This mineral is associated with large 
+pegmatite deposits. </FONT> 
+    
+<DD>  
+    
+<p>
+    
+<DT><FONT 
+COLOR="#004080"><A HREF="#number CAS">CAS#</A></FONT><FONT 
+COLOR="#004080"> : 15096-52-3 </FONT> 
+    
+<DT><FONT COLOR="#004080">European N&#176; (and/or) EINECS: 
+2391488 (EINECS: European Inventory of Existing Commercial 
+Substances) </FONT> 
+    
+<p>
+    
+<DD>  
+    
+<DT><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=5 WIDTH="80%" 
+bgcolor="#ffffff"> 
+<TR> 
+<TD COLSPAN=2 bgcolor="#D8EBE0"> 
+	 <P><B><FONT COLOR="#004080">HAZARD SENTENCES</FONT></B> 
+</TD></TR> 
+<TR> 
+<TD> 
+	 <P><FONT COLOR="#004080">20/22</FONT> 
+</TD><TD> 
+	 <P><FONT COLOR="#004080">Harmful by inhalation and 
+	 ingestion </FONT> 
+</TD></TR> 
+<TR> 
+<TD> 
+	 <P><FONT COLOR="#004080">48/23/25</FONT> 
+</TD><TD> 
+	 <P><FONT COLOR="#004080">Toxic: risk of serious health 
+	 effects in the event of prolonged exposure by  inhalation 
+	 and ingestion </FONT> 
+</TD></TR> 
+<TR> 
+<TD COLSPAN=2 bgcolor="#D8EBE0"> 
+	 <P><B><FONT COLOR="#004080">CAUTION SENTENCES</FONT></B> 
+</TD></TR> 
+<TR> 
+<TD> 
+	 <P><FONT COLOR="#004080">22</FONT> 
+</TD><TD> 
+	 <P><FONT COLOR="#004080">Do not to breathe dust </FONT> 
+</TD></TR> 
+<TR> 
+<TD> 
+	 <P><FONT COLOR="#004080">37</FONT> 
+</TD><TD> 
+	 <P><FONT COLOR="#004080">Wear suitable gloves </FONT> 
+</TD></TR> 
+<TR> 
+<TD> 
+	 <P><FONT COLOR="#004080">45</FONT> 
+</TD><TD> 
+	 <P><FONT COLOR="#004080">In the event of an accident or 
+	 feeling of sickness, see a doctor immediately </FONT> 
+</TD></TR> 
+<TR> 
+<TD> 
+	 <P><FONT COLOR="#004080">46</FONT> 
+</TD><TD> 
+	 <P><FONT COLOR="#004080">(if possible show him the 
+	 label)</FONT> 
+</TD></TR> 
+</TABLE> 
+    
+<p>
+    
+<DT><FONT COLOR="#004080">Because of its scarcity, this mineral 
+has been replaced in industrial processes by artificially produced 
+sodium and aluminium fluorides. </FONT> 
+    
+<DT><FONT COLOR="#004080">The production of aluminum 
+fluoride(AlF3) and cryolite (AlF3,3NaF) on a world level 
+represents more than 400,000 tons/year. They are used, mainly, in 
+the electrometallurgy of aluminium. </FONT> 
+    
+<DT><B> </B> 
+    
+<DT><B><FONT COLOR="#004080">In general :</FONT></B> 
+    
+<DT><FONT COLOR="#004080">Refined cryolite is a very fine white 
+powder. </FONT> 
+    
+<DT><FONT COLOR="#004080">1 kg of cryolite gives 0.443 kg of <a  href="https://digitalfire.com/oxide/na2o">Na<sub>2</sub>O</a> 
+and 0.243 kg of <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> in glazes or glass. </FONT> 
+    
+<DT><FONT COLOR="#004080">Slightly soluble in water : 0.4 g/liter 
+at 20&#176;C </FONT> 
+    
+<DT><FONT COLOR="#004080">Molecular weight: 210 g </FONT> 
+    
+<DT><FONT COLOR="#004080">Density: 2.97 </FONT> 
+    
+<DT><FONT COLOR="#004080">Linear dilation coefficient in glass: 
+2.2 X 10-7 &#176;K-1 (very weak) </FONT> 
+    
+<DT><FONT COLOR="#004080">Fusion point : 1000-1020&#176;C </FONT> 
+    
+<p>
+    
+<DT><B><U><FONT SIZE="+1" COLOR="#004080">Uses in glass and 
+<a  href="https://digitalfire.com/glossary/ceramics">ceramics</a> : </FONT></U></B> 
+    
+<p>
+    
+<DT><FONT COLOR="#004080">Cryolite is a powerful <a  href="https://digitalfire.com/glossary/flux">flux</a> rather low 
+in iron, used especially in glass for its strong solvent action on 
+<a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> such as <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a>, Al<sub>2</sub>O<sub>3</sub> and <a  href="https://digitalfire.com/oxide/cao">CaO</a> with which it forms eutectics 
+at low melting temperatures. It is also an <a  href="https://digitalfire.com/glossary/opacifier">opacifier</a> used in opal 
+glasses in which it favours opalescence. </FONT> 
+    
+<DT><FONT COLOR="#004080">The melting and opacifying action of 
+cryolite contributes to the homogeneity and fining of glass, it is 
+also an easily fusible alumina source. Cryolite is used to 
+accelerate fusion. The action of fluorine in small proportion 
+strongly lowers <a  href="https://digitalfire.com/glossary/viscosity">viscosity</a> and facilitates fining (elimination of 
+bubbles present in glass in fusion). </FONT> 
+    
+<p>
+    
+<DT><B><FONT COLOR="#004080">Glazes :</FONT></B><FONT 
+COLOR="#004080"> the addition of fluorides in glazes opacified by 
+tin improves <a  href="https://digitalfire.com/glossary/opacity">opacity</a>, but fluorine release can cause <a  href="https://digitalfire.com/glossary/pinholing">pinholes</a> and 
+small bubbles if the glaze solidifies too early. </FONT> 
+    
+<DT><FONT COLOR="#004080">In white glazes cryolite can be used as 
+a component at the level of 5 to 15 % by weight. </FONT> 
+    
+<p>
+    
+<DT><FONT COLOR="#004080">Cryolite is sometimes used as an 
+auxiliary flux in white clays.</FONT> 
+    
+<p>
+    
+<DT><FONT COLOR="#004080">Cryolite is the most stable form for 
+supplying fluoride in glass and glazes because of its high alumina 
+content.</FONT> 
+    
+<p>
+    
+<DT><FONT COLOR="#004080">Cryolite is used in some <a  href="https://digitalfire.com/glossary/shino+glazes">Shino glazes</a> in 
+which the role of fluorine allows to intensify colors and  
+facilitate the migration of iron to the surface while it escapes 
+as a gas through the glaze in fusion. </FONT> 
+    
+<DT><B><FONT COLOR="#004080">Link to Hank Murrow's article on 
+<a  href="https://digitalfire.com/glossary/shino+glazes">Shino</a> glazes in order to learn more :</FONT></B><FONT 
+COLOR="#004080"> </FONT><FONT 
+COLOR="#004080"><A HREF="http://perso.wanadoo.fr/smart2000/shinos.htm#formules">http://perso.wanadoo.fr/smart2000/shinos.htm#formules</A></FONT><FONT 
+COLOR="#004080"> </FONT> 
+    
+<p>
+    
+<DT><B><U><FONT SIZE="+1" COLOR="#004080">Use in metallurgy : 
+</FONT></U></B> 
+    
+<p>
+    
+<DT><FONT COLOR="#004080">In metallurgy, it is mainly used as a 
+slovent of alumina in the metallurgy of aluminium by electrolysis. 
+Cryolite has the following properties: it dissolves fluorides and 
+oxides of aluminium but not the metal. Melted at 1000&#176;C, it 
+becomes a conductor of electrical current. </FONT> 
+    
+<DT><FONT COLOR="#004080">Its density weaker than that of 
+aluminium facilitates <a  href="https://digitalfire.com/glossary/phase+separation">phase separation</a> during electrolysis. 
+</FONT> 
+    
+<p>
+    
+<DT><FONT COLOR="#004080">Production of aluminium: The process 
+most often used consists in dissolving alumina in molten cryolite 
+then to separate aluminium by electrolysis. The aluminium obtained 
+is 99%, pure, after elimination of impurities by refining (iron, 
+silicon, zinc, <a  href="https://digitalfire.com/material/1644">titanium</a>, copper...), its purity reaches 99.99%. 
+</FONT> 
+    
+<p>
+    
+<DT><B><U><FONT SIZE="+1" COLOR="#004080">Presence of fluorine in 
+our environment : </FONT></U></B> 
+    
+<p>
+    
+<DT><FONT COLOR="#004080">Excerpt from Haguenau's site on 
+fluorides in water: </FONT> 
+    
+<DT><FONT COLOR="#004080">9, way of Gases - 67500 Haguenau - Tel.. 
+03.88.73.71.71 </FONT> 
+    
+<DT><FONT 
+COLOR="#004080"><A HREF="http://www.ville-haguenau.fr/site_eau_vers2/pages/qualite/fluorure.asp">http://www.ville-haguenau.fr/site_eau_vers2/pages/qualite/fluorure.asp</A></FONT> 
+    
+<p>
+    
+<DT><FONT COLOR="#004080">The earth's crust contains approximately 
+0,3 g/kg of fluorine. This element is more abundant than copper, 
+for instance.One always finds it in a combined state as fluorides 
+in association with other elements. Fluorine is concentrated in 
+the ores containing cryolite and fluorite. </FONT> 
+    
+<DT><FONT COLOR="#004080">Fluorides are naturally present at 
+concentrations generally lower than 1 mg/l in surface waters, but 
+can reach several tens of mg/l in certain deep waters.</FONT> 
+    
+<p>
+    
+<DT><FONT COLOR="#004080">Fluorine is also present in plants, and 
+mainly in the graminaceous ones. It plays a significant role in 
+the animal kingdom, where it is found primarily in bones and 
+teeth. Almost all foodstuffs contain fluorine but exotic tea, fish 
+and some fruits are particularly rich in it. It should be noted 
+that certain mineral waters are very rich in fluorides (up to 8 
+mg/l). </FONT> 
+    
+<DD>  
+    
+<DT><FONT COLOR="#004080">&nbsp;&nbsp;</FONT> 
+    
+<P ALIGN=RIGHT><B><FONT SIZE="+1" COLOR="#AF0000">&copy; 
+Smart.Conseil / July 2003</FONT></B></P> 
+    
+<DT><FONT COLOR="#004080">&nbsp;&nbsp;</FONT> 
+    
+<DT><FONT COLOR="#004080"><A NAME="number CAS"></A>&nbsp;</FONT> 
+    
+<p>
+    
+<DT><I><FONT COLOR="#004080">CAS Number :</FONT></I> 
+    
+<DT><I><FONT COLOR="#004080">This number is allotted by Chemical 
+Abstracts Services to each chemical entity, be it a quite precise 
+molecule, a mixture of isomers or a product resulting from a well 
+defined industrial process. Considering the complexity of chemical 
+nomenclature and the possibility of indicating a substance by 
+several names, the <a  href="https://digitalfire.com/glossary/cas+numbers">CAS Number</a> makes it possible to identify  
+chemical species without any ambiguity</FONT></I> 
+    
+<DD>  
+    
+<DT><FONT 
+COLOR="#004080"><A NAME="cryolite toxicology"></A></FONT> 
+    
+<DD>&nbsp; 
+    
+<DT><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=10 WIDTH="100%" 
+bgcolor="#ffffff"> 
+<TR> 
+<TD HEIGHT=50> 
+	 <P><CENTER><B><FONT SIZE="+3" FACE="Times New Roman" 
+	 COLOR="#FF0000">CRYOLITE Toxicology</FONT></B> 
+	 </CENTER></P> 
+             
+	 <P><CENTER><B><FONT SIZE="+2" FACE="Times New Roman" 
+	 COLOR="#FF0000">by Edouard Bastarache</FONT></B> 
+	 </CENTER> 
+</TD></TR> 
+</TABLE> 
+    
+<DT>&nbsp; 
+    
+<DT>&nbsp; 
+    
+<DT><B><FONT SIZE="+1" COLOR="#004080">Molecular Formula : 
+ALF6NA3</FONT></B> 
+    
+<DD><B><FONT SIZE="+1" COLOR="#004080">&nbsp;</FONT></B> 
+    
+<DT><B><U><FONT SIZE="+1" COLOR="#004080">Main synonyms 
+:</FONT></U></B> 
+    
+<DD><B><FONT SIZE="+1" COLOR="#004080">&nbsp;</FONT></B> 
+    
+<DT><B><FONT COLOR="#004080">I-English :</FONT></B> 
+    
+<DT><FONT COLOR="#004080">Sodium hexafluoroaluminate. </FONT> 
+    
+<DT><FONT COLOR="#004080">CRYOLITE.</FONT> 
+    
+<DT><B><FONT COLOR="#004080">II-French :</FONT></B> 
+    
+<DT><FONT COLOR="#004080">Hexafluoroaluminate de sodium. </FONT> 
+    
+<DT><FONT COLOR="#004080">CRYOLITE. </FONT> 
+    
+<DD>  
+    
+<DT><B><U><FONT SIZE="+1" COLOR="#004080">Uses and sources of 
+emission :</FONT></U></B><U><FONT COLOR="#004080"> </FONT></U> 
+    
+<p>
+    
+<DT><B><FONT COLOR="#004080">I-Aluminium Smelting :</FONT></B> 
+    
+<DD>  
+    
+<DT><FONT COLOR="#004080">Aluminium is produced from bauxite, a 
+mineral containing aluminium oxide, ferrous oxide and <a  href="https://digitalfire.com/material/1245">silica</a>. By a 
+chemical process, bauxite is refined to aluminium oxide. </FONT> 
+    
+<DT><FONT COLOR="#004080">Pure aluminium is then produced by using 
+an electrothermal process, where electrolysis takes place in a 
+carbonlined steel container with molten cryolite. </FONT> 
+    
+<DT><FONT COLOR="#004080">Carbon anodes are dipped into the liquid 
+molten cryolite. A direct current generates molten aluminium in 
+the bottom of the cell.</FONT> 
+    
+<p>
+    
+<DT><B><FONT COLOR="#004080">II- Glaze Chemistry</FONT></B><FONT 
+COLOR="#004080"> </FONT> 
+    
+<p>
+    
+<DT><B><FONT COLOR="#004080">III-Pesticide (Raticide)</FONT></B> 
+    
+<p>
+    
+<DT><B><U><FONT SIZE="+1" COLOR="#004080">Hygiene and Safety 
+:</FONT></U></B> 
+    
+<DT><B> </B> 
+    
+<DT><B><FONT COLOR="#004080">I-Appearance : </FONT></B> 
+    
+<DD>  
+    
+<DT><FONT COLOR="#004080">Crystalline, solid powdery material, 
+colourless to dark, odourless. </FONT> 
+    
+<p>
+    
+<DT><B><FONT COLOR="#004080">II- Immediately dangerous to life or 
+health (IDLH) : 250 mg/m3 as F.</FONT></B> 
+    
+<p>
+    
+<DT><B><FONT COLOR="#004080">III-Inflammability : </FONT></B> 
+    
+<DD>  
+    
+<DT><FONT COLOR="#004080">This product is non flammable. </FONT> 
+    
+<p>
+    
+<DT><B><FONT COLOR="#004080">IV-Techniques and Means of 
+Extinguishing :</FONT></B> 
+    
+<DD>  
+    
+<DT><I><FONT COLOR="#004080">Special techniques : </FONT></I> 
+    
+<DT><FONT COLOR="#004080">Wear an autonomous respiratory apparatus 
+provided with a complete facial mask and suitable protective 
+clothing. Move containers away from the zone of fire if that does 
+not present any risk. </FONT> 
+    
+<p>
+    
+<DT><B><FONT COLOR="#004080">V-Products of Combustion :</FONT></B> 
+    
+<DD>  
+    
+<DT><FONT COLOR="#004080"> </FONT> 
+    
+<DT><FONT COLOR="#004080">Highly toxic and irritating fumes of 
+hydrofluoric acid. </FONT> 
+    
+<p>
+    
+<DT><B><U><FONT SIZE="+1" COLOR="#004080">Prevention 
+:</FONT></U></B> 
+    
+<p>
+    
+<DT><B><FONT COLOR="#004080">I-Reactivity :</FONT></B> 
+    
+<DD>  
+    
+<DT><B><FONT COLOR="#004080">A-Stability :</FONT></B> 
+    
+<DD>  
+    
+<DT><FONT COLOR="#004080">This product is stable.</FONT> 
+    
+<p>
+    
+<DT><B><FONT COLOR="#004080">B-Incompatibility :</FONT></B><FONT 
+COLOR="#004080"> </FONT> 
+    
+<DD>  
+    
+<DT><FONT COLOR="#004080">This product is incompatible with the 
+following substances: Calcium oxide; at high temperature,  strong 
+acids, water or moisture breaks it up. It breaks up upon heating 
+with aqueous solutions of calcium hydroxide or aqueous solution of 
+<a  href="https://digitalfire.com/glossary/alkali">alkali</a> hydroxides. </FONT> 
+    
+<p>
+    
+<DT><B><FONT COLOR="#004080">C-Products of <a  href="https://digitalfire.com/glossary/decomposition">Decomposition</a> 
+:</FONT></B> 
+    
+<DD>  
+    
+<DT><FONT COLOR="#004080">It breaks up at the point of boiling. 
+Thermal decomposition gives off toxic and irritating hydrofluoric 
+acid fumes. Hydrolytic decomposition gives off hydrofluoric acid 
+(normally at high temperature). </FONT> 
+    
+<p>
+    
+<DT><B><FONT COLOR="#004080">II-Handling : </FONT></B> 
+    
+<p>
+    
+<DT><FONT COLOR="#004080">Avoid prolonged and repeated skin 
+contacts.</FONT> 
+    
+<DT><FONT COLOR="#004080">Ventilate adequately if not, wear a 
+suitable breathing apparatus. Do not smoke, drink or eat during 
+use. </FONT> 
+    
+<DT><FONT COLOR="#004080">Remove contaminated clothes and wash 
+them before re-using them. </FONT> 
+    
+<p>
+    
+<DT><B><FONT COLOR="#004080">III-Storage : </FONT></B> 
+    
+<DD>  
+    
+<DT><FONT COLOR="#004080">Store away from incompatible materials. 
+Preserve in an airtight container placed in a dry and well 
+ventilated place. </FONT> 
+    
+<p>
+    
+<DT><B><FONT COLOR="#004080">IV-Leaks :</FONT></B> 
+    
+<DD>  
+    
+<DT><FONT COLOR="#004080">Avoid accumulation of dust. Collect it. 
+Put in a container. </FONT> 
+    
+<DT><FONT COLOR="#004080">Collect waste materials and put them in 
+a hermetic container. </FONT> 
+    
+<p>
+    
+<DT><B><FONT COLOR="#004080">V-Waste Disposal :</FONT></B> 
+    
+<DD>  
+    
+<DT><FONT COLOR="#004080">Check with the regional office of the 
+Department of the Environment. </FONT> 
+    
+<DD>  
+    
+<DT><B><U><FONT SIZE="+1" COLOR="#004080">Toxicology 
+:</FONT></U></B> 
+    
+<p>
+    
+<DT><B><FONT COLOR="#004080">I-Absorbtion :</FONT></B> 
+    
+<DD>  
+    
+<DT><FONT COLOR="#004080">This material is absorbed by the 
+respiratory and digestive tracts.</FONT> 
+    
+<p>
+    
+<DT><B><FONT COLOR="#004080">II-Acute Effects :</FONT></B> 
+    
+<DD>  
+    
+<DT><FONT COLOR="#004080">The insoluble derivatives of fluorine 
+(spathfluor, cryolite) have a very low acute <a  href="https://digitalfire.com/glossary/toxicity">toxicity</a>. It causes 
+irritation of the eyes and the respiratory system but, no 
+irritation of the skin during tests carried out on animals. 
+</FONT> 
+    
+<p>
+    
+<DT><B><FONT COLOR="#004080">III-Chronic Effects :</FONT></B><FONT 
+COLOR="#004080"> </FONT> 
+    
+<DD>  
+    
+<DT><FONT COLOR="#004080">Loss of weight, anorexia, anemia, dental 
+effects, eosinophilia, disorders of growth in young 
+individuals.Gastro-intestinal, circulatory, respiratory and 
+neurological disorders, itching. Possibility of constipation and 
+pain located with the area of the liver. Possible fluorosis: 
+brittleness of the bones, rigidity of the joints and 
+decalcification of the bones. </FONT> 
+    
+<DT><FONT COLOR="#004080">When ingested, this product releases 
+fluoride ions. </FONT> 
+    
+<p>
+    
+<DT><B><FONT COLOR="#004080">IV-Effects on Development 
+:</FONT></B> 
+    
+<DD>  
+    
+<DT><FONT COLOR="#004080">No data concerning the antenatal 
+development was found in the consulted documentary sources. 
+</FONT> 
+    
+<p>
+    
+<DT><B><FONT COLOR="#004080">V-Cancerogenic Effects : </FONT></B> 
+    
+<p>
+    
+<DT><FONT COLOR="#004080">Evaluation by the ACGIH : Substance not 
+classifiable as cancerogenic for man (A4 group). </FONT> 
+    
+<DT><FONT COLOR="#004080">The data do not make it possible to make 
+an adequate evaluation of the cancerogenic effect. </FONT> 
+    
+<p>
+    
+<DT><B><FONT COLOR="#004080">VI-Mutagenic Effects : </FONT></B> 
+    
+<DD>  
+    
+<DT><FONT COLOR="#004080">No data concerning a mutagenic effect in 
+vivo or in vitro on the cells of mammals were found in the 
+consulted documentary sources. </FONT> 
+    
+<DD><FONT SIZE="+1" COLOR="#004080">&nbsp;</FONT> 
+    
+<DT><B><U><FONT SIZE="+1" COLOR="#004080">Biological surveillance 
+: </FONT></U></B> 
+    
+<DD>  
+    
+<DT><B><FONT COLOR="#004080">I-Biological parameter, biological 
+index of exposure and time of sampling : </FONT></B> 
+    
+<p>
+    
+<DT><FONT COLOR="#004080">Urinary fluorides: </FONT> 
+    
+<DT><FONT COLOR="#004080">18 &#181;mol/mmol of creatinine measured 
+at the beginning of the first workshift of the week, </FONT> 
+    
+<DT><FONT COLOR="#004080">60 &#181;mol/mmol of creatinine measured 
+at the end of the workshift. </FONT> 
+    
+<p>
+    
+<DT><B><FONT COLOR="#004080">II-Factors to be considered at the 
+time of interpretation : </FONT></B> 
+    
+<DD>  
+    
+<DT><FONT COLOR="#004080">The measurement of urinary fluorides is 
+not a specific indicator of professional exposure.</FONT> 
+    
+<DT><FONT COLOR="#004080">Possible external contamination of the 
+sample at the time of sampling can distort the evaluation due to 
+exposure.</FONT> 
+    
+<DT><FONT COLOR="#004080">Absorption by the digestive tract may be 
+considerable if there is a risk of contamination of the hands or 
+food; </FONT> 
+    
+<DT><FONT COLOR="#004080">Biological indices of exposure apply 
+only to exposures to metallic fluorides, hydrofluoric acid and 
+fluorine. </FONT> 
+    
+<DT><FONT COLOR="#004080">An exposure to fluorides at levels 
+equivalent to the standard may cause a urinary excretion of 
+fluorides higher than the values suggested  ACGIH; biological 
+indices of exposure suggested by this organization aim at 
+preventing any effect to the health of workers. </FONT> 
+    
+<DT><B><FONT SIZE="+1" COLOR="#004080">&nbsp;</FONT></B> 
+    
+<DT><B><U><FONT SIZE="+1" COLOR="#004080">First aid 
+:</FONT></U><FONT SIZE="+1" COLOR="#004080"> </FONT></B> 
+    
+<DD>  
+    
+<DT><FONT COLOR="#004080">Rinse abundantly the eyes with water, 
+wash the skin and see a doctor. </FONT> 
+    
+<DT><FONT COLOR="#004080">In the event of ingestion, make the 
+person vomit if he is conscious. Call a doctor. </FONT> 
+    
+<DT><FONT COLOR="#004080">In the event of inhalation of  vapors or 
+dusts, bring the person in a ventilated place. </FONT> 
+    
+<DT><FONT COLOR="#004080">See a doctor. </FONT> 
+    
+<p>
+    
+<DT><B><U><FONT SIZE="+1" COLOR="#004080">Quebec's Exposure limit 
+:</FONT></U></B> 
+    
+<DD>  
+    
+<DT><FONT COLOR="#004080">Valeur d'exposition moyenne 
+pond&eacute;r&eacute;e (VEMP) : </FONT><B><FONT 
+COLOR="#004080">2,5 mg/m&#179;</FONT></B><FONT COLOR="#004080">, 
+expressed as F (Fluorides)	</FONT> 
+    
+<DD><B><FONT SIZE="+1" COLOR="#004080">&nbsp;</FONT></B> 
+    
+<p>
+    
+<p>
+    
+<DT><I><FONT COLOR="#004080">References :</FONT></I> 
+    
+<DT><I><FONT COLOR="#004080">1-CSST-Quebec, R&eacute;pertoire 
+Toxicologique, 2003</FONT></I> 
+    
+<DT><I><FONT COLOR="#004080">2-Toxicologie Industrielle et 
+Intoxications Professionnelles, Lauwerys R. last 
+edition.</FONT></I> 
+    
+<DT><I><FONT COLOR="#004080">3-Sax's Dangerous Properties of 
+Industrial Materials, Lewis C., last edition.</FONT></I> 
+    
+<DT><I><FONT COLOR="#004080">4-Clinical Environmental Health and 
+Toxic Exposures, Sullivan J.B and Krieger G.R., last 
+dition.</FONT></I> 
+    
+<DT><I><FONT COLOR="#004080">5-Occupational Medicine, Zenz C arl, 
+last edition.</FONT></I>
+<hr><p>By Edouard Bastarache </p>
+<h2 style="font-style:italic; margin-top:40px;">Related Information</h2>
+
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/cryolite">Cryolite</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/eba">Article by Edouard Bastarache</a>
+<br /><i>Edouard Bastarache is a well known doctor that has written many articles on the subject of <a  href="https://digitalfire.com/glossary/toxicity">toxicity</a> of ceramic materials and books on technical aspects of <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>. He writes in both English and French.</i>
+</td>
+</tr>
+</tbody></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

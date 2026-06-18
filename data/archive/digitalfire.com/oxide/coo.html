@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>CoO (Cobalt Oxide)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="The use of CoO in traditional ceramics, how its chemistry contributes to fired properties of glazes">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item active"><a class="nav-link" href="/oxide/list">Oxides <span class="sr-only">(current)</span></a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=oxide" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"></td><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table>
+<div style="margin:10px 0px 10px 0px;" class="accordion" id="accordionExample">
+ <div class="card">
+  <div class="card-header pl-0 py-0" id="heading1">
+   <h2 class="mb-0">
+    <button class="btn btn-link collapsed btn-lg" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">Common Ceramic Oxides</button>
+   </h2>
+  </div>
+  <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#accordionExample">
+   <div class="card-body">
+<a title="3" href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> | <a title="7" href="https://digitalfire.com/oxide/b2o3">B<sub>2</sub>O<sub>3</sub></a> | <a title="8" href="https://digitalfire.com/oxide/bao">BaO</a> | <a title="11" href="https://digitalfire.com/oxide/c">C</a> | <a title="13" href="https://digitalfire.com/oxide/cao">CaO</a> | <a title="12" href="https://digitalfire.com/oxide/co2">CO<sub>2</sub></a> | <a title="16" href="https://digitalfire.com/oxide/16"><button type="button" class="btn btn-dark">CoO</button></a> | <a title="17" href="https://digitalfire.com/oxide/cr2o3">Cr<sub>2</sub>O<sub>3</sub></a> | <a title="19" href="https://digitalfire.com/oxide/cu2o">Cu<sub>2</sub>O</a> | <a title="20" href="https://digitalfire.com/oxide/cuo">CuO</a> | <a title="25" href="https://digitalfire.com/oxide/fe2o3">Fe<sub>2</sub>O<sub>3</sub></a> | <a title="26" href="https://digitalfire.com/oxide/feo">FeO</a> | <a title="32" href="https://digitalfire.com/oxide/h2o">H<sub>2</sub>O</a> | <a title="38" href="https://digitalfire.com/oxide/k2o">K<sub>2</sub>O</a> | <a title="42" href="https://digitalfire.com/oxide/li2o">Li<sub>2</sub>O</a> | <a title="40" href="https://digitalfire.com/oxide/loi">LOI</a> | <a title="44" href="https://digitalfire.com/oxide/mgo">MgO</a> | <a title="46" href="https://digitalfire.com/oxide/mno">MnO</a> | <a title="47" href="https://digitalfire.com/oxide/mno2">MnO<sub>2</sub></a> | <a title="50" href="https://digitalfire.com/oxide/na2o">Na<sub>2</sub>O</a> | <a title="53" href="https://digitalfire.com/oxide/nio">NiO</a> | <a title="54" href="https://digitalfire.com/oxide/o">O</a> | <a title="97" href="https://digitalfire.com/oxide/organics">Organics</a> | <a title="56" href="https://digitalfire.com/oxide/p2o5">P<sub>2</sub>O<sub>5</sub></a> | <a title="59" href="https://digitalfire.com/oxide/pbo">PbO</a> | <a title="75" href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> | <a title="77" href="https://digitalfire.com/oxide/sno2">SnO<sub>2</sub></a> | <a title="70" href="https://digitalfire.com/oxide/so3">SO<sub>3</sub></a> | <a title="96" href="https://digitalfire.com/oxide/so4">SO<sub>4</sub></a> | <a title="78" href="https://digitalfire.com/oxide/sro">SrO</a> | <a title="83" href="https://digitalfire.com/oxide/tio2">TiO<sub>2</sub></a> | <a title="89" href="https://digitalfire.com/oxide/v2o5">V<sub>2</sub>O<sub>5</sub></a> | <a title="93" href="https://digitalfire.com/oxide/zno">ZnO</a> | <a title="94" href="https://digitalfire.com/oxide/zro">ZrO</a> | <a title="95" href="https://digitalfire.com/oxide/zro2">ZrO<sub>2</sub></a>
+   </div>
+  </div>
+ </div>
+ <div class="card">
+  <div class="card-header pl-0 py-0" id="heading2">
+   <h2 class="mb-0">
+    <button class="btn btn-link collapsed btn-lg" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">Uncommon Ceramic Oxides</button>
+   </h2>
+  </div>
+  <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordionExample">
+   <div class="card-body">
+<a title="102" href="https://digitalfire.com/oxide/ag2o">Ag<sub>2</sub>O</a> | <a title="104" href="https://digitalfire.com/oxide/alf3">AlF<sub>3</sub></a> | <a title="4" href="https://digitalfire.com/oxide/as2o3">As<sub>2</sub>O<sub>3</sub></a> | <a title="5" href="https://digitalfire.com/oxide/as4o6">As<sub>4</sub>O6</a> | <a title="6" href="https://digitalfire.com/oxide/au2o3">Au<sub>2</sub>O<sub>3</sub></a> | <a title="108" href="https://digitalfire.com/oxide/baf2">BaF<sub>2</sub></a> | <a title="9" href="https://digitalfire.com/oxide/beo">BeO</a> | <a title="10" href="https://digitalfire.com/oxide/bi2o3">Bi<sub>2</sub>O<sub>3</sub></a> | <a title="109" href="https://digitalfire.com/oxide/caf2">CaF<sub>2</sub></a> | <a title="14" href="https://digitalfire.com/oxide/cdo">CdO</a> | <a title="15" href="https://digitalfire.com/oxide/ceo2">CeO<sub>2</sub></a> | <a title="99" href="https://digitalfire.com/oxide/cl">Cl</a> | <a title="110" href="https://digitalfire.com/oxide/co">CO</a> | <a title="113" href="https://digitalfire.com/oxide/cro3">CrO<sub>3</sub></a> | <a title="18" href="https://digitalfire.com/oxide/cs2o">Cs<sub>2</sub>O</a> | <a title="101" href="https://digitalfire.com/oxide/cuco3">CuCO<sub>3</sub></a> | <a title="21" href="https://digitalfire.com/oxide/dy2o3">Dy<sub>2</sub>O<sub>3</sub></a> | <a title="22" href="https://digitalfire.com/oxide/er2o3">Er<sub>2</sub>O<sub>3</sub></a> | <a title="23" href="https://digitalfire.com/oxide/eu2o3">Eu<sub>2</sub>O<sub>3</sub></a> | <a title="24" href="https://digitalfire.com/oxide/f">F</a> | <a title="27" href="https://digitalfire.com/oxide/fr2o">Fr<sub>2</sub>O</a> | <a title="28" href="https://digitalfire.com/oxide/free sio2">Free SiO<sub>2</sub></a> | <a title="29" href="https://digitalfire.com/oxide/ga2o3">Ga<sub>2</sub>O<sub>3</sub></a> | <a title="30" href="https://digitalfire.com/oxide/gdo3">GdO<sub>3</sub></a> | <a title="31" href="https://digitalfire.com/oxide/geo2">GeO<sub>2</sub></a> | <a title="33" href="https://digitalfire.com/oxide/hfo2">HfO<sub>2</sub></a> | <a title="34" href="https://digitalfire.com/oxide/hgo">HgO</a> | <a title="35" href="https://digitalfire.com/oxide/ho2o3">Ho<sub>2</sub>O<sub>3</sub></a> | <a title="36" href="https://digitalfire.com/oxide/in2o3">In<sub>2</sub>O<sub>3</sub></a> | <a title="37" href="https://digitalfire.com/oxide/iro2">IrO<sub>2</sub></a> | <a title="107" href="https://digitalfire.com/oxide/kf">KF</a> | <a title="39" href="https://digitalfire.com/oxide/knao">KNaO</a> | <a title="41" href="https://digitalfire.com/oxide/la2o3">La<sub>2</sub>O<sub>3</sub></a> | <a title="43" href="https://digitalfire.com/oxide/lu2o3">Lu<sub>2</sub>O<sub>3</sub></a> | <a title="45" href="https://digitalfire.com/oxide/mn2o3">Mn<sub>2</sub>O<sub>3</sub></a> | <a title="48" href="https://digitalfire.com/oxide/moo3">MoO<sub>3</sub></a> | <a title="49" href="https://digitalfire.com/oxide/n2o5">N<sub>2</sub>O<sub>5</sub></a> | <a title="105" href="https://digitalfire.com/oxide/naf">NaF</a> | <a title="51" href="https://digitalfire.com/oxide/nb2o5">Nb<sub>2</sub>O<sub>5</sub></a> | <a title="52" href="https://digitalfire.com/oxide/nd2o3">Nd<sub>2</sub>O<sub>3</sub></a> | <a title="98" href="https://digitalfire.com/oxide/ni2o3">Ni<sub>2</sub>O<sub>3</sub></a> | <a title="55" href="https://digitalfire.com/oxide/oso2">OsO<sub>2</sub></a> | <a title="58" href="https://digitalfire.com/oxide/pa2o5">Pa<sub>2</sub>O<sub>5</sub></a> | <a title="106" href="https://digitalfire.com/oxide/pbf2">PbF<sub>2</sub></a> | <a title="60" href="https://digitalfire.com/oxide/pdo">PdO</a> | <a title="61" href="https://digitalfire.com/oxide/pmo3">PmO<sub>3</sub></a> | <a title="57" href="https://digitalfire.com/oxide/po4">PO<sub>4</sub></a> | <a title="62" href="https://digitalfire.com/oxide/pr2o3">Pr<sub>2</sub>O<sub>3</sub></a> | <a title="63" href="https://digitalfire.com/oxide/pro2">PrO<sub>2</sub></a> | <a title="64" href="https://digitalfire.com/oxide/pto2">PtO<sub>2</sub></a> | <a title="65" href="https://digitalfire.com/oxide/rao">RaO</a> | <a title="66" href="https://digitalfire.com/oxide/rb2o">Rb<sub>2</sub>O</a> | <a title="67" href="https://digitalfire.com/oxide/re2o7">Re<sub>2</sub>O7</a> | <a title="68" href="https://digitalfire.com/oxide/rho3">RhO<sub>3</sub></a> | <a title="69" href="https://digitalfire.com/oxide/ruo2">RuO<sub>2</sub></a> | <a title="71" href="https://digitalfire.com/oxide/sb2o3">Sb<sub>2</sub>O<sub>3</sub></a> | <a title="72" href="https://digitalfire.com/oxide/sb2o5">Sb<sub>2</sub>O<sub>5</sub></a> | <a title="73" href="https://digitalfire.com/oxide/sc2o3">Sc<sub>2</sub>O<sub>3</sub></a> | <a title="74" href="https://digitalfire.com/oxide/se">Se</a> | <a title="111" href="https://digitalfire.com/oxide/seo2">SeO<sub>2</sub></a> | <a title="76" href="https://digitalfire.com/oxide/sm2o3">Sm<sub>2</sub>O<sub>3</sub></a> | <a title="79" href="https://digitalfire.com/oxide/ta2o5">Ta<sub>2</sub>O<sub>5</sub></a> | <a title="80" href="https://digitalfire.com/oxide/tb2o3">Tb<sub>2</sub>O<sub>3</sub></a> | <a title="81" href="https://digitalfire.com/oxide/tc2o7">Tc<sub>2</sub>O7</a> | <a title="82" href="https://digitalfire.com/oxide/tho2">ThO<sub>2</sub></a> | <a title="84" href="https://digitalfire.com/oxide/tl2o">Tl<sub>2</sub>O</a> | <a title="85" href="https://digitalfire.com/oxide/tm2o3">Tm<sub>2</sub>O<sub>3</sub></a> | <a title="86" href="https://digitalfire.com/oxide/trace">Trace</a> | <a title="87" href="https://digitalfire.com/oxide/u3o8">U<sub>3</sub>O8</a> | <a title="88" href="https://digitalfire.com/oxide/uo2">UO<sub>2</sub></a> | <a title="90" href="https://digitalfire.com/oxide/wo3">WO<sub>3</sub></a> | <a title="91" href="https://digitalfire.com/oxide/y2o3">Y<sub>2</sub>O<sub>3</sub></a> | <a title="92" href="https://digitalfire.com/oxide/yb2o3">Yb<sub>2</sub>O<sub>3</sub></a>
+   </div>
+  </div>
+ </div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>CoO (Cobalt Oxide)</h1>
+<h3>Data</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<th scope="row"><a href="https://digitalfire.com/test/14">Frit Softening Point</a></th>
+<td>1810C (From The Oxide Handbook)</td>
+</tr>
+</tbody></table>
+<h4>Notes</h4><p>-Cobalt is the most powerful and stable <a  href="https://digitalfire.com/glossary/colorant">colorant</a> used in glass, glaze, enamel, and even paint. As little as 2 PPM can produce a recognizable tint, thus cobalt is often cut in a medium to make it easier to weigh and distribute in a mix.<br />
+<br />
+-Various raw forms are available and all break down to cobaltous oxide (<a  href="https://digitalfire.com/oxide/coo">CoO</a>), which is the stable form that combines with the glass melt to produce color. These include black stable cobalto-cobaltic oxide (cobaltosic oxide) Co3O<sub>4</sub>, which has a 93% conversion ratio and decomposes to liberate oxygen at 800C. Grey cobaltic oxide (Co2O<sub>3</sub>) is 90% CoO and mauve cobalt carbonate (CoCO<sub>3</sub>) has 63% effective stain content. Cobalt dioxide (CoO2) is not marketed for <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>.<br />
+<br />
+-Although cobalt has a high melting point by itself, is dissolves readily in most glazes and acts as a powerful <a  href="https://digitalfire.com/glossary/flux">flux</a>, especially alkaline and <a  href="https://digitalfire.com/glossary/borate">boron</a> types. This active nature causes it to diffuse, making it difficult to maintain a clean edge on painted decoration, especially <a  href="https://digitalfire.com/glossary/overglaze">overglaze</a>. Decorated areas employing color in or on glaze can thus be locally more melted depending on the concentration of CoO or its particle size, this can result in increased tendency to <a  href="https://digitalfire.com/trouble/glaze+blisters">blister</a> or <a  href="https://digitalfire.com/trouble/crawling">crawl</a> in some glazes.<br />
+<br />
+-It is very color dependable under both oxidizing and reducing furnace conditions, fast and slow firing. Cobalt is used in a wide array of <a  href="https://digitalfire.com/glossary/ceramic+decals">decal</a> inks, <a  href="https://digitalfire.com/glossary/underglaze">underglaze</a> colors, glaze and body <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a>, and colored glazes. It is not volatile even at 1400C.<br />
+<br />
+-Cobalt is a trace element in vegetables and an important vitamin (B12) in stock raising. Cobalt metal is used in steel and chrome alloys.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Cobalt in a transparent glaze: Color varies with thickness</h3>
+<br /><a href="https://digitalfire.com/picture/325"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/oxides/cobaltintransparent.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/325">click here</a> to see it.</p>
+<p>If you add an <a  href="https://digitalfire.com/glossary/opacifier">opacifier</a> to this the color will become pastel and lighter and vary less with thickness.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">How do metal oxides compare in their degrees of melting?</h3>
+<br /><a alt="Metal oxides melting" href="https://digitalfire.com/picture/790"><img class="flexleft50" alt="Metal oxides melting"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/kilnezojat.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/790">click here</a> to see it.</p>
+<p>These <a  href="https://digitalfire.com/glossary/metal+oxides">metal oxides</a> have been mixed with 50% Ferro <a  href="https://digitalfire.com/material/351">frit 3134</a> and fired to <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> oxidation. Chrome and <a  href="https://digitalfire.com/material/1204">rutile</a> have not melted, copper and cobalt are extremely active melters, frothing and boiling. Cobalt and copper have crystallized during cooling. Manganese has formed an iridescent glass.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Ceramic Oxide Periodic Table</h3>
+<a href="https://digitalfire.com/picture/1257"><img class="flexleft50" alt="Periodic table of ceramic oxides"  src="https://digitalfire.com/4sight/images/pictures/er5fytcakh.svg" /></a>
+<p>Pretty well all common traditional ceramic <a  href="https://digitalfire.com/glossary/base+glaze">base glazes</a> are made from less than a dozen elements (plus oxygen). Go to the full picture of this table and click or tap each of the <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> to learn more (on its page at <a  href="https://digitalfire.com/glossary/digitalfire+reference+library">digitalfire</a>.com). When materials melt, they <a  href="https://digitalfire.com/glossary/decomposition">decompose</a>, sourcing these elements in oxide form. The kiln builds the glaze from them, it does not care what material sources what oxide (assuming, of course, that all materials do melt or dissolve completely into <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> to release those oxides). Each of these oxides contributes specific properties to the glass. So, you can look at a formula and make a good prediction of the properties of the fired glaze. And know what specific oxide to increase or decrease to move a property in a given direction (e.g. melting behavior, hardness, <a  href="https://digitalfire.com/glossary/glaze+durability">durability</a>, <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a>, color, gloss, <a  href="https://digitalfire.com/glossary/crystallization">crystallization</a>). And know about how they interact (affecting each other). This is powerful. A lot of ceramic materials are available, hundreds - that is complicated when individual materials source multiple oxides. Viewing a glaze as a simple <a  href="https://digitalfire.com/glossary/unity+formula">unity formula</a> of ceramic oxides is just simpler.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Transform the yellow-white of cone 6 to blue-white of cone 10R</h3>
+<br /><a href="https://digitalfire.com/picture/764"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/bipladejat.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/764">click here</a> to see it.</p>
+<p>Adding a little blue stain to a <a  href="https://digitalfire.com/glossary/medium+temperature">medium temperature</a> transparent glaze can give it a more pleasant tone. Some iron is present in all <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> bodies (and even porcelains), so <a  href="https://digitalfire.com/glossary/transparent+glazes">transparent glazes</a> never fire pure white. At <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10 reduction</a> they generally exhibit a bluish color (left), whereas at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> they tend toward straw yellow (right). Notice the glaze on the inside of the center mug, it has a 0.1% Mason 6336 blue stain addition; this transforms the appearance to look like a cone 10 glaze (actually, you might consider using a little less, perhaps 0.05%). Blue stain is a better choice than <a  href="https://digitalfire.com/material/230">cobalt oxide</a>, the latter will produce fired speckle.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">How reduction firing can affect glaze color</h3>
+<br /><a href="https://digitalfire.com/picture/660"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/korlajupuv.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/660">click here</a> to see it.</p>
+<p>An example of how the same <a  href="https://digitalfire.com/material/273">dolomite</a> cobalt blue glaze fires much darker in oxidation than reduction. But the surface character is the same. A different <a  href="https://digitalfire.com/glossary/base+glaze">base glaze</a> having the same <a  href="https://digitalfire.com/glossary/colorant">colorant</a> might fire much more similar. The percentage of colorant can also be a factor in how similar they will appear. The identity of the colorant is important, some are less prone to differences in kiln atmosphere. Color interactions are also a factor. The rule? There is none, it depends on the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> of the host glaze, which color and how much there is.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Bleeding underglaze. Why?</h3>
+<br /><a href="https://digitalfire.com/picture/930"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/glossary/cekgumyzok.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/930">click here</a> to see it.</p>
+<p>This cobalt <a  href="https://digitalfire.com/glossary/underglaze">underglaze</a> is <a  href="https://digitalfire.com/trouble/bleeding+colors">bleeding</a> into the transparent glaze that covers it. This is happening either because the underglaze is too highly <a  href="https://digitalfire.com/glossary/flux">fluxed</a>, the over glaze has too high of a <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> or the firing is being soaked too long. <a  href="https://digitalfire.com/glossary/engobe">Engobes</a> used under the glaze (<a  href="https://digitalfire.com/glossary/underglaze">underglazes</a>) need to be formulated for the specific temperature and <a  href="https://digitalfire.com/glossary/colorant">colorant</a> they will host, cobalt is known for this problem so it needs to be hosted in a less <a  href="https://digitalfire.com/glossary/vitreous">vitreous</a> <a  href="https://digitalfire.com/glossary/engobe">engobe</a> medium. When medium-colorant compounds melt too much they bleed, if too little they do not bond to the body well enough. Vigilance is needed to made sure the formulation is right.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Pure cobalt carbonate and copper carbonate at 1850F</h3>
+<br /><a href="https://digitalfire.com/picture/1192"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/solwyvituk.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1192">click here</a> to see it.</p>
+<p>Cobalt carbonate (top) and <a  href="https://digitalfire.com/material/236">copper carbonate</a> (bottom). Left is the raw powder plastic-formed into a sample (with 2% veegum). Right: fired to 1850F. The CuCO<sub>3</sub> is quickly densifying over the past 100 degrees and should begin to melt soon. It is long past the fuming stage.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/cobalt+carbonate">Cobalt Carbonate</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/cobalt+oxide">Cobalt Oxide</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/stain+%28blue%29">Stain (blue)</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/limit+formula">Limit Formula</a>
+<br /><i>A way of establishing guideline for each oxide in the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> for different ceramic glaze types. Understanding the roles of each oxide and the limits of this approach are a key to effectively using these guidelines.</i>
+</td>
+</tr>
+</tbody></table>
+<h3>Mechanisms</h3><table>
+<table class="table table-bordered"><tbody>
+<tr><th scope="row">Body Color</th><td>In magnesia glazes a color range is from violet to lilac is possible.</td></tr>
+<tr><th scope="row">Glaze Color</th><td>Cobalt is a classic and reliable blue colorant at all temperatures and in most types of glazes. The shade of blue can, however, be affected in many ways by the presence of different oxides. Cobalt is powerful and often less than 1% will give strong color. If the color needs to be toned down, additions of iron, titanium, rutile and nickel may work.</td></tr>
+<tr><th scope="row">Glaze Color</th><td>Cobalt is often calcined with alumina and lime for soft underglaze colors. Stains often employ mixes of alumina, cobalt, and zinc for softer blue colors.</td></tr>
+<tr><th scope="row">Glaze Color</th><td>Cobalt is used in combination with manganese and selenium to mask excess yellow coloration (yellow plus blue gives green which is masked by the pink of selenium).</td></tr>
+<tr><th scope="row">Glaze Color</th><td>Combinations with iron and manganese can give a slate blue.</td></tr>
+<tr><th scope="row">Glaze Color</th><td>With barium shades of blue-green are possible.</td></tr>
+<tr><th scope="row">Glaze Color</th><td>With chrome and manganese blue-black and black are common.</td></tr>
+<tr><th scope="row">Glaze Color</th><td>With chrome and copper, cobalt can yield tints from pure cobalt blue, to greenish-blue, to the green of chromium. These effects work best when silica is not too high and there is adequate alumina.</td></tr>
+<tr><th scope="row">Glaze Color</th><td>When cobalt occurs with manganese (i.e. 1-3% cobalt carb, 3-5% manganese carb), purples and violets can be made. Less cobalt will lighten the color. This effect works well in magnesia glazes. In high magnesia glazes, 1-2% cobalt alone will give purple. Add tin to move the color toward lavender.</td></tr>
+<tr><th scope="row">Glaze Color</th><td>With adequate SiO2 and high MgO (0.4 molar), purple, violet, lavender, and pinks can be made using 1% or more CoO. Mimimizing boron, alumina, and KNaO will help prevent it from turning blue. Note that the high MgO will generally make the glaze matte and it could suffer some ill effects associated with excessive MgO.</td></tr>
+<tr><th scope="row">Glaze Color</th><td>With MgO, SiO2, and B2O3, red, voilet, lavender, and pinks can be made.</td></tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

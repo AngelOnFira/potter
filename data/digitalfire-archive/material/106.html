@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Bentonite</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="Bentonite can make a clay body instantly plastic, only 2-3% can have a big effect. It also suspends slurries so they don't settle out and slows down drying." name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item active"><a class="nav-link" href="list.html">Materials <span class="sr-only">(current)</span></a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=material" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container">
+<ul class="nav nav-tabs pt-1" id="myTab" role="tablist">
+<li class="nav-item">
+<a aria-controls="material" aria-selected="true" class="nav-link active" data-toggle="tab" href="#material" id="material-tab" role="tab">Materials for Ceramics</a>
+</li>
+</ul>
+<div class="tab-content mb-3" id="myTabContent" style="border-right:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #ddd; padding:10px;">
+<div aria-labelledby="material-tab" class="tab-pane fade show active" id="material" role="tabpanel">
+<a href="list_1-9.html">1-9</a> | <a href="list_A.html">A</a> | <a href="list_B.html">B</a> | <a href="list_C.html">C</a> | <a href="list_D.html">D</a> | <a href="list_E.html">E</a> | <a href="list_F.html">F</a> | <a href="list_Frits.html">Frits</a> | <a href="list_G.html">G</a> | <a href="list_H.html">H</a> | <a href="list_I.html">I</a> | <a href="list_J.html">J</a> | <a href="list_K.html">K</a> | <a href="list_L.html">L</a> | <a href="list_M.html">M</a> | <a href="list_N.html">N</a> | <a href="list_O.html">O</a> | <a href="list_P.html">P</a> | <a href="list_Q.html">Q</a> | <a href="list_R.html">R</a> | <a href="list_S.html">S</a> | <a href="list_T.html">T</a> | <a href="list_U.html">U</a> | <a href="list_V.html">V</a> | <a href="list_W.html">W</a> | <a href="list_X.html">X</a> | <a href="list_Y.html">Y</a> | <a href="list_Z.html">Z</a><br/>
+<nobr></nobr>
+</div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Bentonite</h1>
+<p><b>Alternate Names</b>: Montmorillonite, Bentonite USA</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/oxide.html">Oxide</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/analysis.html">Analysis</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Formula</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Tolerance</a></th>
+</tr></thead><tbody>
+<tr><td class="label"><a href="../oxide/cao.html">CaO</a></td>
+<td class="text-right">1.00%</td>
+<td class="text-right">
+0.14
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/na2o.html">Na2O</a></td>
+<td class="text-right">3.00%</td>
+<td class="text-right">
+0.38
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/mgo.html">MgO</a></td>
+<td class="text-right">2.00%</td>
+<td class="text-right">
+0.39
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/k2o.html">K2O</a></td>
+<td class="text-right">1.00%</td>
+<td class="text-right">
+0.08
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/al2o3.html">Al2O3</a></td>
+<td class="text-right">20.00%</td>
+<td class="text-right">
+1.55
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/sio2.html">SiO2</a></td>
+<td class="text-right">59.00%</td>
+<td class="text-right">
+7.76
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/fe2o3.html">Fe2O3</a></td>
+<td class="text-right">3.50%</td>
+<td class="text-right">
+0.17
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/loi.html">LOI</a></td>
+<td class="text-right">10.00%</td><td class="text-right">n/a</td></tr>
+<tr><td colspan="2">Oxide Weight</td><td class="text-right" colspan="2">
+707.76
+</td></tr>
+<tr><td class="text-right" colspan="2"><a href="../glossary/formula+weight.html">Formula Weight</a></td><td colspan="2" style="text-align:right">
+786.40
+</td></tr>
+</tbody></table>
+<h4>Notes</h4><p>Bentonites are classified according to several types (e.g. calcium, sodium, potassium) but in the ceramic industry sodium <a href="106.html">bentonite</a> is the material of commerce (this is the same material used by the drilling industry). Sodium bentonites have incredibly small <a href="../glossary/particle+sizes.html">particle sizes</a> (and thus surface areas). Combine this with the active particle surface <a href="../glossary/glaze+chemistry.html">chemistry</a> (which makes them hold onto water) and it is the most plastic and impermeable common clay material used in <a href="../glossary/ceramics.html">ceramics</a>. Its contribution to working properties in glazes and <a href="../glossary/clay+body.html">clay bodies</a> is balanced by the undesirable properties that are also imparted (so have your eyes open to the advantages and disadvantages).<br/>
+<br/>
+There is wide variation in the chemistries of bentonites, it is impossible to specify an average (bentonite is not employed in ceramics for its chemistry). Any generic <a href="../glossary/chemical+analysis.html">chemical analysis</a> is thus only an attempt to represent the amounts you might find in a common variety. Because of the high iron content, bentonite is considered a dirty material and thus the tug-of-war between the valuable working properties it imparts and the need for whiteness or pure color that it impedes.<br/>
+<br/>
+Fine particle size: Bentonite is colloidal (particles are so small the action of water molecules is enough to keep them in <a href="../glossary/suspension.html">suspension</a>). It is typically 10 times finer than <a href="80.html">ball clay</a>. It can have a <a href="../glossary/surface+area.html">surface area</a> of almost 1000 square meters per gram (50 times that of <a href="925.html">kaolin</a>, 5000 times that of <a href="1245.html">silica</a> flour).<br/>
+<br/>
+Bentonite is usually far too plastic to prepare test specimens (e.g. for drying, strength and shrinkage evaluation). However, a mix of 20-30% virgin material with <a href="../glossary/calcination.html">calcined</a> material can be extruded and formed (test specimens will still shrink to a very small size).<br/>
+<br/>
+<a href="../glossary/permeability.html">Permeability</a>: Sodium bentonites are impermeable to water. To demonstrate this fill a tall glass cylinder with bentonite, to near the top, and then carefully pour water on top. The water will penetrate down into the clay only a few millimeters and no matter how long you leave it it will not penetrate further. This occurs because the powder swells as the water penetrates and adjacent particles 'hang onto' the water between them. The water thus becomes a glue that holds the mass together and prevents more from entering or passing through. This phenomenon accounts for why glazes and bodies of high bentonite content dry slower. As an example, if you pour a <a href="../glossary/slurry.html">slurry</a> of silty clay onto a <a href="1124.html">plaster</a> surface the water is often pulled out in seconds. However, a bentonite slurry may require days or weeks to pull the water out evenly.<br/>
+<br/>
+Swelling: Sodium bentonites expand (as much as 15 times) when added to water. This characteristic is valuable in thickening liquids and slurries and is another contributing factor to maintaining suspensions. Bentonite is used in large quantities in the gas and oil drilling industries to suspend high <a href="../glossary/specific+gravity.html">specific gravity</a> slurries which are used as a medium to float out the chunks of rock cut by the drill bit. <br/>
+<br/>
+<a href="../glossary/thixotropy.html">Thixotropy</a>: This is a tendency of a suspension to gel after sitting for a time and then re-liquefy when it is agitated. Clay bodies also exhibit this behavior, stiffening on aging but then re-softening when worked. Thixotropy is valuable in clay slurries for this reason, they gel when not being used and thus do not settle out. While typical industrial <a href="../glossary/thixotropy.html">thixotropic</a> agents employ various <a href="../glossary/mechanism.html">mechanisms</a> bentonite works by charge attraction (see above).<br/>
+<br/>
+Plastic bodies: Because of their active electrolytic behavior and fine particle size, bentonites exhibit extremely high <a href="../glossary/plasticity.html">plasticity</a> (and associated high shrinkage). In pottery and <a href="../glossary/porcelain.html">porcelain</a> clay bodies additions of only 2% can produce marked improvements in workability and dry strength without much effect on fired color. The use of up to 5% is common, especially where high plasticity is needed in a white-burning body. High amounts of bentonite will dramatically slow down the drying rate. In certain applications, it is practical to use bentonite as the only <a href="../glossary/plasticity.html">plasticizer</a> in a mix (e.g. 5-7.5% with <a href="1191.html">Redart</a> to make a <a href="../glossary/terra+cotta.html">terra cotta</a>). The plasticity-producing effects of bentonite depend on the shapes, sizes, surfaces and electrolytics of the particles it is interacting with, equal additions of bentonite to two different host bodies may have very different effects on the plasticities. While bentonites can be called upon to assume the major burden of plasticizing a body, there is a need to assess the practicality of this (the body can become excessively plastic, take too long to dry and be too easily torn). Bentonite makes bodies more plastic and dry harder but this comes at a cost, they shrink more during drying and thus potentially crack more.<br/>
+<br/>
+<a href="../glossary/casting+slip.html">Casting bodies</a>: Bentonite is invaluable to tune the balance between casting time and plastic strength (which enables pieces in the mold to shrink and pull themselves away from the plaster without tearing). Adding 0.5-1.0% can transform otherwise normally uncastable non-plastic porcelains. Of course if too much bentonite is added casting time will increase significantly (because bentonite reduces water permeability).<br/>
+<br/>
+Suspensions: Bentonite is used to keep particulates in suspension in all sorts of consumer and industrial products, and in glazes in ceramics. The <a href="../glossary/mechanism.html">mechanism</a> is charge attraction, that is, opposite electrolytic charges develop on the surfaces and edges of dispersed particles and give rise to a stable 'house-of-cards" structure that can be disrupted by shear stress. However, when the stress is removed, the structure re-establishes itself. The amazing thing is that large amounts of other types of particles can be tolerated within this structure, they are kept in suspension as well. Thus maximum <a href="../glossary/suspension.html">suspending</a> benefit can be achieved by <a href="../glossary/blunging.html">blunging</a> bentonite with the water before adding the other dry materials (to ensure that every particle is whetted on all sides). However, this cannot be done without a powerful high-speed <a href="../glossary/propeller+mixer.html">propeller mixer</a>. Thus it is normal to blend dry ingredients including bentonite first and then add them to the water. However beware of too much bentonite in glazes, they will dry too slowly and will shrink too much during drying causing cracks that later turn into <a href="../trouble/crawling.html">crawling</a> during firing.<br/>
+<br/>
+Chemically inert, Inorganic, Non-irritating: Formulations that are not fired are not altered chemically by bentonite additions. Bentonite does not support organic growth. Thus it is suitable as a carrier for personal care products like hand cream and cosmetics.<br/>
+<br/>
+Trace minerals and <a href="../glossary/toxicity.html">toxicity</a>: Like soils and terra cotta clays, bentonite has trace amounts of dozens of elements in the periodic table, including heavy metals. But the percentages are normally very small. Like other clays, <a href="../glossary/glass+vs.+crystalline.html">crystalline</a> quartz should be regarded as the main hazard to its use.<br/>
+<br/>
+Binder: Bentonite binds particles together in ceramic bodies to make them stronger in the green or dry state. Its minute particles fill voids between others to produce a more dense mass with more points of contact. Adding bentonite to glazes also imparts better dry strength and a harder and more durable surface. To fully appreciate how plastic, hard and strong bentonite can be, try mixing 25:75 with silica and preparing plastic test bars.<br/>
+<br/>
+Firing: Standard grades typically vitrify (around Orton cone 6-10) from grey to deep red coloration. However <a href="../glossary/soluble+salts.html">soluble salts</a> can be so high that they form a glaze on pure test specimens. Utility grades often contain granular iron material that causes specking in clay bodies, even materials rated at <a href="../glossary/325+mesh.html">325 mesh</a> can contain significant speck-causing particles. For good reason, bentonite is considered a very dirty material. However commercial micro-fine grades (100% minus 325 mesh) are available (these are very expensive, however). <a href="86.html">Barium carbonate</a> can be added to bodies to precipitate the solubles bentonite brings. Thus the iron content is the only firing issue associated with the visual character. Contrary to what many think, a white body can often tolerate up to 5% bentonite without firing significantly darker.<br/>
+<br/>
+White-firing bentonites: There are a number of white-firing and highly refined (and highly expensive) bentonites produced for the ceramic industry (and others). However, they can have less plasticity. Testing is needed to determine if the plasticity and plastic character are sufficient and if the extra cost is worth it. Normal microfine bentonite raw bentonite even at 5% does not darken the color of the porcelain as much as you might think. Examining recipes often shows that the kaolin and ball clay are contributing more iron than the bentonite. Even white plasticizers can have up to 0.5% iron. 5% bentonite increases the iron content of the body by .25% without considering the factors above. If you used only 2.5% bentonite the extra iron may not be an issue at all.<br/>
+<br/>
+Sorptive properties: Granules of this material can be heat-treated to nullify gelling properties but greatly improve liquid absorption, creating hard micro-sponges (e.g. for <a href="../picture/3082.html">cat litter</a> and other absorptive products of many types).<br/>
+<br/>
+Firing cracks, explosions: Bentonite slows down water penetration. Not only does a bentonite-containing <a href="../glossary/clay+body.html">clay body</a> dry slower but it does not dry as completely. Although ware might look dry it likely is not, several percent tightly bound water remains. If ware is not temperature-dried before being fired there is a risk that water will not be able to escape fast enough during firing and ware will crack, fracture under steam pressure.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">A few drops of water on top of a tiny pile of bentonite powder.</h3>
+<br/><a href="../picture/969.html"><img class="flexleft50" loading="lazy" src="../media/images/godwemylus.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/969.html">click here</a> to see it.</p>
+<p>Notice the water just sits there in a little lake. It does not soak in because the <a href="106.html">bentonite</a> gels in contact with the water and that gel acts as a barrier. This water-barrier property of bentonite is a key to its use in many products but can be a problem in <a href="../glossary/ceramics.html">ceramics</a> (because it slows down the drying speed of bodies and glazes that contain it).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Bentonite, it dries super slow and shrinks like no other clay</h3>
+<br/><a href="../picture/2169.html"><img class="flexleft50" loading="lazy" src="../media/images/ncmlt1ryks.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2169.html">click here</a> to see it.</p>
+<p>It took more than a week for this small sample to dry. To make this thick gel I propeller-mixed a <a href="../glossary/slurry.html">slurry</a> as thick as I could make it and then let it sit for two weeks to evaporate off water. It would be very difficult to make it into a plastic material, but if I did the <a href="../glossary/drying+shrinkage.html">drying shrinkage</a> would likely be 30% (typical plastic forming clays are around 5-8%!).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Bentonite content affects ability to absorb water</h3>
+<br/><a href="../picture/1071.html"><img class="flexleft50" loading="lazy" src="../media/images/jinlevenah.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1071.html">click here</a> to see it.</p>
+<p>An example of how a dried piece of clay having lower <a href="106.html">bentonite</a> content (left) absorbs a drop of water faster. After 10 seconds (middle picture) the water is gone while the other is still wet. By 30 seconds (bottom) all traces of water are gone.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">How fast will Veegum settle in water?</h3>
+<br/><a href="../picture/1598.html"><img class="flexleft50" loading="lazy" src="../media/images/lymhifebak.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1598.html">click here</a> to see it.</p>
+<p>This is <a href="1672.html">VeeGum T</a>, a processed smectite clay (similar to <a href="106.html">bentonite</a>, extremely small particle size). I have propeller-mixed enough powder into water that it has begun to gel. How long does it take for them to begin to settle? Never. This sat for a month with no visible change! That means it is colloidal. For ceramic slurries, Veegum is a gelling agent, not a gum (or hardener).</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Will a bentonite slurry addition suspend a glaze?
+</h3>
+<h4 style="color:#888888; margin-top:0px;">Not like you might have been told.</h4>
+<br/><a alt="A gallon of bentonite slurry" href="../picture/3646.html"><img alt="A gallon of bentonite slurry" class="flexleft50" loading="lazy" src="../media/images/z9gep5agrv.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3646.html">click here</a> to see it.</p>
+<p>This is 50g of sodium <a href="106.html">bentonite</a> in 1 gallon of water (~0.5% concentration). Sodium bentonite creates a gel that resists mixing. With a better propeller, faster mixer, hot water, slow addition, etc. we might be able to achieve 1% (or ~100g/gallon). Mud-men (drilling mud mixers) claim 4% is possible using shear pumps, ribbon blenders, or paddle mixers - that seems impossible to me! Why does all this matter? Some say that a gel like this can be added to a <a href="../glossary/suspension.html">settling</a> glaze to fix it. Is that true? Not really. Here is why. Our typical imperial gallon of <a href="../glossary/dipping+glaze.html">dipping glaze</a> contains 3500g powder (US gallon 2800g). At least 1% bentonite, or 35g, is needed to make any difference. The more typical 2% would be 70g. If you have a great mixer and can make a <a href="../glossary/slurry.html">slurry</a> having double the concentration of this one, then to deliver the minimum bentonite for a gallon of the glaze would require 1/3 gallon of this! While the added bentonite might help somewhat, the effects of all that extra water will cancel the benefits.<br/>
+</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">The incredible plasticity of bentonite. 
+</h3>
+<h4 style="color:#888888; margin-top:0px;">It is the secret to win the ThrowDown!</h4>
+<br/><a alt="Two dissected vases showing the comparison in wall thickness" href="../picture/2346.html"><img alt="Two dissected vases showing the comparison in wall thickness" class="flexleft50" loading="lazy" src="../media/images/tmkhksxazd.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2346.html">click here</a> to see it.</p>
+<p>The 20cm vase on the left is <a href="../glossary/throwing.html">thrown</a> from what I thought was a very plastic body, <a href="https://plainsmanclays.ca/data/index.php?product=12880">M370</a>. I achieved close to the same thickness top-to-bottom (5mm). The one on the right was the same original height, 20cm. But it has dried down to only 18cm high, it shrinks 14% (vs. 6% for the other). The thinnest part of the wall is near the bottom, only 2mm thick! How is it possible to throw that thin? The body is 50% <a href="80.html">ball clay</a> and 50% <a href="106.html">bentonite</a>. Bentonite, by itself, cannot be mixed with water, but dry-blended with fine-particled ball clay it can. That bentonite is what produces this magic <a href="../glossary/plasticity.html">plasticity</a>. But it comes at a cost. It took about four days to dewater the <a href="../glossary/slurry.html">slurry</a> on our <a href="../glossary/plaster+table.html">plaster table</a>. And one month under cloth and plastic to dry it without cracks.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">It is impossible to dry this clay. Yet we did it. How?</h3>
+<br/><a alt="Two dried pottery mugs" href="../picture/2370.html"><img alt="Two dried pottery mugs" class="flexleft50" loading="lazy" src="../media/images/zuhjruhamu.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2370.html">click here</a> to see it.</p>
+<p>These are made from a 50:50 mix of <a href="106.html">bentonite</a> and <a href="80.html">ball clay</a>! The <a href="../glossary/drying+shrinkage.html">drying shrinkage</a> is 14%, more than double that of normal pottery clay. These should have cracked into many small pieces. Yet notice that the handle joins with the walls are flawless, not even a hairline crack (admittedly the base has cracked a little). Remember that the better the mixing and <a href="../glossary/kneading+clay.html">wedging</a>, the smaller the piece, the thinner the walls, the more even wall thickness, the better the joins, the fewer the sharp contour changes, the more even the <a href="../glossary/water+content.html">water content</a> is throughout the piece (during the entire drying cycle) and the damper the climate the more successful drying will be. What did it take to dry these in our arid climate? One month under cloth and plastic, changing the cloth every couple of days. Implementing these same principles on a normal <a href="../glossary/clay+body.html">clay body</a> will assure drying success.<br/>
+<br/>
+</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">A body containing excessive non-plastics having a high bentonite addition for plasticity</h3>
+<br/><a href="../picture/1447.html"><img class="flexleft50" loading="lazy" src="../media/images/mulgunixeh.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1447.html">click here</a> to see it.</p>
+<p>This can happen during tooling (I am making a <a href="../picture/1479.html">crucible</a> here). While the <a href="../glossary/plasticity.html">plasticity</a> is sufficient for <a href="../glossary/throwing.html">throwing</a>, at lower water contents it drops off quickly. This is a mix of 5% <a href="106.html">bentonite</a>, 10% <a href="80.html">ball clay</a> and 85% <a href="41.html">calcined alumina</a>. For better trimming some <a href="../glossary/refractory.html">refractory</a> capability needs to be sacrificed for more ball clay (perhaps 20%).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Turbo-charge plasticity using bentonite, hectorite, smectite.</h3>
+<br/><a href="../picture/802.html"><img class="flexleft50" loading="lazy" src="../media/images/popweduwaf.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/802.html">click here</a> to see it.</p>
+<p>These are <a href="../glossary/clay+body+porosity.html">porosity</a> and fired shrinlage test bars, <a href="../glossary/code+numbering.html">code numbered</a> to have their data recorded in our group account at <a href="../glossary/digitalfire+insight-live.html">Insight-live</a>.com. <a href="../glossary/plainsman+clays.html">Plainsman</a> P580 (top) has 35% <a href="80.html">ball clay</a> and 17% American <a href="925.html">kaolin</a>. <a href="https://plainsmanclays.ca/data/index.php?product=12891">H570</a> (below it) has 10% ball clay and 45% kaolin, so it burns whiter (but has a higher <a href="../glossary/firing+shrinkage.html">fired shrinkage</a>). <a href="https://plainsmanclays.ca/data/index.php?product=12893">P700</a> (third down) has 50% <a href="831.html">Grolleg</a> kaolin and no ball clay, it is the whitest and has even more fired shrinkage. Crysanthos <a href="../glossary/porcelain.html">porcelain</a> (bottom, from China) also only employs kaolin, but at a much lower percentage, thus is has almost no <a href="../glossary/plasticity.html">plasticity</a> (suitable for machine forming only). Do <a href="https://plainsmanclays.ca/data/index.php?product=12891">H570</a> and <a href="https://plainsmanclays.ca/data/index.php?product=12893">P700</a> sacrifice plasticity to be whiter? No, with added <a href="106.html">bentonite</a> they have better plasticity than P580. Could that bottom one be super-charged? Yes, 3-4% VeeGum or Bentone (smectite, hectorite) would make it the most plastic of all of these (at a high cost of course).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">An example of a DFAC drying test of a bentonitic clay</h3>
+<br/><a href="../picture/931.html"><img class="flexleft50" loading="lazy" src="../media/images/wuksivicat.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/931.html">click here</a> to see it.</p>
+<p>This disk has dried under heat (with the center part protected) for many hours. During that process it curled upward badly (flattening back out later). It is very reluctant to give up its water in the central protected section. Obviously it shrinks alot during drying and forms a network of cracks. When there are this many cracks it is difficult to <a href="../glossary/characterization.html">characterize</a> it, so a picture is best.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Fired bars of a bentonite used in porcelains! Is this possible?</h3>
+<br/><a alt="Fired bentonite test bars are dark brown" href="../picture/1135.html"><img alt="Fired bentonite test bars are dark brown" class="flexleft50" loading="lazy" src="../media/images/huhkyganow.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1135.html">click here</a> to see it.</p>
+<p>Perhaps you are shocked that a material this dark and dirty (the bars are fired from <a href="../glossary/cone+1.html">cone 1</a> to 7 oxidation, bottom to top), would be used in porcelains. Why? Bentonites are very difficult to process. This is just raw <a href="106.html">bentonite</a> (HPM-20), dry ground to -325 mesh (to guarantee no fired specks). That grinding does not reduce the <a href="../glossary/soluble+salts.html">soluble salts</a> (that melt by cone 4) or the iron (which accounts for the dark-burning color). These undesirable properties must be tolerated (as whiteness loss) to get the <a href="../glossary/plasticity.html">plasticity</a> supercharge 3-5% of this can impart. Why not use super-white bentonites or smectites instead? They can cost ten or even twenty times more!</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Two plasticizers show vastly different potency</h3>
+<br/><a href="../picture/771.html"><img class="flexleft50" loading="lazy" src="../media/images/malrojojom.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/771.html">click here</a> to see it.</p>
+<p>A comparison of the <a href="../glossary/plasticity.html">plasticity</a> of two bentonites was done by diluting them with <a href="1245.html">silica</a>. The top sample is Volcay 325 mixed 25:75 with silica. It is a standard Wyoming sodium <a href="106.html">bentonite</a> - mined, dried and ground. The bottom specimen is Hectalite 200, a highly refined white hectorite, mixed 50:50 with silica. Notice how much less plastic it is (even though at double the percentage).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Soluble salts as a white powder on a commercial bentonite</h3>
+<br/><a alt="A dry lump of bentonite with solubles as a powder" href="../picture/2878.html"><img alt="A dry lump of bentonite with solubles as a powder" class="flexleft50" loading="lazy" src="../media/images/2ykwdy3hcb.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2878.html">click here</a> to see it.</p>
+<p><a href="106.html">Bentonite</a> is a super-plastic clay. This block of it took months to dry, the material really holds on to its water! It shrunk to about half the size and, of course, broke up into many pieces in the process (because bentonite has such a high <a href="../glossary/drying+shrinkage.html">drying shrinkage</a>). That white powder is calcium sulphate, it is soluble and comes to the surface with the water as the clay dries. The finer the manufacturer grinds the material, the more salts are liberated. In most ceramic applications for commercial raw bentonites, these <a href="../glossary/soluble+salts.html">soluble salts</a> are not an issue (but the iron content certainly can be). The reason these salts can be tolerated is that bentonite is normally employed in bodies and glazes in the 1-5% range.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Could these bentonite particles cause specking in a porcelain?</h3>
+<br/><a href="../picture/767.html"><img class="flexleft50" loading="lazy" src="../media/images/nucdivanyn.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/767.html">click here</a> to see it.</p>
+<p>The stated particle size of a material and fired appearance can both be misleading. For example, these are Volclay 325 <a href="106.html">bentonite</a> particles fired to cone 8 oxidation. They are from a water washed <a href="../glossary/sieve.html">sieve</a> analysis test, the <a href="../picture/3706.html">oversize particles</a> from a <a href="../glossary/325+mesh.html">325 mesh</a> screen (left) make up 2% of the total and 1% are from the <a href="../glossary/200+mesh.html">200 mesh</a> screen (right). Although the 325 particles appear ominously dark, individually they are likely to small to produce apparent fired specks in a <a href="../glossary/porcelain.html">porcelain</a>. However 200 mesh sizes can produce visible fired specks, but that fraction of oversize does not have nearly as high iron or <a href="../glossary/flux.html">flux</a> content. Still, the finer darker particles could <a href="../glossary/agglomeration.html">agglomerate</a>, it might be better to use a cleaner bentonite to <a href="../glossary/plasticity.html">plasticize</a> a porcelain.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">National Standard Bentonite fired to 1650F in a crucible</h3>
+<br/><a href="../picture/1166.html"><img class="flexleft50" loading="lazy" src="../media/images/pyrruwyvop.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1166.html">click here</a> to see it.</p>
+<p>The powder was simply put into this <a href="../picture/3390.html">cast crucible</a> and fired. <a href="../glossary/sintering.html">Sintering</a> is just beginning.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">What is sintering?</h3>
+<br/><a href="../picture/765.html"><img class="flexleft50" loading="lazy" src="../media/images/razdetawas.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/765.html">click here</a> to see it.</p>
+<p><a href="106.html">Bentonite</a> fired to 1950F in a small <a href="../picture/3390.html">cast crucible</a>. It is <a href="../glossary/sintering.html">sintering</a>, the particles are bonding even though there is no glass development. The powdered mass is behaving as a unit, the cohesive forces holding it together are enough to shrink the entire mass away from the walls of the container. This sintering process continues slowly, beginning around 1650. Most raw bentonites, this is National Standard <a href="../glossary/200+mesh.html">200 mesh</a>, have a fairly low melting point, this will begin to fuse soon.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">What if you just cannot solve a pinhole problem?</h3>
+<br/><a href="../picture/1327.html"><img class="flexleft50" loading="lazy" src="../media/images/cadlyvejac.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1327.html">click here</a> to see it.</p>
+<p><a href="../glossary/pinholing.html">Pinholing</a> on the inside of a <a href="../glossary/cone+6.html">cone 6</a> <a href="../glossary/whiteware.html">whiteware</a> bowl. This is glaze <a href="../recipe/g2926b.html">G2926B</a>. The cause is likely a combination of thick glaze layer and gas-producing particles in the body. Bodies containing ball clays and bentonites often have particles in the +150 and even +100 mesh sizes. The presence of such particles is often sporadic, thus it is possible to produce defect-free ware for a time. But at some point problems will be encountered. Companies in large production need to have fast <a href="../glossary/firing+schedule.html">firing schedules</a>, so they either have to <a href="../glossary/filter+press.html">filter press</a> or wet process these bodies to remove the particles. Or, they need to switch to more expensive bodies containing only kaolins and highly processed plasticizers. But potters have the freedom to use <a href="../glossary/drop-and-soak+firing.html">drop-and-hold</a> or slow-cool firing schedules, that single factor can solve even serious pinholing issues.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Test bar made from 20% bentonite and 80% calcium carbonate</h3>
+<br/><a href="../picture/770.html"><img class="flexleft50" loading="lazy" src="../media/images/cihryzyfyt.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/770.html">click here</a> to see it.</p>
+<p>It fumes a glassy glaze onto nearby test bars at <a href="../glossary/reduction+firing.html">cone 10R</a>. This fumed glaze layer on the other bars is thick enough to <a href="../trouble/glaze+crazing.html">craze</a> and is transparent and glossy. Any ideas why this happens? Please let me know.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Natural bentonites fire to a surprisingly dirty surface!</h3>
+<br/><a href="../picture/929.html"><img class="flexleft50" loading="lazy" src="../media/images/curcoxygig.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/929.html">click here</a> to see it.</p>
+<p>Pure HPM-20 micro-fine <a href="106.html">bentonite</a> fired to cone 8 (top) and cone 2 (bottom) oxidation (it is actually a mix of raw and <a href="../glossary/calcination.html">calcined</a> material to make it possible to make the bars). Below that is an 85% <a href="1245.html">silica</a>:15% HPM-20 bentonite mix; they are fired to cone 10 (top) and 6 (bottom); these lower bars tell us the degree of <a href="../glossary/plasticity.html">plasticity</a> imparted but also how much the bentonite is staining a normally paper-white burning material. HPM is a very expensive micro-pulverized bentonite, but, like other common bentonites, it still has significant iron. However note that much of the color on the top bars is from the <a href="../glossary/soluble+salts.html">soluble salts</a> on the surface. These salts do not appear to come to the surface in the same way when mixed with the silica. It is very common to put these relatively dirty materials into porcelains to <a href="../glossary/plasticity.html">plasticize</a> them. Why? The alternative is a material like VeeGum, it is 10-15 times the price! Still, if only a few percent of this is added, the color is affected less than you might think.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Here is what it takes to make sure P700 has minimal fired specks</h3>
+<br/><a href="../picture/2220.html"><img class="flexleft50" loading="lazy" src="../media/images/xqdimf56t3.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2220.html">click here</a> to see it.</p>
+<p>Every pallet of a 1500 bag <a href="106.html">bentonite</a> shipment, a material used to make <a href="https://plainsmanclays.ca/data/index.php?product=12893">P700</a>, had to be sampled. On testing each one, dark-coloured particulates were found. The worst pallets got a second round of testing. Ware and tiles were made, clear-glazed and fired to <a href="../glossary/reduction+firing.html">cone 10R</a> (with heavy reduction). Samples were also prepared and returned to the manufacturer for further testing in their lab. As it turned out, the dark particles were not iron-containing; only a few tiny fired specks were found.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">The clay aging myth: Prove it wrong by slurry mixing</h3>
+<br/><a alt="Clay aging: It is a myth" href="../picture/2477.html"><img alt="Clay aging: It is a myth" class="flexleft50" loading="lazy" src="../media/images/rz2et6jbic.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2477.html">click here</a> to see it.</p>
+<p>Do you really need to age clay when you make your own? No. In ancient Japan they did not have power blenders and propeller mixers. We do. To illustrate: I just sieved out the +80 mesh and +200 mesh particles from this raw clay (from one of our stockpiles) and then propeller-mixed it as a <a href="../glossary/slurry.html">slurry</a>. That wetted the particles very well and made it easy to <a href="../glossary/sieve.html">sieve</a>. Then I poured the slurry on to a <a href="../glossary/plaster+table.html">plaster table</a> and thirty minutes later it was ready-to-use. Slurry mixing is just as good as deairing in a <a href="../glossary/pugmill.html">pugmill</a>. No wait! Particles wet even better. The <a href="../glossary/plasticity.html">plasticity</a> of this clay is wonderful, and, it will not get any better with aging. Ancient Japanese potters used non-plastic, coarse particled clays so they needed to squeeze every last bit of plasticity out of them. Today, fine particled plastic clay materials are readily available. And we have something else the ancients did not: Micro-fine <a href="106.html">bentonite</a>. A few percent of that and any clay can be made super-plastic (provided you have a good mixer to wet and separate all the particles to release their full power).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Comparison of the swelling of a calcium and sodium bentonite</h3>
+<br/><a alt="Swelling of calcium and sodium bentonites" href="../picture/3309.html"><img alt="Swelling of calcium and sodium bentonites" class="flexleft50" loading="lazy" src="../media/images/fsvdhe64uu.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3309.html">click here</a> to see it.</p>
+<p>Left: A small dry lump has been immersed in water (top is a sodium <a href="106.html">bentonite</a> from Saskatchewan, bottom is a calcium bentonite from Mexico). Right: After ten minutes both have swelled. Although the character of the swelling is a little different, both dewater on a <a href="../glossary/plaster+table.html">plaster table</a> and exhibit similar <a href="../glossary/plasticity.html">plasticity</a>. Both create a gelled <a href="../glossary/slurry.html">slurry</a> having similar feel and character. This seems odd. The lesson appears to be that all sodium bentonites are not created equal. Sodium bentonites normally resist wetting, they literally cannot be stirred into water without the use of high-energy mixing equipment. And tiny amounts can gel a large amount of water or <a href="../glossary/plasticity.html">plasticize</a> an otherwise short <a href="../glossary/clay+body.html">clay body</a>. However, that is not the case with this sodium bentonite we are getting from Saskatchewan. This is exciting for us because it suggests that this material, although not plastic enough for use in <a href="../glossary/ceramics.html">ceramics</a>, can be used for cosmetics, masks and detox.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Will soil testing help you assess a wild clay for pottery?</h3>
+<br/><a alt="Soil test not for clay" href="../picture/3509.html"><img alt="Soil test not for clay" class="flexleft50" loading="lazy" src="../media/images/9kwk6kg32y.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3509.html">click here</a> to see it.</p>
+<p>No, soil testing is not helpful. Soils normally contain clay but it is so diluted with sand, rocks, silt and <a href="../oxide/organics.html">organics</a> that overall <a href="../glossary/plasticity.html">plasticity</a> is just a dot on a graph - not even close to what modelling or <a href="../glossary/throwing.html">throwing</a> clays exhibit. Pottery clays easily hold a shape and can be adjusted to a new shape without <a href="../glossary/splitting.html">splitting</a>. They dry slowly with substantial shrinkage. Highly plastic clays need more water to achieve working consistency, silty non-plastic ones need less (typical pottery clays need 18-23%). The reports shown here are typical for soils. But almost nothing here would look familiar to a potter.<br/>
+<br/>
+-The Shrinkage Limit (SL) is the <a href="../glossary/water+content.html">water content</a> where further loss of moisture will not result in any more volume reduction.<br/>
+-The Plastic Limit (PL) is minimum water content at which a soil is considered to behave in a ‘plastic’ manner, i.e. is capable of being moulded.<br/>
+-The Liquid Limit (LL) is the maximum water content a silt or clay can have before becoming a liquid, i.e. turning into mud.<br/>
+-The Plasticity Index (PI) is the range of moisture contents where the silt or clay remains plastic (PI = LL – PL).<br/>
+<br/>
+Potters don't care about the amount of water needed, they care about how plastic the clay is once enough water has been added to get the right stiffness.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Physical testing of two bentonites from one site:
+</h3>
+<h4 style="color:#888888; margin-top:0px;">Comparative and absolute conclusions resulted.</h4>
+<br/><a alt="Two bentonites of differing plasticity" href="../picture/3656.html"><img alt="Two bentonites of differing plasticity" class="flexleft50" loading="lazy" src="../media/images/ismtzoxo1e.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3656.html">click here</a> to see it.</p>
+<p>These samples were part of a project to compare two sodium bentonites, using our standard procedures to <a href="../glossary/characterization.html">characterize</a> the <a href="../glossary/physical+testing.html">physical properties</a> of clays for use in bodies in traditional <a href="../glossary/ceramics.html">ceramics</a>. These samples were taken from different spots in the same location in Nevada, USA. We were interested in dry-state properties: Shrinkage and deformation, water <a href="../glossary/permeability.html">permeability</a>, <a href="../glossary/plasticity.html">plasticity</a> and related water requirements. And also firing: <a href="../glossary/loi.html">LOI</a>, shrinkage, <a href="../glossary/clay+body+porosity.html">porosity</a> and color at various temperatures. The <a href="../test/dfac.html">DFAC test</a> disk of L4122 (right) is still wet in the center (very slow and difficult drying is characteristic of bentonites). Its <a href="../test/shab.html">SHAB test</a> bars have shrunk and curled much more. And cracked badly (expected of bentonites). <br/>
+While these tests were mainly about comparing the two materials, they were also an absolute indicator - it would be impossible to even make these specimens from a pure <a href="106.html">bentonite</a>, so these are simply montmorillonitic clays, containing differing percentages of <a href="106.html">bentonitic</a> particles.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="../mineral/montmorillonite%2c+bentonite.html">Montmorillonite, Bentonite</a>
+<br/><i>A clay mineral of extremely small particle size and high <a href="../glossary/plasticity.html">plasticity</a>. Raw <a href="106.html">bentonite</a> is generally a pa</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ball+clay.html">Ball Clay</a>
+<br/><i>A fine particled highly plastic <a href="../glossary/secondary+clay.html">secondary clay</a> used mainly to impart <a href="../glossary/plasticity.html">plasticity</a> to clay and <a href="../glossary/porcelain.html">porcelain</a> bodies and to suspend glaze, slips and <a href="../glossary/engobe.html">engobe</a> slurries.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="acti-gel+208.html">Acti-Gel 208</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="bentone+ma.html">Bentone MA</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="attapulgite.html">Attapulgite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hectorite.html">Hectorite</a>
+<br/><i>A sodium magnesium <a href="106.html">montmorillonite</a> that burns much whiter than <a href="106.html">bentonite</a> (because of lower iron content).</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="bentolite+l-3.html">Bentolite L-3</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="bentonite+avonlea.html">Bentonite Avonlea</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="bentonite+ce.html">Bentonite CE</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="bentonite+tech+5.html">Bentonite Tech 5</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="bentonite+wa.html">Bentonite WA</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="gk+129+bentonite.html">GK 129 Bentonite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hectalite+200.html">Hectalite 200</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ibex+bentonite.html">Ibex Bentonite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="kaopolite+k+129.html">Kaopolite K 129</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="milwhite+bentonite+b.html">Milwhite Bentonite B</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="vol331cer.html">vol331cer</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="vol351cer.html">vol351cer</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="vol364cer.html">vol364cer</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="vol446cer.html">vol446cer</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="volclay+spv+200+bentonite.html">Volclay SPV 200 Bentonite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="polargel.html">Polargel</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="wyoming+k-4.html">Wyoming K-4</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="cape+cross+bentonite.html">Cape Cross Bentonite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="claytone.html">Claytone</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="national+premium+wt+bentonite.html">National Premium WT Bentonite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hpm-20+volclay+bentonite.html">HPM-20 Volclay Bentonite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Hazards</td>
+<td>
+<a href="../hazard/bentonite+toxicity.html">Bentonite Toxicity</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/gnm">Generic Material</a>
+<br/><i>Generic materials are those with no brand name. Normally they are theoretical, the <a href="../glossary/glaze+chemistry.html">chemistry</a> portrays what a specimen would be if it had no contamination. Generic materials are helpful in educational situations where students need to study material theory (later they graduate to dealing with real world materials). They are also helpful where the chemistry of an actual material is not known. Often the accuracy of calculations is sufficient using generic materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/clo">Clay Other</a>
+<br/><i>Clays that are not kaolins, ball clays or bentonites. For example, <a href="../glossary/stoneware.html">stoneware</a> clays are mixtures of all of the above plus quartz, <a href="310.html">feldspar</a>, mica and other minerals. There are also many clays that have high <a href="../glossary/plasticity.html">plasticity</a> like <a href="106.html">bentonite</a> but are much different mineralogically.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/den">Materials used in Denmark</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/bin">Additives for Ceramic Bodies</a>
+<br/><i>Materials that are added to bodies to impart physical working properties and usually burn away during firing. Binders enable bodies with very low or zero clay content to have <a href="../glossary/plasticity.html">plasticity</a> and dry hardness, they can give powders flow properties during pressing and impart <a href="../glossary/rheology.html">rheological</a> properties to clay slurries. Among potters however, it is common for bodies to have zero additives.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/adv">Additives for Ceramic Glazes</a>
+<br/><i>Materials that are added to glazes to impart physical working properties and usually burn away during firing. In industry all glazes, inks and <a href="../glossary/engobe.html">engobes</a> have additives, they are considered essential to control of cohesion, adhesion, <a href="../glossary/suspension.html">suspension</a>, dry hardness, surface leveling, <a href="../glossary/rheology.html">rheology</a>, speed-of-drying, etc. Among potters, it is common for glazes to have zero additives.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/432">http://www.volclay.com.au/products.htm#Bentonite.htm</a>
+<br/><i>About <a href="106.html">Bentonite</a> at Volclay.com</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1131">http://www.ilo.org/public/english/protection/safework/cis/products/icsc/dtasht/_icsc03/icsc0384.htm</a>
+<br/><i><a href="106.html">Bentonite</a> hazards at ilo.org</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1132">http://en.wikipedia.org/wiki/Bentonite</a>
+<br/><i><a href="106.html">Bentonite</a> at Wikipedia</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1600">http://www.sorptive.org/</a>
+<br/><i>Sorptive Mineral Institute for producers of absorbent clay mineral products</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/plasticity.html">Plasticity</a>
+<br/><i><a href="../glossary/plasticity.html">Plasticity</a> (in <a href="../glossary/ceramics.html">ceramics</a>) is a property exhibited by soft clay. Force exerted effects a change in shape and the clay exhibits no tendency to return to the old shape. Elasticity is the opposite.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/porcelain.html">Porcelain</a>
+<br/><i>How do you make <a href="../glossary/porcelain.html">porcelain</a>? There is a surprisingly simple logic to formulating them and to adjusting their working, drying, glazing and firing properties for different purposes.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/permeability.html">Permeability</a>
+<br/><i>In <a href="../glossary/ceramics.html">ceramics</a>, the <a href="../glossary/permeability.html">permeability</a> of clay slurries and plastics determines the rate as which water can move through the matrix</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/binders+for+ceramic+bodies.html">Binders for Ceramic Bodies</a>
+<br/><i>An overview of the major types of organic and inorganic binders used in various different ceramic industries.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/formulating+a+porcelain.html">Formulating a Porcelain</a>
+<br/><i>The principles behind formulating a <a href="../glossary/porcelain.html">porcelain</a> are quite simple. You just need to know the purpose of each material, a starting recipe and a testing regimen.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Recipes</td>
+<td>
+<a href="../recipe/l2000.html">L2000 - 25 Porcelain</a>
+<br/><i>Base 25x4 <a href="../glossary/porcelain.html">porcelain</a> recipe</i>
+</td>
+</tr>
+</tbody></table>
+<h3>Mechanisms</h3><table>
+<table class="table table-bordered"><tbody>
+<tr><th scope="row">Body Plasticity</th><td>1 part bentonite can plasticize a body as much as 10 parts kaolin. Bentonitic bodies are stronger in the dry form but dry slower, crack more and fire darker with potential iron specks (get a super fine ground grade).</td></tr>
+<tr><th scope="row">Glaze Suspender</th><td>1-3% bentonite can greatly improve glaze suspension by geling it. In addition it will harden the dry layer. Coarser varieties can impart some glaze speck. If a glaze already contains more than 15% clay (kaolin, ball clay) you should not need more than 1% bentonite.</td></tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></table></div></body>
+</html>

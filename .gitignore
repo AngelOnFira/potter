@@ -1,16 +1,10 @@
-# Large / regenerable archival caches — NOT tracked
-/data/wayback/cdx/
-/data/archive/
+# Exclude only the giant source zip (redundant with the extracted
+# data/digitalfire-archive/ — re-download from archive.org if needed),
+# plus scratch QA files and run logs. Everything else under data/ is committed
+# so the whole archive can be cloned in one go.
 /data/digitalfire-archive.zip
-/data/digitalfire-archive/
 /data/qa/
 /data_run.log
-
-# Tracked on purpose (small, high-value artifacts):
-#   data/urls.jsonl, data/urls.csv, data/survey_summary.{json,md}, data/robots.txt
-#   data/wayback/cdx_index.jsonl, data/archive_plan.jsonl
-#   data/missing_from_wayback.json, data/coverage_report.md, data/malformed_locs.json
-#   data/sitemaps/*.xml, prototype/data/chem/*.json
 
 # Python
 __pycache__/

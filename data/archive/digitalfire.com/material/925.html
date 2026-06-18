@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Kaolin</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="The purest of all clays in nature. Kaolins are used in porcelains and stonewares to impart whiteness, in glazes to supply Al2O3 and to suspend slurries.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+March 2026: We are doing major upgrades to code here, please be patient regarding any issues. If any page is not working for a period of hours, please contact us. Thank you.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item active"><a class="nav-link" href="/material/list">Materials <span class="sr-only">(current)</span></a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=material" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:center; vertical-align:top;">Feb 14-15, 2026 - <b>Major Server <a href="https://digitalfire.com">Upgrade</a> Done</b></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table>
+<ul class="nav nav-tabs pt-1" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="material-tab" data-toggle="tab" href="#material" role="tab" aria-controls="material" aria-selected="true">Materials for Ceramics</a>
+  </li>
+</ul>
+<div class="tab-content mb-3" id="myTabContent" style="border-right:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #ddd; padding:10px;">
+  <div class="tab-pane fade show active" id="material" role="tabpanel" aria-labelledby="material-tab">
+<a href="/material/list/1-9">1-9</a> | <a href="/material/list/A">A</a> | <a href="/material/list/B">B</a> | <a href="/material/list/C">C</a> | <a href="/material/list/D">D</a> | <a href="/material/list/E">E</a> | <a href="/material/list/F">F</a> | <a href="/material/list/Frits">Frits</a> | <a href="/material/list/G">G</a> | <a href="/material/list/H">H</a> | <a href="/material/list/I">I</a> | <a href="/material/list/J">J</a> | <a href="/material/list/K">K</a> | <a href="/material/list/L">L</a> | <a href="/material/list/M">M</a> | <a href="/material/list/N">N</a> | <a href="/material/list/O">O</a> | <a href="/material/list/P">P</a> | <a href="/material/list/Q">Q</a> | <a href="/material/list/R">R</a> | <a href="/material/list/S">S</a> | <a href="/material/list/T">T</a> | <a href="/material/list/U">U</a> | <a href="/material/list/V">V</a> | <a href="/material/list/W">W</a> | <a href="/material/list/X">X</a> | <a href="/material/list/Y">Y</a> | <a href="/material/list/Z">Z</a><br />
+<nobr></nobr>
+</div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Kaolin</h1>
+<p><b>Alternate Names</b>: China Clay, Generic Kaolin</p>
+<p><b>Description</b>: Hydrated alumina silicate, Pure clay mineral</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/oxide">Oxide</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/analysis">Analysis</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/formula">Formula</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/formula">Tolerance</a></th>
+</tr></thead><tbody>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/al2o3">Al2O3</a></td>
+<td class="text-right"">40.21%</td>
+<td class="text-right">
+1.00
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/sio2">SiO2</a></td>
+<td class="text-right"">47.29%</td>
+<td class="text-right">
+2.00
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/loi">LOI</a></td>
+<td class="text-right">12.50%</td><td class="text-right">n/a</td></tr>
+<tr><td colspan="2">Oxide Weight</td><td colspan="2" class="text-right">
+221.96
+</td></tr>
+<tr><td colspan="2" class="text-right"><a href="https://digitalfire.com/glossary/formula+weight">Formula Weight</a></td><td colspan="2" style="text-align:right">
+253.67
+</td></tr>
+</tbody></table>
+<h4>Notes</h4><p>A wide array of <a  href="https://digitalfire.com/material/925">kaolin</a> (also known as China Clay) products are available. These vary in <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a>, crystal and surface <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a>, particle shape and size, flow properties, <a  href="https://digitalfire.com/glossary/permeability">permeability</a>, etc. However the most common varieties most people will see are two: kaolins intended for plastic bodies or casting ones. Plastic kaolins can rival the workability of a <a  href="https://digitalfire.com/material/80">ball clay</a>, casting ones can be so short that it is difficult to even wedge or roll them without the plastic mass falling apart. Strangely, non-plastic kaolins are not necessarily whiter burning.<br />
+<br />
+Pure kaolin is the clay of choice for bodies that need to be clean and white. Many porcelains contain only a kaolin mix as their clay complement. But kaolins have relatively low plasticity when compared to other raw clay types. Thus in non-casting plastic-forming bodies it is often not possible to achieve enough plasticity employing kaolin alone. Additions of ball clays, bentonites and other plasticizers are thus common. Where <a  href="https://digitalfire.com/glossary/translucency">translucency</a> and whiteness are paramount, highly plastic kaolins and white burning ball clays and bentonites can be used .<br />
+<br />
+Because kaolinite mineral has a much larger particle size than ball clay and <a  href="https://digitalfire.com/material/106">bentonite</a> materials, blending it with them in bodies can produce a good cross-section of ultimate <a  href="https://digitalfire.com/glossary/particle+sizes">particle sizes</a> (this imparts enhanced working and drying properties). Another advantage of the larger particle size of kaolins is that they are much more permeable to the passage of water. Thus kaolins, especially the larger sized ones, speed up casting rates in <a  href="https://digitalfire.com/glossary/slurry">slurry</a> bodies and drying rates in all bodies.<br />
+<br />
+Kaolins are employed in <a  href="https://digitalfire.com/glossary/glaze+recipes">glaze recipes</a> to keep the <a  href="https://digitalfire.com/material/1245">silica</a>, <a  href="https://digitalfire.com/material/310">feldspar</a>, <a  href="https://digitalfire.com/glossary/frit">frit</a> and other particles from <a  href="https://digitalfire.com/glossary/suspension">settling</a> out (the surface chemistry of the particles and their interaction with water are responsible for this behavior). At the same time the oxide chemistry of kaolin makes it the primary source of alumina oxide for glazes.<br />
+<br />
+Kaolin is a very <a  href="https://digitalfire.com/glossary/refractory">refractory</a> aluminum silicate. Kaolin-based bodies are used to make all kinds of refractory parts for industry. <a  href="https://digitalfire.com/glossary/kiln+wash">Kiln wash</a> is often made from 50:50 mix of kaolin and silica. Cordierite is made mainly from kaolin. High-heat-duty grogs are made by calcining kaolin.<br />
+<br />
+Kaolin is used in many industries other than <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>, in fact the ceramics industry uses only a small amount of the total kaolin produced. Kaolin companies tend to be billion-dollar operations and kaolin is used in everything from paper to cosmetics, paint to agricultural products. The spread of pictures across the page at the Ukranian Kaolin Company shows some examples: http://www.ukc-kaolin.com/en/product.html<br />
+<br />
+If you use kaolin in your production there is good reason to be doing routine quality control to make sure it remains consistent. Kaolins can sometimes have particulate impurities (can cause firing specks) and exhibit differences in <a  href="https://digitalfire.com/glossary/soluble+salts">soluble salts</a> content, <a  href="https://digitalfire.com/glossary/drying+shrinkage">drying shrinkage</a>, <a  href="https://digitalfire.com/glossary/drying+performance">drying performance</a> and behavior in slurries. Different name-brand kaolins, and even different ones marketed by the same company, can have very different properties. The plasticity range can be huge (from almost zero to like ball clay). Fired color and fired <a  href="https://digitalfire.com/glossary/maturity">maturity</a> can be very different. If you make a <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a>, for example, it is very important to compare fired maturity of the recipe using the original and new kaolin (using the <a  href="https://digitalfire.com/test/shab">SHAB test</a> for example). It is often necessary to compensate fired maturity changes by adjusting the feldspar percentage. And plasticity changes by adding/removing bentonite or adjusting the ball clay/kaolin proportion. Also, just because a clay fires really white does not mean it is a koalin, even if the supplier calls it such.<br />
+<br />
+Kaolin transforms to mullite above 1000C, this is a key factor in the micro structure of porcelain and other types of bodies. This transformation is also exploited in <a  href="https://digitalfire.com/glossary/engobe">engobes</a>.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<br /><a href="https://digitalfire.com/picture/676"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/materials/cogwulelor.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/676">click here</a> to see it.</p>
+<p><a  href="https://digitalfire.com/material/80">Ball clay</a> and <a  href="https://digitalfire.com/material/925">kaolin</a> test bars side-by-side fired from cone 9-11 oxidation and 10 reduction.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">How a kaolin and ball clay compare in a dry performance test</h3>
+<br /><a title="Drying test for kaolin, ball clay" href="https://digitalfire.com/picture/798"><img class="flexleft50" title="Drying test for kaolin, ball clay"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/xitxomehic.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/798">click here</a> to see it.</p>
+<p>These are DFAC <a  href="https://digitalfire.com/glossary/drying+performance">drying performance</a> disks of a large-particle <a  href="https://digitalfire.com/material/925">kaolin</a> (<a  href="https://digitalfire.com/material/3115">OptiKast</a>) and a <a  href="https://digitalfire.com/material/80">ball clay</a> (<a  href="https://digitalfire.com/material/1142">Plainsman A2</a>). This test reveals a clay's response to uneven drying (these disks are dried with the center portion covered). The kaolin feels smoother yet its <a  href="https://digitalfire.com/glossary/ultimate+particles">ultimate particles</a> are ten to one hundred times bigger than a typical ball clay. Thus it shrinks much less. The ball clay has dramatically lower water <a  href="https://digitalfire.com/glossary/permeability">permeability</a>, water from the center protected portion resists migration to the outer edge during drying. When the inner section finally dried the outer was already rigid so it split the disk in two and pulled all the edge cracks. Most ball clays shrink more and crack worse than this (cracks concentric to the center also appear). So why use ball clay? This kaolin is so lacking in <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> it was barely possible to even make this disk. And it is so weak that it can easily break just by handling it. Still, it is useful to make <a  href="https://digitalfire.com/glossary/casting+slip">casting bodies</a>. But the ball clay, when used as a percentage of a body mix, can produce highly plastic bodies than can be dried without trouble if done evenly.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Closeup of Halloysite particles</h3>
+<br /><a href="https://digitalfire.com/picture/1000"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/wywdodefym.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1000">click here</a> to see it.</p>
+<p>Electron micrograph showing Dragonite Halloysite needle structure. For use in making porcelains, Halloysite has <a  href="https://digitalfire.com/glossary/physical+testing">physical properties</a> similar to a <a  href="https://digitalfire.com/material/925">kaolin</a>. However it tends to be less plastic, so bodies employing it need more <a  href="https://digitalfire.com/material/106">bentonite</a> or other <a  href="https://digitalfire.com/glossary/plasticity">plasticizer</a> added. Compared to a typical kaolin it also has a higher <a  href="https://digitalfire.com/glossary/firing+shrinkage">fired shrinkage</a> due to the nature of the way its particles densify during firing. However, Dragonite and New Zealand Halloysites have proven to be the whitest firing materials available, they make excellent porcelains.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Does this terra cotta clay have an LOI higher than kaolin? No.</h3>
+<br /><a href="https://digitalfire.com/picture/1488"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/glossary/wotfikibyr.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1488">click here</a> to see it.</p>
+<p>These two samples demonstrate how different the <a  href="https://digitalfire.com/glossary/loi">LOI</a> can be between different clay minerals. The top one is mainly <a  href="https://digitalfire.com/material/1191">Redart</a> (with a little <a  href="https://digitalfire.com/material/106">bentonite</a> and <a  href="https://digitalfire.com/glossary/frit">frit</a>), it loses only 4% of its weight when fired to cone 02. The bottom one is <a  href="https://digitalfire.com/material/2145">New Zealand kaolin</a>, it loses 14% when fired to the same temperature! The top one is <a  href="https://digitalfire.com/glossary/vitrification">vitrified</a>, the bottom one will not vitrify for another 15 cones.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Health warning phrases on a bag of Kaolin</h3>
+<br /><a href="https://digitalfire.com/picture/1759"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/vihvinubyn.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1759">click here</a> to see it.</p>
+<p></p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">880 bags of kaolin arrive. First step: Record the date code.</h3>
+<br /><a href="https://digitalfire.com/picture/1291"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/wogtifijoj.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1291">click here</a> to see it.</p>
+<p>A shipment <a  href="https://digitalfire.com/material/291">EP Kaolin</a> has arrived for use in some of our production <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> and <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> bodies. Of course, this needs to be tested before being put into product. But how? The first step is to create a new recipe record in my <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-Live</a> account, and find their production date code stamp on the bag. Hmmm. It does not have one! OK, then I need to record the date on which we received it. We need to save a bag on every pallet and <a  href="https://digitalfire.com/glossary/sieve">sieve</a> 50 grams through 100 mesh (to spot contamination). Then we'll make test bars (of all the samples mixed) to fire across a range of temperatures (to compare fired <a  href="https://digitalfire.com/glossary/maturity">maturity</a> with past shipments). We do a <a  href="https://digitalfire.com/glossary/drying+performance">drying performance</a> disk also to assess <a  href="https://digitalfire.com/glossary/soluble+salts">soluble salts</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Cone 6 kaolin porcelain verses ball clay porcelain.</h3>
+<br /><a href="https://digitalfire.com/picture/1452"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/wewfuwefoh.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1452">click here</a> to see it.</p>
+<p>Typical porcelains are made using clay (for workability), <a  href="https://digitalfire.com/material/310">feldspar</a> (for fired <a  href="https://digitalfire.com/glossary/maturity">maturity</a>) and <a  href="https://digitalfire.com/material/1245">silica</a> (for structural integrity and <a  href="https://digitalfire.com/glossary/glaze+fit">glaze fit</a>). These <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> test bars demonstrate the fired color difference between using <a  href="https://digitalfire.com/material/925">kaolin</a> (top) and <a  href="https://digitalfire.com/material/80">ball clay</a> (bottom). The top one employs #6 Tile super plastic kaolin, but even with this it still needs a 3% <a  href="https://digitalfire.com/material/106">bentonite</a> addition for <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a>. The bottom one uses Old Hickory #5 and M23, these are very clean ball clays but still nowhere near the whiteness of kaolins. Plus, 1% bentonite was still needed to get adequate plasticity for <a  href="https://digitalfire.com/glossary/throwing">throwing</a>. Which is better? For workability and drying, the bottom one is much better. For fired appearance, the top one.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Ball clay vs. Kaolin porcelain at cone 6</h3>
+<br /><a href="https://digitalfire.com/picture/1520"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/paskalyzip.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1520">click here</a> to see it.</p>
+<p>Left: A <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> that is plasticized using only ball clays (Spinx Gleason and Old Hickory #5). Right: Only <a  href="https://digitalfire.com/material/925">kaolin</a> (in this case <a  href="https://digitalfire.com/material/831">Grolleg</a>). Kaolins are much less plastic so <a  href="https://digitalfire.com/material/106">bentonite</a> (e.g. 2-5%) is typically needed to get good <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a>. The color can be alot whiter using a clean kaolin, but there are down sides. Kaolins have double the <a  href="https://digitalfire.com/glossary/loi">LOI</a> of ball clays, so there are more gasses that potentially need to bubble up through the glaze (<a  href="https://digitalfire.com/material/80">ball clay</a> porcelains can produce brilliantly glassy and clean results in <a  href="https://digitalfire.com/glossary/transparent+glazes">transparent glazes</a> even at fast fire, while pure kaolins can produce tiny dimples in the glaze surface if firings are not soaked long enough). Kaolins plasticized by bentonite often do not dry as well as ball clays even though the <a  href="https://digitalfire.com/glossary/drying+shrinkage">drying shrinkage</a> is usually less. Strangely, even though ball clays are so much harder and stronger in the dry state, a porcelain made using only ball clays often still needs some bentonite. If you do not need the very whitest result, it seems that a hibrid using both is still the best general purpose, low cost answer.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Do not rely on material data sheets, do the testing</h3>
+<br /><a href="https://digitalfire.com/picture/1477"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/fyckexaxaf.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1477">click here</a> to see it.</p>
+<p>The <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> on the left uses <a  href="https://digitalfire.com/material/831">Grolleg</a> <a  href="https://digitalfire.com/material/925">kaolin</a>, the right uses Tile #6 kaolin. The Grolleg body needs 5-10% less <a  href="https://digitalfire.com/material/310">feldspar</a> to vitrify it to zero <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a>. It thus contains more kaolin, yet it fires significantly whiter. Theoretically this seems simple. Tile #6 contains alot more iron than Grolleg. Wrong! According to the data sheets, Grolleg has the more iron of the two. Why does it always fire whiter? I actually do not know. But the point is, do not rely totally on numbers on data sheets, do the testing yourself.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">What happens when you dry and bisque a piece made of pure kaolin?</h3>
+<br /><a href="https://digitalfire.com/picture/1529"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/juvjynuzuw.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1529">click here</a> to see it.</p>
+<p>The way in which the walls of this <a  href="https://digitalfire.com/glossary/bisque">bisque fired</a> <a  href="https://digitalfire.com/material/925">kaolin</a> cup laminate reflect the plately and uniform nature of the kaolin particles. Because they are lining up during the <a  href="https://digitalfire.com/glossary/kneading+clay">wedging</a> and <a  href="https://digitalfire.com/glossary/throwing">throwing</a> process, the strength to resist cracks is better along the circumference than perpendicular to it. The bonds are weak enough that it is very easy to break it apart by hand (even though it is <a  href="https://digitalfire.com/glossary/bisque">bisque</a> fired). The worst <a  href="https://digitalfire.com/glossary/laminations">laminations</a> were at the bottom where wall thickness was the most variable and therefore the most drying stresses occurred. However, if this kaolin were blended with <a  href="https://digitalfire.com/material/310">feldspar</a> and <a  href="https://digitalfire.com/material/1245">silica</a>, this lamination tendency would completely disappear.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Cleanest kaolin porcelain vs. ball-clay-only porcelain!</h3>
+<br /><a alt="Side by side mugs, a porcelain made using only kaolin and one made with ball clay" href="https://digitalfire.com/picture/1473"><img class="flexleft50" alt="Side by side mugs, a porcelain made using only kaolin and one made with ball clay"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/helwepubim.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1473">click here</a> to see it.</p>
+<p>These <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> clear-glazed porcelains demonstrate just how white you can make a <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> if you use white burning kaolins and bentonites instead of ball clays. Both contain about 40% clay. The one on the left employs <a  href="https://digitalfire.com/material/2145">New Zealand kaolin</a> and Veegum <a  href="https://digitalfire.com/glossary/plasticity">plasticizer</a>, the one on the right Kentucky ball clays (among the whitest of ball clays in North America) and standard <a  href="https://digitalfire.com/material/106">bentonite</a>. Both are zero <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a>. The glaze surface is a little more flawless on the right one (possibly because ball clays have a lower <a  href="https://digitalfire.com/glossary/loi">LOI</a> than kaolins).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Chunks of metal found in contaminated truckload of kaolin</h3>
+<br /><a href="https://digitalfire.com/picture/1564"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/hyvjyxehah.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1564">click here</a> to see it.</p>
+<p>You may not fully appreciate what your <a  href="https://digitalfire.com/glossary/clay+body">clay body</a> manufacturer has to go through to make clean <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> for you. Every load of material that they receive has to be checked. We now have to check every pallet. This is the third semi-trailer load of material we have had contaminated (ball clays and kaolins are most vulnerable). When we phoned another manufacturer they checked their supply and it was contaminated also! Materials can also be contaminated by larger clay particles that disrupt the fired glaze surface. These chunks of metal were pulled out by magnets in the production line, a thousand boxes of porcelain are now garbage. It is too expensive to return a load, so it just becomes a loss.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">What material makes the tiny bubbles? The big bubbles?</h3>
+<br /><a href="https://digitalfire.com/picture/1618"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/cyrfyjidyl.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1618">click here</a> to see it.</p>
+<p>These are two 10 gram <a  href="https://digitalfire.com/test/gbmf">GBMF test</a> balls of  Worthington Clear glaze fired at cone 03 on <a  href="https://digitalfire.com/glossary/terra+cotta">terra cotta</a> tiles (55 <a  href="https://digitalfire.com/material/806">Gerstley Borate</a>, 30 <a  href="https://digitalfire.com/material/925">kaolin</a>, 20 <a  href="https://digitalfire.com/material/1245">silica</a>). On the left it contains raw kaolin, on the right <a  href="https://digitalfire.com/glossary/calcination">calcined</a> kaolin. The clouds of finer bubbles (on the left) are gone from the glaze on the right. That means the kaolin is generating them and the Gerstley <a  href="https://digitalfire.com/glossary/borate">Borate</a> the larger bubbles. These are a bane of the terra cotta process. One secret of getting more <a  href="https://digitalfire.com/glossary/transparent+glazes">transparent glazes</a> is to fire to temperature and soak only long enough to even out the temperature, then drop 100F and soak there (I hold it half an hour).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Bubbles in Terra Cotta transparent glazes. What to do?</h3>
+<br /><a href="https://digitalfire.com/picture/1210"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/rosvifajir.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1210">click here</a> to see it.</p>
+<p>Two <a  href="https://digitalfire.com/glossary/transparent+glazes">transparent glazes</a> applied thickly and fired to cone 03 on a <a  href="https://digitalfire.com/glossary/terra+cotta">terra cotta</a> body. Right: A commercial bottled clear, I had to paint it on in layers, I ended up getting it on pretty thick. Left: <a  href="https://insight-live.com/insight/share.php?z=EgMrBcHj4v">G1916S</a>, a mix of Ferro <a  href="https://digitalfire.com/glossary/frit">frits</a>, <a  href="https://digitalfire.com/material/1070">nepheline syenite</a> and <a  href="https://digitalfire.com/material/925">kaolin</a> - one dip for 2 seconds and it was glazed. And it went on more evenly. Bubbles are, of course, generated by and <a  href="https://digitalfire.com/glossary/clay+body">clay body</a> during firing, but terra cottas are the worst. And when fired toward <a  href="https://digitalfire.com/glossary/vitrification">vitrification</a> the gas volume can really increase. Complicating this is the fact that low temperature glazes melt early, while body gassing may still be happening. Improvements? Both of these could have been applied thinner. And I could have fired them using a <a  href="https://digitalfire.com/glossary/drop-and-soak+firing">drop-and-hold</a> and a slow-cool schedule. But the biggest improvement would likely be firing lower, to <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 04</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">The difference in fired character between kaolin and ball clay at cone 10R</h3>
+<br /><a href="https://digitalfire.com/picture/1818"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/k5nougzvue.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1818">click here</a> to see it.</p>
+<p>The top one is <a  href="https://digitalfire.com/material/291">EP Kaolin</a>, the bottom one is Old Hickory M23 <a  href="https://digitalfire.com/material/80">Ball Clay</a> (these materials are typical of their respective types). These materials have low <a  href="https://digitalfire.com/glossary/alkali">alkali</a> contents (especially the <a  href="https://digitalfire.com/material/925">kaolin</a>), this lack of <a  href="https://digitalfire.com/glossary/flux">flux</a> means they are theoretically highly <a  href="https://digitalfire.com/glossary/refractory">refractory</a> mixes of <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> and <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a>. It is interesting that, although the kaolin has a much larger ultimate particle size, it is shrinking much more (23% total vs. 14%). This is even more unexpected since, given that it has a lower <a  href="https://digitalfire.com/glossary/drying+shrinkage">drying shrinkage</a>, and should be more refractory. Further, the kaolin has a <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a> of 0.5% vs. the ball clay's 1.5%. The kaolin should theoretically have a much higher porosity? What is more, both of these values are unexpectedly low. This can partly be explained by the particle packing achieved because of the fine particle size. Despite these observations, their refractory nature is ultimately proven by the fact that both of these can be fired much higher and they will only slowly densify toward zero porosity.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">We have to fight with the fibreglass industry to get kaolin!</h3>
+<br /><a href="https://digitalfire.com/picture/2236"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/phwcfc42qb.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2236">click here</a> to see it.</p>
+<p>These are bags from three recent truckloads of 880 bags each. Order-delivery delays are getting longer and longer as the fibreglass industry is making more and more demands on <a  href="https://digitalfire.com/material/925">kaolin</a> suppliers. This means we have to store this material in larger quantities and for longer periods than in the past. And we must be more diligent in testing for consistency because manufacturers are catering to fibreglass instead of <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>. When this is coupled with the decline of ceramic manufacturing in North America it means maintaining and documenting the properties important to ceramics are becoming less important to kaolin manufacturers.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Two kaolins with different drying performance: </h3>
+<h4 style="color:#888888; margin-top:0px;">One always cracks, the other does not. Why?</h4>
+<br /><a href="https://digitalfire.com/picture/2245"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/emdbseqqrk.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2245">click here</a> to see it.</p>
+<p>Both of these bodies are 70:30 <a  href="https://digitalfire.com/material/925">kaolin</a>:feldspar. The kaolin on the left (Tile #6) contains finer particles and some natural <a  href="https://digitalfire.com/material/106">bentonitic</a> material, giving it higher <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> and better ability to absorb drying stresses. The <a  href="https://digitalfire.com/material/291">EPK</a> on the right is coarser and has less ability to redistribute stress. As the mugs dry, circumferential stresses develop near the base. The body cannot stretch enough to accommodate them, so cracks form around the bottom (or, as happens here, leave residual stresses that reveal later in <a  href="https://digitalfire.com/glossary/bisque">bisque firing</a>). The Tile #6 body, having greater “stress-relief plasticity”, can tolerate the strain and dries without cracking.<br />
+<br />
+Is it true that during forming, the larger kaolin particles line up concentrically to the center, producing more shrinkage along radius lines than along tangents? Not likely. Clay platelets do orient during forming, but the orientation tends to be parallel to the forming surface, not radially oriented toward the center. Further, shrinkage alone does not predict cracking; uneven shrinkage does. Despite efforts to prevent it, we could not eliminate it.<br />
+<br />
+While these specific cracks appear during our <a  href="https://digitalfire.com/glossary/bisque">bisque</a> firing, as noted, the cause originates earlier during drying. Uneven shrinkage creates residual tensile stresses in the clay. While the dried ware may appear sound, the body weakens during early firing when organic materials burn out and particle bonds weaken, releasing the stored stresses as the circumferential crack.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">How plastic is a pure kaolin? Could one use it pure for pottery?</h3>
+<br /><a alt="A small bowl thrown from pure kaolin" href="https://digitalfire.com/picture/1193"><img class="flexleft50" alt="A small bowl thrown from pure kaolin"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/bopcowacam.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1193">click here</a> to see it.</p>
+<p>Pure kaolins are clay. It seems logical that "pure clay" is plastic. However most kaolins are not plastic (compared to a typical clay for <a  href="https://digitalfire.com/glossary/throwing">throwing</a> or modelling). This is because they have a comparatively large particle size (compared to ball clays, bentonites, etc). This small bowl was <a  href="https://digitalfire.com/glossary/throwing">thrown</a> from #6 Tile <a  href="https://digitalfire.com/material/925">kaolin</a>. It is, by far, the most plastic kaolin available in North America. It's throwing properties are so good that one might be misled into thinking it should be possible to make pottery from it. Unfortunately, if it was survive drying without cracks, it would not make it through firing without this happening. This was fired, unglazed, to <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>. Pure kaolin particles are flat and the throwing process lines them up concentric to centre. So shrinkage is greater across than along them. A filler is needed to separate the kaolin particles. All pure kaolins are also <a  href="https://digitalfire.com/glossary/refractory">refractory</a>, so even if this bowl had not cracked, the <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a> of this piece is very high, completely impractical for <a  href="https://digitalfire.com/glossary/functional">functional</a> ware (it needs a <a  href="https://digitalfire.com/glossary/flux">flux</a> like <a  href="https://digitalfire.com/material/310">feldspar</a> to develop fired <a  href="https://digitalfire.com/glossary/maturity">maturity</a>).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Will soil testing help you assess a wild clay for pottery?</h3>
+<br /><a alt="Soil test not for clay" href="https://digitalfire.com/picture/3509"><img class="flexleft50" alt="Soil test not for clay"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/9kwk6kg32y.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3509">click here</a> to see it.</p>
+<p>No, soil testing is not helpful. Soils normally contain clay but it is so diluted with sand, rocks, silt and <a  href="https://digitalfire.com/oxide/organics">organics</a> that overall <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> is just a dot on a graph - not even close to what modelling or <a  href="https://digitalfire.com/glossary/throwing">throwing</a> clays exhibit. Pottery clays easily hold a shape and can be adjusted to a new shape without <a  href="https://digitalfire.com/glossary/splitting">splitting</a>. They dry slowly with substantial shrinkage. Highly plastic clays need more water to achieve working consistency, silty non-plastic ones need less (typical pottery clays need 18-23%). The reports shown here are typical for soils. But almost nothing here would look familiar to a potter.<br />
+<br />
+-The Shrinkage Limit (SL) is the <a  href="https://digitalfire.com/glossary/water+content">water content</a> where further loss of moisture will not result in any more volume reduction.<br />
+-The Plastic Limit (PL) is minimum water content at which a soil is considered to behave in a ‘plastic’ manner, i.e. is capable of being moulded.<br />
+-The Liquid Limit (LL) is the maximum water content a silt or clay can have before becoming a liquid, i.e. turning into mud.<br />
+-The Plasticity Index (PI) is the range of moisture contents where the silt or clay remains plastic (PI = LL – PL).<br />
+<br />
+Potters don't care about the amount of water needed, they care about how plastic the clay is once enough water has been added to get the right stiffness.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ajax+p+kaolin">Ajax P Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/allen+g+kaolin">Allen G Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/glomax+ll+kaolin">Glomax LL Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/a+kaolin">A Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/600+kaolin">600 Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/albion+sperse">Albion Sperse</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/avery+kaolin">Avery Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/b+kaolin">B Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/bell+kaolin">Bell Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/puraflo+50+kaolin">Puraflo 50 Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/c+kaolin">C Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/calcined+kaolin">Calcined Kaolin</a>
+<br /><i>This is <a  href="https://digitalfire.com/material/925">kaolin</a> powder that has been fired in a furnace to remove the 12% crystal water and render it non-plastic.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/cc+china+clay">CC China Clay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/cc31+china+clay">CC31 China Clay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ceraclay+wtc+kaolin">Ceraclay WTC Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/wtd+kaolin">WTD Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/cf+kaolin">CF Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/d+kaolin">D Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/diamond+kaolin">Diamond Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/e+kaolin">E Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/english+kaolin">English Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ep+kaolin">EP Kaolin</a>
+<br /><i>A <a  href="https://digitalfire.com/material/925">kaolin</a> that gels slurries (thus handy to suspend ceramic glazes). It is plastic and fires white enough that it is also valuable in <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> bodies.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ewing+kaolin">Ewing Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/f.+c.+kaolin">F. C. Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/glomax+ll+calcined+kaolin">Glomax LL Calcined Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/grolleg+kaolin">Grolleg Kaolin</a>
+<br /><i>A white burning <a  href="https://digitalfire.com/material/925">kaolin</a> from the UK, commonly used in <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> bodies and as a glaze suspender. Sticky when wet, low <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/gunheath+kaolin">Gunheath Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/hamilton+kaolin">Hamilton Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/helmer+kaolin">Helmer Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/hillman+kaolin">Hillman Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/hong+kong+kaolin">Hong Kong Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ixl+34e">IXL 34E</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ixl+34e%2ff+95">IXL 34E/F 95</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ixl+re">IXL RE</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/jhc+white+kaolin">JHC White Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/k1+kaolin">K1 Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/k50+kaolin">K50 Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/kamec+kaolin">Kamec Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/kampaku+kaolin">Kampaku Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/kaolin+slurry">Kaolin Slurry</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/kaopaque+20+kaolin">Kaopaque 20 Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/kingsley+kaolin">Kingsley Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/kms+kaolin">KMS Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/korean+kaolin">Korean Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/kt-cast+kaolin">KT-Cast Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/lg+kaolin">LG Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/lpc+kaolin">LPC Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/mastercast+kaolin">Mastercast Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/masterfil+kaolin">Masterfil Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/masterfloat+kaolin">Masterfloat Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/mcnamee+kaolin">McNamee Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/monarch+kaolin">Monarch Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/no.+50+china+clay">No. 50 China Clay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/nsc+kaolin">NSC Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/peerless+2+kaolin">Peerless 2 Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/pioneer+kaolin">Pioneer Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/piopot+kaolin">Piopot Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/pleyber+s+kaolin">Pleyber S Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/putnam+kaolin">Putnam Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/putnam+s+kaolin">Putnam S Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/qc+china+clay">Qc China Clay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/rampant+bb+kaolin">Rampant BB Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/remblend+kaolin">Remblend Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/rogers+kaolin">Rogers Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/sa-1+kaolin">SA-1 Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/saf+kaolin">SAF Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/samson+kaolin">Samson Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/sapphire+kaolin">Sapphire Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/snobrite+kaolin">Snobrite Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/standard+porcelain+kaolin">Standard Porcelain Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/stannon+kaolin">Stannon Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/tile+%236+kaolin">Tile #6 Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/treviscoe+kaolin">Treviscoe Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/plainsman+troy+clay">Plainsman Troy Clay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/velvacast+kaolin">Velvacast Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/wc-5+kaolin">WC-5 Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/wilclay+cr+kaolin">Wilclay CR Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/wilclay+wc+kaolin">Wilclay WC Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/wilson+kaolin">Wilson Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ws+kaolin">WS Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/kaolin-serpentine">KAOLIN-SERPENTINE</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/lampang+kaolin">Lampang Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/zedlec+kaolin">Zedlec Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/delta+kaolin">Delta Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/kaolex+d-6+kaolin">Kaolex D-6 Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/laguna+%231+kaolin">Laguna #1 Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/snocal+707+kaolin">Snocal 707 Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/grade+c+kaolin">Grade C Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/sovereign+kaolin">Sovereign Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/kaolin+natural+bp">Kaolin Natural BP</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/speswhite+kaolin">Speswhite Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/super+standard+porcelain">Super Standard Porcelain</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/stockalite+kaolin">Stockalite Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/supreme+kaolin">Supreme Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/topaz+kaolin">Topaz Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/db+float+kaolin">DB Float Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/allen+kaolin">Allen Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/james+bay+stn+kaolin">James Bay Stn Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/jb+kaolin">JB Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/kaolin+111">Kaolin 111</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/kaolin+113">Kaolin 113</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/kaolin+114">Kaolin 114</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/kaolin+115">Kaolin 115</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/kaolin+143">Kaolin 143</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/kaolin+151">Kaolin 151</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/kaolin+171">Kaolin 171</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/d%27arvor+kaolin">D'Arvor Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/h-1+kaolin">H-1 Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/sparks+kaolin">Sparks Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/609+kaolin">609 Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/layton+clay">Layton Clay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/1431+kaolin">1431 Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/1433+kaolin">1433 Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/1434+kaolin">1434 Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/1479+kaolin">1479 Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/38+kaolin">38 Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/klondike+kaolin">Klondike Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/vc-1+kaolin">VC-1 Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/a-1+kaolin">A-1 Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/richardsons+kaolin">Richardsons Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/m%2bm+china+kaolin">M+M China Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/m.g.r.+kaolin">M.G.R. Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/m.w.m.+kaolin">M.W.M. Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/no.+44+kaolin">No. 44 Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/no.+17+kaolin">No. 17 Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/372+kaolin">372 Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/dixie+clay">Dixie Clay</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/langford+kaolin">Langford Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/bilt-cote+kaolin">Bilt-Cote Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/par+kaolin">PAR Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/snocal+40">Snocal 40</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/peerless+3+kaolin">Peerless 3 Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/sterling+kaolin">Sterling Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/kernick+kaolin">Kernick Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ball+clay">Ball Clay</a>
+<br /><i>A fine particled highly plastic <a  href="https://digitalfire.com/glossary/secondary+clay">secondary clay</a> used mainly to impart <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> to clay and <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> bodies and to suspend glaze, slips and <a  href="https://digitalfire.com/glossary/engobe">engobe</a> slurries.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/zettlitzer+kaolin">Zettlitzer Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/caol%c3%adn+gris+%28cuba%29">Caolín Gris (Cuba)</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/caol%c3%adn+blanco+%28cuba%29">Caolín Blanco (Cuba)</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/caol%c3%adn+mantua+%28cuba%29">Caolín Mantua (Cuba)</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/caol%c3%adn+damanueco+%28cuba%29">Caolín Damanueco (Cuba)</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/caol%c3%adn+santa+elena+%28cuba%29">Caolín Santa Elena (Cuba)</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/eckaglass+kaolin">Eckaglass Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/wilco-upf+kaolin">Wilco-UPF Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/glasurfritten+33.17">Glasurfritten 33.17</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/skt-1433+kaolin">SKT-1433 Kaolin</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/spinks+kaolin+low+residue">Spinks Kaolin Low Residue</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Hazards</td>
+<td>
+<a href="https://digitalfire.com/hazard/clay+toxicity">Clay Toxicity</a>
+<br /><i>Is clay toxic? No. Should you breathe it? No.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/kao">Kaolin</a>
+<br /><i>Pure clay mineral, there are many brand names of varying purity and iron content.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/gnm">Generic Material</a>
+<br /><i>Generic materials are those with no brand name. Normally they are theoretical, the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> portrays what a specimen would be if it had no contamination. Generic materials are helpful in educational situations where students need to study material theory (later they graduate to dealing with real world materials). They are also helpful where the chemistry of an actual material is not known. Often the accuracy of calculations is sufficient using generic materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/kao">Kaolin</a>
+<br /><i>Pure clay mineral, there are many brand names of varying purity and iron content.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/436">http://kaolin.com/</a>
+<br /><i>Information at <a  href="https://digitalfire.com/material/925">Kaolin</a>.com</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/437">http://en.wikipedia.org/wiki/Kaolin</a>
+<br /><i><a  href="https://digitalfire.com/material/925">Kaolin</a> at Wikipedia.com</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="https://digitalfire.com/oxide/al2o3">Al2O3 - Aluminum Oxide, Alumina</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="https://digitalfire.com/oxide/sio2">SiO2 - Silicon Dioxide, Silica</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="https://digitalfire.com/mineral/kaolinite">Kaolinite</a>
+<br /><i>The most fundamental clay mineral. This mineral is found in nature in its purest form as <a  href="https://digitalfire.com/material/925">kaolin</a>. How</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/clay">Clay</a>
+<br /><i>What is clay? How is it different than dirt? For <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>, the answer lies on the microscopic level with the particle shape, size and how the surfaces interact with water.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/plasticity">Plasticity</a>
+<br /><i><a  href="https://digitalfire.com/glossary/plasticity">Plasticity</a> (in <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>) is a property exhibited by soft clay. Force exerted effects a change in shape and the clay exhibits no tendency to return to the old shape. Elasticity is the opposite.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/porcelain">Porcelain</a>
+<br /><i>How do you make <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a>? There is a surprisingly simple logic to formulating them and to adjusting their working, drying, glazing and firing properties for different purposes.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/permeability">Permeability</a>
+<br /><i>In <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>, the <a  href="https://digitalfire.com/glossary/permeability">permeability</a> of clay slurries and plastics determines the rate as which water can move through the matrix</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="https://digitalfire.com/project/materials">Materials</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="https://digitalfire.com/project/troubles">Troubles</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/shab">Shrinkage/Absorption Test</a>
+<br /><i>SHAB Shrinkage and absorption test procedure for plastic <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a> and materials</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/siev">Sieve Analysis 35-325 Wet</a>
+<br /><i>A measure of <a  href="https://digitalfire.com/glossary/particle+size+distribution">particle size distribution</a> by washing a powdered or <a  href="https://digitalfire.com/glossary/slaking">slaked</a> sample through a series of successively finer sieves</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/formulating+a+porcelain">Formulating a Porcelain</a>
+<br /><i>The principles behind formulating a <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> are quite simple. You just need to know the purpose of each material, a starting recipe and a testing regimen.</i>
+</td>
+</tr>
+</tbody></table>
+<h3>Data</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<th scope="row"><a href="https://digitalfire.com/test/14">Frit Softening Point</a></th>
+<td>1770C M</td>
+</tr>
+<tr>
+<th scope="row">Density (Specific Gravity)</th>
+<td>2.62</td>
+</tr>
+</tbody></table>
+<h3>Mechanisms</h3><table>
+<table class="table table-bordered"><tbody>
+<tr><th scope="row">Body Plasticity</th><td>It is possible to make a plastic throwing body using 50% kaolin only, however you must choose one of the highly plastic varieties such as #6 Tile. Even then you will likely need a little bentonite to augment the kaolin. There is a huge range in kaolin plasticities, test for yourself to find out.</td></tr>
+<tr><th scope="row">Glaze Suspender</th><td>Kaolin is the most common glaze suspender. Depending on the type of kaolin used, 15-20% should be enough. Many fritted glazes are composed solely of frit and kaolin. Some kaolins make the glaze gel, this is a helpful additional mechanism to keep it suspended.</td></tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

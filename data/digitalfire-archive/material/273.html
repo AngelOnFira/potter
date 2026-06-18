@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Dolomite</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="An inexpensive source of MgO and CaO for ceramic glazes, also a highly refractory material when fired in the absence of reactant fluxes." name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item active"><a class="nav-link" href="list.html">Materials <span class="sr-only">(current)</span></a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=material" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container">
+<ul class="nav nav-tabs pt-1" id="myTab" role="tablist">
+<li class="nav-item">
+<a aria-controls="material" aria-selected="true" class="nav-link active" data-toggle="tab" href="#material" id="material-tab" role="tab">Materials for Ceramics</a>
+</li>
+</ul>
+<div class="tab-content mb-3" id="myTabContent" style="border-right:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #ddd; padding:10px;">
+<div aria-labelledby="material-tab" class="tab-pane fade show active" id="material" role="tabpanel">
+<a href="list_1-9.html">1-9</a> | <a href="list_A.html">A</a> | <a href="list_B.html">B</a> | <a href="list_C.html">C</a> | <a href="list_D.html">D</a> | <a href="list_E.html">E</a> | <a href="list_F.html">F</a> | <a href="list_Frits.html">Frits</a> | <a href="list_G.html">G</a> | <a href="list_H.html">H</a> | <a href="list_I.html">I</a> | <a href="list_J.html">J</a> | <a href="list_K.html">K</a> | <a href="list_L.html">L</a> | <a href="list_M.html">M</a> | <a href="list_N.html">N</a> | <a href="list_O.html">O</a> | <a href="list_P.html">P</a> | <a href="list_Q.html">Q</a> | <a href="list_R.html">R</a> | <a href="list_S.html">S</a> | <a href="list_T.html">T</a> | <a href="list_U.html">U</a> | <a href="list_V.html">V</a> | <a href="list_W.html">W</a> | <a href="list_X.html">X</a> | <a href="list_Y.html">Y</a> | <a href="list_Z.html">Z</a><br/>
+<nobr></nobr>
+</div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Dolomite</h1>
+<p><b>Alternate Names</b>: Calcium Magnesium Carbonate, Raw Limestone</p>
+<p><b>Description</b>: Double carbonate of magnesia/calcia</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/oxide.html">Oxide</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/analysis.html">Analysis</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Formula</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Tolerance</a></th>
+</tr></thead><tbody>
+<tr><td class="label"><a href="../oxide/cao.html">CaO</a></td>
+<td class="text-right">30.49%</td>
+<td class="text-right">
+0.50
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/mgo.html">MgO</a></td>
+<td class="text-right">21.90%</td>
+<td class="text-right">
+0.50
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/co2.html">CO2</a></td>
+<td class="text-right">47.61%</td><td class="text-right">n/a</td></tr>
+<tr><td colspan="2">Oxide Weight</td><td class="text-right" colspan="2">
+48.20
+</td></tr>
+<tr><td class="text-right" colspan="2"><a href="../glossary/formula+weight.html">Formula Weight</a></td><td colspan="2" style="text-align:right">
+92.00
+</td></tr>
+</tbody></table>
+<h4>Notes</h4><p><a href="273.html">Dolomite</a> as a <a href="../glossary/ceramic+material.html">ceramic material</a> is a uniform calcium magnesium carbonate. In ceramic glazes, it is used as a source of magnesia and calcia. Other than <a href="1620.html">talc</a>, dolomite is the principal source of <a href="../oxide/mgo.html">MgO</a> in high-temperature raw glazes. 'Dolomite matte' <a href="../glossary/stoneware.html">stoneware</a> glazes, for example, are highly prized for their pleasant 'silky' surface texture. Dolomite by itself is <a href="../glossary/refractory.html">refractory</a>, but when combined with the typical <a href="../glossary/ceramic+oxide.html">oxides</a> in a glaze (especially <a href="../glossary/borate.html">boron</a>) it readily enters <a href="../glossary/melt+fluidity.html">the melt</a>.<br/>
+<br/>
+Commercial dolomites are not able to achieve the theoretical 54:46 <a href="173.html">calcium carbonate</a>:magnesium carbonate ratio, they tend to have less magnesia. It is simple to do an <a href="../glossary/loi.html">LOI</a> test by firing a specimen of powder in a thin bisqued bowl to confirm the consistency of dolomite shipments. The <a href="../glossary/glaze+chemistry.html">chemistry</a> shown here is theoretical and many commercial materials approach this with much less than 1% of two or three other oxides (e.g.  <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a>, <a href="../oxide/sio2.html">SiO<sub>2</sub></a>).<br/>
+<br/>
+Dolomite is a carbonate (like whiting) in that it loses considerable weight during firing when it disassociates to form MgO, <a href="../oxide/cao.html">CaO</a> and <a href="../oxide/co2.html">CO2</a>, this process being complete by about 900C. That being said, dolomite gases out before talc does so for boron glazes that begin melting early, sourcing MgO from dolomite will produce a smoother and more defect-free surface (because of the comparative absence of tiny bubbles in the glass matrix).<br/>
+<br/>
+In many circumstances where a raw glaze employs both CaO and MgO, dolomite is an economic alternative to sourcing with a mix of calcium carbonate and talc. However, care needs to be taken to obtain a consistent grade since dolomites tend to vary more in <a href="../glossary/mineralogy.html">mineralogy</a> and can contain iron contamination that can darken the fired glaze. Although calcium carbonate and dolomite are plentiful minerals and grinding plants are located throughout North America, finding a suitable ceramic-grade dolomite that will be consistent and available long term is not as easy as it might seem.<br/>
+<br/>
+Synthetic substitutes to source MgO and CaO (e.g. <a href="../glossary/frit.html">frits</a>) are worth considering, especially if glazes are not high temperature. Frits have no loss on ignition (therefore do not generate <a href="../glossary/glaze+bubbles.html">glaze bubbles</a>) and melt far earlier than mineral sources of MgO and CaO. Using <a href="../glossary/glaze+chemistry.html">glaze chemistry</a> it is quite easy to adjust a recipe to source MgO from a <a href="../glossary/frit.html">frit</a> instead of raw materials.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">LOI horse race with surprising winners</h3>
+<br/><a alt="A chart showing weight-loss vs firing temperature for common ceramic materials" href="../picture/1114.html" title="A chart showing weight-loss vs firing temperature for common ceramic materials"><img alt="A chart showing weight-loss vs firing temperature for common ceramic materials" class="flexleft50" loading="lazy" src="../media/images/r7o6o9pqpg.jpg" title="A chart showing weight-loss vs firing temperature for common ceramic materials"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1114.html">click here</a> to see it.</p>
+<p>This chart compares the decompositional off-gassing (% weight Loss on Ignition) behavior of six glaze materials as they are heated through the range 500-1700F. It is amazing how much weight some can lose on firing - for example, 100 grams of <a href="173.html">calcium carbonate</a> generates 45 grams of <a href="../oxide/co2.html">CO2</a>! This chart is a reminder that some late <a href="../glossary/loi.html">gassers</a> overlap early melters. That is a problem. The <a href="../glossary/loi.html">LOI</a> of these materials can affect glazes (causing bubbles, <a href="../trouble/glaze+blisters.html">blisters</a>, <a href="../glossary/pinholing.html">pinholes</a>, <a href="../trouble/crawling.html">crawling</a>). <a href="1620.html">Talc</a> is an example: It is not finished gassing until 1650F, yet many <a href="../glossary/frit.html">fritted</a> glazes have already begun melting by then. Even <a href="806.html">Gerstley Borate</a>, a raw material, begins to melt while talc is barely finished gassing. <a href="273.html">Dolomite</a> and calcium carbonate Other materials also create gases as they <a href="../glossary/decomposition.html">decompose</a> during glaze melting (e.g. clays, carbonates, dioxides).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Dolomite Crystals</h3>
+<br/><a href="../picture/289.html"><img class="flexleft50" loading="lazy" src="../media/images/dolomite_crystals.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/289.html">click here</a> to see it.</p>
+<p></p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Testing a new brand of dolomite</h3>
+<br/><a alt="Melt fluidity of high dolomite glaze" href="../picture/1118.html"><img alt="Melt fluidity of high dolomite glaze" class="flexleft50" loading="lazy" src="../media/images/podhupacax.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1118.html">click here</a> to see it.</p>
+<p><a href="273.html">Dolomite</a> is a key material for glazes, especially mattes. We were forced to adopt a new brand and needed confidence it was equivalent. Three tests were done to compare the old long-time-use material (IMASCO Sirdar) with a new one (LHoist Dolowhite). The first <a href="../picture/2350.html">melt flow tester</a> compares them in a very high dolomite <a href="../glossary/cone+6.html">cone 6</a> recipe formulated for this purpose; the new material runs just slightly more. The second tester is uses the <a href="../recipe/g2934.html">G2934</a> cone 6 <a href="../glossary/magnesia+matte.html">magnesia matte</a> recipe with 5% black stain; the new material runs a little less here. The third test is the high dolomite glaze on a dark burning clay to see the <a href="../glossary/translucency.html">translucency</a> and compare the surface character. They are very close. These three gave us the confidence to proceed.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">When both mineralogy and chemistry are shown on a data sheet</h3>
+<br/><a href="../picture/1121.html"><img class="flexleft50" loading="lazy" src="../media/images/muvcahyzyp.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1121.html">click here</a> to see it.</p>
+<p>Some material data sheets show both the oxide and mineralogical analyses. <a href="273.html">Dolomite</a>, for example, is composed of <a href="173.html">calcium carbonate</a> and magnesium carbonate minerals, these can be separated mechanically. Although this material participates in the glaze melt to source the <a href="../oxide/mgo.html">MgO</a> and <a href="../oxide/cao.html">CaO</a> (which are <a href="../glossary/ceramic+oxide.html">oxides</a>), it's <a href="../glossary/mineralogy.html">mineralogy</a> (the calcium and magnesium carbonates) specifically accounts for the unique way it decomposes and melts.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">The difference between dolomite and calcium carbonate in a glaze</h3>
+<br/><a href="../picture/1008.html"><img class="flexleft50" loading="lazy" src="../media/images/sassucumam.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1008.html">click here</a> to see it.</p>
+<p>These glaze cones are fired at <a href="../glossary/cone+6.html">cone 6</a> (without slow cooling) and have the same recipe: 20 <a href="351.html">Frit 3134</a>, 21 <a href="291.html">EP Kaolin</a>, 27 <a href="173.html">calcium carbonate</a>, 32 <a href="1245.html">silica</a>. The difference: The one on the left uses <a href="273.html">dolomite</a> instead of calcium carbonate. Notice how the <a href="../oxide/mgo.html">MgO</a> from the dolomite mattes the surface (without slow cooling) whereas the <a href="../oxide/cao.html">CaO</a> from the calcium carbonate produces a brilliant gloss (because it needs slow cooling).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Calcium carbonate and dolomite are refractory when used pure</h3>
+<br/><a href="../picture/769.html"><img class="flexleft50" loading="lazy" src="../media/images/xoxjybidaj.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/769.html">click here</a> to see it.</p>
+<p>Examples of <a href="173.html">calcium carbonate</a> (top) and <a href="273.html">dolomite</a> (both mixed with 25% <a href="106.html">bentonite</a> to make them plastic enough to make a test bars). They are fired to cone 9. Both bars are porous and <a href="../glossary/refractory.html">refractory</a>, even powdery. However, put either of these in a mix with other ceramic minerals and they interact strongly to become fluxes.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">2, 5, 10, 15% dolomite added to Ravenscrag Slip at cone 10R</h3>
+<br/><a href="../picture/895.html"><img class="flexleft50" loading="lazy" src="../media/images/sudnotaxad.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/895.html">click here</a> to see it.</p>
+<p>This is a buff <a href="../glossary/stoneware.html">stoneware</a> clay. Crystal development toward a <a href="273.html">dolomite</a> matte begins at 15%. By Kat Valenzuela.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Ravenscrag Slip based dolomite matte</h3>
+<br/><a href="../picture/1041.html"><img class="flexleft50" loading="lazy" src="../media/images/belwatofes.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1041.html">click here</a> to see it.</p>
+<p><a href="../recipe/gr10-j.html">GR10-J</a> <a href="1178.html">Ravenscrag</a> <a href="273.html">dolomite</a> matte <a href="../glossary/base+glaze.html">base glaze</a> at <a href="../glossary/reduction+firing.html">cone 10R</a> on <a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12886">H443</a> iron speckled clay (actually, the <a href="../oxide/mgo.html">MgO</a> is being sourced from <a href="1620.html">talc</a> instead of dolomite). This recipe was created by starting with the popular G2571 <a href="../glossary/base+glaze.html">base recipe</a> (googleable) and calculating a mix of materials having the maximum possible <a href="https://plainsmanclays.ca/data/index.php?product=12911">Ravenscrag Slip</a> percentage. The resultant glaze has the same excellent surface properties (resistance to staining and <a href="../glossary/cutlery+marking.html">cutlery marking</a>) but has even better application and working properties. It is a little more tan in color because of the iron content of <a href="https://plainsmanclays.ca/data/index.php?product=12911">Ravenscrag Slip</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Does iron oxide stain a dolomite body red? Nope!</h3>
+<br/><a href="../picture/2905.html"><img class="flexleft50" loading="lazy" src="../media/images/bwkk5zng8h.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2905.html">click here</a> to see it.</p>
+<p>These fired bars are the <a href="https://insight-live.com/insight/share.php?z=P8uThTnFoY">L4410P</a> low temperature <a href="../glossary/clay+body.html">clay body</a> (it replaces the traditional 50% <a href="1620.html">talc</a> with 40% <a href="273.html">dolomite</a> and 10% nepheline). These bars are fired from <a href="../glossary/cone+5.html">cone 5</a> down to <a href="../glossary/low+temperature+glaze.html">cone 06</a> (top to bottom). The body contains 4% red <a href="874.html">iron oxide</a>, this would normally be enough to produce a bright red fired color. But clearly, the dolomite is killing its development. A better option is to use the <a href="https://insight-live.com/insight/share.php?z=No2m98AEhJ">L4170</a> plastic <a href="../glossary/terra+cotta.html">terra cotta</a> (or its <a href="https://insight-live.com/insight/share.php?z=No2m98AEhJ">L4170B</a> casting version).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Why this dolomite body bisqueware is splitting after sitting around</h3>
+<br/><a alt="Cracked 3D-printed sculptural pieces" href="../picture/2980.html"><img alt="Cracked 3D-printed sculptural pieces" class="flexleft50" loading="lazy" src="../media/images/fd1ld1pak4.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2980.html">click here</a> to see it.</p>
+<p>On the loss of <a href="1620.html">talc</a> earlier this year we had to reformulate a <a href="../glossary/earthenware.html">low fire</a> white burning body to use <a href="273.html">dolomite</a> instead, recipe <a href="https://insight-live.com/insight/share.php?z=P8uThTnFoY">L4410P</a> (like talc it raises <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> to ensure fit of <a href="../glossary/commercial+hobby+brushing+glazes.html">commercial glazes</a>). As its advantages and disadvantages become evident we have been documenting them on the <a href="https://plainsmanclays.ca/data/index.php?product=12955">Snow</a> page. A recent revelation has been the matter of rehydration of the limestone (dolomite is ground limestone): <a href="../glossary/bisque.html">Bisque firing</a> dehydrates it. The dolomite particles are neutralized somewhat by being isolated and having reacted to some extent with neighbouring clay and <a href="310.html">feldspar</a> particles. Further, during <a href="../glossary/dehydration.html">dehydration</a>, they leave considerable <a href="../glossary/clay+body+porosity.html">porosity</a> into which they should be able to reexpand later if needed. This photo demonstrates something we have not seen in our dry climate: These <a href="../glossary/3d-printing.html">3D-printed</a> <a href="../glossary/bisque.html">bisque</a> pieces have spontaneously cracked after sitting around for some time in the much damper climate of southern Ontario. In some cases, swelling occurs around the cracks. Until we can further tune the recipe to chemically tie up the dolomite take some precautions when using this type of body. Glaze ware soon after bisquing. Dry it as quickly as possible after glazing. If any surface has not been glazed then render it impervious to water penetration by using a <a href="../picture/2848.html">silicone sealer</a>. Photo courtesy of Nilou Ghaemi, Sheridan College.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Are dolomite clay bodies OK?</h3>
+<br/><a href="../picture/2984.html"><img class="flexleft50" loading="lazy" src="../media/images/46qugzwufd.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2984.html">click here</a> to see it.</p>
+<p>The <a href="https://insight-live.com/insight/share.php?z=P8uThTnFoY">L4410P</a> <a href="../glossary/low+temperature+glaze.html">cone 04</a> body (<a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12955">Snow</a>), although high in <a href="273.html">Dolomite</a> has proven to be very resilient, but not just in physical strength. This was developed as an alternative to <a href="1620.html">talc</a> bodies. This tile has not spalled despite cycling it three times through an hours-long water immersion then a week-long freezer stay. The mug has cracked after four years of storage on a shelf in our lab (but it has 60% dolomite vs. <a href="https://plainsmanclays.ca/data/index.php?product=12955">Snow</a>'s 40%). If the percentage of dolomite (or <a href="173.html">calcium carbonate</a>) is too high, cracks like this can develop as the dolomite hydrates. For use in pottery, these can be avoided by treating pieces with a <a href="../picture/2848.html">silicone sealant</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Four cone 04 glazes cover a brown engobe and dolomite body differently</h3>
+<br/><a alt="Four brown engobed square vessels" href="../picture/2915.html"><img alt="Four brown engobed square vessels" class="flexleft50" loading="lazy" src="../media/images/nv6trzgzg1.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2915.html">click here</a> to see it.</p>
+<p>These are <a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12955">Snow</a> (the <a href="https://insight-live.com/insight/share.php?z=P8uThTnFoY">L4410P</a> recipe using <a href="273.html">dolomite</a>) cast pieces with <a href="https://insight-live.com/insight/share.php?z=7LZpwM5ZvS">L3685Z7</a> stained <a href="../glossary/engobe.html">engobe</a> on the upper sections. The four sides have been clear glazed with Mayco S-2101, Duncan PB001, Amaco LG-10 and <a href="https://digitalfire.com/url/3410">Spectrum 700</a> <a href="../glossary/transparent+glazes.html">transparent glazes</a>. The left half of each has an extra glaze layer, that has not made much difference in any of them. The S-2101 transmits the brown color best, the LG-10 and PB001 a little less. The 700 is decidedly lighter, it is altering the brown color (likely <a href="../oxide/mgo.html">MgO</a> in the glaze is reacting with the stain). However, over the white body, the 700 is by far the best, being crystal clear and glassy smooth. The lower halves of these also demonstrate something equally interesting: The ones that don't alter the brown do react with the MgO in the white body, yellowing it and turning opaque in areas. The lesson is to try various brands of clear glazes over <a href="../glossary/underglaze.html">underglaze</a> decoration and colored <a href="../glossary/engobe.html">engobes</a>, especially with dolomite-based <a href="../glossary/earthenware.html">low fire</a> bodies. It might even be advantageous to use one brand on the insides of pieces and another on the engobe or slip-decorated exteriors.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">A body so porous that it has absorbed its own glaze!</h3>
+<br/><a href="../picture/2323.html"><img class="flexleft50" loading="lazy" src="../media/images/chyvcezgpy.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2323.html">click here</a> to see it.</p>
+<p>This unbelievable body is made from <a href="273.html">dolomite</a>, 65% of it. There is 35% <a href="80.html">ball clay</a> to give it workability and 5% Ferro <a href="349.html">frit 3110</a>. The <a href="../glossary/frit.html">frit</a> stabilizes it so that the fired body does not rehydrate. This has a <a href="../glossary/clay+body+porosity.html">porosity</a> of 35%! And that porosity is stable across the entire range we have fired it at (cone 06-6). The single-layer on the lower portion has been completely absorbed, the double-layer on the upper is almost gone.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">How to make a zero fired shrinkage clay</h3>
+<br/><a alt="Eight fired clay test bars" href="../picture/2738.html"><img alt="Eight fired clay test bars" class="flexleft50" loading="lazy" src="../media/images/wjs2nayv1n.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2738.html">click here</a> to see it.</p>
+<p>This is <a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="2428.html">BGP</a>, a <a href="../glossary/terra+cotta.html">terra cotta</a>, mixed with 30% <a href="273.html">dolomite</a>. Note the "DSHR" column in the <a href="../test/shab.html">SHAB test</a> data (third last column): The <a href="../glossary/drying+shrinkage.html">drying shrinkage</a> still averages over 7% even with the 30% dolomite, so BGP is very plastic. Notice the "FSHR" (<a href="../glossary/firing+shrinkage.html">fired shrinkage</a>) column, it is negative for the first five test bars fired at cone 05-01, which means the bars grew in size! But notice the shrinkage hits 0% at <a href="../glossary/cone+1.html">cone 1</a> (bar #6). By cone 2 the trend has reversed to 0.3% shrinkage. The #6 bar is appears to be vitrifying, the color is darkening and it is strong. But notice the last "ABS" column (water absorption), it is 18.7%! This body was intended as a high-porosity ceramic at the lower ranges (it has 25% <a href="../glossary/clay+body+porosity.html">porosity</a> at cone 05), but the dolomite is also slowing the densification as it goes through the <a href="../glossary/vitrification.html">vitrification</a> process. Without the dolomite the top bar would be melting! By cone 1 its <a href="../glossary/firing+shrinkage.html">firing shrinkage</a> would be 7%, and the porosity would be zero. Is this technique practical? Yup! The entire <a href="../article/341.html">monoporosa</a> wall tile industry is based on it!</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">QRCode mounted on Plainsman "Snow" tile</h3>
+<br/><a alt="A QRCode mosaic" href="../picture/2899.html"><img alt="A QRCode mosaic" class="flexleft50" loading="lazy" src="../media/images/mkbmf5lfcy.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2899.html">click here</a> to see it.</p>
+<p><a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12955">Snow</a> clay (developed under <a href="../glossary/code+numbering.html">code number</a> <a href="https://insight-live.com/insight/share.php?z=P8uThTnFoY">L4410P</a>) makes this QRCode mosaic possible. Each 8mm square <a href="../glossary/porcelain.html">porcelain</a> pixel is glaze-glued onto a 21cm square 5mm thick <a href="../glossary/ceramic+tile.html">ceramic tile</a> made of <a href="https://plainsmanclays.ca/data/index.php?product=12955">Snow</a> (simply rolled and cut and dewatered between sheets of Gyproc). During the <a href="../glossary/bisque.html">bisque firing</a> to <a href="../glossary/low+temperature+glaze.html">cone 04</a>, the <a href="https://plainsmanclays.ca/data/index.php?product=12955">Snow</a> tile had zero shrinkage, from dry to fired, and therefore did not curl up at the edges. On refiring to melt the glaze it again stays flat. No other common plastic clay can do this! <a href="https://plainsmanclays.ca/data/index.php?product=12955">Snow</a> continues this zero-shrinkage performance for seven more cones of firing (all the way to 4). The secret is the 40% <a href="273.html">dolomite</a> it contains. We silicone-sealed this work front and back, now it is ready for outdoor installation.<br/>
+</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="talc.html">Talc</a>
+<br/><i>A source of <a href="../oxide/mgo.html">MgO</a> for ceramic glazes, a <a href="../glossary/flux.html">flux</a> or <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> additive in <a href="../glossary/clay+body.html">clay bodies</a>, also used in the manufacture of cordierite.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="limestone.html">Limestone</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="camadil+95+dolomite.html">Camadil 95 Dolomite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="calcined+dolomite.html">Calcined Dolomite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="dolocron+40-13.html">Dolocron 40-13</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="kuncice+dolomite.html">Kuncice Dolomite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="dolowhite.html">Dolowhite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="karibib+dolomite.html">KARIBIB Dolomite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="magnesite.html">Magnesite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/gnm">Generic Material</a>
+<br/><i>Generic materials are those with no brand name. Normally they are theoretical, the <a href="../glossary/glaze+chemistry.html">chemistry</a> portrays what a specimen would be if it had no contamination. Generic materials are helpful in educational situations where students need to study material theory (later they graduate to dealing with real world materials). They are also helpful where the chemistry of an actual material is not known. Often the accuracy of calculations is sufficient using generic materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/fls">Flux Source</a>
+<br/><i>Materials that source <a href="../oxide/na2o.html">Na2O</a>, <a href="../oxide/k2o.html">K2O</a>, <a href="../oxide/li2o.html">Li2O</a>, <a href="../oxide/cao.html">CaO</a>, <a href="../oxide/mgo.html">MgO</a> and other fluxes but are not <a href="310.html">feldspars</a> or <a href="../glossary/frit.html">frits</a>. Remember that materials can be <a href="../glossary/flux.html">flux</a> sources but also perform many other roles. For example, <a href="1620.html">talc</a> is a flux in high temperature glazes, but a matting agent in low temperatures ones. It can also be a flux, a filler and an expansion increaser in bodies.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/cao.html">CaO - Calcium Oxide, Calcia</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/mgo.html">MgO - Magnesium Oxide, Magnesia</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/matte+glaze.html">Matte Glaze</a>
+<br/><i>Random material mixes that melt well overwhelmingly want to be glossy, creating a <a href="../glossary/matte+glaze.html">matte glaze</a> that is also <a href="../glossary/functional.html">functional</a> is not an easy task.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="../mineral/dolomite.html">Dolomite</a>
+<br/><i><a href="273.html">Dolomite</a>, as a rock, is called "dolomitic limestone". It is a carbonate, similar to limestone, but h</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1400">http://www.mineralszone.com/minerals/dolomite.html</a>
+<br/><i><a href="273.html">Dolomite</a> at mineralszone.com</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/3192">https://en.wikipedia.org/wiki/Dolomite_(rock)</a>
+<br/><i><a href="273.html">Dolomite</a> rock at Wikipedia</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+</tbody></table>
+<h3>Mechanisms</h3><table>
+<table class="table table-bordered"><tbody>
+<tr><th scope="row">Glaze Matteness</th><td>Dolomite can be used in glazes melting over 1170C to produce a silky matte surface. This occurs because high percentages of dolomite help to form diopside crystals (CaMg(SiO3)2) on cooling, and it is these that produce the popular butter-matte effect. This effect is most pronounced in reduction.</td></tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></table></div></body>
+</html>

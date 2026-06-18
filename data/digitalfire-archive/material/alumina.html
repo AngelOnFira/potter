@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Alumina</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="Alternate names: Aluminum Oxide - Digitalfire Reference Library (no ads)" name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item active"><a class="nav-link" href="list.html">Materials <span class="sr-only">(current)</span></a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=material" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container">
+<ul class="nav nav-tabs pt-1" id="myTab" role="tablist">
+<li class="nav-item">
+<a aria-controls="material" aria-selected="true" class="nav-link active" data-toggle="tab" href="#material" id="material-tab" role="tab">Materials for Ceramics</a>
+</li>
+</ul>
+<div class="tab-content mb-3" id="myTabContent" style="border-right:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #ddd; padding:10px;">
+<div aria-labelledby="material-tab" class="tab-pane fade show active" id="material" role="tabpanel">
+<a href="list_1-9.html">1-9</a> | <a href="list_A.html">A</a> | <a href="list_B.html">B</a> | <a href="list_C.html">C</a> | <a href="list_D.html">D</a> | <a href="list_E.html">E</a> | <a href="list_F.html">F</a> | <a href="list_Frits.html">Frits</a> | <a href="list_G.html">G</a> | <a href="list_H.html">H</a> | <a href="list_I.html">I</a> | <a href="list_J.html">J</a> | <a href="list_K.html">K</a> | <a href="list_L.html">L</a> | <a href="list_M.html">M</a> | <a href="list_N.html">N</a> | <a href="list_O.html">O</a> | <a href="list_P.html">P</a> | <a href="list_Q.html">Q</a> | <a href="list_R.html">R</a> | <a href="list_S.html">S</a> | <a href="list_T.html">T</a> | <a href="list_U.html">U</a> | <a href="list_V.html">V</a> | <a href="list_W.html">W</a> | <a href="list_X.html">X</a> | <a href="list_Y.html">Y</a> | <a href="list_Z.html">Z</a><br/>
+<nobr></nobr>
+</div>
+</div><h1>Alumina</h1>
+<p><b>Alternate Names</b>: Aluminum Oxide</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/oxide.html">Oxide</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/analysis.html">Analysis</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Formula</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Tolerance</a></th>
+</tr></thead><tbody>
+<tr><td class="label"><a href="../oxide/al2o3.html">Al2O3</a></td>
+<td class="text-right">100.00%</td>
+<td class="text-right">
+1.00
+</td><td class="text-right">
+</td></tr>
+<tr><td colspan="2">Oxide Weight</td><td class="text-right" colspan="2">
+102.00
+</td></tr>
+<tr><td class="text-right" colspan="2"><a href="../glossary/formula+weight.html">Formula Weight</a></td><td colspan="2" style="text-align:right">
+102.00
+</td></tr>
+</tbody></table>
+<h4>Notes</h4><p>Alumina (properly called aluminum oxide) powder, as used in <a href="../glossary/ceramics.html">ceramics</a>, can be a white granular material (like table salt) or an exceptionally fine silky white and dense powder (depending on the type and processing method). It is the most widely used high-tech <a href="../glossary/ceramic+material.html">ceramic material</a> with near-limitless manufacturing capabilities. The advent of <a href="../glossary/3d-printing.html">3D printing</a> or pastes and resins has greatly increased its horizons in recent years.<br/>
+<br/>
+There are three general types of alumina: Hydrated, <a href="../glossary/calcination.html">calcined</a> and tabular. Within each of these there are many grades. The magnitude of industrial energy, processing and know-how put into alumina production becomes evident when one sees the great variety of grades available and realizes what it takes to make these. Aluminas vary in the amount of soda (<a href="../oxide/na2o.html">Na<sub>2</sub>O</a>), iron (<a href="../oxide/fe2o3.html">Fe<sub>2</sub>O<sub>3</sub></a>) and <a href="1245.html">silica</a> (<a href="../oxide/sio2.html">SiO<sub>2</sub></a>); ultimate crystal size, chemical purity and the <a href="../glossary/physical+testing.html">physical properties</a> of the powder or granules. Calcined aluminas are generally used in <a href="../glossary/porcelain.html">porcelain</a> and <a href="../glossary/whiteware.html">whiteware</a> bodies, low soda for electronic applications. Super high purity grades (99.99% pure) for optical and electronic applications are made using non-Bayer processes such as ammonium aluminum sulfate, aluminum chloride or aluminum alkoxide. Typical bodies for use in electronic applications may contain 95% or more alumina. When hardness is required (e.g. for abrasive) purity (e.g. 99%) is considered one indicator.<br/>
+<br/>
+Alumina oxide ceramics have very high melting temperatures and hot and cold mechanical strength and are good for abrasion and corrosion-resistant applications where heat resistance is also important (compressive strength may average 250,000 psi but high purity mixes can be up to 500,000 psi!). They are among the strongest, hardest and most abrasion resistant of all ceramic materials. The strength of alumina ceramics is exceeded only by silicon carbide, <a href="../glossary/borate.html">boron</a> carbide and diamond; the abrasion resistance only by diamond. They also have outstanding electrical and thermal properties (like high dielectric strength, high electrical resistance, low dielectric loss). Spark plugs, for example, are made using a high alumina porcelain (about 90%) for its insulating properties coupled with its strength, heat and <a href="../glossary/thermal+shock.html">thermal shock</a> resistance. High alumina ceramics (99%+) can provide such good resistance to chemical attack that they can resist hydrofluoric acid and molten alkalis and <a href="../glossary/alkali.html">alkali</a> vapors. The chemical inertness of these same bodies make them ideal for making valves and seals exposed to severe corrosive and abrasive conditions. Alumina ceramics also resist the effects of radiation that can destroy other materials. Further, alumina ceramics maintain most of the above properties at elevated temperatures. Many of alumina's outstanding properties can be further enhanced by specific manufacturing methods and additives.<br/>
+<br/>
+Since alumina is by nature <a href="../glossary/refractory.html">refractory</a>, alumina ceramics and alumina refractories might seem like redundant terms. However the former refers to alumina-containing bodies that have a fine grain structure and dense matrix and whose purpose is more than just resistance to temperature. The term 'high alumina ceramics' generally refers to mixes containing 85+% alumina. Some high-demand applications such as furnace tubes and lab ware cross the boundaries of both alumina ceramics and alumina refractories, these are often made from 99.8% alumina mixes. 99.9% aluminas are used in super duty applications like nuclear ceramics and cutting tools. Just the standard parts that are made from alumina make an impressive list (e.g. tubes, plates, standoff insulators, bolts, nuts and washers, machinable components), but an endless range of custom components are also being made.<br/>
+<br/>
+Microfine alumina grades have <a href="../glossary/particle+sizes.html">particle sizes</a> less than 1 micron, these are used in the refractories industry to fill voids in between other particles to increase density and lower the amount of water needed.<br/>
+<br/>
+Alumina and alumina mixes can be dry pressed, isostatic pressed, hot pressed and extruded, tape cast and injection or compress molded. However, most processing and firing methods involving alumina have to be adjusted compared to those used for more traditional ceramic mixtures. High alumina bodies lack forming properties so organic and inorganic lubricants, binders, electrolytes and plasticizers are used (e.g. methyl cellulose or HPMC binder). We have had good success using 3-3.5% VeeGum, if the alumina is fine enough this produces a material that can be formed like potter's clay!<br/>
+<br/>
+While greater percentages of alumina often improve the properties of mixes in which they are being used, it is expensive and requires higher firing unless balancing fluxes are present. Thus a compromise between performance and cost must be reached.<br/>
+<br/>
+While it seems counterintuitive that pure alumina would be used in glazes, since it obviously would resist going into solution in <a href="../glossary/melt+fluidity.html">the melt</a>. However, it is commonly used! It seems that the physical form alone can impart <a href="../glossary/glaze+durability.html">durability</a> and act as a <a href="../picture/2702.html">fining agent</a> for clearing <a href="../glossary/glaze+bubbles.html">micro-bubbles</a>. And, if particles are fine enough, it can go into solution and contribute <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a> to the <a href="../glossary/glaze+chemistry.html">chemistry</a> of the glass. We have seen as much as 8% in high-temperature tableware glazes.<br/>
+<br/>
+The mineral corundum yields native alumina while the hydrated minerals gibbsite, diaspore, and boehmite are also found in nature. Alumina occurs as silicates in clays, <a href="310.html">feldspars</a>, <a href="951.html">kyanite</a>, and many other minerals. However, the principal sources of purified and hydrated alumina are native bauxite and laterite deposits.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/19">http://www.qal.com.au/a_process/process4.html</a>
+<br/><i><a href="../glossary/calcination.html">Calcination</a> of Alumina</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/20">http://www.qal.com.au/</a>
+<br/><i>Gladstone Alumina Refinery</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1430">http://www.associatedceramics.com/alumina.htm</a>
+<br/><i>Associated Ceramic alumina <a href="../glossary/ceramics.html">ceramics</a> properties page</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/3213">https://www.yumpu.com/en/document/read/18251075/on-the-influence-of-superfines-in-high-alumina-castables-elkem</a>
+<br/><i>The influence of superfines on high alumina castables</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/3620">https://www.prodways.com/material/alumina-photx-a100-a110/</a>
+<br/><i>ALUMINA PHOTX A100 <a href="../glossary/3d-printing.html">3D printing</a> resin by SINTX</i>
+<br/><i style="color:#888888;">They claim &gt;60% solids and cures quickly under 365nm light. They claim low <a href="../glossary/viscosity.html">viscosity</a>, no <a href="../glossary/suspension.html">settling</a>, high <a href="../glossary/green+strength.html">green strength</a> and minimal densification on <a href="../glossary/sintering.html">sintering</a> at 1650C. Used for printing electronics, tubing, sheets, bars, rods, discs wear-resistant coatings, biomedical, etc.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="boron+carbide.html">Boron Carbide</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="silicon+carbide.html">Silicon Carbide</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="boron+nitride.html">Boron Nitride</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="alumina+hydrate.html">Alumina Hydrate</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="calcined+alumina.html">Calcined Alumina</a>
+<br/><i>A high-purity <a href="../oxide/al2o3.html">Al2O3</a> used in technical <a href="../glossary/ceramics.html">ceramics</a>, refractories, glazes, and bodies for its extreme hardness, high-temperature strength, and chemical stability.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="tabular+alumina.html">Tabular Alumina</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pechiney+alumina.html">Pechiney Alumina</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="steatite.html">Steatite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="zirconium+dioxide.html">Zirconium Dioxide</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="cordierite.html">Cordierite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Hazards</td>
+<td>
+<a href="../hazard/alumina+toxicology.html">Alumina Toxicology</a>
+<br/><i>An overview of the hazards of <a href="../glossary/calcination.html">calcined</a> and hydrated alumina materials in the ceramic glazes and clay bodies</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/alm">Alumina</a>
+<br/><i>Alumina products</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/gnm">Generic Material</a>
+<br/><i>Generic materials are those with no brand name. Normally they are theoretical, the <a href="../glossary/glaze+chemistry.html">chemistry</a> portrays what a specimen would be if it had no contamination. Generic materials are helpful in educational situations where students need to study material theory (later they graduate to dealing with real world materials). They are also helpful where the chemistry of an actual material is not known. Often the accuracy of calculations is sufficient using generic materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/alm">Alumina</a>
+<br/><i>Alumina products</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/abr">Abrasive Resistant Super Hard Material</a>
+<br/><i>These materials are generally available in granular form, the particles are cemented together using <a href="../glossary/frit.html">frits</a> to produce abrasive products. However, powdered and <a href="../glossary/slurry.html">slurried</a> forms of these materials can also be formed and fired by various means to produce hard materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/ref">Refractory</a>
+<br/><i>Materials that melt at high temperatures. These are normally used for kiln bricks, furniture, etc. or for <a href="../glossary/ceramics.html">ceramics</a> that must withstand high temperatures during service.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="../mineral/bauxite.html">Bauxite</a>
+<br/><i>The main ore from which alumina oxide products are refined, contains diaspore, gibbsite and boehmite</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="../mineral/gibbsite.html">Gibbsite</a>
+<br/><i>An ore of aluminum.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="../mineral/laterite.html">Laterite</a>
+<br/><i>An ore of aluminum.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="../mineral/corundum.html">Corundum</a>
+<br/><i>The natural <a href="../glossary/glass+vs.+crystalline.html">crystalline</a> form of alumina.</i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></div></body>
+</html>

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Hydrofluoric Acid Toxicity</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Hydrofluoric acid is used for etching and engraving in ceramics and glassware. How toxic is it?">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item active" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=hazard" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:center; vertical-align:top;">Feb 14-15, 2026 - <b>Major Server <a href="https://digitalfire.com">Upgrade</a> Done</b></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Hazards</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a title="341" href="https://digitalfire.com/hazard/341">Alumina Toxicology</a> |</nobr> <nobr><a title="333" href="https://digitalfire.com/hazard/333">Ammonia and Latex Toxicity</a> |</nobr> <nobr><a title="16" href="https://digitalfire.com/hazard/16">Antimony Oxide</a> |</nobr> <nobr><a title="412" href="https://digitalfire.com/hazard/412">Are colored porcelains hazardous?</a> |</nobr> <nobr><a title="18" href="https://digitalfire.com/hazard/18">Arsenic Oxide</a> |</nobr> <nobr><a title="19" href="https://digitalfire.com/hazard/19">Asbestos Toxicity</a> |</nobr> <nobr><a title="22" href="https://digitalfire.com/hazard/22">Ball Clay</a> |</nobr> <nobr><a title="321" href="https://digitalfire.com/hazard/321">BARIUM and COMPOUNDS Toxicology</a> |</nobr> <nobr><a title="367" href="https://digitalfire.com/hazard/367">Barium Carbonate in Clay Bodies</a> |</nobr> <nobr><a title="26" href="https://digitalfire.com/hazard/26">Barium Carbonate in Glazes</a> |</nobr> <nobr><a title="31" href="https://digitalfire.com/hazard/31">Bentonite Toxicity</a> |</nobr> <nobr><a title="33" href="https://digitalfire.com/hazard/33">Beryllium Monoxide Toxicology</a> |</nobr> <nobr><a title="352" href="https://digitalfire.com/hazard/352">Bismuth Trioxide Toxicology</a> |</nobr> <nobr><a title="326" href="https://digitalfire.com/hazard/326">Boron Compounds and Their Toxicity</a> |</nobr> <nobr><a title="1" href="https://digitalfire.com/hazard/1">Brown Stain</a> |</nobr> <nobr><a title="335" href="https://digitalfire.com/hazard/335">Cadmium Toxicity</a> |</nobr> <nobr><a title="343" href="https://digitalfire.com/hazard/343">Calcium Carbonate Toxicology</a> |</nobr> <nobr><a title="334" href="https://digitalfire.com/hazard/334">Carbon Monoxide Toxicity</a> |</nobr> <nobr><a title="353" href="https://digitalfire.com/hazard/353">Cesium Toxicology</a> |</nobr> <nobr><a title="330" href="https://digitalfire.com/hazard/330">Chromium Compounds Toxicology</a> |</nobr> <nobr><a title="146" href="https://digitalfire.com/hazard/146">Clay Toxicity</a> |</nobr> <nobr><a title="73" href="https://digitalfire.com/hazard/73">Cobalt Oxide and Carbonate</a> |</nobr> <nobr><a title="331" href="https://digitalfire.com/hazard/331">Cobalt Toxicology</a> |</nobr> <nobr><a title="329" href="https://digitalfire.com/hazard/329">Copper Compounds Toxicology</a> |</nobr> <nobr><a title="78" href="https://digitalfire.com/hazard/78">Copper Oxide and Carbonate</a> |</nobr> <nobr><a title="84" href="https://digitalfire.com/hazard/84">Cristobalite Toxicity</a> |</nobr> <nobr><a title="337" href="https://digitalfire.com/hazard/337">Cryolite and Ceramics</a> |</nobr> <nobr><a title="372" href="https://digitalfire.com/hazard/372">Dealing With Dust in Ceramics</a> |</nobr> <nobr><a title="351" href="https://digitalfire.com/hazard/351">Diatomaceous Earth Toxicology</a> |</nobr> <nobr><a title="323" href="https://digitalfire.com/hazard/323">Dioxins in Clays</a> |</nobr> <nobr><a title="95" href="https://digitalfire.com/hazard/95">Epsom Salts</a> |</nobr> <nobr><a title="348" href="https://digitalfire.com/hazard/348">Eye Injuries Due to Radiation</a> |</nobr> <nobr><a title="222" href="https://digitalfire.com/hazard/222">Feldspar</a> |</nobr> <nobr><a title="320" href="https://digitalfire.com/hazard/320">Fighting Micro-Organisms in Ceramics</a> |</nobr> <nobr><a title="108" href="https://digitalfire.com/hazard/108">Fluorine Gas</a> |</nobr> <nobr><a title="413" href="https://digitalfire.com/hazard/413">Fumes from gas kilns</a> |</nobr> <nobr><a title="354" href="https://digitalfire.com/hazard/354">Gallium Oxide Toxicology</a> |</nobr> <nobr><a title="342" href="https://digitalfire.com/hazard/342">Hafnium Oxide Toxicty</a> |</nobr> <nobr><a title="345" href="https://digitalfire.com/hazard/345"><button type="button" class="btn btn-dark">Hydrofluoric Acid Toxicity</button></a> |</nobr> <nobr><a title="350" href="https://digitalfire.com/hazard/350">Iron oxide and Hematite</a> |</nobr> <nobr><a title="169" href="https://digitalfire.com/hazard/169">Lead Chromate</a> |</nobr> <nobr><a title="368" href="https://digitalfire.com/hazard/368">Lead in Ceramic Glazes</a> |</nobr> <nobr><a title="328" href="https://digitalfire.com/hazard/328">Lead Toxicology</a> |</nobr> <nobr><a title="174" href="https://digitalfire.com/hazard/174">Lithium Carbonate Toxicity</a> |</nobr> <nobr><a title="349" href="https://digitalfire.com/hazard/349">Lithium Toxicology</a> |</nobr> <nobr><a title="322" href="https://digitalfire.com/hazard/322">Man-Made Vitreous Fibers (MMVF) Toxicology</a> |</nobr> <nobr><a title="410" href="https://digitalfire.com/hazard/410">Man-Made Vitreous Fibers Safety Update</a> |</nobr> <nobr><a title="406" href="https://digitalfire.com/hazard/406">Manganese and Parkinsons by Jane Watkins</a> |</nobr> <nobr><a title="187" href="https://digitalfire.com/hazard/187">Manganese in Clay Bodies</a> |</nobr> <nobr><a title="317" href="https://digitalfire.com/hazard/317">Manganese Inorganic Compounds Toxicology</a> |</nobr> <nobr><a title="409" href="https://digitalfire.com/hazard/409">Manganese Toxicity by Elke Blodgett</a> |</nobr> <nobr><a title="407" href="https://digitalfire.com/hazard/407">Manganese: Creativity and Illness by Dierdre O'Reilly</a> |</nobr> <nobr><a title="332" href="https://digitalfire.com/hazard/332">Molybdenum Compounds Toxicology</a> |</nobr> <nobr><a title="327" href="https://digitalfire.com/hazard/327">Nickel Compounds Toxicity</a> |</nobr> <nobr><a title="314" href="https://digitalfire.com/hazard/314">Niobium Oxide Toxicity</a> |</nobr> <nobr><a title="318" href="https://digitalfire.com/hazard/318">Occupational Dermatoses</a> |</nobr> <nobr><a title="370" href="https://digitalfire.com/hazard/370">Overview of Material Safety by Gavin Stairs</a> |</nobr> <nobr><a title="364" href="https://digitalfire.com/hazard/364">Paraffin Toxicology</a> |</nobr> <nobr><a title="216" href="https://digitalfire.com/hazard/216">Perlite Toxicity</a> |</nobr> <nobr><a title="238" href="https://digitalfire.com/hazard/238">Plant Ash Toxicity</a> |</nobr> <nobr><a title="346" href="https://digitalfire.com/hazard/346">Potassium Carbonate Toxicity</a> |</nobr> <nobr><a title="365" href="https://digitalfire.com/hazard/365">Pregnancy and Ceramics</a> |</nobr> <nobr><a title="355" href="https://digitalfire.com/hazard/355">Propane Toxicology</a> |</nobr> <nobr><a title="251" href="https://digitalfire.com/hazard/251">Quartz Toxicity</a> |</nobr> <nobr><a title="369" href="https://digitalfire.com/hazard/369">Quartz Toxicity on Clayart</a> |</nobr> <nobr><a title="336" href="https://digitalfire.com/hazard/336">Rare Earth Compounds Toxicity</a> |</nobr> <nobr><a title="366" href="https://digitalfire.com/hazard/366">Rubidium and Cesium Toxicology</a> |</nobr> <nobr><a title="356" href="https://digitalfire.com/hazard/356">Rutile Toxicology</a> |</nobr> <nobr><a title="324" href="https://digitalfire.com/hazard/324">Silicosis and Screening</a> |</nobr> <nobr><a title="357" href="https://digitalfire.com/hazard/357">Silver Compounds Toxicology</a> |</nobr> <nobr><a title="358" href="https://digitalfire.com/hazard/358">Sodium Azide Toxicology</a> |</nobr> <nobr><a title="359" href="https://digitalfire.com/hazard/359">Sodium Carbonate Toxicology</a> |</nobr> <nobr><a title="360" href="https://digitalfire.com/hazard/360">Sodium Silicate Powder Toxicology</a> |</nobr> <nobr><a title="315" href="https://digitalfire.com/hazard/315">Stannous Chloride Toxicity</a> |</nobr> <nobr><a title="316" href="https://digitalfire.com/hazard/316">Strontium Carbonate Toxicity Note</a> |</nobr> <nobr><a title="347" href="https://digitalfire.com/hazard/347">Sulfur Dioxide Toxicity</a> |</nobr> <nobr><a title="3" href="https://digitalfire.com/hazard/3">Talc Hazards Overview</a> |</nobr> <nobr><a title="361" href="https://digitalfire.com/hazard/361">Talc Toxicology</a> |</nobr> <nobr><a title="362" href="https://digitalfire.com/hazard/362">Thallium Oxide Toxicology</a> |</nobr> <nobr><a title="344" href="https://digitalfire.com/hazard/344">Thorium Dioxide Toxicity</a> |</nobr> <nobr><a title="338" href="https://digitalfire.com/hazard/338">Tin Inorganic Compounds</a> |</nobr> <nobr><a title="339" href="https://digitalfire.com/hazard/339">Titanium Dioxide Toxicology</a> |</nobr> <nobr><a title="313" href="https://digitalfire.com/hazard/313">Toxicological Assessment of Zeolites</a> |</nobr> <nobr><a title="363" href="https://digitalfire.com/hazard/363">Tungsten Compounds Toxicology</a> |</nobr> <nobr><a title="371" href="https://digitalfire.com/hazard/371">Understanding Acronyms on MSDS's</a> |</nobr> <nobr><a title="325" href="https://digitalfire.com/hazard/325">Uranium and Ceramics</a> |</nobr> <nobr><a title="319" href="https://digitalfire.com/hazard/319">Vanadium and Compounds Toxicology</a> |</nobr> <nobr><a title="411" href="https://digitalfire.com/hazard/411">Vermiculite</a> |</nobr> <nobr><a title="340" href="https://digitalfire.com/hazard/340">Zinc Compounds Toxicology</a> |</nobr> <nobr><a title="373" href="https://digitalfire.com/hazard/373">Zirconium Compounds Toxicity</a> |</nobr> <nobr><a title="234" href="https://digitalfire.com/hazard/234">Zirconium Encapsulated Stains Toxicity</a></nobr></div><h1>Hydrofluoric Acid Toxicity</h1>
+<li>Background</li>
+
+<p class="L2"></p>
+<ol type="I">
+<ol type="I">
+<ol type="A">
+<li>Hydrofluoric acid (HF) is one of the strongest inorganic acids. Its use is mainly industrial, including glass etching, metal cleaning and electronics manufacturing. It may be found in home rust removers. Exposure is usually accidental, often due to inadequate use of protective measures.</li>
+</ol>
+</ol>
+</ol>
+<p></p>
+<p class="L2"></p>
+<ol type="I">
+<ol type="I">
+<ol type="A">
+<li>HF burns are a unique clinical entity. Dilute solutions penetrate deeply before dissociating, causing delayed injury and symptoms. Burns to the fingers and nail beds may leave the overlying nails intact.</li>
+</ol>
+</ol>
+</ol>
+<p></p>
+<p class="L2"></p>
+<ol type="I">
+<ol type="I">
+<ol type="A">
+<li>Severe burns are those following exposure to concentrated HF (50% or greater) to 1% or more " body <a  href="https://digitalfire.com/glossary/surface+area">surface area</a> ", HF of any concentration to 5% or more " body surface area ", or inhalation of HF fumes from a 60% or stronger solution. The vast majority of cases involve only small areas of exposure, usually on the digits.</li>
+</ol>
+</ol>
+</ol>
+<p></p>
+<ul>
+<li>Pathophysiology</li>
+</ul>
+<p class="L2">Tissue damage is caused by two <a  href="https://digitalfire.com/glossary/mechanism">mechanisms</a>. A corrosive burn from the free hydrogen ions and a chemical burn from tissue penetration of the fluoride ions. Fluoride ions penetrate and form insoluble salts with calcium and magnesium. <a  href="https://digitalfire.com/glossary/soluble+salts">Soluble salts</a> are also formed with other cations but dissociate rapidly, releasing the fluoride ion allowing further tissue destruction.</p>
+<ul>
+<li>Mortality/Morbidity</li>
+</ul>
+<p class="L2">Local effects include tissue destruction and necrosis. Burns may involve underlying bone. Systemic fluoride ion poisoning from severe burns is associated with hypocalcemia, hyperkalemia, hypomagnesemia and sudden death. Deaths have been reported from as little as 2.5% " body surface area " burn from concentrated acid.</p>
+<ul>
+<li>History</li>
+</ul>
+<p class="L2"></p>
+<ol type="I">
+<ol type="I">
+<ol type="A">
+<li>The time to onset of symptoms is related to the concentration of the HF. Solutions of 14% produce symptoms immediately. Solutions of 12% may take up to an hour. Solutions of 7% or less may take several hours before onset of symptoms, resulting in delayed presentation, deeper penetration of the undissociated HF and a more severe burn.</li>
+</ol>
+</ol>
+</ol>
+<p></p>
+<p class="L2"></p>
+<ol type="I">
+<ol type="I">
+<ol type="A">
+<li>Concentrated solutions cause immediate pain and produce a surface burn similar to other common acids with erythema, <a  href="https://digitalfire.com/trouble/glaze+blisters">blistering</a> and necrosis.</li>
+</ol>
+</ol>
+</ol>
+<p></p>
+<p class="L2"></p>
+<ol type="I">
+<ol type="I">
+<ol type="A">
+<li>The pain is typically described as deep, burning, or throbbing and is often out of proportion to apparent skin involvement.</li>
+</ol>
+</ol>
+</ol>
+<p></p>
+<p class="L2"></p>
+<ol type="I">
+<ol type="I">
+<ol type="A">
+<li>A history of potential exposure to cleaning solutions should be obtained in the last 24 hours including :</li>
+</ol>
+</ol>
+</ol>
+<p></p>
+<ol type="I">
+<ol type="I">
+<ol type="A">
+<ol>
+<li>Concentration of acid.</li>
+<li>Duration of exposure.</li>
+<li>Use of protective measures.</li>
+<li>Other agents in the solution.</li>
+</ol>
+</ol>
+</ol>
+</ol>
+<p class="L2"></p>
+<ol type="I">
+<ol type="I">
+<ol type="A">
+<li>Symptoms of hypocalcaemia such as tetany, Chvostek039;s sign and Trousseau039;s sign (although these are often absent even with marked hypocalcemia). Medications and intercurrent illness predisposing to hypocalcaemia or hypomagnesaemia</li>
+</ol>
+</ol>
+</ol>
+<p></p>
+<ul>
+<li>Physical</li>
+</ul>
+<p class="L2"></p>
+<ol type="I">
+<ol type="I">
+<ol type="A">
+<li>Weaker solutions penetrate before dissociating. Surface involvement in these cases is minimal and may even be absent.</li>
+</ol>
+</ol>
+</ol>
+<p></p>
+<p class="L2"></p>
+<ol type="I">
+<ol type="I">
+<ol type="A">
+<li>Three categories of appearance :</li>
+</ol>
+</ol>
+</ol>
+<p></p>
+<ol type="I">
+<ol type="I">
+<ol type="A">
+<ol>
+<li>A white burn mark and/or erythema and pain.</li>
+<li>A white burn mark and/or erythema and pain, plus edema and blistering.</li>
+<li>A white burn mark and/or erythema and pain, swelling and blistering, plus necrosis.</li>
+</ol>
+</ol>
+</ol>
+</ol>
+<p class="L2"></p>
+<ol type="I">
+<ol type="I">
+<ol type="A">
+<li>Ocular burns present with severe pain.</li>
+</ol>
+</ol>
+</ol>
+<p></p>
+<p class="L2"></p>
+<ol type="I">
+<ol type="I">
+<ol type="A">
+<li>Inhalation burns may develop acute pulmonary edema.</li>
+</ol>
+</ol>
+</ol>
+<p></p>
+<ul>
+<li>Lab Studies</li>
+</ul>
+<ul>
+<li>Electrolytes</li>
+</ul>
+<p class="L2">Severe disturbances can occur, especially hypocalcemia, hypomagnesemia and hyperkalemia.</p>
+<ul>
+<li>Imaging Studies</li>
+</ul>
+<p class="L2">Radiographs :</p>
+<p class="L3">CXR, if pulmonary edema is suspected; to look for pulmonary edema</p>
+<p class="L3">Digital - if burns to the fingers to evaluate bone integrity.</p>
+<ul>
+<li>C. Other Tests</li>
+</ul>
+<p class="L2">ECG - Cardiac monitoring is necessary if the burn is significant. Arrhythmias are a primary cause of death. Monitor for Q-T prolongation from hypocalcemia or signs of hyperkalemia.</p>
+<ul>
+<li>Treatment</li>
+</ul>
+<ul>
+<li>Prehospital Care</li>
+</ul>
+<ul>
+<li>Skin Burns</li>
+</ul>
+<p class="L2"></p>
+<ol type="I">
+<ol type="I">
+<ol type="A">
+<ol type="1">
+<ol type="a">
+<li>Treatment for HF burns includes basic life support and appropriate decontamination, followed by neutralization of the acid by the use of calcium gluconate. If exposure occurs at an industrial site, obtain and transport any treatment literature available.</li>
+</ol>
+</ol>
+</ol>
+</ol>
+</ol>
+<p></p>
+<p class="L2"></p>
+<ol type="I">
+<ol type="I">
+<ol type="A">
+<ol type="1">
+<ol type="a">
+<li>Acute life threats are assessed and managed in the usual manner. EMS personnel use gloves, masks and gowns, if necessary.</li>
+</ol>
+</ol>
+</ol>
+</ol>
+</ol>
+<p></p>
+<p class="L2"></p>
+<ol type="I">
+<ol type="I">
+<ol type="A">
+<ol type="1">
+<ol type="a">
+<li>Remove soiled clothing. Initially decontaminate by irrigation with copious amounts of water.</li>
+</ol>
+</ol>
+</ol>
+</ol>
+</ol>
+<p></p>
+<p class="L2"></p>
+<ol type="I">
+<ol type="I">
+<ol type="A">
+<ol type="1">
+<ol type="a">
+<li>Ice packs on the affected area may alleviate symptoms. If calcium gluconate gel is available, apply liberally to the affected area.</li>
+</ol>
+</ol>
+</ol>
+</ol>
+</ol>
+<p></p>
+<ul>
+<li>Inhalation injuries</li>
+</ul>
+<p class="L2">Oxygen, and 2.5% calcium gluconate nebulizer.</p>
+<ul>
+<li>Transport</li>
+</ul>
+<p class="L2">the patient to the nearest appropriate medical facility.</p>
+<ul>
+<li>Emergency Department Care</li>
+</ul>
+<ul>
+<li>Skin Burns</li>
+</ul>
+<p class="L2"></p>
+<ol type="I">
+<ol type="I">
+<ol type="A">
+<ol type="1">
+<ol type="a">
+<li>Remove soiled clothing.</li>
+</ol>
+</ol>
+</ol>
+</ol>
+</ol>
+<p></p>
+<p class="L2"></p>
+<ol type="I">
+<ol type="I">
+<ol type="A">
+<ol type="1">
+<ol type="a">
+<li>Decontaminate by irrigation with copious amounts of water.</li>
+</ol>
+</ol>
+</ol>
+</ol>
+</ol>
+<p></p>
+<p class="L2"></p>
+<ol type="I">
+<ol type="I">
+<ol type="A">
+<ol type="1">
+<ol type="a">
+<li>Assess and manage life threats as with any other cause.</li>
+</ol>
+</ol>
+</ol>
+</ol>
+</ol>
+<p></p>
+<p class="L2"></p>
+<ol type="I">
+<ol type="I">
+<ol type="A">
+<ol type="1">
+<ol type="a">
+<li>Commence comprehensive monitoring for significant exposures.</li>
+</ol>
+</ol>
+</ol>
+</ol>
+</ol>
+<p></p>
+<p class="L2"></p>
+<ol type="I">
+<ol type="I">
+<ol type="A">
+<ol type="1">
+<ol type="a">
+<li>Intravenous 10% calcium gluconate should be administered early if there is any evidence of hypocalcemia.</li>
+</ol>
+</ol>
+</ol>
+</ol>
+</ol>
+<p></p>
+<p class="L2"></p>
+<ol type="I">
+<ol type="I">
+<ol type="A">
+<ol type="1">
+<ol type="a">
+<li>Application of 2.5% calcium gluconate gel to the affected area. If the proprietary gel is not available, constitute by dissolving 10% calcium gluconate solution in 3 times the volume of a water soluble lubricant such as KY gel.</li>
+</ol>
+</ol>
+</ol>
+</ol>
+</ol>
+<p></p>
+<p class="L2"></p>
+<ol type="I">
+<ol type="I">
+<ol type="A">
+<ol type="1">
+<ol type="a">
+<li>For burns to the fingers, retain gel in a latex glove.</li>
+</ol>
+</ol>
+</ol>
+</ol>
+</ol>
+<p></p>
+<p class="L2"></p>
+<ol type="I">
+<ol type="I">
+<ol type="A">
+<ol type="1">
+<ol type="a">
+<li>If pain persists for more than 30 minutes after using calcium gluconate gel, further treatment is required. Subcutaneous infiltration of calcium gluconate (not the chloride salt as it is an irritant and may itself cause tissue damage) is recommended at a dose of 0.5 ml of a 10% solution per square centimeter of surface burn extending 0.5 cm beyond the margin of involved tissue.</li>
+</ol>
+</ol>
+</ol>
+</ol>
+</ol>
+<p></p>
+<ul>
+<li>Burns to the digits</li>
+</ul>
+<p class="L2">Local infiltration of digits is not reccommended due to pain, disfugurement and potential complications.</p>
+<ul>
+<li>regional calcium gluconate</li>
+</ul>
+<p class="L2">10-15 ml of 10% calcium gluconate plus 5,000 units of heparin diluted up to 40 ml in 5% dextrose. Using a Bier039;s ischemic arm block technique, the solution is infused intravenously and the cuff released when the first of the following occur: pain from the digits is resolved; the cuff is more painful than the burn, or 20 minutes of ischemic time has elapsed. Treatment can be repeated after 4 hours if needed.</p>
+<ul>
+<li>Intra-arterial calcium gluconate</li>
+</ul>
+<p class="L2">An arterial catheter is placed in the radial or brachial artery as needed to perfuse the affected digits. The solution of 10 ml of 10% calcium gluconate in 40 ml of 5% dextrose is infused over a 4 hour period, followed by further infusions repeated after 4-8 hours, if necessary.</p>
+<p class="L2">Several treatments may be needed.</p>
+<p class="L2">Continuous ECG and clinical monitoring is essential during these procedures.</p>
+<ul>
+<li>Ocular burns</li>
+</ul>
+<p class="L2">Irrigate generously with sterile water or saline for at least 5 minutes. Local anaesthetic may be required. If pain persists, irrigate with a 1% solution of calcium gluconate by diluting the 10% solution in 10 times the volume of normal saline.</p>
+<p>Undiluted 10% calcium gluconate should NOT be used.</p>
+<ul>
+<li>Inhalation burns</li>
+</ul>
+<p class="L2">All exposures to the head and neck should arouse suspicion of pulmonary involvement. If there is any doubt, admission for observation is advised.</p>
+<p>Specific treatment includes: 100% oxygen by mask, 2.5% calcium gluconate by nebulizer with 100% oxygen, continuous pulse oximetry, ECG and clinical monitoring.</p>
+<ul>
+<li>Pulmonary edema</li>
+</ul>
+<p class="L2">is treated along conventional lines as needed.</p>
+<hr><p>By Edouard Bastarache </p>
+<h2 style="font-style:italic; margin-top:40px;">Related Information</h2>
+
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/eba">Article by Edouard Bastarache</a>
+<br /><i>Edouard Bastarache is a well known doctor that has written many articles on the subject of <a  href="https://digitalfire.com/glossary/toxicity">toxicity</a> of ceramic materials and books on technical aspects of <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>. He writes in both English and French.</i>
+</td>
+</tr>
+</tbody></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

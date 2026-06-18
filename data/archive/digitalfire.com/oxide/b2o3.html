@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>B2O3 (Boric Oxide)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="The use of B2O3 in traditional ceramics, how its chemistry contributes to fired properties of glazes">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+March 2026: We are doing major upgrades to code here, please be patient regarding any issues. If any page is not working for a period of hours, please contact us. Thank you.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item active"><a class="nav-link" href="/oxide/list">Oxides <span class="sr-only">(current)</span></a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=oxide" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:center; vertical-align:top;">Feb 14-15, 2026 - <b>Major Server <a href="https://digitalfire.com">Upgrade</a> Done</b></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table>
+<div style="margin:10px 0px 10px 0px;" class="accordion" id="accordionExample">
+ <div class="card">
+  <div class="card-header pl-0 py-0" id="heading1">
+   <h2 class="mb-0">
+    <button class="btn btn-link collapsed btn-lg" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">Common Ceramic Oxides</button>
+   </h2>
+  </div>
+  <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#accordionExample">
+   <div class="card-body">
+<a title="3" href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> | <a title="7" href="https://digitalfire.com/oxide/7"><button type="button" class="btn btn-dark">B<sub>2</sub>O<sub>3</sub></button></a> | <a title="8" href="https://digitalfire.com/oxide/bao">BaO</a> | <a title="11" href="https://digitalfire.com/oxide/c">C</a> | <a title="13" href="https://digitalfire.com/oxide/cao">CaO</a> | <a title="12" href="https://digitalfire.com/oxide/co2">CO<sub>2</sub></a> | <a title="16" href="https://digitalfire.com/oxide/coo">CoO</a> | <a title="17" href="https://digitalfire.com/oxide/cr2o3">Cr<sub>2</sub>O<sub>3</sub></a> | <a title="19" href="https://digitalfire.com/oxide/cu2o">Cu<sub>2</sub>O</a> | <a title="20" href="https://digitalfire.com/oxide/cuo">CuO</a> | <a title="25" href="https://digitalfire.com/oxide/fe2o3">Fe<sub>2</sub>O<sub>3</sub></a> | <a title="26" href="https://digitalfire.com/oxide/feo">FeO</a> | <a title="32" href="https://digitalfire.com/oxide/h2o">H<sub>2</sub>O</a> | <a title="38" href="https://digitalfire.com/oxide/k2o">K<sub>2</sub>O</a> | <a title="42" href="https://digitalfire.com/oxide/li2o">Li<sub>2</sub>O</a> | <a title="40" href="https://digitalfire.com/oxide/loi">LOI</a> | <a title="44" href="https://digitalfire.com/oxide/mgo">MgO</a> | <a title="46" href="https://digitalfire.com/oxide/mno">MnO</a> | <a title="47" href="https://digitalfire.com/oxide/mno2">MnO<sub>2</sub></a> | <a title="50" href="https://digitalfire.com/oxide/na2o">Na<sub>2</sub>O</a> | <a title="53" href="https://digitalfire.com/oxide/nio">NiO</a> | <a title="54" href="https://digitalfire.com/oxide/o">O</a> | <a title="97" href="https://digitalfire.com/oxide/organics">Organics</a> | <a title="56" href="https://digitalfire.com/oxide/p2o5">P<sub>2</sub>O<sub>5</sub></a> | <a title="59" href="https://digitalfire.com/oxide/pbo">PbO</a> | <a title="75" href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> | <a title="77" href="https://digitalfire.com/oxide/sno2">SnO<sub>2</sub></a> | <a title="70" href="https://digitalfire.com/oxide/so3">SO<sub>3</sub></a> | <a title="96" href="https://digitalfire.com/oxide/so4">SO<sub>4</sub></a> | <a title="78" href="https://digitalfire.com/oxide/sro">SrO</a> | <a title="83" href="https://digitalfire.com/oxide/tio2">TiO<sub>2</sub></a> | <a title="89" href="https://digitalfire.com/oxide/v2o5">V<sub>2</sub>O<sub>5</sub></a> | <a title="93" href="https://digitalfire.com/oxide/zno">ZnO</a> | <a title="94" href="https://digitalfire.com/oxide/zro">ZrO</a> | <a title="95" href="https://digitalfire.com/oxide/zro2">ZrO<sub>2</sub></a>
+   </div>
+  </div>
+ </div>
+ <div class="card">
+  <div class="card-header pl-0 py-0" id="heading2">
+   <h2 class="mb-0">
+    <button class="btn btn-link collapsed btn-lg" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">Uncommon Ceramic Oxides</button>
+   </h2>
+  </div>
+  <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordionExample">
+   <div class="card-body">
+<a title="102" href="https://digitalfire.com/oxide/ag2o">Ag<sub>2</sub>O</a> | <a title="104" href="https://digitalfire.com/oxide/alf3">AlF<sub>3</sub></a> | <a title="4" href="https://digitalfire.com/oxide/as2o3">As<sub>2</sub>O<sub>3</sub></a> | <a title="5" href="https://digitalfire.com/oxide/as4o6">As<sub>4</sub>O6</a> | <a title="6" href="https://digitalfire.com/oxide/au2o3">Au<sub>2</sub>O<sub>3</sub></a> | <a title="108" href="https://digitalfire.com/oxide/baf2">BaF<sub>2</sub></a> | <a title="9" href="https://digitalfire.com/oxide/beo">BeO</a> | <a title="10" href="https://digitalfire.com/oxide/bi2o3">Bi<sub>2</sub>O<sub>3</sub></a> | <a title="109" href="https://digitalfire.com/oxide/caf2">CaF<sub>2</sub></a> | <a title="14" href="https://digitalfire.com/oxide/cdo">CdO</a> | <a title="15" href="https://digitalfire.com/oxide/ceo2">CeO<sub>2</sub></a> | <a title="99" href="https://digitalfire.com/oxide/cl">Cl</a> | <a title="110" href="https://digitalfire.com/oxide/co">CO</a> | <a title="113" href="https://digitalfire.com/oxide/cro3">CrO<sub>3</sub></a> | <a title="18" href="https://digitalfire.com/oxide/cs2o">Cs<sub>2</sub>O</a> | <a title="101" href="https://digitalfire.com/oxide/cuco3">CuCO<sub>3</sub></a> | <a title="21" href="https://digitalfire.com/oxide/dy2o3">Dy<sub>2</sub>O<sub>3</sub></a> | <a title="22" href="https://digitalfire.com/oxide/er2o3">Er<sub>2</sub>O<sub>3</sub></a> | <a title="23" href="https://digitalfire.com/oxide/eu2o3">Eu<sub>2</sub>O<sub>3</sub></a> | <a title="24" href="https://digitalfire.com/oxide/f">F</a> | <a title="27" href="https://digitalfire.com/oxide/fr2o">Fr<sub>2</sub>O</a> | <a title="28" href="https://digitalfire.com/oxide/free sio2">Free SiO<sub>2</sub></a> | <a title="29" href="https://digitalfire.com/oxide/ga2o3">Ga<sub>2</sub>O<sub>3</sub></a> | <a title="30" href="https://digitalfire.com/oxide/gdo3">GdO<sub>3</sub></a> | <a title="31" href="https://digitalfire.com/oxide/geo2">GeO<sub>2</sub></a> | <a title="33" href="https://digitalfire.com/oxide/hfo2">HfO<sub>2</sub></a> | <a title="34" href="https://digitalfire.com/oxide/hgo">HgO</a> | <a title="35" href="https://digitalfire.com/oxide/ho2o3">Ho<sub>2</sub>O<sub>3</sub></a> | <a title="36" href="https://digitalfire.com/oxide/in2o3">In<sub>2</sub>O<sub>3</sub></a> | <a title="37" href="https://digitalfire.com/oxide/iro2">IrO<sub>2</sub></a> | <a title="107" href="https://digitalfire.com/oxide/kf">KF</a> | <a title="39" href="https://digitalfire.com/oxide/knao">KNaO</a> | <a title="41" href="https://digitalfire.com/oxide/la2o3">La<sub>2</sub>O<sub>3</sub></a> | <a title="43" href="https://digitalfire.com/oxide/lu2o3">Lu<sub>2</sub>O<sub>3</sub></a> | <a title="45" href="https://digitalfire.com/oxide/mn2o3">Mn<sub>2</sub>O<sub>3</sub></a> | <a title="48" href="https://digitalfire.com/oxide/moo3">MoO<sub>3</sub></a> | <a title="49" href="https://digitalfire.com/oxide/n2o5">N<sub>2</sub>O<sub>5</sub></a> | <a title="105" href="https://digitalfire.com/oxide/naf">NaF</a> | <a title="51" href="https://digitalfire.com/oxide/nb2o5">Nb<sub>2</sub>O<sub>5</sub></a> | <a title="52" href="https://digitalfire.com/oxide/nd2o3">Nd<sub>2</sub>O<sub>3</sub></a> | <a title="98" href="https://digitalfire.com/oxide/ni2o3">Ni<sub>2</sub>O<sub>3</sub></a> | <a title="55" href="https://digitalfire.com/oxide/oso2">OsO<sub>2</sub></a> | <a title="58" href="https://digitalfire.com/oxide/pa2o5">Pa<sub>2</sub>O<sub>5</sub></a> | <a title="106" href="https://digitalfire.com/oxide/pbf2">PbF<sub>2</sub></a> | <a title="60" href="https://digitalfire.com/oxide/pdo">PdO</a> | <a title="61" href="https://digitalfire.com/oxide/pmo3">PmO<sub>3</sub></a> | <a title="57" href="https://digitalfire.com/oxide/po4">PO<sub>4</sub></a> | <a title="62" href="https://digitalfire.com/oxide/pr2o3">Pr<sub>2</sub>O<sub>3</sub></a> | <a title="63" href="https://digitalfire.com/oxide/pro2">PrO<sub>2</sub></a> | <a title="64" href="https://digitalfire.com/oxide/pto2">PtO<sub>2</sub></a> | <a title="65" href="https://digitalfire.com/oxide/rao">RaO</a> | <a title="66" href="https://digitalfire.com/oxide/rb2o">Rb<sub>2</sub>O</a> | <a title="67" href="https://digitalfire.com/oxide/re2o7">Re<sub>2</sub>O7</a> | <a title="68" href="https://digitalfire.com/oxide/rho3">RhO<sub>3</sub></a> | <a title="69" href="https://digitalfire.com/oxide/ruo2">RuO<sub>2</sub></a> | <a title="71" href="https://digitalfire.com/oxide/sb2o3">Sb<sub>2</sub>O<sub>3</sub></a> | <a title="72" href="https://digitalfire.com/oxide/sb2o5">Sb<sub>2</sub>O<sub>5</sub></a> | <a title="73" href="https://digitalfire.com/oxide/sc2o3">Sc<sub>2</sub>O<sub>3</sub></a> | <a title="74" href="https://digitalfire.com/oxide/se">Se</a> | <a title="111" href="https://digitalfire.com/oxide/seo2">SeO<sub>2</sub></a> | <a title="76" href="https://digitalfire.com/oxide/sm2o3">Sm<sub>2</sub>O<sub>3</sub></a> | <a title="79" href="https://digitalfire.com/oxide/ta2o5">Ta<sub>2</sub>O<sub>5</sub></a> | <a title="80" href="https://digitalfire.com/oxide/tb2o3">Tb<sub>2</sub>O<sub>3</sub></a> | <a title="81" href="https://digitalfire.com/oxide/tc2o7">Tc<sub>2</sub>O7</a> | <a title="82" href="https://digitalfire.com/oxide/tho2">ThO<sub>2</sub></a> | <a title="84" href="https://digitalfire.com/oxide/tl2o">Tl<sub>2</sub>O</a> | <a title="85" href="https://digitalfire.com/oxide/tm2o3">Tm<sub>2</sub>O<sub>3</sub></a> | <a title="86" href="https://digitalfire.com/oxide/trace">Trace</a> | <a title="87" href="https://digitalfire.com/oxide/u3o8">U<sub>3</sub>O8</a> | <a title="88" href="https://digitalfire.com/oxide/uo2">UO<sub>2</sub></a> | <a title="90" href="https://digitalfire.com/oxide/wo3">WO<sub>3</sub></a> | <a title="91" href="https://digitalfire.com/oxide/y2o3">Y<sub>2</sub>O<sub>3</sub></a> | <a title="92" href="https://digitalfire.com/oxide/yb2o3">Yb<sub>2</sub>O<sub>3</sub></a>
+   </div>
+  </div>
+ </div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>B<sub>2</sub>O<sub>3</sub> (Boric Oxide)</h1>
+<h3>Data</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<th scope="row"><a href="https://digitalfire.com/glossary/18">Co-efficient of Linear Expansion</a></th>
+<td>0.031</td>
+</tr>
+</tbody></table>
+<h4>Notes</h4><p>-B<sub>2</sub>O<sub>3</sub> is a low melting glass of low <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> and <a  href="https://digitalfire.com/glossary/surface+tension">surface tension</a>. It is an extremely useful oxide, indispensable in many industries and applications. <a  href="https://digitalfire.com/oxide/na2o">Na<sub>2</sub>O</a> melts as well or better than <a  href="https://digitalfire.com/oxide/b2o3">B<sub>2</sub>O<sub>3</sub></a>, but unlike B<sub>2</sub>O<sub>3</sub>, its high thermal expansion limits it to lower percentages.<br />
+<br />
+-Below cone 10, additions of B<sub>2</sub>O<sub>3</sub> are almost always needed to make glazes melt well. Other fluxes, like <a  href="https://digitalfire.com/oxide/zno">ZnO</a>, will melt glazes at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>, but many issues limit them to only certain types of glazes. The lower the temperature the more <a  href="https://digitalfire.com/glossary/borate">boron</a> is needed. A <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> checker is the best way to determine if the glaze is melting enough (and not too much). At <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 06</a>, 0.5 molar parts of B<sub>2</sub>O<sub>3</sub> are usually needed, whereas at cone 6, only around 0.1-0.2 are required. <a  href="https://digitalfire.com/glossary/reactive+glazes">Reactive glazes</a> often contain much more boron (e.g. 0.4-0.5 at cone 6), these formulations have associated issues with running that contribute to various defects. Almost all <a  href="https://digitalfire.com/glossary/frit">frits</a> for low and medium temperatures contain boron as their main melting <a  href="https://digitalfire.com/glossary/mechanism">mechanism</a>.<br />
+<br />
+-Powdered B<sub>2</sub>O<sub>3</sub> cannot be added to a glaze, there is no such insoluble material. It must be done using <a  href="https://digitalfire.com/glossary/glaze+chemistry">glaze chemistry</a>. There are many videos and pages here showing how this can be done using your account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a>.com and with <a  href="https://digitalfire.com/glossary/digitalfire+insight">Digitalfire Insight</a>.<br />
+<br />
+-Boric oxide itself has no melting point, but a progressive softening and melting range from 300-700C. The crystals begin to break down at 300C, and a series of suboxides are produced with partial melting until full fusion is reached at 700C. Boron frits also behave in this manner.<br />
+<br />
+-Boric oxide is a unique oxide often not fully appreciated for all its qualities. It reacts with whatever is available to behave as both the 'bones' and the 'blood' of glazes (acidic glass former and <a  href="https://digitalfire.com/glossary/flux">flux</a>). In some ways, it can thus be considered a low-temperature equivalent of <a  href="https://digitalfire.com/material/1245">silica</a> (although silica still needs to be present for boron to act as a flux, see below). Because of its dual personality, technicians often are not sure where to place it in the <a  href="https://digitalfire.com/glossary/unity+formula">unity formula</a>. If placed with the amphoterics, where chemically it should go, it becomes difficult to compare the formula to others that have no boric oxide.<br />
+<br />
+-Boron has many advantages as a glass-forming oxide. <a  href="https://digitalfire.com/glossary/borosilicate">Borosilicate</a> glazes have been the major alternative to lead-based formulations (melting as low as 750C), and thus boron is critical to the ceramic industry. 'Pyrex' ware, for example, is a <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">low expansion</a>, high silica, borosilicate glass.<br />
+<br />
+-The way in which boric oxide combines with <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> like calcia and soda is not as well understood as other systems.<br />
+<br />
+-Its low expansion makes it valuable in preventing <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a>. However, each glaze recipe tends to have an optimum amount above which the effect can be reversed and crazing increases (typically 10-14%). This effect is said to be due to the loss of elasticity associated with excess B<sub>2</sub>O<sub>3</sub>. Predicting the expansion of high boron glazes can thus be misleading.<br />
+<br />
+-Like silica (in glazes), it does not crystallize on cooling unless significant calcia is present to form calcium <a  href="https://digitalfire.com/glossary/borate">borate</a>.<br />
+<br />
+-Boron glazes have less melt fluidity and this has been the major challenge in switching from lead. While many users increased firing temperatures to compensate, this has not fully solved the 'healing' and bubble clearance problems.<br />
+<br />
+-In the <a  href="https://digitalfire.com/glossary/sanitary+ware">sanitaryware</a> industry boron is being used to impart better <a  href="https://digitalfire.com/glossary/refiring+ceramics">refire</a> characteristics (where significant reject rates necessitate fix-up and refire). Small amounts (2% from frits) in previously boron-free glazes produce a glaze that does not <a  href="https://digitalfire.com/glossary/crystallization">devitrify</a>, and therefore lose gloss, on second and subsequent firings (see linked article below). In addition, the small boron addition imparts better acid resistance and hardness, lowers <a  href="https://digitalfire.com/glossary/melting+temperature">melting temperature</a> and reduces thermal expansion.<br />
+<br />
+-In <a  href="https://digitalfire.com/glossary/low+temperature+glaze">low-temperature glazes</a>, it both substitutes for fluxes of higher-expansion and less potency, and contributes to glass building in lieu of the lower <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> percentages present.<br />
+<br />
+-Boron's reactivity helps to form better clay-glaze interfacial zones.<br />
+<br />
+-The action of B<sub>2</sub>O<sub>3</sub> is said to depend upon the ratio of bases to silica existing in the glaze before the addition. If the ratio is greater than 1:2, the glaze will tend toward opalescence and crazing; if less toward clear and transparent.<br />
+<br />
+-Boron can form both borosilicate and borosilite <a  href="https://digitalfire.com/glossary/alkali">alkali</a> glasses in the same melt, separating (called <a  href="https://digitalfire.com/glossary/phase+separation">phase separation</a>). Glasses solidified from such a non-homogeneous melt can have thermal expansion properties that are much lower or higher than expected. Frits very high in boron demonstrate this phenomenon.<br />
+<br />
+-Boron can form a strong <a  href="https://digitalfire.com/glossary/eutectic">eutectic</a> with <a  href="https://digitalfire.com/oxide/bao">BaO</a> and it is possible to produce glossy and <a  href="https://digitalfire.com/picture/3577">runny glazes</a> that can solidify below 500C.<br />
+<br />
+-Boron is very important in glass manufacture. It is employed to obtain the low expansion and quick heat transfer necessary for hot-cold cycle endurance. It also imparts corrosion resistance and lower temperature workability (at the expense of working range). Small amounts in ordinary soda-lime glass (1-1.5%) give greater strength, brilliance, <a  href="https://digitalfire.com/glossary/glaze+durability">durability</a>, <a  href="https://digitalfire.com/glossary/thermal+shock">thermal shock</a> resistance and protect against the tendency to crystallize during the cool cycle.<br />
+<br />
+-B<sub>2</sub>O<sub>3</sub> can actually be a <a  href="https://digitalfire.com/glossary/refractory">refractory</a>, frits with very high contents are used in the refractory industry. These frits do not contain SiO<sub>2</sub> (depriving boron of a reaction with it to form a borosilicate glass).<br />
+<br />
+How much B<sub>2</sub>O<sub>3</sub> should a glaze have? For <a  href="https://digitalfire.com/glossary/earthenware">low fire</a> glazes, just getting them to melt well is a priority so lots is needed. For <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> glazes (<a  href="https://digitalfire.com/glossary/cone+5">cone 5</a> and higher) much less boron is needed. Just enough to melt to the degree needed.  This is different for each recipe (e.g. <a  href="https://digitalfire.com/recipe/g2934">G2934</a> only needs 0.12 to have a <a  href="https://digitalfire.com/glossary/fluid+melt+glazes">fluid melt</a>, <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a> needs 0.34). Complex eutectics are involved in every recipe. If lithia or zinc are present less boron is needed. If too much boron is present the glaze melts too early and likely will not be suitable for use with decals. That being said, reactive glazes, like those in the Mastering Glazes book, need more boron to get good melt fluidity (and better <a  href="https://digitalfire.com/glossary/crystallization">crystallization</a> on cooling). Likewise, if the glaze is crazing, often the only practical way to get the thermal expansion down is more boron to permit less <a  href="https://digitalfire.com/picture/1775">KNaO</a> and more Al<sub>2</sub>O<sub>3</sub>/SiO<sub>2</sub>.<br />
+<br />
+-Borax and Boracic Acid are both soluble and unsuitable sources for glazes, but fine for frits.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">The amazing fluxing power of boron (in borax)</h3>
+<br /><a href="https://digitalfire.com/picture/791"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/benwagosed.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/791">click here</a> to see it.</p>
+<p>The two top clay bars contain 15% hydrous <a  href="https://digitalfire.com/material/2271">borax</a>. At <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 06</a>, a very low temperature, it has already melted and drained out of the bars, running down over the others as a glass.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A frit softens over a wide temperature range</h3>
+<br /><a alt="Melt flow tests showing the a frit melting from 1550-1750F, Gerstley Borate from 1600-1625F." href="https://digitalfire.com/picture/599"><img class="flexleft50" alt="Melt flow tests showing the a frit melting from 1550-1750F, Gerstley Borate from 1600-1625F."  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/w1kc61hmtt.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/599">click here</a> to see it.</p>
+<p>Raw materials often have a specific <a  href="https://digitalfire.com/glossary/melting+temperature">melting temperature</a> (or they melt quickly over a narrow temperature range). We can use the <a  href="https://digitalfire.com/test/glfl">GLFL test</a> to demonstrate the development of <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> between a <a  href="https://digitalfire.com/glossary/frit">frit</a> and a raw material. On the left we see five flows of <a  href="https://digitalfire.com/glossary/borate">boron</a> Ferro <a  href="https://digitalfire.com/material/356">Frit 3195</a>, across 200 degrees F. Its melting pattern is slow and continuous: It starts flowing at 1550F (although it began to turn to a glass at 1500F) and is falling off the bottom of the runway by 1750F. The <a  href="https://digitalfire.com/material/806">Gerstley Borate</a> (GB), on the other hand, goes from no melting at 1600F to flowing off the bottom by 1625F! But GB has a complex melting pattern, there is more to its story. Notice the flow at 1625F is not transparent, that is because the <a  href="https://digitalfire.com/material/1660">Ulexite</a> mineral within GB has melted but its Colemanite has not. Later, at 1700F, the Colemanite melts and the glass becomes transparent. Technicians call this melting behaviour "phase transition", that does not happen with the frit.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Frits melt so much better than raw materials</h3>
+<br /><a alt="Frits, talc, feldspar melting" href="https://digitalfire.com/picture/1115"><img class="flexleft50" alt="Frits, talc, feldspar melting"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/fuxrucugaz.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1115">click here</a> to see it.</p>
+<p><a  href="https://digitalfire.com/material/310">Feldspar</a> and <a  href="https://digitalfire.com/material/1620">talc</a> are both <a  href="https://digitalfire.com/glossary/flux">flux</a> sources (glaze melters), they are common in all types of <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> glazes. But their fluxing <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a>, <a  href="https://digitalfire.com/oxide/na2o">Na<sub>2</sub>O</a> and <a  href="https://digitalfire.com/oxide/mgo">MgO</a>, are locked in crystal structures that neither melt early or supply other oxides with which they like to interact. The pure feldspar is only beginning to soften at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>. Yet the soda <a  href="https://digitalfire.com/glossary/frit">frit</a> is already very active at <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 06</a>! As high as cone 6, talc (the best source of MgO) shows no signs of melting activity at all. But a high-MgO frit is melting beautifully at cone 06! The <a  href="https://digitalfire.com/glossary/frit">frits</a> progressively soften, starting from low temperatures, both because they have been premelted and have significant <a  href="https://digitalfire.com/glossary/borate">boron</a> content. In both, the Na<sub>2</sub>O and MgO are free to impose themselves as fluxes, actively participating in the softening process.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Boron blue in low fire transparent glazes</h3>
+<br /><a href="https://digitalfire.com/picture/360"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/ypo7kqdeqb.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/360">click here</a> to see it.</p>
+<p>This high-boron high-CaOcone 04 glaze is generating calcium-borate crystals during cool down (called <a  href="https://digitalfire.com/glossary/boron+blue">boron-blue</a>). This is a common problem and a reason to control the <a  href="https://digitalfire.com/glossary/borate">boron</a> levels in transparent glazes; use just enough to melt it well. If more <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> is needed, decrease the percentage of <a  href="https://digitalfire.com/oxide/cao">CaO</a> in favor of a lower melting oxide, that will certainly help. There is a positive: For opaque glazes, this effect can actually enable the use of less <a  href="https://digitalfire.com/glossary/opacifier">opacifier</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Melting range is mainly about boron content</h3>
+<br /><a href="https://digitalfire.com/picture/1260"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/sehwivesih.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1260">click here</a> to see it.</p>
+<p>Fired at 1850. Notice that <a  href="https://digitalfire.com/material/356">Frit 3195</a> is melting earlier. By 1950F, they appear much more similar. Melting earlier can be a disadvantage, it means that gases still escaping as materials in the body and glaze <a  href="https://digitalfire.com/glossary/decomposition">decompose</a> get trapped in the glass matrix. But if the glaze melts later, these have more time to burn away. Glazes that have a lower <a  href="https://digitalfire.com/oxide/b2o3">B<sub>2</sub>O<sub>3</sub></a> content will melt later, <a  href="https://digitalfire.com/glossary/frit">frit</a> 3195 has 23% while <a  href="https://digitalfire.com/material/350">Frit 3124</a> only has 14%).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">These common Ferro frits have distinct uses in traditional ceramics</h3>
+<br /><a alt="Five melt frit balls" href="https://digitalfire.com/picture/1108"><img class="flexleft50" alt="Five melt frit balls"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/kutrupopak.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1108">click here</a> to see it.</p>
+<p>I used Veegum to form 10 gram <a  href="https://digitalfire.com/test/gbmf">GBMF test</a> balls and fired them at cone 08 (1700F). <a  href="https://digitalfire.com/glossary/frit">Frits</a> melt really well, they do have an <a  href="https://digitalfire.com/glossary/loi">LOI</a>  like raw materials. These contain <a  href="https://digitalfire.com/glossary/borate">boron</a> (<a  href="https://digitalfire.com/oxide/b2o3">B<sub>2</sub>O<sub>3</sub></a>), it is a <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">low expansion</a> super-melter that raw materials don’t have. <a  href="https://digitalfire.com/material/350">Frit 3124</a> (glossy) and 3195 (silky matte) are balanced-chemistry bases (just add 10-15% <a  href="https://digitalfire.com/material/925">kaolin</a> for a <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 04</a> glaze, or more silica+kaolin to go higher). Consider <a  href="https://digitalfire.com/material/349">Frit 3110</a> a man-made low-Al<sub>2</sub>O<sub>3</sub> super <a  href="https://digitalfire.com/material/310">feldspar</a>. Its high-sodium makes it high <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a>. It works really well in bodies and is great to make glazes that <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a>. The high-MgO <a  href="https://digitalfire.com/material/369">Frit 3249</a> (made for the abrasives industry) has a very-low expansion, it is great for fixing <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a> glazes. <a  href="https://digitalfire.com/material/351">Frit 3134</a> is similar to 3124 but without <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a>. Use it where the glaze does not need more Al<sub>2</sub>O<sub>3</sub> (e.g. already has enough clay). It is no accident that these are used by potters in North America, they complement each other well (equivalents are made around the world by others). The <a  href="https://digitalfire.com/material/806">Gerstley Borate</a> is a natural source of boron (with issues frits do not have).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">These two frits have one difference in the chemistry: Al2O3.</h3>
+<br /><a href="https://digitalfire.com/picture/1116"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/fyztudazoh.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1116">click here</a> to see it.</p>
+<p>These two <a  href="https://digitalfire.com/glossary/borate">boron</a> <a  href="https://digitalfire.com/glossary/frit">frits</a> (Ferro 3124 left, 3134 right) have almost the same <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a>. But there is one difference: The one on the right has no <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a>, the one on the left has 10%. Alumina plays an important role (as an oxide that builds the glass) in stiffening <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a>, giving it body and lowering its <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a>, you can see that in the way these flow when melting at 1800F. The <a  href="https://digitalfire.com/glossary/frit">frit</a> on the right is invaluable where the glaze needs clay to suspend it (because the clay can supply the Al<sub>2</sub>O<sub>3</sub>). The frit on the left is better when the glaze already has plenty of clay, so it supplies the Al<sub>2</sub>O<sub>3</sub>. Of course, you need to be able to do the chemistry to figure out how to substitute these for each other because it involves changing the <a  href="https://digitalfire.com/material/1245">silica</a> and <a  href="https://digitalfire.com/material/925">kaolin</a> amounts in the recipe also.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Ceramic Oxide Periodic Table</h3>
+<a href="https://digitalfire.com/picture/1257"><img class="flexleft50" alt="Periodic table of ceramic oxides"  src="https://digitalfire.com/4sight/images/pictures/er5fytcakh.svg" /></a>
+<p>Pretty well all common traditional ceramic <a  href="https://digitalfire.com/glossary/base+glaze">base glazes</a> are made from less than a dozen elements (plus oxygen). Go to the full picture of this table and click or tap each of the <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> to learn more (on its page at <a  href="https://digitalfire.com/glossary/digitalfire+reference+library">digitalfire</a>.com). When materials melt, they <a  href="https://digitalfire.com/glossary/decomposition">decompose</a>, sourcing these elements in oxide form. The kiln builds the glaze from them, it does not care what material sources what oxide (assuming, of course, that all materials do melt or dissolve completely into <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> to release those oxides). Each of these oxides contributes specific properties to the glass. So, you can look at a formula and make a good prediction of the properties of the fired glaze. And know what specific oxide to increase or decrease to move a property in a given direction (e.g. melting behavior, hardness, <a  href="https://digitalfire.com/glossary/glaze+durability">durability</a>, <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a>, color, gloss, <a  href="https://digitalfire.com/glossary/crystallization">crystallization</a>). And know about how they interact (affecting each other). This is powerful. A lot of ceramic materials are available, hundreds - that is complicated when individual materials source multiple oxides. Viewing a glaze as a simple <a  href="https://digitalfire.com/glossary/unity+formula">unity formula</a> of ceramic oxides is just simpler.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Before spending time trying online recipes, take a minute to do a sanity check on them</h3>
+<br /><a alt="A matte glaze melt flow that is not moving at all" href="https://digitalfire.com/picture/860"><img class="flexleft50" alt="A matte glaze melt flow that is not moving at all"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/articles/mogguwykac.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/860">click here</a> to see it.</p>
+<p>This is a <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> <a  href="https://digitalfire.com/test/glfl">GLFL test</a> to compare <a  href="https://digitalfire.com/glossary/melt+fluidity">melt-flow</a> between a matte recipe, found online at a respected website, and a glaze we use often. Yes, it is matte. But why? Because it is not melted! Matte glazes used on <a  href="https://digitalfire.com/glossary/functional">functional</a> surfaces need to melt well, they should flow like a <a  href="https://digitalfire.com/glossary/glossy+glaze">glossy glaze</a>. Even though this recipe has 40% <a  href="https://digitalfire.com/material/1070">nepheline syenite</a>, lots of <a  href="https://digitalfire.com/material/273">dolomite</a> and <a  href="https://digitalfire.com/material/173">calcium carbonate</a> it is not melting. Yes, these are powerful fluxes, but at cone 10, not cone 6! To melt a cone 6 glaze <a  href="https://digitalfire.com/glossary/borate">boron</a>, zinc or lithia are needed. Boron is the most common and best general-purpose melter for potters (it comes mainly in <a  href="https://digitalfire.com/glossary/frit">frits</a>, <a  href="https://digitalfire.com/material/806">Gerstley borate</a>). The concept of a <a  href="https://digitalfire.com/glossary/limit+recipe">limit recipe</a> applies here, the idea of eye-balling a recipe and quickly assessing if it is ridiculous or not.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Slow cooling vs. fast cooling on a cone 6 transparent glaze</h3>
+<br /><a href="https://digitalfire.com/picture/1828"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/a1je1grbft.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1828">click here</a> to see it.</p>
+<p>These are the inside uppers on two mugs made from the same clay with the same clear glaze. The one on the left was fired in a large electric kiln full of ware (thus it cooled relatively slowly). The one on the right was in a <a  href="https://digitalfire.com/picture/1293">test kiln</a> and was cooled rapidly. This glaze contains 40% Ferro <a  href="https://digitalfire.com/material/351">Frit 3134</a> so there is plenty of <a  href="https://digitalfire.com/glossary/borate">boron</a> and plenty of calica to grow the <a  href="https://digitalfire.com/glossary/borosilicate">borosilicate</a> crystals that cause the cloudiness in the glass. But in the faster cooling kiln they do not have time to grow.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Al2O3 in glazes make them durable and wear resistant</h3>
+<br /><a href="https://digitalfire.com/picture/912"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/glossary/xubxiwucaw.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/912">click here</a> to see it.</p>
+<p>The <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> glazes on the left have double the <a  href="https://digitalfire.com/glossary/borate">boron</a> of those on the right so they should be melting much more. But they flow less because they have much higher <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> and <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> contents. This effect renders them milky white vs. the transparent of those on the right. Why? Because G and H are trapping micro-bubbles because of the increased <a  href="https://digitalfire.com/glossary/viscosity">viscosity</a> of <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a>. In spite of this, the two on the left do fire almost transparent when applied to ware, they have enough fluidity to shed most of the bubbles when in a thin layer. The ones on the right are too fluid, they will run excessively on ware unless applied thinly. The sweet-spot is a little more fluidity than those on the left. But there is another very important factor: <a  href="https://digitalfire.com/glossary/glaze+durability">Durability</a>. The increased Al<sub>2</sub>O<sub>3</sub> in G and H make them fire harder, more resistant to abrasion. The added SiO<sub>2</sub> adds resistance to <a  href="https://digitalfire.com/glossary/leaching">leaching</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Why does Gerstley Borate melt in two stages? Because it is two minerals.</h3>
+<br /><a alt="Gerstley Borate melts in two stages" href="https://digitalfire.com/picture/1120"><img class="flexleft50" alt="Gerstley Borate melts in two stages"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/materials/fuwpapofyf.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1120">click here</a> to see it.</p>
+<p>The <a  href="https://digitalfire.com/material/1660">ulexite</a> in <a  href="https://digitalfire.com/material/806">Gerstley Borate</a> melts first, producing an opaque fired glass having the unmelted (and still gassing) particles of colemanite <a  href="https://digitalfire.com/glossary/suspension">suspended</a> in it. By 1750F the colemanite is almost melted also. Boron-containing <a  href="https://digitalfire.com/glossary/frit">frits</a>, by contrast, soften slowly over a wide temperature range and gradually spread and melt. Not surprisingly they produce a more stable glaze (albeit often less interesting visually without additives e.g. <a  href="https://digitalfire.com/material/1644">titanium</a>, <a  href="https://digitalfire.com/material/1204">rutile</a>). These behavior contributes to <a  href="https://digitalfire.com/glossary/phase+separation">phase changes</a> in fired glazes that contribute to <a  href="https://digitalfire.com/glossary/reactive+glazes">variegation</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Your boron glaze might melt alot earlier than you think</h3>
+<br /><a href="https://digitalfire.com/picture/1528"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/cyhsahabir.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1528">click here</a> to see it.</p>
+<p>The <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> mug on the left is fired to <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> with <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a> clear <a  href="https://digitalfire.com/glossary/glossy+glaze">glossy glaze</a>. This recipe only contains 25% <a  href="https://digitalfire.com/glossary/boron+frit">boron frit</a> (0.33 molar of <a  href="https://digitalfire.com/oxide/b2o3">B<sub>2</sub>O<sub>3</sub></a>). Yet the mug on the right (the same clay and glaze) is only fired to cone 02 yet the same glaze is already well melted! What does this mean? Industry avoids high <a  href="https://digitalfire.com/glossary/borate">boron</a> glazes (they consider 0.33 to be high boron) because this early melting behavior means gases cannot clear before the glaze starts to melt (causing surface defects). For this reason, <a  href="https://digitalfire.com/glossary/fast+fire+glazes">fast fire glazes</a> melt much later. Yet many middle temperature <a  href="https://digitalfire.com/glossary/reactive+glazes">reactive glazes</a> in use by potters have double the amount of B<sub>2</sub>O<sub>3</sub> that this glaze has!</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Does adding boron alone always increase glaze melt?</h3>
+<br /><a href="https://digitalfire.com/picture/1595"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/guxnowifar.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1595">click here</a> to see it.</p>
+<p><a  href="https://digitalfire.com/glossary/borate">Boron</a> (<a  href="https://digitalfire.com/oxide/b2o3">B<sub>2</sub>O<sub>3</sub></a>) is like <a  href="https://digitalfire.com/material/1245">silica</a>, but it is also a <a  href="https://digitalfire.com/glossary/flux">flux</a>. <a  href="https://digitalfire.com/glossary/frit">Frits</a> and <a  href="https://digitalfire.com/material/806">Gerstley Borate</a> supply it to glazes. In this test, I increased the amount of boron from 0.33 to 0.40 (using the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> tools in my <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">insight-live</a>.com account). I was sure that this would make the glaze melt more and have less of a tendency to <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a>. But as these GBMF tests for <a  href="https://digitalfire.com/glossary/melt+fluidity">melt flow</a> (10 gram <a  href="https://digitalfire.com/test/gbmf">GBMF test</a> balls melted on <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> tiles) show, that did not happen. Why? I am guessing that to get the effect B<sub>2</sub>O<sub>3</sub> has to be substituted, molecule for molecule for <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> (not just added to the glaze).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">An ultra-clear brilliantly-glossy cone 6 clear base glaze? Yes!</h3>
+<br /><a href="https://digitalfire.com/picture/1628"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/zabjasuwam.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1628">click here</a> to see it.</p>
+<p>I am comparing 6 well known <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> <a  href="https://digitalfire.com/glossary/fluid+melt+glazes">fluid melt</a> <a  href="https://digitalfire.com/glossary/base+glaze">base glazes</a> and have found some surprising things. The top row are 10 gram <a  href="https://digitalfire.com/test/gbmf">GBMF test</a> balls of each melted down onto a tile to demonstrate <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> and bubble populations. Second, third, fourth rows show them on <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a>, buff, brown stonewares. The first column is a typical cone 6 boron-fluxed clear. The others add strontium, lithium and zinc or super-size the <a  href="https://digitalfire.com/glossary/borate">boron</a>. They have more glassy smooth surfaces, less bubbles and would should give brilliant colors and reactive visual effects. The cost? They settle, crack, dust, gel, run during firing, <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a> or risk <a  href="https://digitalfire.com/glossary/leaching">leaching</a>. Out of this work came the <a  href="https://insight-live.com/insight/share.php?z=gbcM8HXmX2">G3806E</a> and <a  href="https://insight-live.com/insight/share.php?z=gbcM8HXmX2">G3806F</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">In pursuit of a reactive cone 6 base that I can live with</h3>
+<br /><a href="https://digitalfire.com/picture/1655"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/rovvotatyp.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1655">click here</a> to see it.</p>
+<p>These GLFL tests and GBMF tests for <a  href="https://digitalfire.com/glossary/melt+fluidity">melt-flow</a> compare 6 unconventionally <a  href="https://digitalfire.com/glossary/flux">fluxed</a> glazes with a traditional <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> moderately <a  href="https://digitalfire.com/glossary/borate">boron</a> fluxed (+soda/calcia/magnesia) base (far left <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a>). The objective is to achieve higher <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> for a more brilliant surface and for more reactive response with <a  href="https://digitalfire.com/glossary/colorant">colorant</a> and variegator additions (with awareness of downsides of this). Classified by most active fluxes they are:<br />
+<a  href="https://insight-live.com/insight/share.php?z=nB3JEnMhBi">G3814</a> - Moderate zinc, no boron<br />
+<a  href="https://insight-live.com/insight/share.php?z=nB3JEnMhBi">G2938</a> - High-soda+lithia+strontium<br />
+<a  href="https://insight-live.com/insight/share.php?z=nB3JEnMhBi">G3808</a> - High boron+soda (<a  href="https://digitalfire.com/material/806">Gerstley Borate</a> based)<br />
+<a  href="https://insight-live.com/insight/share.php?z=1e5PZvzZ2H">G3808A</a> - 3808 <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> sourced from <a  href="https://digitalfire.com/glossary/frit">frits</a><br />
+<a  href="https://insight-live.com/insight/share.php?z=kM4EdoTzp1">G3813</a> - Boron+zinc+lithia<br />
+<a  href="https://insight-live.com/insight/share.php?z=1e5PZvzZ2H">G3806B</a> - Soda+zinc+strontium+boron (mixed oxide effect)<br />
+This series of tests was done to choose a recipe, that while more fluid, will have a minimum of the problems associated with such (e.g. <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a>, <a  href="https://digitalfire.com/trouble/glaze+blisters">blistering</a>, low run volatility, susceptibility to <a  href="https://digitalfire.com/glossary/leaching">leaching</a>). As a final step the recipe will be adjusted as needed. We eventually evolved the <a  href="https://insight-live.com/insight/share.php?z=1e5PZvzZ2H">G3806B</a>, after many iterations <a  href="https://digitalfire.com/glossary/suspension">settled</a> on <a  href="https://insight-live.com/insight/share.php?z=gbcM8HXmX2">G3806E</a> or <a  href="https://insight-live.com/insight/share.php?z=gbcM8HXmX2">G3806F</a> as best for now.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">The same glaze fires very differently depending on kiln cooling rate</h3>
+<br /><a href="https://digitalfire.com/picture/761"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/jyldybomav.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/761">click here</a> to see it.</p>
+<p>Both mugs use the same <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> oxidation high-iron (9%), high-boron, <a  href="https://digitalfire.com/glossary/fluid+melt+glazes">fluid melt</a> glaze. Iron silicate crystals have completely invaded the surface of the one on the left, turning the gloss surface into a yellowy matte. Why? Multiple factors. This glaze does not contain enough iron to guarantee <a  href="https://digitalfire.com/glossary/crystallization">crystallization</a> on cooling. When cooled quickly it fires the ultragloss near-black on the right. As cooling is slowed at some point the iron will begin to precipitate as small scattered golden crystals (sometimes called Teadust or Sparkles). As cooling slows further the number and size of these increases. Their maximum saturation is achieved on the discovery, usually by accident, of the likely narrow temperature range they form at (normally hundreds of degrees below the firing cone). Potters seek this type of glaze but industry avoids it because of difficulties with consistency.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">High B2O3 imparts better melt fluidity, but also fewer micro-bubbles</h3>
+<br /><a alt="Glazed tiles and melt fluidity comparisons between the two clear glazes" href="https://digitalfire.com/picture/2560"><img class="flexleft50" alt="Glazed tiles and melt fluidity comparisons between the two clear glazes"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/hqgeobxdkd.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2560">click here</a> to see it.</p>
+<p>A <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> firing. The glaze on the left has a <a  href="https://digitalfire.com/oxide/b2o3">B<sub>2</sub>O<sub>3</sub></a> molar content of 0.54 whereas the one on the right has 0.64 (other oxide levels are the same). This is triple the typical amount of <a  href="https://digitalfire.com/glossary/borate">boron</a> in a cone 6 glaze, the result is obvious: High <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> for both. But <a  href="https://insight-live.com/insight/share.php?z=682QPmFGJ3">G3904A</a> has a significant difference: The flow is more transparent because of the lower micro-bubble population. It's melt better enables the bubbles to pass, exit and the surface to heal. Why don't all glazes use more boron? Cost. <a  href="https://digitalfire.com/glossary/frit">Frits</a> are expensive and they are the best source of boron. There is also a cost to <a  href="https://digitalfire.com/glossary/glaze+durability">durability</a> (although mitigated when there is plenty of <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> and <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> present, as is the case here). These recipes were part of a project to fix a recipe where the potter mistakenly used <a  href="https://digitalfire.com/material/351">Frit 3134</a> instead of 3124 when mixing a large batch of glaze. I calculated how much <a  href="https://digitalfire.com/material/925">kaolin</a> and <a  href="https://digitalfire.com/material/1245">silica</a> to add to bring the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> back into line with the original. This was possible because <a  href="https://digitalfire.com/glossary/frit">frit</a> 3134 chemistry is an approximate oxide-subset of 3124. The resultant glaze is potentially better than the original.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/g1916m+cone+06-04+transparent+glaze">G1916M Cone 06-04 transparent glaze</a>
+<br /><i>This is a <a  href="https://digitalfire.com/glossary/frit">frit</a> based <a  href="https://digitalfire.com/glossary/borate">boron</a> glaze that is easily adjustable in <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a>, a good base for color and a starting point to go on to more specialized glazes.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/270">http://www.ceramicindustry.com/CDA/ArticleInformation/features/BNP__Features__Item/0,2710,123649,00.html</a>
+<br /><i>Using borates in brick and roofing tile</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1411">http://www.ceramicindustry.com/articles/borates-a-new-flux-for-glossy-glazes</a>
+<br /><i>Formulating <a  href="https://digitalfire.com/glossary/borate">borate</a> glazes to premit <a  href="https://digitalfire.com/glossary/refiring+ceramics">refire</a> without loss in gloss</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1180">http://m.youtube.com/user/tonywilliamhansen</a>
+<br /><i>YouTube channel for Tony Hansen</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/medium+temperature">Medium Temperature</a>
+<br /><i>These are <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> glazes that fire in the range of 1200C (<a  href="https://digitalfire.com/glossary/cone+6">2200F</a>). They often contain <a  href="https://digitalfire.com/glossary/borate">boron</a> to assist with melting.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/boron+frit">Boron Frit</a>
+<br /><i>Most ceramic glazes contain <a  href="https://digitalfire.com/oxide/b2o3">B2O3</a> as the main melter. This oxide is supplied by great variety of <a  href="https://digitalfire.com/glossary/frit">frits</a>, thousands of which are available around the world.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/borate">Borate</a>
+<br /><i><a  href="https://digitalfire.com/glossary/borate">Borate</a> glazes, those <a  href="https://digitalfire.com/glossary/flux">fluxed</a> with the oxide <a  href="https://digitalfire.com/oxide/b2o3">B2O3</a>, are the most common type used in ceramic industry and hobby for low and medium temperatures.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/ceramic+oxide">Ceramic Oxide</a>
+<br /><i>In <a  href="https://digitalfire.com/glossary/glaze+chemistry">glaze chemistry</a>, the oxide is the basic unit of formulas and analyses. Knowledge of what materials supply an oxide and of how it affects the fired glass or glaze is a key to control.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/limit+formula">Limit Formula</a>
+<br /><i>A way of establishing guideline for each oxide in the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> for different ceramic glaze types. Understanding the roles of each oxide and the limits of this approach are a key to effectively using these guidelines.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/flux">Flux</a>
+<br /><i>Fluxes are the reason we can fire <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a> and glazes in common kilns, they make glazes melt and bodies vitrify at lower temperatures.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/gerstley+borate">Gerstley Borate</a>
+<br /><i><a  href="https://digitalfire.com/material/806">Gerstley Borate</a> was a natural source of <a  href="https://digitalfire.com/glossary/borate">boron</a> for ceramic glazes. It was plastic and melted clear at 1750F. Now we need to replace it. How?</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/colemanite">Colemanite</a>
+<br /><i>A natural source of <a  href="https://digitalfire.com/glossary/borate">boron</a> that melts at a very low temperature.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/boric+acid">Boric Acid</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/borax+decahydrate">Borax Decahydrate</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/boric+oxide">Boric Oxide</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/borax+pentahydrate">Borax Pentahydrate</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ulexite">Ulexite</a>
+<br /><i>A natural source of <a  href="https://digitalfire.com/glossary/borate">boron</a>, it melts at a very low temperature to a clear glass.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/boron+frits">Boron Frits</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/matrix+frit+b40-c">Matrix Frit B40-C</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="https://digitalfire.com/oxide/pbo">PbO - Lead Oxide</a>
+</td>
+</tr>
+</tbody></table>
+<h3>Mechanisms</h3><table>
+<table class="table table-bordered"><tbody>
+<tr><th scope="row">Glaze Color</th><td>Low fire transparent glazes employing boron frits, which have CaO and lack alumina, will have opalescent blue cloudy effects from the formation of calcium borate crystals. These 'boron blue' glazes work well visually on terra cotta bodies. These crystals do not form well if there is adequate alumina to stiffen the melt.</td></tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

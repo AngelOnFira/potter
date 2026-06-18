@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Limit Recipe</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content=""Recipe logic" is the ability to sanity-check ceramic glaze recipes on sight, by noting that materials present and their relative percentages.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item active"><a class="nav-link" href="/glossary/list">Glossary <span class="sr-only">(current)</span></a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=glossary" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:center; vertical-align:top;">Feb 14-15, 2026 - <b>Major Server <a href="https://digitalfire.com">Upgrade</a> Done</b></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table>Error: API server returned an invalid response for glossary<p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Limit Recipe</h1>
+<p class="text-muted" style="margin-left:20px">"Recipe logic" is the ability to sanity-check ceramic glaze recipes on sight, by noting that materials present and their relative percentages.
+<p class="text-muted" style="margin-left:20px; font-style:italic; font-size:90%;"><b>Key phrases linking here:</b> unbalanced recipes, unbalanced recipe, balanced recipes, balanced recipe, recipe limits, limit recipes, sanity-checks, limit recipe, sanity check, recipe logic
+ - <a href="https://digitalfire.com/home/linkmaker">Learn more</a></p>
+</h4>
+<h2>Details</h2>
+<p>A "<a  href="https://digitalfire.com/glossary/limit+recipe">limit recipe</a>" is a <a  href="https://digitalfire.com/glossary/limit+recipe">sanity check</a>. It is "<a  href="https://digitalfire.com/glossary/limit+recipe">recipe logic</a>". The concept in <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a> applies to recipes of glazes, <a  href="https://digitalfire.com/glossary/engobe">engobes</a>, <a  href="https://digitalfire.com/glossary/underglaze">underglazes</a> and to <a  href="https://digitalfire.com/glossary/clay+body">clay body</a> recipes and <a  href="https://digitalfire.com/glossary/casting+slip">casting slip</a> recipes. This page deals with glazes.<br />
+<br />
+There is a proliferation of pottery <a  href="https://digitalfire.com/glossary/glaze+recipes">glaze recipes</a> online, many of which just don’t work for <a  href="https://digitalfire.com/glossary/functional">functional</a> ware. Or which impact the safety, strength and quality of your ware. Admittedly, many recipes have accompanying warnings against their use on functional ware. Or notes that they are intended for use as an over-spray to enhance the surface of an existing glaze. However, potters and hobbyists often just want to get the surface they see in a picture!<br />
+<br />
+<div class="flexright25"><img style="width:100%;" src="https://digitalfire.com/4sight/images/pictures/hjngxcrcwx.jpeg"><p style="color:#888888; font-style:italic; font-size:80%; margin:4px 0px 5px 0px;">When glazes do this on drying, there is too much clay in the recipe. That is easily fixable.</p></div>There are some simple sanity checks, things to know that enable identifying obvious issues, especially potential <a  href="https://digitalfire.com/glossary/toxicity">toxicity</a> and <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a>. Remember, these limits are for functional glazes, ones whose surface will touch food and that are expected to be durable. If you want to dive deeper consider also the matter of <a  href="https://digitalfire.com/glossary/limit+formula">balanced chemistry</a>.<br />
+<br />
+The concept of a limit recipe is akin to a <a  href="https://digitalfire.com/glossary/limit+formula">limit formula</a> (except it is applied on the physical material level rather than on the oxide <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a>). We expect the percentages of material types to fall within certain ranges for typical glossy and matte functional or service glazes. If they are not, red flags should pop up! Consider some examples:<br />
+<br />
+Glazes need clay to suspend the <a  href="https://digitalfire.com/glossary/slurry">slurry</a> and harden them on drying. The ideal is 15-20% <a  href="https://digitalfire.com/material/925">kaolin</a> or <a  href="https://digitalfire.com/material/80">ball clay</a>. This assumes the brands typically used in glazes, e.g. <a  href="https://digitalfire.com/material/291">EPK</a> or No. 5 Glaze in North America. Highly plastic clays can do the job at a lower percentage; non-plastic ones require more. Other clays are also used (and clay-like materials like <a  href="https://digitalfire.com/material/806">Gerstley Borate</a>). Where clay is lacking, it is common to augment with <a  href="https://digitalfire.com/material/106">bentonite</a>, up to 5%. Where more clay is needed (e.g. to supply <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> for a matte), some <a  href="https://digitalfire.com/glossary/calcination">calcined</a> or <a  href="https://digitalfire.com/glossary/calcination">roasted</a> clay can be used to keep the raw clay material less than 25%. If the percentage of clay is too high or the type of clay is too plastic, cracking and <a  href="https://digitalfire.com/picture/3594">peeling</a> of the dried layer will result.<br />
+<br />
+<div class="flexleft25"><img style="width:100%;" src="https://digitalfire.com/4sight/images/pictures/jgfsctwnrq.jpeg"><p style="color:#888888; font-style:italic; font-size:80%; margin:4px 0px 5px 0px;">A pigmented glaze runs and crystallizes like this on a test tile, question its <a  href="https://digitalfire.com/glossary/glaze+durability">durability</a> and leach resistance.</p></div>SiO<sub>2</sub> is the building block of all glazes. Most combinations of materials do not supply enough, so most recipes contain <a  href="https://digitalfire.com/material/1245">silica</a>. 10-30% is normal. If there is none the glaze will likely over-melt and <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a>. If there is 40% it won’t melt enough.<br />
+<br />
+Middle and <a  href="https://digitalfire.com/glossary/low+temperature+glaze">low-temperature glazes</a> need significant <a  href="https://digitalfire.com/glossary/borate">boron</a> (<a  href="https://digitalfire.com/oxide/b2o3">B<sub>2</sub>O<sub>3</sub></a>) to melt them. It comes from Gerstley <a  href="https://digitalfire.com/glossary/borate">borate</a> and <a  href="https://digitalfire.com/glossary/frit">frits</a>. What if a glaze has none of these? How will it melt sufficiently? Perhaps it employs zinc or lithium as melters. But these are troublesome. Are you ready for that? The Gerstley Borate (GB) deposit is exhausted as of 2022, it is no more, so there is no point putting effort into glazes containing it. It also presents serious issues in slurry usability and should be avoided anyway. There are GB substitutes that likely use <a  href="https://digitalfire.com/material/1660">Ulexite</a> or Colemanite, and they may or may not work, but frits are superior. There are lots of pages on this site about how to source boron from a <a  href="https://digitalfire.com/glossary/frit">frit</a> instead.<br />
+<br />
+It is very common to see high <a  href="https://digitalfire.com/material/310">feldspar</a> percentages (up to 80%) in <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> glazes. 30% is normal, 50% is not. There are very few circumstances in which excessive feldspar does not produce crazing.<br />
+<br />
+Does a recipe contain “borax frit”? That is like a cake recipe containing “a grain flour”. Which one? There are hundreds of <a  href="https://digitalfire.com/material/2271">borax</a> frits, they serve temperature ranges from cone 010 to 10, which one? Some contain 2% B<sub>2</sub>O<sub>3</sub>, others 30%. The other 98% or 70% could be anything.<br />
+<br />
+<div class="flexright25"><img style="width:100%;" src="https://digitalfire.com/4sight/images/pictures/svjajzgeww.jpg"><p style="color:#888888; font-style:italic; font-size:80%; margin:4px 0px 5px 0px;">When you see a glaze containing 50% feldspar, a "crazing red light" should go on in your head.</p></div>Does it contain a feldspar you don't have? Is the chemistry available, or is it at least known if it is a potash or soda feldspar so that you could at substitute it for another of the same type? Specific kaolins and ball clays are known to work well in glazes; consider using them instead of those listed.<br />
+<br />
+Does it contain materials you have never heard of or used? Is there information there to explain their purpose? Does it contain significant bone ash? Bone ash is a phosphate, generally used for non-functional pigmented surfaces. It is not typical in glazes and not well studied or understood, especially for functional ware.<br />
+<br />
+It is normal to see 1% cobalt, it is a powerful <a  href="https://digitalfire.com/glossary/colorant">colorant</a>. And super expensive. But if there is 5% that is crazy for functional ware, it is a <a  href="https://digitalfire.com/glossary/leaching">leaching</a> hazard. 3% <a  href="https://digitalfire.com/material/237">copper oxide</a> is normal, 10% is not. Carbonate colors (like copper, cobalt) are trouble, they gas during firing and produce <a  href="https://digitalfire.com/trouble/glaze+blisters">blisters</a> (the oxide forms are better). <a  href="https://digitalfire.com/glossary/ceramic+stain">Stains</a> are better yet.<br />
+<br />
+Does it contain <a  href="https://digitalfire.com/material/1644">titanium dioxide</a> or <a  href="https://digitalfire.com/material/1204">rutile</a>? These are used to <a  href="https://digitalfire.com/glossary/variegation">variegate</a> surfaces and it is normal to see up to about 5%. In excess of this will cause heavy <a  href="https://digitalfire.com/glossary/crystallization">crystallization</a> of the surface, inducing issues with <a  href="https://digitalfire.com/glossary/cutlery+marking">cutlery marking</a> and staining.<br />
+<br />
+<a  href="https://digitalfire.com/material/86">Barium carbonate</a> at 5% might be OK, but 20% is going to produce a toxic glaze. <a  href="https://digitalfire.com/material/975">Lithium carbonate</a> likewise.<br />
+<br />
+High percentages of <a  href="https://digitalfire.com/material/173">calcium carbonate</a> or <a  href="https://digitalfire.com/material/273">dolomite</a>? They gas like mad, can you source <a  href="https://digitalfire.com/oxide/cao">CaO</a> and <a  href="https://digitalfire.com/oxide/mgo">MgO</a> from wollastonite and <a  href="https://digitalfire.com/material/1620">talc</a> instead?<br />
+<br />
+Are you going to do <a  href="https://digitalfire.com/glossary/glaze+layering">multi-layering</a>? You cannot just take any recipe found online and expect it to be suitable for multi-layering or as a <a  href="https://digitalfire.com/glossary/base-coat+dipping+glaze">first-coat dipping</a> glaze.<br />
+<br />
+Another aspect where recipe logic applies is the practice of having a dozen, or dozens, of completely different recipes in your operation. Learn from what <a  href="https://digitalfire.com/glossary/commercial+hobby+brushing+glazes">commercial glaze</a> manufacturers do. They use <a  href="https://digitalfire.com/glossary/base+glaze">base recipes</a>, for example, a transparent one; to that they add pigments, <a  href="https://digitalfire.com/glossary/opacifier">opacifiers</a> and <a  href="https://digitalfire.com/glossary/variegation">variegators</a>. They use frits and stains; they are less troublesome and safer than raw fluxing materials (like lithium carbonate, calcium carbonate, <a  href="https://digitalfire.com/material/1718">zinc oxide</a>, <a  href="https://digitalfire.com/material/1609">strontium carbonate</a>, barium carbonate) and raw metallic carbonates and <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> (like copper, cobalt, chrome, iron). Worry about finding ways to save money later by adjusting a working recipe.<br />
+<br />
+Equipped with recipe logic, you will quickly be able to predict glazes likely to craze, leach, run, settle, crystallize, <a  href="https://digitalfire.com/glossary/pinholing">pinhole</a>, bubble and <a  href="https://digitalfire.com/trouble/glaze+blisters">blister</a>. For artists, the opposite can also be true; they often seek these effects as part of an aesthetic.<p style="clear:left"></p></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Glaze recipes online waiting for a victim to try them!</h3>
+<br /><a alt="A pile of printed recipes to try, but few are likely to work" title="Trafficked pottery glaze recipes" href="https://digitalfire.com/picture/2180"><img class="flexleft50" title="Trafficked pottery glaze recipes"  alt="A pile of printed recipes to try, but few are likely to work"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/fjfwf9wwre.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2180">click here</a> to see it.</p>
+<p>You found some recipes. Their photos looked great, you bought $500 of materials to try them, but none worked! Why? Consider these recipes. Many have 50+% feldspar/Cornwall/nepheline (with little <a  href="https://digitalfire.com/material/273">dolomite</a> or <a  href="https://digitalfire.com/material/1620">talc</a> to counteract their high <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a>, they will <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a>). Many are high in <a  href="https://digitalfire.com/material/806">Gerstley Borate</a> (it will turn the <a  href="https://digitalfire.com/glossary/slurry">slurry</a> into a bucket of jelly, cause <a  href="https://digitalfire.com/trouble/crawling">crawling</a>). Others waste high percentages of expensive tin, lithium and cobalt in crappy <a  href="https://digitalfire.com/glossary/base+glaze">base recipes</a>. Metal carbonates in some encourage <a  href="https://digitalfire.com/trouble/glaze+blisters">blistering</a>. Some melt too much and run onto the kiln shelf. Some contain almost no clay (they will settle like a rock in the bucket). A better way? Find, or develop, <a  href="https://digitalfire.com/glossary/frit">fritted</a>, stable <a  href="https://digitalfire.com/glossary/base+glaze">base transparent</a> glossy and matte base recipes that fit your body, have good slurry properties, resist <a  href="https://digitalfire.com/glossary/leaching">leaching</a> and <a  href="https://digitalfire.com/glossary/cutlery+marking">cutlery marking</a>. Identify the <a  href="https://digitalfire.com/glossary/mechanism">mechanisms</a> (<a  href="https://digitalfire.com/glossary/colorant">colorants</a>, <a  href="https://digitalfire.com/glossary/opacifier">opacifiers</a> and <a  href="https://digitalfire.com/glossary/variegation">variegators</a>) in a recipe you want to try and transplant these into your own base (or mix of bases). And use <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a> for color (instead of <a  href="https://digitalfire.com/glossary/metal+oxides">metal oxides</a>).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">It is possible to spot a leaching glaze just by looking at it!</h3>
+<br /><a alt="A matte black coffee mug with leaching glaze" href="https://digitalfire.com/picture/2743"><img class="flexleft50" alt="A matte black coffee mug with leaching glaze"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/figqc4os3e.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2743">click here</a> to see it.</p>
+<p>This glaze looks too matte, too metallic, too <a  href="https://digitalfire.com/glossary/glass+vs.+crystalline">crystalline</a>. This picture was sent to me by a worried person who had bought it and noticed it discolouring on the inside. The potter may very well have considered this safe just because it was fired to cone 10. It is common among potters to overload glazes with raw metal oxide blends, often 15% or more (e.g. manganese, copper, iron, nickel, cobalt). These percentages cannot be held in solution in <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> as it cools and solidifies, so they precipitate out and crystallize, especially if the glaze is not melting well or has insufficient <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a>. The crystalline forms of these metals might look nice to some people, but the glaze is likely to leach them. It is better to use a <a  href="https://digitalfire.com/glossary/ceramic+stain">ceramic stain</a> to create a black like this, adding it to a stable matte <a  href="https://digitalfire.com/glossary/base+glaze">base glaze</a> (one that melts well and has sufficient SiO<sub>2</sub> and <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> to create a durable glass). The concept of a <a  href="https://digitalfire.com/glossary/limit+recipe">limit recipe</a> is helpful in eyeballing recipes for their likelihood of <a  href="https://digitalfire.com/glossary/leaching">leaching</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Knowing about recipe limits could save you the work of testing this glaze</h3>
+<br /><a alt="A recipe accompanied by fancy pictures that make it look credible" href="https://digitalfire.com/picture/2628"><img class="flexleft50" alt="A recipe accompanied by fancy pictures that make it look credible"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/qjy4jiacdq.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2628">click here</a> to see it.</p>
+<p>This is an example of a recipe being <a  href="https://digitalfire.com/glossary/trafficking">trafficked</a> online that raises red flags just looking at it. Before dismissing the following I can tell you that I deal with hundreds of customer glaze issues a year and people expect recipes to work as shown if no documentation is included, many also assume functionality.<br />
+<br />
+The first red flag: There is no <a  href="https://digitalfire.com/material/1245">silica</a>! That means this is a <a  href="https://digitalfire.com/glossary/earthenware">low fire</a> glaze masquerading as middle temperature, so it is going to run during firing (run a lot). It will also mean poor <a  href="https://digitalfire.com/glossary/glaze+durability">durability</a>. There is a ton of <a  href="https://digitalfire.com/material/310">feldspar</a>, that means a high level of sodium. Without <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">low-expansion</a> <a  href="https://digitalfire.com/oxide/mgo">MgO</a> to counterbalance its high <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> the glaze is likely going to <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a> badly. The <a  href="https://digitalfire.com/glossary/mechanism">mechanism</a> of the <a  href="https://digitalfire.com/glossary/crystallization">crystallization</a> is <a  href="https://digitalfire.com/material/1644">titanium</a> over-supply, this has triple the maximum I would ever put in a glaze. The crystallization happens during cooling in the kiln (producing the visual effect being sought). But the the surface produced will cutlery mark and stain, probably very badly. Given the <a  href="https://digitalfire.com/glossary/food+safe">unbalanced chemistry</a> this has, any <a  href="https://digitalfire.com/glossary/colorant">colorant</a> added will likely be leachable! I tested it and all my fears were realized. My slow-cool firing made the surface so dry it was very unpleasant to touch. Maybe this needs fast cooling. But who knows, there are no notes. This does not appear to belong on any <a  href="https://digitalfire.com/glossary/functional">functional</a> ware, inside or outside. Someone noted that people use this to produce layering effects (see links). That begs documentation on how that wold work. Without gum would it lift and <a  href="https://digitalfire.com/trouble/crawling">crawl</a> as layers are added over it. Would you have to overlay every square inch? Would it still craze? All the how-to information needed to make it work are more important that the recipe itself.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A down side of high feldspar glazes: Crazing!</h3>
+<br /><a alt="A runny, amber, crazed glaze" href="https://digitalfire.com/picture/659"><img class="flexleft50" alt="A runny, amber, crazed glaze"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/glossary/dungibojot.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/659">click here</a> to see it.</p>
+<p>This reduction celadon is <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a>. Why? High <a  href="https://digitalfire.com/material/310">feldspar</a>. Feldspar supplies the <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> <a  href="https://digitalfire.com/oxide/k2o">K<sub>2</sub>O</a> and <a  href="https://digitalfire.com/oxide/na2o">Na<sub>2</sub>O</a>, they contribute the brilliant gloss and great color but the price is very high <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a>. Scores of recipes being traded online are high-feldspar, some more than 50%! There are ways to tolerate the <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">high expansion</a> of <a  href="https://digitalfire.com/picture/1775">KNaO</a>, but the vast majority are crazing on all but high quartz bodies. Crazing is a plague for potters. Ware strength suffers dramatically, pieces leak, the glaze can harbor bacteria and customers return pieces. The simplest fix is to transplant the color and <a  href="https://digitalfire.com/glossary/opacity">opacity</a> <a  href="https://digitalfire.com/glossary/mechanism">mechanism</a> into a better transparent, one that fits your ware (in this glaze, for example, the mechanism is simply an iron addition). Fixing the recipe may also be practical. A 2:1 mix of <a  href="https://digitalfire.com/material/1245">silica</a>:kaolin has the same <a  href="https://digitalfire.com/glossary/silica%3Aalumina+ratio">Si:Al</a> ratio as most glossy glazes, this glaze could possibly tolerate 10% of that. That would reduce running, improve fit and increase <a  href="https://digitalfire.com/glossary/glaze+durability">durability</a>. Failing that, the next step is to substitute some of the <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">high-expansion</a> KNaO, the <a  href="https://digitalfire.com/glossary/flux">flux</a>, for the <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">low-expansion</a> <a  href="https://digitalfire.com/oxide/mgo">MgO</a>, that requires doing some <a  href="https://digitalfire.com/glossary/glaze+chemistry">glaze chemistry</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A high feldspar glaze is settling, running and crazing. What to do?</h3>
+<br /><a alt="Blue glaze with chemistry calculations" href="https://digitalfire.com/picture/1960"><img class="flexleft50" alt="Blue glaze with chemistry calculations"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/jxf9asors4.55.42 am.png" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1960">click here</a> to see it.</p>
+<p>The original <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> recipe, WCB, fires to a beautiful brilliant deep blue green (shown in column 2 of this <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a> screen-shot). But it is <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a> and <a  href="https://digitalfire.com/glossary/suspension">settling</a> badly in the bucket. The crazing is because of high <a  href="https://digitalfire.com/picture/1775">KNaO</a> (potassium and sodium from the high <a  href="https://digitalfire.com/material/310">feldspar</a>). The settling is because there is almost no clay in the recipe. Adjustment 1 (column 3 in the picture) eliminates the feldspar and sources <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> from <a  href="https://digitalfire.com/material/925">kaolin</a> and KNaO from <a  href="https://digitalfire.com/material/349">Frit 3110</a> (preserving the glaze's <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a>). To make that happen the amounts of other materials had to be juggled. But the fired test revealed that this one, although very similar, is melting more (because the <a  href="https://digitalfire.com/glossary/frit">frit</a> releases its <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> more readily than feldspar). Adjustment 2 (column 4) proposes a 10-part <a  href="https://digitalfire.com/material/1245">silica</a> addition. <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> is the glass former, the more a glaze will accept without losing the intended visual character, the better. The result is less running and more <a  href="https://digitalfire.com/glossary/glaze+durability">durability</a> and resistance to <a  href="https://digitalfire.com/glossary/leaching">leaching</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">An example of how much Gerstley Borate LOI can affect a glaze</h3>
+<br /><a href="https://digitalfire.com/picture/2117"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/zerdb7ciqq.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2117">click here</a> to see it.</p>
+<p>Fired at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>. The samples on the bottom tiles are from ten-gram balls that have melted down (in our <a  href="https://digitalfire.com/test/gbmf">GBMF test</a>). These glazes have the same <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a>, but the one of the left sources its <a  href="https://digitalfire.com/oxide/b2o3">B<sub>2</sub>O<sub>3</sub></a> from <a  href="https://digitalfire.com/material/806">Gerstley Borate</a> (which has a high <a  href="https://digitalfire.com/glossary/loi">LOI</a>). The one on the right gets it from a <a  href="https://digitalfire.com/glossary/frit">frit</a>. Because the <a  href="https://digitalfire.com/glossary/frit">fritted</a> version has less gases of <a  href="https://digitalfire.com/glossary/decomposition">decomposition</a> to expel, the glass is much smoother. Curiously, the fritted version is flowing less and the red color has been lost. Why? This could be because the <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a>, which stabilizes glazes against excessive fluidity, is being dissolved into <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> better and thus is more available for glass building.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">The traffic in glaze recipes may burn your success!</h3>
+<br /><a alt="The glaze dragon will burn you!" href="https://digitalfire.com/picture/511"><img class="flexleft50" alt="The glaze dragon will burn you!"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/wlkux5mqgo.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/511">click here</a> to see it.</p>
+<p>Do you mix your own recipes? That's great, but the right approach to <a  href="https://digitalfire.com/glossary/do-it-yourself">DIY</a> is important. Online recipes might look great on a fancy website, but what are the chances they will actually fire the way they look in the picture? Or work in your circumstances? Did the contributor know the <a  href="https://digitalfire.com/glossary/mechanism">mechanism</a> or give any sort of directions or cautions? After trying many glazes you may think you have found one that works. But does it really? How does it hold up to <a  href="https://digitalfire.com/glossary/limit+recipe">limit recipes</a>? Does it have a <a  href="https://digitalfire.com/glossary/limit+formula">balanced chemistry</a>? Is it erratic and unreliable in firing? Difficult to use? Does it leach or <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a> or <a  href="https://digitalfire.com/glossary/glaze+shivering">shiver</a> or <a  href="https://digitalfire.com/glossary/pinholing">pinhole</a> or <a  href="https://digitalfire.com/trouble/glaze+blisters">blister</a>? Or make you endure other problems? Be critical and cautious about foreign recipes. Most often it is better to find a <a  href="https://digitalfire.com/glossary/base+glaze">base recipe</a>, adjust and perfect it to your <a  href="https://digitalfire.com/glossary/clay+body">clay body</a>, then add <a  href="https://digitalfire.com/glossary/colorant">colorants</a>, <a  href="https://digitalfire.com/glossary/opacifier">opacifiers</a> and <a  href="https://digitalfire.com/glossary/variegation">variegators</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">We fight the dragon that others do not see</h3>
+<br /><a href="https://digitalfire.com/picture/1159"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/zagxatywul.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1159">click here</a> to see it.</p>
+<p>There are thousands of ceramic <a  href="https://digitalfire.com/glossary/glaze+recipes">glaze recipes</a> floating around the internet. People dream of finding that perfect one, but they often only think about the visual appearance, not of the usability, function, safety, cost or materials. That resistance to understanding your materials and glazes and learning to take control is what we personify as the dragon. Using the resources on this site you could be fixing, adjusting, testing, formulating your own glaze recipes. Start with your own account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">insight-live</a>.com.</p>
+<p style="clear:left"></p>
+<h3>Inbound Photo Links</h3><table><tr>
+<td style="vertical-align:top; font-size:80%;">
+<br /><a alt="A melt flow tester showing how a normal glazes runs when melting compared to this one" href="https://digitalfire.com/picture/2613"><img style="margin:0px 10px 10px 0px; height:100px;" alt="A melt flow tester showing how a normal glazes runs when melting compared to this one"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/lkjpzpkg2f-100H.jpg" /></a><br />The first of 15 "Fool-Proof Recipes" wrecked my kiln shelf!
+</td>
+<td style="vertical-align:top; font-size:80%;">
+<br /><a alt="A matte glaze melt flow that is not moving at all" href="https://digitalfire.com/picture/860"><img style="margin:0px 10px 10px 0px; height:100px;" alt="A matte glaze melt flow that is not moving at all"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/articles/mogguwykac-100H.jpg" /></a><br />Before spending time trying online recipes, take a minute to do a sanity check on them
+</td>
+<td style="vertical-align:top; font-size:80%;">
+<br /><a href="https://digitalfire.com/picture/2589"><img style="margin:0px 10px 10px 0px; height:100px;" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/5d2hqhmwh2-100H.jpg" /></a><br />EU Food Contact testing limits are changing - 2021
+</td>
+<td style="vertical-align:top; font-size:80%;">
+<br /><a href="https://digitalfire.com/picture/3546"><img style="margin:0px 10px 10px 0px; height:100px;" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/svjajzgeww-100H.jpg" /></a><br />High feldspar glazes craze. Don't put up with it.
+</td>
+<td style="vertical-align:top; font-size:80%;">
+<br /><a alt="A purple pottery glaze that shivers" href="https://digitalfire.com/picture/3560"><img style="margin:0px 10px 10px 0px; height:100px;" alt="A purple pottery glaze that shivers"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/ysg98vugws-100H.jpg" /></a><br />Sanity checking a cone 6 purple pottery glaze
+</td>
+<td style="vertical-align:top; font-size:80%;">
+<br /><a alt="Val's Turpquoise glaze chemistry" href="https://digitalfire.com/picture/3606"><img style="margin:0px 10px 10px 0px; height:100px;" alt="Val's Turpquoise glaze chemistry"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/brxkvwh8uz-100H.jpg" /></a><br />Feeling good about the glazes we use on functional surfaces
+</td>
+</tr></table><br />
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/limit+formula">Limit Formula</a>
+<br /><i>A way of establishing guideline for each oxide in the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> for different ceramic glaze types. Understanding the roles of each oxide and the limits of this approach are a key to effectively using these guidelines.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/mechanism">Mechanism</a>
+<br /><i>Identifying the <a  href="https://digitalfire.com/glossary/mechanism">mechanism</a> of a ceramic glaze recipe is the key to moving adjusting it, fixing it, reverse engineering it, even avoiding it!</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/food+safe">Food Safe</a>
+<br /><i>Be skeptical of claims of <a  href="https://digitalfire.com/glossary/food+safe">food safety</a> from potters who cannot explain or demonstrate why. Investigate the basis of manufacturer claims and labelling and the actual use to which their products are put.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/glaze+recipes">Glaze Recipes</a>
+<br /><i>Stop! Think! Do not get addicted to the <a  href="https://digitalfire.com/glossary/trafficking">trafficking</a> in online <a  href="https://digitalfire.com/glossary/glaze+recipes">glaze recipes</a>. Learn to make your own or adjust/adapt/fix what you find online.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/frit">Frit</a>
+<br /><i><a  href="https://digitalfire.com/glossary/frit">Frits</a> are used in ceramic glazes for a wide range of reasons. They are man-made glass powders of controlled <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> with many advantages over raw materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/loi">LOI</a>
+<br /><i>Loss on Ignition is a number that appears on the data sheets of ceramic materials. It refers to the amount of weight the material loses as it decomposes to release water vapor and various gases during firing.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/ceramic+stain">Ceramic Stain</a>
+<br /><i>Ceramic <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a> are manufactured powders. They are used as an alternative to employing metal oxide powders and have many advantages.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/brushing+glaze">Brushing Glaze</a>
+<br /><i>Hobbyists and increasing numbers of potters use commercial paint-on glazes. It's convenient, there are lots of visual effects. There are also issues compared to <a  href="https://digitalfire.com/glossary/dipping+glaze">dipping glazes</a>. You can also make your own.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/dipping+glaze">Dipping Glaze</a>
+<br /><i>In traditional <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a> and pottery <a  href="https://digitalfire.com/glossary/dipping+glaze">dipping glazes</a> can be of two main types: For single layer and for application of other layers overtop. Understanding the difference is important.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/triaxial+glaze+blending">Triaxial Glaze Blending</a>
+<br /><i>In <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a> many technicians develop and adjust glazes by blending two, three or even four l materials or glazes together to obtain new effects</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/trafficking+in+glaze+recipes">Trafficking in Glaze Recipes</a>
+<br /><i>The trade is <a  href="https://digitalfire.com/glossary/glaze+recipes">glaze recipes</a> has spawned generations of potters going up blind alleys trying recipes that don't work and living with ones that are much more trouble than they are worth. It is time to leave this behind and take control.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/glaze+recipes%3a+formulate+and+make+your+own+instead">Glaze Recipes: Formulate and Make Your Own Instead</a>
+<br /><i>The only way you will ever get the glaze you really need is to formulate your own. The longer you stay on the glaze recipe treadmill the more time you waste.</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

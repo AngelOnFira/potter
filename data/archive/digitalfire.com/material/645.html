@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Lead Bisilicate Frit</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="A standard frit of 1 molar part of PbO and 2 of SiO2. It is considered stable and non-leachable.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+March 2026: We are doing major upgrades to code here, please be patient regarding any issues. If any page is not working for a period of hours, please contact us. Thank you.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item active"><a class="nav-link" href="/material/list">Materials <span class="sr-only">(current)</span></a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=material" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:center; vertical-align:top;">Feb 14-15, 2026 - <b>Major Server <a href="https://digitalfire.com">Upgrade</a> Done</b></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table>
+<ul class="nav nav-tabs pt-1" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="material-tab" data-toggle="tab" href="#material" role="tab" aria-controls="material" aria-selected="true">Materials for Ceramics</a>
+  </li>
+</ul>
+<div class="tab-content mb-3" id="myTabContent" style="border-right:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #ddd; padding:10px;">
+  <div class="tab-pane fade show active" id="material" role="tabpanel" aria-labelledby="material-tab">
+<a href="/material/list/1-9">1-9</a> | <a href="/material/list/A">A</a> | <a href="/material/list/B">B</a> | <a href="/material/list/C">C</a> | <a href="/material/list/D">D</a> | <a href="/material/list/E">E</a> | <a href="/material/list/F">F</a> | <a href="/material/list/Frits">Frits</a> | <a href="/material/list/G">G</a> | <a href="/material/list/H">H</a> | <a href="/material/list/I">I</a> | <a href="/material/list/J">J</a> | <a href="/material/list/K">K</a> | <a href="/material/list/L">L</a> | <a href="/material/list/M">M</a> | <a href="/material/list/N">N</a> | <a href="/material/list/O">O</a> | <a href="/material/list/P">P</a> | <a href="/material/list/Q">Q</a> | <a href="/material/list/R">R</a> | <a href="/material/list/S">S</a> | <a href="/material/list/T">T</a> | <a href="/material/list/U">U</a> | <a href="/material/list/V">V</a> | <a href="/material/list/W">W</a> | <a href="/material/list/X">X</a> | <a href="/material/list/Y">Y</a> | <a href="/material/list/Z">Z</a><br />
+<nobr></nobr>
+</div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Lead Bisilicate Frit</h1>
+<p><b>Description</b>: Lead bisilicate frit</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/oxide">Oxide</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/analysis">Analysis</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/formula">Formula</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/formula">Tolerance</a></th>
+</tr></thead><tbody>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/pbo">PbO</a></td>
+<td class="text-right"">65.00%</td>
+<td class="text-right">
+1.00
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/sio2">SiO2</a></td>
+<td class="text-right"">35.00%</td>
+<td class="text-right">
+2.00
+</td><td class="text-right">
+
+</td></tr>
+<tr><td colspan="2">Oxide Weight</td><td colspan="2" class="text-right">
+343.38
+</td></tr>
+<tr><td colspan="2" class="text-right"><a href="https://digitalfire.com/glossary/formula+weight">Formula Weight</a></td><td colspan="2" style="text-align:right">
+343.38
+</td></tr>
+</tbody></table>
+<h4>Notes</h4><p>This term refers to <a  href="https://digitalfire.com/glossary/frit">frits</a> having one molar part of lead and two of <a  href="https://digitalfire.com/material/1245">silica</a>. This ratio of silica and lead that is said to produce a stable low solubility powdered glass material that can be used in production with relative safety to workers.<br />
+<br />
+In pottery circles, <a  href="https://digitalfire.com/glossary/lead+in+ceramic+glazes">lead glazes</a> carry a lot of “legal baggage” in North America, irresponsible use in the past contributed to this. Pottery supply companies do not carry <a  href="https://digitalfire.com/material/645">lead bisilicate</a> frits. Yet manufacturers have been using them all along and claim they can prove their recipes are resistant to <a  href="https://digitalfire.com/glossary/leaching">leaching</a>. Potters, especially on the hobby level, would not be good candidates for the use of lead bisilicate.<br />
+<br />
+Ceraflux from Hammond Lead Products is the most common North American lead bisilicate. Many lead bisilicate frits contain from 1-3% <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> and are referred to as "lead alumina bilsilicates". This addition further stabilizes the glass powder itself and helps prevent <a  href="https://digitalfire.com/glossary/phase+separation">phase separation</a> (<a  href="https://digitalfire.com/glossary/crystallization">crystallization</a>) in the glass during firing.<br />
+<br />
+For certain glazes, care must be taken not to ball-mill these frits too fine (eg. tin-glazed <a  href="https://digitalfire.com/glossary/earthenware">earthenware</a>). Some products are dry milled by the manufacturer, others are wet milled (much less common).<br />
+<br />
+While the <a  href="https://digitalfire.com/glossary/frit">frit</a> powder itself is stable (compared to raw lead carbonate or oxide), that does not mean that glazes created using it automatically resist leaching. Theoretically, the most stable non-leachable glass would be created using the pure frit without additives (however our lead testing indicates lead leaching). To make a practical glaze <a  href="https://digitalfire.com/glossary/slurry">slurry</a> 10-15% clay is typically added, the add <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> and Al<sub>2</sub>O<sub>3</sub> should add stability.<br />
+<br />
+Lead <a  href="https://digitalfire.com/glossary/borosilicate">borosilicate</a> is different than lead bisilicate, the former has almost as much lead but the rest is a mix of <a  href="https://digitalfire.com/oxide/b2o3">B<sub>2</sub>O<sub>3</sub></a>, SiO<sub>2</sub> and <a  href="https://digitalfire.com/oxide/na2o">Na<sub>2</sub>O</a>.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Ferro Frit 3602 melt flow over many temperatures</h3>
+<br /><a alt="A 9 gram ball of frit melts and flows downward more and more as temperature increases." href="https://digitalfire.com/picture/2545"><img class="flexleft50" alt="A 9 gram ball of frit melts and flows downward more and more as temperature increases."  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/f7ycbsfkrh.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2545">click here</a> to see it.</p>
+<p>This demonstrates the amazing melt behaviour of lead-as-a-flux for ceramic glazes. Not only does it melt early, but it softens slowly over a 300F range of temperatures before it goes off the end of the runway on this <a  href="https://digitalfire.com/test/glfl">GLFL test</a>. Then, when fired 200F hotter than that, it remains a stable, clear and uncrazed glass. Beginning around 1750F, this becomes a transparent glaze, by itself.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Lead bisilicate with his ugly borosilicate cousins at a cone 05 party</h3>
+<br /><a alt="Boron and lead transparent glazes on terra cotta" href="https://digitalfire.com/picture/3255"><img class="flexleft50" alt="Boron and lead transparent glazes on terra cotta"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/unypqanlsk.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3255">click here</a> to see it.</p>
+<p>The middle front mug is glazed with an 85:15 <a  href="https://digitalfire.com/material/645">lead bisilicate</a>:kaolin mix, the <a  href="https://insight-live.com/insight/share.php?z=w5KQLhY6gz">G3971</a> recipe. It is an absolutely "knock your socks off" crystal-clear hyper-glossy surface that transmits the <a  href="https://digitalfire.com/glossary/terra+cotta">terra cotta</a> color beautifully regardless of whether the clay is smooth or coarse or the glaze thick or thin (this one was applied as a <a  href="https://digitalfire.com/glossary/brushing+glaze">brushing glaze</a> in three coats on <a  href="https://plainsmanclays.ca/data/index.php?product=12866">L215</a>). My lead testing kit passes it with no detectable lead release. The other pieces are done using brush-on versions of boron-based clear glazes (commercial and made from a recipe). At almost any thickness and whether on <a  href="https://plainsmanclays.ca/data/index.php?product=12866">L215</a> or <a  href="https://insight-live.com/insight/share.php?z=No2m98AEhJ">L4170B</a> <a  href="https://digitalfire.com/glossary/glaze+bubbles">clouding</a> occurs. The worst one is a commercial three-coater on the right, the best is <a  href="https://insight-live.com/insight/share.php?z=jDCvHWKF6P">G1916W</a> (it has 2% added iron as a <a  href="https://digitalfire.com/glossary/fining+agent">fining agent</a> for the micro-bubbles). My terra cotta plan: Glaze the inside <a  href="https://digitalfire.com/glossary/functional">functional</a> surfaces with that and the outsides with the leaded one (and using a kiln exhaust system).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">The secret of the higher gloss glaze on the right? A lead frit addition.</h3>
+<br /><a alt="Lead frit smooths a glaze" href="https://digitalfire.com/picture/1619"><img class="flexleft50" alt="Lead frit smooths a glaze"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/bomnipicic.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1619">click here</a> to see it.</p>
+<p>These <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 04</a> glazes have the same recipe (a version of Worthington Clear sourcing <a  href="https://digitalfire.com/oxide/b2o3">B<sub>2</sub>O<sub>3</sub></a> from <a  href="https://digitalfire.com/material/1660">Ulexite</a> instead of <a  href="https://digitalfire.com/material/806">Gerstley borate</a>). But the one on the right is more glassy, more transparent. Why? It has 10% added <a  href="https://digitalfire.com/material/645">lead bisilicate</a> <a  href="https://digitalfire.com/glossary/frit">frit</a>. Lead bisilicate produces dazzling <a  href="https://digitalfire.com/glossary/transparent+glazes">transparent glazes</a>. no other method matches it. While potters gasp at the thought of using lead consider this: They thrive on unstable flux-deprived, glass-deprived and alumina-deprived base <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> glazes with additions of large percentages of toxic <a  href="https://digitalfire.com/glossary/colorant">colorants</a> like chrome and manganese!</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A lead bisilicate frit fails a leach test. Yet as-a-glaze it passes. Why?</h3>
+<video class="flexleft50" alt="Lead testing bisilicate frit" width="640" controls="controls" preload="none" autoplay="false" poster="https://digitalfire.com/4sight/images/pictures/g9to4zuhgc.jpg">
+<source src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/g9to4zuhgc.mp4" type="video/mp4">Your browser does not support MP4 video.
+</video>
+<p>I have soaked a <a  href="https://digitalfire.com/material/645">lead bisilicate</a> <a  href="https://digitalfire.com/glossary/frit">frit</a> in vinegar overnight. To test whether it is <a  href="https://digitalfire.com/glossary/leaching">leaching</a> I pour the vinegar leachate into a test tube, soak a Q-Tip in the sensor solution and dip it into the vinegar. It turns black immediately - so we have lead in the leachate! But this is not as it seems. <br />
+<br />
+Remember a key point here: The frit glass had no opportunity to be annealed - it was crash-cooled by being quenched in water. Annealing and associated toughening of the surface is a natural consequence of a glaze cooling slowly in a periodic kiln - which is why pieces made using an 85:15 mix of this same frit and <a  href="https://digitalfire.com/material/925">kaolin</a>, pass this test. The same 85:15 mix also still passes a lead check test if melted into an ingot and crushed into a granular powder (this is amazing given the exponential increase in <a  href="https://digitalfire.com/glossary/surface+area">surface area</a>).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Is a brilliant metallic glaze surface possible without lead bisilicate?</h3>
+<br /><a alt="Lead glazed glossy metallic tile" href="https://digitalfire.com/picture/2040"><img class="flexleft50" alt="Lead glazed glossy metallic tile"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/4tp7dfwbkd.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2040">click here</a> to see it.</p>
+<p><a  href="https://digitalfire.com/glossary/lead+in+ceramic+glazes">Lead glazes</a> can have brilliant high gloss surfaces. They can dissolve high percentages of <a  href="https://digitalfire.com/glossary/colorant">colorants</a> without losing transparency. And do this at unbelievably low temperatures. In Europe the use of lead is still common among potters, in North America it’s use is often met with fear. This picture is courtesy of Cory Lund. He glazes the tiles, cuts the grooves and then fires the tiles again. While working in an area where lead <a  href="https://digitalfire.com/glossary/frit">frits</a> are not available Mr. Lund was able to produce a similar surface using lead free Fusion <a  href="https://digitalfire.com/material/556">Frit FZ-16</a>, albeit with higher <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> and thus some <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a> (but it was not an issue for him). Then, when the <a  href="https://digitalfire.com/glossary/frit">frit</a> was not available, he was able to calculate the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> and source it using <a  href="https://digitalfire.com/material/2271">Borax</a>, this worked so well the glaze was even melting too much!</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/lead+sesquisilicate+frit">Lead Sesquisilicate Frit</a>
+<br /><i>A standard <a  href="https://digitalfire.com/glossary/frit">frit</a> of 1 molar part of <a  href="https://digitalfire.com/oxide/pbo">PbO</a> and 1.5 of <a  href="https://digitalfire.com/oxide/sio2">SiO2</a>. It melts lower than a <a  href="https://digitalfire.com/material/645">lead bisilicate</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/frit">Frit</a>
+<br /><i><a  href="https://digitalfire.com/glossary/frit">Frits</a> are made by melting mixes of raw materials, quenching <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> in water, grinding the pebbles into a powder. Frits have chemistries raw materials cannot.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ferro+frit+3498">Ferro Frit 3498</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/pemco+frit+pb-700">Pemco Frit Pb-700</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/potclays+frit+2261">Potclays Frit 2261</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ferro+frit+3602">Ferro Frit 3602</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/solargil+frit+fr2">Solargil Frit FR2</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ferro+frit+4064">Ferro Frit 4064</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ferro+frit+4364">Ferro Frit 4364</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ceraflux">Ceraflux</a>
+<br /><i>An alumina <a  href="https://digitalfire.com/material/645">lead bisilicate</a> from Hammond Lead Products in Indiana. The data sheet claims it is safe and insoluble in stomach acid.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/potterycrafts+frit+p2950">PotteryCrafts Frit P2950</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/pemco+frit+pb-545">Pemco Frit Pb-545</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/p29+frit">P29 Frit</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ceraflux">Ceraflux</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/lead+bisilcate+b-15">Lead Bisilcate B-15</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/hommel+frit+437">Hommel Frit 437</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/bps+lead+bisilicate">BPS Lead Bisilicate</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/lead+monosilicate+frit">Lead Monosilicate Frit</a>
+<br /><i>A standard <a  href="https://digitalfire.com/glossary/frit">frit</a> of 1 molar part of <a  href="https://digitalfire.com/oxide/pbo">PbO</a> and 1 of <a  href="https://digitalfire.com/oxide/sio2">SiO2</a>. It melts lower than a <a  href="https://digitalfire.com/material/645">lead bisilicate</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/frit+welte+fr+2015">Frit Welte FR 2015</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ceradel+frit+c+1249">Ceradel Frit C 1249</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ceradel+frit+c+1250">Ceradel Frit C 1250</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ceradel+frit+c+1251">Ceradel Frit C 1251</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ferro+frit+3403">Ferro Frit 3403</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/red+lead">Red Lead</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/lead+carbonate">Lead Carbonate</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ferro+frit+ce+vtr+29">Ferro Frit CE VTR 29</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/frit+3647">Frit 3647</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Hazards</td>
+<td>
+<a href="https://digitalfire.com/hazard/lead+toxicology">Lead Toxicology</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Hazards</td>
+<td>
+<a href="https://digitalfire.com/hazard/lead+in+ceramic+glazes">Lead in Ceramic Glazes</a>
+<br /><i><a  href="https://digitalfire.com/glossary/lead+in+ceramic+glazes">Lead glazes</a> may or may not be hazardous. This topic is not as clear as you might think.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/frl">Leaded Frit</a>
+<br /><i><a  href="https://digitalfire.com/glossary/frit">Frits</a> can contain 1% or 80% <a  href="https://digitalfire.com/oxide/pbo">PbO</a> so this category can be misleading, check the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> to find out.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/frt">Frit</a>
+<br /><i>A <a  href="https://digitalfire.com/glossary/frit">frit</a> is the powdered form a man-made glass. <a  href="https://digitalfire.com/glossary/frit">Frits</a> are premelted, then ground to a glass. They have tightly controlled chemistries, they are available for glazes of all types.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/metallic+glazes">Metallic Glazes</a>
+<br /><i>Non-functional ceramic glazes having very high percentages of metallic oxides/carbonates (manganese, copper, cobalt, chrome).</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/lead+in+ceramic+glazes">Lead in Ceramic Glazes</a>
+<br /><i>Lead is a melter in ceramic glazes and performs exceptionally well and must be misused to be toxic. It is also now environmentally pervasive. It is toxic and cumulative at any level of exposure.</i>
+</td>
+</tr>
+</tbody></table>
+<h3>Data</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<th scope="row"><a href="https://digitalfire.com/glossary/18">Co-efficient of Linear Expansion</a></th>
+<td>7.1 x 10-6</td>
+</tr>
+<tr>
+<th scope="row"><a href="https://digitalfire.com/test/14">Frit Softening Point</a></th>
+<td>880-1050C  M</td>
+</tr>
+<tr>
+<th scope="row"><a href="https://digitalfire.com/test/14">Frit Softening Point</a></th>
+<td>1390F</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

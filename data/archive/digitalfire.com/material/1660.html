@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Ulexite</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="A natural source of boron, it melts at a very low temperature to a clear glass.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item active"><a class="nav-link" href="/material/list">Materials <span class="sr-only">(current)</span></a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=material" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"></td><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table>
+<ul class="nav nav-tabs pt-1" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="material-tab" data-toggle="tab" href="#material" role="tab" aria-controls="material" aria-selected="true">Materials for Ceramics</a>
+  </li>
+</ul>
+<div class="tab-content mb-3" id="myTabContent" style="border-right:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #ddd; padding:10px;">
+  <div class="tab-pane fade show active" id="material" role="tabpanel" aria-labelledby="material-tab">
+<a href="/material/list/1-9">1-9</a> | <a href="/material/list/A">A</a> | <a href="/material/list/B">B</a> | <a href="/material/list/C">C</a> | <a href="/material/list/D">D</a> | <a href="/material/list/E">E</a> | <a href="/material/list/F">F</a> | <a href="/material/list/Frits">Frits</a> | <a href="/material/list/G">G</a> | <a href="/material/list/H">H</a> | <a href="/material/list/I">I</a> | <a href="/material/list/J">J</a> | <a href="/material/list/K">K</a> | <a href="/material/list/L">L</a> | <a href="/material/list/M">M</a> | <a href="/material/list/N">N</a> | <a href="/material/list/O">O</a> | <a href="/material/list/P">P</a> | <a href="/material/list/Q">Q</a> | <a href="/material/list/R">R</a> | <a href="/material/list/S">S</a> | <a href="/material/list/T">T</a> | <a href="/material/list/U">U</a> | <a href="/material/list/V">V</a> | <a href="/material/list/W">W</a> | <a href="/material/list/X">X</a> | <a href="/material/list/Y">Y</a> | <a href="/material/list/Z">Z</a><br />
+<nobr></nobr>
+</div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Ulexite</h1>
+<p><b>Alternate Names</b>: Television Stone</p>
+<p><b>Description</b>: Sodium calcium borate mineral</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/oxide">Oxide</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/analysis">Analysis</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/formula">Formula</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/formula">Tolerance</a></th>
+</tr></thead><tbody>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/cao">CaO</a></td>
+<td class="text-right"">13.84%</td>
+<td class="text-right">
+0.67
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/na2o">Na2O</a></td>
+<td class="text-right"">7.65%</td>
+<td class="text-right">
+0.33
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/b2o3">B2O3</a></td>
+<td class="text-right"">42.95%</td>
+<td class="text-right">
+1.67
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/loi">LOI</a></td>
+<td class="text-right">35.55%</td><td class="text-right">n/a</td></tr>
+<tr><td colspan="2">Oxide Weight</td><td colspan="2" class="text-right">
+174.12
+</td></tr>
+<tr><td colspan="2" class="text-right"><a href="https://digitalfire.com/glossary/formula+weight">Formula Weight</a></td><td colspan="2" style="text-align:right">
+270.16
+</td></tr>
+</tbody></table>
+<h4>Notes</h4><p><a  href="https://digitalfire.com/material/1660">Ulexite</a> is a natural source of <a  href="https://digitalfire.com/glossary/borate">boron</a>, it is similar to colemanite mineral. These two minerals are the only practical sources of insoluble boron for glazes (other than <a  href="https://digitalfire.com/glossary/frit">frits</a>). Ulexite one of the lowest melting non-lead ceramic minerals, it can form an ultra-gloss transparent glass at <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 06</a>. Strangely this material does not appear to <a  href="https://digitalfire.com/glossary/flux">flux</a> bodies nearly as well as one might expect.<br />
+<br />
+Ulexite is a truly uncommon ceramic mineral in that it contains almost no alumina or <a  href="https://digitalfire.com/material/1245">silica</a>, it is nothing but fluxing <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a>. This mineral forms in unusual geologic circumstances and can be found in very few places in the world. The <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> given here is theoretical, actual deposits will have lower boron content.<br />
+<br />
+The popular mineral <a  href="https://digitalfire.com/material/806">Gerstley Borate</a>, used by potters for many decades is, is composed partly of ulexite. It was mined and stockpiled in the California desert many years ago. The last remaining stockpile is being ground, bagged and sold by Laguna Clay.<br />
+<br />
+While Ulexite melts well, it does have a very high <a  href="https://digitalfire.com/glossary/loi">LOI</a> (that means that gases are generated during melting). For this reason, it is not possible to produce ultra-clear glazes at low temperatures (as with frits). Notwithstanding this, by doing a <a  href="https://digitalfire.com/glossary/drop-and-soak+firing">drop-and-hold</a> firing it is possible to clear many more bubbles. Thinner <a  href="https://digitalfire.com/glossary/glaze+layering">glaze layering</a> is also much more transparent.<br />
+<br />
+Ulexite is available industrially from Turkey and Chile. It can be found in the wild in California. It is used in the fiberglass industry as a melter but its potential has never been exploited to any extent in ceramic glazes.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Why does Gerstley Borate melt in two stages? Because it is two minerals.</h3>
+<br /><a alt="Gerstley Borate melts in two stages" href="https://digitalfire.com/picture/1120"><img class="flexleft50" alt="Gerstley Borate melts in two stages"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/materials/fuwpapofyf.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1120">click here</a> to see it.</p>
+<p>The <a  href="https://digitalfire.com/material/1660">ulexite</a> in <a  href="https://digitalfire.com/material/806">Gerstley Borate</a> melts first, producing an opaque fired glass having the unmelted (and still gassing) particles of colemanite <a  href="https://digitalfire.com/glossary/suspension">suspended</a> in it. By 1750F the colemanite is almost melted also. Boron-containing <a  href="https://digitalfire.com/glossary/frit">frits</a>, by contrast, soften slowly over a wide temperature range and gradually spread and melt. Not surprisingly they produce a more stable glaze (albeit often less interesting visually without additives e.g. <a  href="https://digitalfire.com/material/1644">titanium</a>, <a  href="https://digitalfire.com/material/1204">rutile</a>). These behavior contributes to <a  href="https://digitalfire.com/glossary/phase+separation">phase changes</a> in fired glazes that contribute to <a  href="https://digitalfire.com/glossary/reactive+glazes">variegation</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Ulexite rocks for sale on eBay</h3>
+<br /><a href="https://digitalfire.com/picture/3584"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/materials/w9q6rdezdw.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3584">click here</a> to see it.</p>
+<p>There are many others selling them. It should be possible to buy rejects from them and grind them up to make your own <a  href="https://digitalfire.com/material/1660">Ulexite</a> powder.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">The difference between these low fire transparents: Gerstley Borate vs. Ulexite</h3>
+<br /><a href="https://digitalfire.com/picture/1011"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/fipdyheget.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1011">click here</a> to see it.</p>
+<p>Left: Worthington Clear <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 04</a> glaze (A) uses <a  href="https://digitalfire.com/material/806">Gerstley Borate</a> to supply the <a  href="https://digitalfire.com/oxide/b2o3">B<sub>2</sub>O<sub>3</sub></a> and <a  href="https://digitalfire.com/oxide/cao">CaO</a>. Right: A substitute using <a  href="https://digitalfire.com/material/1660">Ulexite</a> and 12% <a  href="https://digitalfire.com/material/173">calcium carbonate</a> (B). The degree of melting is the same but the gassing of the calcium carbonate has disrupted the flow of B. Gerstley <a  href="https://digitalfire.com/glossary/borate">Borate</a> gasses also, but does so at a stage in the firing that does not disrupt this recipe. However, as a glaze, B does not gel and produces a clearer glass. A further adjustment to source CaO from non-gassing wollastonite would likely improve it.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A cure for long-time Gerstley Borate sufferers</h3>
+<br /><a alt="Glazes using frits instead of Gerstley Borate " href="https://digitalfire.com/picture/1625"><img class="flexleft50" alt="Glazes using frits instead of Gerstley Borate "  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/wanxipowis.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1625">click here</a> to see it.</p>
+<p>These are various different <a  href="https://digitalfire.com/glossary/terra+cotta">terra cotta</a> clays fired to <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 04</a> with a recipe I developed that sources the same <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> as the popular <a  href="https://insight-live.com/insight/share.php?z=j8MDK8vgKM">G2931</a> Worthington clear (<a  href="https://digitalfire.com/picture/3030">50:30:20</a> GB:Kaolin:Silica) but from a different set of materials. The key change was that instead of getting the <a  href="https://digitalfire.com/oxide/b2o3">B<sub>2</sub>O<sub>3</sub></a> from <a  href="https://digitalfire.com/material/806">Gerstley Borate</a> I sourced it first from <a  href="https://digitalfire.com/material/1660">Ulexite</a> (G2931B) and then from a mix of <a  href="https://digitalfire.com/glossary/frit">frits</a> (<a  href="https://digitalfire.com/recipe/g2931k">G2931K</a>). All pieces were fired with a <a  href="https://digitalfire.com/glossary/drop-and-soak+firing">drop-and-hold</a> <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a> C03DRH. Fit was good on many terra cottas I tried (pieces even surviving boiling:icewater stressing). Where it did not fit I had <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> adjustability because more than one <a  href="https://digitalfire.com/glossary/frit">frit</a> was sourcing the <a  href="https://digitalfire.com/glossary/borate">boron</a>. Frits are so much better for sourcing B<sub>2</sub>O<sub>3</sub> than Gerstley <a  href="https://digitalfire.com/glossary/borate">Borate</a> (the latter is notorious for turning glaze slurries into jelly!). Of course, a little <a  href="https://digitalfire.com/glossary/glaze+chemistry">glaze chemistry</a> is needed to figure out how to convert a recipe from Gerstley Borate bondage to frit freedom, but there is lots of information here on how to do that.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Alberta slip and Ulexite at cone 6</h3>
+<br /><a href="https://digitalfire.com/picture/1005"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/megzinefep.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1005">click here</a> to see it.</p>
+<p>90% <a  href="https://digitalfire.com/material/32">Alberta Slip</a> (which is a mix of half and half raw and <a  href="https://digitalfire.com/glossary/calcination">calcine</a>) and 10% <a  href="https://digitalfire.com/material/1660">Ulexite</a> fired at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>. A dazzling fluid dark amber transparent. You could also do this using a high-boron <a  href="https://digitalfire.com/glossary/frit">frit</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">The perfect storm to create boron-blue clouding at low fire</h3>
+<br /><a href="https://digitalfire.com/picture/1658"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/byptehihul.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1658">click here</a> to see it.</p>
+<p>Two clear glazes fired in the same slow-cool kiln on the same body with the same thickness. Why is one suffering <a  href="https://digitalfire.com/glossary/boron+blue">boron blue</a> (1916Q) and the other is not? <a  href="https://digitalfire.com/glossary/glaze+chemistry">Chemistry</a> and material sourcing. <a  href="https://digitalfire.com/glossary/borate">Boron</a> blue crystals grow best when there is plenty of boron (and other power fluxes), alumina is low, adequate <a  href="https://digitalfire.com/material/1245">silica</a> is available and cooling is slow enough to give them time to grow. In the glaze on the left <a  href="https://digitalfire.com/oxide/b2o3">B<sub>2</sub>O<sub>3</sub></a> is higher, crystal-fighting <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> and <a  href="https://digitalfire.com/oxide/mgo">MgO</a> levels are a lot lower, <a  href="https://digitalfire.com/picture/1775">KNaO</a> fluxing is significantly higher, it has more <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> and the cooling is slow. In addition, it is sourcing B<sub>2</sub>O<sub>3</sub> from a <a  href="https://digitalfire.com/glossary/frit">frit</a> making the boron even more available for crystal formation (the glaze on the right is <a  href="https://insight-live.com/insight/share.php?z=C1R5LciBu4">G2931F</a>, it sources its boron from <a  href="https://digitalfire.com/material/1660">Ulexite</a>).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Two transparents having opposite melt fluidity/surface tension balances</h3>
+<br /><a alt="Melt flow test demonstrates surface tension" href="https://digitalfire.com/picture/1801"><img class="flexleft50" alt="Melt flow test demonstrates surface tension"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/mxm6c1iubt.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1801">click here</a> to see it.</p>
+<p>This <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 04</a> flow tester compares two commercial <a  href="https://digitalfire.com/glossary/earthenware">low-fire</a> <a  href="https://digitalfire.com/glossary/transparent+glazes">transparent glazes</a>. Their different approaches to the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> are revealed by these melt flows. While 3825B appears to have a higher <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a>, its higher <a  href="https://digitalfire.com/glossary/surface+tension">surface tension</a> is the real story. This is demonstrated by how the flow meets the runway at a perpendicular angle. Notice that A, by contrast, meanders down the runway in a broad, flat and relatively bubble-free river. Low-fire glazes must pass many more bubbles than their high-temperature counterparts, the low surface tension of A aids in that. A is Amaco LG-10. B is Crysanthos SG213 (<a  href="https://digitalfire.com/url/3410">Spectrum 700</a> behaves similarly, although flowing less). Both have advantages and disadvantages and are worth testing in your application.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/105">http://mineral.galleries.com/minerals/carbonat/ulexite/ulexite.htm</a>
+<br /><i>The Mineral Ulexite</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/339">http://en.wikipedia.org/wiki/Ulexite</a>
+<br /><i><a  href="https://digitalfire.com/material/1660">Ulexite</a> at Wikipedia</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1457">http://www.americanborate.com/boron-products/ulexite/</a>
+<br /><i><a  href="https://digitalfire.com/material/1660">Ulexite</a> information at American Borates</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1507">http://www.electronicsandbooks.com/eab1/manual/Magazine/T/Thermochimica%20Acta/336_400/S0040603100005840.pdf</a>
+<br /><i><a  href="https://digitalfire.com/material/1660">Ulexite</a> <a  href="https://digitalfire.com/glossary/decomposition">decomposition</a> on heating</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/3303">https://borates.today/ulexite-the-wonder-mineral</a>
+<br /><i>Details on <a  href="https://digitalfire.com/material/1660">ulexite</a> from Borates.today</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/gerstley+borate">Gerstley Borate</a>
+<br /><i><a  href="https://digitalfire.com/material/806">Gerstley Borate</a> was a natural source of <a  href="https://digitalfire.com/glossary/borate">boron</a> for ceramic glazes. It was plastic and melted clear at 1750F. Now we need to replace it. How?</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/calcium+borate">Calcium Borate</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/abc+colemanite">ABC Colemanite</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/colemanite">Colemanite</a>
+<br /><i>A natural source of <a  href="https://digitalfire.com/glossary/borate">boron</a> that melts at a very low temperature.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/turkish+colemanite">Turkish Colemanite</a>
+<br /><i>A mineral with very high <a  href="https://digitalfire.com/oxide/b2o3">B2O3</a> and <a  href="https://digitalfire.com/oxide/cao">CaO</a> content.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/chilean+ulexite">Chilean Ulexite</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/turkish+ulexite">Turkish Ulexite</a>
+<br /><i>A mineral with very high <a  href="https://digitalfire.com/oxide/b2o3">B2O3</a> and <a  href="https://digitalfire.com/oxide/cao">CaO</a> content.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/hydroboracite+30">Hydroboracite 30</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/gnm">Generic Material</a>
+<br /><i>Generic materials are those with no brand name. Normally they are theoretical, the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> portrays what a specimen would be if it had no contamination. Generic materials are helpful in educational situations where students need to study material theory (later they graduate to dealing with real world materials). They are also helpful where the chemistry of an actual material is not known. Often the accuracy of calculations is sufficient using generic materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/fls">Flux Source</a>
+<br /><i>Materials that source <a  href="https://digitalfire.com/oxide/na2o">Na2O</a>, <a  href="https://digitalfire.com/oxide/k2o">K2O</a>, <a  href="https://digitalfire.com/oxide/li2o">Li2O</a>, <a  href="https://digitalfire.com/oxide/cao">CaO</a>, <a  href="https://digitalfire.com/oxide/mgo">MgO</a> and other fluxes but are not <a  href="https://digitalfire.com/material/310">feldspars</a> or <a  href="https://digitalfire.com/glossary/frit">frits</a>. Remember that materials can be <a  href="https://digitalfire.com/glossary/flux">flux</a> sources but also perform many other roles. For example, <a  href="https://digitalfire.com/material/1620">talc</a> is a flux in high temperature glazes, but a matting agent in low temperatures ones. It can also be a flux, a filler and an expansion increaser in bodies.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/gbs">Gerstley Borate Substitutes</a>
+<br /><i>Many development efforts to create <a  href="https://digitalfire.com/material/806">Gerstley Borate</a> substitutes took place during the early 2000s (the initial period when the demise of Gerstley <a  href="https://digitalfire.com/glossary/borate">Borate</a> appeared imminent). A number of companies, including Laguna Clays itself, produced and sold these for many years. When Laguna secured another stockpile at the mine and began producing the original material again, interest in substitutes gradually waned. However, the sudden dramatic price increase in 2023 appears to have initiated the process again. <a  href="https://digitalfire.com/material/2141">Gillespie Borate</a> appears to be the only viable and visible substitute now.
+
+Thus, the substitutes listed here are mostly no longer made. Other high-boron materials shown are also no longer available.
+
+We continue to recommend sourcing <a  href="https://digitalfire.com/oxide/b2o3">B2O3</a> from <a  href="https://digitalfire.com/glossary/frit">frits</a> instead. Please contact us if you have a specific recipe and we can work with you in your <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a> account to develop a new recipe that both eliminates the GB and improves overall working and firing properties.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/borate">Borate</a>
+<br /><i><a  href="https://digitalfire.com/glossary/borate">Borate</a> glazes, those <a  href="https://digitalfire.com/glossary/flux">fluxed</a> with the oxide <a  href="https://digitalfire.com/oxide/b2o3">B2O3</a>, are the most common type used in ceramic industry and hobby for low and medium temperatures.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/boron+frit">Boron Frit</a>
+<br /><i>Most ceramic glazes contain <a  href="https://digitalfire.com/oxide/b2o3">B2O3</a> as the main melter. This oxide is supplied by great variety of <a  href="https://digitalfire.com/glossary/frit">frits</a>, thousands of which are available around the world.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="https://digitalfire.com/oxide/b2o3">B2O3 - Boric Oxide</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="https://digitalfire.com/mineral/borate+minerals">Borate Minerals</a>
+<br /><i>The major <a  href="https://digitalfire.com/glossary/borate">borate</a> minerals are Colemanite and <a  href="https://digitalfire.com/material/1660">Ulexite</a>. The geology required for borates is found in v</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Media</td>
+<td>
+<a href="https://digitalfire.com/video/getting+frustrated+with+a+55%25+gerstley+borate+glaze">Getting Frustrated With a 55% Gerstley Borate Glaze</a>
+<br /><i>I show you why people love/hate this material and how I substituted it for <a  href="https://digitalfire.com/material/1660">Ulexite</a> in this crazy recipe to make a far easier-to-use <a  href="https://digitalfire.com/glossary/slurry">slurry</a> that fires identical.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Firing Schedules</td>
+<td>
+<a href="https://digitalfire.com/schedule/plc6ds">Cone 6 Drop-and-Soak Firing Schedule</a>
+<br /><i>350F/hr to 2100F, 108/hr to 2200, hold 10 minutes, freefall to 2100, hold 30 minutes, free fall</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

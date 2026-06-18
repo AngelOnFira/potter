@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>How to Find and Test Your Own Native Clays</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Some of the key tests needed to really understand what a clay is and what it can be used for can be done with inexpensive equipment and simple procedures. These practical tests can give you a better picture than a data sheet full of numbers.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+March 2026: We are doing major upgrades to code here, please be patient regarding any issues. If any page is not working for a period of hours, please contact us. Thank you.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item active" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=article" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:center; vertical-align:top;">Feb 14-15, 2026 - <b>Major Server <a href="https://digitalfire.com">Upgrade</a> Done</b></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Articles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a title="388" href="https://digitalfire.com/article/388">A ChatBot gives jaw-dropping glaze recipe advice - Jan 2025</a><br /><a title="244" href="https://digitalfire.com/article/244">A Low Cost Tester of Glaze Melt Fluidity</a><br /><a title="361" href="https://digitalfire.com/article/361">A One-speed Lab or Studio Slurry Mixer</a><br /><a title="353" href="https://digitalfire.com/article/353">A Textbook Cone 6 Matte Glaze With Problems</a><br /><a title="199" href="https://digitalfire.com/article/199">Adjusting Glaze Expansion by Calculation to Solve Shivering</a><br /><a title="251" href="https://digitalfire.com/article/251">Alberta Slip, 20 Years of Substitution for Albany Slip</a><br /><a title="273" href="https://digitalfire.com/article/273">An Overview of Ceramic Stains</a><br /><a title="37" href="https://digitalfire.com/article/37">Are You in Control of Your Production Process?</a><br /><a title="12" href="https://digitalfire.com/article/12">Are Your Glazes Food Safe or are They Leachable?</a><br /><a title="143" href="https://digitalfire.com/article/143">Attack on Glass: Corrosion Attack Mechanisms</a><br /><a title="204" href="https://digitalfire.com/article/204">Ball Milling Glazes, Bodies, Engobes</a><br /><a title="345" href="https://digitalfire.com/article/345">Binders for Ceramic Bodies</a><br /><a title="4" href="https://digitalfire.com/article/4">Bringing Out the Big Guns in Craze Control: MgO (G1215U)</a><br /><a title="381" href="https://digitalfire.com/article/381">Can We Help You Fix a Specific Problem?</a><br /><a title="124" href="https://digitalfire.com/article/124">Ceramic Glazes Today</a><br /><a title="208" href="https://digitalfire.com/article/208">Ceramic Material Nomenclature</a><br /><a title="336" href="https://digitalfire.com/article/336">Ceramic Tile Clay Body Formulation</a><br /><a title="217" href="https://digitalfire.com/article/217">Changing Our View of Glazes</a><br /><a title="22" href="https://digitalfire.com/article/22">Chemistry vs. Matrix Blending to Create Glazes from Native Materials</a><br /><a title="209" href="https://digitalfire.com/article/209">Concentrate on One Good Glaze</a><br /><a title="115" href="https://digitalfire.com/article/115">Copper Red Glazes</a><br /><a title="271" href="https://digitalfire.com/article/271">Crazing and Bacteria: Is There a Hazard?</a><br /><a title="190" href="https://digitalfire.com/article/190">Crazing in Stoneware Glazes: Treating the Causes, Not the Symptoms</a><br /><a title="97" href="https://digitalfire.com/article/97">Creating a Non-Glaze Ceramic Slip or Engobe</a><br /><a title="195" href="https://digitalfire.com/article/195">Creating Your Own Budget Glaze</a><br /><a title="36" href="https://digitalfire.com/article/36">Crystal Glazes: Understanding the Process and Materials</a><br /><a title="324" href="https://digitalfire.com/article/324">Deflocculants: A Detailed Overview</a><br /><a title="32" href="https://digitalfire.com/article/32">Demonstrating Glaze Fit Issues to Students</a><br /><a title="334" href="https://digitalfire.com/article/334">Diagnosing a Casting Problem at a Sanitaryware Plant</a><br /><a title="196" href="https://digitalfire.com/article/196">Drying Ceramics Without Cracks</a><br /><a title="187" href="https://digitalfire.com/article/187">Duplicating Albany Slip</a><br /><a title="45" href="https://digitalfire.com/article/45">Duplicating AP Green Fireclay</a><br /><a title="197" href="https://digitalfire.com/article/197">Electric Hobby Kilns: What You Need to Know</a><br /><a title="39" href="https://digitalfire.com/article/39">Fighting the Glaze Dragon</a><br /><a title="214" href="https://digitalfire.com/article/214">Firing Clay Test Bars</a><br /><a title="200" href="https://digitalfire.com/article/200">Firing: What Happens to Ceramic Ware in a Firing Kiln</a><br /><a title="113" href="https://digitalfire.com/article/113">First You See It Then You Don't: Raku Glaze Stability</a><br /><a title="316" href="https://digitalfire.com/article/316">Fixing a glaze that does not stay in suspension</a><br /><a title="338" href="https://digitalfire.com/article/338">Formulating a body using clays native to your area</a><br /><a title="191" href="https://digitalfire.com/article/191">Formulating a Clear Glaze Compatible with Chrome-Tin Stains</a><br /><a title="282" href="https://digitalfire.com/article/282">Formulating a Porcelain</a><br /><a title="188" href="https://digitalfire.com/article/188">Formulating Ash and Native-Material Glazes</a><br /><a title="114" href="https://digitalfire.com/article/114">G1214M Cone 5-7 20x5 glossy transparent glaze</a><br /><a title="121" href="https://digitalfire.com/article/121">G1214W Cone 6 transparent glaze</a><br /><a title="122" href="https://digitalfire.com/article/122">G1214Z Cone 6 matte glaze</a><br /><a title="226" href="https://digitalfire.com/article/226">G1916M Cone 06-04 transparent glaze</a><br /><a title="203" href="https://digitalfire.com/article/203">Getting the Glaze Color You Want: Working With Stains</a><br /><a title="342" href="https://digitalfire.com/article/342">Glaze and Body Pigments and Stains in the Ceramic Tile Industry</a><br /><a title="189" href="https://digitalfire.com/article/189">Glaze Chemistry Basics - Formula, Analysis, Mole%, Unity </a><br /><a title="358" href="https://digitalfire.com/article/358">Glaze chemistry using a frit of approximate analysis</a><br /><a title="123" href="https://digitalfire.com/article/123">Glaze Recipes: Formulate and Make Your Own Instead</a><br /><a title="343" href="https://digitalfire.com/article/343">Glaze Types, Formulation and Application in the Tile Industry</a><br /><a title="181" href="https://digitalfire.com/article/181">Having Your Glaze Tested for Toxic Metal Release</a><br /><a title="364" href="https://digitalfire.com/article/364">High Gloss Glazes</a><br /><a title="384" href="https://digitalfire.com/article/384">Hire Us for a 3D Printing Project</a><br /><a title="136" href="https://digitalfire.com/article/136">How a Material Chemical Analysis is Done</a><br /><a title="235" href="https://digitalfire.com/article/235">How desktop INSIGHT Deals With Unity, LOI and Formula Weight</a><br /><a title="331" href="https://digitalfire.com/article/331">How to Find and Test Your Own Native Clays</a><br /><a title="26" href="https://digitalfire.com/article/26">I have always done it this way!</a><br /><a title="344" href="https://digitalfire.com/article/344">Inkjet Decoration of Ceramic Tiles</a><br /><a title="279" href="https://digitalfire.com/article/279">Is Your Fired Ware Safe?</a><br /><a title="311" href="https://digitalfire.com/article/311">Leaching Cone 6 Glaze Case Study</a><br /><a title="206" href="https://digitalfire.com/article/206">Limit Formulas and Target Formulas</a><br /><a title="133" href="https://digitalfire.com/article/133">Low Budget Testing of Ceramic Glazes</a><br /><a title="333" href="https://digitalfire.com/article/333">Make Your Own Ball Mill Stand</a><br /><a title="347" href="https://digitalfire.com/article/347">Making Glaze Testing Cones</a><br /><a title="341" href="https://digitalfire.com/article/341">Monoporosa or Single Fired Wall Tiles</a><br /><a title="325" href="https://digitalfire.com/article/325">Organic Matter in Clays: Detailed Overview</a><br /><a title="105" href="https://digitalfire.com/article/105">Outdoor Weather Resistant Ceramics</a><br /><a title="27" href="https://digitalfire.com/article/27">Painting Glazes Rather Than Dipping or Spraying</a><br /><a title="212" href="https://digitalfire.com/article/212">Particle Size Distribution of Ceramic Powders</a><br /><a title="339" href="https://digitalfire.com/article/339">Porcelain Tile, Vitrified Tile</a><br /><a title="20" href="https://digitalfire.com/article/20">Rationalizing Conflicting Opinions About Plasticity</a><br /><a title="332" href="https://digitalfire.com/article/332">Ravenscrag Slip is Born</a><br /><a title="247" href="https://digitalfire.com/article/247">Recylcing Scrap Clay</a><br /><a title="101" href="https://digitalfire.com/article/101">Reducing the Firing Temperature of a Glaze From Cone 10 to 6</a><br /><a title="329" href="https://digitalfire.com/article/329">Setting up a Clay Testing Program in Your Company or Studio</a><br /><a title="211" href="https://digitalfire.com/article/211">Simple Physical Testing of Clays</a><br /><a title="350" href="https://digitalfire.com/article/350">Single Fire Glazing</a><br /><a title="326" href="https://digitalfire.com/article/326">Soluble Salts in Minerals: Detailed Overview</a><br /><a title="28" href="https://digitalfire.com/article/28">Some Keys to Dealing With Firing Cracks</a><br /><a title="249" href="https://digitalfire.com/article/249">Stoneware Casting Body Recipes</a><br /><a title="194" href="https://digitalfire.com/article/194">Substituting Cornwall Stone</a><br /><a title="274" href="https://digitalfire.com/article/274">Super-Refined Terra Sigillata</a><br /><a title="340" href="https://digitalfire.com/article/340">The Chemistry, Physics and Manufacturing of Glaze Frits</a><br /><a title="202" href="https://digitalfire.com/article/202">The Effect of Glaze Fit on Fired Ware Strength</a><br /><a title="125" href="https://digitalfire.com/article/125">The Four Levels on Which to View Ceramic Glazes</a><br /><a title="207" href="https://digitalfire.com/article/207">The Majolica Earthenware Process</a><br /><a title="43" href="https://digitalfire.com/article/43">The Potter's Prayer</a><br /><a title="359" href="https://digitalfire.com/article/359">The Right Chemistry for a Cone 6 Magnesia Matte</a><br /><a title="33" href="https://digitalfire.com/article/33">The Trials of Being the Only Technical Person in the Club</a><br /><a title="107" href="https://digitalfire.com/article/107">The Whining Stops Here: A Realistic Look at Clay Bodies</a><br /><a title="134" href="https://digitalfire.com/article/134">Those Unlabelled Bags and Buckets</a><br /><a title="16" href="https://digitalfire.com/article/16">Tiles and Mosaics for Potters</a><br /><a title="308" href="https://digitalfire.com/article/308">Toxicity of Firebricks Used in Ovens</a><br /><a title="379" href="https://digitalfire.com/article/379">Trafficking in Glaze Recipes</a><br /><a title="216" href="https://digitalfire.com/article/216">Understanding Ceramic Materials</a><br /><a title="210" href="https://digitalfire.com/article/210">Understanding Ceramic Oxides</a><br /><a title="130" href="https://digitalfire.com/article/130">Understanding Glaze Slurry Properties</a><br /><a title="213" href="https://digitalfire.com/article/213">Understanding the Deflocculation Process in Slip Casting</a><br /><a title="132" href="https://digitalfire.com/article/132">Understanding the Terra Cotta Slip Casting Recipes In North America</a><br /><a title="198" href="https://digitalfire.com/article/198">Understanding Thermal Expansion in Ceramic Glazes</a><br /><a title="313" href="https://digitalfire.com/article/313">Unwanted Crystallization in a Cone 6 Glaze</a><br /><a title="389" href="https://digitalfire.com/article/389">Using Dextrin, Glycerine and CMC Gum together</a><br /><a title="135" href="https://digitalfire.com/article/135">Volcanic Ash</a><br /><a title="201" href="https://digitalfire.com/article/201">What Determines a Glaze's Firing Temperature?</a><br /><a title="111" href="https://digitalfire.com/article/111">What is a Mole, Checking Out the Mole</a><br /><a title="38" href="https://digitalfire.com/article/38">What is the Glaze Dragon?</a><br /><a title="98" href="https://digitalfire.com/article/98">Where do I start in understanding glazes?</a><br /><a title="215" href="https://digitalfire.com/article/215">Why Textbook Glazes Are So Difficult</a><br /><a title="239" href="https://digitalfire.com/article/239">Working with children</a></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>How to Find and Test Your Own Native Clays</h1>
+<h4 class="text-muted">Description</h4><p class="text-muted font-italic">Some of the key tests needed to really understand what a clay is and what it can be used for can be done with inexpensive equipment and simple procedures. These practical tests can give you a better picture than a data sheet full of numbers.</p><h4>Article</h4>
+<div class="flexright50"><img style="width:100%;" src="https://digitalfire.com/4sight/images/pictures/bdsjax7m85.jpg"><p style="color:#888888; font-style:italic; font-size:80%; margin:4px 0px 5px 0px;">Mining the Battle Formation in <a  href="https://digitalfire.com/material/1178">Ravenscrag</a>, Saskatchewan - June 2018</p></div>
+
+<p>Few things are as exciting as finding your own clay materials and then using them to make your own pottery. Especially if the items you make are strong, durable, <a  href="https://digitalfire.com/glossary/functional">functional</a> and safe. Given the effort, you likely won't save money compared to buying prepared bodies (unless you use a lot of clay and can scale up the processing). But in some situations, it is better. It can raise the market value of your ware. And give you bragging rights! And satisfaction.</p>
+
+<p>Can anyone evaluate <a  href="https://digitalfire.com/glossary/native+clay">found clay</a> materials? Test them? Yes. If it’s below the topsoil and it’s not sand and it is plastic it is (or contains) clay. <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> Clays has mined a wide range of its own clay materials since 1965 and has a very practical set of inexpensive tests to <a  href="https://digitalfire.com/glossary/characterization">characterize</a> them. My work there inspired the development and refinement of these tests and the creation of <a  href="https://digitalfire.com/glossary/digitalfire+reference+library">digitalfire</a>.com and the <a  href="https://digitalfire.com/glossary/digitalfire+reference+library">Digitalfire Reference Library</a>.</p>
+
+<p>Where do you find clay? Everywhere. Well, almost. If you take a shovel into your backyard, how deep can you dig before you hit rock? In some places, it is only inches. In other places hundreds, even thousands of feet. But almost everywhere, within driving distance, you will be able to find places where there are sedimentary layers (except perhaps if you live on a limestone island!). By the magic of the water cycle, weathering and erosion planet-earth is a sand and clay-making machine! Talk to local people who need to dig in the ground; road construction companies, gravel companies, builders, farmers, electrical and municipal utilities. When you talk to people, listen for terms like 'gumbo', 'river silt', 'sticky', 'stream bed', 'hard to dig; these are your triggers to investigate!</p>
+
+<div class="flexleft50"><img style="width:100%;" src="https://digitalfire.com/4sight/images/pictures/abr7uj2ktg.jpg"></div> 
+
+<p>Characterization is a key concept here. It means that you know how to describe that clay you have found. Could you put it on a potter's wheel and make a thin-walled piece? Is it sticky? Does it take a long time to dry? These things mean it is plastic. Does it have high <a  href="https://digitalfire.com/glossary/drying+shrinkage">drying shrinkage</a>? Does it crack on drying? Is it fine particled? Does it contain impurities that must be screened out? Does it have <a  href="https://digitalfire.com/glossary/soluble+salts">soluble salts</a>? At what temperature will it <a  href="https://digitalfire.com/glossary/maturity">mature</a> in the kiln (that is, be dense and strong)? Does it have a high <a  href="https://digitalfire.com/glossary/firing+shrinkage">firing shrinkage</a>? What color does it fire? How does the color, density and shrinkage progress over a range of temperatures? Does it fit your glazes? The answers to all of these questions are a matter of judgement. If you have used plenty of commercial <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a>, then you already have frame-of-references with which to compare native materials. Knowing the answers to questions like these will tell you what to mix it them (e.g. <a  href="https://digitalfire.com/material/1245">silica</a>, <a  href="https://digitalfire.com/material/310">feldspar</a>, <a  href="https://digitalfire.com/material/80">ball clay</a>, <a  href="https://digitalfire.com/material/925">kaolin</a>). If you have multiple materials, knowing their individual characters will often enable mixing them to produce a 100% native body. Or, one having as high a percentage of <a  href="https://digitalfire.com/glossary/native+clay">native clay</a> as possible.</p>
+
+<p>Another important factor is to lose whatever fear you have of putting something unknown in the kiln. Fine particled clays are not going to explode! The worst that can happen is they melt. So you just put them on <a  href="https://digitalfire.com/glossary/refractory">refractory</a> tiles (which you can make using a <a  href="https://digitalfire.com/glossary/fireclay">fireclay</a> (or ball clay/kaolin mix).</p>
+
+<div class="flexright33"><img style="width:100%;" src="https://digitalfire.com/4sight/images/pictures/f1bjmzvkb4.jpeg"></div>
+
+<p style="clear:left">Another factor for success is to learn to think like a mad scientist! That will motivate you. It will also turn you into a compulsive note-taker and record-keeper. And today’s mad scientist takes a lot of before-and-after and this-vs-that pictures, and he/she knows how to use <a  href="https://digitalfire.com/glossary/bit+image">Photoshop</a> (or similar). It will help you weather failures, regarding them as education and a path to eventual success. This is important, especially if you are testing multiple clays. And working over a long period. An audit trail of data, notes and pictures and knowing how to interpret these is a key to being able to characterize a clay. That is why I created <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a>.com, it is the place where you document all your work. Follow this path and you will learn how to describe your clays to others in succinct and nerdy language! Developing both right-brained and left-brained thinking patterns will make your work as an artist or crafts person so much better. And think of how valuable the data you accumulate will be for those workshops you are going to do?
+
+<p>In doing thorough testing work you will start to look at the commercial materials you have always used with a more critical eye. And understand them better. You will see that the results of the practical tests you can do yourself yield more valuable information than all those numbers on the datasheets for those materials!</p>
+
+<p>Mixing clay bodies is not like mixing glazes. <a  href="https://digitalfire.com/glossary/glaze+chemistry">Glaze chemistry</a> is a key predictor of fired results, but with clay materials, it is the <a  href="https://digitalfire.com/glossary/physical+testing">physics</a> (e.g. <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a>, color, shrinkage, particle size, maturing temperature). It is exciting when you can start to mentally model the working properties of plastic clays by visualizing the particles, their <a  href="https://digitalfire.com/glossary/mineralogy">mineralogy</a>, sizes, shapes, <a  href="https://digitalfire.com/glossary/surface+area">surface area</a> and interactivity with water and each other.</p>
+
+<h3>Does it contain much soluble calcium?</h3>
+
+<p>This early field test on raw lump clays involves <a  href="https://digitalfire.com/picture/1875">dripping</a> some vinegar (or 50% muriatic acid, HCl) on a specimen. Fizzing is a predictor of serious <a  href="https://digitalfire.com/glossary/efflorescence">efflorescence</a> issues. But do not over-react if it is not a lot, some soluble salts are OK. And you can use <a  href="https://digitalfire.com/material/86">barium carbonate</a> to precipitate them.</p>
+
+<div class="flexright33"><img style="width:100%;" src="https://digitalfire.com/4sight/images/glossary/heckedywic.jpg"><p style="color:#888888; font-style:italic; font-size:80%; margin:4px 0px 5px 0px;">Raw lumps vs. powdered form of the same raw clay</p></div>
+
+<h3>Lump properties</h3>
+
+<p>You can learn a lot just from a lump of the material. If wet lumps smell bad they likely contain decaying plant matter, that will cause issues (watch out for clays dug close to the surface where animals graze, obviously these can contain organic hazards). If raw lumps are grey or black they might contain lignite (a classic sign of ball clay). <a  href="https://digitalfire.com/glossary/slaking">Slake</a> and wash some through a fine screen (e.g. 100 mesh that you can buy on eBay) to see what it catches. During firing, organic particles create gases that can bubble-damage glazes, or <a  href="https://digitalfire.com/trouble/bloating">bloat</a> or black-core bodies. If you have a big lump, note if it cracks into many smaller ones during drying (this indicates good plasticity). Using a hammer, break dried lumps into smaller ones. Do they resist breakage or turn to powder (non-plastic clays can be very fragile, plastics can be amazingly hard). When there are nodules or stringers of iron, carbon or calcium on broken surfaces you can gauge their impact by firing some of the lumps. That will also provide initial information on firing properties.</p>
+
+<h3>Slaking properties</h3>
+
+<p>The term "<a  href="https://digitalfire.com/glossary/slaking">slaking</a>" refers to the breakdown that normally occurs when a dry clay lump is immersed in water (again, it must be dry, damp plastic clays will not generally slake because existing water creates a barrier to further penetration). Clays that slake well will break down completely in water and stir or propeller-mix to a smooth <a  href="https://digitalfire.com/glossary/slurry">slurry</a>. To be plastic the slaking should proceed as shown.</p>
+
+<div class="flexleft50"><img style="width:100%;" src="https://digitalfire.com/4sight/images/pictures/gegbypocid.jpg"></div>
+
+<p>If you have a raw lump sample then slaking properties will be evident during the preparation of a plastic sample. Sprinkle 1.5 lb of that material into water (lumps should be small e.g. 1/2 inch). During the process take the opportunity to note if the slurry is lumpy or sandy or if shale and grit settle on the bottom (of course this will mean that screening or grinding could be needed during production processing. Also note if the slurry gels, this indicates <a  href="https://digitalfire.com/glossary/thixotropy">thixotropic</a> behavior. Also, is there organic material floating on top?</p>
+
+<p>However it is best to also slake one of the test bars later in the process, as shown here (these are specimens of consistent size and shape enabling comparative observation). Note that if there are soluble salts on some surfaces of the bar these may slow the onset of slaking.</p>
+
+<h3 style="clear:left">Dewater the slurry</h3>
+
+<div class="flexright33"><img style="width:100%;" src="https://digitalfire.com/4sight/images/pictures/levceriwoc.jpg"><p style="color:#888888; font-style:italic; font-size:80%; margin:4px 0px 5px 0px;">flexright35</p></div>
+
+<p>Pour the slurry onto a <a  href="https://digitalfire.com/glossary/plaster+bat">plaster bat</a> of sufficient size (if you do not have one make one). It is worth noting the dewatering behavior. Fine-particled clays have ultimate sizes much smaller than a micron (especially <a  href="https://digitalfire.com/material/106">bentonitic</a> materials). These can lay on a <a  href="https://digitalfire.com/material/1124">plaster</a> slab for many hours (even days) while dewatering. And when you peel them up for <a  href="https://digitalfire.com/glossary/kneading+clay">wedging</a> they will be sticky and messy, requiring smearing them down on the batt again. Larger particled plastic materials (e.g. ball clays) may not be as sticky but will require peel-up, wedging and lay-down multiple times. By contrast, large-particled clays, like kaolins, have 5-10 micron particles. These may dewater in minutes and require vigilance to not end up too stiff. Sandy and silty materials dewater even faster. Clays containing lots of silt and sand often separate during dewatering, the fine clay component migrating against the plaster (with the water) and the silt and particulates layered above.</p>
+
+<p>If a difficult-to-clean film forms on your plaster slab after dry-out it likely means the clay contains soluble salts.</p>
+
+<h3>Plastic properties</h3>
+
+<p>Sufficient plasticity is indicated if a rolled cigar shape can be bent without <a  href="https://digitalfire.com/glossary/splitting">splitting</a>. Native clays often have excessive plasticity and pass this test easily. They can be so sticky that they cannot be rolled or shaped. Or they need to have such a low <a  href="https://digitalfire.com/glossary/water+content">water content</a>, to not be sticky, that they are difficult to work with. It might be necessary to mix these with a non-plastic to continue testing. A standard in many labs is to mix it 50:50 with silica powder (commonly done with ball clays and bentonites). A problem with this approach is getting inaccurate fired property results. So, another option, involving more effort is to powderize some of the test material, <a  href="https://digitalfire.com/glossary/calcination">calcine</a> it and mix 50:50 calcine:raw (this enables a true picture of the fired properties later). Non-plastic clays present a similar challenge, often they cannot be formed into test bars, or even if they are, the dried bars are so fragile it is impractical to handle them. It is common for labs to mix such clays with ball clay, perhaps 25% to make them workable. However, to get more reliable fired property results it is better to mix with <a  href="https://digitalfire.com/material/106">bentonite</a>, typically 5% is enough.</p>
+
+<div class="flexleft33"><img style="width:100%;" src="https://digitalfire.com/4sight/images/pictures/jnps7aygc5.jpg"></div>
+
+<p>Tendency to allow water penetration and water splitting is indicated if you balance a cigar-shaped piece on your finger, put a couple of drops on the top center and splits begin to form quickly (clays with coarser grains and lower plasticity have advantages but can be susceptible to water splitting).</p>
+
+<h3>Make test bars</h3>
+
+<p>When the clay is suitable for forming, I roll slabs (using metal bars as roller guides) and carefully lay them on 12cm wide boards for cutting. If the clay is sticky it will be difficult to peel up, it might be necessary to roll it on newspaper, or plaster. For very non-plastic clays (that are too weak with withstand <a  href="https://digitalfire.com/picture/3594">peeling</a> up) a similar approach might be needed: Repeat cycles of rolling it a little thinner (between sheets of newspaper), peeling away the top layer and replacing it with a new piece, flipping the board on to another and replacing that newspaper, then repeating. It will split at the edges, so roll the piece big enough so that the final flip onto the 12cm board leaves enough to cut.</p>
+
+<p>Once the clay is on the board, cutting along both sides produces a 12 cm wide strip that can be sectioned, using a wooden ruler and thin-bladed knife, into 2.5cm (1”) wide bars. Be careful to cut vertically so the bars will stand on edge for firing. If the clay is sticky the ruler sticks. If it is very non-plastic it will be difficult to cut the bars without tears (use a compressing rather than cutting motion with the knife for these).</p>
+
+<p>Make 5 or 6 bars. Stamp the identification and a sequential specimen number on each. Carefully make 10cm-apart marks on each bar, ones that can be accurately measured after drying and firing. Make a half-length bar (for an <a  href="https://digitalfire.com/glossary/loi">LOI</a> test). </p>
+
+<p>Roll a 5 mm (3/16”) thick slab and cut a 12 cm diameter drying test disk and put it on the board with the bars (place a plaster small soup can in the center, leaving only the outer part of the disk exposed).</p>
+
+<h3>Dry the specimens completely.</h3>
+
+<div class="flexright33"><img style="width:100%;" src="https://digitalfire.com/4sight/images/articles/pyskycagor.jpg"><p style="color:#888888; font-style:italic; font-size:80%; margin:4px 0px 5px 0px;">border</p></div>
+
+<h4>Soluble salts</h4>
+
+<p>Many native and commercial clays contain soluble materials (e.g. <a  href="https://digitalfire.com/glossary/sulfates">sulphates</a>) that come to the surface with the water and leave solute behind that melts into a dirty glassy surface layer. This is a universal problem in the ceramic industry. In structural products it is dealt with by the addition of barium carbonate (0.2-0.4%). During clay processing, it reacts with the sulphates to produce insoluble carbonates and barium sulphate.</p>
+
+<p>On the circular drying disk (made above) solubles from the center migrate with the water to the outer exposed section and concentrate there during drying producing obvious differences in the surface coloration. Note the solubles deposits around the edges of the disk. Fire it to see if they visually impair the fired surface (soluble salts usually melt like a glaze so they are actually an asset to fired functionality).</p>
+
+<p>Note the nature and number of cracks on the circular drying disk and record (use the method described for the <a  href="https://digitalfire.com/test/shab">SHAB test</a>).</p>
+
+<h4>Evaluate dry bars</h4>
+
+<p>Completely dry the bars (under heat or in the sun). Clean the bars using a knife to remove corner burs. Plastic clays are strong and hard to trim. Highly plastic ones shrink a lot and warp the bars during drying. Super plastics (e.g. bentonite) crack the bars. Non-plastics have soft edges, chip easily and are fragile to handle. Kaolins feel smooth and soapy on cut edges.</p>
+
+<p>Break one of the dried bars and rate it, based on your experience of the strength of kaolin, ball clay, fireclay, etc.</p>
+
+<p>Record the weight of the half-width bar and calculate water content as wet weight – dry weight / wet weight * 100. Kaolins have water contents of less than 20%, stonewares 20-23% and ball clays, even more, bentonites can be 30%+</p>
+
+<p>Record the average <a  href="https://digitalfire.com/glossary/drying+shrinkage">dry shrinkage</a> of all the bars (shrinkage is simply 100 minus the dry length). 7% shrinkage is high but can be tolerated if dry strength is good and coarse particles are available to terminate micro-cracks and prevent warping. 5% shrinkage is low and normally accompanied by poor dry strength and low plasticity.</p>
+
+<div class="flexleft33"><img style="width:100%;" src="https://digitalfire.com/4sight/images/pictures/jozfanekiw.jpg"></div>
+
+<h3>Particle size</h3>
+
+<p>Knowing the identity, amount, sizes, and proportions of sizes of particles in a sample is important (the feel of a material can actually be misleading). Apparent particles and <a  href="https://digitalfire.com/glossary/ultimate+particles">ultimate particles</a> are different (apparent particles are agglomerations of ultimate particles). Clays with a lot of harmful +100 mesh impurity particles (e.g. sand, shale, quartz, iron-bearing rock) may be useable if your ware can tolerate some fired speckle. Even +50 mesh particles can be tolerated for stonewares and <a  href="https://digitalfire.com/glossary/earthenware">earthenware</a>. But for fine functional ware, you will need a way to screen out +100 mesh sizes (see links below). If the clay contains a lot of quartz sand remember that these particles expand and contract suddenly as they pass upwards and downwards through quartz-inversion (about 1050F) producing micro-cracks around each grain in the rigid fired matrix. Such materials obviously must be fired slower.</p>
+
+<p>The apparent particle size is determined by washing material through a series of progressively finer <a  href="https://digitalfire.com/glossary/sieve">sieves</a>. Wash 50 grams through a 100 and <a  href="https://digitalfire.com/glossary/200+mesh">200 mesh</a> screen (piled on top of each other). Dry the screens and weigh the material on each (and multiply by 2 for percentage). Examine the particles on the 100# under and 50X light scope or microscope (available on Amazon). Are they quartz sand? Hard clay or shale? Lignite? Flakes of mica? Dark particles of iron or manganese material?</p>
+
+<h3 style="clear:left">Fire the test bars</h3>
+
+<div class="flexleft50"><img style="width:100%;" src="https://digitalfire.com/4sight/images/pictures/rg7zykst6n.jpg"></div>
+
+<p>For this part of the test it is necessary to have a small <a  href="https://digitalfire.com/picture/1293">test kiln</a>. I would not live, as a potter, without one! Using your experience of firing the initial lumps, guess the maturing temperature. Then fire bars to one or two cones higher and lower. If needed in your application, fire one of the bars at an accelerated rate (compared to your typical firing) up to 500F to see if it can withstand faster firing.</p>
+
+<p>Fire the half-length bar to at least cone 02, record its weight and calculate <a  href="https://digitalfire.com/oxide/loi">LOI</a> (Loss On Ignition) as dry weight – fired weight / dry weight * 100. Clays that contain organic matter lose weight on firing, for obvious reasons (often 7% or more). Much of this amount is crystal-bound water, but it is surprising how much smoke can be present in a rising 500F kiln.</p>
+
+<p>Fire all the bars accurately. Record the temperature reached according to the degree-of-bend of the three cones (see my article <a  href="https://digitalfire.com/picture/386">interpreting cones</a>).</p>
+
+<div class="flexleft25"><p style="text-align:center; padding:30px 0px 30px 0px;">Photo not found<br />or not published</p></div>
+
+<h3 style="clear:left">Evaluate <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a> and shrinkage</h3>
+
+<p>Measure the distance between marks on each fired bar and record <a  href="https://digitalfire.com/glossary/firing+shrinkage">fired shrinkage</a> as dry length – fired length / dry length * 100.</p>
+
+<p>Record the weight of each bar, then boil all fired bars for 5 hours and soak for 19, blot dry and record the weight again. Record porosity is wet weight – dry weight / dry weight * 100. Plot a chart showing percentage porosity and shrinkage against temperature. Compare this chart with one for a standard commercial body you use with success. <a  href="https://digitalfire.com/glossary/vitreous">Vitreous</a> <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> bodies are best tuned to fire at the point where porosity and shrinkage curves are levelling out before reversing direction. Red earthenwares give the best results at least 2-3 cones before they suddenly change color to dark brown. <a  href="https://digitalfire.com/glossary/sculpture">Sculpture</a> bodies need a compromise of <a  href="https://digitalfire.com/glossary/fired+strength">fired strength</a> with resistance to <a  href="https://digitalfire.com/trouble/warping">fired warping</a>.</p>
+
+<h3>Thermal expansion</h3>
+
+<p>The above testing should indicate the best firing temperature for the material. Apply a typical transparent glaze to a dry and <a  href="https://digitalfire.com/glossary/bisque">bisque-fired</a> bar or disk of the clay, fire and then stress its fit with immersions in ice and boiling water. If it crazes the clay has a low <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> and is likely low in quartz. If it shivers the clay is likely high in quartz and would be a good body ingredient to prevent <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a>.</p>
+
+<h3>Further evaluation</h3>
+
+<p>Now that you know what the material is in relation to kaolin, ball clay, fireclay, stoneware and bentonite; put it into recipes accordingly. Don’t be tempted to use it alone as a body, it should at least be diluted to dampen changes in properties over time. To use as much as possible in a body, find other materials with complementing strengths and weaknesses.</p>
+
+<h3>Let's get started</h3>
+
+<p>These test bars are an example of how much can be learned from firing a clay to many temperatures.<p>
+
+<p>Do you want to go to the next step and really learn how to test materials and compile the test results in an organized way? There is a lot more information in the Digitalfire Reference Library (including a glossary). And get a subscription to Insight-Live.com so you can start keeping records.</p>
+
+<p>A practical example: Look for the link below: "It Starts With A Lump of Clay". This is part of the Insight-live.com instruction manual. It shows, from start to finish, how I went about testing two lumps of clay. We have done this thousands of times and have several hundred thousand test measurements in our Insight-Live.com account!</p><p style="clear:left"></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Dried test bars stacked into an electric kiln for firing</h3>
+<br /><a href="https://digitalfire.com/picture/835"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/articles/dohcepiric.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/835">click here</a> to see it.</p>
+<p>These have already been measured to deduce <a  href="https://digitalfire.com/glossary/drying+shrinkage">drying shrinkage</a>. After firing they will be measured again to calculate the <a  href="https://digitalfire.com/glossary/firing+shrinkage">firing shrinkage</a>. Then they will be weighed, boiled in water and weighed again to determine the water absorption. <a  href="https://digitalfire.com/glossary/firing+shrinkage">Fired shrinkage</a> and absorption are good indicators of body <a  href="https://digitalfire.com/glossary/maturity">maturity</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Red burning, customer-found terra cotta clays charachterized</h3>
+<br /><a href="https://digitalfire.com/picture/2490"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/thbrtz1qtb.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2490">click here</a> to see it.</p>
+<p>We tested four different clays (brought in by customers). One is from BC and three from Alberta. These fired sample bars show rich color, low <a  href="https://digitalfire.com/glossary/soluble+salts">soluble salts</a> and high density and strength at very low temperatures. L4233 (left): <a  href="https://digitalfire.com/glossary/low+temperature+glaze">Cone 06</a> to 3 (bottom to top). Reaches stoneware-density at cone 02 (middle bar). <a  href="https://digitalfire.com/glossary/plasticity">Plasticity</a> is very low (<a  href="https://digitalfire.com/glossary/drying+shrinkage">drying shrinkage</a> is only 4.5%). But, it is stable even if over-fired. L4254 (center bottom): <a  href="https://digitalfire.com/glossary/low+temperature+glaze">Cone 04</a>,02,3,4 (bottom to top). Very fine particled but contains an organic that is gassing and <a  href="https://digitalfire.com/trouble/bloating">bloating</a> the middle two bars. L4243: Fires lighter and looks stable here (cone 02,01,1,2 shown) but melts suddenly less than a cone above the top bar (well before <a  href="https://digitalfire.com/glossary/vitrification">vitrification</a> is reached). L4242 (right): Hyper-plastic, with 12% drying shrinkage! Already melting by cone 02 (third from top). Achieves almost zero <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a> (<a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> density) at cone 04 (#2 bar). Even when mixed with 20% <a  href="https://digitalfire.com/material/925">kaolin</a> and 20% <a  href="https://digitalfire.com/material/1245">silica</a> it still hits zero porosity by <a  href="https://digitalfire.com/glossary/cone+1">cone 1</a>. What next? I'll mix L4233 (left) and L4242 (right), that should produce <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> density at cone 02 (about 1% porosity).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Step-by-step how to test and evaluate a new native clay</h3>
+<br /><a alt="Two lumps of raw clay dug straight out of a hill" title="Two lumps of raw clay dug straight out of a hill" href="https://digitalfire.com/picture/2509"><img class="flexleft50" title="Two lumps of raw clay dug straight out of a hill"  alt="Two lumps of raw clay dug straight out of a hill"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/tjwmxtcruc.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2509">click here</a> to see it.</p>
+<p>"It Starts With a Lump of Clay", a step-by-step <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-Live</a>.com tutorial (from its help system and the link below) on how to document every step (in an account at insight-live.com) of testing a raw clay. You will learn about <a  href="https://digitalfire.com/glossary/drying+shrinkage">drying shrinkage</a>, <a  href="https://digitalfire.com/glossary/drying+performance">drying performance</a>, <a  href="https://digitalfire.com/glossary/particle+size+distribution">particle size distribution</a>, <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a>, <a  href="https://digitalfire.com/glossary/firing+shrinkage">firing shrinkage</a>, fired <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a>, fired color, soluble salt content, <a  href="https://digitalfire.com/glossary/fired+strength">fired strength</a>, etc. We will not just observe these properties, but measure them. In doing so we will <a  href="https://digitalfire.com/glossary/characterization">characterize</a> the material. We will answer simple questions about how the material forms, dries and fires across a range of temperatures. In doing the testing I will be generating a lot of data. No single factor is more intimidating to new technicians than what to do with this data, how and where to store it, how it can be searched, learned from, compared.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Mel Noble at Plainsman Clay's Ravenscrag, Saskatchewan quarry</h3>
+<br /><a alt="Whitemud formation layers" href="https://digitalfire.com/picture/2170"><img class="flexleft50" alt="Whitemud formation layers"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/zdbygf8nxm.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2170">click here</a> to see it.</p>
+<p>Six different sedimentary clays are extracted from this quarry. It was opened in the 1970s, the best location available at the time. These test bars were made by <a  href="https://digitalfire.com/glossary/slaking">slaking</a> select lumps from each layer (thus exhibiting their best performance). The left-most dried test bars show the layers (top to bottom). The <a  href="https://digitalfire.com/material/1141">A1</a> top layer is the most plastic and has the most iron contamination (it is used in the most speckled <a  href="https://digitalfire.com/glossary/reduction+firing">reduction firing</a> bodies). <a  href="https://plainsmanclays.ca/data/index.php?product=12899">A2</a>, the second one down, is a <a  href="https://digitalfire.com/material/80">ball clay</a> (similar to commercial products, although darker burning), it is very <a  href="https://digitalfire.com/glossary/refractory">refractory</a> and the base for <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://digitalfire.com/glossary/fireclay">Fireclay</a>. <a  href="https://plainsmanclays.ca/data/index.php?product=12900">A3</a>, third from top, is a complete buff high-temperature <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> (like <a  href="https://plainsmanclays.ca/data/index.php?product=12887">H550</a>), although sandy and over-mature at cone 10. <a  href="https://digitalfire.com/material/1144">3B</a>, third from bottom, is a smooth <a  href="https://digitalfire.com/glossary/medium+temperature">medium-temperature</a> stoneware; it contains significant natural <a  href="https://digitalfire.com/material/310">feldspar</a> (although fired color and particulate contamination are the most variable). The second from the bottom, <a  href="https://plainsmanclays.ca/data/index.php?product=12950">3C</a>. fires the whitest and is the most refractory (it is the base for <a  href="https://plainsmanclays.ca/data/index.php?product=12894">H441G</a>). The bottom one, 3D, the best product in the quarry. Although the least plastic and most silty, it is also very fine particled and the cleanest (consistently free of particulate impurities and sand), it pairs very well with a ball clay to make a <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> stoneware.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Clay from below a bog, ready to throw right out of the ground!</h3>
+<br /><a href="https://digitalfire.com/picture/979"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/glossary/pobcyfovoj.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/979">click here</a> to see it.</p>
+<p>This little pot on the left is more than it appears. Both of these samples were fired at cone 01 and clear glazed in the green state (without bisquing). The one on the right, a typical unprocessed native <a  href="https://digitalfire.com/glossary/terra+cotta">terra cotta</a> clay, is full of <a  href="https://digitalfire.com/glossary/pinholing">pinholes</a>, the one on the left has none. But the one on the left has been pre-processed by mother nature: it is from a thick layer of clay found below a bog in northern Alberta. It has 21% <a  href="https://digitalfire.com/glossary/water+content">water content</a>, you just cut a piece out, wedge it and throw a pot! Although it contains some particulate, it is highly plastic yet dries well and fires to a dense stoneware-like hardness 11 cones lower than we normally make <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> at.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Mother Nature's Porcelain: The lumps in the quarry</h3>
+<br /><a alt="Mother nature's porcleain lumps" href="https://digitalfire.com/picture/2200"><img class="flexleft50" alt="Mother nature's porcleain lumps"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/ijqbycbkt2.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2200">click here</a> to see it.</p>
+<p>This 50 lb lump is from a quarry where we are mining the Whitemud Formation in southern Saskatchewan. This layer is extracted from the top of a hill at the bottom of a valley, putting it more than 50 meters below the prairie surface. The lumps are extremely dense and very heavy. They are also quite damp, about 12% by weight fossil water. They exhibit this horizontal layering, a clear indication of the sedimentary nature of the deposit. The clay is exceedingly fine-particled and the <a  href="https://digitalfire.com/material/1245">silica</a> present exists in rounded grains finer than about 150 mesh. There are flecks of high-carbon material and some tiny iron particles. When lumps like this dry out when exposed to the sun they break down into thousands of pure-white pieces. These dry lumps <a  href="https://digitalfire.com/glossary/slaking">slake</a> quickly in water to create a creamy smooth <a  href="https://digitalfire.com/glossary/slurry">slurry</a> from which I can easily <a  href="https://digitalfire.com/glossary/sieve">sieve</a> out the carbon and iron particles to produce the hyper-smooth natural <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Mother Nature's porcelain - From the Cretaceous period</h3>
+<br /><a alt="MNP pottery mug" href="https://digitalfire.com/picture/2205"><img class="flexleft50" alt="MNP pottery mug"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/lzpgahgkr4.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2205">click here</a> to see it.</p>
+<p>During a 6 week of mining in 2018 in <a  href="https://digitalfire.com/material/1178">Ravenscrag</a>, Saskatchewan we extracted marine sediment layers of the late Cretaceous period. The center portion of the "B layer", as we call it, is unbelievably fine particled (impossibly smooth, like a body that is pure <a  href="https://digitalfire.com/glossary/terra+sigilatta">terra sigillata</a>)! The <a  href="https://digitalfire.com/material/310">feldspar</a> and <a  href="https://digitalfire.com/material/1245">silica</a> are built-in, producing a glassy body surface, starting at cone 4 and lasting to cone 8. Despite this, pieces don't warp in firings! I have not glazed the outside of this mug for demo purposes. I got away with it this time because the <a  href="https://plainsmanclays.ca/data/index.php?product=12911">Ravenscrag</a> clear glaze <a  href="https://digitalfire.com/recipe/gr6-a">GR6-A</a> is very compatible (the <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> is high enough to avoid <a  href="https://digitalfire.com/glossary/glaze+compression">glaze compression</a> issues and low enough not to <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a>). With other less compatible glazes these mugs cracked when I poured in hot coffee. To make this body I am <a  href="https://digitalfire.com/glossary/slurry+up">slurrying it up</a> as a slip and processing it to <a  href="https://digitalfire.com/glossary/325+mesh">325 mesh</a> (using a <a  href="https://digitalfire.com/picture/2931">vibrating sieve</a>).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Mother Nature's porcelain with no glaze</h3>
+<br /><a href="https://digitalfire.com/picture/2231"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/aoqlx61c6k.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2231">click here</a> to see it.</p>
+<p>These bowls were fired at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>. The body is amazingly <a  href="https://digitalfire.com/glossary/vitreous">vitreous</a>, given that pieces are very resistant to <a  href="https://digitalfire.com/trouble/warping">warping during firing</a>. In fact, other pieces made from it having walls as thin as 2mm, did not warp either! This comes from a two-foot-thick section of the <a  href="https://digitalfire.com/material/1144">3B</a> layer from a <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> Clays quarry near <a  href="https://digitalfire.com/material/1178">Ravenscrag</a>, Saskatchewan, Canada. It is plastic and feels smoother than any commercial <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a>. It does not fire white because Mother Nature included some <a  href="https://digitalfire.com/material/874">iron oxide</a> in the clay itself and in the <a  href="https://digitalfire.com/glossary/soluble+salts">soluble salts</a> that produce the glaze-like surface (these disappear when a clear glaze is applied). It accepts glaze like a porcelain. I have dubbed this body <a  href="https://plainsmanclays.ca/data/index.php?product=12868">MNP</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Incredible Mother Nature’s porcelain</h3>
+<br /><a alt="A hand-built mug made from 100% of a naturally occurring porcelain" title="A hand-built mug made from 100% of a naturally occurring porcelain" href="https://digitalfire.com/picture/2324"><img class="flexleft50" title="A hand-built mug made from 100% of a naturally occurring porcelain"  alt="A hand-built mug made from 100% of a naturally occurring porcelain"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/l3ho9en1hf.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2324">click here</a> to see it.</p>
+<p>This is made from 100% of a natural clay (<a  href="https://digitalfire.com/material/1144">3B</a>) from the Whitemud formation in <a  href="https://digitalfire.com/material/1178">Ravenscrag</a>, Saskatchewan. To make this body, which I call <a  href="https://plainsmanclays.ca/data/index.php?product=12868">MNP</a>, I <a  href="https://digitalfire.com/glossary/slaking">slake</a> and <a  href="https://digitalfire.com/glossary/slurry+up">slurry up</a> the raw clay lumps, <a  href="https://digitalfire.com/glossary/sieve">sieve</a> it to <a  href="https://digitalfire.com/glossary/200+mesh">200 mesh</a> and then dewater on a <a  href="https://digitalfire.com/glossary/plaster+table">plaster table</a>. I rolled the plastic clay into a thin layer, cut it into a cross-shape using a <a  href="https://digitalfire.com/glossary/3d-printing">3D printed</a> cookie-cutter, drape-molded it over a <a  href="https://digitalfire.com/material/1124">plaster</a> form and then slip-joined the seams. It fires very dense and strong (to zero <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a> like glass!). It holds together well and joins well with its own slip. Although not super plastic, it is smooth and fine-grained like a commercial <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> body. I add 1-2% <a  href="https://digitalfire.com/material/106">bentonite</a> to make it more plastic when needed. It can be rolled extremely thin and yet does not warp in the firing! This mug has a weight-to-volume ratio of 2.08 (the weight of water it will hold compared to its own weight).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Michael Cardew might be turning over in his grave!</h3>
+<br /><a alt="Michael Cardew Pioneer Pottery book" href="https://digitalfire.com/picture/3317"><img class="flexleft50" alt="Michael Cardew Pioneer Pottery book"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/pat8sq7yrv.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3317">click here</a> to see it.</p>
+<p>This post got a lot of negative reaction on social media. To be clear, I work both sides of the fence, making my living on selling prepared glazes and <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a> but I get my satisfaction being closer to the materials and processes. That is what enables me to give customer support. I am not an artist, ceramic art is outside the scope of this page. For part of my life in the craft of pottery I am also guilty of what I lament below. In all my years dealing with customer traffic at our store I have never once had a customer that was offended by seeing new clay and <a  href="https://digitalfire.com/glossary/glaze+recipes">glaze recipes</a> we are discovering in the studio and lab, that are better and cheaper than prepared ones. But online some are somehow offended by what follows. 80 manufacturers are selling convenience and encouraging disconnection - although I work for one of them I am a voice of caution about this.<br />
+<br />
+This book was once a “Bible” of hobby and professional potters. They were independent and resourceful. They made their own clays and glazes, knew the materials, built their own kilns. Now we scan social media sites for ideas on layering expensive prepared goopy <a  href="https://digitalfire.com/glossary/brushing+glaze">brushing glazes</a> and hope they melt together into something presentable. Many have even forgotten how to wedge clay properly. We describe processes using mystical art language and exchange likes and poor advice on social media. Those who still know how to retotal a recipe and venture into mixing their own often end up in the online <a  href="https://digitalfire.com/glossary/trafficking">trafficking</a> of an endless parade of recipes that don’t work. Now we even outsource design to <a  href="https://digitalfire.com/glossary/a.i.+at+digitalfire">AI</a>. Even Nigeria, the very country about whom Cardew wrote, has lost its pottery tradition.<br />
+<br />
+I never appreciated the book back there. Even though he came to visit us in 1973. I have always just taken whatever clay I needed out of our warehouse, but now that I very often make my own clay it really resonates. I got this copy on eBay, I value it as an inspiration to be more closely connected with the planet and the minerals it gifts us (of course I would not do everything as he does). He was no dinosaur, he understood and taught <a  href="https://digitalfire.com/glossary/glaze+chemistry">glaze chemistry</a> and material <a  href="https://digitalfire.com/glossary/mineralogy">mineralogy</a>, his work was the basis for many prepared glazes we buy today. "Progress" is defined by some as convenience products that make modern <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a> easy. But I believe that, for many, progress is arming yourself with a little more understanding - it enables making better quality ware, in less time, for less expense and time than with prepared products.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Testing your own native clays is easier than you think</h3>
+<br /><a alt="Simple tests being done on a found clay" title="Various simple tests you can do in your own workshop to characterize a clay" href="https://digitalfire.com/picture/2118"><img class="flexleft50" title="Various simple tests you can do in your own workshop to characterize a clay"  alt="Simple tests being done on a found clay"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/abr7uj2ktg.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2118">click here</a> to see it.</p>
+<p>Some simple equipment is all you need. You can do practical tests to <a  href="https://digitalfire.com/glossary/characterization">characterize</a> a local clay in your own studio or workshop (e.g. our <a  href="https://digitalfire.com/test/shab">SHAB test</a>, <a  href="https://digitalfire.com/test/dfac">DFAC test</a>, <a  href="https://digitalfire.com/test/siev">SIEV test</a>, <a  href="https://digitalfire.com/test/ldw">LDW test</a>). You need a gram scale (preferably accurate to 0.01g) and a set of callipers (check Amazon.com). Some metal <a  href="https://digitalfire.com/glossary/sieve">sieves</a> (search "Tyler Sieves" on Ebay). A stamp to mark samples with code and specimen numbers. A <a  href="https://digitalfire.com/glossary/plaster+table">plaster table</a> or slab. A <a  href="https://digitalfire.com/glossary/propeller+mixer">propeller mixer</a>. And, of course, a <a  href="https://digitalfire.com/picture/1293">test kiln</a>. And you need a place to put all the measurement data collected and learn from it (e.g. an account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">insight-live</a>.com).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Personal size sieve shakers you can buy on Amazon</h3>
+<br /><a alt="Small vibrating sieve shakers" href="https://digitalfire.com/picture/3430"><img class="flexleft50" alt="Small vibrating sieve shakers"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/bejqeqlxc7.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3430">click here</a> to see it.</p>
+<p>These are small-scale devices that work on the same principles as industrial ones - thus they put industrial methods of clay processing in the hands of a potter or hobbyist. These products are stainless steel and food grade and most can be used with powders or shurries and have interchangeable screens. The most expensive device here costs $5000 and the least expensive is far less than $1000.  The suppliers of each of these also have other similar machines (as well as other types of processing equipment potentially valuable in small-scale ceramic production).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Will soil testing help you assess a wild clay for pottery?</h3>
+<br /><a alt="Soil test not for clay" href="https://digitalfire.com/picture/3509"><img class="flexleft50" alt="Soil test not for clay"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/9kwk6kg32y.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3509">click here</a> to see it.</p>
+<p>No, soil testing is not helpful. Soils normally contain clay but it is so diluted with sand, rocks, silt and <a  href="https://digitalfire.com/oxide/organics">organics</a> that overall <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> is just a dot on a graph - not even close to what modelling or <a  href="https://digitalfire.com/glossary/throwing">throwing</a> clays exhibit. Pottery clays easily hold a shape and can be adjusted to a new shape without <a  href="https://digitalfire.com/glossary/splitting">splitting</a>. They dry slowly with substantial shrinkage. Highly plastic clays need more water to achieve working consistency, silty non-plastic ones need less (typical pottery clays need 18-23%). The reports shown here are typical for soils. But almost nothing here would look familiar to a potter.<br />
+<br />
+-The Shrinkage Limit (SL) is the <a  href="https://digitalfire.com/glossary/water+content">water content</a> where further loss of moisture will not result in any more volume reduction.<br />
+-The Plastic Limit (PL) is minimum water content at which a soil is considered to behave in a ‘plastic’ manner, i.e. is capable of being moulded.<br />
+-The Liquid Limit (LL) is the maximum water content a silt or clay can have before becoming a liquid, i.e. turning into mud.<br />
+-The Plasticity Index (PI) is the range of moisture contents where the silt or clay remains plastic (PI = LL – PL).<br />
+<br />
+Potters don't care about the amount of water needed, they care about how plastic the clay is once enough water has been added to get the right stiffness.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">There’s DIY magic in the ground beneath your feet!</h3>
+<br /><a href="https://digitalfire.com/picture/3794"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/z2zzcyehyx.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3794">click here</a> to see it.</p>
+<p>Place: Vernon, Alabama.<br />
+Story: Potter's friend sends a picture of an outcrop of white clay in the ditch near his driveway.<br />
+Result: A <a  href="https://digitalfire.com/glossary/do-it-yourself">DIY</a> claybody is born.<br />
+<br />
+This planet is full of accessible clay deposits. Many can be used as-is for <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a>, <a  href="https://digitalfire.com/glossary/earthenware">earthenware</a> and even <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a>. <a  href="https://digitalfire.com/glossary/characterization">Characterizing</a> this clay is the first step. How plastic is it? What does it look like when fired at different temperatures? Does it contain impurities that need to be sieved out? Does it dry without cracking? Does it work with glazes? Etc.<br />
+<br />
+A journey of clay discovery to a finished piece is one of the most rewarding experiences you can have as a potter. And be more <a  href="https://digitalfire.com/glossary/do-it-yourself">self-reliant</a>. You don’t need special gear, just curiosity, eyes that notice, a few simple tools, and a willingness to experiment and learn to <a  href="https://digitalfire.com/glossary/characterization">characterize</a> clays. And one more thing: An organized way to <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">keep records</a> of your testing. Think of an <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">insight-live</a> account as a commitment to building experience; it is your memory of everything that worked. And didn't.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/simple+physical+testing+of+clays">Simple Physical Testing of Clays</a>
+<br /><i>Learn to test your <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a> and clay materials and record the results in an organized way, understanding the purpose of each test and how to relate its results to changes that need to be made in process, recipe and materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/formulating+a+body+using+clays+native+to+your+area">Formulating a body using clays native to your area</a>
+<br /><i>Being able to mix your own <a  href="https://digitalfire.com/glossary/clay+body">clay body</a> and glaze from native materials might seem ridiculous, yet Covid-19 taught us about the need for independence. </i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/setting+up+a+clay+testing+program+in+your+company+or+studio">Setting up a Clay Testing Program in Your Company or Studio</a>
+<br /><i>Set up a routine testing pipeline and start generating historical data that will enable your staff to understand your source materials and maintain, adjust and troubleshoot your <a  href="https://digitalfire.com/glossary/clay+body">clay body</a> recipes.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/223">https://plainsmanclays.com/index.php?menupath=18</a>
+<br /><i>About <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> Clays</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1543">https://insight-live.com/insight/help/It+Starts+With+a+Lump+of+Clay-433.html</a>
+<br /><i>Case Study: Testing a <a  href="https://digitalfire.com/glossary/native+clay">Native Clay</a> Using <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-Live</a>.com</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1636">https://www.youtube.com/watch?v=0zXfghDNxUg</a>
+<br /><i>ShowerShelf.com vibratory screen that fits the top of a five-gallon bucket</i>
+<br /><i style="color:#888888;">The tank, <a  href="https://digitalfire.com/glossary/sieve">sieve</a> and vibration assembly are all in one piece that fits into the top of the bucket. This unit can handle 1.8SG <a  href="https://digitalfire.com/glossary/slurry">slurry</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1637">https://www.amazon.com/Vibration-3600RPM-Industrial-Asynchronous-Vibrator/dp/B07P5CLJLP/ref=sr_1_12?qid=1559306388</a>
+<br /><i>Industrial vibration motor at Amazon.com</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/shab">Shrinkage/Absorption Test</a>
+<br /><i>SHAB Shrinkage and absorption test procedure for plastic <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a> and materials</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/dfac">Drying Factor</a>
+<br /><i>The DFAC Drying Factor test visually displays a plastic clay's response to very uneven drying. It is beneficial to show the relative <a  href="https://digitalfire.com/glossary/drying+performance">drying performance</a> of different clays.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/siev">Sieve Analysis 35-325 Wet</a>
+<br /><i>A measure of <a  href="https://digitalfire.com/glossary/particle+size+distribution">particle size distribution</a> by washing a powdered or <a  href="https://digitalfire.com/glossary/slaking">slaked</a> sample through a series of successively finer sieves</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/plasticity">Plasticity</a>
+<br /><i><a  href="https://digitalfire.com/glossary/plasticity">Plasticity</a> (in <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>) is a property exhibited by soft clay. Force exerted effects a change in shape and the clay exhibits no tendency to return to the old shape. Elasticity is the opposite.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/slaking">Slaking</a>
+<br /><i>This term is using in <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a> to describe how a dry clay disintegrates when it is immersed in or exposed to water. Different clays have different <a  href="https://digitalfire.com/glossary/slaking">slaking</a> rates.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/efflorescence">Efflorescence</a>
+<br /><i>A common problem with dry and fired ceramic. It is evident by the presence of a light or dark colored scum on the dry or fired surface.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/characterization">Characterization</a>
+<br /><i>In <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>, this normally refers to the process of doing physical or chemical testing on a raw material to accurately describe it in terms of similar ones.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/clay">Clay</a>
+<br /><i>What is clay? How is it different than dirt? For <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>, the answer lies on the microscopic level with the particle shape, size and how the surfaces interact with water.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/native+clay">Native Clay</a>
+<br /><i>A clay that a potter finds, tests and learns to process and use himself. To reduce the costs of importing materials manufacturers, especially in Asia, often develop processes for clays mined in their locality.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="https://digitalfire.com/project/materials">Materials</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="https://digitalfire.com/project/slurry+mixing+and+dewatering+your+own+clay+body">Slurry Mixing and Dewatering Your Own Clay Body</a>
+<br /><i>Weigh out the ingredients, mix them using your <a  href="https://digitalfire.com/glossary/propeller+mixer">propeller mixer</a> and then dewater and fine-tune the stiffness on your <a  href="https://digitalfire.com/glossary/plaster+table">plaster table</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="https://digitalfire.com/project/evaluating+a+clay%27s+suitability+for+use+in+pottery">Evaluating a clay's suitability for use in pottery</a>
+<br /><i>Would you like to be able to use your own found-clays in your production? Follow me as we evaluate a mystery clay sample provided by a potter who wants to do this.</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

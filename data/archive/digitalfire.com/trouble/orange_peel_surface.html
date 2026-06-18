@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Orange Peel Surface</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Orange peel is a defect or physical property of ceramic glazes">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item active" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=trouble" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"></td><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Troubles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a title="29" href="https://digitalfire.com/trouble/black+coring">Black Coring</a></nobr><br /><nobr><a title="30" href="https://digitalfire.com/trouble/bleeding+colors">Bleeding Colors</a></nobr><br /><nobr><a title="11" href="https://digitalfire.com/trouble/bloating">Bloating</a></nobr><br /><nobr><a title="13" href="https://digitalfire.com/trouble/casting+slip+problems">Casting Slip Problems</a></nobr><br /><nobr><a title="7" href="https://digitalfire.com/trouble/chrome+flashing+in+ceramic+glazes">Chrome Flashing in Ceramic Glazes</a></nobr><br /><nobr><a title="23" href="https://digitalfire.com/trouble/clouding+in+ceramic+glazes">Clouding in Ceramic Glazes</a></nobr><br /><nobr><a title="10" href="https://digitalfire.com/trouble/cracking+of+clays+during+drying">Cracking of Clays During Drying</a></nobr><br /><nobr><a title="1" href="https://digitalfire.com/trouble/crawling">Crawling</a></nobr><br /><nobr><a title="9" href="https://digitalfire.com/trouble/dunting+and+cracking+of+clay+bodies+during+firing">Dunting and Cracking of Clay Bodies During Firing</a></nobr><br /><nobr><a title="19" href="https://digitalfire.com/trouble/foaming+of+ceramicd+glaze+slurries">Foaming of Ceramicd Glaze Slurries</a></nobr><br /><nobr><a title="3" href="https://digitalfire.com/trouble/glaze+blisters">Glaze Blisters</a></nobr><br /><nobr><a title="2" href="https://digitalfire.com/trouble/glaze+crazing">Glaze Crazing</a></nobr><br /><nobr><a title="6" href="https://digitalfire.com/trouble/glaze+is+off-color">Glaze is Off-Color</a></nobr><br /><nobr><a title="8" href="https://digitalfire.com/trouble/glaze+marks+or+scratches">Glaze Marks or Scratches</a></nobr><br /><nobr><a title="22" href="https://digitalfire.com/trouble/glaze+peeling+on+drying">Glaze peeling on drying</a></nobr><br /><nobr><a title="5" href="https://digitalfire.com/trouble/glaze+pinholes%2C+pitting">Glaze Pinholes, Pitting</a></nobr><br /><nobr><a title="18" href="https://digitalfire.com/trouble/glaze+shivering">Glaze Shivering</a></nobr><br /><nobr><a title="14" href="https://digitalfire.com/trouble/glaze+slurry+is+difficult+to+use+or+settling">Glaze Slurry is Difficult to Use or Settling</a></nobr><br /><nobr><a title="26" href="https://digitalfire.com/trouble/leaking+of+fired+ceramics">Leaking of Fired Ceramics</a></nobr><br /><nobr><a title="28" href="https://digitalfire.com/trouble/lime+popping">Lime Popping</a></nobr><br /><nobr><a title="27" href="https://digitalfire.com/trouble/27"><button type="button" class="btn btn-dark">Orange Peel Surface</button></a></nobr><br /><nobr><a title="21" href="https://digitalfire.com/trouble/over+firing+of+ceramic+glazes+and+bodies">Over Firing of Ceramic Glazes and Bodies</a></nobr><br /><nobr><a title="4" href="https://digitalfire.com/trouble/powdering%2C+cracking+and+settling+glazes">Powdering, Cracking and Settling Glazes</a></nobr><br /><nobr><a title="25" href="https://digitalfire.com/trouble/runny+ceramic+glazes">Runny Ceramic Glazes</a></nobr><br /><nobr><a title="17" href="https://digitalfire.com/trouble/specking+on+ceramic+ware">Specking on Ceramic Ware</a></nobr><br /><nobr><a title="15" href="https://digitalfire.com/trouble/splitting+at+the+plastic+stage">Splitting at the Plastic Stage</a></nobr><br /><nobr><a title="24" href="https://digitalfire.com/trouble/staining+of+fired+ceramic+glazes">Staining of Fired Ceramic Glazes</a></nobr><br /><nobr><a title="20" href="https://digitalfire.com/trouble/uneven+glaze+coverage">Uneven Glaze Coverage</a></nobr><br /><nobr><a title="12" href="https://digitalfire.com/trouble/warping">Warping</a></nobr></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Orange Peel Surface</h1>
+<p class="text-muted" style="margin-left:20px">Orange peel is a defect or physical property of ceramic glazes
+<h2>Details</h2>
+<p>Ceramic glazes can have a surface texture like <a  href="https://digitalfire.com/glossary/dimpled+glaze">orange peel</a>, this can be intentional or a defect. Matte glazes, depending on their <a  href="https://digitalfire.com/glossary/mechanism">mechanism</a>, can have a smooth but dull or a bumpy but glossy surface (the bumps are very fine and scatter the light to produce a silky matteness). Variegated glazes having phase differences can also have an <a  href="https://digitalfire.com/trouble/orange+peel+surface">orange-peel</a> surface. Glazes with significant entrained bubbles and those not sufficiently melted can also have a rougher peel surface.<br />
+<br />
+Assuming the glaze is sufficiently melted, a firing cycle having a slower cool can help level the surface of glossy glazes. If better melting is needed the recipe can be adjusted to have more fluxing <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a>. Adding some <a  href="https://digitalfire.com/glossary/frit">frit</a> can really help (e.g. <a  href="https://digitalfire.com/material/356">Frit 3195</a> has <a  href="https://digitalfire.com/glossary/limit+formula">balanced chemistry</a> and will often help melt glazes with minimal impact on other properties). If the glaze also has issues with <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a> Ferro <a  href="https://digitalfire.com/material/369">Frit 3249</a> (or equivalent) can help solve both problems. If the rough surface is caused by excessive gas bubbles being generated during firing then adjusting the glaze recipe to source the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> from materials having a lower <a  href="https://digitalfire.com/glossary/loi">LOI</a> can really help (e.g. <a  href="https://digitalfire.com/material/806">Gerstley Borate</a> and <a  href="https://digitalfire.com/glossary/frit">frits</a> both source <a  href="https://digitalfire.com/oxide/b2o3">B<sub>2</sub>O<sub>3</sub></a> but the former has a very high <a  href="https://digitalfire.com/oxide/loi">LOI</a>). Carbonate materials can generate lots of orange peel producing bubbles at the wrong time. Strangely enough, <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a> can be a source of bubbles also, try a different one to be sure. If the body is gassing then a <a  href="https://digitalfire.com/glossary/drop-and-soak+firing">drop-and-hold</a> at the end of the firing will really help. Slow cool from there will help even more. If the glaze has a stiff melt (e.g. is high in <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a>) the chemistry can be adjusted to raise the <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> and drop the Al<sub>2</sub>O<sub>3</sub>. High <a  href="https://digitalfire.com/oxide/mgo">MgO</a> glazes naturally have an orange peel surface (MgO is from <a  href="https://digitalfire.com/material/1620">talc</a> and <a  href="https://digitalfire.com/material/273">dolomite</a>). That being said, some MgO can be tolerated, in ultra gloss surfaces, but when a threshold is reached surface texture is affected.<br />
+<br />
+Sometimes the best approach is to transplant the fired mechanism-producing materials in the recipe (the ones giving the color, <a  href="https://digitalfire.com/glossary/reactive+glazes">variegation</a> and <a  href="https://digitalfire.com/glossary/opacity">opacity</a>) into another <a  href="https://digitalfire.com/glossary/base+glaze">base transparent</a> that works well on your <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a>.<br />
+This will resolve another possible issue: A bad shipment of frit. A different clear base that uses a different frit would be a good test to verify that.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A honey glaze that needs a base having more melt fluidity</h3>
+<br /><a alt="A pottery mug with a honey over-glaze that highlights an engobe having a decorative crack pattern" title="A pottery mug with a honey over-glaze that highlights an engobe having a decorative crack pattern" href="https://digitalfire.com/picture/2514"><img class="flexleft50" title="A pottery mug with a honey over-glaze that highlights an engobe having a decorative crack pattern"  alt="A pottery mug with a honey over-glaze that highlights an engobe having a decorative crack pattern"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/6euub68hvw.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2514">click here</a> to see it.</p>
+<p>This transparent glaze adds a little manganese and iron, just enough to give color, but still maintain transparency to highlight the decorative crack-network in the <a  href="https://digitalfire.com/glossary/engobe">engobe</a> below. However this glaze is not as brilliant and transparent as it could be. As apparent in the surface reflections, it has somewhat of an "<a  href="https://digitalfire.com/glossary/dimpled+glaze">orange peel</a>" texture on the glass surface. This is due to a combination of factors (e.g. not enough <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a>, gassing of the manganese during melting, cooling the kiln too quickly). If the <a  href="https://digitalfire.com/glossary/colorant">colorants</a> were transplanted into a more <a  href="https://digitalfire.com/glossary/fluid+melt+glazes">fluid-melt</a> transparent, this glaze could be improved. Photo courtesy of J. Decker.<br />
+</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Orange-peel or pebbly glaze surface. Why?</h3>
+<br /><a alt="An orange peel textured glaze" href="https://digitalfire.com/picture/1597"><img class="flexleft50" alt="An orange peel textured glaze"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/wezsekejod.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1597">click here</a> to see it.</p>
+<p>This is a cone 10 <a  href="https://digitalfire.com/glossary/glossy+glaze">glossy glaze</a>. It has the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> that suggests it should be crystal clear and smooth. But there are multiple issues with the materials supplying that chemistry: <a  href="https://digitalfire.com/material/1609">Strontium carbonate</a>, <a  href="https://digitalfire.com/material/1620">talc</a> and <a  href="https://digitalfire.com/material/173">calcium carbonate</a>. Each has a significant <a  href="https://digitalfire.com/glossary/loi">LOI</a> and produces gases <a  href="https://digitalfire.com/glossary/decomposition">decomposition</a>. When the gases need to come out at the wrong time it turns the glaze into a Swiss cheeze of micro-bubbles. A study to isolate which of these three materials is the problem might make it possible to adjust the firing to accommodate it. But probably not. The most obvious solution is to just use non-gassing sources <a  href="https://digitalfire.com/oxide/mgo">MgO</a>, <a  href="https://digitalfire.com/oxide/sro">SrO</a>, <a  href="https://digitalfire.com/oxide/cao">CaO</a> and <a  href="https://digitalfire.com/oxide/bao">BaO</a> (which will require some calculation). There is a good reason to do this: The glaze contains some <a  href="https://digitalfire.com/glossary/boron+frit">boron frit</a>, that is likely kick-starting melting much earlier than a standard raw-material-only cone 10 glaze. That <a  href="https://digitalfire.com/glossary/fluid+melt+glazes">fluid melt</a> may not only be trapping gases from the body but creating a perfect environment to trap all the bubbles coming out of those carbonates and talc. All of this being said, a <a  href="https://digitalfire.com/glossary/drop-and-soak+firing">drop and hold</a> <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a> could also smooth it out a lot.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Zircopax as a fining agent to de-bubble a stained glaze</h3>
+<br /><a href="https://digitalfire.com/picture/2048"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/tsvmr6kxcr.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2048">click here</a> to see it.</p>
+<p>The cone 03 <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> cup on the left has 10% Cerdec <a  href="https://digitalfire.com/glossary/encapsulated+stain">encapsulated stain</a> 239416 in the <a  href="https://digitalfire.com/recipe/g2931k">G2931K</a> clear base. The surface is orange-peeled because the glass is full of micro-bubbles that developed during the firing. Notice that the insides of the cups are crystal-clear, no bubbles. So here they are a direct product of the presence of the stain. The glaze on the right has even more stain, 15%. But it also has a 3% addition of <a  href="https://digitalfire.com/material/1724">Zircopax</a> (<a  href="https://digitalfire.com/material/1722">zircon</a>). Suppliers of encapsulated <a  href="https://digitalfire.com/glossary/ceramic+stain">stains</a> recommend a zircon addition, but are often unclear about why. Here is the reason: It is a "<a  href="https://digitalfire.com/glossary/fining+agent">fining agent</a>".</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Glaze with an encapsulated stain is bubbling. It needs Zircopax.</h3>
+<br /><a alt="Glaze orange peel defect" href="https://digitalfire.com/picture/2049"><img class="flexleft50" alt="Glaze orange peel defect"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/u1ljkuemj8.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2049">click here</a> to see it.</p>
+<p>These two pieces are fired at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>. The <a  href="https://digitalfire.com/glossary/base+glaze">base transparent</a> glaze is the same - <a  href="https://digitalfire.com/recipe/g2926b">G2926B</a> <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> transparent. The amount of encapsulated red stain is the same (11% Mason 6021 Dark Red). But two things are different. Number 1: 2% <a  href="https://digitalfire.com/material/1724">Zircopax</a> (<a  href="https://digitalfire.com/material/1722">zircon</a>) has been added to the upper glaze. The stain manufacturers recommend this, saying that it makes for a brighter color. However, that is not what we see here. What we do see is the particles of unmelting zircon acting as seeds and collection points for the bubbles (the larger ones produced are escaping). Number 2: The <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a>. The top one has been fired to approach cone 6 and 100F/hr, held for five minutes at <a  href="https://digitalfire.com/glossary/cone+6">2200F</a> (cone 6 as verified in our kiln by cones), dropped quickly to 2100F and held for 30 minutes.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/drop-and-soak+firing">Drop-and-Soak Firing</a>
+<br /><i>A kiln <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a> where temperature is eased to the top, then dropped quickly and held at a temperature 100-200F lower.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Firing Schedules</td>
+<td>
+<a href="https://digitalfire.com/schedule/c6dhsc">Plainsman Cone 6 Drop-and-hold, Slow Cool</a>
+<br /><i>350F/hr to 2100F, 108/hr to 2200, hold 10 minutes, fastdrop to 2100, hold 30 minutes, 150/hr to 1400</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/copper+carbonate+basic">Copper Carbonate Basic</a>
+<br /><i>This form of <a  href="https://digitalfire.com/material/236">copper carbonate</a> is the article of commerce, a mixture of theoretical copper carbonate and copper hydroxide.</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

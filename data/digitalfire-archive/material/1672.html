@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Veegum</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="A clay of incredibly small particle size. It has the highest plasticity of any known clay and acts as a suspending and gelling agent in slurries." name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item active"><a class="nav-link" href="list.html">Materials <span class="sr-only">(current)</span></a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=material" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container">
+<ul class="nav nav-tabs pt-1" id="myTab" role="tablist">
+<li class="nav-item">
+<a aria-controls="material" aria-selected="true" class="nav-link active" data-toggle="tab" href="#material" id="material-tab" role="tab">Materials for Ceramics</a>
+</li>
+</ul>
+<div class="tab-content mb-3" id="myTabContent" style="border-right:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #ddd; padding:10px;">
+<div aria-labelledby="material-tab" class="tab-pane fade show active" id="material" role="tabpanel">
+<a href="list_1-9.html">1-9</a> | <a href="list_A.html">A</a> | <a href="list_B.html">B</a> | <a href="list_C.html">C</a> | <a href="list_D.html">D</a> | <a href="list_E.html">E</a> | <a href="list_F.html">F</a> | <a href="list_Frits.html">Frits</a> | <a href="list_G.html">G</a> | <a href="list_H.html">H</a> | <a href="list_I.html">I</a> | <a href="list_J.html">J</a> | <a href="list_K.html">K</a> | <a href="list_L.html">L</a> | <a href="list_M.html">M</a> | <a href="list_N.html">N</a> | <a href="list_O.html">O</a> | <a href="list_P.html">P</a> | <a href="list_Q.html">Q</a> | <a href="list_R.html">R</a> | <a href="list_S.html">S</a> | <a href="list_T.html">T</a> | <a href="list_U.html">U</a> | <a href="list_V.html">V</a> | <a href="list_W.html">W</a> | <a href="list_X.html">X</a> | <a href="list_Y.html">Y</a> | <a href="list_Z.html">Z</a><br/>
+<nobr></nobr>
+</div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Veegum</h1>
+<p><b>Alternate Names</b>: Veegum T, Veegum CER, Veegum Pro, VGT, Veegum R</p>
+<p><b>Description</b>: Glaze Hardener, Binder</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/oxide.html">Oxide</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/analysis.html">Analysis</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Formula</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Tolerance</a></th>
+</tr></thead><tbody>
+<h4>Notes</h4><p>Vanderbilt Minerals describes <a href="1672.html">Veegum T</a> and R as "Magnesium Aluminum Silicates, water-washed white-firing smectite clays, used as <a href="../glossary/suspension.html">suspending</a> agents for glazes, as plasticizing agents for nonplastic formulations such as high alumina, <a href="1720.html">zirconia</a> and <a href="../glossary/porcelain.html">porcelain</a> bodies, and as a nonmigrating binder in extruded bodies." They do not provide a <a href="../glossary/glaze+chemistry.html">chemistry</a>, but usually, the percentages used in recipes are very small anyway. When the term "Veegum" is used in <a href="../glossary/ceramics.html">ceramics</a>, it generally refers to Veegum T or Veegum R.<br/>
+<br/>
+On this site we often refer to Veegum in a general sense, meaning that other highly refined <a href="106.html">bentonite</a>, smectites, hectorites, attapulgites, etc. might also be suitable in your application. Veegum is the one we have most experience with. It has an unfortunate name; it is not a gum, that is, a hardening agent. It is a gelling agent.<br/>
+<br/>
+Veegum, or Veegum R (less purified) and VeeGum T (or VGT) are not 'gums', rather they are a refined fine particle mineral called 'smectite' (bentonite and hectorite are members of the smectite group; CAS 12199-37-0, 1302-78-9). It is a complex <a href="../glossary/colloid.html">colloid</a> and extremely plastic and sticky magnesium aluminum silicate (CAS 1327-43-1). It is an off-white insoluble flaky consistency and swells to many times its original volume when added to water. Its aqueous dispersions are thus high-viscosity <a href="../glossary/thixotropy.html">thixotropic</a> gels at low solids. A potter encounters this phenomenon when employing significant percentages of VGT in glazes and porcelain bodies (e.g. more than 2%), finding that much more water is needed to produce a pourable <a href="../glossary/suspension.html">suspension</a> (meaning the low <a href="../glossary/specific+gravity.html">specific gravity</a> suspensions can be thickened). Veegum is not subject to attack by <a href="../glossary/micro+organisms.html">microorganisms</a>. Various grades are classified according to <a href="../glossary/viscosity.html">viscosity</a> and ratio of aluminum to magnesium content.<br/>
+<br/>
+Veegum T is the highly purified, whitest grade. It is recommended for pharmaceuticals, cosmetics, and food where purity, low heavy metals, and low microbiological counts are critical. Very effective at swelling, suspending, and thickening aqueous systems.<br/>
+<br/>
+Veegum R is a technical grade of the same material, intended for industrial uses (ceramics, adhesives, paints, coatings, etc.). Less purification, so it can be slightly darker or contain minor impurities not acceptable in pharma/food. Functions the same way (hydrating, swelling, suspending), but specifications are looser. It is much less expensive.<br/>
+<br/>
+It is important to properly hydrate the powder and mix it in water before adding other ingredients (different grades of Veegum hydrate at different rates). They emphasize not underestimating the time needed, pointing out that in 25C water it could take 120 minutes using a <a href="../glossary/propeller+mixer.html">propeller mixer</a>! Using hot water or a higher-energy mixer can drastically cut the time needed. If mixing does not hydrate all particles, then variations in mixing will produce variations in properties, so use the same water temperature, mixing time and energy and viscosity each time it is used to get consistent behavior in the <a href="../glossary/slurry.html">slurry</a> or pugged material.<br/>
+<br/>
+In glazes, Veegum is used as an invaluable in-mix suspending agent and thickener (enabling low specific gravities). This is especially important in <a href="../glossary/brushing+glaze.html">brushing glazes</a> where high <a href="../glossary/water+content.html">water content</a> is important to brushing properties. For such, a Veegum addition is a way to thicken yet still suspend a glaze slurry that would otherwise be thin-as-water (see info on <a href="1672.html">Veegum CER</a> below). Note that if, over time, the <a href="../glossary/brushing+glaze.html">brushing glaze</a> slurry thins and settles, the likely culprit is <a href="../glossary/micro+organisms.html">microbial</a> attack on the organic gum.<br/>
+<br/>
+It can also be suitable for use as a spray-on surface hardener before decorating (mix it with water, start with 0.2% for testing).<br/>
+<br/>
+In bodies, Veegum is employed as a plasticizing agent. It is a non-migrating binder because it is not dissolved in the water. Its key advantage is that it is clean and therefore does not affect fired whiteness. 1.5-2.0% added to a porcelain that is otherwise a little too short for modelling or <a href="../glossary/throwing.html">throwing</a> will transform it into a plastic material. Amazingly, VGT can <a href="../glossary/plasticity.html">plasticize</a> completely nonplastic materials (such as <a href="41.html">calcined alumina</a>,  zirconia, <a href="173.html">calcium carbonate</a>, magnesium carbonate, <a href="273.html">dolomite</a>) at only 3-4%! White-burning porcelains are low-plasticity by nature, but VGT in higher percentages (up to 4%) can produce fantastic <a href="../glossary/plasticity.html">plasticity</a> and workability. VGT may produce more plasticity in one body than another, depending on the type of <a href="925.html">kaolin</a> present and the particle dynamics of the mix. For some formulations, it is difficult to produce the needed plasticity without ending up with a body that is too sticky or requires too much water.<br/>
+<br/>
+In body production, VGT is extremely troublesome because of it resistance to particle wetting and its stickiness. Mixing a batch Veegum plasticized porcelain in a premixer, before pugging, can be almost impossible because it is too sticky to remove. The highly plastic and sticky slurry cannot be dewatered in a <a href="../glossary/filter+press.html">filter press</a> because the clay is not permeable enough and it is too difficult to remove the filter cakes from the machine. The only method the author knows is to feed the powder and water directly into a powerful <a href="../glossary/pugmill.html">pugmill</a> in a continuous stream - in the main chamber the clay can only reach a crumbly state, but as it is forced through the shredder under high pressure, shear and vacuum, it will mix well.<br/>
+<br/>
+Veegum CER has been discontinued (as of 2025). It was described as a mixture of VEEGUM R and medium viscosity sodium carboxymethylcellulose (<a href="228.html">CMC gum</a>) that served to harden, suspend and stabilize viscosity in glazes. A maximum viscosity suspension was made using about 45 grams per litre of water (you will need a good propeller mixer and hot water to do this; the gelled solution is easier to scoop out with a spoon, it is much less stringy than CMC Gum solution). A Veegum CER solution can be added to an already-mixed <a href="../glossary/dipping+glaze.html">dipping glaze</a> to impart the above properties, although it lowers the specific gravity it also gels the slurry. If enough is added, more water will also be needed; in this way, slurries of low specific gravity can be made (e.g. for brushing glazes). You may need to make Veegum CER solutions in smaller quantities or add a <a href="../glossary/micro+organisms.html">biocide</a> (bacterial growth is possible).<br/>
+<br/>
+Veegum Pro is Veegum T treated with an amine to improve dispersibility. It is recommended for use where a minimum amount of water is required and/or only low-shear mixers are available.<br/>
+<br/>
+Other grades (like F, HV, K, HS) are used in non-ceramic applications (like pharmaceuticals and personal care products).<br/>
+<br/>
+In calculations, use the bentonite chemistry (it is possible in INSIGHT to label a recipe line as Veegum yet specify bentonite as the material database lookup value).<br/>
+<br/>
+Density (Mg/m3): 2.6<br/>
+Viscosity (after shear mixing, 5% dispersion): 250 cps +/- 25%<br/>
+Moisture: 8% max<br/>
+pH: 8.5<br/>
+<br/>
+The Vanderbilt Minerals website product finder does not work for finding most Veegum grades (as of Sept 2025).</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Control gel using Veegum, brushing properties with CMC gum</h3>
+<br/><a alt="Mixing a brushing glaze" href="../picture/3079.html"><img alt="Mixing a brushing glaze" class="flexleft50" loading="lazy" src="../media/images/daxvprhqfz.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3079.html">click here</a> to see it.</p>
+<p>This is <a href="../recipe/g1214z1.html">G1214Z1</a> <a href="../glossary/brushing+glaze.html">brushing glaze</a> (with 5% <a href="1644.html">titanium</a> added). For a 340g powder batch (to get a pint) my initial target is 5g <a href="228.html">CMC gum</a> and 5g Veegum. CMC controls drying speed and Veegum the amount of gelling. I first mix the CMC with the powder and shake the whole batch in a plastic bag. Then I add it all to 440g of water in the blender jar and mix it well (making sure no <a href="../glossary/agglomeration.html">agglomerates</a> remain (stage 1). Stage 2 is adding the VeeGum slowly, while high-speed <a href="../glossary/blender+mixing.html">blender-mixing</a>, this is important because it enables tuning the degree of gel (which cannot be predicted). Because this recipe has little clay, it took all 5g of Veegum without overgelling (the entire mass moved freely in the mixer jar). But it did gel overnight (so 4g would be better next time). By contrast, it is the brushing behavior that demonstrates whether the amount of CMC is right. Not enough and coats dry too fast and go on too thick. Too much and it dries too slowly and too many coats are needed.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Veegum is not a gum, it is a gelling agent. 
+</h3>
+<h4 style="color:#888888; margin-top:0px;">CMC gum needs something it provides.</h4>
+<br/><a alt="Bentonite and CMC working together" href="../picture/2258.html"><img alt="Bentonite and CMC working together" class="flexleft50" loading="lazy" src="../media/images/xthxn7uplz.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2258.html">click here</a> to see it.</p>
+<p>On the left, the brush-strokes of gummed glaze, which I batched myself, have been freshly painted onto an already-fired glaze. Notice the brown brush stroke holds its character. It has a high <a href="../glossary/specific+gravity.html">specific gravity</a> (SG): 1.6. And contains 1.5% <a href="228.html">CMC gum</a>. The white one to its left, whose brush stroke has flattened and it is running downward, has the same gum content but an SG of 1.5. Is it running because of its lower SG? No. <a href="../glossary/commercial+hobby+brushing+glazes.html">Commercial glazes</a> with an SG below 1.3 still hold in place well. How? Because they also have a gelling agent (e.g. Veegum - it has an unfortunate name, it is not a gum). That reveals a secret: Gums and gelling agents need each other. CMC Gum needs particle <a href="../glossary/surface+area.html">surface area</a> to work its magic and <a href="106.html">bentonite</a>, the gelling agent here, supplies that. And, the gelling agent needs the gum to slow down drying and enable a hard and crack-free dried surface. The dried strokes on the right demonstrate that - 2% bentonite has been added to the drippy one on the far left. They held in place because of the bentonite and hardened without cracking because of the CMC gum.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">How fast will Veegum settle in water?</h3>
+<br/><a href="../picture/1598.html"><img class="flexleft50" loading="lazy" src="../media/images/lymhifebak.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1598.html">click here</a> to see it.</p>
+<p>This is <a href="1672.html">VeeGum T</a>, a processed smectite clay (similar to <a href="106.html">bentonite</a>, extremely small particle size). I have propeller-mixed enough powder into water that it has begun to gel. How long does it take for them to begin to settle? Never. This sat for a month with no visible change! That means it is colloidal. For ceramic slurries, Veegum is a gelling agent, not a gum (or hardener).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">The premium plasticizer has a premium price. Brace yourself.</h3>
+<br/><a href="../picture/1546.html"><img class="flexleft50" loading="lazy" src="../media/images/tajbutebav.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1546.html">click here</a> to see it.</p>
+<p><a href="1672.html">VeeGum T</a> is expensive. Each of these boxes contains a 50 lb bag. You are looking at $6000 worth of material (in 2015)! This is enough to <a href="../glossary/plasticity.html">plasticize</a> 450 20 kg boxes of <a href="../glossary/porcelain.html">porcelain</a> containing 4% VeeGum. Is it worth it? Yes, this is the king of bentonites, nothing can produce a porcelain body that has the workability and <a href="../glossary/translucency.html">translucency</a> this can impart. Yes, translucifies. Not sure how yet but it does.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Mineral Colloid BP, Gelwhite H, Veegum T in plastic form</h3>
+<br/><a href="../picture/970.html"><img class="flexleft50" loading="lazy" src="../media/images/letfylosaf.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/970.html">click here</a> to see it.</p>
+<p>Each has been mixed with water and all produce a jelly-like <a href="../glossary/translucency.html">translucent</a> sticky material that takes a very very long time to dry. They are expensive and, among other uses, act as white-burning plasticizers in fine <a href="../glossary/porcelain.html">porcelain</a> bodies.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Veegum T , Mineral Colloid BP, Gelwhite H at cone 6</h3>
+<br/><a href="../picture/976.html"><img class="flexleft50" loading="lazy" src="../media/images/meggofuvag.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/976.html">click here</a> to see it.</p>
+<p>The Veegum is dense and white, but not melting. The Mineral <a href="../glossary/colloid.html">Colloid</a> fires like a typical raw <a href="106.html">bentonite</a> (dark brown, high <a href="../glossary/soluble+salts.html">soluble salts</a> and beginning to melt). The Gelwhite is completely melted and foamed.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Veegum CER Saturated suspension</h3>
+<br/><a alt="Veegum CER saturated solution" href="../picture/2842.html"><img alt="Veegum CER saturated solution" class="flexleft50" loading="lazy" src="../media/images/tabhvdrnqf.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2842.html">click here</a> to see it.</p>
+<p>This is the most viscous <a href="../glossary/suspension.html">suspension</a> we can make using hot water and a <a href="../glossary/propeller+mixer.html">propeller mixer</a> - 300ml water with 13.25g <a href="1672.html">Veegum CER</a>. In glazes having low clay content adding this gels the <a href="../glossary/slurry.html">slurry</a>, enabling higher <a href="../glossary/water+content.html">water content</a> to improve its brushing properties and slow down drying. In slurries having plenty of clay pure <a href="228.html">CMC gum</a> is usually better (unless a high-water-content slurry is needed). Of course, keep in mind that anything with CMC gum can be subject to <a href="../glossary/micro+organisms.html">microbial</a> attack.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">You may know Veegum T but do you know VeeGum CER?</h3>
+<br/><a alt="Attempts to use a glaze that is too thick" href="../picture/2257.html"><img alt="Attempts to use a glaze that is too thick" class="flexleft50" loading="lazy" src="../media/images/ysq2ez4whs.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2257.html">click here</a> to see it.</p>
+<p>The glaze in this jar was 'goop', impossible to paint on because it was too viscous. And it dried way too fast. Laguna mentions adding water so I measured the <a href="../glossary/specific+gravity.html">specific gravity</a> (SG): 1.7. That is super-high, it took a 125cc addition to bring it down to 1.5, but it was still thick, dried even faster, and brushing it on evenly was even harder. It was not obvious what to do next. It needed a lot more water (1.3-1.35 SG is normal for multi-layer application of <a href="../glossary/brushing+glaze.html">low SG</a> glazes), adding <a href="228.html">CMC gum</a> and enough water to do that would produce an unusable watery and sticky <a href="../glossary/slurry.html">slurry</a>. <a href="1672.html">Veegum CER</a> to the rescue! It is a 50:50 mix of CMC gum and <a href="1672.html">Veegum T</a>. The former slows drying and hardens, the latter gels. So it can simply be added until the painting properties are right. And, a Veegum CER solution is easier to handle than one of CMC gum. The brushing properties are just right, it gels nicely on standing and stays in place on verticals. CER is also good for highly <a href="../glossary/frit.html">fritted</a> <a href="../glossary/dipping+glaze.html">dipping glazes</a> or others lacking in clay content (otherwise CMC might still be better).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Throw Zircopax on the potters wheel. Just add VeeGum.</h3>
+<br/><a href="../picture/1517.html"><img class="flexleft50" loading="lazy" src="../media/images/cawfenepab.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1517.html">click here</a> to see it.</p>
+<p>These <a href="../picture/1479.html">crucibles</a> are <a href="../glossary/throwing.html">thrown</a> from a mixture of 97% <a href="1724.html">Zircopax</a> (zirconium silicate) and 3% <a href="1672.html">Veegum T</a>. The consistency of the material is good for rolling and making tiles but is not quite plastic enough to throw very thin (so I would try 4% Veegum next time). It takes alot of time to dewater on a <a href="../glossary/plaster+bat.html">plaster bat</a>. But, these are like nothing I could make from any other material. They are incredibly <a href="../glossary/refractory.html">refractory</a> (fired to cone 10 they look like bisqued <a href="../glossary/porcelain.html">porcelain</a>). However I have had mixed results for <a href="../glossary/thermal+shock.html">thermal shock</a> resistance.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">10% Veegum porcelain slurry dewatering on plaster</h3>
+<br/><a href="../picture/956.html"><img class="flexleft50" loading="lazy" src="../media/images/vofcukukos.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/956.html">click here</a> to see it.</p>
+<p>It has taken a couple of days to reach this state, it still has a very high <a href="../glossary/water+content.html">water content</a> and needs another day or two of stiffening. This cracking occurs because much more water is needed to thin a <a href="../glossary/slurry.html">slurry</a> enough to be able to propeller-mix it effectively. Typical clays can be dewatered in this manner in a few hours but not this one. By the way, this is fantastically plastic to use on the potters wheel, but high percentages of Veegum like this would not be affordable or practical.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Ridiculously plastic porcelain! How?</h3>
+<br/><a href="../picture/957.html"><img class="flexleft50" loading="lazy" src="../media/images/babmawykol.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/957.html">click here</a> to see it.</p>
+<p>A ridiculous recipe. I just threw this mug from a <a href="../glossary/porcelain.html">porcelain</a> having 10% Veegum <a href="../glossary/plasticity.html">plasticizer</a> (of course no one could afford that, it is $15 a pound). But anyway, I was testing the extreme. These mugs did not twist during <a href="../glossary/throwing.html">throwing</a>, I could have pulled the wall thinner at the middle and top. The wall thickness at the bottom is 2.3mm (less than 3/32")! This mug is 15cm (6 in) tall. One problem: It takes forever to dry.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">How much VeeGum is needed in a super white porcelain?</h3>
+<br/><a href="../picture/1526.html"><img class="flexleft50" loading="lazy" src="../media/images/betnibakad.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1526.html">click here</a> to see it.</p>
+<p>When formulating a white <a href="../glossary/throwing.html">throwing</a> <a href="../glossary/porcelain.html">porcelain</a> that employs a white expensive <a href="../glossary/plasticity.html">plasticizer</a> (like Bentone or Veegum) the optimal range of percentages can be surprisingly narrow (I am assuming at least 40% <a href="925.html">kaolin</a> is present). The trimming behavior is one indicator. When there is insufficient plasticizer the tool will chatter (of course in extreme cases edges will tear). Smoothing the corners after trimming (using your finger) will also give you an indication. If there is too much plasticizer, the material will ball up under your finger, if there is insufficient it will not smooth out well. The percentage can be critical: 0.5% too high and the <a href="../glossary/drying+shrinkage.html">drying shrinkage</a> could sky rocket, 0.5% too low and lips can split at the rim during throwing.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">VeeGum percentage must be precisely tuned in a porcelain</h3>
+<br/><a href="../picture/1527.html"><img class="flexleft50" loading="lazy" src="../media/images/wepdygaxoj.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1527.html">click here</a> to see it.</p>
+<p>This fine white New Zealand <a href="../glossary/porcelain.html">porcelain</a> body has to be plasticized using an expensive white <a href="106.html">bentonite</a> (VeeGum). In this test mix, the percentage of VeeGum was slightly low (3.25%). Although it is very plastic and throws well on the potters wheel, the tendency to split at the rim is evident on this dried mug. Only 0.5% more Veegum is needed to solve this issue. The percentage is critical, enough to eliminate this issue but not too much or the <a href="../glossary/drying+shrinkage.html">drying shrinkage</a> will be excessive.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">VeeGum and CMC gum can plastify non-plastic powders:
+</h3>
+<h4 style="color:#888888; margin-top:0px;">Great for making melt-flow test balls</h4>
+<br/><a alt="Frit and veegum powder ready to mix with water" href="../picture/2497.html" title="How to make melt flow test balls of frits"><img alt="Frit and veegum powder ready to mix with water" class="flexleft50" loading="lazy" src="../media/images/zsgejdngba.jpg" title="How to make melt flow test balls of frits"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2497.html">click here</a> to see it.</p>
+<p>Fluxes used in <a href="../glossary/ceramics.html">ceramics</a> are almost always non-plastic, they cannot be formed like clay - <a href="../glossary/frit.html">frits</a> and <a href="310.html">feldspars</a> are good examples. And they don't dry hard. To make balls for use in the <a href="../test/gbmf.html">GBMF test</a> for <a href="../glossary/melt+fluidity.html">melt flow</a> a binder needs to be added. Traditionally we have used Veegum, however, it interacts with materials enough to affect melting - <a href="228.html">CMC gum</a> does not. That being said, Veegum dries better (these balls can dry very slowly). When simply comparing <a href="../glossary/melt+fluidity.html">the melt</a> of two materials either is fine.<br/>
+<br/>
+Each ceramic powder responds differently to being water-mixed with a gum or <a href="../glossary/plasticity.html">plasticizer</a>. Some material-gum mixes uptake water so well that it can be worked in drops at a time until a plastic material is produced. Others require vigorous mixing into a <a href="../glossary/slurry.html">slurry</a> and then dewatering on a <a href="1124.html">plaster</a> surface. We target 9g balls, they fit into the reservoir of the <a href="../picture/2350.html">melt flow tester</a>. To make one ball we start with 11 or 12g of powder (to allow for waste) and then form them into 12g (wet) balls - these dry them down to the 9g weight. We are almost always comparing the flow of two materials, in these cases it is only important that the two balls be the same weight - so we trim the heavier one down to the weight of the lighter one. Does cornstarch work? No, the mix is not plastic. Psyllium? Yes, but it has a flakey texture and demands more water.<br/>
+<br/>
+If you are testing a plastic material then a binder is not needed.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">The secret of this cone 6 translucency will surprise you!</h3>
+<br/><a href="../picture/1543.html"><img class="flexleft50" loading="lazy" src="../media/images/wyrjubebuh.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1543.html">click here</a> to see it.</p>
+<p>Three <a href="../glossary/cone+6.html">cone 6</a> mugs. All have zero <a href="../glossary/clay+body+porosity.html">porosity</a>. Why is the middle one so <a href="../glossary/translucency.html">translucent</a>? Three reasons. <br/>
+1. It has 10% more <a href="310.html">feldspar</a> than the one on the left and reaches zero porosity already at <a href="../glossary/cone+5.html">cone 5</a>.<br/>
+2. It employs New Zealand china clay while the one on the left contains high-TiO2 #6 Tile <a href="925.html">kaolin</a>.<br/>
+But this is also true for the one on the right. The third difference is the key.<br/>
+3. The center one contains 4% <a href="1672.html">Veegum T</a> <a href="../glossary/plasticity.html">plasticizer</a> (while the other two use standard <a href="106.html">bentonite</a>). This is surprising when I tell you one more thing: The mug on the right also contains 3% Ferro <a href="349.html">Frit 3110</a>. That means that the <a href="../glossary/frit.html">frit</a> does not have near the fluxing power of the VeeGum!</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">VeeGum and bentonite in the same porcelain! 
+</h3>
+<h4 style="color:#888888; margin-top:0px;">How can they fire this differently?</h4>
+<br/><a alt="Translucent and opaque porcelain cups" href="../picture/1566.html"><img alt="Translucent and opaque porcelain cups" class="flexleft50" loading="lazy" src="../media/images/zimjalilej.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1566.html">click here</a> to see it.</p>
+<p>These two cone 10 porcelains have the same recipe. 50% <a href="831.html">Grolleg</a> <a href="925.html">Kaolin</a> and 25% each of <a href="1245.html">silica</a> and <a href="310.html">feldspar</a>. But the one on the left is plasticized using 3.5% <a href="1672.html">VeeGum T</a> and the one on the right uses 5% regular raw <a href="106.html">bentonite</a>. The VeeGum is obviously doing more than making it more workable, it is acting as a powerful <a href="../glossary/flux.html">flux</a> and super-catalyst for <a href="../glossary/translucency.html">translucency</a>! Although not clear from this picture, the entire <a href="../glossary/translucency.html">translucent</a> mug is covered with <a href="../trouble/glaze+blisters.html">blisters</a>, it has over <a href="../glossary/vitrification.html">vitrified</a>. This is another big benefit of VeeGum, its use in a <a href="../glossary/porcelain.html">porcelain</a> enables cutting the amount of feldspar significantly (while retaining the translucency). This is good because it permits increasing the kaolin content for <a href="../glossary/plasticity.html">plasticity</a>. Or increasing the silica for <a href="../glossary/glaze+fit.html">glaze fit</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">The fluxing power of Veegum with pure Nepheline Syenite</h3>
+<br/><a alt="Nepheline syenite fired bars" href="../picture/3049.html"><img alt="Nepheline syenite fired bars" class="flexleft50" loading="lazy" src="../media/images/laasgqympq.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3049.html">click here</a> to see it.</p>
+<p>These fired bars are <a href="1070.html">nepheline syenite</a> (NS) fired to Orton cone 03 (~2000F). The top bar, L4526C, is 95% NS and 5% Veegum. Its <a href="../glossary/clay+body+porosity.html">porosity</a> is 3%. The bottom bar, L4526B, is 90% NS and 10% raw <a href="106.html">bentonite</a>. Its porosity is 19%! The top bar has much higher <a href="../glossary/firing+shrinkage.html">fired shrinkage</a>, it looks and feels like a <a href="../glossary/porcelain.html">porcelain</a>, that is clearly what is densifying it so much (the bottom one looks and feels like <a href="1124.html">Plaster</a> of Paris). Veegum is a super white clay <a href="../glossary/plasticity.html">plasticizer</a>, not a <a href="../glossary/flux.html">flux</a>. But it is acting as the latter here. Or perhaps its <a href="../glossary/surface+area.html">surface area</a> enables acting as a catalyst to initiate the melting of the nepheline syenite. Don’t think it’s fair to call the top bar a porcelain? A traditional dental porcelain can be 85% <a href="310.html">feldspar</a> and 5% clay, this has 5% clay also. This has not matured enough to be a glass ceramic either (modern dental porcelains are pure <a href="../glossary/frit.html">frit</a> glass ceramic).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Covia nepheline syenite demonstrates the incredible fluxing power of Veegum</h3>
+<br/><a alt="Nepheline syenite fired test bars" href="../picture/3018.html"><img alt="Nepheline syenite fired test bars" class="flexleft50" loading="lazy" src="../media/images/s2lixljt3u.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3018.html">click here</a> to see it.</p>
+<p>The left bars are 5% Veegum and 95% <a href="1070.html">nepheline syenite</a>. By cone 02 (bar #4) it is self-glazing and glass-like with a <a href="../picture/2239.html">total shrinkage</a> (plastic to fired) of 15% (less than some porcelains). At cone 03 (bar #5) the <a href="../glossary/clay+body+porosity.html">porosity</a> is 3% (a <a href="../glossary/stoneware.html">stoneware</a>). The right bars are 10% raw <a href="106.html">bentonite</a> and 90% nepheline (thus the darker color). The top bar (#1) went to cone 3 and has 20% total shrinkage and zero porosity. The bar below it, #3, has 3% porosity. That means that the <a href="../glossary/vitrification.html">vitrification</a> process is 6 cones (115°F) ahead in the Veegum-plasticized material compared to the bentonite-plasticized version. Yet the percentage of Veegum is only half as much! This is clear evidence of how powerful of a <a href="../glossary/flux.html">flux</a> Veegum is.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/100">https://www.vanderbiltminerals.com/resources/Minerals_and_Chemical_for_Ceramics_and_Refractories_web.pdf</a>
+<br/><i>Vanderbilt Minerals for <a href="../glossary/ceramics.html">Ceramics</a> Technical Sheet</i>
+<br/><i style="color:#888888;">Includes Vansil, Pyrax, Peerless, Dixie, Veegum, Vanzan, <a href="260.html">Darvan</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/3216">https://www.vanderbiltminerals.com/resources/VAN_GEL_VEEGUM_Industrial_Applications_Web.pdf</a>
+<br/><i>VEEGUM Magnesium Aluminum Silicate For Industrial Applications</i>
+<br/><i style="color:#888888;">A very detailed technical booklet about Veegum and Van Gel from the manufacturer.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/3728">https://www.vanderbiltminerals.com/products/veegum-r</a>
+<br/><i>Vanderbilt VEEGUM-R data sheet</i>
+<br/><i style="color:#888888;">VEEGUM® R Magnesium Aluminum Silicate is the original and most widely used grade. VEEGUM R is a highly purified smectite clay <a href="../glossary/suspension.html">suspension</a> stabilizer, emulsion optimizer and <a href="../glossary/rheology.html">rheology</a> modifier. It is synergistic with common thickeners such as VANZAN® xanthan gum and CMC. These combinations will provide greater thickening, stabilizing and <a href="../glossary/suspension.html">suspending</a> properties than those developed by the individual components of the mixture.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/3729">https://www.vanderbiltminerals.com/resources/34108_PYRAX-WA_US_EN_VC-VM.pdf</a>
+<br/><i>Vanderbilt Smectite Clays technical data sheet</i>
+<br/><i style="color:#888888;">Compares the properties of, and explains the differences between, <a href="1672.html">Veegum T</a>, <a href="1672.html">Veegum CER</a>, Veegum Pro, Van Gel B, Van Gel SX, VANZAN.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/3730">https://www.vanderbiltminerals.com/product-finder</a>
+<br/><i>Vanderbilt Minerals product finder</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="bentone+ma.html">Bentone MA</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="bentolite+l-3.html">Bentolite L-3</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="new+zealand+halloysite.html">New Zealand Halloysite</a>
+<br/><i>The whitest burning <a href="925.html">kaolin</a> we have ever seen. It is very sticky when wet, suspends glazes well &amp; makes super white <a href="../glossary/porcelain.html">porcelain</a> (with help from a white <a href="106.html">bentonite</a>).</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="mineral+colloid+bp.html">Mineral Colloid BP</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="gelwhite+h.html">Gelwhite H</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="bentone+ew.html">Bentone EW</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="magnabrite.html">Magnabrite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hectabrite.html">Hectabrite</a>
+<br/><i>White magnesium-rich surface-modified highly purified sodium hectorite clay 4-5 times more efficient than raw <a href="106.html">bentonite</a>.
+</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="hectalite+gm.html">Hectalite GM</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/adv">Additives for Ceramic Glazes</a>
+<br/><i>Materials that are added to glazes to impart physical working properties and usually burn away during firing. In industry all glazes, inks and <a href="../glossary/engobe.html">engobes</a> have additives, they are considered essential to control of cohesion, adhesion, <a href="../glossary/suspension.html">suspension</a>, dry hardness, surface leveling, <a href="../glossary/rheology.html">rheology</a>, speed-of-drying, etc. Among potters, it is common for glazes to have zero additives.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/bin">Additives for Ceramic Bodies</a>
+<br/><i>Materials that are added to bodies to impart physical working properties and usually burn away during firing. Binders enable bodies with very low or zero clay content to have <a href="../glossary/plasticity.html">plasticity</a> and dry hardness, they can give powders flow properties during pressing and impart <a href="../glossary/rheology.html">rheological</a> properties to clay slurries. Among potters however, it is common for bodies to have zero additives.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="../mineral/smectite.html">Smectite</a>
+<br/><i>A highly plastic clay mineral related to <a href="106.html">montmorillonite</a> (<a href="106.html">bentonite</a>), more correctly, the name of th</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/binders+for+ceramic+bodies.html">Binders for Ceramic Bodies</a>
+<br/><i>An overview of the major types of organic and inorganic binders used in various different ceramic industries.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/formulating+a+porcelain.html">Formulating a Porcelain</a>
+<br/><i>The principles behind formulating a <a href="../glossary/porcelain.html">porcelain</a> are quite simple. You just need to know the purpose of each material, a starting recipe and a testing regimen.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/fritware.html">Fritware</a>
+<br/><i>A <a href="../glossary/porcelain.html">porcelain</a> with significant added <a href="../glossary/frit.html">frit</a>. The frit matures it at a far lower temperature than typical. The strength <a href="../glossary/mechanism.html">mechanism</a> is one of particle glass bonding rather than <a href="1054.html">mullite</a> development.</i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></tbody></table></div></body>
+</html>

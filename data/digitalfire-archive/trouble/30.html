@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Bleeding Colors</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="In ceramics, the edges of overglaze and underglaze color decoration often bleeds into the over or under glaze. How can this be avoided." name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item"><a class="nav-link" href="../material/list.html">Materials</a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item active" href="list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=trouble" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container"><p><a aria-controls="collapse1" aria-expanded="false" class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button">All Troubles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a href="black+coring.html" title="29">Black Coring</a></nobr><br/><nobr><a href="bleeding+colors.html" title="30">Bleeding Colors</a></nobr><br/><nobr><a href="bloating.html" title="11">Bloating</a></nobr><br/><nobr><a href="casting+slip+problems.html" title="13">Casting Slip Problems</a></nobr><br/><nobr><a href="chrome+flashing+in+ceramic+glazes.html" title="7">Chrome Flashing in Ceramic Glazes</a></nobr><br/><nobr><a href="clouding+in+ceramic+glazes.html" title="23">Clouding in Ceramic Glazes</a></nobr><br/><nobr><a href="cracking+of+clays+during+drying.html" title="10">Cracking of Clays During Drying</a></nobr><br/><nobr><a href="crawling.html" title="1">Crawling</a></nobr><br/><nobr><a href="dunting+and+cracking+of+clay+bodies+during+firing.html" title="9">Dunting and Cracking of Clay Bodies During Firing</a></nobr><br/><nobr><a href="foaming+of+ceramicd+glaze+slurries.html" title="19">Foaming of Ceramicd Glaze Slurries</a></nobr><br/><nobr><a href="glaze+blisters.html" title="3">Glaze Blisters</a></nobr><br/><nobr><a href="glaze+crazing.html" title="2">Glaze Crazing</a></nobr><br/><nobr><a href="glaze+is+off-color.html" title="6">Glaze is Off-Color</a></nobr><br/><nobr><a href="glaze+marks+or+scratches.html" title="8">Glaze Marks or Scratches</a></nobr><br/><nobr><a href="glaze+peeling+on+drying.html" title="22">Glaze peeling on drying</a></nobr><br/><nobr><a href="glaze+pinholes%2C+pitting.html" title="5">Glaze Pinholes, Pitting</a></nobr><br/><nobr><a href="glaze+shivering.html" title="18">Glaze Shivering</a></nobr><br/><nobr><a href="glaze+slurry+is+difficult+to+use+or+settling.html" title="14">Glaze Slurry is Difficult to Use or Settling</a></nobr><br/><nobr><a href="leaking+of+fired+ceramics.html" title="26">Leaking of Fired Ceramics</a></nobr><br/><nobr><a href="lime+popping.html" title="28">Lime Popping</a></nobr><br/><nobr><a href="orange+peel+surface.html" title="27">Orange Peel Surface</a></nobr><br/><nobr><a href="over+firing+of+ceramic+glazes+and+bodies.html" title="21">Over Firing of Ceramic Glazes and Bodies</a></nobr><br/><nobr><a href="powdering%2C+cracking+and+settling+glazes.html" title="4">Powdering, Cracking and Settling Glazes</a></nobr><br/><nobr><a href="runny+ceramic+glazes.html" title="25">Runny Ceramic Glazes</a></nobr><br/><nobr><a href="specking+on+ceramic+ware.html" title="17">Specking on Ceramic Ware</a></nobr><br/><nobr><a href="splitting+at+the+plastic+stage.html" title="15">Splitting at the Plastic Stage</a></nobr><br/><nobr><a href="staining+of+fired+ceramic+glazes.html" title="24">Staining of Fired Ceramic Glazes</a></nobr><br/><nobr><a href="uneven+glaze+coverage.html" title="20">Uneven Glaze Coverage</a></nobr><br/><nobr><a href="warping.html" title="12">Warping</a></nobr></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Bleeding Colors</h1>
+<p class="text-muted" style="margin-left:20px">In ceramics, the edges of overglaze and underglaze color decoration often bleeds into the over or under glaze. How can this be avoided.
+</p><h2>Details</h2>
+<p><a href="../glossary/overglaze.html">Overglaze</a> decoration (and frequently <a href="../glossary/underglaze.html">underglazes</a>) often bleed on the edges, especially brushstrokes. The higher the <a href="../glossary/melt+fluidity.html">melt fluidity</a> of the colored layer the more <a href="bleeding+colors.html">bleeding</a> will occur, especially if the over or under-glaze is also fluid. Cobalt colors are often more fluid and runny, that is why this problem is most commonly seen with blues (this is true even with cobalt silicate <a href="../glossary/ceramic+stain.html">stains</a>, manufacturers recommend cobalt aluminate products for this).<br/>
+<br/>
+While there are other factors, control of <a href="../glossary/melt+fluidity.html">the melt</a> fluidity of the glaze and colored under/over glaze is the most important. Matte glazes tend to be more stable (less fluid) and thus host overglaze colors better (although some matte glazes are still fluid because their matteness <a href="../glossary/mechanism.html">mechanism</a> is surface <a href="../glossary/crystallization.html">crystallization</a> during cooling). The thickness of the glaze layer is also important, some glazes are stable on vertical surfaces, up to a point, after which that stability quickly degrades as they begin to run. It is thus important to know the degree of melt fluidity for both your glaze and over/underglazes. Take the time to make melt fluidity test balls to compare them.<br/>
+<br/>
+Stain powders are not just mixed with water and painted on to ware. They need to be part of a recipe: A base with a color addition. The base is a transparent matte or <a href="../glossary/glossy+glaze.html">glossy glaze</a> having as low a melt fluidity and <a href="../glossary/loi.html">LOI</a> as possible yet still producing a good glass. It also has a <a href="../glossary/glaze+chemistry.html">chemistry</a> that is sympathetic to the stains being used (stain companies outline chemistry requirements for host glazes in their documentation). Bases will almost always be very high in <a href="../glossary/frit.html">frit</a> content. They will also contain 1-1.5% gum to make them brush well and dry slowly. However, there is a problem. Different stains have differing color strengths and different effects on glaze melt fluidity (and even other properties like <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a>). Powerful colors, like blue, will likely not comprise more than 10% (with 90% base). Others, like yellow, will need a much higher percentage. Through testing the coloring power of each stain can be assessed (and its percentage adjusted). Its effect on melt fluidity should be adjusted for. How? One way is to have two or three variations on the base, spanning a range from very stiff melt (even incompletely melted) to one that melts very well (even too much). As an example, suppose you are using a <a href="../glossary/magnesia+matte.html">magnesia matte</a> <a href="../glossary/cone+6.html">cone 6</a> glaze, like <a href="../recipe/g2934y.html">G2934Y</a> and a color is making it too fluid. Try replacing half of the <a href="https://insight-live.com/insight/share.php?z=CMv4xKF3on">G2934Y</a> with a cone 10 magnesia matte, <a href="../recipe/g2571a.html">G2571A</a>. If the opposite is needed, add a balanced frit like Ferro 3195 to make it melt better.<br/>
+<br/>
+Adjusting the recipe to accommodate each color requires considerable testing (some <a href="../glossary/commercial+hobby+brushing+glazes.html">commercial glaze</a> manufacturers do not even do this and the variations in their products demonstrate that). But if you are developing your own colors, seriously consider doing the work necessary to make them work properly. Start with one color, then two, then more. An added benefit will be the ability to see how subtle visual effects on colours change as their melt fluidity is adjusted.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Bleeding underglaze. Why?</h3>
+<br/><a href="../picture/930.html"><img class="flexleft50" loading="lazy" src="../media/images/cekgumyzok.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/930.html">click here</a> to see it.</p>
+<p>This cobalt <a href="../glossary/underglaze.html">underglaze</a> is <a href="bleeding+colors.html">bleeding</a> into the transparent glaze that covers it. This is happening either because the underglaze is too highly <a href="../glossary/flux.html">fluxed</a>, the over glaze has too high of a <a href="../glossary/melt+fluidity.html">melt fluidity</a> or the firing is being soaked too long. <a href="../glossary/engobe.html">Engobes</a> used under the glaze (<a href="../glossary/underglaze.html">underglazes</a>) need to be formulated for the specific temperature and <a href="../glossary/colorant.html">colorant</a> they will host, cobalt is known for this problem so it needs to be hosted in a less <a href="../glossary/vitreous.html">vitreous</a> <a href="../glossary/engobe.html">engobe</a> medium. When medium-colorant compounds melt too much they bleed, if too little they do not bond to the body well enough. Vigilance is needed to made sure the formulation is right.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">A fluid melt glaze bleeds much more into adjoining ones</h3>
+<br/><a href="../picture/1928.html"><img class="flexleft50" loading="lazy" src="../media/images/mqz1pbdkdz.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1928.html">click here</a> to see it.</p>
+<p>The outer green glaze on these <a href="../glossary/cone+6.html">cone 6</a> <a href="../glossary/porcelain.html">porcelain</a> mugs has a high <a href="../glossary/melt+fluidity.html">melt fluidity</a>.  The liner on the upper mug is <a href="../recipe/g3806c.html">G3806C</a>, a <a href="../glossary/fluid+melt+glazes.html">fluid melt</a> high gloss clear. The <a href="../glossary/liner+glaze.html">liner glaze</a> on the lower one, <a href="../recipe/g2926b.html">G2926B</a>, is high gloss but not highly melt fluid. Thus, when both the outer and inner glazes have high melt fluidity (upper mug), they bleed together forming a fuzzy boundary. But when even one of them is not, a crisp boundary is achieved (lower mug).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Why pure stain powders make poor inks, slips, underglazes and overglazes</h3>
+<br/><a alt="Stains used pure as overglazes don't work" href="../picture/1297.html"><img alt="Stains used pure as overglazes don't work" class="flexleft50" loading="lazy" src="../media/images/puhzupuxot.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1297.html">click here</a> to see it.</p>
+<p>On the left are pure blue stain brush strokes, on the right are green ones (both painted over a glaze). Clearly, the green is <a href="../glossary/refractory.html">refractory</a>, stiffening the glaze enough to trap bubbles and sit on the surface as a dry, unmelted layer. The blue is the opposite, melting and <a href="bleeding+colors.html">bleeding</a> profusely into the glaze. Under the glaze, these problems would be magnified (the blue bleeding more, the green causing <a href="crawling.html">crawling</a> and <a href="glaze+blisters.html">blistering</a>). <a href="../glossary/ceramic+stain.html">Stains</a> are not ceramic, they are ceramic additives. Stains are not safe for direct food contact. Stains are expensive. Stains don't suspend in water, paint poorly and dry as a lose powder. These stains each need to be added, as a minor percentage, to a ceramic painting medium (one with <a href="../material/228.html">CMC gum</a> and a mix of ceramic materials tailored to melt to the desired degree and have a compatible <a href="../glossary/glaze+chemistry.html">chemistry</a> for develop the color (as per manufacturer guidelines).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Cobalt and iron overglazes bleeding into the matte glaze</h3>
+<br/><a href="../picture/2111.html"><img class="flexleft50" loading="lazy" src="../media/images/q2qkhgziqj.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2111.html">click here</a> to see it.</p>
+<p>This is the <a href="../recipe/g2934y.html">G2934Y</a> matte base with <a href="../glossary/overglaze.html">overglaze</a> decoration fired at <a href="../glossary/cone+6.html">cone 6</a>. Although this matte has a high <a href="../glossary/melt+fluidity.html">melt fluidity</a>, overglaze decoration can be successful as long as it is not applied too thick and not overfired. But in this case the glaze is thickly applied. Once the critical thickness boundary is passed, the glaze's ability to hold overglaze in place quick degrades. The <a href="../recipe/g2934.html">G2934</a> recipe has less melt fluidity and fires to the same surface, it would would be a better choice as the <a href="../glossary/base+glaze.html">base glaze</a> in this case (and could be applied thicker). However this Y variation would be a good choice as the medium if you want to make your own overglaze brushable colors.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Underglaze color mayhem at cone 5!</h3>
+<br/><a href="../picture/1212.html"><img class="flexleft50" loading="lazy" src="../media/images/pimsohitot.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1212.html">click here</a> to see it.</p>
+<p>These are commercial <a href="../glossary/underglaze.html">underglaze</a> colors fired in a flow tester. <a href="../glossary/underglaze.html">Underglazes</a> are not pure <a href="../glossary/ceramic+stain.html">stains</a>, they are a blend of stain powders with a host recipe (a porcelain-like mix of clay, <a href="../glossary/frit.html">frit</a>, <a href="../material/1245.html">silica</a>) that matures enough to fuse to the body but not so much that it melts. The blue, green and red are from one manufacturer. Stain powders have different melting temperatures and require differing percentages to get color intensity, the <a href="../glossary/base+glaze.html">base recipe</a> of the medium should compensate for that. That is not being done here, the pink one needs less <a href="../glossary/flux.html">flux</a> and the green needs more. The black underglaze (D) (from a second manufacturer) has liquefied, gassed out and is about to head down the runway! The E black (a third manufacturer) has not even started to melt or even <a href="../glossary/sintering.html">sinter</a>. The black <a href="../glossary/engobe.html">engobes</a> were plastic, the colored ones were not, likely an indication that black requires a much lower stain percentage in the <a href="../glossary/engobe.html">engobe</a> recipe.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Here is motivation to make your own underglazes!</h3>
+<br/><a alt="Underglazes melting to different degrees" href="../picture/1215.html"><img alt="Underglazes melting to different degrees" class="flexleft50" loading="lazy" src="../media/images/sapbizygyb.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1215.html">click here</a> to see it.</p>
+<p>Commercial hobby <a href="../glossary/underglaze.html">underglazes</a> are high in stain and very expensive. But does expensive mean suitable? To help answer we have over-fired these commercial products in a <a href="../picture/2350.html">melt fluidity tester</a> (to cone 8). They are recommended for use from cone 06-6 (some can go higher e.g. the green). Underglazes need to melt enough to bond with the underlying body, but not so much that <a href="../glossary/opacity.html">opacity</a> is lost (any melting loses opacity). Excessive melt can also cause design edges to bleed. To work well at greater thicknesses, underglazes need to have a <a href="../glossary/firing+shrinkage.html">firing shrinkage</a> similar to the body (an ill-fitted <a href="../glossary/underglaze.html">underglaze</a> and body forced into marriage are eventually going to divorce, in the form of flaking or cracking at their <a href="../glossary/body+glaze+interface.html">interface</a>). Thus, while a regular glaze would melt enough to go well down the runway on this tester, an underglaze should not flow at all. At this temperature, none of these have achieved the right degree of <a href="../glossary/maturity.html">maturity</a> (the green is too <a href="../glossary/refractory.html">refractory</a>, the others over-melt to varying degrees). The only one that has a chance of suitability at <a href="../glossary/cone+6.html">cone 6</a>, two cones lower than this, is the blue. Clearly, the <a href="../glossary/base+glaze.html">base recipe</a> and stain percentage in each underglaze recipe color needs attention, if that can be achieved all of these would <a href="../glossary/maturity.html">mature</a> to the same degree.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Underglazes can be incompatible with the clear overglaze</h3>
+<br/><a href="../picture/2411.html"><img class="flexleft50" loading="lazy" src="../media/images/qtx3oxzu1c.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2411.html">click here</a> to see it.</p>
+<p>These are <a href="../glossary/porcelain.html">porcelain</a> tiles that we <a href="../glossary/bisque.html">bisque fired</a>, one-coat decorated with <a href="../glossary/underglaze.html">underglazes</a> (Crysanthos), glazed with G3806PS <a href="../glossary/fluid+melt+glazes.html">fluid-melt</a> glossy clear glaze and fired to <a href="../glossary/cone+6.html">cone 6</a>. <a href="../glossary/fluid+melt+glazes.html">Fluid melt</a> clear glazes cover colors much better (without <a href="crawling.html">crawling</a> or <a href="../glossary/glaze+bubbles.html">clouding</a>). Some colors are <a href="bleeding+colors.html">bleeding</a>, if needed this glaze can be adjusted (by adding <a href="../material/925.html">kaolin</a>) to make it melt a little less. The rose color on the upper right, #093, is not working? Why? It likely employs a chrome-tin stain, these have requirements: A clear glaze having a minimum amount of <a href="../oxide/cao.html">CaO</a>, no <a href="../oxide/zno.html">ZnO</a> and not too much <a href="../oxide/b2o3.html">B<sub>2</sub>O<sub>3</sub></a>. This glaze does not qualify. But no transparent glaze works with all underglazes. You could find others that work with #093 but they could cloud, <a href="glaze+crazing.html">craze</a>, <a href="crawling.html">crawl</a> and not be glossy enough. The other orange/pink colors here are working. Why? Because they likely employ inclusion <a href="../glossary/ceramic+stain.html">stains</a>. A key factor is that the black is working well, even when applied over the white <a href="../glossary/underglaze.html">underglaze</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Why it is not a good idea to use straight stain underglaze</h3>
+<br/><a alt="Two ceramic mugs with a rubber-stamped logo using a stain/glycerine ink" href="../picture/1046.html" title="Two ceramic mugs with a rubber-stamped logo using a stain/glycerine ink"><img alt="Two ceramic mugs with a rubber-stamped logo using a stain/glycerine ink" class="flexleft50" loading="lazy" src="../media/images/hohveronoc.jpg" title="Two ceramic mugs with a rubber-stamped logo using a stain/glycerine ink"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1046.html">click here</a> to see it.</p>
+<p>The logo on the left was rubber-stamped using and ink mix made of only glycerine and Mason 6666 black stain. The glaze is shedding off during firing. Multiple properties needed by a stamping ink are not present here. First, the stain dries as a powder, it has no hardening or bonding properties, glycerine is its only <a href="../glossary/mechanism.html">mechanism</a>. Second, it is too concentrated, the black color is so powerful that it bleeds excessively into the overlying glaze. Third, it does not melt during firing so it does not bond with the body below. And, it either develops only a fragile <a href="../glossary/body+glaze+interface.html">interface</a> with the glaze above, or sheds it off. The piece on the right mixes the stain 50:50 with a glossy transparent glaze, from that it inherits better lays down, accepts the <a href="../glossary/overglaze.html">overglaze</a> better and dries harder. Black <a href="../glossary/ceramic+stain.html">stains</a> are potent, an 80:20 stain:glaze mix would work even better.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/bleeding+of+colors.html">Bleeding of colors</a>
+<br/><i>In <a href="../glossary/ceramics.html">ceramics</a>, the edges of <a href="../glossary/overglaze.html">overglaze</a> and <a href="../glossary/underglaze.html">underglaze</a> color decoration often bleeds into the over or <a href="../glossary/underglaze.html">under glaze</a>. How can this be avoided.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/ceramic+glaze+defects.html">Ceramic Glaze Defects</a>
+<br/><i><a href="../glossary/ceramic+glaze+defects.html">Ceramic glaze defects</a> include things like <a href="../glossary/pinholing.html">pinholes</a>, <a href="glaze+blisters.html">blisters</a>, <a href="glaze+crazing.html">crazing</a>, <a href="../glossary/glaze+shivering.html">shivering</a>, <a href="../glossary/leaching.html">leaching</a>, <a href="crawling.html">crawling</a>, <a href="../glossary/cutlery+marking.html">cutlery marking</a>, <a href="../glossary/glaze+bubbles.html">clouding</a> and color problems.</i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></div></body>
+</html>

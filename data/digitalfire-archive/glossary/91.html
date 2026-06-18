@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Thixotropy</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="Thixotropy is a property of ceramic slurries of high water content. Thixotropic suspensions flow when moving but gel after sitting (for a few moments more depending on application). This phenomenon is helpful in getting even, drip-free glaze coverage." name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item"><a class="nav-link" href="../material/list.html">Materials</a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item active"><a class="nav-link" href="list.html">Glossary <span class="sr-only">(current)</span></a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=glossary" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container"><p><a aria-controls="collapse1" aria-expanded="false" class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button">All Glossary</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a href="0.8mm+thickness.html" title="398">0.8mm thickness</a> |</nobr> <nobr><a href="200+mesh.html" title="343">200 mesh</a> |</nobr> <nobr><a href="325+mesh.html" title="335">325 mesh</a> |</nobr> <nobr><a href="3d+design.html" title="309">3D Design</a> |</nobr> <nobr><a href="3d+modeling.html" title="390">3D Modeling</a> |</nobr> <nobr><a href="3d+printer.html" title="310">3D Printer</a> |</nobr> <nobr><a href="3d+printing+clay.html" title="314">3D Printing Clay</a> |</nobr> <nobr><a href="3d+slicer.html" title="311">3D Slicer</a> |</nobr> <nobr><a href="3d-printing.html" title="267">3D-Printing</a> |</nobr> <nobr><a href="42+mesh.html" title="410">42 mesh</a> |</nobr> <nobr><a href="a.i.+in+ceramics.html" title="378">A.I. in Ceramics</a> |</nobr> <nobr><a href="abrasion+ceramics.html" title="1">Abrasion Ceramics</a> |</nobr> <nobr><a href="acidic+oxides.html" title="2">Acidic Oxides</a> |</nobr> <nobr><a href="agglomeration.html" title="168">Agglomeration</a> |</nobr> <nobr><a href="ai+at+digitalfire.html" title="424">AI at Digitalfire</a> |</nobr> <nobr><a href="alkali.html" title="139">Alkali</a> |</nobr> <nobr><a href="alkaline+earths.html" title="140">Alkaline Earths</a> |</nobr> <nobr><a href="all-in-one+case+mold.html" title="397">All-in-one case mold</a> |</nobr> <nobr><a href="amorphous.html" title="3">Amorphous</a> |</nobr> <nobr><a href="apparent+porosity.html" title="4">Apparent porosity</a> |</nobr> <nobr><a href="artware.html" title="368">Artware</a> |</nobr> <nobr><a href="ball+milling.html" title="208">Ball milling</a> |</nobr> <nobr><a href="bamboo+glaze.html" title="174">Bamboo Glaze</a> |</nobr> <nobr><a href="base+glaze.html" title="262">Base Glaze</a> |</nobr> <nobr><a href="base-coat+dipping+glaze.html" title="303">Base-Coat Dipping Glaze</a> |</nobr> <nobr><a href="basic+oxides.html" title="6">Basic Oxides</a> |</nobr> <nobr><a href="batch+recipe.html" title="133">Batch Recipe</a> |</nobr> <nobr><a href="bisque.html" title="8">Bisque</a> |</nobr> <nobr><a href="bit+image.html" title="194">Bit Image</a> |</nobr> <nobr><a href="black+core.html" title="9">Black Core</a> |</nobr> <nobr><a href="bleeding+of+colors.html" title="228">Bleeding of colors</a> |</nobr> <nobr><a href="blender+mixing.html" title="366">Blender Mixing</a> |</nobr> <nobr><a href="blunging.html" title="10">Blunging</a> |</nobr> <nobr><a href="body+bloating.html" title="114">Body Bloating</a> |</nobr> <nobr><a href="body+glaze+interface.html" title="261">Body glaze Interface</a> |</nobr> <nobr><a href="body+warping.html" title="124">Body Warping</a> |</nobr> <nobr><a href="bone+china.html" title="145">Bone China</a> |</nobr> <nobr><a href="borate.html" title="129">Borate</a> |</nobr> <nobr><a href="boron+blue.html" title="106">Boron Blue</a> |</nobr> <nobr><a href="boron+frit.html" title="135">Boron Frit</a> |</nobr> <nobr><a href="borosilicate.html" title="103">Borosilicate</a> |</nobr> <nobr><a href="breaking+glaze.html" title="249">Breaking Glaze</a> |</nobr> <nobr><a href="brick+making.html" title="370">Brick Making</a> |</nobr> <nobr><a href="brushing+glaze.html" title="290">Brushing Glaze</a> |</nobr> <nobr><a href="calcia+matte.html" title="426">Calcia Matte</a> |</nobr> <nobr><a href="calcination.html" title="137">Calcination</a> |</nobr> <nobr><a href="calculated+thermal+expansion.html" title="164">Calculated Thermal Expansion</a> |</nobr> <nobr><a href="candling.html" title="13">Candling</a> |</nobr> <nobr><a href="carbon+burnout.html" title="250">Carbon Burnout</a> |</nobr> <nobr><a href="carbon+trap+glazes.html" title="14">Carbon trap glazes</a> |</nobr> <nobr><a href="cas+numbers.html" title="153">CAS Numbers</a> |</nobr> <nobr><a href="casting+slip.html" title="403">Casting Slip</a> |</nobr> <nobr><a href="casting-jiggering.html" title="313">Casting-Jiggering</a> |</nobr> <nobr><a href="catch+glaze.html" title="375">Catch Glaze</a> |</nobr> <nobr><a href="celadon+glaze.html" title="100">Celadon Glaze</a> |</nobr> <nobr><a href="ceramic.html" title="16">Ceramic</a> |</nobr> <nobr><a href="ceramic+binder.html" title="183">Ceramic Binder</a> |</nobr> <nobr><a href="ceramic+decals.html" title="29">Ceramic Decals</a> |</nobr> <nobr><a href="ceramic+glaze.html" title="45">Ceramic Glaze</a> |</nobr> <nobr><a href="ceramic+glaze+defects.html" title="347">Ceramic Glaze Defects</a> |</nobr> <nobr><a href="ceramic+ink.html" title="245">Ceramic Ink</a> |</nobr> <nobr><a href="ceramic+material.html" title="121">Ceramic Material</a> |</nobr> <nobr><a href="ceramic+oxide.html" title="67">Ceramic Oxide</a> |</nobr> <nobr><a href="ceramic+slip.html" title="217">Ceramic Slip</a> |</nobr> <nobr><a href="ceramic+stain.html" title="182">Ceramic Stain</a> |</nobr> <nobr><a href="ceramic+tile.html" title="307">Ceramic Tile</a> |</nobr> <nobr><a href="ceramic+transfer.html" title="394">Ceramic Transfer</a> |</nobr> <nobr><a href="ceramics.html" title="298">Ceramics</a> |</nobr> <nobr><a href="characterization.html" title="299">Characterization</a> |</nobr> <nobr><a href="chemical+analysis.html" title="5">Chemical Analysis</a> |</nobr> <nobr><a href="chromaticity.html" title="176">Chromaticity</a> |</nobr> <nobr><a href="clay.html" title="141">Clay</a> |</nobr> <nobr><a href="clay+body.html" title="11">Clay body</a> |</nobr> <nobr><a href="clay+body+porosity.html" title="72">Clay Body Porosity</a> |</nobr> <nobr><a href="clay+stiffness.html" title="258">Clay Stiffness</a> |</nobr> <nobr><a href="clays+for+construction.html" title="373">Clays for Construction</a> |</nobr> <nobr><a href="clays+for+ovens+and+heaters.html" title="337">Clays for Ovens and Heaters</a> |</nobr> <nobr><a href="co-efficient+of+thermal+expansion.html" title="18">Co-efficient of Thermal Expansion</a> |</nobr> <nobr><a href="code+numbering.html" title="302">Code Numbering</a> |</nobr> <nobr><a href="coil+pottery.html" title="19">Coil pottery</a> |</nobr> <nobr><a href="colloid.html" title="20">Colloid</a> |</nobr> <nobr><a href="colorant.html" title="148">Colorant</a> |</nobr> <nobr><a href="commercial+hobby+brushing+glazes.html" title="376">Commercial hobby brushing glazes</a> |</nobr> <nobr><a href="cone+1.html" title="333">Cone 1</a> |</nobr> <nobr><a href="cone+5.html" title="348">Cone 5</a> |</nobr> <nobr><a href="cone+6.html" title="340">Cone 6</a> |</nobr> <nobr><a href="cone+plaque.html" title="22">Cone plaque</a> |</nobr> <nobr><a href="content+management+system.html" title="425">Content Management System</a> |</nobr> <nobr><a href="copper+red.html" title="241">Copper Red</a> |</nobr> <nobr><a href="cordierite+ceramics.html" title="199">Cordierite Ceramics</a> |</nobr> <nobr><a href="crackle+glaze.html" title="24">Crackle glaze</a> |</nobr> <nobr><a href="cristobalite.html" title="256">Cristobalite</a> |</nobr> <nobr><a href="cristobalite+inversion.html" title="115">Cristobalite Inversion</a> |</nobr> <nobr><a href="crm.html" title="419">CRM</a> |</nobr> <nobr><a href="crucible.html" title="255">Crucible</a> |</nobr> <nobr><a href="crystalline+glazes.html" title="28">Crystalline glazes</a> |</nobr> <nobr><a href="crystallization.html" title="132">Crystallization</a> |</nobr> <nobr><a href="cuerda+seca.html" title="315">Cuerda Seca</a> |</nobr> <nobr><a href="cutlery+marking.html" title="131">Cutlery Marking</a> |</nobr> <nobr><a href="decomposition.html" title="136">Decomposition</a> |</nobr> <nobr><a href="deflocculation.html" title="30">Deflocculation</a> |</nobr> <nobr><a href="dehydration.html" title="177">Dehydration</a> |</nobr> <nobr><a href="differential+thermal+analysis.html" title="371">Differential thermal analysis</a> |</nobr> <nobr><a href="digitalfire+api.html" title="382">Digitalfire API</a> |</nobr> <nobr><a href="digitalfire+foresight.html" title="260">Digitalfire Foresight</a> |</nobr> <nobr><a href="digitalfire+insight.html" title="259">Digitalfire Insight</a> |</nobr> <nobr><a href="digitalfire+insight-live.html" title="253">Digitalfire Insight-Live</a> |</nobr> <nobr><a href="digitalfire+reference+library.html" title="320">Digitalfire Reference Library</a> |</nobr> <nobr><a href="digitalfire+taxonomy.html" title="383">Digitalfire Taxonomy</a> |</nobr> <nobr><a href="dimpled+glaze.html" title="32">Dimpled glaze</a> |</nobr> <nobr><a href="dinnerware+safe.html" title="399">Dinnerware Safe</a> |</nobr> <nobr><a href="dip+glazing.html" title="297">Dip Glazing</a> |</nobr> <nobr><a href="dipping+glaze.html" title="301">Dipping Glaze</a> |</nobr> <nobr><a href="dishwasher+safe.html" title="272">Dishwasher Safe</a> |</nobr> <nobr><a href="displacer.html" title="391">Displacer</a> |</nobr> <nobr><a href="do-it-yourself.html" title="414">Do-It-Yourself</a> |</nobr> <nobr><a href="drop-and-soak+firing.html" title="289">Drop-and-Soak Firing</a> |</nobr> <nobr><a href="drying+crack.html" title="196">Drying Crack</a> |</nobr> <nobr><a href="drying+performance.html" title="170">Drying Performance</a> |</nobr> <nobr><a href="drying+shrinkage.html" title="265">Drying Shrinkage</a> |</nobr> <nobr><a href="dunting.html" title="33">Dunting</a> |</nobr> <nobr><a href="dust+pressing.html" title="169">Dust Pressing</a> |</nobr> <nobr><a href="earthenware.html" title="34">Earthenware</a> |</nobr> <nobr><a href="efflorescence.html" title="142">Efflorescence</a> |</nobr> <nobr><a href="encapsulated+stain.html" title="37">Encapsulated Stain</a> |</nobr> <nobr><a href="engobe.html" title="35">Engobe</a> |</nobr> <nobr><a href="eutectic.html" title="36">Eutectic</a> |</nobr> <nobr><a href="fast+fire+glazes.html" title="154">Fast Fire Glazes</a> |</nobr> <nobr><a href="fat+glaze.html" title="105">Fat Glaze</a> |</nobr> <nobr><a href="fdm%2C+sla%2C+sls%2C+mex+3d+printing+technologies.html" title="401">FDM, SLA, SLS, MEX 3D printing technologies</a> |</nobr> <nobr><a href="feldspar+glazes.html" title="155">Feldspar Glazes</a> |</nobr> <nobr><a href="filter+press.html" title="357">Filter Press</a> |</nobr> <nobr><a href="fining+agent.html" title="350">Fining Agent</a> |</nobr> <nobr><a href="firebrick.html" title="39">Firebrick</a> |</nobr> <nobr><a href="fireclay.html" title="229">Fireclay</a> |</nobr> <nobr><a href="fired+strength.html" title="242">Fired Strength</a> |</nobr> <nobr><a href="firing+schedule.html" title="226">Firing Schedule</a> |</nobr> <nobr><a href="firing+shrinkage.html" title="150">Firing Shrinkage</a> |</nobr> <nobr><a href="flameware.html" title="98">Flameware</a> |</nobr> <nobr><a href="flashing.html" title="173">Flashing</a> |</nobr> <nobr><a href="flocculation.html" title="40">Flocculation</a> |</nobr> <nobr><a href="fluid+melt+glazes.html" title="283">Fluid Melt Glazes</a> |</nobr> <nobr><a href="flux.html" title="42">Flux</a> |</nobr> <nobr><a href="food+safe.html" title="271">Food Safe</a> |</nobr> <nobr><a href="foot+ring.html" title="195">Foot Ring</a> |</nobr> <nobr><a href="forming+method.html" title="159">Forming Method</a> |</nobr> <nobr><a href="formula+ratios.html" title="202">Formula Ratios</a> |</nobr> <nobr><a href="formula+weight.html" title="161">Formula Weight</a> |</nobr> <nobr><a href="frit.html" title="43">Frit</a> |</nobr> <nobr><a href="fritware.html" title="287">Fritware</a> |</nobr> <nobr><a href="functional.html" title="210">Functional</a> |</nobr> <nobr><a href="ghs+safety+data+sheets.html" title="279">GHS Safety Data Sheets</a> |</nobr> <nobr><a href="glass+vs.+crystalline.html" title="44">Glass vs. Crystalline</a> |</nobr> <nobr><a href="glass-ceramic+glazes.html" title="191">Glass-Ceramic Glazes</a> |</nobr> <nobr><a href="glaze+blisters.html" title="264">Glaze Blisters</a> |</nobr> <nobr><a href="glaze+bubbles.html" title="184">Glaze Bubbles</a> |</nobr> <nobr><a href="glaze+chemistry.html" title="118">Glaze Chemistry</a> |</nobr> <nobr><a href="glaze+compression.html" title="197">Glaze Compression</a> |</nobr> <nobr><a href="glaze+crawling.html" title="26">Glaze Crawling</a> |</nobr> <nobr><a href="glaze+crazing.html" title="27">Glaze Crazing</a> |</nobr> <nobr><a href="glaze+durability.html" title="284">Glaze Durability</a> |</nobr> <nobr><a href="glaze+fit.html" title="46">Glaze fit</a> |</nobr> <nobr><a href="glaze+gelling.html" title="244">Glaze Gelling</a> |</nobr> <nobr><a href="glaze+laydown.html" title="365">Glaze laydown</a> |</nobr> <nobr><a href="glaze+layering.html" title="281">Glaze Layering</a> |</nobr> <nobr><a href="glaze+mixing.html" title="294">Glaze Mixing</a> |</nobr> <nobr><a href="glaze+recipes.html" title="276">Glaze Recipes</a> |</nobr> <nobr><a href="glaze+shivering.html" title="79">Glaze shivering</a> |</nobr> <nobr><a href="glaze+shrinkage.html" title="212">Glaze Shrinkage</a> |</nobr> <nobr><a href="glaze+thickness.html" title="257">Glaze thickness</a> |</nobr> <nobr><a href="globally+harmonized+data+sheets.html" title="274">Globally Harmonized Data Sheets</a> |</nobr> <nobr><a href="glossy+glaze.html" title="47">Glossy Glaze</a> |</nobr> <nobr><a href="green+strength.html" title="227">Green Strength</a> |</nobr> <nobr><a href="grog.html" title="48">Grog</a> |</nobr> <nobr><a href="gunmetal+glaze.html" title="213">Gunmetal glaze</a> |</nobr> <nobr><a href="hand+building+techniques.html" title="429">Hand Building Techniques</a> |</nobr> <nobr><a href="high+temperature+glaze.html" title="116">High Temperature Glaze</a> |</nobr> <nobr><a href="hot+pressing.html" title="158">Hot Pressing</a> |</nobr> <nobr><a href="incised+decoration.html" title="222">Incised decoration</a> |</nobr> <nobr><a href="industrial+clay+body.html" title="342">Industrial clay body</a> |</nobr> <nobr><a href="infill+and+support.html" title="389">Infill and Support</a> |</nobr> <nobr><a href="ink+jet+printing.html" title="247">Ink Jet Printing</a> |</nobr> <nobr><a href="inside-only+glazing.html" title="305">Inside-only Glazing</a> |</nobr> <nobr><a href="iron+red+glaze.html" title="221">Iron Red Glaze</a> |</nobr> <nobr><a href="jasper+ware.html" title="192">Jasper Ware</a> |</nobr> <nobr><a href="jiggering.html" title="49">Jiggering</a> |</nobr> <nobr><a href="json.html" title="422">JSON</a> |</nobr> <nobr><a href="kaki.html" title="50">Kaki</a> |</nobr> <nobr><a href="kiln+controller.html" title="23">Kiln Controller</a> |</nobr> <nobr><a href="kiln+firing.html" title="236">Kiln Firing</a> |</nobr> <nobr><a href="kiln+fumes.html" title="51">Kiln fumes</a> |</nobr> <nobr><a href="kiln+venting+system.html" title="52">Kiln venting system</a> |</nobr> <nobr><a href="kiln+wash.html" title="53">Kiln Wash</a> |</nobr> <nobr><a href="kneading+clay.html" title="374">Kneading clay</a> |</nobr> <nobr><a href="kovar+metal.html" title="323">Kovar Metal</a> |</nobr> <nobr><a href="laminations.html" title="225">Laminations</a> |</nobr> <nobr><a href="leaching.html" title="54">Leaching</a> |</nobr> <nobr><a href="lead+in+ceramic+glazes.html" title="55">Lead in Ceramic Glazes</a> |</nobr> <nobr><a href="leather+hard.html" title="57">Leather hard</a> |</nobr> <nobr><a href="limit+formula.html" title="123">Limit Formula</a> |</nobr> <nobr><a href="limit+recipe.html" title="304">Limit Recipe</a> |</nobr> <nobr><a href="liner+glaze.html" title="193">Liner Glaze</a> |</nobr> <nobr><a href="liner+glazing.html" title="361">Liner Glazing</a> |</nobr> <nobr><a href="liquid+bright+colors.html" title="99">Liquid Bright Colors</a> |</nobr> <nobr><a href="loi.html" title="56">LOI</a> |</nobr> <nobr><a href="low+temperature+glaze.html" title="119">Low Temperature Glaze</a> |</nobr> <nobr><a href="magnesia+matte.html" title="146">Magnesia Matte</a> |</nobr> <nobr><a href="majolica.html" title="59">Majolica</a> |</nobr> <nobr><a href="managed+service+provider.html" title="420">Managed Service Provider</a> |</nobr> <nobr><a href="marbling.html" title="235">Marbling</a> |</nobr> <nobr><a href="material+substitution.html" title="219">Material Substitution</a> |</nobr> <nobr><a href="matte+glaze.html" title="130">Matte Glaze</a> |</nobr> <nobr><a href="maturity.html" title="60">Maturity</a> |</nobr> <nobr><a href="maximum+density.html" title="331">Maximum Density</a> |</nobr> <nobr><a href="mdt.html" title="216">MDT</a> |</nobr> <nobr><a href="mechanism.html" title="286">Mechanism</a> |</nobr> <nobr><a href="medium+temperature.html" title="117">Medium Temperature</a> |</nobr> <nobr><a href="melt+fluidity.html" title="112">Melt Fluidity</a> |</nobr> <nobr><a href="melting+temperature.html" title="165">Melting Temperature</a> |</nobr> <nobr><a href="metal+oxides.html" title="339">Metal Oxides</a> |</nobr> <nobr><a href="metallic+glazes.html" title="181">Metallic Glazes</a> |</nobr> <nobr><a href="micro+organisms.html" title="185">Micro Organisms</a> |</nobr> <nobr><a href="microwave+safe.html" title="205">Microwave Safe</a> |</nobr> <nobr><a href="mineral+phase.html" title="70">Mineral phase</a> |</nobr> <nobr><a href="mineralogy.html" title="120">Mineralogy</a> |</nobr> <nobr><a href="mocha+glazes.html" title="61">Mocha glazes</a> |</nobr> <nobr><a href="mohs+hardness.html" title="324">Mohs Hardness</a> |</nobr> <nobr><a href="mold+natches.html" title="392">Mold Natches</a> |</nobr> <nobr><a href="mold+shell+flange.html" title="404">Mold Shell Flange</a> |</nobr> <nobr><a href="mole%25.html" title="204">Mole%</a> |</nobr> <nobr><a href="monocottura.html" title="156">Monocottura</a> |</nobr> <nobr><a href="mosaic+tile.html" title="266">Mosaic Tile</a> |</nobr> <nobr><a href="mottled.html" title="62">Mottled</a> |</nobr> <nobr><a href="native+clay.html" title="321">Native Clay</a> |</nobr> <nobr><a href="non+oxide+ceramics.html" title="104">Non Oxide Ceramics</a> |</nobr> <nobr><a href="oil-spot+glaze.html" title="240">Oil-spot glaze</a> |</nobr> <nobr><a href="once+fire+glazing.html" title="63">Once fire glazing</a> |</nobr> <nobr><a href="opacifier.html" title="64">Opacifier</a> |</nobr> <nobr><a href="opacity.html" title="200">Opacity</a> |</nobr> <nobr><a href="ovenware.html" title="97">Ovenware</a> |</nobr> <nobr><a href="overglaze.html" title="65">Overglaze</a> |</nobr> <nobr><a href="oxidation+firing.html" title="66">Oxidation Firing</a> |</nobr> <nobr><a href="oxide+formula.html" title="41">Oxide Formula</a> |</nobr> <nobr><a href="oxide+interaction.html" title="207">Oxide Interaction</a> |</nobr> <nobr><a href="oxide+system.html" title="163">Oxide System</a> |</nobr> <nobr><a href="particle+classification.html" title="408">Particle classification</a> |</nobr> <nobr><a href="particle+orientation.html" title="68">Particle orientation</a> |</nobr> <nobr><a href="particle+size+distribution.html" title="230">Particle Size Distribution</a> |</nobr> <nobr><a href="particle+size+reduction.html" title="407">Particle size reduction</a> |</nobr> <nobr><a href="particle+sizes.html" title="338">Particle Sizes</a> |</nobr> <nobr><a href="pce.html" title="69">PCE</a> |</nobr> <nobr><a href="permeability.html" title="291">Permeability</a> |</nobr> <nobr><a href="phase+diagram.html" title="190">Phase Diagram</a> |</nobr> <nobr><a href="phase+separation.html" title="138">Phase Separation</a> |</nobr> <nobr><a href="physical+testing.html" title="269">Physical Testing</a> |</nobr> <nobr><a href="pinholing.html" title="198">Pinholing</a> |</nobr> <nobr><a href="plainsman+clays.html" title="325">Plainsman Clays</a> |</nobr> <nobr><a href="plaster+bat.html" title="7">Plaster Bat</a> |</nobr> <nobr><a href="plaster+table.html" title="319">Plaster table</a> |</nobr> <nobr><a href="plasticine.html" title="251">Plasticine</a> |</nobr> <nobr><a href="plasticity.html" title="143">Plasticity</a> |</nobr> <nobr><a href="plucking.html" title="263">Plucking</a> |</nobr> <nobr><a href="porcelain.html" title="71">Porcelain</a> |</nobr> <nobr><a href="porcelain+insulators.html" title="428">Porcelain Insulators</a> |</nobr> <nobr><a href="porcelaineous+stoneware.html" title="326">Porcelaineous Stoneware</a> |</nobr> <nobr><a href="portable+document+format.html" title="421">Portable Document Format</a> |</nobr> <nobr><a href="pour+glazing.html" title="296">Pour Glazing</a> |</nobr> <nobr><a href="pour+spout.html" title="381">Pour Spout</a> |</nobr> <nobr><a href="powder+processing.html" title="351">Powder Processing</a> |</nobr> <nobr><a href="precipitation.html" title="234">Precipitation</a> |</nobr> <nobr><a href="primary+clay.html" title="231">Primary Clay</a> |</nobr> <nobr><a href="primitive+firing.html" title="73">Primitive Firing</a> |</nobr> <nobr><a href="propane.html" title="74">Propane</a> |</nobr> <nobr><a href="propeller+mixer.html" title="175">Propeller Mixer</a> |</nobr> <nobr><a href="pugmill.html" title="239">Pugmill</a> |</nobr> <nobr><a href="pyroceramics.html" title="128">Pyroceramics</a> |</nobr> <nobr><a href="pyrometric+cone.html" title="248">Pyrometric Cone</a> |</nobr> <nobr><a href="quartz+inversion.html" title="162">Quartz Inversion</a> |</nobr> <nobr><a href="raku.html" title="75">Raku</a> |</nobr> <nobr><a href="reactive+glazes.html" title="94">Reactive Glazes</a> |</nobr> <nobr><a href="reduction+firing.html" title="125">Reduction Firing</a> |</nobr> <nobr><a href="reduction+speckle.html" title="186">Reduction Speckle</a> |</nobr> <nobr><a href="refiring+ceramics.html" title="330">Refiring Ceramics</a> |</nobr> <nobr><a href="refractory.html" title="76">Refractory</a> |</nobr> <nobr><a href="refractory+ceramic+coatings.html" title="17">Refractory Ceramic Coatings</a> |</nobr> <nobr><a href="representative+sample.html" title="220">Representative Sample</a> |</nobr> <nobr><a href="restaurant+ware.html" title="336">Restaurant Ware</a> |</nobr> <nobr><a href="rheology.html" title="127">Rheology</a> |</nobr> <nobr><a href="rutile+blue+glazes.html" title="171">Rutile Blue Glazes</a> |</nobr> <nobr><a href="salt+and+soda+firing.html" title="77">Salt and Soda firing</a> |</nobr> <nobr><a href="sanitary+ware.html" title="273">Sanitary ware</a> |</nobr> <nobr><a href="sculpture.html" title="275">Sculpture</a> |</nobr> <nobr><a href="search+engine+optimization+.html" title="423">Search Engine Optimization </a> |</nobr> <nobr><a href="secondary+clay.html" title="232">Secondary Clay</a> |</nobr> <nobr><a href="shino+glazes.html" title="78">Shino Glazes</a> |</nobr> <nobr><a href="side+rails.html" title="380">Side Rails</a> |</nobr> <nobr><a href="sieve.html" title="80">Sieve</a> |</nobr> <nobr><a href="sieve+shaker.html" title="356">Sieve Shaker</a> |</nobr> <nobr><a href="silica%3Aalumina+ratio.html" title="151">Silica:Alumina Ratio</a> |</nobr> <nobr><a href="silk+screen+printing.html" title="81">Silk screen printing</a> |</nobr> <nobr><a href="sintering.html" title="82">Sintering</a> |</nobr> <nobr><a href="slaking.html" title="160">Slaking</a> |</nobr> <nobr><a href="slip+casting.html" title="15">Slip Casting</a> |</nobr> <nobr><a href="slip+trailing.html" title="147">Slip Trailing</a> |</nobr> <nobr><a href="slipware.html" title="367">Slipware</a> |</nobr> <nobr><a href="slurry.html" title="362">Slurry</a> |</nobr> <nobr><a href="slurry+processing.html" title="329">Slurry Processing</a> |</nobr> <nobr><a href="slurry+up.html" title="349">Slurry Up</a> |</nobr> <nobr><a href="soaking.html" title="84">Soaking</a> |</nobr> <nobr><a href="soluble+colors.html" title="157">Soluble colors</a> |</nobr> <nobr><a href="soluble+salts.html" title="254">Soluble Salts</a> |</nobr> <nobr><a href="specific+gravity.html" title="86">Specific gravity</a> |</nobr> <nobr><a href="splitting.html" title="206">Splitting</a> |</nobr> <nobr><a href="spray+glazing.html" title="277">Spray Glazing</a> |</nobr> <nobr><a href="stain+medium.html" title="327">Stain Medium</a> |</nobr> <nobr><a href="stoneware.html" title="85">Stoneware</a> |</nobr> <nobr><a href="stull+chart.html" title="189">Stull Chart</a> |</nobr> <nobr><a href="sulfate+scum.html" title="179">Sulfate Scum</a> |</nobr> <nobr><a href="sulfates.html" title="180">Sulfates</a> |</nobr> <nobr><a href="surface+area.html" title="111">Surface Area</a> |</nobr> <nobr><a href="surface+tension.html" title="108">Surface Tension</a> |</nobr> <nobr><a href="suspension.html" title="83">Suspension</a> |</nobr> <nobr><a href="tapper+clay.html" title="187">Tapper Clay</a> |</nobr> <nobr><a href="tenmoku.html" title="87">Tenmoku</a> |</nobr> <nobr><a href="terra+cotta.html" title="88">Terra Cotta</a> |</nobr> <nobr><a href="terra+sigilatta.html" title="238">Terra Sigilatta</a> |</nobr> <nobr><a href="test+kiln.html" title="322">Test Kiln</a> |</nobr> <nobr><a href="theoretical+material.html" title="122">Theoretical Material</a> |</nobr> <nobr><a href="thermal+conductivity.html" title="306">Thermal Conductivity</a> |</nobr> <nobr><a href="thermal+shock.html" title="89">Thermal shock</a> |</nobr> <nobr><a href="thermocouple.html" title="90">Thermocouple</a> |</nobr> <nobr><a href="thixotropy.html" title="91">Thixotropy</a> |</nobr> <nobr><a href="throwing.html" title="359">Throwing</a> |</nobr> <nobr><a href="tipping+point.html" title="396">Tipping point</a> |</nobr> <nobr><a href="tony+hansen.html" title="282">Tony Hansen</a> |</nobr> <nobr><a href="toxicity.html" title="316">Toxicity</a> |</nobr> <nobr><a href="trafficking.html" title="341">Trafficking</a> |</nobr> <nobr><a href="translucency.html" title="233">Translucency</a> |</nobr> <nobr><a href="transparent+glazes.html" title="149">Transparent Glazes</a> |</nobr> <nobr><a href="triaxial+glaze+blending.html" title="280">Triaxial Glaze Blending</a> |</nobr> <nobr><a href="ultimate+particles.html" title="113">Ultimate Particles</a> |</nobr> <nobr><a href="underglaze.html" title="92">Underglaze</a> |</nobr> <nobr><a href="unity+formula.html" title="93">Unity Formula</a> |</nobr> <nobr><a href="upwork.html" title="312">Upwork</a> |</nobr> <nobr><a href="variegation.html" title="346">Variegation</a> |</nobr> <nobr><a href="viscosity.html" title="109">Viscosity</a> |</nobr> <nobr><a href="vitreous.html" title="332">Vitreous</a> |</nobr> <nobr><a href="vitrification.html" title="95">Vitrification</a> |</nobr> <nobr><a href="volatiles.html" title="110">Volatiles</a> |</nobr> <nobr><a href="water+content.html" title="379">Water Content</a> |</nobr> <nobr><a href="water+in+ceramics.html" title="144">Water in Ceramics</a> |</nobr> <nobr><a href="water+smoking.html" title="237">Water Smoking</a> |</nobr> <nobr><a href="water+solubility.html" title="126">Water Solubility</a> |</nobr> <nobr><a href="wedging.html" title="96">Wedging</a> |</nobr> <nobr><a href="whiteware.html" title="308">Whiteware</a> |</nobr> <nobr><a href="woocommerce.html" title="387">WooCommerce</a> |</nobr> <nobr><a href="wood+ash+glaze.html" title="101">Wood Ash Glaze</a> |</nobr> <nobr><a href="wood+firing.html" title="172">Wood Firing</a> |</nobr> <nobr><a href="wordpress.html" title="386">WordPress</a> |</nobr> <nobr><a href="zero3.html" title="293">Zero3</a> |</nobr> <nobr><a href="zero4.html" title="355">Zero4</a> |</nobr> <nobr><a href="zeta+potential.html" title="178">Zeta Potential</a></nobr></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Thixotropy</h1>
+<p class="text-muted" style="margin-left:20px">Thixotropy is a property of ceramic slurries of high water content. Thixotropic suspensions flow when moving but gel after sitting (for a few moments more depending on application). This phenomenon is helpful in getting even, drip-free glaze coverage.
+</p><p class="text-muted" style="margin-left:20px; font-style:italic; font-size:90%;"><b>Key phrases linking here:</b> thixotropic, thixotropy
+ - <a href="https://digitalfire.com/home/linkmaker">Learn more</a></p>
+<h2>Details</h2>
+<p></p><div class="flexright33"><img src="../media/images/qt7vfga5kx.jpg" style="width:100%;"/><p style="color:#888888; font-style:italic; font-size:80%; margin:4px 0px 5px 0px;">Thixotropic glaze in use at <a href="https://digitalfire.com/url/3753">Eastfork</a> Pottery</p></div>Knowing about <a href="thixotropy.html">thixotropy</a> enables you to mix non-gummed <a href="dipping+glaze.html">dipping glazes</a> that stay in <a href="suspension.html">suspension</a>, go on evenly and dry quickly without <a href="../picture/1875.html">dripping</a>. <a href="thixotropy.html">Thixotropic</a> glazes DO NOT behave like <a href="brushing+glaze.html">brushing glazes</a> (which contain <a href="../material/228.html">CMC gum</a>). Their secret is not intuitive. It involves using <a href="limit+recipe.html">balanced recipes</a> (that pass a <a href="limit+recipe.html">sanity check</a> of common sense <a href="limit+recipe.html">recipe limits</a>), knowing how to measure <a href="specific+gravity.html">specific gravity</a>, adding more water than you think it needs and then gelling the <a href="slurry.html">slurry</a> using a flocculant (vinegar, <a href="../material/292.html">Epsom salts</a>, calcium chloride). This is done to reach a point at which the slurry is both creamy but also thixotropic. The magic of this phenomenon is that it can transform a glaze that is almost impossible into a pleasure to use! This is a topic worth knowing about.<br/>
+<br/>
+The term "thixotropy" refers to a decrease in the <a href="viscosity.html">viscosity</a> when a slurry is subjected to shearing (movement) followed by a gradual recovery to the viscous state when the movement stops. Or, in simpler terms, it is the tendency of undisturbed slip to thicken with time. A highly thixotropic slurry gels as soon as motion stops (fluid when in motion, gelled when not). Products we use every day are like this (e.g. mayonnaise, toothpaste, paints, ketchup, hair gel, these are thixotropic non-Newtonian fluids). Thixotropy measuring devices record the difference between two readings: In motion and after sitting for a fixed period.<br/>
+<br/>
+Thixotropy is great with single layer <a href="base+glaze.html">cover glazes</a>, ones that you want to be able to dip <a href="bisque.html">bisque</a> ware into and get even coverage, no dripping and quick-drying. But, like any other non-gummed <a href="dipping+glaze.html">dipping glaze</a>, additional layering is problematic. In these cases, the cover dipping glaze needs a binder, typically CMC gum (convert it to a <a href="base-coat+dipping+glaze.html">first coat</a> dipping glaze). There is also a kind of thixotropy where slurries of dramatically higher <a href="water+content.html">water content</a> than we discuss here (e.g. 1.2 specific gravity) can be gelled by adding a high-surface-area <a href="../material/106.html">bentonite</a> or smectite (like Veegum or Bentone), this is done with commercial brushing glazes or slips. However, on this page, I am talking mostly about creating thixotropy without additives (other than a tiny amount of flocculant) in raw or lightly <a href="frit.html">fritted</a> slurries, these most often require near equal parts of water and powder. If your recipe contains a high percentage of clay (e.g. <a href="../material/925.html">kaolin</a>, <a href="../material/80.html">ball clay</a>, bentonite or <a href="../material/806.html">Gerstley Borate</a>) it may gel naturally and you won't need the method described here.<br/>
+<br/>
+<div class="flexright33"><img src="../media/images/x1dbu8hevn.jpg" style="width:100%;"/><p style="color:#888888; font-style:italic; font-size:80%; margin:4px 0px 5px 0px;">Highly thixotropic slips multilayered yet hang on</p></div>Thixotropy does come automatically with high-clay-content glazes, these often produce a creamy slightly gelling slurry as is. <a href="../material/1178.html">Ravenscrag</a> Slip is an example, at about 1.45 specific gravity (in a 50:50 roast:raw mix) its properties are good enough that it can be used as-is. While there is some dripping it gels enough to go on evenly. A more extreme example is <a href="../material/32.html">Alberta Slip</a>, it is very plastic and will certainly cause cracking during drying in high percentages. It is necessary to <a href="calcination.html">calcine</a> or roast part of it. The proportion of calcine:raw is adjusted to produce a compromise between the creamy slurry with good application properties (that higher raw content imparts) with one that dries quickly without cracking (that higher calcine content produces). The proportions of raw and calcine give fine control over slurry properties simply by visual inspection of slurry behaviour, without the need to know specific gravity or for any additions to gel the slurry to make it thixotropic.<br/>
+<br/>
+Another class of glazes deserves extra mention: Gerstley <a href="borate.html">Borate</a> recipes (GB). This material is notorious for making slurries overly thixotropic (because it is somewhat soluble). It is both a clay and a <a href="flux.html">flux</a>. When proportions go beyond about 20% it will gel the slurry, forcing the addition of more water (yet some recipes have 40% or more). Water additions do not just lower the specific gravity, but they increase <a href="drying+shrinkage.html">drying shrinkage</a>, thus <a href="drying+crack.html">drying cracks</a>. This type of glaze often simply needs to be "endured". That being said, lower percentages of GB can impart nice thixotropic properties that need no further help. If a recipe contains both GB and clay and the two add up to more than 40%, then the glaze is almost beyond help, it will be a bucket of jelly no matter what you do!<br/>
+<br/>
+Now, let's get back to typical <a href="glaze+recipes.html">glaze recipes</a>: Those made from mixtures of ceramic minerals like clays (e.g. kaolin, ball clay), <a href="../material/310.html">feldspar</a>, <a href="../material/1245.html">silica</a>, <a href="../material/173.html">calcium carbonate</a>, <a href="../material/273.html">dolomite</a>, <a href="../material/1620.html">talc</a>, etc (<a href="cone+6.html">cone 6</a> recipes normally add some <a href="frit.html">frit</a>). As noted, each glaze has a <a href="rheology.html">rheological</a> "sweet spot", a slurry condition at which it is at its best. What is that condition in this context? When motionless it gels quickly and does not settle. During use, it is fluid, goes on evenly and does not drip. It does not dry too quickly on bisque. When it is right for me I can stir the slurry vigorously and pull out the stirring stick it will stop motion in 2-3 seconds (in a small 1-2 gallon bucket). And, it bounces back slightly! That bounce-back is the thixotropy. Normally, one cannot just mix water with a powder and get this behaviour. It is done by incorporating a flocculant.<br/>
+<br/>
+First, one must discover the specific gravity the slurry needs to have before adding the flocculant. Mix the pre-mixed powder into about 80% of its weight in water (which should produce a slurry that is too thick for typical recipes containing 12-25% clay). Begin adding water (while <a href="propeller+mixer.html">propeller mixing</a>) until it reaches a creamy consistency. For us, such a slurry will apply, in the right thickness on our bisque, using a 2-3 second dip (this is how I used to use most glazes). Does this apply to a bisque tile evenly with almost no drips? Then you are done! Otherwise, proceed.<br/>
+<br/>
+Second, the slurry needs to be gelled (be thixotropic) so that it will stop motion in two seconds and bounce back slightly (after mixing ceases for 1-2 gallons). However, at the viscosity of the last paragraph, even a small amount of flocculant will turn the whole bucket into useless jelly. So more water is needed (remember, I am still describing how to discover the right specific gravity that will tolerate the addition of the flocculant). How much water? It might be more than you think. For us, about 5  teaspoons of vinegar are required to gel a gallon (or about 5 pinches, 2-3 grams, of powdered Epsom salts).<br/>
+<br/>
+What next? Give a test tile a two-second dip and watch the drain characteristics. It should hang on in an even and adequate thickness, not just because of the absorbency of the bisque but the gel of the slurry. Adjust the slurry as needed according to the above. Of course, two seconds is not cast-in-stone, dip it longer if that is all that is needed to get the thickness required.<br/>
+<br/>
+This next thing I say is key to this whole page: MEASURE THE SPECIFIC GRAVITY. And record it. That is what to mix it to next time before adding the flocculant.<br/>
+<br/>
+Questions about making a 1.45SG slurry:<br/>
+<br/>
+The glaze is not working right, what do I do?<br/>
+Is the specific gravity correct? You cannot do anything else until that is right!<br/>
+<br/>
+What if I have too much water in the glaze, will the vinegar still gel it? <br/>
+No. If it is only a little too much Epsom salts might. Or calcium chloride. Otherwise it would be better to leave it out and evaporate some of the water.<br/>
+<br/>
+My glaze contains carbonates and they are reacting with the vinegar, what can I do? Vinegar does not seem to work well for me, what can I do?<br/>
+Use Epsom salts or calcium chloride (see link below).<br/>
+<br/>
+Can you give me a ball-park specific gravity? <br/>
+For many raw or partially fritted glazes we target 1.43-1.45 specific gravity. However, some glazes want to be fluid at higher specific gravities, so this is not a hard-fast rule (see above on how to discover the right specific gravity).<br/>
+<br/>
+Does the temperature and age of my slurry affect its thixotropy?<br/>
+Yes. Yes. Unless you have a very powerful mixer it will normally gel more over time.<br/>
+<br/>
+What about bisque temperature? <br/>
+It does not matter! With our glazes dipping time is close the same (about 3-4 seconds) if we bisque at <a href="low+temperature+glaze.html">cone 06</a>, 05 or 04 (assuming ware is dry). That being said, pay attention to how thick it is going on and adjust immersion time accordingly. When the thixotropy is right then any clay, porous or dense, bisqued or green the thickness will glaze well! Getting control of this concept after struggling for years has revolutionized our ability to apply glazes.<br/>
+<br/>
+Do I still need to add bentonite to my glazes? <br/>
+Any glaze that has at least 10-15% kaolin or ball clay does not need bentonite when gelled like this (provided the clay is a good glaze suspender).<br/>
+<br/>
+Why does my glaze not seem to work with this advice?<br/>
+Does your glaze contain enough clay to suspend and harden on it drying? With only kaolin, they need 15%. With only ball clay about 10%. Other clays also suspend but are not typical in glazes. Gerstley borate is a suspender like clay. The Epsom salts need <a href="surface+area.html">surface area</a> and electrolytics that clay supplies. If there is not enough clay add a bentonite (starting with 2%). <a href="../picture/1960.html">High feldspar glazes</a> (e.g. 50%) very likely can be reformulated, using <a href="glaze+chemistry.html">glaze chemistry</a>, to supply the <a href="../picture/1775.html">KNaO</a> from a frit instead, this enables adding clay which keeping the overall <a href="glaze+chemistry.html">chemistry</a> the same.<br/>
+<br/>
+I mixed the glaze again, got it to the right specific gravity and it is thin as water and <a href="suspension.html">settling</a> in seconds after I stop stirring. Why? <br/>
+You have not added the flocculant. When you do it will turn back into the beautiful gel you had last time.<br/>
+<br/>
+The specific gravity I have determined is different than yours. Why? <br/>
+The information above is based on our water (with its electrolytes), our materials, our studio, our recipes. Yours could well be different.<br/>
+<br/>
+It is weeks later and my glaze has gone thin. What can I do?<br/>
+Put in more flocculant. It will stabilize more each time you do this.<br/>
+<br/>
+My glaze is jelly. What can I do?<br/>
+First, make sure the specific gravity is not too high, we target about 1.44. If it is high (e.g. 1.48) then add water. If it is good then add a little <a href="../material/260.html">Darvan</a> to thin it. Be careful - a gallon of glaze might only need one drop! If you thin it too much it will be hard to thicken it again with a flocculant.<br/>
+<br/>
+I used to have a lot higher specific gravity in my glazes than this, are you sure this is right?<br/>
+I am not making a rule for all types of <a href="ceramics.html">ceramics</a>. For <a href="sanitary+ware.html">sanitary ware</a>, for example, it is common to <a href="deflocculation.html">deflocculate</a> glazes (to densify <a href="glaze+laydown.html">laydown</a>), the opposite of what I am doing here (well, not quite, as you will see in a moment). With tight controls on production parameters they are able to maintain the <a href="rheology.html">rheology</a> of the slurry at a state of controlled <a href="flocculation.html">flocculation</a> at 1.75 specific gravity (basically there is not quite enough deflocculant in the mix). In this state, the slurry also gels when not in motion. With the right equipment, they can spray heavy green ware achieving a dense thick laydown that dries hard and even. You would not be able to use that glaze with any of the application techniques common in a studio environment.<br/>
+<br/>
+We <a href="slip+casting.html">slip cast</a> ware and vessel walls are thin. At 1.43 specific gravity, the glaze waterlogs the ware, it dries slowly, cracks and then crawls in the firing. What can we do?<br/>
+Find a way to enable quicker drying. Heat ware before immersing, bisque lower or glaze the insides first and let them dry and then the outsides. As noted in the previous point you may need to deflocculate the glaze to lower water content (perhaps to 1.5 specific gravity). Using Darvan it is still easy to make it quite watery, then you can gel it.<br/>
+<br/>
+Couldn’t I deflocculate the glaze to enable lower water content and yet still have it runny and then add the flocculant to gel it?<br/>
+Yes. Once you get better at this. But it produces a more fragile slurry theology, you will be adjusting it more often. And it is heavier so will form downward runs more easily on verticals.<br/>
+<br/>
+Casting Slips<br/>
+Thixotropy is more of an anti-settling strategy, ideally the slip remains fluid when in use but if allowed to stand it turns to a gel in half an hour, for example. And with <a href="casting+slip.html">casting slip</a> we obtain that thixotropy, not by adding an acid, but by deliberately adding a smaller amount of deflocculant than what would take it to the minimum viscosity possible (again, this state is called controlled flocculation).<br/>
+<br/>
+<a href="engobe.html">Engobes</a><br/>
+Thixotropy is vitally important when using slips (engobes), especially when applied to vertical surfaces or <a href="leather+hard.html">leather hard</a> clay (which is normal). Being able to gel an <a href="engobe.html">engobe</a> is the foundation of being able to effectively apply it. Flocculated slips stay put. Engobes must be gelled more than glazes. When the consistency is right you will be amazed at how even and smooth the application will be. These more gelled slips (and glazes) also work better for spraying because you can apply a thicker wetter layer. Be aware also that a fresh application of slip re-wets the ware and will take hours to be able to handle (it adds a day to the drying cycle).<br/>
+<br/>
+Plastic Clays<br/>
+These are sometimes called thixotropic. This usually refers to material that is very elastic, can be pulled and twisted like taffy, and does not set until left still for a time.<p style="clear:left"></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">What to do when glazes drain and drip like this</h3>
+<br/><a alt="Two mugs, one with glaze drips" href="../picture/1875.html"><img alt="Two mugs, one with glaze drips" class="flexleft50" loading="lazy" src="../media/images/dgbufjfh7s.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1875.html">click here</a> to see it.</p>
+<p>These are the same <a href="dipping+glaze.html">dipping glaze</a>, it is variegated and drips look ugly on fired ware. The <a href="slurry.html">slurry</a> of the one on the left had a <a href="specific+gravity.html">specific gravity</a> of 1.45, it was creamy and appeared to be good. However, when this <a href="bisque.html">bisque</a> <a href="porcelain.html">porcelain</a> mug was pulled out after the dip and rolled it formed drips on the rim. Why fix the slurry instead of just rubbing this out? Keep reading. To fix this I added water to decrease the specific gravity to 1.43. Then I added <a href="../material/292.html">Epsom salts</a> to induce <a href="thixotropy.html">thixotropy</a> and gel it back to a creamy consistency. This time it went on evenly. Although the piece dries enough to handle in less than 30 seconds, it does take longer to dry completely because there is more water in the slurry. Adding <a href="../material/228.html">CMC gum</a> would also slow down drying but it would be very tricky to get just the right amount (otherwise <a href="../picture/1875.html">dripping</a> could be worse than this). Consider a few of the advantages of <a href="thixotropy.html">thixotropic</a> <a href="dipping+glaze.html">dipping glazes</a>: They don't settle like a rock in the bucket, they don't go on too thick or in multiple thicknesses, they don't drip and they don't dry too fast.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Glaze dunking videos reveal the value of thixotropy</h3>
+<br/><a href="../picture/3784.html"><img class="flexleft50" loading="lazy" src="../media/images/qt7vfga5kx.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3784.html">click here</a> to see it.</p>
+<p>These videos from <a href="https://digitalfire.com/url/3753">Eastfork</a> Pottery demonstrate their use of <a href="thixotropy.html">thixotropic</a> glaze slurries. Watch them to see how effective a highly gelled glaze is. It enables a quick dip, stays fluid while draining, gives even coverage and dries in seconds. These don't hard-pan or settle out in the bucket either. They work on porous or dense <a href="bisque.html">bisque</a>. Almost any glaze can be thixotropic if you take the time to learn how to do it. The fast drying enables the use of twin running (or twin belt) foot wiper machines (best shown on these Instagram and Facebook videos).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Pure feldspar applied as a glaze: Possible because of the magic of thixotropy.</h3>
+<br/><a alt="Suspending feldspar in water" href="../picture/1878.html"><img alt="Suspending feldspar in water" class="flexleft50" loading="lazy" src="../media/images/1j1ygmgup5.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1878.html">click here</a> to see it.</p>
+<p>These are pure <a href="../material/253.html">Custer feldspar</a> and <a href="../material/1070.html">Nepheline Syenite</a>. The coverage is perfectly even on both. No drips. Yet no clay is present. The secret? <a href="../material/292.html">Epsom salts</a>. I <a href="slurry.html">slurried</a> the two powders in water until the flow was like heavy cream. I added more water to thin and then started adding the Epsom salts (powdered). After only a pinch or two, they both gelled. Then I added more water and more Epsom salts until they thickened again and gelled even better. The result is a <a href="thixotropy.html">thixotropic</a> <a href="slurry.html">slurry</a>. They both applied beautifully to these porcelains. The gelled consistency prevented them from <a href="suspension.html">settling</a> in seconds to a hard layer on the bucket bottom. Could you do this with pure <a href="../material/1245.html">silica</a>? Yes! The lesson: If these will suspend by gelling with Epsom salts, then any glaze will. You never need to tolerate settling or uneven coverage for single-layer dip-glazing again! </p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">A pure ball clay slip demonstrates thixotropy of a slurry</h3>
+<br/><a alt="Ball clay slurry on terra cotta" href="../picture/3158.html"><img alt="Ball clay slurry on terra cotta" class="flexleft50" loading="lazy" src="../media/images/vrvwc6jqqb.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3158.html">click here</a> to see it.</p>
+<p>Many ball clays create a <a href="thixotropy.html">thixotropic</a> <a href="slurry.html">slurry</a> that has beautiful application properties on <a href="leather+hard.html">leather-hard</a> ware. Look at that big drip coming off the rim on this freshly dipped cup (left) - it is not running downward. Yet this drip dried down and likely will be barely noticeable after glazing and firing (it is <a href="bisque.html">bisque fired</a> right). The rest of the surface dried thin enough to preserve the texture of the body yet completely hide its color.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Freshly slipped jug demonstrates the importance of thixotropy</h3>
+<br/><a alt="Highly thixotropic ceramic slip" href="../picture/3146.html"><img alt="Highly thixotropic ceramic slip" class="flexleft50" loading="lazy" src="../media/images/x1dbu8hevn.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3146.html">click here</a> to see it.</p>
+<p>These thickly applied clay slips are defying gravity! This piece has just been <a href="engobe.html">engobed</a> using a <a href="thixotropy.html">thixotropic</a> brown slip. The white was applied over that by pouring and the decoration done by scoring and <a href="../picture/1875.html">dripping</a>. Both slips are very high in <a href="../material/80.html">ball clay</a>, no additive is necessary to make them thixotropic. The gelled state persists even with double or more the amount of water that would be in a glaze <a href="slurry.html">slurry</a>. The <a href="rheology.html">rheology</a> of both of these slurries, the brown underlayer and of the white overlayer, is the entire secret of how this is even possible. People who want to understand why things work come to <a href="digitalfire+reference+library.html">digitalfire</a>.com, one reader said the following about this page: "Thank you SO much for sharing this information, I have been searching for exactly what you are talking about here!" Photo courtesy of Russell Kingston, Lynmouth <a href="slipware.html">Slipware</a> Pottery.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Are cheap plastic graduated cylinders useful?
+</h3>
+<h4 style="color:#888888; margin-top:0px;">Yes, you can calibrate them yourself.</h4>
+<br/><a href="../picture/1098.html"><img class="flexleft50" loading="lazy" src="../media/images/zagmyzosop.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1098.html">click here</a> to see it.</p>
+<p>Graduated cylinders like this are inexpensive (e.g. Amazon.com). Of course, these cheap plastic ones are not accurate. But, there is one factor that makes them useful: They are light and can thus be used to measure <a href="specific+gravity.html">specific gravity</a> on a 200g scale. There is a way to make these accurate enough for a potter: <a href="../picture/2222.html">Calibrate</a> them by checking with 100g and 50g of water, just mark the levels using a Sharpie.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Measure specific gravity using a scale and measuring cup</h3>
+<br/><a href="../picture/1484.html"><img class="flexleft50" loading="lazy" src="../media/images/padcokumes.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1484.html">click here</a> to see it.</p>
+<p>The <a href="specific+gravity.html">specific gravity</a> of a <a href="suspension.html">suspension</a> is simply its weight compared to water (water weighs 1g per cc). For example, different glazes optimize to different specific gravities (e.g. 1.45 is typical for <a href="stoneware.html">stoneware</a> glazes). Casting slips typically have specific gravities of 1.75-1.8. This plastic measuring cup accommodates 500g. I have already counter-weighed it on our <a href="../picture/3629.html">0.1g scale</a> and filled it with 500 grams of water to verify the accuracy of the 500g marking (mark the correct level with a felt pen or sticker if needed). Now, I am filling the cup with the <a href="slurry.html">slurry</a> to the same level. The specific gravity will be that weight divided by 500.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">More problems measuring glaze specific gravity using a hydrometer </h3>
+<br/><a href="../picture/2297.html"><img class="flexleft50" loading="lazy" src="../media/images/rs4zpqwnc5.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2297.html">click here</a> to see it.</p>
+<p>Potters sometimes call this a "floating thingy". Maybe, because of the problems it presents, it does not make a big enough impression to remember the name! Because of the length of the hydrometer the only container we have is this graduated cylinder. I have to fill it just the right level so it reads near the top. OK, fine. But the hydrometer needs to bob up and down to find home. However, this glaze has our desired <a href="thixotropy.html">thixotropy</a>, which prevents free movement. OK, I will carefully help it find home by pushing it down a little. But then it doesn’t want to bob back up! Ok, I’ll pull it up ... then is doesn't want to go back down to where it should float. Not great. Next problem: The glaze is opaque, I can’t see the reading. Yikes! A better way would be to throw out the hydrometer and just tare the empty cylinder on a scale, fill it to 100 and read the SG as the weight/100. Or fill it to any mark and divide the weight by that.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">How stop dripping and running: 
+</h3>
+<h4 style="color:#888888; margin-top:0px;">Add water! Then make it thixotropic.</h4>
+<br/><a href="../picture/1122.html"><img class="flexleft50" loading="lazy" src="../media/images/hebcuzywot.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1122.html">click here</a> to see it.</p>
+<p>The white slip on the left, <a href="https://insight-live.com/insight/share.php?z=DWJbEStb1w">L3685Z2</a>, (applied to a <a href="leather+hard.html">leather hard</a> cup) is <a href="../picture/1875.html">dripping</a> downward from the rim (even though it was held upside down for a couple of minutes!). Yet that <a href="slurry.html">slurry</a> was very viscous with a 1.48 <a href="specific+gravity.html">specific gravity</a>. Why? Because it was not <a href="thixotropy.html">thixotropic</a>. The fix? I watered it down to 1.46 (making it runny) and added pinches of powdered <a href="../material/292.html">Epsom salts</a> (while mixing vigorously) until it thickened enough to stop motion in about 1-2 seconds on mixer shut-off. But that stop-motion is followed by a bounce-back. That is the <a href="thixotropy.html">thixotropy</a>. It is easy to overdo the Epsom salts (gelling it too much), I add a drop or two of <a href="../material/260.html">Darvan</a> to rethin it if needed. When the <a href="engobe.html">engobe</a> is right, it gels after about 10 seconds of sitting, so I can stir it, dip and extract the mug, shake to drain it and then it gels and holds in place. Keep in mind, this is a pottery project. In industry, they <a href="deflocculation.html">deflocculate</a> <a href="engobe.html">engobes</a> to reduce <a href="water+content.html">water content</a> and then impose thixotropy, but that is more technical than the average potter would want.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">When to use vinegar and when to use epsom salts to flocculate a slurry</h3>
+<br/><a href="../picture/1656.html"><img class="flexleft50" loading="lazy" src="../media/images/xewcykyfod.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1656.html">click here</a> to see it.</p>
+<p>Slurries with more clay (like <a href="engobe.html">engobes</a>, slips) generally respond better to <a href="../material/292.html">epsom salts</a>. However the extra clay also makes them more likely to go moldy, so you may need to add a few drops of Dettol to kill the bacteria (if they are stored for any length of time). Vinegar works better for glaze surries, but only if they have sufficient <a href="specific+gravity.html">specific gravity</a>. Many people like to make an epsom salts solution and add that, but if you have a good mixer you may find it more intuitive to add the crystals (which you should crush to a powder) and wait 30 seconds for the <a href="viscosity.html">viscosity</a> to respond.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Why your supplier does not sell dipping engobes: 
+</h3>
+<h4 style="color:#888888; margin-top:0px;">#1 Getting the thixotropy just right is hard.</h4>
+<br/><a href="../picture/1709.html"><img class="flexleft50" loading="lazy" src="../media/images/uneyo1r83f.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1709.html">click here</a> to see it.</p>
+<p>Two things are happening simultaneously: The <a href="engobe.html">engobe</a> is gelling and last few drips are falling away. I am rolling the mug just enough to encourage them (but so so much as to disrupt the gelling). <a href="engobe.html">Engobes</a> are best applied to <a href="leather+hard.html">leather-hard</a> ware and thus need to be <a href="thixotropy.html">thixotropic</a>. The dipping process for each is to stir, pour-fill the mug, pour it out and push it upside down into the engobe. If I finish before the 10 second gel-time is up I get a perfectly even layer that does not move. Achieving this behaviour requires careful additions of <a href="../material/292.html">Epsom salts</a>. As the slip approaches the 10-second threshold even a slight bit more salts will turn it into a bucket of jelly (if that happens I add a drop or two of <a href="../material/260.html">Darvan</a>). This process works across a range of specific gravities (about 1.45-1.6), the higher the SG the trickier it is (but the faster it dries). I work at the low end, it’s easier..<br/>
+<br/>
+Are dipping engobes useful? Incredibly. But the technical support that would be required to help customers learn the careful tuning of <a href="rheology.html">rheology</a> is not something that any <a href="commercial+hobby+brushing+glazes.html">commercial glaze</a> supplier would be prepared to do. No problem. <a href="do-it-yourself.html">DIY</a> is the answer. This engobe is <a href="../recipe/l3954b.html">L3954B</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Four drops of Davan deflocculant fixed the problem!</h3>
+<br/><a href="../picture/2007.html"><img class="flexleft50" loading="lazy" src="../media/images/xr6sekwpw4.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2007.html">click here</a> to see it.</p>
+<p>This is a white <a href="engobe.html">engobe</a> (<a href="../recipe/l3954b.html">L3954B</a>) drying on two dark burning <a href="cone+6.html">cone 6</a> <a href="stoneware.html">stoneware</a> <a href="leather+hard.html">leather-hard</a> mugs (<a href="plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12876">M390</a>). Those lumps are on the left cannot be screened out, they are <a href="agglomeration.html">agglomerates</a>. That slip has excessive flocculant (powdered <a href="../material/292.html">Epsom salts</a> are added to gel it so that it stays put on the piece after dipping). About 4 drops of <a href="../material/260.html">Darvan</a> were added to one gallon of the <a href="slurry.html">slurry</a>, this immediately made it smooth and a perfect consistency for application. It remains stable on ware (without runs). <a href="engobe.html">Engobes</a> require tight control to have the right <a href="viscosity.html">viscosity</a> and <a href="thixotropy.html">thixotropy</a> (which can be achieved over a range of specific gravities (about 1.45-1.6). When they are right they are a joy to use, when they are not ware is ruined.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Absolutely Jet-Black Cone 6 Engobe on M340
+</h3>
+<h4 style="color:#888888; margin-top:0px;">This could also be super white</h4>
+<br/><a alt="A buff stoneware mug with black engobe" href="../picture/2133.html"><img alt="A buff stoneware mug with black engobe" class="flexleft50" loading="lazy" src="../media/images/ecice6yfwh.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2133.html">click here</a> to see it.</p>
+<p>This is the <a href="../recipe/l3954b.html">L3954B</a> <a href="engobe.html">engobe</a>. 15% Mason 6600 black body stain has been added (instead of the normal 10% <a href="../material/1724.html">Zircopax</a> used for white). Of course, a <a href="base+glaze.html">cover glaze</a> is needed for a <a href="functional.html">functional</a> surface. A lot of development work went into producing a recipe that fits this body, <a href="https://plainsmanclays.ca/data/index.php?product=12875">M340</a>. It works even when thickly applied because it has the same fired <a href="maturity.html">maturity</a> as the body. Lots of information is available on using <a href="https://insight-live.com/insight/share.php?z=uiqNgtxwws">L3954B</a> (including mixing and adjustment instructions). <a href="engobe.html">Engobes</a> are tricky to use. Follow the links below to learn more. <a href="https://insight-live.com/insight/share.php?z=uiqNgtxwws">L3954B</a> is designed to work on regular <a href="plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12875">M340</a> (this piece), <a href="https://plainsmanclays.ca/data/index.php?product=12876">M390</a> and <a href="https://plainsmanclays.ca/data/index.php?product=12943">Coffee Clay</a>. Most importantly, adjusting its maturity, and thus reducing <a href="firing+shrinkage.html">firing shrinkage</a>, is documented. These bodies dry better than porcelains and are much less expensive, so coating them with an engobe to get a surface like this makes a lot of sense. <a href="https://rongetty.com/category/people/21">Ed Phillipson</a> discovered this 80 years ago, enabling selling pieces made from these clays as white hotelware.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Fundamentals of Fluid Mechanics - book</h3>
+<br/><a href="../picture/1956.html"><img class="flexleft50" loading="lazy" src="../media/images/er6hpsjmfs.15.47 pm.png"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1956.html">click here</a> to see it.</p>
+<p>Many aspects of ceramic production relate to the control of fluids (mostly suspensions). This is also true of material production. If you want to solve problems and optimize your process this is invaluable knowledge. This book is available at amazon.com.</p>
+<p style="clear:left"></p>
+<h3>Inbound Photo Links</h3><table><tr>
+<td style="vertical-align:top; font-size:80%;">
+<br/><a href="../picture/1568.html"><img loading="lazy" src="../media/images/gixxapefyx-100H.jpg" style="margin:0px 10px 10px 0px; height:100px;"/></a><br/>Can you bisque fire at cone 02? Yes. But why? How?
+</td>
+<td style="vertical-align:top; font-size:80%;">
+<br/><a alt="Two samples, the same engobe runs but not the other" href="../picture/1088.html" title="The same ceramic engobe, same water content, yet one runs and the other does not"><img alt="Two samples, the same engobe runs but not the other" loading="lazy" src="../media/images/taxsugyvaf-100H.jpg" style="margin:0px 10px 10px 0px; height:100px;" title="The same ceramic engobe, same water content, yet one runs and the other does not"/></a><br/>The same engobe. Same water content. What is the difference?
+</td>
+<td style="vertical-align:top; font-size:80%;">
+<br/><a alt="Chrome tin glazed mugs - bad and good" href="../picture/3186.html"><img alt="Chrome tin glazed mugs - bad and good" loading="lazy" src="../media/images/5wxcnnh9fc-100H.jpg" style="margin:0px 10px 10px 0px; height:100px;"/></a><br/>Bad and good glaze application: The difference was the rheology.
+</td>
+<td style="vertical-align:top; font-size:80%;">
+<video alt="Mixing 20kg of pottery glaze" autoplay="false" controls="controls" preload="none" style="margin:0px 10px 10px 0px; height:100px;" width="640">
+<source src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/mix50lbbag.mp4" type="video/mp4">Your browser does not support MP4 video.
+</source></video><br/>See the magic of thixotropy as I mix a 20kg batch of G2926B glaze
+</td>
+<td style="vertical-align:top; font-size:80%;">
+<br/><a href="../picture/2259.html"><img loading="lazy" src="../media/images/buydzmyp6t-100H.jpg" style="margin:0px 10px 10px 0px; height:100px;"/></a><br/>30g of Epsom salts dissolved in 100cc of water:
+Is this the best way to use it?
+</td>
+<td style="vertical-align:top; font-size:80%;">
+<br/><a href="../picture/3692.html"><img loading="lazy" src="../media/images/bjlqvh36qz-100H.jpg" style="margin:0px 10px 10px 0px; height:100px;"/></a><br/>DIY glazes can do something commercial ones do not: 
+Go on evenly, in one coat, and dry in seconds.
+</td>
+</tr></table><br/>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="rheology.html">Rheology</a>
+<br/><i>In <a href="ceramics.html">ceramics</a>, this term refers to the flow and gel properties of a glaze or body <a href="suspension.html">suspension</a> (made from water and mineral powders, with possible additives, deflocculants, modifiers).</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="deflocculation.html">Deflocculation</a>
+<br/><i><a href="deflocculation.html">Deflocculation</a> is the magic behind the ceramic casting process, it enables slurries having impossibly low water contents and ware having amazingly low drying shrinkage</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="flocculation.html">Flocculation</a>
+<br/><i>The <a href="flocculation.html">flocculation</a> process enables technicians in <a href="ceramics.html">ceramics</a> to create an <a href="engobe.html">engobe</a> or glaze <a href="slurry.html">slurry</a> that gels and goes on to ware in a thick yet even, non-dripping layer.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="viscosity.html">Viscosity</a>
+<br/><i>In ceramic slurries (especially casting slips, but also glazes) the degree of fluidity of the <a href="suspension.html">suspension</a> is important to its performance.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="specific+gravity.html">Specific gravity</a>
+<br/><i>In <a href="ceramics.html">ceramics</a>, the <a href="specific+gravity.html">specific gravity</a> of slurries tells us their water-to-solids ratio. That ratio is a key indicator of performance and enabler of consistency.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="colloid.html">Colloid</a>
+<br/><i>In <a href="ceramics.html">ceramics</a> some clays of are of such exceedingly small <a href="particle+sizes.html">particle sizes</a> that they can stay in <a href="suspension.html">suspension</a> in water indefinitely. But unlike common colloids, clays have a secret weapon.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="glaze+layering.html">Glaze Layering</a>
+<br/><i>In hobby <a href="ceramics.html">ceramics</a> and pottery it is common to layer glazes for visual effects. Using brush-on glazes it is easy. But how to do it with <a href="dipping+glaze.html">dipping glazes</a>? Or apply brush-ons on to dipped base coats?</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="suspension.html">Suspension</a>
+<br/><i>In <a href="ceramics.html">ceramics</a>, glazes are slurries. They consist of water and undissolved powders kept in <a href="suspension.html">suspension</a> by clay particles. You have much more control over the properties than you might think.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="engobe.html">Engobe</a>
+<br/><i><a href="engobe.html">Engobes</a> are high-clay slurries that are applied to <a href="leather+hard.html">leather hard</a> or dry <a href="ceramics.html">ceramics</a>. They fire opaque and are used for <a href="functional.html">functional</a> or decorative purposes. They are formulated to match the <a href="firing+shrinkage.html">firing shrinkage</a> and <a href="co-efficient+of+thermal+expansion.html">thermal expansion</a> of the body.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="raku.html">Raku</a>
+<br/><i>Gas fired rustic ceramic ware is cooled from red-hot in a closed container with organic material. The zero-oxygen atmosphere produced reduces carbonate metal decoration to its metallic form.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="dipping+glaze.html">Dipping Glaze</a>
+<br/><i>In traditional <a href="ceramics.html">ceramics</a> and pottery <a href="dipping+glaze.html">dipping glazes</a> can be of two main types: For single layer and for application of other layers overtop. Understanding the difference is important.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="base-coat+dipping+glaze.html">Base-Coat Dipping Glaze</a>
+<br/><i>These are ceramic glazes intended for dipping but which contain a gum to enable them to adhere to the body better and tolerate over-layers without danger of flaking or cracking.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="../test/rheo.html">Rheology of a Ceramic Slurry</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Troubles</td>
+<td>
+<a href="../trouble/uneven+glaze+coverage.html">Uneven Glaze Coverage</a>
+<br/><i>The secret to getting event glaze coverage lies in understanding how to make <a href="thixotropy.html">thixotropy</a>, <a href="specific+gravity.html">specific gravity</a> and <a href="viscosity.html">viscosity</a> work for you</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Troubles</td>
+<td>
+<a href="../trouble/powdering%2c+cracking+and+settling+glazes.html">Powdering, Cracking and Settling Glazes</a>
+<br/><i>Powdering and dusting glazes are difficult and a dust hazard. Shrinking and cracking glazes fall off and <a href="../trouble/crawling.html">crawl</a>. The cause is the wrong amount or type of clay.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/epsom+salts.html">Epsom Salts</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/vinegar.html">Vinegar</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/calcium+chloride.html">Calcium Chloride</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/ep+kaolin.html">EP Kaolin</a>
+<br/><i>A <a href="../material/925.html">kaolin</a> that gels slurries (thus handy to suspend ceramic glazes). It is plastic and fires white enough that it is also valuable in <a href="porcelain.html">porcelain</a> bodies.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="../material/acti-gel+208.html">Acti-Gel 208</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Media</td>
+<td>
+<a href="../video/thixotropy+and+how+to+gel+a+ceramic+glaze.html">Thixotropy and How to Gel a Ceramic Glaze</a>
+<br/><i>I will show you why <a href="thixotropy.html">thixotropy</a> is so important. Glazes that you have never been able to suspend or apply evenly will work beautifully.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Media</td>
+<td>
+<a href="../video/how+to+apply+a+white+slip+to+terra+cotta+ware.html">How to Apply a White Slip to Terra Cotta Ware</a>
+<br/><i>I will show you some secrets of making a base <a href="engobe.html">engobe</a> (or slip) apply to <a href="leather+hard.html">leather hard</a> <a href="terra+cotta.html">terracotta</a> ware in a thick, perfectly even layer.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Media</td>
+<td>
+<a href="../video/adjusting+the+thixotropy+of+an+engobe+for+pottery.html">Adjusting the Thixotropy of an Engobe for Pottery</a>
+<br/><i>How to fine-tune the <a href="thixotropy.html">thixotropy</a> of a ceramic <a href="engobe.html">engobe</a> for pottery</i>
+</td>
+</tr>
+<tr>
+<td>Video<br/><img src="../media/images/mix50lbbag.jpg" style="width:200px;"/></td>
+<td>
+<a href="../video/watch+thixotropy+happen+with+a+20kg+batch+of+dipping+glaze.html">Watch Thixotropy Happen With a 20kg Batch of Dipping Glaze</a>
+<br/><i>I mixed 20kg of glaze powder into 20kg of water, turned out super watery. Yet the <a href="specific+gravity.html">specific gravity</a> was 1.46, too high. How? But, instead of more water, I added Epsom salts—and boom: A perfect <a href="thixotropy.html">thixotropic</a> gel. It glides on smooth, no drips, no thickness issues.</i>
+</td>
+</tr>
+<tr>
+<td>Video<br/><img src="../media/images/TuneThixotropy.jpg" style="width:200px;"/></td>
+<td>
+<a href="../video/fine+tune+the+thixotropy+of+a+glaze+or+engobe+slurry.html">Fine tune the thixotropy of a glaze or engobe slurry</a>
+<br/><i>How I tune the <a href="thixotropy.html">thixotropy</a> of a <a href="dipping+glaze.html">dipping glaze</a> or <a href="engobe.html">engobe</a> so it hangs on after extraction, not <a href="../picture/1875.html">dripping</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Recipes</td>
+<td>
+<a href="../recipe/g3806c.html">G3806C - Cone 6 Clear Fluid-Melt transparent glaze</a>
+<br/><i>A base <a href="fluid+melt+glazes.html">fluid-melt</a> glaze recipe developed by <a href="tony+hansen.html">Tony Hansen</a>. With <a href="colorant.html">colorant</a> additions it forms reactive melts that <a href="variegation.html">variegate</a> and run. It is more resistant to <a href="../trouble/glaze+crazing.html">crazing</a> than others.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Recipes</td>
+<td>
+<a href="../recipe/g1916q.html">G1916Q - Low Fire Highly-Expansion-Adjustable Transparent</a>
+<br/><i>An expansion-adjustable <a href="low+temperature+glaze.html">cone 04</a> transparent glaze made using three common Ferro <a href="frit.html">frits</a> (low and <a href="co-efficient+of+thermal+expansion.html">high expansion</a>), it produces an easy-to-use <a href="slurry.html">slurry</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Recipes</td>
+<td>
+<a href="../recipe/g2934.html">G2934 - Matte Glaze Base for Cone 6</a>
+<br/><i>A base <a href="../oxide/mgo.html">MgO</a> <a href="matte+glaze.html">matte glaze</a> recipe fires to a hard utilitarian surface and has very good working properties. Blend in the glossy if it is too matte.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Recipes</td>
+<td>
+<a href="../recipe/gr6-m.html">GR6-M - Ravenscrag Cone 6 Floating Blue</a>
+<br/><i><a href="plainsman+clays.html">Plainsman</a> <a href="cone+6.html">Cone 6</a> <a href="../material/1178.html">Ravenscrag</a> Slip based version of the popular <a href="../picture/2776.html">floating blue</a> recipe.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Recipes</td>
+<td>
+<a href="../recipe/g2926b.html">G2926B - Cone 6 Whiteware/Porcelain transparent glaze</a>
+<br/><i>A <a href="base+glaze.html">base transparent</a> glaze recipe created by <a href="tony+hansen.html">Tony Hansen</a>, it fires high gloss and ultra clear with low melt mobility.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="../article/where+do+i+start+in+understanding+glazes%3f.html">Where do I start in understanding glazes?</a>
+<br/><i>Break your addiction to online recipes that don't work or bottled expensive glazes that you could <a href="do-it-yourself.html">DIY</a>. Learn why glazes fire as they do. Why each material is used. How to create perfect dipping and brushing properties. Even some <a href="glaze+chemistry.html">chemistry</a>.</i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></div></body>
+</html>

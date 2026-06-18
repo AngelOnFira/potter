@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Uneven Glaze Coverage</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="The secret to getting event glaze coverage lies in understanding how to make thixotropy, specific gravity and viscosity work for you">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item active" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=trouble" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"></td><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Troubles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a title="29" href="https://digitalfire.com/trouble/black+coring">Black Coring</a></nobr><br /><nobr><a title="30" href="https://digitalfire.com/trouble/bleeding+colors">Bleeding Colors</a></nobr><br /><nobr><a title="11" href="https://digitalfire.com/trouble/bloating">Bloating</a></nobr><br /><nobr><a title="13" href="https://digitalfire.com/trouble/casting+slip+problems">Casting Slip Problems</a></nobr><br /><nobr><a title="7" href="https://digitalfire.com/trouble/chrome+flashing+in+ceramic+glazes">Chrome Flashing in Ceramic Glazes</a></nobr><br /><nobr><a title="23" href="https://digitalfire.com/trouble/clouding+in+ceramic+glazes">Clouding in Ceramic Glazes</a></nobr><br /><nobr><a title="10" href="https://digitalfire.com/trouble/cracking+of+clays+during+drying">Cracking of Clays During Drying</a></nobr><br /><nobr><a title="1" href="https://digitalfire.com/trouble/crawling">Crawling</a></nobr><br /><nobr><a title="9" href="https://digitalfire.com/trouble/dunting+and+cracking+of+clay+bodies+during+firing">Dunting and Cracking of Clay Bodies During Firing</a></nobr><br /><nobr><a title="19" href="https://digitalfire.com/trouble/foaming+of+ceramicd+glaze+slurries">Foaming of Ceramicd Glaze Slurries</a></nobr><br /><nobr><a title="3" href="https://digitalfire.com/trouble/glaze+blisters">Glaze Blisters</a></nobr><br /><nobr><a title="2" href="https://digitalfire.com/trouble/glaze+crazing">Glaze Crazing</a></nobr><br /><nobr><a title="6" href="https://digitalfire.com/trouble/glaze+is+off-color">Glaze is Off-Color</a></nobr><br /><nobr><a title="8" href="https://digitalfire.com/trouble/glaze+marks+or+scratches">Glaze Marks or Scratches</a></nobr><br /><nobr><a title="22" href="https://digitalfire.com/trouble/glaze+peeling+on+drying">Glaze peeling on drying</a></nobr><br /><nobr><a title="5" href="https://digitalfire.com/trouble/glaze+pinholes%2C+pitting">Glaze Pinholes, Pitting</a></nobr><br /><nobr><a title="18" href="https://digitalfire.com/trouble/glaze+shivering">Glaze Shivering</a></nobr><br /><nobr><a title="14" href="https://digitalfire.com/trouble/glaze+slurry+is+difficult+to+use+or+settling">Glaze Slurry is Difficult to Use or Settling</a></nobr><br /><nobr><a title="26" href="https://digitalfire.com/trouble/leaking+of+fired+ceramics">Leaking of Fired Ceramics</a></nobr><br /><nobr><a title="28" href="https://digitalfire.com/trouble/lime+popping">Lime Popping</a></nobr><br /><nobr><a title="27" href="https://digitalfire.com/trouble/orange+peel+surface">Orange Peel Surface</a></nobr><br /><nobr><a title="21" href="https://digitalfire.com/trouble/over+firing+of+ceramic+glazes+and+bodies">Over Firing of Ceramic Glazes and Bodies</a></nobr><br /><nobr><a title="4" href="https://digitalfire.com/trouble/powdering%2C+cracking+and+settling+glazes">Powdering, Cracking and Settling Glazes</a></nobr><br /><nobr><a title="25" href="https://digitalfire.com/trouble/runny+ceramic+glazes">Runny Ceramic Glazes</a></nobr><br /><nobr><a title="17" href="https://digitalfire.com/trouble/specking+on+ceramic+ware">Specking on Ceramic Ware</a></nobr><br /><nobr><a title="15" href="https://digitalfire.com/trouble/splitting+at+the+plastic+stage">Splitting at the Plastic Stage</a></nobr><br /><nobr><a title="24" href="https://digitalfire.com/trouble/staining+of+fired+ceramic+glazes">Staining of Fired Ceramic Glazes</a></nobr><br /><nobr><a title="20" href="https://digitalfire.com/trouble/20"><button type="button" class="btn btn-dark">Uneven Glaze Coverage</button></a></nobr><br /><nobr><a title="12" href="https://digitalfire.com/trouble/warping">Warping</a></nobr></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Uneven Glaze Coverage</h1>
+<p class="text-muted" style="margin-left:20px">The secret to getting event glaze coverage lies in understanding how to make thixotropy, specific gravity and viscosity work for you
+<h2>Details</h2>
+<p>In industry alot of effort is put forth to create glaze slurries that cover ware evenly and dry quickly. <a  href="https://digitalfire.com/glossary/glaze+recipes">Glaze recipes</a> contain adequate clay to suspend the slurry; their <a  href="https://digitalfire.com/glossary/thixotropy">thixotropy</a>, <a  href="https://digitalfire.com/glossary/viscosity">viscosity</a> and <a  href="https://digitalfire.com/glossary/specific+gravity">specific gravity</a> are tuned to produce an easy-to-use product. Manufacturers also use a variety of binders, hardeners, de-foamers, suspenders to find tune the <a  href="https://digitalfire.com/glossary/slurry">slurry</a>. Engineers in these companies have equipment to measure these properties and they can tell you absolute values in units like centipoises and <a  href="https://digitalfire.com/glossary/thixotropy">thixotropic</a> index. Potters tend to think more about the fired appearance of the glaze and they are much more willing to endure less-than-ideal slurry properties in their glazes. While industry uses <a  href="https://digitalfire.com/glossary/frit">frits</a> and <a  href="https://digitalfire.com/material/925">kaolin</a>, potters use a host of raw materials that, while contributing to the fired character they want, are hostile to the application properties of the slurry. There is considerable ignorance of the products and techniques used to control slurry properties. I used to tell people to measure glaze slurry properties (e.g. viscosity, specific gravity, thixotropy) when a glaze is working well and use these as a benchmark to diagnose the cause when there is trouble. But many have never actually seen a glaze that really suspends well, applies evenly, does not drip, dries quickly, hardens well and does not dust. So matter how well you think your glaze is working, read on. Of course, none of us have lab test equipment to measure these properties, but for our application we do not need it. By thinking in comparative rather than absolute terms we can accomplish a lot.</p>
+
+<p>Some aspects to getting even application:</p>
+<ul>
+<li>Glaze recipe: Use a glaze base that has <b>adequate clay</b> to suspend the slurry, but not so much that the glaze shrinks excessively during drying. Clay also hardens the glaze when it dries. It is typical to see 15-20% kaolin in <a  href="https://digitalfire.com/glossary/frit">fritted</a> glazes. A similar amount of <a  href="https://digitalfire.com/material/80">ball clay</a> can be used. Clays source a key oxide that the fired glass needs: <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a>. Thus there is no reason for inadequate clay in a recipe (unless the glaze is special purpose like <a  href="https://digitalfire.com/glossary/glass+vs.+crystalline">crystalline</a>). However <a  href="https://digitalfire.com/material/310">feldspar</a> also sources a lot of Al<sub>2</sub>O<sub>3</sub> so it is not surprising that <a  href="https://digitalfire.com/picture/1960">high feldspar glazes</a> are often lacking in clay content. Using a little <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> it is almost always possible to reduce feldspar and increase other materials in the recipe such that overall chemistry does not change, but the materials sourcing the Al<sub>2</sub>O<sub>3</sub> do.</li>
+
+<li>Density of <a  href="https://digitalfire.com/glossary/bisque">bisque</a>: Typical <a  href="https://digitalfire.com/glossary/bisque">bisque firing</a> is done at <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 06</a> (1800F). However this is not a rule. Many companies green glaze, thus doing no bisque at all. Others bisque to vitrify (e.g. Cone 10) and then glaze ware and fire at low temperatures. Often what seems practical conflicts was what needs to be done to get even glaze coverage. If bisque is too porous, it can be all to easy to get the glaze on too thick (since by nature thickness is determined by how fast the bisque absorbs the water during dipping or pouring). If bisque is too dense you will have the opposite problem, the glaze layer will be too thin (especially if ware is already damp from a previous glaze dip or pour). However if the thixotropy of the glaze slurry has been optimized the density of the bisque will not be that much of an issue because a quick dip will produce an even layer regardless of the density of the ware. When you realize this you will be able to fire bisque hotter and still get good coverage (generally, the hotter the bisque the better since this will enable purging more of the gases of <a  href="https://digitalfire.com/glossary/decomposition">decomposition</a> and decarbonization that cause glaze faults).</li>
+
+<li>Specific Gravity: Below we will talk about the importance of the viscosity and thixotropy of the slurry. But before even considering these things you must address the density or specific gravity. While it seems logical that one should simply tune the amount of water in a glaze to get the desired viscosity, this is not the best. The same viscosity can be achieved using different viscosities, but what is the difference? We will see in a moment. A variety of factors contribute to the amount of water it will take to achieve a desired viscosity, these change with material batches and brands and water electrolyte content. It is very possible that a glaze having what appears to be the right <a  href="https://digitalfire.com/glossary/water+content">water content</a> will go on too thickly, apply unevenly and settle and even hard-pan in the bucket. Assuming that a glaze has sufficient clay, why would this happen? The specific gravity is too high. It is too heavy. Unless you are doing some unusual type of glazing or your glaze needs to be low in clay content (e.g. Crystalline ware) a specific gravity around 1.45 to 1.5 should be about right. It is actually better to err on the low side if you want to get the best coverage. But, you might say, that will make the slurry to thin. Notwithstanding that, it is also very possible that troublesome glaze you are using now has a specific gravity of 1.6 or more and have about the viscosity you think is right. Imagine adding enough water to take it down to 1.45, that will will make it so runny as to make it impossible to use. Right? Bear with me, we will take care of this in a minute. The real point here is that the <b>specific gravity is the bench mark</b>. If anyone is having trouble with even coverage and they need advice I feel unqualified to give it without knowing the specific gravity. And I feel it should be around 1.45 for the average raw or partially fritted glaze.</li>
+
+<li>Viscosity: Glaze viscosity is most easily measured using a <a  href="https://digitalfire.com/picture/1094">Ford cup</a> (from a paint store). Maybe a simpler way is just to stir it in the bucket, pull out the stick and see how long it keeps going. Traditionally I have liked to see it go for three or four seconds (or less for slip ware or dense bisque). It seems obvious that this property is very important to achieving even coverage on ware. But in actual fact, it is not as important as you might think. I will explain in the next section.</li>
+
+<li>Thixotrophy of slurry: Thixotropy refers to the dynamic nature a slurry can have, being more fluid when in motion and gelled when not. By adding a small amount of vinegar or <a  href="https://digitalfire.com/material/292">Epsom salts</a> to a glaze slurry we can do two things: Increase the viscosity and the thixotropy. If the specific gravity starting point is low enough the amount of acid needed to thicken it to the right viscosity will also produce the right thixotropy. But if we start with too high of a specific gravity it will gel too much when motion stops and apply too thickly. For me, the magic point is around 1.45 specific gravity. When the slurry is right you can dip a piece, extract it right away leaving an even layer of gelled glaze cover the right thickness and no <a  href="https://digitalfire.com/picture/1875">dripping</a>. What is a good indicator to it being right? Stir it well, pull the stick out and watch it. It should go round for 2-3 seconds, then stop and <b>bounce back</b> slightly. That bounce back is the thixotropy. Getting that immediate bounce-back is harder with slurries of higher specific gravity. There is another important implication with this perfectly gelled slurry we create: Dipping time is always the same (assuming ware is dry); immerse it and remove it in less than a second on any clay, porous or dense, bisqued or green, and the thickness will be right! What I have just said may be hard to believe if you have always worked with non-gelled glazes. Every time I demonstrate this jaws drop, people cannot believe it! But think about the products we use every day like mayonnaise, toothpaste, paints, ketchup, hair gel, etc., they are also thixotropic non-Newtonian fluids.</li>
+
+<li>Glazing technique: Of course many factors relating to technique can affect how evenly a glaze application is. Even a gelled glaze will not go on as thickly if the ware is wet or damp from a previous dip. Ware should be clean and free of <a  href="https://digitalfire.com/glossary/soluble+salts">soluble salts</a>. Super thin ware may need to be heated to accelerate drying if dipping to glaze it inside and out. Consider glazing it inside first, letting that dry, then doing the outside.</li>
+
+<li>Once-fire ware: Once you discover the secret of gelling glazes it will not be long before you are thinking about the option of green glazing (glazing dry ware without bisquing it). You may be surprised how well glazes adhere to dry clay. But caution is needed. It is much more important not to water-log the piece or <a  href="https://digitalfire.com/glossary/glaze+bubbles">bubbling</a> will occur. Using a higher specific gravity, if possible, might be needed. Glaze ware on the inside first, let that dry, then do the outside. In addition, experiment to learn where your glaze melts and adjust your <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a> to soak the kiln before it melts.</li>
+</ul>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Achieve more even glaze coverage on pieces of varying wall thickness</h3>
+<br /><a href="https://digitalfire.com/picture/1508"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/sihbicibid.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1508">click here</a> to see it.</p>
+<p>This is an example of the importance of allowing a <a  href="https://digitalfire.com/glossary/bisque">bisque</a> piece to dry after glaze the inside surface before glazing the outside face. This hand-built caserole lid is thin and was glazed on the inside first. That wetted the bisque enough that when the outside was poured there was not enough absorbency remaining to build a sufficient thickness on the darker-colored areas of thinner cross section. The problem is exacerbated by the fact that the underlying red body is darkening the color of the thinner glazed sections.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">The same engobe. Same water content. What is the difference?</h3>
+<br /><a alt="Two samples, the same engobe runs but not the other" title="The same ceramic engobe, same water content, yet one runs and the other does not" href="https://digitalfire.com/picture/1088"><img class="flexleft50" title="The same ceramic engobe, same water content, yet one runs and the other does not"  alt="Two samples, the same engobe runs but not the other"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/taxsugyvaf.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1088">click here</a> to see it.</p>
+<p>The <a  href="https://digitalfire.com/glossary/engobe">engobe</a> on the left, even though it has a fairly low <a  href="https://digitalfire.com/glossary/water+content">water content</a>, is running off the <a  href="https://digitalfire.com/glossary/leather+hard">leather hard</a> clay, <a  href="https://digitalfire.com/picture/1875">dripping</a> and drying slowly. The one on the right has been flocculated with <a  href="https://digitalfire.com/material/292">epsom salts</a> (powdered), giving it <a  href="https://digitalfire.com/glossary/thixotropy">thixotropy</a> (ability to gel when not in motion but flow when in motion). Now there are no drips, there are no thin or thick sections. It gels after a few seconds and can be uprighted and set on the shelf for drying.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Adding water actually made this white engobe run less? How?</h3>
+<br /><a href="https://digitalfire.com/picture/1122"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/hebcuzywot.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1122">click here</a> to see it.</p>
+<p>The white slip (applied to a <a  href="https://digitalfire.com/glossary/leather+hard">leather hard</a> cup) on the left is <a  href="https://digitalfire.com/picture/1875">dripping</a> downward from the rim (even though it was held upside down for a couple of minutes!). Yet that <a  href="https://digitalfire.com/glossary/slurry">slurry</a> was very viscous with a 1.48 <a  href="https://digitalfire.com/glossary/specific+gravity">specific gravity</a>. Why? Because it was not <a  href="https://digitalfire.com/glossary/thixotropy">thixotropic</a>. The fix? I watered it down to 1.46 (making it runny) and added pinches of powdered <a  href="https://digitalfire.com/material/292">epsom salts</a> (while mixing vigorously) until it thickened enough to stop motion in about 1-2 seconds on mixer shut-off. But that stop-motion is followed by a bounce-back. That is the <a  href="https://digitalfire.com/glossary/thixotropy">thixotropy</a>. It is easy overdo the epsom salts (gelling it too much), I add a drop or two of <a  href="https://digitalfire.com/material/260">Darvan</a> to rethin it if needed. When the <a  href="https://digitalfire.com/glossary/engobe">engobe</a> is right it gels after about 10 seconds of sitting, so I can stir it, dip and extract the mug, shake to drain it and then it gels and holds in place. Keep in mind, this is a pottery project. In industry they <a  href="https://digitalfire.com/glossary/deflocculation">deflocculate</a> <a  href="https://digitalfire.com/glossary/engobe">engobes</a> to reduce <a  href="https://digitalfire.com/glossary/water+content">water content</a>. But a <a  href="https://digitalfire.com/glossary/deflocculation">deflocculated</a> slurry can still be gelled (if it is runny).</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/specific+gravity">Specific gravity</a>
+<br /><i>In <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>, the <a  href="https://digitalfire.com/glossary/specific+gravity">specific gravity</a> of slurries tells us their water-to-solids ratio. That ratio is a key indicator of performance and enabler of consistency.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/viscosity">Viscosity</a>
+<br /><i>In ceramic slurries (especially casting slips, but also glazes) the degree of fluidity of the <a  href="https://digitalfire.com/glossary/suspension">suspension</a> is important to its performance.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/thixotropy">Thixotropy</a>
+<br /><i><a  href="https://digitalfire.com/glossary/thixotropy">Thixotropy</a> is a property of ceramic slurries of high <a  href="https://digitalfire.com/glossary/water+content">water content</a>. <a  href="https://digitalfire.com/glossary/thixotropy">Thixotropic</a> suspensions flow when moving but gel after sitting (for a few moments more depending on application). This phenomenon is helpful in getting even, drip-free glaze coverage.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/ceramic+glaze+defects">Ceramic Glaze Defects</a>
+<br /><i><a  href="https://digitalfire.com/glossary/ceramic+glaze+defects">Ceramic glaze defects</a> include things like <a  href="https://digitalfire.com/glossary/pinholing">pinholes</a>, <a  href="https://digitalfire.com/trouble/glaze+blisters">blisters</a>, <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a>, <a  href="https://digitalfire.com/glossary/glaze+shivering">shivering</a>, <a  href="https://digitalfire.com/glossary/leaching">leaching</a>, <a  href="https://digitalfire.com/trouble/crawling">crawling</a>, <a  href="https://digitalfire.com/glossary/cutlery+marking">cutlery marking</a>, <a  href="https://digitalfire.com/glossary/glaze+bubbles">clouding</a> and color problems.</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg">
+<link rel="mask-icon" href=/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Project: Materials</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+H2 { color:#222222; }
+H3 { color:#444444; }
+H4 { color:#666666; }
+H5 { color:#888888; }
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item active" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=project" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td><p style="float:right; font-size:80%; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Projects</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a title="15" href="https://digitalfire.com/project/15">2019 Jiggering-Casting Project of Medalta 66 Mug</a><br /><a title="54" href="https://digitalfire.com/project/54">A cereal bowl jigger mold made using 3D printing</a><br /><a title="33" href="https://digitalfire.com/project/33">Beer Bottle Master Mold via 3D Printing</a><br /><a title="61" href="https://digitalfire.com/project/61">Better Porosity Clay for Brown Sugar Savers</a><br /><a title="48" href="https://digitalfire.com/project/48">Build a kiln monitoring device</a><br /><a title="69" href="https://digitalfire.com/project/69">Celebration Project</a><br /><a title="60" href="https://digitalfire.com/project/60">Coffee Mug Slip Casting Mold via 3D Printing</a><br /><a title="29" href="https://digitalfire.com/project/29">Comparing the Melt Fluidity of 16 Frits</a><br /><a title="52" href="https://digitalfire.com/project/52">Cookie Cutting clay with 3D printed cutters</a><br /><a title="41" href="https://digitalfire.com/project/41">Evaluating a clay's suitability for use in pottery</a><br /><a title="55" href="https://digitalfire.com/project/55">Make a mold for 4-gallon stackable calciners</a><br /><a title="49" href="https://digitalfire.com/project/49">Make Your Own Pyrometric Cones</a><br /><a title="40" href="https://digitalfire.com/project/40">Making a high quality ceramic tile</a><br /><a title="46" href="https://digitalfire.com/project/46">Making a Plaster Table</a><br /><a title="37" href="https://digitalfire.com/project/37">Making Bricks</a><br /><a title="50" href="https://digitalfire.com/project/50">Making our own kiln posts using a hand extruder</a><br /><a title="47" href="https://digitalfire.com/project/47">Making your own sieve shaker for slurries</a><br /><a title="59" href="https://digitalfire.com/project/59">Medalta Ball Pitcher Slip Casting Mold via 3D Printing</a><br /><a title="34" href="https://digitalfire.com/project/34">Medalta Jug Master Mold Development</a><br /><a title="63" href="https://digitalfire.com/project/63">Mold Natches</a><br /><a title="32" href="https://digitalfire.com/project/32">Mother Nature's Porcelain - Plainsman 3B</a><br /><a title="66" href="https://digitalfire.com/project/66">Mug Handle Casting</a><br /><a title="39" href="https://digitalfire.com/project/39">Nursery plant pot mold via 3D printing</a><br /><a title="30" href="https://digitalfire.com/project/30">Pie-Crust Mug-Making Method</a><br /><a title="35" href="https://digitalfire.com/project/35">Plainsman 3D, Mother Nature's Porcelain/Stoneware</a><br /><a title="38" href="https://digitalfire.com/project/38">Project to Document a Shimpo Jiggering Attachment</a><br /><a title="36" href="https://digitalfire.com/project/36">Roll, Cut, Pull, Attach Handle-making Method</a><br /><a title="23" href="https://digitalfire.com/project/23">Slurry Mixing and Dewatering Your Own Clay Body</a><br /><a title="24" href="https://digitalfire.com/project/24">Testing a New Load of EP Kaolin</a><br /><a title="44" href="https://digitalfire.com/project/44">Using milk as a glaze</a></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Materials</h1>
+<p>The study of ceramic materials is at the center of all ceramic technology. While knowing the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> of materials gives you much control of fired the properties of glazes, knowing the physical and fired properties of materials enables control of both fired and unfired properties of bodies (and of course of the physical and working properties of glaze slurries). In education students study theoretical materials, in industry we work directly with real-world materials, we can see them and touch them. These materials normally come in bags, they are powders and we understand their properties from this view (not from the rocks they once were in a quarry). They have plasticities, melting temperatures, particle size distributions, <a  href="https://digitalfire.com/glossary/vitrification">vitrification</a> histories, solubility or solubles contents, impurities, consistency issues, <a  href="https://digitalfire.com/glossary/rheology">rheological</a> properties, bulk densities, particle surface areas, costs, etc.<br />
+<br />
+Materials science needs to be put into context with all the levels of assessment: oxide, mineral, material, recipe and process. For example, consider the problem of ware cracking during drying, a body issue (not likely related to chemistry). The problem could be as simple as ware being dried unevenly, a process level problem. If the cracking is occurring because the body has been formulated with too much <a  href="https://digitalfire.com/material/80">ball clay</a> to make it practical to dry, that is a recipe level issue. If the cracking is occurring because one material has changed or been substituted, perhaps to a much smaller particle size alternative, that is a material level issue. If the cause of the problem is difficult to asses, then the <a  href="https://digitalfire.com/glossary/mineralogy">mineralogy</a> of the ingredient materials and their interactions may need to be studied and understood better to solve the problem. <br />
+<br />
+In many cases the causes of a problem have roots on multiple levels. Amazingly, this affords the opportunity to link apparently separate problems occurring on multiple levels and solve them all at once. Consider the issue of a glaze <a  href="https://digitalfire.com/glossary/slurry">slurry</a> that is <a  href="https://digitalfire.com/glossary/suspension">settling</a> quickly, powdering after drying and failing to adhere well to ware, these are happening because of lack of clay content. This problem is probably directly related to the fact that the glaze is also running off ware during firing (likely due to lack of <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> and <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> in the glaze). Adding <a  href="https://digitalfire.com/material/925">kaolin</a> (which supplies both) will help suspend and harden the glaze and it will help stabilize it during firing, solving all the problems. In addition the glaze will also be more durable and less soluble.<br />
+<br />
+In this materials area of the database we avoid discussing too much about chemistry, this is done in the <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> area. For example, on the material level we see kaolin as clay powder that contributes <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> to a body and <a  href="https://digitalfire.com/glossary/suspension">suspension</a> properties to a glaze (while of course contributing Al<sub>2</sub>O<sub>3</sub> and SiO<sub>2</sub> to the chemistry of the glaze and a mullite building source to the body). On the mineral level it is kaolinite, its properties compare to other clays in relation to its particle size and shape, surface chemistry on the particles, etc. On the chemistry level it is no longer kaolin, it is Al<sub>2</sub>O<sub>3</sub> and SiO<sub>2</sub>, therefore studying its effects on glazes involves studying these two oxides. However there a limitations to this 'materials as chemistry sources' view, different materials of the same chemistry do not release their oxides into a melt with the same willingness. These differences can be answered on the mineral level.<br />
+<br />
+The concept of distinguishing between generic materials and name-brand materials enables maintaining general information in fewer places. For example, all generic information about kaolin can be found in the generic kaolin record. Other name-brand kaolins are linked to the generic kaolin as their parent and only information specific or unique to them is recorded there. Generic kaolin is, in turn, linked to the mineral kaolinite.<br />
+<br />
+If you have studied or compared data sheets over a period of time then you know how many errors they can have, how unclear they can be, how non-applicable or non-practical their data is for ceramic applications and how drastically numbers can change as companies update them. This underscores the importance of being able to test these materials for yourself to know the behaviour for specific properties that relate to your application.<p style="clear:left"></p></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Lab testing a clay for its physical properties</h3>
+<br /><a href="https://digitalfire.com/picture/gunhonibus"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/haftugomux.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/gunhonibus">click here</a> to see it.</p>
+<p>It only takes a few minutes to make these. But you would be amazed at how much information they can give you about a clay! These are <a  href="https://digitalfire.com/test/shab">SHAB test</a> bars, an <a  href="https://digitalfire.com/test/ldw">LDW test</a> for <a  href="https://digitalfire.com/glossary/water+content">water content</a> and a <a  href="https://digitalfire.com/test/dfac">DFAC test</a> disk about to be put into a drier. The SHAB bars shrink during drying and firing, the length is measured at each stage. The LDW sample is weighed wet, dry and fired. The tin can prevents the inner portion of the DFAC disk from drying and this sets up stresses that cause it to crack. The nature of the cracking pattern and its magnitude are recorded as a Drying Factor. The numbers from all of these measurements are recorded in my account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a>. It can present a complete <a  href="https://digitalfire.com/glossary/physical+testing">physical properties</a> report that calculates things like <a  href="https://digitalfire.com/glossary/drying+shrinkage">drying shrinkage</a>, <a  href="https://digitalfire.com/glossary/firing+shrinkage">firing shrinkage</a>, water content and <a  href="https://digitalfire.com/glossary/loi">LOI</a> (from the measured values).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Refined 200 mesh materials are not guaranteed to be such</h3>
+<br /><a href="https://digitalfire.com/picture/gilxykuvyj"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/ratwotucaj.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/gilxykuvyj">click here</a> to see it.</p>
+<p>Each of these eight pallets of <a  href="https://digitalfire.com/material/925">kaolin</a> are being sampled to screen them for oversize particles. The 50 gram samples needed can be taken without having to open the bags, they are filled through a valve at the top and it can be opened easily. Kaolins and ball clays especially are suspect and body manufacturers must be vigilant about this (each can tell you disaster stories about making product with faulty raw materials containing grit, carbon and iron particles). The samples will be washed through 70, 100 and 150 mesh screens to spot any particles that could introduce grit or fired speckle into the bodies.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Do not rely on material data sheets, do the testing</h3>
+<br /><a href="https://digitalfire.com/picture/cudzucanis"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/fyckexaxaf.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/cudzucanis">click here</a> to see it.</p>
+<p>The <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> on the left uses <a  href="https://digitalfire.com/material/831">Grolleg</a> <a  href="https://digitalfire.com/material/925">kaolin</a>, the right uses Tile #6 kaolin. The Grolleg body needs 5-10% less <a  href="https://digitalfire.com/material/310">feldspar</a> to vitrify it to zero <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a>. It thus contains more kaolin, yet it fires significantly whiter. Theoretically this seems simple. Tile #6 contains alot more iron than Grolleg. Wrong! According to the data sheets, Grolleg has the more iron of the two. Why does it always fire whiter? I actually do not know. But the point is, do not rely totally on numbers on data sheets, do the testing yourself.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Lignite contamination in manufactured porcelain body</h3>
+<br /><a href="https://digitalfire.com/picture/varkafufip"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/maggolutit.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/varkafufip">click here</a> to see it.</p>
+<p>These contaminating particles are exposed on the rim of a <a  href="https://digitalfire.com/glossary/bisque">bisque-fired</a> mug. The liqnite ones have burned away but the iron particle is still there (and will produce a speck in the glaze). Remnants of the lignite remain inside the matrix and can <a  href="https://digitalfire.com/glossary/pinholing">pinhole</a> glazes. Since ball clays are air floated (a stream of air takes away the lighter particles and the heavier ones recycle for regrinding) it seems that contamination like this would be impossible. But the equipment requires vigilance for correct operation, especially when there is pressure to maximize production. Ores in Tennessee are higher in coal than those in Kentucky. North American <a  href="https://digitalfire.com/glossary/clay+body">clay body</a> manufacturers who confront <a  href="https://digitalfire.com/material/80">ball clay</a> suppliers with this contamination find that ceramic applications have become a very small part of the total ball clay market - complaints are not taken with the same seriousness as in the past.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">When both mineralogy and chemistry are shown on a data sheet</h3>
+<br /><a href="https://digitalfire.com/picture/kutdorojux"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/muvcahyzyp.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/kutdorojux">click here</a> to see it.</p>
+<p>Some material data sheets show both the oxide and mineralogical analyses. <a  href="https://digitalfire.com/material/273">Dolomite</a>, for example, is composed of <a  href="https://digitalfire.com/material/173">calcium carbonate</a> and magnesium carbonate minerals, these can be separated mechanically. Although this material participates in the glaze melt to source the <a  href="https://digitalfire.com/oxide/mgo">MgO</a> and <a  href="https://digitalfire.com/oxide/cao">CaO</a> (which are <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a>), it's <a  href="https://digitalfire.com/glossary/mineralogy">mineralogy</a> (the calcium and magnesium carbonates) specifically accounts for the unique way it decomposes and melts.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<th scope="row">Glossary</th>
+<td>
+<a href="https://digitalfire.com/glossary/ceramic+material">Ceramic Material</a>
+<br /><i>Ceramic materials are employed in the ceramic industry to make glazes, bodies, <a  href="https://digitalfire.com/glossary/engobe">engobes</a> and refractories. We study them at the mineral, chemical and physical levels.</i>
+</td>
+</tr>
+<tr>
+<th scope="row">Glossary</th>
+<td>
+<a href="https://digitalfire.com/glossary/theoretical+material">Theoretical Material</a>
+<br /><i>In <a  href="https://digitalfire.com/glossary/glaze+chemistry">glaze chemistry</a>, theoretical materials are used to represent what a material would be if it was uncontaminated and perfectly crystallized</i>
+</td>
+</tr>
+<tr>
+<th scope="row">Glossary</th>
+<td>
+<a href="https://digitalfire.com/glossary/physical+testing">Physical Testing</a>
+<br /><i>In <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>, glazes, <a  href="https://digitalfire.com/glossary/engobe">engobes</a> and bodies have chemistries and <a  href="https://digitalfire.com/glossary/physical+testing">physics</a>. To fix, formulate and adjust their relative importances in each situation need to be understood.</i>
+</td>
+</tr>
+<tr>
+<th scope="row">Articles</th>
+<td>
+<a href="https://digitalfire.com/article/chemistry+vs.+matrix+blending+to+create+glazes+from+native+materials">Chemistry vs. Matrix Blending to Create Glazes from Native Materials</a>
+<br /><i>Is it better to do trial and error line and matrix blending of materials to formulate glazes or is it better to use <a  href="https://digitalfire.com/glossary/glaze+chemistry">glaze chemistry</a> right from the start?</i>
+</td>
+</tr>
+<tr>
+<th scope="row">Articles</th>
+<td>
+<a href="https://digitalfire.com/article/particle+size+distribution+of+ceramic+powders">Particle Size Distribution of Ceramic Powders</a>
+<br /><i>Understanding the theory behind <a  href="https://digitalfire.com/glossary/sieve">sieve</a> selection, how to properly sample a powder and how to carry out a <a  href="https://digitalfire.com/glossary/particle+size+distribution">particle size distribution</a> test can give you valuable information about a material.</i>
+</td>
+</tr>
+<tr>
+<th scope="row">Articles</th>
+<td>
+<a href="https://digitalfire.com/article/how+to+find+and+test+your+own+native+clays">How to Find and Test Your Own Native Clays</a>
+<br /><i>Some of the key tests needed to really understand what a clay is and what it can be used for can be done with inexpensive equipment and simple procedures. These practical tests can give you a better picture than a data sheet full of numbers.</i>
+</td>
+</tr>
+<tr>
+<th scope="row">Hazards</th>
+<td>
+<a href="https://digitalfire.com/hazard/overview+of+material+safety+by+gavin+stairs">Overview of Material Safety by Gavin Stairs</a>
+<br /><i>Toxicology and ceramic materials is a complex subject, what materials and methods pose the greatest dangers, which are the safest?</i>
+</td>
+</tr>
+<tr>
+<th scope="row">Media</th>
+<td>
+<a href="https://digitalfire.com/video/desktop+insight+4+-+add+a+native+material+to+mdt%2c+build+a+glaze">Desktop Insight 4 - Add a Native Material to MDT, Build a Glaze</a>
+<br /><i>Learn to add a native volcanic ash to the INSIGHT materials database (<a  href="https://digitalfire.com/glossary/mdt">MDT</a>) and then create a glaze from it maximizing its percentage. Learn to impose an <a  href="https://digitalfire.com/glossary/loi">LOI</a> on a material and why this method is better than line blending.
+</i>
+</td>
+</tr>
+<tr>
+<th scope="row">Media</th>
+<td>
+<a href="https://digitalfire.com/video/how+to+add+materials+to+the+desktop+insight+mdt">How to Add Materials to the Desktop Insight MDT</a>
+<br /><i>There are four ways to do it. Copy and paste XML, type in the formula, enter an analysis as a recipe, handle the <a  href="https://digitalfire.com/glossary/mdt">MDT</a> as a CSV file in Excel.</i>
+</td>
+</tr>
+<tr>
+<th scope="row">Materials</th>
+<td>
+<a href="https://digitalfire.com/material/kaolin">Kaolin</a>
+<br /><i>The purest of all clays in nature. Kaolins are used in porcelains and stonewares to impart whiteness, in glazes to supply <a  href="https://digitalfire.com/oxide/al2o3">Al2O3</a> and to suspend slurries.</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Mastodon" href="https://mastodon.art/@digitalfire" target="_blank"><img src="https://digitalfire.com/images/mastodon.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

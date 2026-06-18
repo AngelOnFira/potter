@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Project: Mug Handle Casting</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="" name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item"><a class="nav-link" href="../material/list.html">Materials</a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item active" href="list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=project" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container"><p><a aria-controls="collapse1" aria-expanded="false" class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button">All Projects</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a href="15.html" title="15">2019 Jiggering-Casting Project of Medalta 66 Mug</a><br/><a href="54.html" title="54">A cereal bowl jigger mold made using 3D printing</a><br/><a href="33.html" title="33">Beer Bottle Master Mold via 3D Printing</a><br/><a href="61.html" title="61">Better porosity for Brown Sugar Savers</a><br/><a href="48.html" title="48">Build a kiln monitoring device</a><br/><a href="69.html" title="69">Celebration Project</a><br/><a href="60.html" title="60">Coffee Mug Slip Casting Mold via 3D Printing</a><br/><a href="29.html" title="29">Comparing the Melt Fluidity of 16 Frits</a><br/><a href="52.html" title="52">Cookie Cutting clay with 3D printed cutters</a><br/><a href="41.html" title="41">Evaluating a clay's suitability for use in pottery</a><br/><a href="55.html" title="55">Make a mold for 4-gallon stackable calciners</a><br/><a href="49.html" title="49">Make Your Own Pyrometric Cones</a><br/><a href="47.html" title="47">Make your own sieve shaker to process ceramic slurries</a><br/><a href="40.html" title="40">Making a high quality ceramic tile</a><br/><a href="46.html" title="46">Making a Plaster Table</a><br/><a href="37.html" title="37">Making Bricks</a><br/><a href="50.html" title="50">Making our own kiln posts using a hand extruder</a><br/><a href="59.html" title="59">Medalta Ball Pitcher Slip Casting Mold via 3D Printing</a><br/><a href="34.html" title="34">Medalta Jug Master Mold Development</a><br/><a href="63.html" title="63">Mold Natches</a><br/><a href="32.html" title="32">Mother Nature's Porcelain - Plainsman 3B</a><br/><button class="btn btn-dark" type="button">Mug Handle Casting</button><br/><a href="39.html" title="39">Nursery plant pot mold via 3D printing</a><br/><a href="30.html" title="30">Pie-Crust Mug-Making Method</a><br/><a href="35.html" title="35">Plainsman 3D, Mother Nature's Porcelain/Stoneware</a><br/><a href="38.html" title="38">Project to Document a Shimpo Jiggering Attachment</a><br/><a href="36.html" title="36">Roll, Cut, Pull, Attach Handle-making Method</a><br/><a href="23.html" title="23">Slurry Mixing and Dewatering Your Own Clay Body</a><br/><a href="24.html" title="24">Testing a New Load of EP Kaolin</a><br/><a href="44.html" title="44">Using milk as a glaze</a></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Mug Handle Casting</h1>
+<p>Handles are the 'user <a href="../glossary/body+glaze+interface.html">interface</a>' for your pottery mugs, make them something people will love to hold. Handle-making in pottery may be a place where <a href="../glossary/3d-printing.html">3D printing</a> can find a real home in your process. We have developed a flexible <a href="../glossary/3d+design.html">CAD</a> design that puts 3D printing of case molds within the reach of almost anyone. It requires so little tooling it can be done in a kitchen using spoon mixing and a paper cup! Multiple cycles of redesign and print are practical to achieve just the right shape and fit. Cast handles can be produced in quantity and stored in a damp box, removing one of the biggest hassles in the production of handled ware. The feel of the handle is the first thing customers notice, even a hobbyist can now turn a "wet noodle" handle into something designed and utilitarian.<br/>
+<br/>
+While manually pulling handles has its place, casting them has important advantages:<br/>
+-Consistency of size, shape<br/>
+-Handle can be made to fit perfectly to mug wall contours<br/>
+-Precast handle can be stuck on in seconds with just slip<br/>
+-They can be made off-site by other people<br/>
+-Ready-to-apply handles can be stored in a damp box<br/>
+-The procedure of applying them can be relegated to helpers<br/>
+-The casting process produces no waste clay, everything is used<br/>
+-Casting clays dry-shrink much less than plastic ones so handles don't crack even if dried quickly<br/>
+-Because you can mix your own <a href="../glossary/casting+slip.html">casting slip</a> you have control of the working and firing properties<br/>
+-Making the handles might be a first step in leading your to making the mugs themselves in holds (either casting or <a href="../glossary/jiggering.html">jiggering</a>)<br/>
+<br/>
+Learning <a href="../glossary/3d+design.html">3D design</a> is difficult but this type of project might be just the motivation you need to get started. We will be providing step-by-step tutorials here. You will make the design and the molds will duplicate it perfectly for each piece. Because only small amounts of material are needed this is a great onramp to learning about <a href="../glossary/clay+body.html">clay bodies</a> and making one of your own. That experience may take you some good places!<br/>
+<br/>
+Making a casting slip that matches your plastic clay fired appearance, <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> and degree of <a href="../glossary/vitrification.html">vitrification</a> sounds complicated but not really. I will give you a starting recipe and information on how to fine tune its properties and test it.</p><p style="clear:left"></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">CAD steps for a 3DP block mold to make a rubber case mold</h3>
+<br/><a alt="Drawing a mug handle block mold shell" href="../picture/3533.html"><img alt="Drawing a mug handle block mold shell" class="flexleft50" loading="lazy" src="../media/images/2rkznfxncz.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3533.html">click here</a> to see it.</p>
+<p>The objective was to make a rubber master <a href="../picture/3728.html">case mold</a> for the production of working <a href="../material/1124.html">plaster</a> molds. <a href="../glossary/3d-printing.html">3DP</a> is a great solution. This drawing was done in <a href="../picture/2453.html">Fusion 360</a>.<br/>
+1: A make a sketch of a box, around the handle, on the XY plane. Offset that outward by 1.2mm (my printer prints <a href="../glossary/0.8mm+thickness.html">0.4mm</a> wide, three passes give good strength).<br/>
+2: Extrude to create box 1: The base backward by 1mm and the sides forward by 20mm.<br/>
+3: Use five sides of the box as cutting planes to slice it out of the mug.<br/>
+<br/>
+At this point I could print this in <a href="../picture/3701.html">PLA</a> filament, pour plaster into and then use a hair drier to peel it off. But let’s make rubber molds instead.<br/>
+<br/>
+4: Move the box-with-handle away from the mug. Pull the four sides out by 5mm to thicken them.<br/>
+5 &amp; 6: Create box 2 around the outside of it, as a new body, 1.2mm wider and taller, 1mm more frontward and 1mm less backward.<br/>
+7: Use box 1 as a cutter to remove material from box 2 and then pull the outer 1.2mm sides 5mm backward.<br/>
+8: Shell out the back side to 1.2 wall thickness and make two 9.4mm holes (to accommodate <a href="../picture/3483.html">natch clips</a>).<br/>
+<br/>
+To make side 2 mirror-image a new body using the front or back as the reflexion plane. The back side is then filled with <a href="https://digitalfire.com/url/3533">PMC-746</a> rubber to make the block mold. Plaster is poured into that to make each working mold.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">3D printing case vs block mug handle molds</h3>
+<br/><a alt="Block and case handle molds" href="../picture/3531.html"><img alt="Block and case handle molds" class="flexleft50" loading="lazy" src="../media/images/jlk5w2e41a.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3531.html">click here</a> to see it.</p>
+<p>Top: Case molds (for pouring <a href="../material/1124.html">plaster</a> into to make working molds) in <a href="../glossary/3d+slicer.html">the slicer</a> about to be printed.<br/>
+Bottom: Block molds (actually molds of block molds for pouring rubber into) about to be printed.<br/>
+The top situation would have been a dream for a potter like me, the simplest possible way to introduce mold-making for <a href="../glossary/slip+casting.html">slip casting</a> into a process. However, my goal of print-and-pour was not met, this shape is not conducive to the extraction of the plaster without corner breaking. The block mold master (lower left) was made by pouring <a href="https://digitalfire.com/url/3533">PMC-746</a> rubber into these molds. That works extremely well, there will be no problems making plaster molds with this. Notice how well it has preserved the printing <a href="../picture/3536.html">artifacts</a>, they look like wood grain. The white <a href="../picture/3483.html">embeds</a> enable inserting <a href="../glossary/mold+natches.html">natches</a> (that I make on the printer also).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">CAD drawing of mug handle block mold (spareless)</h3>
+<p style="margin-top:0px;"><b>Available</b> on the <a href="https://digitalfire.com/downloads/index.php?picture=3590" target="_blank">Downloads</a> page</p>
+<br/><a alt="Mug handle 3D printed mold" href="../picture/3590.html"><img alt="Mug handle 3D printed mold" class="flexleft50" loading="lazy" src="../media/images/z9en7bwkgg.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3590.html">click here</a> to see it.</p>
+<p>I have long wanted an easy way to make molds for slipcasting handles that mate perfectly to specifically shaped and sized mugs (or pitchers, teapots, etc). These are the answer. These shells print quickly to only 11 grams of <a href="../picture/3701.html">PLA</a> filament. They peel away from the set <a href="../material/1124.html">plaster</a> with a <a href="../picture/3729.html">heat gun</a> to give fine detail and a perfect fit. These use <a href="../glossary/3d-printing.html">3D-printed</a> <a href="../glossary/pour+spout.html">pour spouts</a> instead of a <a href="../picture/3603.html">mold spare</a> (printed separately) and enable cutting the joint surface cleanly and accurately before the handle is removed from the mold (a version of this is also available with spares). This is the product of a long development process. This drawing is available on the <a href="https://digitalfire.com/url/3634">downloads page</a>.<br/>
+<br/>
+Worried about mixing or tuning your own <a href="../glossary/casting+slip.html">casting slip</a> recipe? We have lots of help on doing that. As motivation, consider the benefits of mass producing handles and store them in a wet box with the attachment slip.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">CAD drawing of mug handle mold with traditional spares </h3>
+<p style="margin-top:0px;"><b>Available</b> on the <a href="https://digitalfire.com/downloads/index.php?picture=3602" target="_blank">Downloads</a> page</p>
+<br/><a alt="3D printed mug handle block mold" href="../picture/3602.html"><img alt="3D printed mug handle block mold" class="flexleft50" loading="lazy" src="../media/images/4zjf5p47xt.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3602.html">click here</a> to see it.</p>
+<p>This mold creates traditional spares (instead of <a href="../glossary/3d-printing.html">3D-printed</a> <a href="../glossary/pour+spout.html">pour spouts</a> on our alternative design). We print these using <a href="../picture/3701.html">PLA</a> filament. After extraction from the mold the spares on the clay handles need to be cut away carefully, using a sharp fine-bladed knife.<br/>
+<br/>
+Worried about mixing or tuning your own <a href="../glossary/casting+slip.html">casting slip</a> recipe? We have lots of help on doing that. As motivation, consider the benefits of mass-producing handles and storing them in a wet box with the attachment slip - they will be ready to use whenever needed.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/3763">https://www.instagram.com/reel/DU8FQ19lAD5</a>
+<br/><i>Instagram video: Fast application of slipcast handles in a factory</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></div></body>
+</html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Drawing a Mug Mold Using OnShape CAD</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="Follow me, step-by-step, as I draw a coffee mug case mold, with handle. You'll be able to 3D print this using PLA filament in a standard consumer printer, pour in plaster to make a working mold. If you are coming from Fusion 360 the process will be familiar.  " name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support. Insight-live.com is not affected by this.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item"><a class="nav-link" href="../material/list.html">Materials</a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item active" href="list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=video" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container"><p><a aria-controls="collapse1" aria-expanded="false" class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button">All Media</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a href="124.html" title="124">3D Print a Test of the Beer Bottle Neck</a><br/><a href="120.html" title="120">3D Printing a Clay Cookie Cutter-Stamper</a><br/><a href="105.html" title="105">A 3-minute Mug with Plainsman Polar Ice</a><br/><a href="55.html" title="55">A Broken Glaze Meets Insight-Live and a Magic Material</a><br/><a href="65.html" title="65">Accessing Recipes from "Mid-Fire Glazes" book in Insight-Live</a><br/><a href="113.html" title="113">Adjusting the Thixotropy of an Engobe for Pottery</a><br/><a href="114.html" title="114">Analysing a Crazing, Cutlery-marking Glaze Using Insight-Live</a><br/><a href="115.html" title="115">Compare the Chemistry of Recipes Using Insight-Live</a><br/><a href="110.html" title="110">Connecting an External Image to Insight-Live Pictures</a><br/><a href="137.html" title="137">Converting G1214M Cone 6 transparent glaze to G1214Z matte</a><br/><a href="119.html" title="119">Create a Synthetic Feldspar in Insight-Live</a><br/><a href="117.html" title="117">Creating a Cone 6 Oil-Spot Overglaze Effect</a><br/><a href="127.html" title="127">Design a Triangular Pottery Plate Block Mold in Fusion 360</a><br/><a href="130.html" title="130">Designing a Jigger Mold for a Bowl Using Fusion 360 CAD</a><br/><a href="131.html" title="131">Downloading and 3D-Printing a 3MF file</a><br/><a href="128.html" title="128">Draw a propeller in Fusion 360 for use on an overhead propeller mixer</a><br/><a href="129.html" title="129">Drawing a Mug Handle Mold in Fusion 360</a><br/><a href="135.html" title="135">Drawing a Mug Mold Using OnShape CAD</a><br/><a href="102.html" title="102">Enter a Recipe Into Insight-live</a><br/><a href="72.html" title="72">Entering TestData Into Insight-Live</a><br/><a href="139.html" title="139">Fine tune the thixotropy of a glaze or engobe slurry</a><br/><a href="97.html" title="97">Getting Frustrated With a 55% Gerstley Borate Glaze</a><br/><a href="70.html" title="70">How I Developed the G2926B Cone 6 Transparent Base Glaze</a><br/><a href="69.html" title="69">How I Formulated G2934 Cone 6 Silky MgO Matte Glaze Using Insight-Live</a><br/><a href="104.html" title="104">How to Apply a White Slip to Terra Cotta Ware</a><br/><a href="101.html" title="101">How to Paste a Recipe Into Insight-live</a><br/><a href="74.html" title="74">Importing Data into Insight-live</a><br/><a href="107.html" title="107">Importing Desktop Insight Recipes to Insight-live</a><br/><a href="62.html" title="62">Importing Generic CSV Recipe Data into Insight-Live</a><br/><a href="94.html" title="94">Insight-Live Meets a Silica Deprived Glaze Recipe</a><br/><a href="106.html" title="106">Insight-Live Quick Tour</a><br/><a href="103.html" title="103">Liner Glazing a Stoneware Mug</a><br/><a href="123.html" title="123">Make a precision plaster mold for slip casting using Fusion 360 and 3D Printing</a><br/><a href="93.html" title="93">Making ceramic glaze flow test balls</a><br/><a href="132.html" title="132">Making test bars for the SHAB, LDW and DFAC tests</a><br/><a href="98.html" title="98">Manually program your kiln or suffer glaze defects!</a><br/><a href="37.html" title="37">Mica and Feldspar Mine of MGK Minerals</a><br/><a href="68.html" title="68">Predicting Glaze Durability by Chemistry in Insight-Live</a><br/><a href="71.html" title="71">Preparing Pictures for Insight-live</a><br/><a href="57.html" title="57">Replace Lithium Carbonate With Lithium Frit Using Insight-Live</a><br/><a href="121.html" title="121">Replacing 10% Gerstley Borate in a clear glaze</a><br/><a href="134.html" title="134">Same Beer Bottle Mold Using Fusion 360 and OnShape CAD</a><br/><a href="108.html" title="108">Signing Up at Insight-live.com</a><br/><a href="109.html" title="109">Signing-In at Insight-live.com</a><br/><a href="126.html" title="126">Slip cast a stoneware beer bottle</a><br/><a href="118.html" title="118">Substitute Ferro Frit 3134 For Another Frit</a><br/><a href="125.html" title="125">Substituting Custer Feldspar for Another in a Cone 10R Glaze Recipe</a><br/><a href="73.html" title="73">Thixotropy and How to Gel a Ceramic Glaze</a><br/><a href="116.html" title="116">Use Insight-live to substitute materials in a recipe</a><br/><a href="133.html" title="133">Watch Thixotropy Happen With a 20kg Batch of Dipping Glaze</a></div><p style="clear:left"></p><h1>Drawing a Mug Mold Using OnShape CAD</h1>
+<p style="margin:0px 5px 3px 10px; font-style:italic; color:#888888;">Follow me, step-by-step, as I draw a coffee mug case mold, with handle. You'll be able to 3D print this using PLA filament in a standard consumer printer, pour in plaster to make a working mold. If you are coming from Fusion 360 the process will be familiar.  </p>
+<iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/pOvuPTDIOj0" width="560"></iframe>
+<br/><a href="https://www.youtube.com/watch?v=pOvuPTDIOj0" target="_blank">Click here</a> to watch this at youtube.com
+ or <a href="https://www.youtube.com/user/tonywilliamhansen" target="_blank">click here</a> to go to our Youtube channel
+<br/>
+<h3>Transcript/Notes</h3>
+<p style="color:#888888;">There are lots of online videos showing the use of <a href="../glossary/3d-printing.html">3D printing</a> in creating molds for <a href="../glossary/ceramics.html">ceramics</a>. But almost no one shows you how they did it. And they almost certainly do not show a step-by-step of the most complex part: Drawing it in a <a href="../glossary/3d+design.html">CAD</a> program. Here, I will do this using <a href="../picture/3712.html">OnShape</a>, an industrial strength 3D CAD system that is free for hobbyists. The arrival of such software is an inflection point for ceramic artists and craftsmen, one that is going unnoticed by most.<br/>
+<br/>
+1<br/>
+After logging in to OnShape.com, I'll by click on my name on the top right and choose “My Account”, then open the Preferences tab.<br/>
+In the “Units section” I’ll choose “Millimeter” as the default length unit.<br/></p>
+<details style="color:#888888;"><summary><b>more..</b></summary>
+Next, I’ll go back home, by clicking the OnShape logo on the upper left, then click the “Create button”, then choose “Document”, enter a name, and click the blue “Create button”.<br/>
+<br/>
+2<br/>
+OnShape is <a href="../picture/2550.html">parametric</a>, like Fusion three-sixty.<br/>
+I’ll open the “Variable Table” using this button on the far right.<br/>
+I’ll need six variables:<br/>
+<break time="1.0s"></break><br/>
+For the mug, they are the foot radius of 42mm, base radius of 50, lip radius of 51 and height of 114.<br/>
+For the <a href="../glossary/3d-printing.html">3D print</a>, we need the wall thickness of <a href="../glossary/0.8mm+thickness.html">0.8mm</a>.<br/>
+And for the working mold, a <a href="../material/1124.html">plaster</a> thickness of 20mm.<br/>
+Note that OnShape does not permit spaces in the names.<br/>
+OnShape exhibits one of its idiosyncrasies here.<br/>
+You can’t edit the contents of a cell using the mouse. <br/>
+On each cell, just begin typing to replace what is there. This characteristic is also found in other parts of the user <a href="../glossary/body+glaze+interface.html">interface</a>, it is a consequence of implementing this in a web browser instead of as an application.<br/>
+<break time="1.0s"></break><br/>
+Please pause the video here, if needed, to finish entered the variables.<br/>
+<br/>
+If you have not already watched our video on understanding the indiosyncrasies of OnShape, compared to <a href="../picture/2453.html">Fusion 360</a>, consider doing that now.<br/>
+<br/>
+3<br/>
+To start, I’ll hide the front and top planes and then choose the Sketch Tool.<br/>
+<break time="2.0s"></break><br/>
+The sketch dialog appears and it is waiting for me to select a sketch plane. I'll click the right plane, and then double-click that face on the View Cube to square it on the screen.<br/>
+<break time="1.0s"></break><br/>
+OK, let’s begin drawing the outer profile of the mug.<br/>
+<break time="0.5s"></break><br/>
+Choose the line-tool, click on the origin, move rightward to draw the flat foot radius.<br/>
+Let it infer a horizontal line of about 40.<br/>
+Draw the diagonal edge of the foot by clicking on a point up, and out, about 10.<br/>
+Finally, draw wall about 50 high.<br/>
+Don't let it infer a vertical line, click to get an inward slope.<br/>
+Then press Escape.<br/>
+<break time="1.0s"></break><br/>
+Now, press the “d” key to select the dimension tool.<br/>
+Click on the first line, pull out a dimension arrow, and click again.<br/>
+Type “foot radius”, as soon as foot radius is the only item in the list, press the enter key twice.<br/>
+Now, making sure the dimension tool is still active, click the diagonal point.<br/>
+Then click the origin. <br/>
+OnShape guesses whether we want a vertical, horizontal or diagonal measurement.<br/>
+Just move around until you get what you want. We want this 10mm vertically up from the origin.<br/>
+<break time="2.0s"></break><br/>
+Then, I’ll dimension the point to be right of the origin by the “base radius” variable.<br/>
+Then, I'll move those measurements out of the way.<br/>
+<break time="1.0s"></break><br/>
+Notice the line has turned from blue to black. That’s good, it means it is fully defined.<br/>
+<break time="1.0s"></break><br/>
+Now, let's repeat by dimensioning that top point<br/>
+<break time="2.0s"></break><br/>
+Vertically up from the origin “height times 0.78” mm.<br/>
+<break time="2.0s"></break><br/>
+And horizontally right of it “lip radius times 0.88”.<br/>
+<br/>
+4<br/>
+OnShape exited that sketch, so I'll right click it and edit it again.<br/>
+First, I’ll draw a horizontal line for the lip of the mug. <br/>
+I'll put it about 20 above the endpoint of that vertical side.<br/>
+<break time="2.0s"></break><br/>
+I’ll dimension its length as the “lip radius” variable minus four. To do this I have to enter the parameter in the normal manner, then add the "minus four" after. But I also have to finish with "times 1 mm", this is a requirement when added or subtracting numbers from variables.<br/>
+<break time="2.0s"></break><br/>
+Next, I'll dimension the left enpoint distance up from the origin as the “height” parameter.<br/>
+<break time="2.0s"></break><br/>
+Finally, I’ll choose the “vertical constraint” tool, and then position the left point of the line vertical to the origin.<br/>
+<break time="2.0s"></break><br/>
+Next I’ll choose the “point tool” and create a point down from, and to the right of, the right end of the line.<br/>
+I dimension it 4mm right, and 4.5mm down.<br/>
+<break time="2.0s"></break><br/>
+Then, I’ll use the “spline curve” tool to join the lip and the sidewall, clicking on each point and double clicking to terminate at the end.<br/>
+<break time="2.0s"></break><br/>
+Next, I’ll use the “Tangent tool” to smooth the transition from curve to straight at both ends of the spline.<br/>
+For each I'll click the curve (not the curve handle), then the straight line.<br/>
+<break time="2.0s"></break><br/>
+To finish the mug profile, I’ll fillet the two corners at the base, to a 5mm radius.<br/>
+<br/>
+5<br/>
+Now, let's turn off the "right plane", and offset this profile inward by the “wall thickness” variable.<br/>
+I’ll do that using the “offset tool”.<br/>
+I'll carefully click each segment of the mug outline, then use the arrow to get it approximately right.<br/>
+<break time="2.0s"></break><br/>
+Finally, I’ll press enter, then type in the "wall thickness" parameter name, and press Enter again.<br/>
+<break time="2.0s"></break><br/>
+Now, I’ll create a vertical line, from the origin, up the center, extending above the top line by 10mm.<br/>
+The reason for this is not obvious, but you will see why shortly.<br/>
+<break time="2.0s"></break><br/>
+Next, I’ll choose the “Mirror Tool”.<br/>
+Notice that its dialog wants me to select the mirror line first, then the entities to be reflected. <br/>
+<break time="2.0s"></break><br/>
+I’ll just choose the vertical wall section of the mug, but not the base or lip.<br/>
+Notice the line sections don't stay selected, but they do accumulate on the left.<br/>
+<break time="2.0s"></break><br/>
+I’ll finish with the “construction line” tool.<br/>
+I'll search for it here. Notice that as I type, it highlights, in yellow, the toolbar item it thinks I want.<br/>
+And, it gives me a list with descriptions and shortcuts.<br/>
+This is a great way to learn the locations of the tools.<br/>
+I'll click the first section.<br/>
+This doesn't look good. Sometimes it is better not to worry about why this happens.<br/>
+Just undo, and do it another way.<br/>
+I'll make a selection rectangle around it instead and then click the construction line tool.<br/>
+I want the reflected contour to be a construction line because it is only needed as a drawing guide later in the process.<br/>
+<br/>
+6<br/>
+Next, let’s create three points to describe the handle.<br/>
+I'll put them in their approximate positions.<br/>
+<break time="2.0s"></break><br/>
+I'll dimension the first to be right of origin by “lip radius times 0.7”.<br/>
+As a reminder, I am going to all of this trouble with parameters so the mug will scale intelligently if I change one of the variables.<br/>
+<break time="2.0s"></break><br/>
+Now, I'll dimension this point, up from origin, about three quarters of the height, namely, “height times 0.77”.<br/>
+<break time="2.0s"></break><br/>
+The second point is to the right of the origin by “base radius times 1.44”, this is the outer extremity of the handle, well outside the mug body. As I do this, the dimension lines can get cluttered, but that is not a problem, I can move them out of the way later.<br/>
+<break time="2.0s"></break><br/>
+I'll position this second point, up from the origin, about two thirds the height of the mug, the "height parameter" times 0.66.<br/>
+<break time="2.0s"></break><br/>
+Now, I'll dimension the third point to be, right of the origin, by the “lip radius parameter" times 0.86.<br/>
+<break time="2.0s"></break><br/>
+To finish, I'll position it up from the origin by “height times 0.25”.<br/>
+<break time="2.0s"></break><br/>
+Next, let's join the points using the spline-tool. This will give us a curve that has a handle at each end, to enable manipulating the direction of the line out of the point, as well as the pull of its gravity.<br/>
+<break time="2.0s"></break><br/>
+Finally, I'll adjust the upper part of the curve, using the handle on the starting end of the spline.<br/>
+<br/>
+7<br/>
+Next, using the "line tool", let’s draw the outer perimeter of the mold. <br/>
+I’ll start from the top end of the center vertical.<br/>
+Then I'll go leftward, drawing line segments to follow the approximate shape of the mug.<br/>
+For a piece having no handle and no flared lip this is simple.<br/>
+But in this case, I have estimate the distance to end up with an approximate average thickness of 20mm, that is what we defined the 'plaster thickness' variable as.<br/>
+<break time="2.0s"></break><br/>
+Next, I'll dimension the mold base as that same distance away from the foot of the mug.<br/>
+<break time="2.0s"></break><br/>
+I can then use that as a visual guide to fine tune the positions of the vertexes that join all the lines that form the perimeter.<br/>
+<break time="2.0s"></break><br/>
+Next, I'll add three 13.5mm <a href="../glossary/mold+natches.html">natch</a> holes.<br/>
+To do that, I'll use the "center point circle" tool, click for the position, drag the approximate diameter and release the mouse button, enter the diameter, and press the Enter key.<br/>
+<break time="2.0s"></break><br/>
+Then I'll press Escape to leave that tool, select it, press command-C for copy, then command-V twice to paste. If you are using Windows that will be control-C and control-V.<br/>
+<break time="2.0s"></break><br/>
+Next, I'll position each of them.<br/>
+<break time="2.0s"></break><br/>
+Finally, I’ll fillet the corners.<br/>
+<br/>
+8<br/>
+Now, let's save the sketch we have been working on and create another for the oval cross-section of the handle. <br/>
+But we need a plane to sketch on. So I’ll search the “Plane tool” and select it.<br/>
+<break time="2.0s"></break><br/>
+I'll choose the “Curve Point” option in its dialog, then click the top end vertex of the handle and the curve itself (notice these clicks enumerate in the entities box).<br/>
+<break time="2.0s"></break><br/>
+Finally, I'll confirm. We now have a plane perpendicular to the handle curve, at its top vertex.<br/>
+<break time="1.0s"></break><br/>
+I'll click the sketch tool and then click on this new plane.<br/>
+Then, I'll rotate from home and zoom in. I need to be able to recognize OnShape's horizontal inference when I draw the oval, and, I also need to be able to see the top vertex point.<br/>
+<break time="2.0s"></break><br/>
+I'll find the "ellipse tool", click on the point, and drag rightward.<br/>
+<break time="2.0s"></break><br/>
+Notice that OnShape is prompting me to go horizontal.<br/>
+<break time="2.0s"></break><br/>
+I will click twice to set the approximate width and height.<br/>
+<break time="1.0s"></break><br/>
+It will then offer fields to enter a width of 20 and a height of 12, I'll press Enter after each.<br/>
+<break time="2.0s"></break><br/>
+Next, I’ll offset the oval inward by the “wall thickness” parameter.<br/>
+<break time="2.0s"></break><br/>
+Then, click the green checkmark to finish the sketch.<br/>
+<break time="2.0s"></break><br/>
+<br/>
+9<br/>
+I’ll go home by double-clicking the right-front spot on the view cube.<br/>
+Notice I have renamed these as "main sketch", "handle plane", and "handle sketch".<br/>
+I did that by right-clicking on each, and choosing the "rename option".<br/>
+<break time="1.0s"></break><br/>
+Next, I'll hide the handle sketch and its plane.<br/>
+Now, I’ll select everything and use the "extrude tool".<br/>
+I'll pull backward by “lip radius” plus “plaster thickness”.<br/>
+I'll click OK when done.<br/>
+<break time="2.0s"></break><br/>
+This creates the outside shape of the mold.<br/>
+From now on, we will be cutting shapes into this block, both back and front.<br/>
+<break time="2.0s"></break><br/>
+Now, let’s sweep the handle and subtract it from the block.<br/>
+I’ll make the main and handle sketches visible,<br/>
+<break time="2.0s"></break><br/>
+find the “sweep tool”,<br/>
+<break time="2.0s"></break><br/>
+and select the inner oval as the face.<br/>
+As you can see, that gets added the the "faces and regions box in the sweep dialog.<br/>
+Now, I'll click the "sweep path" box in the dialog and then click the handle path.<br/>
+<break time="2.0s"></break><br/>
+I’ll make sure the “Remove operation” is selected.<br/>
+<break time="2.0s"></break><br/>
+Then I'll click the green checkmark.<br/>
+The handle has now been carved out of the block.<br/>
+We're finally working in 3D!<br/>
+<br/>
+10<br/>
+Next, we want to carve the mug profile out of the block.<br/>
+I'll do that using the revolve tool. It is over here on the left.<br/>
+It's dialog prompts me to choose the faces to revolve.<br/>
+And then the axis.<br/>
+I'll choose to remove, rather than add, material.<br/>
+<break time="2.0s"></break><br/>
+Notice, I've forgotten to draw the spare on the main sketch.<br/>
+And, there is an issue with the lower handle-join right here.<br/>
+<break time="1.0s"></break><br/>
+The timeline enables fixing issues like this.<br/>
+I can go back and and edit the original sketch.<br/>
+Let's do that. <br/>
+I'll right-click to edit the main sketch.<br/>
+<br/>
+11<br/>
+I'll draw a diagonal line upward.<br/>
+From the point at the lip edge.<br/>
+To the top of the mold.<br/>
+<break time="2.0s"></break><br/>
+I'll dimension the line at 25 degrees from vertical.<br/>
+<break time="2.0s"></break><br/>
+Then, I'll choose the line tool.<br/>
+<break time="2.0s"></break><br/>
+Then, draw a small connector downward from the same point, <br/>
+following the same 25-degree angle (which it should infer because I hovered over the line).<br/>
+<break time="2.0s"></break><br/>
+Next, let's look closer at the lower handle vertex.<br/>
+<break time="2.0s"></break><br/>
+I need to move that inward a couple of millimeters.<br/>
+So, I'll double-click the dimension and reduce the ratio from 0.86 to 0.85<br/>
+<break time="1.0s"></break><br/>
+Let’s also adjust the curve coming out of the point.<br/>
+<break time="2.0s"></break><br/>
+Adding these two new lines affects actions done later, both the extrude and revolve.<br/>
+<break time="2.0s"></break><br/>
+First, let's fix the extrude of the block.<br/>
+I'll edit that to include the two new areas defined by these two lines.<br/>
+<break time="2.0s"></break><br/>
+Now, I'll edit that last revolve to include the same two faces.<br/>
+Now, we are getting a very good-looking result.<br/>
+<br/>
+12<br/>
+Let's turn off the sketch to get an unobstructed view.<br/>
+And zoom in on where the handle joins the mug body.<br/>
+First, I'll find the fillet-tool.<br/>
+<break time="2.0s"></break><br/>
+And use it to round the joins by 3mm.<br/>
+<break time="2.0s"></break><br/>
+Then, let’s turn the whole thing over and find the "shell-tool".<br/>
+<break time="2.0s"></break><br/>
+It's dialog prompts me about which faces to remove.<br/>
+And then for the shell thickness.<br/>
+<break time="2.0s"></break><br/>
+I'll set that at the “wall thickness” parameter.<br/>
+<break time="2.0s"></break><br/>
+We now have a cavity into which plaster can be poured to make half of a working mold.<br/>
+We are ready to 3D print this.<br/>
+Although I could mirror this here, it is not needed.<br/>
+The 3D <a href="../glossary/3d+slicer.html">slicer software</a> can reflect it across the flat face to produce the other half.<br/>
+<br/>
+13<br/>
+Next, I'll edit the main drawing again to draw the pouring-spout-slash-cutting guide. <br/>
+Above the mug, I’ll create a corner rectangle 1.2mm wide and 20mm high.<br/>
+To dimension as I draw, the sequence is: click, drag, click, “1.2”, enter, "20", enter.<br/>
+I'll press Escape to exit that tool.<br/>
+Then, hover over the corner lines until I find the perpendicular constraint that OnShape automatically inferred.<br/>
+I'll click on it and remove it.<br/>
+Notice I can now move the bottom independently from the top.<br/>
+Now, let’s set the angle at 25 degrees using the dimension tool.<br/>
+The sequence is to click the line, click the vertical center line, position the number, click, “25”, enter.<br/>
+<break time="2.0s"></break><br/>
+Now, using the line tool, I’ll create a 2.5mm wide step.<br/>
+I'll be careful not to infer it at the center. <br/>
+<break time="2.0s"></break><br/>
+Then, a vertical line back up to the spout wall.<br/>
+<break time="2.0s"></break><br/>
+Then I’ll vertical-dimension the step 8.5mm up from the base.<br/>
+I am drawing the step like this so the spout can be printed upside down without supports.<br/>
+<break time="2.0s"></break><br/>
+Theoretically, I would constrain the seat of the spout vertically above where it fits.<br/>
+But, I have found that dimensioning its diameter is better.<br/>
+A poor fit is then just a dimension-change and reprint away.<br/>
+<break time="2.0s"></break><br/>
+I'll set it at 50.16 from the center.<br/>
+<break time="2.0s"></break><br/>
+Finally, I'll finish the sketch and use the revolve tool to take this into 3D.<br/>
+<br/>
+14<br/>
+There are two more quick things to do here.<br/>
+First, I’ll extrude the three natch-holes to cut them out of the shell.<br/>
+Of course, being able to select these depends on the main drawing being visible.<br/>
+I'll then use the arrow to move them backward, then choose the remove operation, and click OK.<br/>
+<break time="2.0s"></break><br/>
+Next, I’ll chamfer the inner edge by 3mm. <br/>
+This chamfer serves two purposes.<br/>
+<break time="2.0s"></break><br/>
+It strengthens the corner for this thin-walled mold.<br/>
+And, it enables easier <a href="../glossary/splitting.html">splitting</a> of the working mold.<br/>
+<break time="2.0s"></break><br/>
+Let's turn off the sketches and admire what we just made.<br/>
+<break time="2.0s"></break><br/>
+I hope you are as amazed as I am that such a complex drawing can be done in so few simple steps.<br/>
+And how practical this method is for making <a href="../glossary/slip+casting.html">slip casting</a> molds for ceramics.
+</details><br/><br/>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">v3 Shelled AI Mug Using OnShape CAD
+</h3>
+<h4 style="color:#888888; margin-top:0px;">A great on-ramp to learning slip casting
+
+</h4>
+<p style="margin-top:0px;"><b>Available</b> on the <a href="https://digitalfire.com/downloads/index.php?picture=3719" target="_blank">Downloads</a> page</p>
+<br/><a alt="3D printed case mold for coffee mug" href="../picture/3719.html"><img alt="3D printed case mold for coffee mug" class="flexleft50" loading="lazy" src="../media/images/4snjlsbzyn.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3719.html">click here</a> to see it.</p>
+<p>Follow the video, step-by-step, to create this yourself. Don’t expect perfection the first pour, we did this dozens of times to get to this point. You’ll still make a few mistakes before getting it right, that is what <a href="../glossary/do-it-yourself.html">DIY</a> is about.<br/>
+This design differs from the v2 drawing in that the <a href="../material/1124.html">plaster</a> pouring cavity is formed by shelling (hollowing) the back side (top right). And this is designed for removal using a <a href="../picture/3729.html">heat gun</a>. This method has several advantages:<br/>
+-No sketch offset or extrusion was needed to make the outer wall.<br/>
+-Because the first 3D action is to extrude everything as one solid mass, corners of the outer 3D perimeter can be chamfered (but don’t do it so much that that there is insufficient thickness for the <a href="../glossary/mold+natches.html">natches</a>).<br/>
+-The mug's geometry (offset inward by <a href="../glossary/0.8mm+thickness.html">0.8mm</a>) is revolved, swept and bevelled by cutting into the block. Shelling to the same 0.8mm wall thickness, from the backside of the block, produces the cavity needed (top right).<br/>
+-The last steps, after shelling, are chamfering the outside inner corner, cutting the holes for the natches and revolving the <a href="../glossary/pour+spout.html">pouring spout</a> (as a separate body).<br/>
+-Our v3 <a href="../picture/3716.html">natch system</a> continues to work well with this (lower left).<br/>
+-Printing <a href="../picture/3536.html">artifacts</a> are not a problem for prototype molds (visible op right). Production is asking me to enhance these (a freshly cast mug is shown lower right).<br/>
+-The plaster mold is of stunning quality (the <a href="../picture/3701.html">PLA</a> <a href="../glossary/3d-printing.html">3D print</a> was softened using a heat gun and carefully removed using needle-nose pliers).<br/>
+-Slip cast mugs most often have poor-quality and oval lips. This one stays round because of the outward flare and the quality is better because the <a href="../glossary/3d-printing.html">3D printed</a> pouring spout also acts as a cutting guide at the pre-removal stage.<br/>
+-The PLA pouring spout is deep and absorbs no water. Thus, the slip level does not need to be topped up during casting, the slip surface stays flatter (not developing a bowl shape) so pour-out time can be accurately gauged by its slip level.<br/>
+<br/>
+There are many <a href="../glossary/casting+slip.html">casting body recipes</a> that would work with this. DIY <a href="../glossary/3d+design.html">CAD</a> skills will enable you to follow me into another exciting world: Low-cost <a href="../glossary/3d-printing.html">3D printing</a> of the clay itself! Coming soon.</p>
+<p style="clear:left"></p><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

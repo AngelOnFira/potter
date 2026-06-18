@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Rutile</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="A raw TiO2-containing mineral used in ceramics to color and variegate glaze surfaces." name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item active"><a class="nav-link" href="list.html">Materials <span class="sr-only">(current)</span></a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=material" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container">
+<ul class="nav nav-tabs pt-1" id="myTab" role="tablist">
+<li class="nav-item">
+<a aria-controls="material" aria-selected="true" class="nav-link active" data-toggle="tab" href="#material" id="material-tab" role="tab">Materials for Ceramics</a>
+</li>
+</ul>
+<div class="tab-content mb-3" id="myTabContent" style="border-right:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #ddd; padding:10px;">
+<div aria-labelledby="material-tab" class="tab-pane fade show active" id="material" role="tabpanel">
+<a href="list_1-9.html">1-9</a> | <a href="list_A.html">A</a> | <a href="list_B.html">B</a> | <a href="list_C.html">C</a> | <a href="list_D.html">D</a> | <a href="list_E.html">E</a> | <a href="list_F.html">F</a> | <a href="list_Frits.html">Frits</a> | <a href="list_G.html">G</a> | <a href="list_H.html">H</a> | <a href="list_I.html">I</a> | <a href="list_J.html">J</a> | <a href="list_K.html">K</a> | <a href="list_L.html">L</a> | <a href="list_M.html">M</a> | <a href="list_N.html">N</a> | <a href="list_O.html">O</a> | <a href="list_P.html">P</a> | <a href="list_Q.html">Q</a> | <a href="list_R.html">R</a> | <a href="list_S.html">S</a> | <a href="list_T.html">T</a> | <a href="list_U.html">U</a> | <a href="list_V.html">V</a> | <a href="list_W.html">W</a> | <a href="list_X.html">X</a> | <a href="list_Y.html">Y</a> | <a href="list_Z.html">Z</a><br/>
+<nobr></nobr>
+</div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Rutile</h1>
+<p><b>Description</b>: Iron Titanium Mineral</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/oxide.html">Oxide</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/analysis.html">Analysis</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Formula</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Tolerance</a></th>
+</tr></thead><tbody>
+<tr><td class="label"><a href="../oxide/tio2.html">TiO2</a></td>
+<td class="text-right">90.00%</td>
+<td class="text-right">
+1.00
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/fe2o3.html">Fe2O3</a></td>
+<td class="text-right">10.00%</td>
+<td class="text-right">
+0.06
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/loi.html">LOI</a></td>
+<td class="text-right">0.10%</td><td class="text-right">n/a</td></tr>
+<tr><td colspan="2">Oxide Weight</td><td class="text-right" colspan="2">
+88.78
+</td></tr>
+<tr><td class="text-right" colspan="2"><a href="../glossary/formula+weight.html">Formula Weight</a></td><td colspan="2" style="text-align:right">
+88.87
+</td></tr>
+</tbody></table>
+<h4>Notes</h4><p><a href="1204.html">Rutile</a> is the mineral name for natural crystals of <a href="1644.html">titanium dioxide</a>. However in nature rutile is always contaminated by other minerals (especially iron but also things like tantalum, niobium, chromium and tin, the analysis provided here is obviously a simplification). In <a href="../glossary/ceramics.html">ceramics</a>, the term 'rutile' is generally understood to refer to the brown powder into which these minerals are ground. Industry accepts up to 15% contaminants (below 85% <a href="1644.html">titanium</a> is called ilmenite). Rutile is considered an impure form of titanium whereas ilmenite is considered as FeTiO<sub>3</sub>. Grades of rutile are sometimes named after one of the impurities. Rutile is employed in many industries, ceramic uses are minor in comparison. There are large reserves of rutile in the world so supply shortages are related to other factors. Manufacturers often blend ores from different deposits, at times from different parts of the world. And they improve the <a href="../oxide/tio2.html">TiO2</a> content by furnace-processing. Large users of rutile will often track batch numbers and test when the number changes. A situation can sometimes be dealt with by adjusting the amount of rutile in the recipe, firing differently or milling it. In more serious cases additions of iron or pure titanium might be needed.<br/>
+<br/>
+Rutile is available in light tan <a href="../glossary/calcination.html">calcined</a> ceramic grade powder (light rutile), darker uncalcined powder (dark rutile), and granular form. Either ceramic grade of powder is normally ground very fine (e.g. <a href="../glossary/325+mesh.html">325 mesh</a>). In glazes, it is better to use a calcined grade (since the <a href="../glossary/decomposition.html">decomposition</a> of raw rutile during firing could be a source of glaze imperfections like <a href="../glossary/pinholing.html">pinholing</a> and bubbles). In our experience the <a href="../glossary/loi.html">LOI</a> (weight loss on firing) when calcining rutile from our suppliers is less than 1%, so we are getting a calcined material. Milled rutile is normally ground to <a href="../glossary/200+mesh.html">200 mesh</a>.<br/>
+<br/>
+Rutile produces many <a href="../glossary/glass+vs.+crystalline.html">crystalline</a>, speckling, streaking, and mottling effects in glazes during cooling in the kiln and has been used in all types of colored glazes to enhance the surface character. It is thus highly prized by potters, many attractive variegated glazes are made using it. Many potters would say that their living depends on their rutile supply!<br/>
+<br/>
+Rutile is very <a href="../glossary/refractory.html">refractory</a> in oxidation, even a mix of 50% <a href="2271.html">borax</a> alumina-free <a href="../glossary/frit.html">frit</a> like Ferro 3134 will not melt it in a <a href="../picture/1479.html">crucible</a>. In reduction, the improvement in melting will depend on the amount of iron present.<br/>
+<br/>
+In ceramic glazes rutile is more often considered a variegator than a <a href="../glossary/colorant.html">colorant</a>. As little as 2% can impart significant effects in <a href="../glossary/stoneware.html">stoneware</a> glazes. It is normally used in combination with a wide range of metal oxide and stain <a href="../glossary/colorant.html">colorants</a> to produce surfaces that are much more visually interesting. In glazes with high <a href="../glossary/melt+fluidity.html">melt fluidity</a> (e.g. having high <a href="../glossary/borate.html">boron</a>), large amounts of rutile (e.g. 6-8%) can be quite stunning. The rutile encourages the development of micro-crystals (it is crystalline itself) and rivulets. Since rutile contains significant iron its use in combination with other colorants will often muddy the color that they would otherwise have or alter it if they are sensitive to the presence of iron. Even though rutile generally makes up less than 5% of stoneware glazes that employ it, they are often called 'rutile glazes' in recognition of its dramatic contribution.<br/>
+<br/>
+Excessive rutile in a glaze can produce surface imperfections. In addition, when rutile is employed in higher percentages (e.g. 5%+) a given percentage might work well whereas a slightly higher amount can look drastically different. Such situations are vulnerable to <a href="../glossary/glaze+chemistry.html">chemistry</a> changes in the supply of rutile. Thus people will often do a line blend trying a range of percentages to determine an optimal amount.<br/>
+<br/>
+In glazes, rutile can be quite sensitive to the presence of <a href="../glossary/opacifier.html">opacifiers</a>. While an unopacified glaze might appear quite stunning, the addition of a <a href="1722.html">zircon</a> <a href="../glossary/opacifier.html">opacifier</a> will usually drastically alter its appearance and interest because the <a href="../glossary/reactive+glazes.html">variegation</a> imparted is dependent on the glaze having depth and transparency or <a href="../glossary/translucency.html">translucency</a>. Strangely rutile and tin, another opacifier, can produce some very interesting reactions and it is quite common to see tin in amounts of up to 4% in <a href="../glossary/rutile+blue+glazes.html">rutile glazes</a>. In these cases, the tin appears to react in the crystal formation rather than <a href="../glossary/opacifier.html">opacify</a> the glaze.<br/>
+<br/>
+Pure rutile powder, although its color makes it appear to be a crude ground mineral, normally contains 95%+ titanium dioxide. However, this does not mean that you can use a 95% titanium:5% iron mix and get the same result in a ceramic glaze (obviously line blending would be needed to match the amount of iron). The <a href="../glossary/mineralogy.html">mineralogy</a> and significant other impurities in rutile are a major factor in the way it acts in glazes (not easily duplicated using a blend of other things). Sometimes the special effects that rutile produces in glazes are also partly a product of a coarser grade (larger particle size). These likewise cannot be easily duplicated by more refined materials. Unfortunately, the trend at some mining operations (at least in Australia) is to fine grind the rutile on-site, making it more difficult for ceramic operations to obtain the coarser grades.<br/>
+<br/>
+Although rutile will normally stain a glaze brown or yellow, its <a href="../glossary/crystallization.html">crystallization</a> effects can significantly lighten the color of iron glazes. Higher amounts of rutile in stoneware glazes will often contribute glaze imperfections.<br/>
+<br/>
+Granular rutile is sometimes used in bodies and glazes to impart fired speckle.<br/>
+<br/>
+Rutile is used for special effects in leaded glazes and can form up to 15% of the recipe.<br/>
+<br/>
+Rutile can be used as a tone modifier to soften the more potent colorants.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">An original container bag of ceramic rutile</h3>
+<br/><a href="../picture/1827.html"><img class="flexleft50" loading="lazy" src="../media/images/b5c5ijxrdb.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1827.html">click here</a> to see it.</p>
+<p>This bag is very small, this material is very dense and heavy. The primary use of this material is obvious: For making welding rods. We can thus assume it will continue to be abundantly available for <a href="../glossary/ceramics.html">ceramics</a>. Notice the bag bottom is marked "<a href="968.html">Ceramic Rutile</a>" (with a batch number). Why would a product intended for making welding rods be used in ceramics? The answer is very interesting.</p>
+<p style="clear:left"></p>
+<br/><a href="../picture/133.html"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/materials/rutilite_slices.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/133.html">click here</a> to see it.</p>
+<p>Rutilite Slices</p>
+<p style="clear:left"></p>
+<br/><a href="../picture/132.html"><img class="flexleft50" loading="lazy" src="../media/images/rutile_crystals.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/132.html">click here</a> to see it.</p>
+<p><a href="1204.html">Rutile</a> Crystals</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Rutilated quartz</h3>
+<br/><a href="../picture/117.html"><img class="flexleft50" loading="lazy" src="../media/images/quartz_rutilated.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/117.html">click here</a> to see it.</p>
+<p></p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">How do metal oxides compare in their degrees of melting?</h3>
+<br/><a alt="Metal oxides melting" href="../picture/790.html"><img alt="Metal oxides melting" class="flexleft50" loading="lazy" src="../media/images/kilnezojat.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/790.html">click here</a> to see it.</p>
+<p>These <a href="../glossary/metal+oxides.html">metal oxides</a> have been mixed with 50% Ferro <a href="351.html">frit 3134</a> and fired to <a href="../glossary/cone+6.html">cone 6</a> oxidation. Chrome and <a href="1204.html">rutile</a> have not melted, copper and cobalt are extremely active melters, frothing and boiling. Cobalt and copper have crystallized during cooling. Manganese has formed an iridescent glass.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Making your own ceramic rutile</h3>
+<br/><a href="../picture/2316.html"><img class="flexleft50" loading="lazy" src="../media/images/crmhqxbbr7.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2316.html">click here</a> to see it.</p>
+<p>Left: <a href="../recipe/ga6-c.html">GA6-C</a> <a href="../glossary/rutile+blue+glazes.html">rutile blue</a> glaze on a brown <a href="../glossary/stoneware.html">stoneware</a>. The 4% <a href="968.html">ceramic rutile</a> powder gives the blue variegated effect. Right: We <a href="../glossary/ball+milling.html">ball-milled</a> our granular <a href="1204.html">rutile</a> and then screened it down to <a href="../glossary/325+mesh.html">325 mesh</a> and put that into the same glaze. The results are the same. So if any of your <a href="../glossary/rutile+blue+glazes.html">rutile glazes</a> ever lose this effect with a new supply of the material the cause could be that it has not been milled sufficiently fine. Finer rutile powders are browner in color.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">The rutile mechanism in glazes</h3>
+<br/><a href="../picture/292.html"><img class="flexleft50" loading="lazy" src="../media/images/g2862-431x170-6.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/292.html">click here</a> to see it.</p>
+<p>2, 3, 4, 5% <a href="1204.html">rutile</a> added to an 80:20 mix of <a href="32.html">Alberta Slip</a>:Frit 3134 at <a href="../glossary/cone+6.html">cone 6</a>. This <a href="../glossary/variegation.html">variegating</a> <a href="../glossary/mechanism.html">mechanism</a> of rutile is well-known among potters. Rutile can be added to many glazes to <a href="../glossary/variegation.html">variegate</a> existing color and <a href="../glossary/opacifier.html">opacification</a>. If more rutile is added the surface turns an ugly yellow in a mass of <a href="1644.html">titanium</a> crystals.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">4% rutile in a low temperature transparent glaze</h3>
+<br/><a href="../picture/2614.html"><img class="flexleft50" loading="lazy" src="../media/images/cndkdwq8jy.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2614.html">click here</a> to see it.</p>
+<p>The glaze is G191T (a variation of <a href="../recipe/g1916q.html">G1916Q</a>). Firing was <a href="../glossary/low+temperature+glaze.html">cone 04</a> <a href="../glossary/drop-and-soak+firing.html">drop-and-hold</a> with slow cool. Sometimes a raw <a href="../glossary/colorant.html">colorant</a> is advisable over a <a href="../glossary/ceramic+stain.html">ceramic stain</a>. At low temperatures <a href="../glossary/ceramic+stain.html">stains</a> are almost universal. But in this case, the orangey-yellow color that <a href="1204.html">rutile</a> produces merits further testing. On the red body (<a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12866">L215</a>) the color is barely perceptible, but on the light <a href="https://plainsmanclays.ca/data/index.php?product=12869">Buffstone</a> body it is working well. The variations in thickness highlight contours better than what a stain would do.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">G2571C rutile blue on P700 at cone 10R</h3>
+<br/><a alt="G2571C rutile blue glaze" href="../picture/3245.html"><img alt="G2571C rutile blue glaze" class="flexleft50" loading="lazy" src="../media/images/4omkgqz8ay.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3245.html">click here</a> to see it.</p>
+<p>The <a href="../glossary/clay+body.html">clay body</a> is <a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12893">P700</a>. This was fired in <a href="../glossary/reduction+firing.html">cone 10R</a> using the <a href="../schedule/c10rpl.html">C10RPL</a> <a href="../glossary/firing+schedule.html">firing schedule</a>. The outside glaze is <a href="https://insight-live.com/insight/share.php?z=erKwjtZ9tq">G2571C</a>. The inside glaze is <a href="../recipe/g1947u.html">G1947U</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">The Magic of Rutile Glazes!</h3>
+<br/><a href="../picture/3212.html"><img class="flexleft50" loading="lazy" src="../media/images/hfqcnzqyal.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3212.html">click here</a> to see it.</p>
+<p><a href="1204.html">Rutile</a> is a high iron and <a href="1644.html">titanium</a> mineral mined in Sudbury, Ontario. When kilns cool this glaze "parties and dances", creating amazing rivulets and crystals of blue and navy. Both of these glazes are made from materials mined by <a href="../glossary/plainsman+clays.html">Plainsman</a> Clays (in Montana, Alberta and Saskatchewan). Both produce a wide range of effects with different thicknesses, bodies and <a href="../glossary/firing+schedule.html">firing schedules</a>. These effects were achieved by firing to <a href="../glossary/cone+6.html">cone 6</a> (<a href="../glossary/cone+6.html">2200F</a>) and slow cooling down to 1400F (my <a href="../schedule/c6dhsc.html">C6DHSC</a> schedule).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Titanium instead of rutile for floating blue</h3>
+<br/><a alt="Floating blue using titanium dioxide" href="../picture/3264.html"><img alt="Floating blue using titanium dioxide" class="flexleft50" loading="lazy" src="../media/images/mbjhjqrd4e.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3264.html">click here</a> to see it.</p>
+<p><a href="../glossary/rutile+blue+glazes.html">Rutile blue glazes</a> are actually <a href="1644.html">titanium</a> blues (because <a href="1204.html">rutile</a> mineral is an impure source of <a href="../oxide/tio2.html">TiO2</a> and <a href="../oxide/fe2o3.html">Fe<sub>2</sub>O<sub>3</sub></a>). The iron and titanium in the rutile react to form the <a href="../picture/2776.html">floating blue</a> effect. The <a href="../recipe/ga6-c.html">GA6-C</a> recipe has always relied on a 4% rutile addition. Its <a href="../recipe/ga6-a.html">GA6-A</a> <a href="../glossary/base+glaze.html">base recipe</a> contains significant iron (because of the 80% <a href="32.html">Alberta Slip</a>), so could titanium oxide deliver the same floating blue effect? Yes.<br/>
+<br/>
+These mugs are <a href="https://plainsmanclays.ca/data/index.php?product=12876">M390</a> clay. The top left one is the standard GA6-C (with rutile) fired using the <a href="../schedule/c6dhsc.html">C6DHSC</a> slow-cool <a href="../glossary/firing+schedule.html">firing schedule</a> (the bottom left normal cool <a href="../schedule/plc6ds.html">PLC6DS</a> schedule produces little color). But the ones on the right switch the 4% rutile for <a href="1644.html">titanium dioxide</a> (the <a href="https://insight-live.com/insight/share.php?z=oLZXQTy9TR">L4655</a> recipe). The top right was fired using the slow cool, the bottom right was the normal cool schedule.<br/>
+<br/>
+Titanium thus seems more consistent and reliable material than rutile. An excellent blue color is produced even without a slow cool (lower right).</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/159">http://mineral.galleries.com/minerals/oxides/rutile/rutile.htm</a>
+<br/><i>MineralGalleries.com Information</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/160">http://www.mindat.org/min-3486.html</a>
+<br/><i>MinDat.org Information</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/161">http://webmineral.com/data/Rutile.shtml</a>
+<br/><i><a href="1204.html">Rutile</a> at WebMineral.com</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/162">http://www.theimage.com/mineral/rutile/</a>
+<br/><i><a href="1204.html">Rutile</a> information website</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/213">http://www.consrutile.com.au/ABOUTCRL/dwnstream.htm</a>
+<br/><i>Consolidated <a href="1204.html">Rutile</a> Ltd in Australia</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/312">http://en.wikipedia.org/wiki/Rutile</a>
+<br/><i><a href="1204.html">Rutile</a> on Wikipedia</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1327">http://www.sciencedirect.com/science/article/pii/S0168583X03018214</a>
+<br/><i>Report on the composition of Nigerian Rutile</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ilmenite.html">Ilmenite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ceramic+rutile.html">Ceramic Rutile</a>
+<br/><i><a href="1204.html">Rutile</a> mineral ground to a very fine particle size (e.g. <a href="../glossary/325+mesh.html">325 mesh</a>) contributes <a href="1644.html">titanium</a> and iron that colors and variegates ceramic glazes.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ruflux+61.html">Ruflux 61</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="titanium+dioxide.html">Titanium Dioxide</a>
+<br/><i>A super white powder used in ceramic glazes to <a href="../glossary/variegation.html">variegate</a>, <a href="../glossary/opacifier.html">opacify</a> and moderate color.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="granular+rutile.html">Granular Rutile</a>
+<br/><i>The same material as milled <a href="1204.html">rutile</a>, but ground only to granular size.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Hazards</td>
+<td>
+<a href="../hazard/titanium+dioxide+toxicology.html">Titanium Dioxide Toxicology</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Hazards</td>
+<td>
+<a href="../hazard/rutile+toxicology.html">Rutile Toxicology</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/gnm">Generic Material</a>
+<br/><i>Generic materials are those with no brand name. Normally they are theoretical, the <a href="../glossary/glaze+chemistry.html">chemistry</a> portrays what a specimen would be if it had no contamination. Generic materials are helpful in educational situations where students need to study material theory (later they graduate to dealing with real world materials). They are also helpful where the chemistry of an actual material is not known. Often the accuracy of calculations is sufficient using generic materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/clt">Colorant</a>
+<br/><i>Metallic based materials that impart fired color to glazes and bodies.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/tio2.html">TiO2 - Titanium Dioxide, Titania</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/reactive+glazes.html">Reactive Glazes</a>
+<br/><i>In <a href="../glossary/ceramics.html">ceramics</a>, <a href="../glossary/reactive+glazes.html">reactive glazes</a> have variegated surfaces that are a product of more <a href="../glossary/melt+fluidity.html">melt fluidity</a> and the presence of <a href="../glossary/opacifier.html">opacifiers</a>, crystallizers and phase changers.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/variegation.html">Variegation</a>
+<br/><i>Ceramic glaze <a href="../glossary/reactive+glazes.html">variegation</a> refers to its visual character. This is an overview of the various <a href="../glossary/mechanism.html">mechanisms</a> to make glazes dance with color, crystals, highlights, speckles, rivulets, etc.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="../mineral/anatase.html">Anatase</a>
+<br/><i>A mineral form of <a href="1644.html">titanium dioxide</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="../mineral/brookite.html">Brookite</a>
+<br/><i>A mineral form on <a href="1644.html">titanium dioxide</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="../mineral/rutile.html">Rutile</a>
+<br/><i><a href="1204.html">Rutile</a> is the mineral name for natural crystals of <a href="1644.html">titanium dioxide</a>. It is a very hard (6-6.5 Moh) a</i>
+</td>
+</tr>
+</tbody></table>
+<h3>Data</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<th scope="row">Hardness (Moh)</th>
+<td>6.0-6.5</td>
+</tr>
+<tr>
+<th scope="row"><a href="../test/14.html">Frit Softening Point</a></th>
+<td>1600C M</td>
+</tr>
+<tr>
+<th scope="row">Density (Specific Gravity)</th>
+<td>4.20</td>
+</tr>
+</tbody></table>
+<h3>Mechanisms</h3><table>
+<table class="table table-bordered"><tbody>
+<tr><th scope="row">Body Color</th><td>Rutile sand (granular) can be used to add speck to bodies.</td></tr>
+<tr><th scope="row">Body Color</th><td>Rutile can be added to low fire bodies to make them burn golden yellow.</td></tr>
+<tr><th scope="row">Glaze Color</th><td>Rutile produces many shades from pale straw to tan to cinammon brown to orange brown. Alkaline glazes experience less of the classic rutile crystalline effect. Color intensifies with increased amounts and tends to be darker in reduction.</td></tr>
+<tr><th scope="row">Glaze Color</th><td>5-8% added rutile can give powder to deep blue colors in reduction. These colors can be brilliant and mottled with shades of browns and tans. Rutile effects can be hard to Like copper reds, rutile blue reduction effects depend on adequate silica being available (7 times or more that of alumina).
+Classic rutile blue glazes are best made by using rutile in fluid glossy bases. The amount of iron in the rutile (or from the body) determines the degree of blue since its reduction to FeO is a key to the effect. Since rutile is variable in makeup, changes in the iron content will change the blue color. The fact that titanium dioxide additions do not make good blues suggests that the iron-titanium mix is the key to good color.
+Silky matte variegated blue glazes can also be made with rutile additions.
+If you employ this type of glaze be sure that you have a large supply of rutile on hand and test new supplies throughly.</td></tr>
+<tr><th scope="row">Glaze Color</th><td>In zinc glazes powdered rutile develops an orange-tan color.</td></tr>
+<tr><th scope="row">Glaze Color</th><td>Rutile can produce soft tan colors due to its iron content, especially in matte glazes.</td></tr>
+<tr><th scope="row">Glaze Color</th><td>Rutile and cobalt can crystallize to form green glazes.</td></tr>
+<tr><th scope="row">Glaze Matteness</th><td>Even in small amounts, rutile tends to matte the surface of leaded glazes.</td></tr>
+<tr><th scope="row">Glaze Opacifier</th><td>As an opacifier rutile is economical compared with pure titanium and it is employed where white shades are not required. It is also used to stain pottery bodies and glazes (yellowish, orange and tan colors are most common because of its iron content).</td></tr>
+<tr><th scope="row">Glaze Variegation</th><td>Rutile has the unique property of breaking up and variegating the color and texture of glazes, it is quite popular in tile and art pottery for this reason. However this effect depends on the rutile powder being coarse enough to act as an adjunct (the finer grades disperse more readily into the glass matrix). The addition of 4-8% rutile to many stoneware glazes can make an otherwise drab or flat glaze become much more interesting. When used in combination with colorants, it can be very effective at improving the character, however it will affect the color. When used with added tin streaking and mottling effects can be enhanced, especially in lead glazes.
+
+</td></tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></table></table></div></body>
+</html>

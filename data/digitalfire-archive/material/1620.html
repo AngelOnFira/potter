@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Talc</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="A source of MgO for ceramic glazes, a flux or thermal expansion additive in clay bodies, also used in the manufacture of cordierite." name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item active"><a class="nav-link" href="list.html">Materials <span class="sr-only">(current)</span></a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=material" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container">
+<ul class="nav nav-tabs pt-1" id="myTab" role="tablist">
+<li class="nav-item">
+<a aria-controls="material" aria-selected="true" class="nav-link active" data-toggle="tab" href="#material" id="material-tab" role="tab">Materials for Ceramics</a>
+</li>
+</ul>
+<div class="tab-content mb-3" id="myTabContent" style="border-right:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #ddd; padding:10px;">
+<div aria-labelledby="material-tab" class="tab-pane fade show active" id="material" role="tabpanel">
+<a href="list_1-9.html">1-9</a> | <a href="list_A.html">A</a> | <a href="list_B.html">B</a> | <a href="list_C.html">C</a> | <a href="list_D.html">D</a> | <a href="list_E.html">E</a> | <a href="list_F.html">F</a> | <a href="list_Frits.html">Frits</a> | <a href="list_G.html">G</a> | <a href="list_H.html">H</a> | <a href="list_I.html">I</a> | <a href="list_J.html">J</a> | <a href="list_K.html">K</a> | <a href="list_L.html">L</a> | <a href="list_M.html">M</a> | <a href="list_N.html">N</a> | <a href="list_O.html">O</a> | <a href="list_P.html">P</a> | <a href="list_Q.html">Q</a> | <a href="list_R.html">R</a> | <a href="list_S.html">S</a> | <a href="list_T.html">T</a> | <a href="list_U.html">U</a> | <a href="list_V.html">V</a> | <a href="list_W.html">W</a> | <a href="list_X.html">X</a> | <a href="list_Y.html">Y</a> | <a href="list_Z.html">Z</a><br/>
+<nobr></nobr>
+</div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Talc</h1>
+<p><b>Alternate Names</b>: Magnesium Silicate, Steatite, French Chalk, Hydrated talc</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/oxide.html">Oxide</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/analysis.html">Analysis</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Formula</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Tolerance</a></th>
+</tr></thead><tbody>
+<tr><td class="label"><a href="../oxide/mgo.html">MgO</a></td>
+<td class="text-right">31.87%</td>
+<td class="text-right">
+1.00
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/sio2.html">SiO2</a></td>
+<td class="text-right">63.38%</td>
+<td class="text-right">
+1.33
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/h2o.html">H2O</a></td>
+<td class="text-right">4.75%</td><td class="text-right">n/a</td></tr>
+<tr><td colspan="2">Oxide Weight</td><td class="text-right" colspan="2">
+120.44
+</td></tr>
+<tr><td class="text-right" colspan="2"><a href="../glossary/formula+weight.html">Formula Weight</a></td><td colspan="2" style="text-align:right">
+126.45
+</td></tr>
+</tbody></table>
+<h4>Notes</h4><p><a href="1620.html">Talc</a> is common and is the softest of all minerals (<a href="../glossary/mohs+hardness.html">Mohs hardness</a> of 1). Talc is also called steatite – or, in chemical terms, magnesium silicate hydrate. It is the main component of soapstone. Its crystals usually develop massive, leafy aggregates with laminar particles. Ground talc is called talcum.<br/>
+<br/>
+Its silicate layers lie on top of one another and are bound only by weak forces (residual van der Waals forces). This gives it its characteristic greasy or soapy feeling – hence the name "soapstone”. In its pure form, talc is colorless or appears white, and often it has a mother-of-pearl sheen. This sheen often appears at the surface of talc-containing slurries as they are being mixed. Talcs containing impurities like carbon or iron can also appear light grey, green, yellow or pink in the raw powdered state.<br/>
+<br/>
+No talcs have the theoretical <a href="../glossary/glaze+chemistry.html">chemistry</a> (although some can be very close), the most common impurities are <a href="../oxide/cao.html">CaO</a> (up to 8%), <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a> (up to 6%) and Fe<sub>2</sub>O<sub>3</sub>/FeO (up to 2%). Along with <a href="273.html">dolomite</a>, and to a less extent magnesium carbonate, it is an important source of <a href="../oxide/mgo.html">MgO</a> <a href="../glossary/flux.html">flux</a> for bodies and glazes. Dolomite and magnesium carbonate have high loss on ignitions which can produce <a href="../glossary/glaze+bubbles.html">glaze bubbles</a>, <a href="../trouble/glaze+blisters.html">blisters</a> and <a href="../glossary/pinholing.html">pinholes</a>, while talc also evolves gases it is less of a problem in this respect (although it gasses quite late, often after glazes have begin to melt).<br/>
+<br/>
+Some textbooks claim that talc is used as a <a href="../glossary/earthenware.html">low-fire</a> body addition to encourage conversion of excess free quartz to <a href="../glossary/cristobalite.html">cristobalite</a> to increase body expansion which reduces <a href="../trouble/glaze+crazing.html">crazing</a>. Ron Roy has argued that his testing indicates that cristobalite does not form at <a href="../glossary/low+temperature+glaze.html">cone 04</a> or below. Thus, while the exact <a href="../glossary/mechanism.html">mechanism</a> by which talc increases body expansion may not be completely evident, clearly glazes fit talc bodies and <a href="../trouble/glaze+crazing.html">craze</a> on non-talc ones. And certain talcs fit glazes better than others.<br/>
+<br/>
+Amazingly, talc is also used to produce <a href="../glossary/co-efficient+of+thermal+expansion.html">low-expansion</a> <a href="../glossary/ceramics.html">ceramics</a>, for example, thermal shock-resistant <a href="../glossary/stoneware.html">stoneware</a> bodies. In these, it acts as a low flux that reduces body expansion by converting available quartz mineral, mainly in <a href="925.html">kaolin</a>, to silicates of magnesia. Cordierite bodies used in kiln furniture and <a href="../glossary/flameware.html">flameware</a> (and a host of other applications, e.g. catalytic converters) employ a high percentage of talc and extend this concept so that all free quartz is used up. Such bodies tend to have a narrow firing range because all the <a href="1245.html">silica</a> needs to react before the body distorts.<br/>
+<br/>
+Thus talc is truly a curious material in bodies. By itself, it is a <a href="../glossary/refractory.html">refractory</a> powder, yet in amounts of only 1-3% in stoneware or <a href="../glossary/porcelain.html">porcelain</a> bodies it can drastically improve <a href="../glossary/vitrification.html">vitrification</a>! Yet adding these same low percentages to some zero-porosity highly <a href="../glossary/vitreous.html">vitreous</a> bodies does cause them to warp, <a href="../trouble/glaze+blisters.html">blister</a> or over-fire. And some cone 06-04 <a href="../glossary/ceramic+slip.html">ceramic slips</a> containing up to 60% talc can be fired to <a href="../glossary/cone+6.html">cone 6</a> without melting or even deforming (50:50 mixes can even go to cone 10). This is obviously a material that needs to be thoroughly tested for each application.<br/>
+<br/>
+Low-temperature <a href="../glossary/casting+slip.html">casting bodies</a> made from a 50:50 mix of <a href="80.html">ball clay</a> and talc were made for many years for the hobby ceramics market. These produced a white burning material, albeit a porous one, that works well for casting and, with a little addition of <a href="106.html">bentonite</a>, for <a href="../glossary/throwing.html">throwing</a> also. Over time, a whole industry developed to supply glazes to fit them for firing at cone 06-04.<br/>
+<br/>
+Around 2020, most body manufacturers discontinued the use of talc. In North America, legal issues surrounding the implications that it contributes to mesothelioma appeared to shake up the talc supply industry, producers literally disappeared! Manufacturers, likewise, were either worried about this or could not get supplies. However, talc is still classified only as an irritant on the backs of original container bags. A shift to using dolomite instead has happened and users are working to adapt to the changes it brings, including cost. In terms of liability, as of 2022 talc is still employed in many applications, including ceramics (usually ones that don't require high whiteness). Large suppliers with state-of-the-art lab capabilities claim to be able to leverage these to ensure that products are safe to use, both from a legal and health perspective. Talc use in glazes is likely to continue, percentages are much lower and glazes do not generally find their way onto floors where traffic and sweeping would put them into the air, they are cleaned up in the wet state at work levels.<br/>
+<br/>
+Talc is a curious glaze material also. At middle temperature, raw talc is refractory; its presence tends to create opaque and matte surfaces, yet if supplied in a <a href="../glossary/frit.html">frit</a> it can create wonderfully transparent glossy glazes. At cone 10 it is a powerful flux but also can be used in combination with <a href="173.html">calcium carbonate</a> to create very tactile <a href="../glossary/magnesia+matte.html">magnesia matte</a> glazes (the MgO forms magnesium silicate crystals on cooling to give both <a href="../glossary/opacity.html">opacity</a> and a matte silky surface). This being said, where transparency is needed, it is generally best to source MgO from a frit (since talc loses its water of hydration quite late in the firing, after melting of most <a href="../glossary/borate.html">boron</a> glazes has begun).<br/>
+<br/>
+When talc is used as a flux in low percentages (like porcelain tile) there is a need for caution where the body composition is close to a <a href="../glossary/eutectic.html">eutectic</a> point of the two or three primary components. Small increases in temperature, firing time or minor flux content (like the talc) can prematurely vitrify the surface, trapping gases being evolved within the matrix and producing <a href="../trouble/bloating.html">bloating</a>.<br/>
+<br/>
+Talcs can detrimentally affect body <a href="../glossary/plasticity.html">plasticity</a>, but vacuum pugging often solves the problem. So if you need to reprocess scrap material in production and cannot vacuum pug this could be an issue.<br/>
+<br/>
+Talcs vary a lot in iron content (some talcs have almost zero iron, others are much higher), so if you are making a body high in talc be aware that the reason it is not firing as white as you would like might be because of the talc, not the clays. Some talcs can have significant carbon. Texas talcs, for example, have <a href="../oxide/co2.html">CO2</a> chemically bound into the dolomitic portion; this can produce 7% <a href="../glossary/loi.html">LOI</a> (in addition to the crystal water <a href="../oxide/loi.html">LOI</a> that burns off later).<br/>
+<br/>
+The soapstone form of talc was first used by Indians who carved it. Coarse-grade talc is used in roofing preparation. Finer grades are used in rubber, paint, steel marking pencils, soaps, lubricants, tailor's chalk (or French chalk), pigments, and it is used for talcum powder.<br/>
+<br/>
+Talc has a complex commercial and litigious history in North America. Various deposits and products have been associated with asbestos.<br/>
+<br/>
+Talc is commonly dusted onto <a href="1124.html">plaster</a> molds to ease the release of cast pieces (especially for difficult or intricate shapes). It is spread in a loosely woven cloth bag or using micro-fibre gloves. When talc is used in consort with in-mold ductwork and compressed air, shapes can be cast that would otherwise be impossible.<br/>
+<br/>
+If you are desperate to substitute this material in a <a href="../glossary/clay+body.html">clay body</a> or glaze and need help, purchase a group account at <a href="../glossary/digitalfire+insight-live.html">Insight-live</a>.com and we can work together to get it done.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">How to matte Ravenscrag Slip at cone 10 by adding talc</h3>
+<br/><a href="../picture/894.html"><img class="flexleft50" loading="lazy" src="../media/images/boknykybab.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/894.html">click here</a> to see it.</p>
+<p>2,5,10,15% <a href="1620.html">talc</a> added to <a href="1178.html">Ravenscrag</a> Slip on a buff <a href="../glossary/stoneware.html">stoneware</a> fired at <a href="../glossary/reduction+firing.html">cone 10R</a>. Matting begins at 10%. By Kat Valenzuela.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Frits work much better in glaze chemistry</h3>
+<br/><a href="../picture/295.html"><img class="flexleft50" loading="lazy" src="../media/images/gotpydimif.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/295.html">click here</a> to see it.</p>
+<p>The same glaze with <a href="../oxide/mgo.html">MgO</a> sourced from a <a href="../glossary/frit.html">frit</a> (left) and from <a href="1620.html">talc</a> (right). The glaze is 1215U. Notice how much more the <a href="../glossary/frit.html">fritted</a> one melts, even though they have the same <a href="../glossary/glaze+chemistry.html">chemistry</a>. <a href="../glossary/frit.html">Frits</a> are predictable when using <a href="../glossary/glaze+chemistry.html">glaze chemistry</a>, it is more absolute and less relative. Mineral sources of <a href="../glossary/ceramic+oxide.html">oxides</a> impose their own melting patterns and when one is substituted for another to supply an oxide in a glaze a different system with its own relative chemistry is entered. But when changing form one frit to another to supply an oxide or set of oxides, the melting properties stay within the same system and are predictable.<br/>
+</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Texas talc (left) and Montana talc (right)</h3>
+<br/><a href="../picture/861.html"><img class="flexleft50" loading="lazy" src="../media/images/kydparyzyg.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/861.html">click here</a> to see it.</p>
+<p>Texas <a href="1620.html">talc</a> contains some <a href="../glossary/amorphous.html">amorphous</a> carbon. The carbon is not stand-alone, but as <a href="../oxide/co2.html">CO2</a> in the dolomitic part of the ore. It produces ~7% <a href="../glossary/loi.html">LOI</a> between 750-850C. Even though the powder color is so much darker in the raw form, it fires whiter! But there is more going on here. On paper, both contain about 0.5% <a href="../oxide/fe2o3.html">Fe<sub>2</sub>O<sub>3</sub></a>. But the iron species in the two talcs are different. In Texas talcs, the iron is part of the crystal lattice.  But, in the Montana material, that 0.5% Fe<sub>2</sub>O<sub>3</sub> is an external <a href="874.html">iron oxide</a> mineral species, a physical contaminant. While the Montana material fires much darker because of this that iron seems to have little affect on the color of the raw white powder.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">The unexpected reason for this crazing can be seen in the chemistry</h3>
+<br/><a alt="Glaze chemistry explains the crazing" href="../picture/859.html"><img alt="Glaze chemistry explains the crazing" class="flexleft50" loading="lazy" src="../media/images/dajxomafop.png"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/859.html">click here</a> to see it.</p>
+<p>The glaze is 10% <a href="173.html">calcium carbonate</a> added to <a href="1178.html">Ravenscrag</a> slip. <a href="https://plainsmanclays.ca/data/index.php?product=12911">Ravenscrag Slip</a> does not <a href="../trouble/glaze+crazing.html">craze</a> when used by itself as a glaze at <a href="../glossary/reduction+firing.html">cone 10R</a> on this body, so why would adding a relatively <a href="../glossary/co-efficient+of+thermal+expansion.html">low expansion</a> <a href="../glossary/flux.html">flux</a> like <a href="../oxide/cao.html">CaO</a> make it craze? This is an excellent example of the value of looking at the <a href="../glossary/glaze+chemistry.html">chemistry</a> (the three are shown side-by-side in my account at <a href="../glossary/digitalfire+insight-live.html">Insight-live</a>.com). The added CaO pushes the very-low-expansion <a href="../oxide/al2o3.html">Al<sub>2</sub>O<sub>3</sub></a> and <a href="../oxide/sio2.html">SiO<sub>2</sub></a> down by 30% (in the <a href="../glossary/unity+formula.html">unity formula</a>), so the much higher expansion of all the others drives the <a href="../glossary/co-efficient+of+thermal+expansion.html">COE</a> of the whole way up. And <a href="1620.html">talc</a>? It contains SiO<sub>2</sub> (so the SiO<sub>2</sub> is not driven down nearly as much) and its <a href="../oxide/mgo.html">MgO</a> has a much lower expansion than CaO does.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">The strange vitrification profile of a talc body</h3>
+<br/><a href="../picture/916.html"><img class="flexleft50" loading="lazy" src="../media/images/cotjusejug.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/916.html">click here</a> to see it.</p>
+<p>This body is made from approximately 50:45:2:3 <a href="80.html">ball clay</a>:talc:whiting:bentonite. These <a href="../test/shab.html">SHAB test</a> bars are fired from cone 2 to 9 oxidation and 10 Reduction (bottom to top). From them the <a href="../glossary/clay+body+porosity.html">porosity</a> and <a href="../glossary/firing+shrinkage.html">fired shrinkage</a> can be measured (the SHAB test). Notice that the fired shrinkage is pretty stable from cone 2 to 8, but accelerates at cone 9 oxidation. But in reduction this stage has not been reached yet. The same thing happens with porosity, the cone 9 bar is dramatically more dense than the cone 8 one. But in reduction, it is still porous.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">RavenTalc silky matte on the outside of a cone 10R buff stoneware mug</h3>
+<br/><a href="../picture/918.html"><img class="flexleft50" loading="lazy" src="../media/images/hkjwdrhm8b.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/918.html">click here</a> to see it.</p>
+<p><a href="../recipe/gr10-c.html">GR10-C</a> <a href="1178.html">Ravenscrag</a> <a href="../glossary/reduction+firing.html">cone 10R</a> silky <a href="../glossary/matte+glaze.html">matte glaze</a> closeup (on <a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12887">H550</a> <a href="../glossary/stoneware.html">stoneware</a>). The recipe is 90% <a href="https://plainsmanclays.ca/data/index.php?product=12911">Ravenscrag Slip</a> (roast:raw combo) and 10% <a href="1620.html">talc</a>. The inside of this piece just has pure Ravenscrag (raw:roast).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Difference between oxidation and reduction! GR10-C matte on Plainsman H443</h3>
+<br/><a href="../picture/926.html"><img class="flexleft50" loading="lazy" src="../media/images/wodxaruhuj.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/926.html">click here</a> to see it.</p>
+<p>Same body, same glaze. Left is cone 10 oxidation, right is <a href="../glossary/reduction+firing.html">cone 10 reduction</a>. What a difference! This is a Ravenscrag-Slip-based recipe on a high-fire iron <a href="../glossary/stoneware.html">stoneware</a>. In reduction, the <a href="874.html">iron oxide</a> in the body and glaze darkens (especially the body) and melts much more. The behavior of the <a href="1642.html">tin oxide</a> <a href="../glossary/opacifier.html">opacifier</a> is also much different (having very little opacifying effect in reduction).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Permeability demonstration of Texas and Montana talcs</h3>
+<br/><a href="../picture/966.html"><img class="flexleft50" loading="lazy" src="../media/images/ryvfaxokef.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/966.html">click here</a> to see it.</p>
+<p>Texas <a href="1620.html">talc</a> (left) quickly absorbs all the water poured on it. Montana talc (right) resists whetting of the particles much more, the water is just sitting on top and has not penetrated at all.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Talc leaves a film on this stainless steel scoop</h3>
+<br/><a href="../picture/1017.html"><img class="flexleft50" loading="lazy" src="../media/images/bodlobigum.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1017.html">click here</a> to see it.</p>
+<p><a href="1620.html">Talc</a> exhibits unique powder characteristics, a product of the particle shape and particle surface characteristics. While most powders slide cleanly from this stainless steel scoop, talc powder leaves a film. <a href="273.html">Dolomite</a> and <a href="173.html">calcium carbonate</a> are similar.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">LOI horse race with surprising winners</h3>
+<br/><a alt="A chart showing weight-loss vs firing temperature for common ceramic materials" href="../picture/1114.html" title="A chart showing weight-loss vs firing temperature for common ceramic materials"><img alt="A chart showing weight-loss vs firing temperature for common ceramic materials" class="flexleft50" loading="lazy" src="../media/images/r7o6o9pqpg.jpg" title="A chart showing weight-loss vs firing temperature for common ceramic materials"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1114.html">click here</a> to see it.</p>
+<p>This chart compares the decompositional off-gassing (% weight Loss on Ignition) behavior of six glaze materials as they are heated through the range 500-1700F. It is amazing how much weight some can lose on firing - for example, 100 grams of <a href="173.html">calcium carbonate</a> generates 45 grams of <a href="../oxide/co2.html">CO2</a>! This chart is a reminder that some late <a href="../glossary/loi.html">gassers</a> overlap early melters. That is a problem. The <a href="../glossary/loi.html">LOI</a> of these materials can affect glazes (causing bubbles, <a href="../trouble/glaze+blisters.html">blisters</a>, <a href="../glossary/pinholing.html">pinholes</a>, <a href="../trouble/crawling.html">crawling</a>). <a href="1620.html">Talc</a> is an example: It is not finished gassing until 1650F, yet many <a href="../glossary/frit.html">fritted</a> glazes have already begun melting by then. Even <a href="806.html">Gerstley Borate</a>, a raw material, begins to melt while talc is barely finished gassing. <a href="273.html">Dolomite</a> and calcium carbonate Other materials also create gases as they <a href="../glossary/decomposition.html">decompose</a> during glaze melting (e.g. clays, carbonates, dioxides).</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Frits melt so much better than raw materials</h3>
+<br/><a alt="Frits, talc, feldspar melting" href="../picture/1115.html"><img alt="Frits, talc, feldspar melting" class="flexleft50" loading="lazy" src="../media/images/fuxrucugaz.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1115.html">click here</a> to see it.</p>
+<p><a href="310.html">Feldspar</a> and <a href="1620.html">talc</a> are both <a href="../glossary/flux.html">flux</a> sources (glaze melters), they are common in all types of <a href="../glossary/stoneware.html">stoneware</a> glazes. But their fluxing <a href="../glossary/ceramic+oxide.html">oxides</a>, <a href="../oxide/na2o.html">Na<sub>2</sub>O</a> and <a href="../oxide/mgo.html">MgO</a>, are locked in crystal structures that neither melt early or supply other oxides with which they like to interact. The pure feldspar is only beginning to soften at <a href="../glossary/cone+6.html">cone 6</a>. Yet the soda <a href="../glossary/frit.html">frit</a> is already very active at <a href="../glossary/low+temperature+glaze.html">cone 06</a>! As high as cone 6, talc (the best source of MgO) shows no signs of melting activity at all. But a high-MgO frit is melting beautifully at cone 06! The <a href="../glossary/frit.html">frits</a> progressively soften, starting from low temperatures, both because they have been premelted and have significant <a href="../glossary/borate.html">boron</a> content. In both, the Na<sub>2</sub>O and MgO are free to impose themselves as fluxes, actively participating in the softening process.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Orange-peel or pebbly glaze surface. Why?</h3>
+<br/><a alt="An orange peel textured glaze" href="../picture/1597.html"><img alt="An orange peel textured glaze" class="flexleft50" loading="lazy" src="../media/images/wezsekejod.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1597.html">click here</a> to see it.</p>
+<p>This is a cone 10 <a href="../glossary/glossy+glaze.html">glossy glaze</a>. It has the <a href="../glossary/glaze+chemistry.html">chemistry</a> that suggests it should be crystal clear and smooth. But there are multiple issues with the materials supplying that chemistry: <a href="1609.html">Strontium carbonate</a>, <a href="1620.html">talc</a> and <a href="173.html">calcium carbonate</a>. Each has a significant <a href="../glossary/loi.html">LOI</a> and produces gases <a href="../glossary/decomposition.html">decomposition</a>. When the gases need to come out at the wrong time it turns the glaze into a Swiss cheeze of <a href="../glossary/glaze+bubbles.html">micro-bubbles</a>. A study to isolate which of these three materials is the problem might make it possible to adjust the firing to accommodate it. But probably not. The most obvious solution is to just use non-gassing sources <a href="../oxide/mgo.html">MgO</a>, <a href="../oxide/sro.html">SrO</a>, <a href="../oxide/cao.html">CaO</a> and <a href="../oxide/bao.html">BaO</a> (which will require some calculation). There is a good reason to do this: The glaze contains some <a href="../glossary/boron+frit.html">boron frit</a>, that is likely kick-starting melting much earlier than a standard raw-material-only cone 10 glaze. That <a href="../glossary/fluid+melt+glazes.html">fluid melt</a> may not only be trapping gases from the body but creating a perfect environment to trap all the bubbles coming out of those carbonates and talc. All of this being said, a <a href="../glossary/drop-and-soak+firing.html">drop and hold</a> <a href="../glossary/firing+schedule.html">firing schedule</a> could also smooth it out a lot.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">A low-fire talc body lacks plasticity when slip-mixed, but not when pugged</h3>
+<br/><a alt="Talc body splitting in the plastic state" href="../picture/1874.html"><img alt="Talc body splitting in the plastic state" class="flexleft50" loading="lazy" src="../media/images/ka4eqt5qyg.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1874.html">click here</a> to see it.</p>
+<p>This clay was <a href="../glossary/slurry.html">slurried</a> in a mixer and then poured onto a <a href="../glossary/plaster+table.html">plaster table</a> for dewatering. During <a href="../glossary/throwing.html">throwing</a> it is <a href="../glossary/splitting.html">splitting</a> when stretched and <a href="../picture/3594.html">peeling</a> when cutting the base. Yet when this same clay is water-mixed and pugged in a vacuum <a href="../glossary/pugmill.html">de-airing pugmill</a> it performs well. One might think that the <a href="../glossary/slurry.html">slurry</a> mixer would wet all the particle surfaces better than a <a href="../glossary/pugmill.html">pugmill</a> - that is our typical experience. However, it appears the energy that a pugmill can inject into the mix is needed to develop the <a href="../glossary/plasticity.html">plasticity</a> when there is a high <a href="1620.html">talc</a> percentage in the recipe.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Talc powder is floating on top of the water and will do so for some time</h3>
+<br/><a href="../picture/1893.html"><img class="flexleft50" loading="lazy" src="../media/images/lcb1nxjfna.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1893.html">click here</a> to see it.</p>
+<p><a href="1620.html">Talc</a> particle surfaces do not wet as easily. Other mineral powders (like <a href="310.html">feldspar</a>, <a href="1245.html">silica</a>, even clay, will wet and sink immediately). Yet even after 30 minutes this still had not submerged. Pugging <a href="../glossary/clay+body.html">clay bodies</a> containing talc can be difficult for this reason. <a href="../glossary/laminations.html">Laminations</a> can be a problem even with small percentages of talc.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Talc:Ball Clay bodies have incredible casting properties</h3>
+<br/><a href="../picture/2347.html"><img class="flexleft50" loading="lazy" src="../media/images/ykfbtn5zc8.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2347.html">click here</a> to see it.</p>
+<p>This bowl is 13cm across yet has a wall thickness of less than 2mm and weighs only 101g! It released from the mold with no problems and dried perfectly round. But it has a key advantage over stonewares and porcelains: When this is fired at cone 04-06 it will stay round!</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">High thermal expansion talc body cannot be COE-calculated</h3>
+<br/><a href="../picture/1954.html" title="COE graph of talc:clay body"><img class="flexleft50" loading="lazy" src="../media/images/1mnncdlar2.png" title="COE graph of talc:clay body"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1954.html">click here</a> to see it.</p>
+<p><a href="1620.html">Talc</a> is employed in <a href="../glossary/earthenware.html">low-fire</a> bodies to raise their <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> (to put the squeeze on glazes to prevent <a href="../trouble/glaze+crazing.html">crazing</a>). These dilatometer curves make it very clear just how effective that strategy is! The <a href="../glossary/artware.html">talc body</a> was fired at <a href="../glossary/low+temperature+glaze.html">cone 04</a> and the <a href="../glossary/stoneware.html">stoneware</a> at <a href="../glossary/cone+6.html">cone 6</a>. The former is porous and completely non-vitreous and the latter is semi-vitreous. This demonstrates something else interesting: The impracticality of calculating the thermal expansion of <a href="../glossary/clay+body.html">clay bodies</a> based on their oxide <a href="../glossary/glaze+chemistry.html">chemistry</a>. Talc sources <a href="../oxide/mgo.html">MgO</a> and <a href="../glossary/earthenware.html">low fire</a> bodies containing it would calculate to a low thermal expansion. But the opposite happens. Why? Because these bodies are composed of mineral particles loosely <a href="../glossary/sintering.html">sintered</a> together. A few melt somewhat, some change their mineral form, many remain unchanged. The body's <a href="../glossary/co-efficient+of+thermal+expansion.html">COE</a> is the additive sum of the proportionate populations of all the particles. Good luck calculating that!</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Talc was making this glaze "puffy" - here is how I fixed it.</h3>
+<br/><a alt="Fixing a puffy pottery glaze" href="../picture/3319.html"><img alt="Fixing a puffy pottery glaze" class="flexleft50" loading="lazy" src="../media/images/wowbjjrpvp.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3319.html">click here</a> to see it.</p>
+<p>The recipe on the right employs <a href="1620.html">talc</a> to source the <a href="../oxide/mgo.html">MgO</a> needed to create a silky matte texture. However, talc is a late gasser, potentially able to produce <a href="../glossary/glaze+bubbles.html">micro-bubbles</a> in the glaze after it has begun melting. The reduction in the definition of contour edges on the tile in front and the reduction in <a href="../glossary/melt+fluidity.html">melt fluidity</a> tipped me off. Using my account at <a href="../glossary/digitalfire+insight-live.html">insight-live</a>.com I did the calculations needed to source the MgO using <a href="273.html">dolomite</a> instead, producing recipe <a href="https://insight-live.com/insight/share.php?z=XxaFobJPcH">G3933E</a>. While dolomite has a far higher <a href="../glossary/loi.html">LOI</a> than talc it starts releasing the gasses of its <a href="../glossary/decomposition.html">decomposition</a> much earlier and finishes well before talc. The mug in the back confirmed my suspicions, firing with a much smoother surface (and with far better definition of the <a href="../glossary/incised+decoration.html">incising</a>).</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">The amazing power of 1% talc:
+</h3>
+<h4 style="color:#888888; margin-top:0px;">It accelerates the vitrification of this stoneware</h4>
+<br/><a alt="1% talc added to a clay body" href="../picture/3368.html"><img alt="1% talc added to a clay body" class="flexleft50" loading="lazy" src="../media/images/ng6oosz8pw.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3368.html">click here</a> to see it.</p>
+<p>These two unglazed pieces are made from the same clay, <a href="https://plainsmanclays.ca/data/index.php?product=12875">M340</a>. They are fired at the same temperature. But the one on the right has 1% <a href="1620.html">talc</a> added. Greying of the color is a characteristic visual change as this <a href="../glossary/clay+body.html">clay body</a> transitions into the <a href="../glossary/vitreous.html">vitreous</a> state we target. That transition happens over a narrow temperature range. Because the raw materials naturally vary in the temperature at which they vitrify, we have to tune the recipe so that the transition happens from <a href="../glossary/cone+5.html">cone 5</a> to <a href="../glossary/cone+6.html">cone 6</a>. It is accompanied by a drop in <a href="../glossary/clay+body+porosity.html">porosity</a> of 2% or more (according to our <a href="../test/shab.html">SHAB test</a>). Talc acts as a catalyst for this change; in this case, only 1% is needed. By itself, talc is <a href="../glossary/refractory.html">refractory</a>. Yet it acts as a <a href="../glossary/flux.html">flux</a> here! The fact that it can effect this big of a change with only 1% is amazing. Interestingly, this phenomenon only occurs with tiny talc additions.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/102">http://mineral.galleries.com/minerals/silicate/talc/talc.htm</a>
+<br/><i><a href="1620.html">Talc</a> at Mineral.Galleries.com</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/103">http://webmineral.com/data/Talc.shtml</a>
+<br/><i><a href="1620.html">Talc</a> at webmineral.com</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/220">http://www.luzenac.com/talc.html</a>
+<br/><i>Luzenac: All About Talc</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/427">http://en.wikipedia.org/wiki/Talc</a>
+<br/><i><a href="1620.html">Talc</a> at Wikipedia</i>
+<br/><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/3440">https://golchaminerals.com/</a>
+<br/><i>Golcha Minerals of India - <a href="1620.html">Talc</a> Supplier</i>
+<br/><i style="color:#888888;">Claimed to be the leading source in Asia.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="dolomite.html">Dolomite</a>
+<br/><i>An inexpensive source of <a href="../oxide/mgo.html">MgO</a> and <a href="../oxide/cao.html">CaO</a> for ceramic glazes, also a highly <a href="../glossary/refractory.html">refractory</a> material when fired in the absence of reactant fluxes.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="light+magnesium+carbonate.html">Light Magnesium Carbonate</a>
+<br/><i>A <a href="../glossary/refractory.html">refractory</a> feather-light white powder used as a source of <a href="../oxide/mgo.html">MgO</a> and matting agent in ceramic glazes</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="magnesite.html">Magnesite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pyrophyllite.html">Pyrophyllite</a>
+<br/><i>A <a href="../glossary/refractory.html">refractory</a> aluminum silicate mineral often used in <a href="../glossary/clay+body.html">clay body</a> recipes to lower <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a>, control fired <a href="../glossary/maturity.html">maturity</a>, <a href="1054.html">mullite</a> development catalyst, etc.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="nytal+talc.html">Nytal Talc</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="texas+talc+286.html">Texas Talc 286</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="glacier+200+talc.html">Glacier 200 Talc</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="caltalc.html">Caltalc</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ceramitalc+hdt.html">Ceramitalc HDT</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="4392+rosa+blanca.html">4392 Rosa Blanca</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="i.t.+talc.html">I.T. Talc</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="pioneer+2661+talc.html">Pioneer 2661 Talc</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="texas+talc+92.html">Texas Talc 92</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="noor+talc.html">Noor Talc</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="suzorite+325-pe.html">Suzorite 325-PE</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="sierralite+talc.html">Sierralite Talc</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ct-30+talc.html">CT-30 Talc</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="tdm+92+talc.html">TDM 92 Talc</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="luzenac+talc+00s.html">Luzenac Talc 00S</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="talc+2c.html">Talc 2C</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="desertalc.html">Desertalc</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="talcron.html">Talcron</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="spluga+talc.html">Spluga Talc</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="amtalc-c98.html">Amtalc-C98</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="ceramitalc.html">Ceramitalc</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="cimcoat+325+talc.html">Cimcoat 325 Talc</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="roudnice+talc.html">Roudnice Talc</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="vantalc.html">VanTalc</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="finntalc.html">FinnTalc</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="sepiolite.html">Sepiolite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="steatite.html">Steatite</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="benwood+talc+2213.html">Benwood Talc 2213</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="natural+talc+c-98.html">Natural Talc C-98</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="cimtuff+9115+talc.html">Cimtuff 9115 Talc</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="magris+jetfil+h+290+talc.html">Magris Jetfil H 290 Talc</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="silverline+303+talc.html">Silverline 303 Talc</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Hazards</td>
+<td>
+<a href="../hazard/talc+hazards+overview.html">Talc Hazards Overview</a>
+<br/><i><a href="1620.html">Talc</a> is invaluable in the <a href="../glossary/ceramics.html">ceramics</a> industry, it is used as a glaze and body ingredient and as a parting a release agent in various processes. Is it safe?</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Hazards</td>
+<td>
+<a href="../hazard/talc+toxicology.html">Talc Toxicology</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Temperatures</td>
+<td>
+<a href="../temperature/29.html">Talc melts (1420-)</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Temperatures</td>
+<td>
+<a href="../temperature/64.html">Amorphous carbon burns from Texas Talc (750-850)</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Temperatures</td>
+<td>
+<a href="../temperature/65.html">Talc crystalline water vaporizes (900-1000)</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/gnm">Generic Material</a>
+<br/><i>Generic materials are those with no brand name. Normally they are theoretical, the <a href="../glossary/glaze+chemistry.html">chemistry</a> portrays what a specimen would be if it had no contamination. Generic materials are helpful in educational situations where students need to study material theory (later they graduate to dealing with real world materials). They are also helpful where the chemistry of an actual material is not known. Often the accuracy of calculations is sufficient using generic materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/fls">Flux Source</a>
+<br/><i>Materials that source <a href="../oxide/na2o.html">Na2O</a>, <a href="../oxide/k2o.html">K2O</a>, <a href="../oxide/li2o.html">Li2O</a>, <a href="../oxide/cao.html">CaO</a>, <a href="../oxide/mgo.html">MgO</a> and other fluxes but are not <a href="310.html">feldspars</a> or <a href="../glossary/frit.html">frits</a>. Remember that materials can be <a href="../glossary/flux.html">flux</a> sources but also perform many other roles. For example, <a href="1620.html">talc</a> is a flux in high temperature glazes, but a matting agent in low temperatures ones. It can also be a flux, a filler and an expansion increaser in bodies.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/lem">Low Expansion Material</a>
+<br/><i>Materials used to make bodies requiring <a href="../glossary/co-efficient+of+thermal+expansion.html">low expansion</a> (e.g. <a href="../glossary/flameware.html">flameware</a>, refractories). The individual particles of these materials have low expansion. Some of theme even expand at certain temperature ranges.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="../oxide/mgo.html">MgO - Magnesium Oxide, Magnesia</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="../glossary/cordierite+ceramics.html">Cordierite Ceramics</a>
+<br/><i>Cordierite is a man-made <a href="../glossary/refractory.html">refractory</a> low <a href="../glossary/co-efficient+of+thermal+expansion.html">thermal expansion</a> <a href="../glossary/glass+vs.+crystalline.html">crystalline</a> solid that forms at very high temperatures (in the right mix of <a href="925.html">kaolin</a> and <a href="1620.html">talc</a>).</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="../mineral/steatite.html">Steatite</a>
+<br/><i><a href="1620.html">Talc</a> is also called steatite (it is a magnesium silicate hydrate). It is the main component of soaps</i>
+</td>
+</tr>
+</tbody></table>
+<h3>Mechanisms</h3><table>
+<table class="table table-bordered"><tbody>
+<tr><th scope="row">Body Maturity</th><td>Talc in 1-4% amounts can be used in the cone 4-10 range to effectively increase body maturity. In some case 1% will move a body down by one cone.</td></tr>
+<tr><th scope="row">Body Thermal Expansion</th><td>Talc is used up to 60% in low fire artware bodies to increase thermal expansion so they fit commercial glazes.</td></tr>
+<tr><th scope="row">Glaze Opacifier</th><td>Talc is a refractory powder and can promote matteness and opacity when added to low-fire glazes.</td></tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></table></div></body>
+</html>

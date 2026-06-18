@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Firing: What Happens to Ceramic Ware in a Firing Kiln</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Understanding more about changes taking place in the ware at each stage of a firing helps tune the curve and atmosphere to produce better ware">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+April 2026: We are continuing a major code rewrite, please be patient regarding any issues. If any page is not working for a period of hours, please contact us. Thank you.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item active" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=article" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>! <b>No paywall</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Articles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a title="388" href="https://digitalfire.com/article/388">A ChatBot gives jaw-dropping glaze recipe advice - Jan 2025</a><br /><a title="244" href="https://digitalfire.com/article/244">A Low Cost Tester of Glaze Melt Fluidity</a><br /><a title="361" href="https://digitalfire.com/article/361">A One-speed Lab or Studio Slurry Mixer</a><br /><a title="353" href="https://digitalfire.com/article/353">A Textbook Cone 6 Matte Glaze With Problems</a><br /><a title="199" href="https://digitalfire.com/article/199">Adjusting Glaze Expansion by Calculation to Solve Shivering</a><br /><a title="251" href="https://digitalfire.com/article/251">Alberta Slip, 20 Years of Substitution for Albany Slip</a><br /><a title="273" href="https://digitalfire.com/article/273">An Overview of Ceramic Stains</a><br /><a title="37" href="https://digitalfire.com/article/37">Are You in Control of Your Production Process?</a><br /><a title="12" href="https://digitalfire.com/article/12">Are Your Glazes Food Safe or are They Leachable?</a><br /><a title="143" href="https://digitalfire.com/article/143">Attack on Glass: Corrosion Attack Mechanisms</a><br /><a title="204" href="https://digitalfire.com/article/204">Ball Milling Glazes, Bodies, Engobes</a><br /><a title="345" href="https://digitalfire.com/article/345">Binders for Ceramic Bodies</a><br /><a title="4" href="https://digitalfire.com/article/4">Bringing Out the Big Guns in Craze Control: MgO (G1215U)</a><br /><a title="381" href="https://digitalfire.com/article/381">Can We Help You Fix a Specific Problem?</a><br /><a title="124" href="https://digitalfire.com/article/124">Ceramic Glazes Today</a><br /><a title="208" href="https://digitalfire.com/article/208">Ceramic Material Nomenclature</a><br /><a title="336" href="https://digitalfire.com/article/336">Ceramic Tile Clay Body Formulation</a><br /><a title="217" href="https://digitalfire.com/article/217">Changing Our View of Glazes</a><br /><a title="22" href="https://digitalfire.com/article/22">Chemistry vs. Matrix Blending to Create Glazes from Native Materials</a><br /><a title="209" href="https://digitalfire.com/article/209">Concentrate on One Good Glaze</a><br /><a title="115" href="https://digitalfire.com/article/115">Copper Red Glazes</a><br /><a title="271" href="https://digitalfire.com/article/271">Crazing and Bacteria: Is There a Hazard?</a><br /><a title="190" href="https://digitalfire.com/article/190">Crazing in Stoneware Glazes: Treating the Causes, Not the Symptoms</a><br /><a title="97" href="https://digitalfire.com/article/97">Creating a Non-Glaze Ceramic Slip or Engobe</a><br /><a title="195" href="https://digitalfire.com/article/195">Creating Your Own Budget Glaze</a><br /><a title="36" href="https://digitalfire.com/article/36">Crystal Glazes: Understanding the Process and Materials</a><br /><a title="324" href="https://digitalfire.com/article/324">Deflocculants: A Detailed Overview</a><br /><a title="32" href="https://digitalfire.com/article/32">Demonstrating Glaze Fit Issues to Students</a><br /><a title="334" href="https://digitalfire.com/article/334">Diagnosing a Casting Problem at a Sanitaryware Plant</a><br /><a title="196" href="https://digitalfire.com/article/196">Drying Ceramics Without Cracks</a><br /><a title="187" href="https://digitalfire.com/article/187">Duplicating Albany Slip</a><br /><a title="45" href="https://digitalfire.com/article/45">Duplicating AP Green Fireclay</a><br /><a title="197" href="https://digitalfire.com/article/197">Electric Hobby Kilns: What You Need to Know</a><br /><a title="39" href="https://digitalfire.com/article/39">Fighting the Glaze Dragon</a><br /><a title="214" href="https://digitalfire.com/article/214">Firing Clay Test Bars</a><br /><a title="200" href="https://digitalfire.com/article/200">Firing: What Happens to Ceramic Ware in a Firing Kiln</a><br /><a title="113" href="https://digitalfire.com/article/113">First You See It Then You Don't: Raku Glaze Stability</a><br /><a title="316" href="https://digitalfire.com/article/316">Fixing a glaze that does not stay in suspension</a><br /><a title="338" href="https://digitalfire.com/article/338">Formulating a body using clays native to your area</a><br /><a title="191" href="https://digitalfire.com/article/191">Formulating a Clear Glaze Compatible with Chrome-Tin Stains</a><br /><a title="282" href="https://digitalfire.com/article/282">Formulating a Porcelain</a><br /><a title="188" href="https://digitalfire.com/article/188">Formulating Ash and Native-Material Glazes</a><br /><a title="114" href="https://digitalfire.com/article/114">G1214M Cone 5-7 20x5 glossy transparent glaze</a><br /><a title="121" href="https://digitalfire.com/article/121">G1214W Cone 6 transparent glaze</a><br /><a title="122" href="https://digitalfire.com/article/122">G1214Z Cone 6 matte glaze</a><br /><a title="226" href="https://digitalfire.com/article/226">G1916M Cone 06-04 transparent glaze</a><br /><a title="203" href="https://digitalfire.com/article/203">Getting the Glaze Color You Want: Working With Stains</a><br /><a title="342" href="https://digitalfire.com/article/342">Glaze and Body Pigments and Stains in the Ceramic Tile Industry</a><br /><a title="189" href="https://digitalfire.com/article/189">Glaze Chemistry Basics - Formula, Analysis, Mole%, Unity </a><br /><a title="358" href="https://digitalfire.com/article/358">Glaze chemistry using a frit of approximate analysis</a><br /><a title="123" href="https://digitalfire.com/article/123">Glaze Recipes: Formulate and Make Your Own Instead</a><br /><a title="343" href="https://digitalfire.com/article/343">Glaze Types, Formulation and Application in the Tile Industry</a><br /><a title="181" href="https://digitalfire.com/article/181">Having Your Glaze Tested for Toxic Metal Release</a><br /><a title="364" href="https://digitalfire.com/article/364">High Gloss Glazes</a><br /><a title="384" href="https://digitalfire.com/article/384">Hire Us for a 3D Printing Project</a><br /><a title="136" href="https://digitalfire.com/article/136">How a Material Chemical Analysis is Done</a><br /><a title="235" href="https://digitalfire.com/article/235">How desktop INSIGHT Deals With Unity, LOI and Formula Weight</a><br /><a title="331" href="https://digitalfire.com/article/331">How to Find and Test Your Own Native Clays</a><br /><a title="26" href="https://digitalfire.com/article/26">I have always done it this way!</a><br /><a title="344" href="https://digitalfire.com/article/344">Inkjet Decoration of Ceramic Tiles</a><br /><a title="279" href="https://digitalfire.com/article/279">Is Your Fired Ware Safe?</a><br /><a title="311" href="https://digitalfire.com/article/311">Leaching Cone 6 Glaze Case Study</a><br /><a title="206" href="https://digitalfire.com/article/206">Limit Formulas and Target Formulas</a><br /><a title="133" href="https://digitalfire.com/article/133">Low Budget Testing of Ceramic Glazes</a><br /><a title="333" href="https://digitalfire.com/article/333">Make Your Own Ball Mill Stand</a><br /><a title="347" href="https://digitalfire.com/article/347">Making Glaze Testing Cones</a><br /><a title="341" href="https://digitalfire.com/article/341">Monoporosa or Single Fired Wall Tiles</a><br /><a title="325" href="https://digitalfire.com/article/325">Organic Matter in Clays: Detailed Overview</a><br /><a title="105" href="https://digitalfire.com/article/105">Outdoor Weather Resistant Ceramics</a><br /><a title="27" href="https://digitalfire.com/article/27">Painting Glazes Rather Than Dipping or Spraying</a><br /><a title="212" href="https://digitalfire.com/article/212">Particle Size Distribution of Ceramic Powders</a><br /><a title="339" href="https://digitalfire.com/article/339">Porcelain Tile, Vitrified Tile</a><br /><a title="20" href="https://digitalfire.com/article/20">Rationalizing Conflicting Opinions About Plasticity</a><br /><a title="332" href="https://digitalfire.com/article/332">Ravenscrag Slip is Born</a><br /><a title="247" href="https://digitalfire.com/article/247">Recylcing Scrap Clay</a><br /><a title="101" href="https://digitalfire.com/article/101">Reducing the Firing Temperature of a Glaze From Cone 10 to 6</a><br /><a title="329" href="https://digitalfire.com/article/329">Setting up a Clay Testing Program in Your Company or Studio</a><br /><a title="211" href="https://digitalfire.com/article/211">Simple Physical Testing of Clays</a><br /><a title="350" href="https://digitalfire.com/article/350">Single Fire Glazing</a><br /><a title="326" href="https://digitalfire.com/article/326">Soluble Salts in Minerals: Detailed Overview</a><br /><a title="28" href="https://digitalfire.com/article/28">Some Keys to Dealing With Firing Cracks</a><br /><a title="249" href="https://digitalfire.com/article/249">Stoneware Casting Body Recipes</a><br /><a title="194" href="https://digitalfire.com/article/194">Substituting Cornwall Stone</a><br /><a title="274" href="https://digitalfire.com/article/274">Super-Refined Terra Sigillata</a><br /><a title="340" href="https://digitalfire.com/article/340">The Chemistry, Physics and Manufacturing of Glaze Frits</a><br /><a title="202" href="https://digitalfire.com/article/202">The Effect of Glaze Fit on Fired Ware Strength</a><br /><a title="125" href="https://digitalfire.com/article/125">The Four Levels on Which to View Ceramic Glazes</a><br /><a title="207" href="https://digitalfire.com/article/207">The Majolica Earthenware Process</a><br /><a title="43" href="https://digitalfire.com/article/43">The Potter's Prayer</a><br /><a title="359" href="https://digitalfire.com/article/359">The Right Chemistry for a Cone 6 Magnesia Matte</a><br /><a title="33" href="https://digitalfire.com/article/33">The Trials of Being the Only Technical Person in the Club</a><br /><a title="107" href="https://digitalfire.com/article/107">The Whining Stops Here: A Realistic Look at Clay Bodies</a><br /><a title="134" href="https://digitalfire.com/article/134">Those Unlabelled Bags and Buckets</a><br /><a title="16" href="https://digitalfire.com/article/16">Tiles and Mosaics for Potters</a><br /><a title="308" href="https://digitalfire.com/article/308">Toxicity of Firebricks Used in Ovens</a><br /><a title="379" href="https://digitalfire.com/article/379">Trafficking in Glaze Recipes</a><br /><a title="216" href="https://digitalfire.com/article/216">Understanding Ceramic Materials</a><br /><a title="210" href="https://digitalfire.com/article/210">Understanding Ceramic Oxides</a><br /><a title="130" href="https://digitalfire.com/article/130">Understanding Glaze Slurry Properties</a><br /><a title="213" href="https://digitalfire.com/article/213">Understanding the Deflocculation Process in Slip Casting</a><br /><a title="132" href="https://digitalfire.com/article/132">Understanding the Terra Cotta Slip Casting Recipes In North America</a><br /><a title="198" href="https://digitalfire.com/article/198">Understanding Thermal Expansion in Ceramic Glazes</a><br /><a title="313" href="https://digitalfire.com/article/313">Unwanted Crystallization in a Cone 6 Glaze</a><br /><a title="389" href="https://digitalfire.com/article/389">Using Dextrin, Glycerine and CMC Gum together</a><br /><a title="135" href="https://digitalfire.com/article/135">Volcanic Ash</a><br /><a title="201" href="https://digitalfire.com/article/201">What Determines a Glaze's Firing Temperature?</a><br /><a title="111" href="https://digitalfire.com/article/111">What is a Mole, Checking Out the Mole</a><br /><a title="38" href="https://digitalfire.com/article/38">What is the Glaze Dragon?</a><br /><a title="98" href="https://digitalfire.com/article/98">Where do I start in understanding glazes?</a><br /><a title="215" href="https://digitalfire.com/article/215">Why Textbook Glazes Are So Difficult</a><br /><a title="239" href="https://digitalfire.com/article/239">Working with children</a></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Firing: What Happens to Ceramic Ware in a Firing Kiln</h1>
+<h4 class="text-muted">Description</h4><p class="text-muted font-italic">Understanding more about changes taking place in the ware at each stage of a firing helps tune the curve and atmosphere to produce better ware</p><h4>Article</h4>
+<p>Firing ware in an electronically controlled kiln is not like heating Chinese noodles in a microwave! It is more like baking an angel food cake. It requires awareness of kiln contents, the process, and the objective. The one-schedule-that-fits-all is out; flexibility and sensitivity are in.</p>
+
+<p>As a potter or industry, you are basically making rocks in your kiln; metamorphic rocks. You are changing the form of matter just the way a metamorphic rock has been changed from another by the forces of heat and pressure. At the same time, you are melting glass (the glazes). While the requirements of the glazes are often the big focus in how firings are done, we cannot forget that the kiln contains bodies and glazes. There are physical and chemical things that happen in both during firing. The physical changes can give us headaches, but the magic of the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> makes it all worthwhile.</p>
+
+<h2>The Stages of a Firing</h2>
+
+<h3>Final Drying</h3>
+
+<p>The ware has to dry in preparation for <a  href="https://digitalfire.com/glossary/bisque">bisque</a> (potters do this) or single fire (common in industry). If you don't have a dedicated drier, then you are using your kiln as a drier. If your drier does not exceed the boiling point of water, then you are using your kiln as a drier. If your ware sits in the studio or plant after drying, then its hydroscopic nature results in the absorption of water from the air and once again, your kiln is the final drier. Whatever the case, all water has to come out and even though a piece looks and feels like it is dry, there can still be plenty of water present. If just 2 or 3 percent needs removal, a typical industrial periodic kiln setting could have hundreds of pounds of water that must escape, all of which expands a thousand times when it turns to steam. Needless to say, this makes for a damp atmosphere during this stage and proper ventilation is a must. Many modern driers (and kilns) have fans that impose a virtual hurricane of draft on the ware in the kiln to remove this water efficiently.</p>
+
+<p>Conceptually, fine-grained bodies (containing significant <a  href="https://digitalfire.com/material/106">bentonite</a> or <a  href="https://digitalfire.com/material/80">ball clay</a>) dry slower (some a lot slower). So extra time is required to vent the moisture out during firing, especially if ware is thick. Fire too fast at this early stage and the water within boils, generates steam and just blows the piece apart. Heat just a little slower and only a few chunks will be blown off at sites of thicker cross section. A little slower yet and maybe just a few cracks. Slower yet and you have it right. Slower yet and you have some margin for getting it right on a continual basis. That is what potters do. Remember, we are talking "conceptually". In actual fact, ware can often be fired much faster than most potters do, they normally fire as slow as they do because of a bad experience. But on reflection, the ware that fractured was clearly not dry or was way too thick. Industry has optimized drying and early-stage firing a lot, in fact, they can heat ware through this zone in minutes (compared to hours for potters). Their <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a> are fast driers, ware is of even cross-section and the drafts in kilns heat ware more evenly.</p>
+
+<p>Typically firings do not contain both <a  href="https://digitalfire.com/glossary/once+fire+glazing">once-fire</a> and glazed biscuit ware. But if they do the latter should be dry. Bisque can pick up considerable water during glazing. If this is being driven off during early stages of firing it increases the humidity in the kiln and therefore affects water expulsion in dry ware if the kiln does not have good ventilation.</p>
+
+<p>How do you tell what <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a> is right? Experiment. There are a number of variables that make it very difficult to establish rules. The most important are the weight of the ware, the density of the setting, how dry the clay already is when entering the kiln, the rate at which the water expulsion can occur. Remember that if your ware dries slowly it will require slower firing (some clays dry naturally from plastic in a day, others can require a week). The airflow within your kiln should be able to remove the vapor as it is generated, if the flow is not significant then more time is needed. Electric kilns are notorious for poor airflow, but understandably so (sucking air through them drastically affects efficiency). Gas kilns, on the other hand, have a natural draft that is a part of their combustion process.</p>
+
+<p>Boiling point hold: Conceptually a firing should take ware to near the boiling point and hold it there for a period of time. Potters, for example, might hold a kiln at 200F for hours. However, experience has shown that you can actually hold it at a higher temperature (and thus dwell for a shorter period) without problems. Consider trying 250F, then 275 or 300F. This is especially the case in poor-draft electric kilns, extra temperature is needed to brute-force the water out. A more conservative approach is however needed with large sculptural pieces weighing hundreds of pounds (made from plastic clays). They can require weeks or even months of protected air drying (to assure evenness in the process). A two or three-day firing would be typical, most of this time at the boiling point stage. But <a  href="https://digitalfire.com/glossary/functional">functional</a> industrial ware can be humidity force-dried in special chambers in hours or minutes and fired very quickly. In general, for dry ware and good airflow in the kiln, most things can be brought through this stage in several hours. Ware that is not dry may require much more time. In a worst-case scenario, namely a densely packed electric kiln having no airflow and large pieces that have not been boil-dried, this stage could take 24 hours or more.</p>
+
+<p>Whatever the case, as long as you understand the importance of thoroughly dry ware, air flow in the kiln, clay venting ability, and density of pack, you will be able to adjust matters to encourage success. It is all just common sense and testing.</p>
+
+<h3>The Ceramic Change</h3>
+
+<p> Crystal-bound water has to escape during bisque or single fire. At earlier stages, mechanically bound pore water, that is water between clay and mineral particles, is expelled. However, <a  href="https://digitalfire.com/oxide/h2o">H<sub>2</sub>O</a> is bound right into the clay crystal itself, as well as into other minerals that may be in the <a  href="https://digitalfire.com/glossary/clay+body">clay body</a>. For example, <a  href="https://digitalfire.com/material/925">kaolin</a> loses 10%+ of its weight on firing due to this crystal water. <a  href="https://digitalfire.com/material/173">Calcium carbonate</a> loses 45% of its weight! This “water smoking” phase occurs over a wide range of temperatures that can extend past the red heat stage. Since large quantities of water can be generated, there is ample reason not to push the kiln too fast up to red heat. For the clay body, there is no going back after the changes that occur during this phase, thus the term “the ceramic change”.</p>
+<p>How much of a concern is this? Well, it turns out that it is not nearly as critical as the expulsion of mechanical water which occurs earlier. By the time this stage is in full swing, pores within the body matrix provide a good network of channels through which the steam can be vented. Although shrinkage does not occur during this period, the ware is very fragile; as it lacks particle bonding <a  href="https://digitalfire.com/glossary/mechanism">mechanisms</a> it had in the green stage. For this reason, there is one matter of concern: Proper airflow in the kiln for single-fire ware should vent all escaping steam to prevent any upset in existing glaze-body bonds.</p>
+
+<h3>Quartz Inversions and Conversions</h3>
+
+<p>Crystalline solids are rather temperamental during heating and quartz is no different. Quartz is a <a  href="https://digitalfire.com/glossary/glass+vs.+crystalline">crystalline</a> form of <a  href="https://digitalfire.com/material/1245">silica</a> in that it has a three-dimensional regular pattern of molecular units. These form naturally in nature because lengthy cooling times allow arrangement. Quartz is made of a network of triangular pyramid (tetrahedron) shaped molecules of silicon combined with four oxygens. Unfortunately, the quartz delights in changing the orientation of the tetrahedron-shaped molecules with respect to each other, thus loosening or tightening the whole mass (and thus changing its total size). It exhibits twenty or more personalities called “phases” and these show a remarkable range of <a  href="https://digitalfire.com/glossary/physical+testing">physical properties</a>. A change to another phase is called a “silica conversion”. The most significant phases are quartz, tridymite, crystobalite, and glass. Note that the material does not melt to change phase (except to produce silica glass of course), only an elevated temperature to increase molecular mobility along with the required time is needed. What is more, each of the above crystal phases has two or more forms (alpha and beta, beta one, etc.). Changes which occur between these are reversible, that is, the change that occurs during heat-up is inverted during cool-down (they are thus called “quartz inversions”). These inversions, unfortunately, often have associated, rather sudden, volume changes. We could just melt quartz, cool it quickly, and the resulting glass (irregular arrangements of molecules) could be ground into a powder having very stable firing behavior. This would really make things much simpler. Unfortunately, silica melts at a very high temperature, so this is impossible. So we have to live with the crystalline stuff we have and learn to cooperate with it during the firing process.</p>
+
+<p>Two inversions are important because of their sudden occurrence and the extent of volume change involved. The first is simply called ‘quartz inversion’ and it occurs quite quickly in the 570°C range (1060°F). In this case, the crystal lattice straightens itself out slightly, thus expanding 1% or so. The second is crystobalite inversion at 226°C. This is a little more nasty because it generates a sudden change of 2.5% in volume and it occurs at a temperature within the range of a normal oven. This material has many more forms than quartz, so it is a complex animal to say the least. However, while almost all bodies have some quartz, you won’t have a problem with crystobalite inversion unless there is crystobalite in your body. Crystobalite forms naturally and slowly during cooling from above cone 3. It forms much better if pure crystobalite is added to the body to seed the crystals, or, in the presence of catalysts (e.g. <a  href="https://digitalfire.com/material/1620">talc</a> in <a  href="https://digitalfire.com/glossary/earthenware">earthenware</a> bodies).</p>
+
+<p>As noted already, individual particles of quartz in the body change from alpha to beta form of the quartz phase and back during heat up and cool down. It is important to realize that it is not the whole piece of ware, or even the silica within it, that undergoes the associated volume change. It is the small and even microscopic particles of the quartz that do. This behavior is, of course, dampened by the structure in which they exist. During heat-up, these particles are in a non-glass bound matrix surrounded by other particles and pore space, so there is tolerance for the volume change associated with the inversion. However, during cool-down or subsequent heat-ups their sudden volume changes are not tolerated well by the now solid glassy mass in which they find themselves embedded. In addition the sheer population of quartz particles and their proximity means they can form a skeleton-like structure. Waves of volume change will flow through ware cross sections as temperature gradients move through them.</p>
+
+<p>What does this all mean? It means there is not too much to worry about with <a  href="https://digitalfire.com/glossary/quartz+inversion">quartz inversion</a> in first-fire ware on the way up, or about cool-down for bisque ware. In both cases, the open body is quite tolerant. However, take it easy on second-fire earthenware, very easy on second-fire <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a>, and super easy on second-fire <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a>. Watch for excessive amounts of quartz powder in dense bodies that do not fire to full <a  href="https://digitalfire.com/glossary/vitrification">vitrification</a>. In these, the quartz has not been dissolved by the corrosive action of the fluxes, but remains part of a non-homogenous fired matrix. If possible, use the finest quartz powder available and this will make <a  href="https://digitalfire.com/trouble/dunting+and+cracking+of+clay+bodies+during+firing">dunting</a> (cooling cracks) during firing less of a problem.</p>
+
+<h3>Burnout</h3>
+
+<p>Almost all bodies contain some organic matter that must <a  href="https://digitalfire.com/glossary/decomposition">decompose</a> and then burn at some point to produce carbon gases (the dark color of ball clays, for example, is due to their coal content). As expected, this burning occurs at red heat and beyond. It is of interest in the firing process because proper oxidation and sufficient time are needed to prevent black coring of the body and associated expansion and strength problems. This means you should provide adequate time for this part of the process, namely, at least a few hours with some draft for thicker ware. In addition, glazes or fine slips should not <a  href="https://digitalfire.com/glossary/flux">flux</a> and seal the surface too early as this could result in <a  href="https://digitalfire.com/trouble/bloating">bloating</a> when the last remaining gases encounter blocked escape routes.</p>
+
+<h3>Sintering</h3>
+
+<p>When all the water has been removed from a clay, there is really little left to hold individual particles together other than intimate contact. At some point during heat-up, chemical bonds begin to develop between particles. These processes do not involve melting yet, but a rearrangement of the molecular structure (across the boundaries) does seem to occur as a result of the increased mobility afforded by the rising temperature. This is the <a  href="https://digitalfire.com/glossary/sintering">sintering</a> point of a clay. You can demonstrate this by putting a sample of powdered clay into a kiln, and firing to a temperature necessary to bond the pile of powder into a cohesive and solid lump. The sintering point is normally around red heat. When a body has reached this point, it becomes impervious to water, thus resisting <a  href="https://digitalfire.com/glossary/slaking">slaking</a> (particle disassociation in water). If heated a little higher, ware demonstrates considerable ability to withstand <a  href="https://digitalfire.com/glossary/thermal+shock">thermal shock</a>, a property that is lost to some degree as the glassy phase develops at higher temperatures.</p>
+
+<h3>Decomposition</h3>
+
+<p>“Decomposition” refers to the first stage of oxide rebuilding undertaken by the kiln fires. Although materials like <a  href="https://digitalfire.com/material/310">feldspar</a> and kaolin are put into the kiln, it gradually “deconstructs” these, first into other mineral forms. For example, flat kaolinite crystals transform into needle-like mullite crystals. A combination of the temperature and interactions of the kaolin particles with others makes this happen, and it does so without actual melting (although feldspar is melting around it and catalyzing things). Melting of the feldspar particles accelerates other transformations also. As firing continues all materials in the glaze eventually melt into their basic oxide building blocks. In some cases (e.g. single fire glaze ware), this deconstruction yields gases like sulphur and carbon dioxide. These must escape. This often occurs before glazes melt but also often after, <a  href="https://digitalfire.com/glossary/glaze+bubbles">bubbling</a> up through or out of the molten glaze (e.g. whiting, <a  href="https://digitalfire.com/material/273">dolomite</a> lose up to 40% of their weight during firing). Glazes, especially transparents, can cloud up with <a  href="https://digitalfire.com/glossary/glaze+bubbles">micro-bubbles</a> because of this phenomenon. The situation is worse if the glaze is viscous or has high <a  href="https://digitalfire.com/glossary/surface+tension">surface tension</a>.</p>
+
+<p>Reconstruction of the glaze and body matrix occurs using the pool of <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> (in the the glass-forming from melting particles) and changing mineral particles available. As you might expect, when the temperature begins to drop, either after shut-off or soaking, <a  href="https://digitalfire.com/glossary/decomposition">decomposition</a> stops and recomposition begins. Thus, the most interesting part of the show really begins when the kiln starts cooling (up until that point the stage was just being set). The glaze that forms during normal cooling is a random arrangement of oxide molecules, unlike a crystalline solid which has a regular repeating structure that requires extended cooling time to form. The body that forms is the frozen matrix of interlocking crystalline mineral particles, quartz particles and the melted glass that cements them all together.</p>
+
+<h3>Reduction</h3>
+
+<p>Many potters and a few industries use <a  href="https://digitalfire.com/glossary/reduction+firing">reduction firing</a> to achieve rich iron brown and earth-tone colors and special effects like <a  href="https://digitalfire.com/glossary/copper+red">copper red</a> glazes. Reduction firing is somewhat of a ‘black art’. The basic idea is to supply only enough oxygen in the kiln to burn the fuel. Many people go a step beyond this by doing what they call a “heavy reduction” (supplying even less oxygen and thus introduce unburned carbon from the gas into the developing body and <a  href="https://digitalfire.com/glossary/glaze+chemistry">glaze chemistry</a>). The reduction process denies the iron compounds in the body the oxygen molecules that they would like to have. This forces them into the reduced form, thus producing the desired colors. Many potters begin a body reduction around 1000°C, holding this for a time. Then they move to a neutral atmosphere to bring the kiln up to glaze melting temperature; when they again apply reduction to shape the final iron chemistry of the glaze. Others begin a light reduction at 1000°C and fire this atmosphere right to the final temperature. Some close the firing with a short hold period in oxidation to clear any carbon residue, others do not. Potters, who tend to love the mystery and surprise of each firing, have embraced the technique.</p>
+
+<p>In recent years, oxygen monitoring devices (i.e. Australian Oxytrol Systems at <A href="cof.com.au/aos/default.asp">cof.com.au/aos/default.asp</A>) have become available which enable users to exercise tight control over the kiln atmosphere. Manufacturers provide detailed instructions on what oxygen level to maintain for each glaze type.</p>
+
+<h3>Vitrification</h3>
+
+<p>Earthenware and low-temperature whitewares are not fired to <a  href="https://digitalfire.com/glossary/maturity">maturity</a>, thus they never vitrify completely. This is not to say they lack strength. A body of considerable <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a> and pore space can be remarkably strong by virtue of the glass weld between its particles. Think of vitrification as a process that develops in a clay body during firing. We take it far enough to produce the desired strength and color, but not so far that ware begins to warp excessively. Some applications require better stability in the kiln, others need a more dense product. Thus each person arbitrarily decides what ‘vitrified’ is for himself and his own circumstances. Some bodies vitrify over a wide range of temperatures, others do so over a very narrow range and thus require closer firing control.</p>
+
+<p>Knowledge of this process helps us to see the importance of testing a body at temperatures below and above the actual working temperature, and testing at slower and faster rates of rise. This helps you to see it in the context of the vitrification process and alerts you if your firing is miss-targeted. Soaking the firing takes on much more meaning when you understand that vitrification is a process. The body is composed of quartz mineral and clay crystal particles (and possibly <a  href="https://digitalfire.com/glossary/grog">grog</a> or alumina) which form a physical skeleton around which the flux-containing materials flow and catalyze other changes. As firing proceeds, the silica-hungry fluxes become more active and begin to dissolve the quartz particles and remove silica from the metakaolin (originally the hydrated clay crystal). As this happens, <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a> forms silicates and thus stiffens, needing yet higher temperatures to continue the process. Given these higher temperatures (above 1000°C), the formation of long mullite crystals from the decomposing metakaolin occurs. This rearrangement happens without the melting of the crystal. The higher <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> mineral form produced melts much later, further stabilizing the <a  href="https://digitalfire.com/glossary/vitrification">vitrified</a> mass. On a chemical level, the alumina oxide present acts as somewhat of a chemical skeleton as silica comes into solution, further stabilizing the clay mass. This helps us understand part of the magic of why the piece does not end up lying on the kiln shelf in a heap.</p>
+
+<p>Remember then, the firing is not just the melting of a glass cement to glue together a bunch of microscopic rocks, it is a matter of silica conversions and inversions, mullite development, chemistry development of the melt, silica dissolution, and a multitude of other things. These make it possible to produce fired products having a great variety of physical properties from the same piece of clay by adjusting only the firing schedule. One excellent reference on this complex subject is the Potter’s Dictionary under ‘silica’, ‘mullite’, and ‘crystobalite’.</p>
+
+<h3>Glaze Set</h3>
+
+<p>As the final stages of firing arrive, the glaze reaches its full <a  href="https://digitalfire.com/glossary/viscosity">viscosity</a> and mobility. Unlike the body, it melts fully and often all oxides move about freely in anticipation of arranging themselves in some semblance of preferred order at freezing. During this period, interaction between body and glaze accelerates and an interfacial layer is formed. The chemistry of the glaze and body, and the time available determine how transitionary this layer becomes. Likewise, the fluidity and surface tension of the glaze determine its ability to wet the surface to heal minor bare spots, and its ability to pass gaseous bubbles percolating up through the melt from the ever-shrinking and vitrifying body. During a soak, the glaze has further opportunity to even itself out and develop an optimum <a  href="https://digitalfire.com/glossary/body+glaze+interface">interface</a> with the body. Well, actually, this may not be completely true. In <a  href="https://digitalfire.com/glossary/fast+fire+glazes">fast-fire</a> industrial applications, glazes melt late and smooth out quickly. But in periodic and slower firing, high <a  href="https://digitalfire.com/glossary/borate">boron</a> glazes stay fluid for hundreds of degrees as temperatures drop. With these, it is actually better to down a little (e.g. 100F below top temperature) and hold the temperature there. At this temperature, the glaze is still fluid enough to level out but it is also viscous enough to overcome the surface tension that might be holding any bubbles alive. In addition, during cooling gas generation from decomposing particles in the body has stopped, meaning no new <a  href="https://digitalfire.com/glossary/glaze+bubbles">glaze bubbles</a> are being generated.</p>
+
+
+<h3>Glaze Cool and Freeze</h3>
+
+<p>Cooling is an integral part of the firing process since this is where the actual glass-building occurs. For the body, on the other hand, the building occurs during heat-up, and the beginning of cooling cements this new form of matter. In the simplest possible case, the ware cools, the glaze solidifies as a glass and it is done. However, an element of crystal formation often accompanies cooling. This is especially the case for slower cooling or where the chemistry of the melt encourages the formation of nuclei for crystal growth. The growth actually occurs right around the freezing temperature, which can be much lower than you might think. Some stoneware glazes may take many hundreds of degrees to set and <a  href="https://digitalfire.com/glossary/crystallization">crystallization</a> continues to occur until all molecule mobility is stopped. You should be aware of this process and if undesired crystalization (<a  href="https://digitalfire.com/glossary/crystallization">devitrification</a>) happens, adjust the chemistry of the glaze (i.e. raise alumina) or speed the rate of drop during the critical range.</p>
+
+<p>So the firing process is slightly more complicated than most people think. Admittedly, you can fire a kiln without knowing any of this and you can bake a cake by just setting the oven timer and going shopping.</p><p style="clear:left"></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Put almost-dry ware into a kiln. This happens!</h3>
+<br /><a href="https://digitalfire.com/picture/1296"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/xeddojakeg.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1296">click here</a> to see it.</p>
+<p>An example of what can happen if ware is heated too fast during early stages of firing. This bowl was not quite dry on the base, it is <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12880">M370</a>. Even though the firing proceeded to 220 degrees and soaked for an hour, it was not enough time for the water to escape before the second step in the <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">The perfect storm of high surface tension and high LOI: Blisters.</h3>
+<br /><a href="https://digitalfire.com/picture/889"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/troubleshooting/zuhhesubap.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/889">click here</a> to see it.</p>
+<p>An example of how <a  href="https://digitalfire.com/material/173">calcium carbonate</a> can cause <a  href="https://digitalfire.com/trouble/glaze+blisters">blistering</a> as it decomposes during a fast firing in our electric kiln. This is a <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> <a  href="https://digitalfire.com/glossary/borosilicate">borosilicate</a> glaze with 15% calcium carbonate added (there is no blistering without it). Calcium carbonate has a very high loss on ignition (<a  href="https://digitalfire.com/glossary/loi">LOI</a>), and for this early-melting glaze, the gases of its <a  href="https://digitalfire.com/glossary/decomposition">decomposition</a> are still escaping after melting begins. Another factor is also involved: Although the glaze has good <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a>, bubbles survived till near the end of the firing, resisting rupture (likely because of the high <a  href="https://digitalfire.com/glossary/surface+tension">surface tension</a> of <a  href="https://digitalfire.com/glossary/melt+fluidity">the melt</a>). When the bubbles finally did burst, there was inadequate time for healing to occur.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">LOI horse race with surprising winners</h3>
+<br /><a alt="A chart showing weight-loss vs firing temperature for common ceramic materials" title="A chart showing weight-loss vs firing temperature for common ceramic materials" href="https://digitalfire.com/picture/1114"><img class="flexleft50" title="A chart showing weight-loss vs firing temperature for common ceramic materials"  alt="A chart showing weight-loss vs firing temperature for common ceramic materials"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/r7o6o9pqpg.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1114">click here</a> to see it.</p>
+<p>This chart compares the decompositional off-gassing (% weight Loss on Ignition) behavior of six glaze materials as they are heated through the range 500-1700F. It is amazing how much weight some can lose on firing - for example, 100 grams of <a  href="https://digitalfire.com/material/173">calcium carbonate</a> generates 45 grams of <a  href="https://digitalfire.com/oxide/co2">CO2</a>! This chart is a reminder that some late <a  href="https://digitalfire.com/glossary/loi">gassers</a> overlap early melters. That is a problem. The <a  href="https://digitalfire.com/glossary/loi">LOI</a> of these materials can affect glazes (causing bubbles, <a  href="https://digitalfire.com/trouble/glaze+blisters">blisters</a>, <a  href="https://digitalfire.com/glossary/pinholing">pinholes</a>, <a  href="https://digitalfire.com/trouble/crawling">crawling</a>). <a  href="https://digitalfire.com/material/1620">Talc</a> is an example: It is not finished gassing until 1650F, yet many <a  href="https://digitalfire.com/glossary/frit">fritted</a> glazes have already begun melting by then. Even <a  href="https://digitalfire.com/material/806">Gerstley Borate</a>, a raw material, begins to melt while talc is barely finished gassing. <a  href="https://digitalfire.com/material/273">Dolomite</a> and calcium carbonate Other materials also create gases as they <a  href="https://digitalfire.com/glossary/decomposition">decompose</a> during glaze melting (e.g. clays, carbonates, dioxides).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Micro bubbles in low fire glaze. Why?</h3>
+<br /><a href="https://digitalfire.com/picture/1161"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/kopnuhedeh.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1161">click here</a> to see it.</p>
+<p>Left: <a  href="https://digitalfire.com/recipe/g1916q">G1916Q</a> transparent fired at cone 03 over a black <a  href="https://digitalfire.com/glossary/engobe">engobe</a> (L3685T plus stain) and a kaolin-based <a  href="https://digitalfire.com/glossary/earthenware">low fire</a> <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> (L3685T). The <a  href="https://digitalfire.com/glossary/glaze+bubbles">micro-bubbles</a> are proliferating when the glaze is too thick. Right: A commercial low fire transparent (two coats lower and 3 coats upper). A crystal clear glaze result is needed and it appears that the body is generating gases that cause this problem. Likely the <a  href="https://digitalfire.com/material/925">kaolin</a> is the guilty material, the recipe contains almost 50%. Kaolin has a 12% <a  href="https://digitalfire.com/glossary/loi">LOI</a>. To cut this <a  href="https://digitalfire.com/oxide/loi">LOI</a> it will be necessary to replace some or all of the kaolin with a low carbon <a  href="https://digitalfire.com/material/80">ball clay</a>. This will mean a loss in whiteness. Another solution would be diluting the kaolin with <a  href="https://digitalfire.com/material/310">feldspar</a> and adding more <a  href="https://digitalfire.com/material/106">bentonite</a> to make up for lost <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Cone 2: Where we see the real difference between terra cottas and white bodies</h3>
+<br /><a href="https://digitalfire.com/picture/928"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/glossary/bywmobikyt.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/928">click here</a> to see it.</p>
+<p>The <a  href="https://digitalfire.com/glossary/terra+cotta">terra cotta</a> (red <a  href="https://digitalfire.com/glossary/earthenware">earthenware</a>) body on the upper left is melting, it is way past zero <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a>, past <a  href="https://digitalfire.com/glossary/vitrification">vitrified</a>. The red one below it and third one down on the right have 1% porosity (like a <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a>), they are still fairly stable at cone 2. The two at the bottom have higher iron contents and are also 1% porosity. By contrast the buff and white bodies have 10%+ porosities. Terra cotta bodies do not just have high iron content to fire them red, they also have high <a  href="https://digitalfire.com/glossary/flux">flux</a> content (e.g. sodium and potassium bearing minerals) that vitrifies them at low temperatures. White burning bodies are white because they are more pure (not only lacking the iron but also the fluxes). The upper right? Barnard slip. It has really high iron but has less fluxes than the terra cottas (having about 3% porosity).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">The difference between vitrified and sintered</h3>
+<br /><a href="https://digitalfire.com/picture/1510"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/gevbihifok.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1510">click here</a> to see it.</p>
+<p>The top fired bar is a <a  href="https://digitalfire.com/glossary/translucency">translucent</a> <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> (made from <a  href="https://digitalfire.com/material/925">kaolin</a>, <a  href="https://digitalfire.com/material/1245">silica</a> and <a  href="https://digitalfire.com/material/310">feldspar</a>). It has zero <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a> and is very hard and strong at room temperature (because fibrous mullite crystals have developed around the quartz and kaolinite grains and feldspar silicate glass has flowed within to cement the matrix together securely). That is what <a  href="https://digitalfire.com/glossary/vitrification">vitrified</a> means. But it has a high <a  href="https://digitalfire.com/glossary/firing+shrinkage">fired shrinkage</a>, poor <a  href="https://digitalfire.com/glossary/thermal+shock">thermal shock</a> resistance and little stability at above red-heat temperatures. The bar below is zirconium silicate plus 3% binder (VeeGum), all that cements <a  href="https://digitalfire.com/material/1722">zircon</a> <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a> together is sinter-bonds between closely packed particles (there is some glass development from the Veegum here). Yet it is surprisingly strong, it cannot be scratched with metal. It has low fired shrinkage, low <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> and maintains its strength and hardness at very high temperatures.<br />
+</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Devitrification of a transparent glaze</h3>
+<br /><a href="https://digitalfire.com/picture/1776"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/wowhepepup.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1776">click here</a> to see it.</p>
+<p>This glaze consists of micro fine <a  href="https://digitalfire.com/material/1245">silica</a>, <a  href="https://digitalfire.com/glossary/calcination">calcined</a> <a  href="https://digitalfire.com/material/291">EP kaolin</a>, Ferro <a  href="https://digitalfire.com/material/369">Frit 3249</a> <a  href="https://digitalfire.com/oxide/mgo">MgO</a> <a  href="https://digitalfire.com/glossary/frit">frit</a>, and Ferro <a  href="https://digitalfire.com/material/351">Frit 3134</a>. It has been <a  href="https://digitalfire.com/glossary/ball+milling">ball milled</a> for 1, 3, and 6 hours with these same results. Notice the <a  href="https://digitalfire.com/glossary/crystallization">crystallization</a> that is occurring. This is likely a product of the MgO in the Frit 3249. This high <a  href="https://digitalfire.com/glossary/boron+frit">boron frit</a> introduces it in a far more mobile and fluid state than would <a  href="https://digitalfire.com/material/1620">talc</a> or <a  href="https://digitalfire.com/material/273">dolomite</a> and MgO is a matting agent (by virtue of the micro crystallization it can produce). The <a  href="https://digitalfire.com/glossary/fluid+melt+glazes">fluid melt</a> and the fine silica further enhance the effect.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="https://digitalfire.com/project/temperatures">Temperatures</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="https://digitalfire.com/project/troubles">Troubles</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/cristobalite+inversion">Cristobalite Inversion</a>
+<br /><i>In <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>, <a  href="https://digitalfire.com/glossary/cristobalite">cristobalite</a> is a form (polymorph) of <a  href="https://digitalfire.com/material/1245">silica</a>. During firing quartz particles in <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> can convert to cristobalite. This has implications on the <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> of the fired matrix.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/quartz+inversion">Quartz Inversion</a>
+<br /><i>In <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>, this refers to the sudden volume change in <a  href="https://digitalfire.com/glossary/glass+vs.+crystalline">crystalline</a> quartz particles experience as they pass up and down a temperature window centering on 573C.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/water+smoking">Water Smoking</a>
+<br /><i>In <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>, this is the period in the <a  href="https://digitalfire.com/glossary/kiln+firing">kiln firing</a> where the final mechanical water is being removed. The temperature at which this can be done is higher than you might think.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/firing+schedule">Firing Schedule</a>
+<br /><i>Designing a good kiln <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedule</a> for your ware is a very important, and often overlooked factor for obtained successful firings.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/loi">LOI</a>
+<br /><i>Loss on Ignition is a number that appears on the data sheets of ceramic materials. It refers to the amount of weight the material loses as it decomposes to release water vapor and various gases during firing.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/reduction+firing">Reduction Firing</a>
+<br /><i>A method of firing <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> where the kiln air intakes and burners are set to restrict or eliminate oxygen in the kiln such that metallic <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> convert to their reduced metallic state.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/electric+hobby+kilns%3a+what+you+need+to+know">Electric Hobby Kilns: What You Need to Know</a>
+<br /><i>Electric hobby kilns are certainly not up to the quality and capability of small industrial electric kilns, being aware of the limitations and keeping them in good repair is very important.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Troubles</td>
+<td>
+<a href="https://digitalfire.com/trouble/warping">Warping</a>
+<br /><i>There are multiple reasons why pottery and <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> pieces can warp during firing, both <a  href="https://digitalfire.com/glossary/vitreous">vitreous</a> and non-vitreous ware. Here is what to do about it.</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

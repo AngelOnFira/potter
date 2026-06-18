@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link color="#000000" href="/mask-icon.svg" rel="mask-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<title>Grolleg Kaolin</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet"/>
+<meta content="Tony Hansen" name="author"/>
+<meta content="A white burning kaolin from the UK, commonly used in porcelain bodies and as a glaze suspender. Sticky when wet, low plasticity." name="description"/>
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+<meta content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" name="google-site-verification"/>
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81"/>
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years. It has been a wild ride for a shy prairie boy, thanks to everyone for your support.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="https://digitalfire.com/home" name="pagetop"><img alt="" height="40" src="../media/images/ReferenceLibrary.svg"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="https://digitalfire.com/home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../oxide/list.html">Oxides</a></li>
+<li class="nav-item active"><a class="nav-link" href="list.html">Materials <span class="sr-only">(current)</span></a></li>
+<li class="nav-item"><a class="nav-link" href="../recipe/list.html">Recipes</a></li>
+<li class="nav-item"><a class="nav-link" href="../glossary/list.html">Glossary</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">Others</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="../article/list.html">Articles</a>
+<a class="dropdown-item" href="../hazard/list.html">Hazards</a>
+<a class="dropdown-item" href="../mineral/list.html">Minerals</a>
+<a class="dropdown-item" href="../property/list.html">Properties</a>
+<a class="dropdown-item" href="../schedule/list.html">Firing Schedules</a>
+<a class="dropdown-item" href="../temperature/list.html">Temperatures</a>
+<a class="dropdown-item" href="../trouble/list.html">Troubles</a>
+<a class="dropdown-item" href="../test/list.html">Tests</a>
+<a class="dropdown-item" href="../video/list.html">Media</a>
+<a class="dropdown-item" href="../picture/list.html">Pictures</a>
+<a class="dropdown-item" href="https://digitalfire.com/typecode/list">Typecodes</a>
+<a class="dropdown-item" href="../project/list.html">Projects</a>
+<a class="dropdown-item" href="https://digitalfire.com/consultants/list">Consultants</a>
+<a class="dropdown-item" href="https://digitalfire.com/schools/list">Schools</a>
+<a class="dropdown-item" href="https://digitalfire.com/stores/list">Stores</a>
+<a class="dropdown-item" href="https://digitalfire.com/potterytony/list">Don't Buy-A-Mug</a>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="../home.html">https://digitalfire.com</a>
+<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+<a class="dropdown-item" href="../home.html">Sign-Up</a>
+</div>
+</li>
+</ul>
+<form accept-charset="UTF-8" action="https://digitalfire.com/index.php?searcharea=material" class="form-inline my-2 my-lg-0" method="post">
+<input aria-label="Search" autocapitalize="off" autocorrect="off" class="form-control mr-sm-2" maxlength="20" name="searchfor" placeholder="Search" title="Search from home to search in all areas" type="search" value=""/><button class="btn btn-outline-success my-2 my-sm-0" name="searchbutton" type="submit">Search</button>
+</form>
+</div>
+</nav>
+<div class="container">
+<ul class="nav nav-tabs pt-1" id="myTab" role="tablist">
+<li class="nav-item">
+<a aria-controls="material" aria-selected="true" class="nav-link active" data-toggle="tab" href="#material" id="material-tab" role="tab">Materials for Ceramics</a>
+</li>
+</ul>
+<div class="tab-content mb-3" id="myTabContent" style="border-right:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #ddd; padding:10px;">
+<div aria-labelledby="material-tab" class="tab-pane fade show active" id="material" role="tabpanel">
+<a href="list_1-9.html">1-9</a> | <a href="list_A.html">A</a> | <a href="list_B.html">B</a> | <a href="list_C.html">C</a> | <a href="list_D.html">D</a> | <a href="list_E.html">E</a> | <a href="list_F.html">F</a> | <a href="list_Frits.html">Frits</a> | <a href="list_G.html">G</a> | <a href="list_H.html">H</a> | <a href="list_I.html">I</a> | <a href="list_J.html">J</a> | <a href="list_K.html">K</a> | <a href="list_L.html">L</a> | <a href="list_M.html">M</a> | <a href="list_N.html">N</a> | <a href="list_O.html">O</a> | <a href="list_P.html">P</a> | <a href="list_Q.html">Q</a> | <a href="list_R.html">R</a> | <a href="list_S.html">S</a> | <a href="list_T.html">T</a> | <a href="list_U.html">U</a> | <a href="list_V.html">V</a> | <a href="list_W.html">W</a> | <a href="list_X.html">X</a> | <a href="list_Y.html">Y</a> | <a href="list_Z.html">Z</a><br/>
+<nobr></nobr>
+</div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Grolleg Kaolin</h1>
+<p><b>Alternate Names</b>: Grolleg China Clay</p>
+<p><b>Description</b>: Fine White Burning English Kaolin, English China Clay</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/oxide.html">Oxide</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/analysis.html">Analysis</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Formula</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="../glossary/formula.html">Tolerance</a></th>
+</tr></thead><tbody>
+<tr><td class="label"><a href="../oxide/cao.html">CaO</a></td>
+<td class="text-right">0.10%</td>
+<td class="text-right">
+-
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/k2o.html">K2O</a></td>
+<td class="text-right">1.90%</td>
+<td class="text-right">
+0.06
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/mgo.html">MgO</a></td>
+<td class="text-right">0.30%</td>
+<td class="text-right">
+0.02
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/na2o.html">Na2O</a></td>
+<td class="text-right">0.10%</td>
+<td class="text-right">
+-
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/tio2.html">TiO2</a></td>
+<td class="text-right">0.03%</td>
+<td class="text-right">
+-
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/al2o3.html">Al2O3</a></td>
+<td class="text-right">37.00%</td>
+<td class="text-right">
+1.00
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/sio2.html">SiO2</a></td>
+<td class="text-right">48.00%</td>
+<td class="text-right">
+2.20
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/fe2o3.html">Fe2O3</a></td>
+<td class="text-right">0.70%</td>
+<td class="text-right">
+0.01
+</td><td class="text-right">
+</td></tr>
+<tr><td class="label"><a href="../oxide/loi.html">LOI</a></td>
+<td class="text-right">12.01%</td><td class="text-right">n/a</td></tr>
+<tr><td colspan="2">Oxide Weight</td><td class="text-right" colspan="2">
+242.95
+</td></tr>
+<tr><td class="text-right" colspan="2"><a href="../glossary/formula+weight.html">Formula Weight</a></td><td colspan="2" style="text-align:right">
+276.11
+</td></tr>
+</tbody></table>
+<h4>Notes</h4><p>A blended English china clay, combining moderate <a href="../glossary/plasticity.html">plasticity</a>, low titania content and relatively high <a href="../glossary/flux.html">flux</a> content, low shrinkage and blue-white fired color. The low <a href="../oxide/tio2.html">TiO2</a> content is a key factor for the usefulness of <a href="831.html">Grolleg</a>. It is excellent for making <a href="../glossary/translucency.html">translucent</a> <a href="../glossary/throwing.html">throwing</a> or casting porcelains. The pottery community uses many Grolleg based porcelains.<br/>
+<br/>
+Its <a href="../glossary/glaze+chemistry.html">chemistry</a> is different from a typical North American <a href="925.html">kaolin</a>, it contains some fluxing <a href="../glossary/ceramic+oxide.html">oxides</a> (e.g. it has almost 2% <a href="../oxide/k2o.html">K<sub>2</sub>O</a>). Thus <a href="../glossary/porcelain.html">porcelain</a> bodies employing it require quite less <a href="310.html">feldspar</a> to vitrify (5-10% at cone 10, for example).<br/>
+<br/>
+For use in plastic porcelains there is a dilemma that body formulators face: This material has a lower plasticity than American materials like <a href="291.html">EPK</a> and much lower than #6 Tile and Sapphire kaolins. Thus porcelain bodies employing it require additions of a <a href="../glossary/plasticity.html">plasticizer</a> like <a href="106.html">bentonite</a> (up to 5% to get high plasticity). Since raw bentonites having the necessary plasticity are also exceptionally high in iron, people must balance the advantages of using a white burning and more costly material like Grolleg against the lower plasticity that makes the addition of dirty plasticizers necessary. Theoretically making translucent bodies employing 5% bentonite having 5% iron content should only increase iron in the body by 0.25%. This does not sound like much, but it is. Bodies having 0.1% iron burn much whiter than those having 0.2%. Thus either lower plasticity should be tolerated or white plasticizers (like VeeGum or Bentone) should be used.<br/>
+<br/>
+Glazes: While the chemistry difference between this and more typical kaolins is certainly worth noting for bodies, it is still likely close enough to the theoretical 1:2 alumina:silica to be substituted in recipes that call for kaolin or china clay. Grolleg may also be preferred because the titania in other kaolins can be detrimental to the development of a color (e.g. <a href="1644.html">titanium</a> can turn celadons to a greenish tint). <a href="../glossary/transparent+glazes.html">Transparent glazes</a> employing Grolleg as-the-kaolin used over Grolleg-based porcelains can produce very white and even blue-white color in <a href="../glossary/reduction+firing.html">reduction firing</a>. Another factor making this material an excellent glaze suspender is its inherent stickiness, which is exhibited to a degree much in excess of its actual plasticity. This property also makes for great hardening and <a href="../glossary/glaze+durability.html">durability</a> of the dried glaze layer. <a href="2145.html">New Zealand kaolin</a> has similar properties are can normally be substituted for Grolleg.<br/>
+<br/>
+As far as commonly available materials in North America, Grolleg competes against New Zealand Halloysite where the whitest possible result is desired.<br/>
+<br/>
+Modulus of Rupture, Kgf/cm2<br/>
+  At 80% Relative Humidity: 10.0<br/>
+  Dried at 110C: 25.7<br/>
+<br/>
+Casting Rate @ 63% solids (mm2/min): 0.8<br/>
+% P84 Deflocculant Required for 5 Poise Slip: 0.65<br/>
+<br/>
+                   1180C  1280C  1410C<br/>
+Brightness:         86     86     75</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">A Grolleg based porcelain vs. a ball clay and American kaolin porcelain</h3>
+<br/><a href="../picture/701.html"><img class="flexleft50" loading="lazy" src="../media/images/vufsotuhaz.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/701.html">click here</a> to see it.</p>
+<p>These mugs were fired in the same kiln load at <a href="../glossary/reduction+firing.html">cone 10R</a> and have the same clear glaze, <a href="../recipe/g1947u.html">G1947U</a>. The mug on the left is a <a href="831.html">Grolleg</a> <a href="925.html">kaolin</a> (52% Grolleg kaolin, 24% <a href="1245.html">silica</a> and 19% <a href="3236.html">Mahavir</a> <a href="310.html">feldspar</a>, 5% <a href="106.html">bentonite</a>). The one on the right is 15% M23 <a href="80.html">ball clay</a>, 40% #6 Tile kaolin, 15% Nepheline, 25% silica, 3% bentonite. Clearly, the Grolleg <a href="../glossary/porcelain.html">porcelain</a> fires so much whiter.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">EPK fired bar (top) vs Grolleg kaolin at cone 10R. Why shrinking more?</h3>
+<br/><a href="../picture/1819.html"><img class="flexleft50" loading="lazy" src="../media/images/ngjk9peqir.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1819.html">click here</a> to see it.</p>
+<p>From these <a href="../test/shab.html">SHAB test</a> bars <a href="291.html">EP kaolin</a> appears to have a much higher <a href="../glossary/firing+shrinkage.html">fired shrinkage</a>. But half of that happened during drying. Still, <a href="291.html">EPK</a> shrinks 4% more during firing. Yet <a href="831.html">Grolleg</a> produces more <a href="../glossary/vitrification.html">vitrified</a> porcelains. The EPK bar also appears to be whiter. Yet in a <a href="../glossary/porcelain.html">porcelain</a> body, Grolleg fires whiter. That higher <a href="../glossary/drying+shrinkage.html">drying shrinkage</a> proves that EPK is much more plastic, right? Not really. <a href="../glossary/throwing.html">Throwing</a> porcelains containing either require <a href="../glossary/plasticity.html">plasticity</a> augmentation using similar percentages of <a href="106.html">bentonite</a>. What do we learn? To compare materials like this we need to see them "playing on the team", in a recipe working with other materials. Don't rely on material data sheets, do the testing in your recipes.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Zero4 porcelain mugs using New Zealand and Grolleg Kaolins</h3>
+<br/><a alt="Zero4 porcelain mugs" href="../picture/2944.html"><img alt="Zero4 porcelain mugs" class="flexleft50" loading="lazy" src="../media/images/71wemecepw.jpeg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2944.html">click here</a> to see it.</p>
+<p>Both of these <a href="../glossary/zero4.html">Zero4 fritware</a> <a href="../glossary/porcelain.html">porcelain</a> mugs were <a href="../glossary/bisque.html">bisque fired</a> at 1450F and glaze fired at <a href="../glossary/low+temperature+glaze.html">cone 04</a>. The <a href="831.html">Grolleg</a> version of the porcelain is burning a much pinker color (both the bare body and under our <a href="https://insight-live.com/insight/share.php?z=7LuGR4KXJn">G1916Q3</a> glaze). In typical <a href="310.html">feldspar</a> porcelains the color difference between these two kaolins is not nearly so much but here the extra glass development is likely amplifying the presence of even just a little more <a href="874.html">iron oxide</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Does Grolleg whiten a glaze the same as it does a body?</h3>
+<br/><a href="../picture/810.html"><img class="flexleft50" loading="lazy" src="../media/images/xitvidifuw.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/810.html">click here</a> to see it.</p>
+<p>Yes. The two specimens are both the same Grolleg-based porcelains. Both of them are glazed with the same glaze: 1947U transparent. But the glaze on the left is using <a href="291.html">EP Kaolin</a> and the one on the right <a href="831.html">Grolleg</a> <a href="925.html">kaolin</a>. The Grolleg glaze is dramatically better, the color has a bluish cast that is more attractive. The Grolleg does not suspend the <a href="../glossary/slurry.html">slurry</a> as well, however it responds well to gelling (using vinegar, for example) more than compensating to create an easy-to-use <a href="../glossary/suspension.html">suspension</a>.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Do not rely on material data sheets, do the testing</h3>
+<br/><a href="../picture/1477.html"><img class="flexleft50" loading="lazy" src="../media/images/fyckexaxaf.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1477.html">click here</a> to see it.</p>
+<p>The <a href="../glossary/cone+6.html">cone 6</a> <a href="../glossary/porcelain.html">porcelain</a> on the left uses <a href="831.html">Grolleg</a> <a href="925.html">kaolin</a>, the right uses <a href="1641.html">Tile #6 kaolin</a>. The Grolleg body needs 5-10% less <a href="310.html">feldspar</a> to vitrify it to zero <a href="../glossary/clay+body+porosity.html">porosity</a>. It thus contains more kaolin, yet it fires significantly whiter. Theoretically this seems simple. Tile #6 contains alot more iron than Grolleg. Wrong! According to the data sheets, Grolleg has the more iron of the two. Why does it always fire whiter? I actually do not know. But the point is, do not rely totally on numbers on data sheets, do the testing yourself.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">How much feldspar should be used in a Grolleg porcelain?</h3>
+<br/><a alt="Sunlight compares the translucency of two porcelain mugs" href="../picture/2264.html"><img alt="Sunlight compares the translucency of two porcelain mugs" class="flexleft50" loading="lazy" src="../media/images/9fykyfigjc.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2264.html">click here</a> to see it.</p>
+<p>These are <a href="../glossary/reduction+firing.html">cone 10R</a> porcelains made using <a href="831.html">Grolleg</a> <a href="925.html">kaolin</a>, <a href="310.html">feldspar</a> and <a href="1245.html">silica</a>. <a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12893">P700</a> (left) has 20% G200 Feldspar. Coleman <a href="../glossary/porcelain.html">porcelain</a> (popular among potters in the US) has 30% of the same feldspar. The Coleman porcelain is certainly more <a href="../glossary/vitreous.html">vitreous</a>. In fact, it is too vitreous. It is much more likely to warp during firing. And, it is much more problematic with regard to <a href="../glossary/plucking.html">plucking</a> (lower left), foot rings glue to even kiln-washed shelves. But, notice that the Coleman porcelain is not any more <a href="../glossary/translucency.html">translucent</a> than <a href="https://plainsmanclays.ca/data/index.php?product=12893">P700</a> (it appears less so because I could not throw it as thin). So why is 30% feldspar even used? I have a theory: American kaolins do require 30% feldspar to vitrify at cone 10, but not Grolleg. it contains significant natural feldspar, so much so that far less feldspar is needed in the recipe. I think that, in the past, Grolleg was simply substituted for an American kaolin a standard recipe. P700 benefits in a special way by recognizing this different in Grolleg: It dedicates the 10% gain to kaolin, increasing body <a href="../glossary/plasticity.html">plasticity</a>. On top of that it adds <a href="106.html">bentonite</a>, producing a porcelain whose high plasticity would come as a shock to people used to the Coleman body.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Ball clay vs. Kaolin porcelain at cone 6</h3>
+<br/><a href="../picture/1520.html"><img class="flexleft50" loading="lazy" src="../media/images/paskalyzip.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1520.html">click here</a> to see it.</p>
+<p>Left: A <a href="../glossary/porcelain.html">porcelain</a> that is plasticized using only ball clays (Spinx Gleason and Old Hickory #5). Right: Only <a href="925.html">kaolin</a> (in this case <a href="831.html">Grolleg</a>). Kaolins are much less plastic so <a href="106.html">bentonite</a> (e.g. 2-5%) is typically needed to get good <a href="../glossary/plasticity.html">plasticity</a>. The color can be alot whiter using a clean kaolin, but there are down sides. Kaolins have double the <a href="../glossary/loi.html">LOI</a> of ball clays, so there are more gasses that potentially need to bubble up through the glaze (<a href="80.html">ball clay</a> porcelains can produce brilliantly glassy and clean results in <a href="../glossary/transparent+glazes.html">transparent glazes</a> even at fast fire, while pure kaolins can produce tiny dimples in the glaze surface if firings are not soaked long enough). Kaolins plasticized by bentonite often do not dry as well as ball clays even though the <a href="../glossary/drying+shrinkage.html">drying shrinkage</a> is usually less. Strangely, even though ball clays are so much harder and stronger in the dry state, a porcelain made using only ball clays often still needs some bentonite. If you do not need the very whitest result, it seems that a hibrid using both is still the best general purpose, low cost answer.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Grolleg vs New Zealand - Which kaolin is better for translucency?</h3>
+<br/><a alt="Two translucent mugs" href="../picture/2823.html"><img alt="Two translucent mugs" class="flexleft50" loading="lazy" src="../media/images/pqj1bws7o2.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2823.html">click here</a> to see it.</p>
+<p>The <a href="2145.html">NZK</a> body, <a href="https://plainsmanclays.ca/data/index.php?product=12881">Polar Ice</a>, is on the left. The <a href="831.html">Grolleg</a> one, <a href="https://insight-live.com/insight/share.php?z=rEgF5sd2dk">L3778D</a>, is on the right. They are not the same recipe, the <a href="310.html">feldspar</a> content in the <a href="https://insight-live.com/insight/share.php?z=rEgF5sd2dk">L3778D</a> has been adjusted to match the degree of <a href="../glossary/vitrification.html">vitrification</a> (Grolleg contains some feldspar). Clearly, the NZK has better <a href="../glossary/translucency.html">translucency</a>. And it fires whiter. </p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Reduction and oxidation porcelains</h3>
+<br/><a href="../picture/1156.html"><img class="flexleft50" loading="lazy" src="../media/images/sopsygugic.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/1156.html">click here</a> to see it.</p>
+<p>Left: <a href="../glossary/reduction+firing.html">Cone 10R</a> (reduction) <a href="../glossary/plainsman+clays.html">Plainsman</a> <a href="https://plainsmanclays.ca/data/index.php?product=12893">P700</a> <a href="../glossary/porcelain.html">porcelain</a> (made using <a href="831.html">Grolleg</a> and G200 <a href="310.html">Feldspar</a>). Right: Plainsman <a href="../glossary/cone+6.html">Cone 6</a> Plainsman <a href="https://plainsmanclays.ca/data/index.php?product=12881">Polar Ice</a> porcelain (made using <a href="2145.html">New Zealand kaolin</a> and <a href="1070.html">Nepheline Syenite</a>). Both are zero <a href="../glossary/clay+body+porosity.html">porosity</a>. The <a href="https://plainsmanclays.ca/data/index.php?product=12881">Polar Ice</a> is very <a href="../glossary/translucency.html">translucent</a>, the <a href="https://plainsmanclays.ca/data/index.php?product=12893">P700</a> much less. The blue coloration of the P700 is mostly a product of the <a href="../glossary/suspension.html">suspended</a> <a href="../glossary/glaze+bubbles.html">micro-bubbles</a> in the feldspar clear glaze (<a href="../recipe/g1947u.html">G1947U</a>). The cone 6 glaze is <a href="../glossary/frit.html">fritted</a> and much more transparent, but it could be stained to match the blue. These are high quality combinations of glaze and body.</p>
+<p style="clear:left"></p>
+<h3 style="margin-top:30px;">Why mid-fire Grolleg porcelain is ideal for both throwing and casting</h3>
+<br/><a alt="Two purple-outside, white inside thrown Grolleg cone 6 porcelain mugs" href="../picture/2527.html" title="The glaze has 10% Mason 6304 purple stain and 2% zircopax to prevent bubbling"><img alt="Two purple-outside, white inside thrown Grolleg cone 6 porcelain mugs" class="flexleft50" loading="lazy" src="../media/images/hc1djh1tms.jpg" title="The glaze has 10% Mason 6304 purple stain and 2% zircopax to prevent bubbling"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/2527.html">click here</a> to see it.</p>
+<p>The very whitest porcelains are made from <a href="2145.html">New Zealand kaolin</a>. However, while <a href="831.html">Grolleg</a> <a href="925.html">kaolin</a> does not fire quite as white, it requires up to 10% less <a href="310.html">feldspar</a> to produce a <a href="../glossary/vitreous.html">vitreous</a> <a href="../glossary/porcelain.html">porcelain</a> (it contains natural feldspar). That 10% less spar can be made up in kaolin, imparting better workability and dry strength to the body (and Grolleg is known for its dry strength). Assuming that 25% <a href="1245.html">silica</a> is needed for <a href="../glossary/glaze+fit.html">glaze fit</a>, one only needs to discover what blend of feldspar and kaolin in the remaining 75% achieves the desired degree of <a href="../glossary/vitrification.html">vitrification</a> (e.g. we like zero <a href="../glossary/clay+body+porosity.html">porosity</a> just-reached at <a href="../glossary/cone+6.html">cone 6</a>). We found 25% nepheline was too vitreous (pieces warped) and at 20% porosity was not yet zero. While the Grolleg version fires a little darker, the better workability imparted by the extra kaolin makes up for that. The <a href="../glossary/plasticity.html">plasticity</a> needed for good <a href="../glossary/throwing.html">throwing</a> requires the addition of <a href="106.html">bentonite</a> (4% for <a href="2145.html">NZK</a> and 3% for Grolleg). Both of these can be made into <a href="../glossary/casting+slip.html">casting bodies</a> by reducing the amount of bentonite (~ 1% for NZK, 0.5% for Grolleg). Do your testing to discover the % of bentonite needed for the <a href="../glossary/leather+hard.html">leather hard</a> to pull away from a mold without cracking but not take too long to cast.</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">What made EP Kaolin unique? 
+</h3>
+<h4 style="color:#888888; margin-top:0px;">What can be substituted?</h4>
+<br/><a alt="EPK kaolin slurry gels" href="../picture/3336.html"><img alt="EPK kaolin slurry gels" class="flexleft50" loading="lazy" src="../media/images/bpqqht8fdq.jpg"/></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="../picture/3336.html">click here</a> to see it.</p>
+<p>In <a href="../glossary/ceramics.html">ceramics</a>, <a href="291.html">EPK</a>, or <a href="291.html">EP Kaolin</a>, is used in <a href="../glossary/clay+body.html">clay bodies</a> and glazes. EPK feels fairly plastic on <a href="../glossary/kneading+clay.html">wedging</a>. But it splits like this during <a href="../glossary/throwing.html">throwing</a> (top right). It needs the help of <a href="106.html">bentonite</a> or <a href="80.html">ball clay</a> to be usable in <a href="../glossary/porcelain.html">porcelain</a> or <a href="../glossary/stoneware.html">stoneware</a> bodies. <a href="1641.html">Tile #6 kaolin</a> is thus a much better choice for <a href="../glossary/plasticity.html">plasticity</a> (although higher in iron and titania).<br/>
+<br/>
+But EPK shines in glazes. A <a href="../glossary/slurry.html">slurry</a> of pure EPK (bottom), mixed to only 1.15 <a href="../glossary/specific+gravity.html">specific gravity</a>, holds this spatula upright! Glazes employing as little as 20% EPK, without added electrolytes, are naturally <a href="../glossary/thixotropy.html">thixotropic</a>. And its sticky nature helps with adherence and dry hardness. Consider the <a href="../glossary/engobe.html">engobe</a> employing it (top left). It gels and clings to this rubber spatula in an even layer, with no drips. If <a href="../glossary/leather+hard.html">leather-hard</a> ware is carefully dipped and extracted, it stays put (even if it takes hours to dry). The performance of EPK <a href="../glossary/suspension.html">suspending</a> glazes for use on <a href="../glossary/bisque.html">bisque</a> is even better.<br/>
+<br/>
+Are there other sticky kaolins that gel? Yes. <a href="831.html">Grolleg</a> and <a href="2145.html">New Zealand kaolin</a>. What if you cannot get either? Tile #6 is a good choice because it dries hard. But, it may need the help of <a href="292.html">Epsom Salts</a> to produce a slurry having <a href="../glossary/thixotropy.html">thixotropy</a> like EPK.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="../mineral/mica.html">Mica</a>
+<br/><i>See Muscovite.
+</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="../mineral/kaolinite.html">Kaolinite</a>
+<br/><i>The most fundamental clay mineral. This mineral is found in nature in its purest form as <a href="925.html">kaolin</a>. How</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="standard+porcelain+kaolin.html">Standard Porcelain Kaolin</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="super+standard+porcelain.html">Super Standard Porcelain</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="nsc+kaolin.html">NSC Kaolin</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="remblend+kaolin.html">Remblend Kaolin</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="treviscoe+kaolin.html">Treviscoe Kaolin</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="kaolin.html">Kaolin</a>
+<br/><i>The purest of all clays in nature. Kaolins are used in porcelains and stonewares to impart whiteness, in glazes to supply <a href="../oxide/al2o3.html">Al2O3</a> and to suspend slurries.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="new+zealand+halloysite.html">New Zealand Halloysite</a>
+<br/><i>The whitest burning <a href="925.html">kaolin</a> we have ever seen. It is very sticky when wet, suspends glazes well &amp; makes super white <a href="../glossary/porcelain.html">porcelain</a> (with help from a white <a href="106.html">bentonite</a>).</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="kaopearl+cnl30+kaolin.html">KaoPearl CNL30 Kaolin</a>
+<br/><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/kao">Kaolin</a>
+<br/><i>Pure clay mineral, there are many brand names of varying purity and iron content.</i>
+</td>
+</tr>
+</tbody></table>
+<h3>Data</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<th scope="row">Firing Shrinkage</th>
+<td>1180C  0%
+1280C  14%
+1410C  18%</td>
+</tr>
+<tr>
+<th scope="row"><a href="../test/14.html">Frit Softening Point</a></th>
+<td>3000F</td>
+</tr>
+<tr>
+<th scope="row">Ultimate Particle Size Distribution</th>
+<td>&gt;53 microns .05 max
+&gt;10 microns 10
+&lt;2 microns  57</td>
+</tr>
+<tr>
+<th scope="row">Water absorption</th>
+<td>1180C  14%
+1280C  6%
+1410C  0.5%</td>
+</tr>
+</tbody></table>
+<h3>Mechanisms</h3><table>
+<table class="table table-bordered"><tbody>
+<tr><th scope="row">Body Maturity</th><td>The use of kaolins containing significant alkalies is an excellent way to achieve greater body maturity coupled with white color. Lower feldspar enables replacing dirty ball clays with kaolin.</td></tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="../media/images/PayPalDonate.png" style="height:66px; padding-right:20px;"/><br/><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br/>Just organized, concise information constantly updated and improved.<br/>Was this helpful? Consider supporting me.</td></tr><tr></tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br/><span style="font-size:80%; color:#888888;">Follow me on<br/><a href="https://www.threads.net/@tonyatdigitalfire" target="_blank" title="Threads"><img border="0" src="../media/images/threads.jpg" style="width:20px;"/></a> <a href="https://www.facebook.com/insightlive" target="_blank" title="Facebook Insight-Live"><img border="0" src="../media/images/facebook.jpg" style="width:20px;"/></a> <a href="https://www.linkedin.com/in/tonywhansen/" target="_blank" title="LinkedIn"><img border="0" src="../media/images/linkedin.jpg" style="width:20px;"/></a> <a href="https://www.pinterest.ca/tonywhansen" target="_blank" title="Pinterest"><img border="0" src="../media/images/pinterest.jpg" style="width:20px;"/></a> <a href="https://instagram.com/tonyatdigitalfire" target="_blank" title="Instagram"><img border="0" src="../media/images/instagram.jpg" style="width:20px;"/></a> <a href="https://ko-fi.com/tonyhansen#" target="_blank" title="Ko-Fi"><img border="0" src="../media/images/ko-fi.jpg" style="width:20px;"/></a> <a href="https://x.com/digitalfiretony" target="_blank" title="Twitter"><img border="0" src="../media/images/twitter.jpg" style="width:20px;"/></a></span></td><td><a href="https://tonyhansen.com/about"><img height="80" src="../media/images/SignaturePhotoSmall.jpg"/></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a href="https://ko-fi.com/tonyhansen" target="_blank"><img src="../media/images/ko-fi.svg" style="width:40px"/></a></p><p style="margin-bottom:30px;"> </p>
+<p></p><p></p><hr/>
+<img src="../media/images/ReferenceLibrary.svg" style="width:250px"/>
+<br/>
+<a href="../home.html">https://digitalfire.com</a>, All Rights Reserved
+<br/><a href="https://digitalfire.com/w3c/privacypolicy.php">Privacy Policy</a>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+</table></table></table></div></body>
+</html>

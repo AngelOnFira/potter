@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Lab tests for traditional ceramic bodies, glazes, processes</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Having a set of practical tests and specifications at hand and a way to execute them consistently is a key to controlling your ceramic process">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item active" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=test" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><h1>Test Procedures for Traditional Ceramics</h1>
+<p><a title="94 - +44 and +63 Micron Residue" href="https://digitalfire.com/test/44mr">44MR</a> - +44 and +63 Micron Residue<br /><a title="38 - Apparent Porosity" href="https://digitalfire.com/test/appo">APPO</a> - Apparent Porosity<br /><a title="85 - Average Particle Size (Microns)" href="https://digitalfire.com/test/avps">AVPS</a> - Average Particle Size (Microns)<br /><a title="42 - Apparent Viscosity (cps)" href="https://digitalfire.com/test/avsc">AVSC</a> - Apparent Viscosity (cps)<br /><a title="36 - Bulk Density g/cc (Packed)" href="https://digitalfire.com/test/bdgc">BDGC</a> - Bulk Density g/cc (Packed)<br /><a title="23 - Bulk Density lbs/cu. ft. (Packed)" href="https://digitalfire.com/test/bdlb">BDLB</a> - Bulk Density lbs/cu. ft. (Packed)<br /><a title="73 - Borate LOI" href="https://digitalfire.com/test/bloi">BLOI</a> - Borate LOI<br /><a title="89 - Boiling Water:Ice Water Glaze Fit Test" href="https://digitalfire.com/test/bwiw">BWIW</a> - Boiling Water:Ice Water Glaze Fit Test<br /><a title="90 - Carbon content" href="https://digitalfire.com/test/ccon">CCON</a> - Carbon content<br /><a title="62 - Drying Factor/Water Content/Solubles" href="https://digitalfire.com/test/cdry">CDRY</a> - Drying Factor/Water Content/Solubles<br /><a title="25 - CEC (meq/100g)" href="https://digitalfire.com/test/cec">CEC</a> - CEC (meq/100g)<br /><a title="47 - Clay Water Content - Powder, Plastic" href="https://digitalfire.com/test/clwc">CLWC</a> - Clay Water Content - Powder, Plastic<br /><a title="99 - Compressive Strength" href="https://digitalfire.com/test/cmst">CMST</a> - Compressive Strength<br /><a title="10 - Co-efficient of Linear Expansion" href="https://digitalfire.com/test/cole">COLE</a> - Co-efficient of Linear Expansion<br /><a title="64 - Cold Over Boiled Porosity" href="https://digitalfire.com/test/covb">COVB</a> - Cold Over Boiled Porosity<br /><a title="63 - Clay, Silt, Sand Sedimentation Test" href="https://digitalfire.com/test/csss">CSSS</a> - Clay, Silt, Sand Sedimentation Test<br /><a title="1 - Density (Specific Gravity)" href="https://digitalfire.com/test/dens">DENS</a> - Density (Specific Gravity)<br /><a title="46 - Drying Factor" href="https://digitalfire.com/test/dfac">DFAC</a> - Drying Factor<br /><a title="77 - Deflocculation Demand" href="https://digitalfire.com/test/dfdm">DFDM</a> - Deflocculation Demand<br /><a title="105 - Dielectric Strength" href="https://digitalfire.com/test/diel">DIEL</a> - Dielectric Strength<br /><a title="8 - Density, loose packed (lbs/cu fut)" href="https://digitalfire.com/test/dnlp">DNLP</a> - Density, loose packed (lbs/cu fut)<br /><a title="19 - Dry Strength (kgf/cm2)" href="https://digitalfire.com/test/ds">DS</a> - Dry Strength (kgf/cm2)<br /><a title="51 - Drying Shrinkage" href="https://digitalfire.com/test/dshr">DSHR</a> - Drying Shrinkage<br /><a title="59 - Dry Strenth (Round Bars)" href="https://digitalfire.com/test/dsrn">DSRN</a> - Dry Strenth (Round Bars)<br /><a title="60 - Dry Strength (Square Bars)" href="https://digitalfire.com/test/dstr">DSTR</a> - Dry Strength (Square Bars)<br /><a title="13 - Decomposition Temperature" href="https://digitalfire.com/test/dtmp">DTMP</a> - Decomposition Temperature<br /><a title="112 - Engobe Body Compatibility Test" href="https://digitalfire.com/test/ebct">EBCT</a> - Engobe Body Compatibility Test<br /><a title="97 - Elastic Modulus, 20 degrees C" href="https://digitalfire.com/test/em20">EM20</a> - Elastic Modulus, 20 degrees C<br /><a title="96 - Frit Fusibility Test" href="https://digitalfire.com/test/frfu">FRFU</a> - Frit Fusibility Test<br /><a title="65 - Fired Strength Round Bars" href="https://digitalfire.com/test/frrd">FRRD</a> - Fired Strength Round Bars<br /><a title="102 - Fracture Toughness" href="https://digitalfire.com/test/frtg">FRTG</a> - Fracture Toughness<br /><a title="21 - Firing Shrinkage" href="https://digitalfire.com/test/fshr">FSHR</a> - Firing Shrinkage<br /><a title="66 - Fired Strength Square Bars" href="https://digitalfire.com/test/fstr">FSTR</a> - Fired Strength Square Bars<br /><a title="113 - Glaze Body Bond Test" href="https://digitalfire.com/test/gbbt">GBBT</a> - Glaze Body Bond Test<br /><a title="110 - Glaze Melt Fluidity - Ball Test" href="https://digitalfire.com/test/gbmf">GBMF</a> - Glaze Melt Fluidity - Ball Test<br /><a title="27 - GE Brightness" href="https://digitalfire.com/test/gebr">GEBR</a> - GE Brightness<br /><a title="68 - Glaze Observations" href="https://digitalfire.com/test/glaz">GLAZ</a> - Glaze Observations<br /><a title="58 - Glaze Melt Flow - Runway Test" href="https://digitalfire.com/test/glfl">GLFL</a> - Glaze Melt Flow - Runway Test<br /><a title="69 - Glaze Hardness" href="https://digitalfire.com/test/glhd">GLHD</a> - Glaze Hardness<br /><a title="70 - Glaze Leaching Test" href="https://digitalfire.com/test/glle">GLLE</a> - Glaze Leaching Test<br /><a title="14 - Frit Softening Point" href="https://digitalfire.com/test/gspt">GSPT</a> - Frit Softening Point<br /><a title="92 - Glass Transition Temperature" href="https://digitalfire.com/test/gttm">GTTM</a> - Glass Transition Temperature<br /><a title="100 - Hardness (Microindentation) Test" href="https://digitalfire.com/test/hdmi">HDMI</a> - Hardness (Microindentation) Test<br /><a title="28 - Hegman Fineness" href="https://digitalfire.com/test/hegf">HEGF</a> - Hegman Fineness<br /><a title="91 - Heating Microscope Analysis for Frits" href="https://digitalfire.com/test/hma">HMA</a> - Heating Microscope Analysis for Frits<br /><a title="95 - Heating Microscope Analysis" href="https://digitalfire.com/test/hman">HMAN</a> - Heating Microscope Analysis<br /><a title="7 - Hardness (Moh)" href="https://digitalfire.com/test/hmoh">HMOH</a> - Hardness (Moh)<br /><a title="88 - I.F.P. (celsius)" href="https://digitalfire.com/test/ifp">IFP</a> - I.F.P. (celsius)<br /><a title="108 - 300F:Ice Water Crazing Test" href="https://digitalfire.com/test/iwct">IWCT</a> - 300F:Ice Water Crazing Test<br /><a title="79 - % < 10 microns" href="https://digitalfire.com/test/l10m">L10M</a> - % < 10 microns<br /><a title="81 - % < 1 micron" href="https://digitalfire.com/test/l1m">L1M</a> - % < 1 micron<br /><a title="78 - % < 20 microns" href="https://digitalfire.com/test/l20m">L20M</a> - % < 20 microns<br /><a title="80 - % < 2 microns" href="https://digitalfire.com/test/l2m">L2M</a> - % < 2 microns<br /><a title="93 - % < 30 microns" href="https://digitalfire.com/test/l30m">L30M</a> - % < 30 microns<br /><a title="17 - % < 5 microns" href="https://digitalfire.com/test/l5">L5</a> - % < 5 microns<br /><a title="18 - % < 0.5 microns" href="https://digitalfire.com/test/l5m">L5M</a> - % < 0.5 microns<br /><a title="49 - LOI/Density/Water Content" href="https://digitalfire.com/test/ldw">LDW</a> - LOI/Density/Water Content<br /><a title="15 - LOI (100-1000C)" href="https://digitalfire.com/test/loi">LOI</a> - LOI (100-1000C)<br /><a title="30 - Liquid Limit" href="https://digitalfire.com/test/lqlm">LQLM</a> - Liquid Limit<br /><a title="76 - Median Particle Size (Microns)" href="https://digitalfire.com/test/mdps">MDPS</a> - Median Particle Size (Microns)<br /><a title="57 - Frit Melting Range (C)" href="https://digitalfire.com/test/mlrg">MLRG</a> - Frit Melting Range (C)<br /><a title="75 - Moisture Content - Powder" href="https://digitalfire.com/test/moip">MOIP</a> - Moisture Content - Powder<br /><a title="61 - Modulus of Rupture - Fired" href="https://digitalfire.com/test/mor">MOR</a> - Modulus of Rupture - Fired<br /><a title="74 - Dry M.O.R. (50% Silica)" href="https://digitalfire.com/test/mor5">MOR5</a> - Dry M.O.R. (50% Silica)<br /><a title="12 - Modulus of Rupture - Dry" href="https://digitalfire.com/test/mord">MORD</a> - Modulus of Rupture - Dry<br /><a title="5 - Oil Adsorption (Spatula)" href="https://digitalfire.com/test/olad">OLAD</a> - Oil Adsorption (Spatula)<br /><a title="107 - % Passing 200 Mesh Wet" href="https://digitalfire.com/test/p200">P200</a> - % Passing 200 Mesh Wet<br /><a title="32 - % Passing 325 Mesh Wet" href="https://digitalfire.com/test/p325">P325</a> - % Passing 325 Mesh Wet<br /><a title="71 - Pugged Body Properties Overview" href="https://digitalfire.com/test/pbpo">PBPO</a> - Pugged Body Properties Overview<br /><a title="11 - Pyrometric Cone Equivalent" href="https://digitalfire.com/test/pce">PCE</a> - Pyrometric Cone Equivalent<br /><a title="4 - pH (pugged clay)" href="https://digitalfire.com/test/phpg">pHPG</a> - pH (pugged clay)<br /><a title="87 - pH for dry powder" href="https://digitalfire.com/test/phpw">pHPW</a> - pH for dry powder<br /><a title="72 - Pyroplastic Deformation" href="https://digitalfire.com/test/ppd">PPD</a> - Pyroplastic Deformation<br /><a title="98 - Poisson's Ratio" href="https://digitalfire.com/test/prsm">PRSM</a> - Poisson's Ratio<br /><a title="6 - Particle Shape (1-7 microns)" href="https://digitalfire.com/test/pshp">PSHP</a> - Particle Shape (1-7 microns)<br /><a title="37 - Reheat Change" href="https://digitalfire.com/test/rc">RC</a> - Reheat Change<br /><a title="34 - Rheology of a Ceramic Slurry" href="https://digitalfire.com/test/rheo">RHEO</a> - Rheology of a Ceramic Slurry<br /><a title="9 - Sieve Analysis Dry" href="https://digitalfire.com/test/sadr">SADR</a> - Sieve Analysis Dry<br /><a title="16 - Surface Area (m2/gm)" href="https://digitalfire.com/test/samg">SAMG</a> - Surface Area (m2/gm)<br /><a title="84 - Simple Clay Evaluation" href="https://digitalfire.com/test/scle">SCLE</a> - Simple Clay Evaluation<br /><a title="41 - Shrinkage/Absorption Test" href="https://digitalfire.com/test/shab">SHAB</a> - Shrinkage/Absorption Test<br /><a title="48 - Sieve Analysis 35-325 Wet" href="https://digitalfire.com/test/siev">SIEV</a> - Sieve Analysis 35-325 Wet<br /><a title="35 - Solubility" href="https://digitalfire.com/test/slby">SLBY</a> - Solubility<br /><a title="45 - Soluble Salts" href="https://digitalfire.com/test/solu">SOLU</a> - Soluble Salts<br /><a title="104 - Specific Heat Capacity" href="https://digitalfire.com/test/sphc">SPHC</a> - Specific Heat Capacity<br /><a title="83 - Simple Shrinkage/Absorption" href="https://digitalfire.com/test/ssab">SSAB</a> - Simple Shrinkage/Absorption<br /><a title="24 - Sieve Analysis Wet" href="https://digitalfire.com/test/svwt">SVWT</a> - Sieve Analysis Wet<br /><a title="82 - TGA" href="https://digitalfire.com/test/tga">TGA</a> - TGA<br /><a title="103 - Thermal Conductivity, 20 degrees C" href="https://digitalfire.com/test/thco">THCO</a> - Thermal Conductivity, 20 degrees C<br /><a title="101 - Tensile Strength, 25 degrees C" href="https://digitalfire.com/test/tnst">TNST</a> - Tensile Strength, 25 degrees C<br /><a title="26 - Trace Elements (ppm)" href="https://digitalfire.com/test/trel">TREL</a> - Trace Elements (ppm)<br /><a title="33 - Trace Minerals" href="https://digitalfire.com/test/trmn">TRMN</a> - Trace Minerals<br /><a title="111 - Thermal Shock Failure" href="https://digitalfire.com/test/tsfl">TSFL</a> - Thermal Shock Failure<br /><a title="40 - Ultimate Particle Size Distribution" href="https://digitalfire.com/test/upsd">UPSD</a> - Ultimate Particle Size Distribution<br /><a title="20 - Water absorption" href="https://digitalfire.com/test/wabs">WABS</a> - Water absorption<br /><a title="43 - Water of Plasticity" href="https://digitalfire.com/test/wopl">WOPL</a> - Water of Plasticity<br /><a title="50 - Whole Rock Analysis" href="https://digitalfire.com/test/wra">WRA</a> - Whole Rock Analysis<br /><a title="86 - Wet Sieve Residue" href="https://digitalfire.com/test/wsr">WSR</a> - Wet Sieve Residue<br /><a title="3 - Index of Refraction" href="https://digitalfire.com/test/xref">XREF</a> - Index of Refraction</p>
+<h2>Introduction</h2>
+<p>Every ceramic production facility should have some sort of materials, body and glaze testing program in place. Amazingly, many large factories have little or no testing! Then one day the kiln operator notices a large number of cracked, warped and off-size items and everyone in the plant blames him! Likely the real causes are in places earlier in the production. This underscores one of the primary reasons for testing and quality control: To establish specifications and triggers that set off alarms when test results fall outside those specifications. Thus problems can be identified before a product goes to the next step of production.<br />
+<br />
+It is not easy to know where to start when it comes to setting up a testing or R&D program. The huge array of ASTM test procedures, their complexity, test equipment requirements and their expense are intimidating (try finding tests for ceramics on the ASTM website to see what I mean). For testing within your own facility to determine product consistency and suitability consider a simpler and more accessible approach: Characterization of your materials and products in a way that is practical. <br />
+<br />
+Think of it this way: What physical properties of your bodies and glazes are important to maintain? What signals do you need to be sensitive to? For plastic bodies you likely want to monitor particle size distribution, drying shrinkage, water content, fired shrinkage and fired porosity. Two tests (the SIEV test and SHAB test) can provide this information. Consider also the DFAC test for plastic forming bodies, the RHEO test for casting bodies. For production glazes use the GLAZ test to maintain the slurry (other monitoring is of course needed for color, surface, hardness, expansion, etc). Remember, we are just talking about where you start.<br />
+<br />
+Tests in this database are defined as Multi-variable or Single-Variable. Single-variable tests are used to define a value for a specific property. For example, the melting point of a material is specified under the MLPT test and simply appears on pages as a label and a value. Multi-variable tests are where data is being collected and measured over time and the system compiles and computes results and displays them accordingly. Data values for multi-variable tests are recorded with the Sample/Test/Specimen/Variable to uniquely identify them. For example, in the SHAB test one collects the dry length, fired length, fired weight and boiled weight for a number of specimens and the system generates a chart showing the data, the calculated dry and fired shrinkages and the porosity.</p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/low+budget+testing+of+ceramic+glazes">Low Budget Testing of Ceramic Glazes</a>
+<br /><i>There is more to glazes than their visual character, they have other physical properties like hardness, thermal expansion, leachability, chemistry and they exhibit many defects. Here are some simple tests.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/a+low+cost+tester+of+glaze+melt+fluidity">A Low Cost Tester of Glaze Melt Fluidity</a>
+<br /><i>Use this novel device to compare the melt fluidity of glazes and materials. Simple physical observations of the results provide a better understanding of the fired properties of your glaze (and problems you did not see before).</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/simple+physical+testing+of+clays">Simple Physical Testing of Clays</a>
+<br /><i>Learn to test your clay bodies and clay materials and record the results in an organized way, understanding the purpose of each test and how to relate its results to changes that need to be made in process, recipe and materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/understanding+thermal+expansion+in+ceramic+glazes">Understanding Thermal Expansion in Ceramic Glazes</a>
+<br /><i>Understanding thermal expansion is the key to dealing with crazing or shivering. There is a rich mans and poor mans way to fit glazes, the latter might be better.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/firing+clay+test+bars">Firing Clay Test Bars</a>
+<br /><i>Being able to make good consistent test bars and fire them in a consistent and proper way is a basic requirement of getting valid results for shrinkage and porosity measurement.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/are+you+in+control+of+your+production+process%3f">Are You in Control of Your Production Process?</a>
+<br /><i>Potters often run operations that are on the edge of control tolerating production and ware problems that industry would not. However ethics will sooner or later demand a better knowledge of process and materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/clay+body+porosity">Clay Body Porosity</a>
+<br /><i>In ceramics, porosity is considered an indication of density, and therefore strength and durability. Porosity is measured by the weight increase when boiled in water.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/firing+shrinkage">Firing Shrinkage</a>
+<br /><i>During drying, clay particles draw together and shrinkage occurs. During firing the matrix densifies and shrinkage continues. More vitreous bodies shrink more.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/characterization">Characterization</a>
+<br /><i>In ceramics, this normally refers to the process of doing physical or chemical testing on a raw material to accurately describe it in terms of similar ones.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1148">http://www.astm.org/Standards/glass-and-ceramic-standards.html</a>
+<br /><i>ASTM Ceramics and Glass Testing Standards</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+</tbody></table>
+<h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

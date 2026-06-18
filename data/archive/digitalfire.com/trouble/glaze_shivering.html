@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Glaze Shivering</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Ask the right questions to analyse the real cause of glaze shivering. Do not just treat the symptoms, the real cause is thermal expansion mismatch with the body.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item active" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=trouble" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"></td><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Troubles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a title="29" href="https://digitalfire.com/trouble/black+coring">Black Coring</a></nobr><br /><nobr><a title="30" href="https://digitalfire.com/trouble/bleeding+colors">Bleeding Colors</a></nobr><br /><nobr><a title="11" href="https://digitalfire.com/trouble/bloating">Bloating</a></nobr><br /><nobr><a title="13" href="https://digitalfire.com/trouble/casting+slip+problems">Casting Slip Problems</a></nobr><br /><nobr><a title="7" href="https://digitalfire.com/trouble/chrome+flashing+in+ceramic+glazes">Chrome Flashing in Ceramic Glazes</a></nobr><br /><nobr><a title="23" href="https://digitalfire.com/trouble/clouding+in+ceramic+glazes">Clouding in Ceramic Glazes</a></nobr><br /><nobr><a title="10" href="https://digitalfire.com/trouble/cracking+of+clays+during+drying">Cracking of Clays During Drying</a></nobr><br /><nobr><a title="1" href="https://digitalfire.com/trouble/crawling">Crawling</a></nobr><br /><nobr><a title="9" href="https://digitalfire.com/trouble/dunting+and+cracking+of+clay+bodies+during+firing">Dunting and Cracking of Clay Bodies During Firing</a></nobr><br /><nobr><a title="19" href="https://digitalfire.com/trouble/foaming+of+ceramicd+glaze+slurries">Foaming of Ceramicd Glaze Slurries</a></nobr><br /><nobr><a title="3" href="https://digitalfire.com/trouble/glaze+blisters">Glaze Blisters</a></nobr><br /><nobr><a title="2" href="https://digitalfire.com/trouble/glaze+crazing">Glaze Crazing</a></nobr><br /><nobr><a title="6" href="https://digitalfire.com/trouble/glaze+is+off-color">Glaze is Off-Color</a></nobr><br /><nobr><a title="8" href="https://digitalfire.com/trouble/glaze+marks+or+scratches">Glaze Marks or Scratches</a></nobr><br /><nobr><a title="22" href="https://digitalfire.com/trouble/glaze+peeling+on+drying">Glaze peeling on drying</a></nobr><br /><nobr><a title="5" href="https://digitalfire.com/trouble/glaze+pinholes%2C+pitting">Glaze Pinholes, Pitting</a></nobr><br /><nobr><a title="18" href="https://digitalfire.com/trouble/18"><button type="button" class="btn btn-dark">Glaze Shivering</button></a></nobr><br /><nobr><a title="14" href="https://digitalfire.com/trouble/glaze+slurry+is+difficult+to+use+or+settling">Glaze Slurry is Difficult to Use or Settling</a></nobr><br /><nobr><a title="26" href="https://digitalfire.com/trouble/leaking+of+fired+ceramics">Leaking of Fired Ceramics</a></nobr><br /><nobr><a title="28" href="https://digitalfire.com/trouble/lime+popping">Lime Popping</a></nobr><br /><nobr><a title="27" href="https://digitalfire.com/trouble/orange+peel+surface">Orange Peel Surface</a></nobr><br /><nobr><a title="21" href="https://digitalfire.com/trouble/over+firing+of+ceramic+glazes+and+bodies">Over Firing of Ceramic Glazes and Bodies</a></nobr><br /><nobr><a title="4" href="https://digitalfire.com/trouble/powdering%2C+cracking+and+settling+glazes">Powdering, Cracking and Settling Glazes</a></nobr><br /><nobr><a title="25" href="https://digitalfire.com/trouble/runny+ceramic+glazes">Runny Ceramic Glazes</a></nobr><br /><nobr><a title="17" href="https://digitalfire.com/trouble/specking+on+ceramic+ware">Specking on Ceramic Ware</a></nobr><br /><nobr><a title="15" href="https://digitalfire.com/trouble/splitting+at+the+plastic+stage">Splitting at the Plastic Stage</a></nobr><br /><nobr><a title="24" href="https://digitalfire.com/trouble/staining+of+fired+ceramic+glazes">Staining of Fired Ceramic Glazes</a></nobr><br /><nobr><a title="20" href="https://digitalfire.com/trouble/uneven+glaze+coverage">Uneven Glaze Coverage</a></nobr><br /><nobr><a title="12" href="https://digitalfire.com/trouble/warping">Warping</a></nobr></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Glaze Shivering</h1>
+<p class="text-muted" style="margin-left:20px">Ask the right questions to analyse the real cause of glaze shivering. Do not just treat the symptoms, the real cause is thermal expansion mismatch with the body.
+<h2>Details</h2>
+<p>Shivering is the opposite of <a  href="https://digitalfire.com/glossary/glaze+crazing">glaze crazing</a>, the fired glaze is under compression and wants to flake off the body, especially at edges. However the route cause is a mismatch in the <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansions</a> of body and glaze, thus the process of resolving it is similar as for <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a>. It it much less common because glazes tend to have a higher <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> than bodies and because they can tolerate being under compression much better than being under tension. Of course, if a glaze is under compression on the inside of a vessel, the body will be under tension and this can cause failure of the piece.</p>
+
+<p>When the body-glaze <a  href="https://digitalfire.com/glossary/body+glaze+interface">interface</a> is not well developed an overly compressed glaze will be able to release itself much more easily, especially on the edges of contours. This can be the case, not only with low fired ware, but where <a  href="https://digitalfire.com/glossary/engobe">engobes</a> or slips are being used under the glaze. If the <a  href="https://digitalfire.com/glossary/engobe">engobe</a> does not contain enough <a  href="https://digitalfire.com/glossary/flux">flux</a> to firmly adhere it to the body and develop hardness, it will not be able to bond to the glaze well.</p>
+
+<p>It is important to recognize that the appearance of this issue is serious, a few shivered pieces coming out of the kiln could mean that all of them will <a  href="https://digitalfire.com/glossary/glaze+shivering">shiver</a> with time! <a  href="https://digitalfire.com/glossary/glaze+shivering">Shivering</a> is also serious in that razor sharp flakes of glaze could get into food or drink, you must make sure this can never happen.</p>
+
+<p>While many band-aid fixes to the issue are recommended, the base problem is a mismatch between the <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">co-efficient of thermal expansion</a> (<a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">COE</a>) of body and glaze, nothing will properly fix it except raising the COE of the glaze (or lowering the body COE). Many many glazes have <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">high expansion</a> <a  href="https://digitalfire.com/oxide/na2o">Na<sub>2</sub>O</a> and <a  href="https://digitalfire.com/oxide/k2o">K<sub>2</sub>O</a> that are more than they need to be (thus the prevalence of crazing), but here we actually need more of them (so this is an easy fix to do). However in <a  href="https://digitalfire.com/glossary/fast+fire+glazes">fast-fire</a> settings, Na<sub>2</sub>O can cause <a  href="https://digitalfire.com/glossary/glaze+bubbles">bubbling</a> (<a  href="https://digitalfire.com/glossary/fast+fire+glazes">fast fire glazes</a> have lower <a  href="https://digitalfire.com/oxide/b2o3">B<sub>2</sub>O<sub>3</sub></a>, higher <a  href="https://digitalfire.com/oxide/zno">ZnO</a> and <a  href="https://digitalfire.com/oxide/cao">CaO</a>, lower Na<sub>2</sub>O and higher <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a>, you must work within these guidelines). But you cannot just add soda <a  href="https://digitalfire.com/material/310">feldspar</a> or a high soda <a  href="https://digitalfire.com/glossary/frit">frit</a> because they also contain other <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a>. Using ceramic <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> software (like <a  href="https://digitalfire.com/glossary/digitalfire+insight">Digitalfire Insight</a>), you can figure out how to adjust the recipe so that the only change in the chemistry is an increase in the Na<sub>2</sub>O/K<sub>2</sub>O. In the case of adding feldspar you would calculate how much to reduce the <a  href="https://digitalfire.com/material/925">kaolin</a> and <a  href="https://digitalfire.com/material/1245">silica</a> in the recipe to compensate for the <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> and SiO<sub>2</sub> also sourced from the feldspar. There are instructional videos at <a  href="https://digitalfire.com/glossary/digitalfire+reference+library">Digitalfire</a>.com that demonstrate this.</p>
+
+<p>It may also be an idea of check your <a  href="https://digitalfire.com/glossary/clay+body">clay body</a>. Has it changed? For example, if it is less <a  href="https://digitalfire.com/glossary/maturity">mature</a> its expansion could have increased and the glaze:body bond could have been degraded.</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Razor-sharp flakes of shivering glaze are flying off this piece</h3>
+<br /><a alt="Glaze is shivering in real time" href="https://digitalfire.com/picture/2084"><img class="flexleft50" alt="Glaze is shivering in real time"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/9q2bqdb1pf.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2084">click here</a> to see it.</p>
+<p>This mug has been pinging every few minutes. For days. Razor-sharp chips of the dark blue glaze on the outside are popping off. This is happening because the coefficient of <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> (<a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">COE</a>) of the glaze is too low compared to that of this <a  href="https://digitalfire.com/glossary/earthenware">low-fire</a> <a  href="https://digitalfire.com/glossary/artware">talc body</a>. Simplistically, it is a size 6 glaze stuck onto a size 5 body! The glaze needs its COE increased without too much impact on its other properties (e.g. melting range, surface character, <a  href="https://digitalfire.com/glossary/glaze+durability">durability</a>, color response) and the least impactful way to do that is by substituting some of the existing <a  href="https://digitalfire.com/oxide/cao">CaO</a>, <a  href="https://digitalfire.com/oxide/mgo">MgO</a>, <a  href="https://digitalfire.com/oxide/li2o">Li<sub>2</sub>O</a>, <a  href="https://digitalfire.com/oxide/sro">SrO</a> or <a  href="https://digitalfire.com/oxide/zno">ZnO</a> for super-high-expansion <a  href="https://digitalfire.com/oxide/na2o">Na<sub>2</sub>O</a>. That can be done using <a  href="https://digitalfire.com/glossary/glaze+chemistry">glaze chemistry</a> or by substituting some of and existing <a  href="https://digitalfire.com/glossary/frit">frit</a> in the recipe for one like Ferro 3110 (it contains lots of Na<sub>2</sub>O).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">How to make a ceramic time-bomb</h3>
+<br /><a href="https://digitalfire.com/picture/945"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/kudjocuhir.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/945">click here</a> to see it.</p>
+<p>This mug is pinging loudly and literally self-destructing in front of my eyes! Why? The glaze is under so much compression (the inside is pushing outward, the outside inward). Spiral cracks are developing all the way up the side. Small razor-sharp flakes are <a  href="https://digitalfire.com/glossary/glaze+shivering">shivering</a> off convex contours. Why? I accidentally fired a low-temperate <a  href="https://digitalfire.com/glossary/artware">talc body</a> at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> (the glaze is the <a  href="https://digitalfire.com/material/32">Alberta Slip</a> base cone 6 glossy). The <a  href="https://digitalfire.com/glossary/clay+body">clay body</a> is not overly <a  href="https://digitalfire.com/glossary/maturity">mature</a>, but it just has an extremely high <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> (<a  href="https://digitalfire.com/material/1620">talc</a> is added to increase the expansion to fit <a  href="https://digitalfire.com/glossary/earthenware">low fire</a> <a  href="https://digitalfire.com/glossary/commercial+hobby+brushing+glazes">commercial glazes</a>, they would <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a> without it). Shivering is serious, it is a mismatch of thermal expansion between body and glaze. It can happen at any temperature.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Low expansion glazes craze less, but they can shiver</h3>
+<br /><a href="https://digitalfire.com/picture/630"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/fyblemareh.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/630">click here</a> to see it.</p>
+<p>Example of serious <a  href="https://digitalfire.com/glossary/glaze+shivering">glaze shivering</a> using <a  href="https://digitalfire.com/recipe/g1215u">G1215U</a> <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">low expansion</a> glaze on a high <a  href="https://digitalfire.com/material/1245">silica</a> body at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>. Be careful to do a thermal stress test before using a transparent glaze on <a  href="https://digitalfire.com/glossary/functional">functional</a> ware.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A classic Albany glaze that often shivers</h3>
+<br /><a href="https://digitalfire.com/picture/832"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/glossary/rycpygijal.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/832">click here</a> to see it.</p>
+<p>These mugs have experienced very serious <a  href="https://digitalfire.com/glossary/glaze+shivering">shivering</a>. This is an <a  href="https://digitalfire.com/material/31">Albany Slip</a> glaze with 10% <a  href="https://digitalfire.com/material/975">lithium carbonate</a>, it is known to have a very low <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a>. This problem can be solved by reducing the amount of lithium or adding <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">high-expansion</a> sodium or potassium. However these fixes will likely affect the appearance.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">These common Ferro frits have distinct uses in traditional ceramics</h3>
+<br /><a alt="Five melt frit balls" href="https://digitalfire.com/picture/1108"><img class="flexleft50" alt="Five melt frit balls"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/kutrupopak.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1108">click here</a> to see it.</p>
+<p>I used Veegum to form 10 gram <a  href="https://digitalfire.com/test/gbmf">GBMF test</a> balls and fired them at cone 08 (1700F). <a  href="https://digitalfire.com/glossary/frit">Frits</a> melt really well, they do have an <a  href="https://digitalfire.com/glossary/loi">LOI</a>  like raw materials. These contain <a  href="https://digitalfire.com/glossary/borate">boron</a> (<a  href="https://digitalfire.com/oxide/b2o3">B<sub>2</sub>O<sub>3</sub></a>), it is a <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">low expansion</a> super-melter that raw materials don’t have. <a  href="https://digitalfire.com/material/350">Frit 3124</a> (glossy) and 3195 (silky matte) are balanced-chemistry bases (just add 10-15% <a  href="https://digitalfire.com/material/925">kaolin</a> for a <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 04</a> glaze, or more silica+kaolin to go higher). Consider <a  href="https://digitalfire.com/material/349">Frit 3110</a> a man-made low-Al<sub>2</sub>O<sub>3</sub> super <a  href="https://digitalfire.com/material/310">feldspar</a>. Its high-sodium makes it high <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a>. It works really well in bodies and is great to make glazes that <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a>. The high-MgO <a  href="https://digitalfire.com/material/369">Frit 3249</a> (made for the abrasives industry) has a very-low expansion, it is great for fixing <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a> glazes. <a  href="https://digitalfire.com/material/351">Frit 3134</a> is similar to 3124 but without <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a>. Use it where the glaze does not need more Al<sub>2</sub>O<sub>3</sub> (e.g. already has enough clay). It is no accident that these are used by potters in North America, they complement each other well (equivalents are made around the world by others). The <a  href="https://digitalfire.com/material/806">Gerstley Borate</a> is a natural source of boron (with issues frits do not have).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Glaze is shivering at the engobe-body interface</h3>
+<br /><a alt="Glaze over engobe shivering on mug lip" href="https://digitalfire.com/picture/1111"><img class="flexleft50" alt="Glaze over engobe shivering on mug lip"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/jiclekihag.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1111">click here</a> to see it.</p>
+<p>Example of a glaze (G1916J) <a  href="https://digitalfire.com/glossary/glaze+shivering">shivering</a> on the rim of a mug. But the situation is not as it might appear. This glaze fits some bodies, crazes on others and shivers on yet others! This is a testament to how tricky it can be to fit glaze at low temperatures. But this is not a white glaze, it is a transparent over a white slip (or <a  href="https://digitalfire.com/glossary/engobe">engobe</a>). Alone on this red body this glaze appears to fit OK, but here it is exploiting the weaker body-engobe <a  href="https://digitalfire.com/glossary/body+glaze+interface">interface</a> - this is where the release is taking place. This failure turned out to be a blessing, alerting us to the need to increase the expansion of the glaze a little to fit this body better (and enable its use with this engobe). This being said, the engobe likewise may be under too much compression, it may not contain enough <a  href="https://digitalfire.com/material/1245">silica</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">There is a morality to making functional vessels used by others</h3>
+<br /><a href="https://digitalfire.com/picture/1153"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/troubleshooting/pivgevuces.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1153">click here</a> to see it.</p>
+<p>On the inside you can see the razor sharp flakes of glaze that have already fallen off the outside of this test piece. They reveal that the clear glaze, which looks fine on the inside, is under too much compression. The weaker <a  href="https://digitalfire.com/glossary/body+glaze+interface">interface</a> between the slip under layer and the body provides a point of failure. This reminds us of the morality of making pottery, we have a responsibility to make safe ware.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Troubles</td>
+<td>
+<a href="https://digitalfire.com/trouble/glaze+crazing">Glaze Crazing</a>
+<br /><i>Ask the right questions to analyse the real cause of <a  href="https://digitalfire.com/glossary/glaze+crazing">glaze crazing</a>. Do not just treat the symptoms, the real cause is <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> mismatch with the body.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/glaze+shivering">Glaze shivering</a>
+<br /><i><a  href="https://digitalfire.com/glossary/glaze+shivering">Shivering</a> is a ceramic glaze defect that results in tiny flakes of glaze <a  href="https://digitalfire.com/picture/3594">peeling</a> off edges of ceramic ware. It happens because the <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> of the body is too much higher than the glaze.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">Co-efficient of Thermal Expansion</a>
+<br /><i>The <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">co-efficient of thermal expansion</a> of ceramic bodies and glazes determines how well they fit each other and their ability to survive sudden heating and cooling without cracking.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/calculated+thermal+expansion">Calculated Thermal Expansion</a>
+<br /><i>The <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> of a glaze can be predicted (relatively) and adjusted using simple <a  href="https://digitalfire.com/glossary/glaze+chemistry">glaze chemistry</a>. Body expansion cannot be calculated.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/understanding+thermal+expansion+in+ceramic+glazes">Understanding Thermal Expansion in Ceramic Glazes</a>
+<br /><i>Understanding <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> is the key to dealing with <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a> or <a  href="https://digitalfire.com/glossary/glaze+shivering">shivering</a>. There is a rich mans and poor mans way to fit glazes, the latter might be better.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/adjusting+glaze+expansion+by+calculation+to+solve+shivering">Adjusting Glaze Expansion by Calculation to Solve Shivering</a>
+<br /><i>This page demonstrates how you might use INSIGHT software to do calculations that will help you increase the <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> of a glaze while having minimal impact on other properties.</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

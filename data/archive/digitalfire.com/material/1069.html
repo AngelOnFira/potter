@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Nepheline Syenite</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Alternate names: Neph Sy - Digitalfire Reference Library (no ads)">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item active"><a class="nav-link" href="/material/list">Materials <span class="sr-only">(current)</span></a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=material" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"></td><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table>
+<ul class="nav nav-tabs pt-1" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="material-tab" data-toggle="tab" href="#material" role="tab" aria-controls="material" aria-selected="true">Materials for Ceramics</a>
+  </li>
+</ul>
+<div class="tab-content mb-3" id="myTabContent" style="border-right:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #ddd; padding:10px;">
+  <div class="tab-pane fade show active" id="material" role="tabpanel" aria-labelledby="material-tab">
+<a href="/material/list/1-9">1-9</a> | <a href="/material/list/A">A</a> | <a href="/material/list/B">B</a> | <a href="/material/list/C">C</a> | <a href="/material/list/D">D</a> | <a href="/material/list/E">E</a> | <a href="/material/list/F">F</a> | <a href="/material/list/Frits">Frits</a> | <a href="/material/list/G">G</a> | <a href="/material/list/H">H</a> | <a href="/material/list/I">I</a> | <a href="/material/list/J">J</a> | <a href="/material/list/K">K</a> | <a href="/material/list/L">L</a> | <a href="/material/list/M">M</a> | <a href="/material/list/N">N</a> | <a href="/material/list/O">O</a> | <a href="/material/list/P">P</a> | <a href="/material/list/Q">Q</a> | <a href="/material/list/R">R</a> | <a href="/material/list/S">S</a> | <a href="/material/list/T">T</a> | <a href="/material/list/U">U</a> | <a href="/material/list/V">V</a> | <a href="/material/list/W">W</a> | <a href="/material/list/X">X</a> | <a href="/material/list/Y">Y</a> | <a href="/material/list/Z">Z</a><br />
+<nobr></nobr>
+</div>
+</div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>Nepheline Syenite</h1>
+<p><b>Alternate Names</b>: Neph Sy</p>
+<p><b>Description</b>: Generic</p>
+<table class="table table-bordered table-sm" style="width:auto">
+<thead class="thead-light">
+<tr style="font-weight:bold">
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/oxide">Oxide</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/analysis">Analysis</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/formula">Formula</a></th>
+<th class="text-center" scope="col" style="width:20%"><a href="https://digitalfire.com/glossary/formula">Tolerance</a></th>
+</tr></thead><tbody>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/cao">CaO</a></td>
+<td class="text-right"">0.70%</td>
+<td class="text-right">
+0.06
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/k2o">K2O</a></td>
+<td class="text-right"">4.60%</td>
+<td class="text-right">
+0.22
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/na2o">Na2O</a></td>
+<td class="text-right"">9.80%</td>
+<td class="text-right">
+0.71
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/al2o3">Al2O3</a></td>
+<td class="text-right"">23.30%</td>
+<td class="text-right">
+1.03
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/sio2">SiO2</a></td>
+<td class="text-right"">60.70%</td>
+<td class="text-right">
+4.55
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/mgo">MgO</a></td>
+<td class="text-right"">0.10%</td>
+<td class="text-right">
+0.01
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/fe2o3">Fe2O3</a></td>
+<td class="text-right"">0.10%</td>
+<td class="text-right">
+-
+</td><td class="text-right">
+
+</td></tr>
+<tr><td class="label"><a href="https://digitalfire.com/oxide/loi">LOI</a></td>
+<td class="text-right">0.70%</td><td class="text-right">n/a</td></tr>
+<tr><td colspan="2">Oxide Weight</td><td colspan="2" class="text-right">
+447.59
+</td></tr>
+<tr><td colspan="2" class="text-right"><a href="https://digitalfire.com/glossary/formula+weight">Formula Weight</a></td><td colspan="2" style="text-align:right">
+450.74
+</td></tr>
+</tbody></table>
+<h4>Notes</h4><p><a  href="https://digitalfire.com/material/1070">Nepheline Syenite</a> is an anhydrous sodium potassium alumino silicate. Although feldspar-like in its <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a>, mineralogically it is an igneous rock combination of nepheline, microcline, albite and minor minerals like mica, hornblende and magnetite. The Canadian manufacturer describes it as “a naturally occurring, <a  href="https://digitalfire.com/material/1245">silica</a> deficient sodium-potassium alumina silicate.” It is found in Canada, India, Norway and USSR. We have provided representative chemistry of the Canadian material. This material has a big advantage over <a  href="https://digitalfire.com/material/310">feldspar</a>: It does not contain quartz.<br />
+<br />
+Nepheline Syenite has been a standard in the ceramic industry for many years, and is very popular for the whiteness it imparts to <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a>. Nepheline syenite melts lower than <a  href="https://digitalfire.com/material/310">feldspars</a>. For example, it is possible to make a very white <a  href="https://digitalfire.com/glossary/vitreous">vitreous</a> <a  href="https://digitalfire.com/glossary/medium+temperature">medium temperature</a> <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> (firing as low as cone 4, but more practically at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>). Up to 50% nepheline syenite will be needed at cone 4, 25-35% at cone 6.<br />
+<br />
+Like feldspar, nepheline syenite is used as a <a  href="https://digitalfire.com/glossary/flux">flux</a> in tile, <a  href="https://digitalfire.com/glossary/sanitary+ware">sanitary ware</a>, porcelain, vitreous and semi-vitreous bodies. It contributes high alumina without associated free silica in its raw form and fluxes to form silicates with free silica in bodies without contributing free silica itself. This stabilizes the expansion curve of the fired body. It is an excellent tile filler and melter, especially for fast firing. Nepheline syenite is valuable in glass batches to achieve the lowest <a  href="https://digitalfire.com/glossary/melting+temperature">melting temperature</a> while acting as a source of alumina.<br />
+<br />
+Like <a  href="https://digitalfire.com/material/1620">talc</a>, this material can also be used at low temperatures to increase the <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> of bodies to make glazes fit better (up to 50% talc is used for this purpose, but it cuts <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> drastically unless vacuum pugged). Nepheline Syenite does not do this, and potentially less is needed. And it fires whiter.<br />
+<br />
+Since nepheline syenite can be slightly soluble, in pugged bodies it can be responsible for stiffness changes during aging (although admittedly many other factors can also contribute to this). It can more challenging to maintain stable <a  href="https://digitalfire.com/glossary/deflocculation">deflocculated</a> <a  href="https://digitalfire.com/glossary/slurry">slurry</a> bodies using nepheline syenite than with feldspars. However, the place where you may note the solubility of nepheline the most is in glaze slurries containing significant percentages, they can gel over time and the addition of more water to thin the slurry can wreak havoc with application performance (try adding a few drops of deflocculant instead).<br />
+<br />
+Because of its sodium content, high nepheline syenite glazes tend to <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a> (because of the high thermal expansion of <a  href="https://digitalfire.com/oxide/na2o">Na<sub>2</sub>O</a>). Also, since nepheline syenite has more alumina than most feldspars, substituting it into recipes means that on one hand a lower melting temperature is achieved while on the other a more viscous melt results because of the extra alumina.<br />
+<br />
+The picture of the flow test here shows that nepheline syenite by itself is barely beginning to flow and melt at cone 9. However when combined with other materials it will promote melting to a much greater degree than is suggested by its performance alone. Notice that the 400 and 270 mesh particle size versions do not melt differently at this temperature.<br />
+<br />
+Comparison between Canada, Norway and theoretical materials:<br />
+<br />
+<a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a>	60.0	56.0	41.1<br />
+<a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a>	23.2	24.2	34.9<br />
+<a  href="https://digitalfire.com/oxide/fe2o3">Fe<sub>2</sub>O<sub>3</sub></a>	0.10	0.11	<br />
+<a  href="https://digitalfire.com/oxide/cao">CaO</a>	0.25	1.2	<br />
+Na<sub>2</sub>O	10.8	7.8	15.9<br />
+<a  href="https://digitalfire.com/oxide/k2o">K<sub>2</sub>O</a>	5.1	9.1	8.1<br />
+<a  href="https://digitalfire.com/glossary/loi">LOI</a>	0.5	1.5</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Which is the better flux? Cornwall stone or nepheline syenite?</h3>
+<br /><a href="https://digitalfire.com/picture/1233"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/xucfosugoj.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1233">click here</a> to see it.</p>
+<p>Left: Cornwall plus 10% Ferro <a  href="https://digitalfire.com/material/351">Frit 3134</a>. Right: <a  href="https://digitalfire.com/material/1070">Nepheline Syenite</a> plus 10% of the same <a  href="https://digitalfire.com/glossary/frit">frit</a>. These are fired at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Which is the champion melter of American/Canadian feldspars?</h3>
+<br /><a alt="Feldspars melting" href="https://digitalfire.com/picture/2746"><img class="flexleft50" alt="Feldspars melting"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/mrqnfkmwdp.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2746">click here</a> to see it.</p>
+<p><a  href="https://digitalfire.com/material/310">Feldspars</a> are employed in <a  href="https://digitalfire.com/glossary/glaze+recipes">glaze recipes</a> as melters. So comparing their melt fluidities should be helpful in deciding if one can substitute for another (of course, if possible, a soda-predominant <a  href="https://digitalfire.com/material/310">feldspar</a> should be substituted for another soda spar). Feldspars don't melt alone at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> (<a  href="https://digitalfire.com/glossary/cone+6">2200F</a>) so we mixed each with 15% Ferro <a  href="https://digitalfire.com/material/356">Frit 3195</a> (we consider a feldspar a material that sources <a  href="https://digitalfire.com/picture/1775">KNaO</a>). <a  href="https://digitalfire.com/material/1070">Nepheline Syenite</a>, this is A270, is the champion melter here. Other similar ones can be spotted easily. In the end, degree of melt is a valid consideration in determining if one feldspar is a viable substitute for another in a recipe. Even if the feldspar you want to substitute does not melt as much a little <a  href="https://digitalfire.com/glossary/frit">frit</a> can be added to the recipe to make up for the difference (e.g. 3-5%).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">The fired color difference between Nepheline Syenite and Custer Feldspar</h3>
+<br /><a href="https://digitalfire.com/picture/2862"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/nwkcbqagzg.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2862">click here</a> to see it.</p>
+<p>These two bars are fired at cone 8 oxidation. The <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> body recipe is the same (close to equal parts of M23 <a  href="https://digitalfire.com/material/80">ball clay</a>, #6 Tile <a  href="https://digitalfire.com/material/925">kaolin</a>, <a  href="https://digitalfire.com/material/310">feldspar</a> and <a  href="https://digitalfire.com/material/1245">silica</a>). But the top bar uses <a  href="https://digitalfire.com/material/1070">Nepheline Syenite</a> (as the feldspar) and the bottom one <a  href="https://digitalfire.com/material/253">Custer Feldspar</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Melt flow comparison between Nepheline Syenite 270 and 400 mesh</h3>
+<br /><a href="https://digitalfire.com/picture/294"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/materials/nephelinesyeniteflowtest.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/294">click here</a> to see it.</p>
+<p>This <a  href="https://digitalfire.com/material/1070">Nepheline Syenite</a> <a  href="https://digitalfire.com/test/glfl">GLFL test</a> for <a  href="https://digitalfire.com/glossary/melt+fluidity">melt flow</a> did not demonstrate much of a difference in melting at cone 9 between 270 and 400 mesh materials.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Cannot get Nepheline Syenite? Here is what to do.</h3>
+<br /><a title="Screenshot of the glaze chemistry I did" href="https://digitalfire.com/picture/2831"><img class="flexleft50" title="Screenshot of the glaze chemistry I did"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/rpdqfnygqr.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2831">click here</a> to see it.</p>
+<p><a  href="https://digitalfire.com/material/1070">Nepheline Syenite</a> is similar to a <a  href="https://digitalfire.com/material/310">feldspar</a>. I have them open side-by-side here in my <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a>.com account (the blue panels). In the "Analysis" column notice that Minspar has 9% more <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> and 5% less <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a>. Minspar has 12% fluxes and Nepheline has more than 15%. If a recipe does not contain a significant percentage of Nepheline these differences might be tolerated but what if there is 30% or more? There is no combination of materials that has the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> of Nepheline (there is no way to take 10% of the SiO<sub>2</sub> out of this feldspar, for example). But it is possible to take SiO<sub>2</sub> out of a glaze containing Nepheline Syenite. Notice the two green recipe panels below: The changes made to the one on the right harmonize the oxide chemistry with the original on the left. Those changes were significant: 15% more feldspar, 12% less <a  href="https://digitalfire.com/material/1245">silica</a> and 2% less <a  href="https://digitalfire.com/material/925">kaolin</a>. Notice how easy this was using a little chemistry!</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">What happens if you blend 35:65 Nepheline:Ball Clay vs Nepheline:Kaolin?</h3>
+<br /><a href="https://digitalfire.com/picture/2329"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/hxv26wrycz.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2329">click here</a> to see it.</p>
+<p>The piece on the left is 65% <a  href="https://digitalfire.com/material/80">ball clay</a> and 35% <a  href="https://digitalfire.com/material/1070">nepheline syenite</a>. The one on the right is 65% <a  href="https://digitalfire.com/material/925">kaolin</a> and 35% nepheline syenite. Both fire <a  href="https://digitalfire.com/glossary/vitreous">vitreous</a> at <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>. But the glaze is <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a> on the kaolin and not on the ball clay. This is because the ball clay contains significant quartz, that raises the <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> and that puts the squeeze on the glaze and prevents the crazing.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Reduction and oxidation porcelains</h3>
+<br /><a href="https://digitalfire.com/picture/1156"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/sopsygugic.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1156">click here</a> to see it.</p>
+<p>Left: <a  href="https://digitalfire.com/glossary/reduction+firing">Cone 10R</a> (reduction) <a  href="https://digitalfire.com/glossary/plainsman+clays">Plainsman</a> <a  href="https://plainsmanclays.ca/data/index.php?product=12893">P700</a> <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> (made using <a  href="https://digitalfire.com/material/831">Grolleg</a> and G200 <a  href="https://digitalfire.com/material/310">Feldspar</a>). Right: Plainsman <a  href="https://digitalfire.com/glossary/cone+6">Cone 6</a> Plainsman <a  href="https://plainsmanclays.ca/data/index.php?product=12881">Polar Ice</a> porcelain (made using <a  href="https://digitalfire.com/material/2145">New Zealand kaolin</a> and <a  href="https://digitalfire.com/material/1070">Nepheline Syenite</a>). Both are zero <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a>. The <a  href="https://plainsmanclays.ca/data/index.php?product=12881">Polar Ice</a> is very <a  href="https://digitalfire.com/glossary/translucency">translucent</a>, the <a  href="https://plainsmanclays.ca/data/index.php?product=12893">P700</a> much less. The blue coloration of the P700 is mostly a product of the <a  href="https://digitalfire.com/glossary/suspension">suspended</a> micro-bubbles in the feldspar clear glaze (<a  href="https://digitalfire.com/recipe/g1947u">G1947U</a>). The cone 6 glaze is <a  href="https://digitalfire.com/glossary/frit">fritted</a> and much more transparent, but it could be stained to match the blue. These are high quality combinations of glaze and body.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Craze city: Feldspar and Nepheline Syenite on cone 10R porcelain bodies</h3>
+<br /><a href="https://digitalfire.com/picture/1901"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/6vwwiaqz4c.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1901">click here</a> to see it.</p>
+<p>These were applied to the <a  href="https://digitalfire.com/glossary/bisque">bisque</a> as a <a  href="https://digitalfire.com/glossary/slurry">slurry</a> (<a  href="https://digitalfire.com/glossary/suspension">suspended</a> by gelling with powdered or dissolved <a  href="https://digitalfire.com/material/292">Epsom salts</a>). On the left is <a  href="https://digitalfire.com/material/253">Custer feldspar</a>, the right is Covia <a  href="https://digitalfire.com/material/1070">Nepheline Syenite</a>. Notice the <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a> (<a  href="https://digitalfire.com/material/310">feldspars</a>, and nepheline syenite, always <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a> because they are high in <a  href="https://digitalfire.com/oxide/k2o">K<sub>2</sub>O</a> and <a  href="https://digitalfire.com/oxide/na2o">Na<sub>2</sub>O</a>, these <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> have by far the highest <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansions</a>).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Covia nepheline syenite bag as of 2021</h3>
+<br /><a href="https://digitalfire.com/picture/2769"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/jaezg9uqgt.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2769">click here</a> to see it.</p>
+<p></p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Melt fluidity: Cornwall Stone vs. Nepheline Syenite</h3>
+<br /><a href="https://digitalfire.com/picture/1235"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/zihsebaxaw.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1235">click here</a> to see it.</p>
+<p>Three <a  href="https://digitalfire.com/material/240">Cornwall Stone</a> shipments (from 2011 and 2014) fired at cone 8 in <a  href="https://digitalfire.com/glossary/melt+fluidity">melt flow</a> GLFL testers and compared to <a  href="https://digitalfire.com/material/1070">Nepheline Syenite</a>. Each contains 10% Ferro <a  href="https://digitalfire.com/material/351">Frit 3134</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Casey is unloading a truckload of Nepheline Syenite</h3>
+<br /><a alt="Fork lift zoom in, out and through the warehouse" href="https://digitalfire.com/picture/2571"><img class="flexleft50" alt="Fork lift zoom in, out and through the warehouse"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/xwjxbbfet7.gif" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2571">click here</a> to see it.</p>
+<p><a  href="https://digitalfire.com/material/1070">Nepheline Syenite</a> is a type of <a  href="https://digitalfire.com/material/310">feldspar</a>. We use it in <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> bodies. The nepheline content determines the temperature at which the body is <a  href="https://digitalfire.com/glossary/vitreous">vitreous</a>. We use this product in preference, where possible over soda or potash feldspar. There are several reasons: It is mined and processed in Canada and is renowned around the world for it's quality. If has a very low iron content, this makes for whiter-burning bodies. It is a more powerful <a  href="https://digitalfire.com/glossary/flux">flux</a> than common <a  href="https://digitalfire.com/material/310">feldspars</a>. It has been very consistent over many decades.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Covia nepheline syenite demonstrates the incredible fluxing power of Veegum</h3>
+<br /><a alt="Nepheline syenite fired test bars" href="https://digitalfire.com/picture/3018"><img class="flexleft50" alt="Nepheline syenite fired test bars"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/s2lixljt3u.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3018">click here</a> to see it.</p>
+<p>The left bars are 5% Veegum and 95% <a  href="https://digitalfire.com/material/1070">nepheline syenite</a>. By cone 02 (bar #4) it is self-glazing and glass-like with a <a  href="https://digitalfire.com/picture/2239">total shrinkage</a> (plastic to fired) of 15% (less than some porcelains). At cone 03 (bar #5) the <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a> is 3% (a <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a>). The right bars are 10% raw <a  href="https://digitalfire.com/material/106">bentonite</a> and 90% nepheline (thus the darker color). The top bar (#1) went to cone 3 and has 20% total shrinkage and zero porosity. The bar below it, #3, has 3% porosity. That means that the <a  href="https://digitalfire.com/glossary/vitrification">vitrification</a> process is 6 cones (115&deg;F) ahead in the Veegum-plasticized material compared to the bentonite-plasticized version. Yet the percentage of Veegum is only half as much! This is clear evidence of how powerful of a <a  href="https://digitalfire.com/glossary/flux">flux</a> Veegum is.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Custer Feldspar vs Nepheline Syenite at cone 8 oxidation</h3>
+<br /><a alt="Feldspar and nepheline melting" href="https://digitalfire.com/picture/3035"><img class="flexleft50" alt="Feldspar and nepheline melting"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/materials/sshppfsda1.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3035">click here</a> to see it.</p>
+<p>Although <a  href="https://digitalfire.com/material/1070">Nepheline Syenite</a> and <a  href="https://digitalfire.com/material/253">Custer Feldspar</a> are used as effective body maturing agents and fluxes in glazes past <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>, curiously, neither of them melt well by themselves. Thus, both of these come 6 <a  href="https://digitalfire.com/glossary/melt+fluidity">melt fluidity</a> tests add 20% Ferro <a  href="https://digitalfire.com/material/351">Frit 3134</a> to get them flowing. This is a 2021 shipment of the <a  href="https://digitalfire.com/material/310">feldspar</a> and a 2022 shipment of the nepheline.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Pure nepheline syenite mug glazed and fired to cone 02</h3>
+<br /><a alt="A nepheline syenite mug" href="https://digitalfire.com/picture/3033"><img class="flexleft50" alt="A nepheline syenite mug"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/3b1dvhtplt.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3033">click here</a> to see it.</p>
+<p>It is near <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> strength. How was it possible to make this? Actually, it is 90% <a  href="https://digitalfire.com/material/1070">nepheline syenite</a> and 10% <a  href="https://digitalfire.com/material/106">bentonite</a>. The latter imparts enough <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> that it can be <a  href="https://digitalfire.com/glossary/throwing">thrown</a> easily on a potter's wheel. By about <a  href="https://digitalfire.com/glossary/cone+1">cone 1</a> it begins to warp. This is fired to cone 02 with standard Spectrum <a  href="https://digitalfire.com/glossary/earthenware">low fire</a> glazes.  No <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a> is evident and the coverage is normal. This really demonstrates the amazing ceramic properties of this material. We aged this for several weeks before <a  href="https://digitalfire.com/glossary/throwing">throwing</a> and it was stable and unchanged in softness or plasticity.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Intense flashing at cone 10R, courtesy of nepheline syenite tiles</h3>
+<br /><a alt="Intense flashing at cone 10R" href="https://digitalfire.com/picture/3089"><img class="flexleft50" alt="Intense flashing at cone 10R"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/lxaka2afyh.jpeg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3089">click here</a> to see it.</p>
+<p>This <a  href="https://digitalfire.com/glossary/flashing">flashing</a> method works in reduction or oxidation. It was done by <a  href="https://digitalfire.com/glossary/bisque">bisque firing</a> a thin <a  href="https://digitalfire.com/material/1070">nepheline syenite</a> tile leaning against the piece. The tiles are made using a 5:95 mix of Veegum and Nepheline (or a 10:90 mix of raw <a  href="https://digitalfire.com/material/106">bentonite</a> and nepheline). Sodium vapours from the tile are deposited on the surface and affect it profoundly enough to influence the glaze firing. A similar effect can be had by spraying on a saltwater solution, it should work whether done prior to the <a  href="https://digitalfire.com/glossary/bisque">bisque</a> or the glaze firing (of course lots of testing would be required to perfect it).</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/soda+feldspar">Soda Feldspar</a>
+<br /><i>A <a  href="https://digitalfire.com/material/310">feldspar</a> having a <a  href="https://digitalfire.com/picture/1775">KNaO</a> content that predominates in sodium.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/f-4+feldspar">F-4 Feldspar</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/covia+nepheline+syenite">Covia Nepheline Syenite</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/feldspar">Feldspar</a>
+<br /><i>In <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>, <a  href="https://digitalfire.com/material/310">feldspars</a> are used in glazes and <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a>. They vitrify stonewares and porcelains. They supply <a  href="https://digitalfire.com/picture/1775">KNaO</a> <a  href="https://digitalfire.com/glossary/flux">flux</a> to glazes to help them melt.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/boron+frits">Boron Frits</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/nepheline+syenite+norwegian">Nepheline Syenite Norwegian</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/329">http://en.wikipedia.org/wiki/Nepheline</a>
+<br /><i>Nepheline at Wikipedia</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/gnm">Generic Material</a>
+<br /><i>Generic materials are those with no brand name. Normally they are theoretical, the <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a> portrays what a specimen would be if it had no contamination. Generic materials are helpful in educational situations where students need to study material theory (later they graduate to dealing with real world materials). They are also helpful where the chemistry of an actual material is not known. Often the accuracy of calculations is sufficient using generic materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/fel">Feldspar</a>
+<br /><i>The most common source of fluxes for high and <a  href="https://digitalfire.com/glossary/medium+temperature">medium temperature</a> glazes and bodies.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/demonstrating+glaze+fit+issues+to+students">Demonstrating Glaze Fit Issues to Students</a>
+<br /><i>Glaze and body can both be adjusted to solve <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a> and <a  href="https://digitalfire.com/glossary/glaze+shivering">shivering</a> problems. This describes a simple project to create body glaze combinations guaranteed to <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a> and <a  href="https://digitalfire.com/glossary/glaze+shivering">shiver</a> to demonstrate the principles involved.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="https://digitalfire.com/oxide/k2o">K2O - Potassium Oxide</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="https://digitalfire.com/oxide/na2o">Na2O - Sodium Oxide, Soda</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Oxides</td>
+<td>
+<a href="https://digitalfire.com/oxide/sio2">SiO2 - Silicon Dioxide, Silica</a>
+</td>
+</tr>
+<tr>
+<td scope="row">Minerals</td>
+<td>
+<a href="https://digitalfire.com/mineral/nepheline">Nepheline</a>
+<br /><i>A feldspathoid silica-undersaturated aluminosilicate mineral.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Hazards</td>
+<td>
+<a href="https://digitalfire.com/hazard/feldspar">Feldspar</a>
+<br /><i><a  href="https://digitalfire.com/material/310">Feldspars</a> are abundant and varied in nature. They contain small amounts of quartz (while <a  href="https://digitalfire.com/material/1070">nepheline syenite</a> does not).</i>
+</td>
+</tr>
+</tbody></table>
+<h3>Data</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<th scope="row">Frit Melting Range (C)</th>
+<td>1100C</td>
+</tr>
+</tbody></table>
+<h3>Mechanisms</h3><table>
+<table class="table table-bordered"><tbody>
+<tr><th scope="row">Body Maturity</th><td>This material is generally fluxes better than feldspars and produces whiter burning bodies.</td></tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

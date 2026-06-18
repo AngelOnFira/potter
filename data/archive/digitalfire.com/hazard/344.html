@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Thorium Dioxide Toxicity</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Digitalfire Reference Library: Practical material hazards information in the traditional ceramic industry">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+March 2026: We are doing major upgrades to code here, please be patient regarding any issues. If any page is not working for a period of hours, please contact us. Thank you.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item active" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=hazard" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:center; vertical-align:top;">Feb 14-15, 2026 - <b>Major Server <a href="https://digitalfire.com">Upgrade</a> Done</b></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Hazards</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a title="341" href="https://digitalfire.com/hazard/341">Alumina Toxicology</a> |</nobr> <nobr><a title="333" href="https://digitalfire.com/hazard/333">Ammonia and Latex Toxicity</a> |</nobr> <nobr><a title="16" href="https://digitalfire.com/hazard/16">Antimony Oxide</a> |</nobr> <nobr><a title="412" href="https://digitalfire.com/hazard/412">Are colored porcelains hazardous?</a> |</nobr> <nobr><a title="18" href="https://digitalfire.com/hazard/18">Arsenic Oxide</a> |</nobr> <nobr><a title="19" href="https://digitalfire.com/hazard/19">Asbestos Toxicity</a> |</nobr> <nobr><a title="22" href="https://digitalfire.com/hazard/22">Ball Clay</a> |</nobr> <nobr><a title="321" href="https://digitalfire.com/hazard/321">BARIUM and COMPOUNDS Toxicology</a> |</nobr> <nobr><a title="367" href="https://digitalfire.com/hazard/367">Barium Carbonate in Clay Bodies</a> |</nobr> <nobr><a title="26" href="https://digitalfire.com/hazard/26">Barium Carbonate in Glazes</a> |</nobr> <nobr><a title="31" href="https://digitalfire.com/hazard/31">Bentonite Toxicity</a> |</nobr> <nobr><a title="33" href="https://digitalfire.com/hazard/33">Beryllium Monoxide Toxicology</a> |</nobr> <nobr><a title="352" href="https://digitalfire.com/hazard/352">Bismuth Trioxide Toxicology</a> |</nobr> <nobr><a title="326" href="https://digitalfire.com/hazard/326">Boron Compounds and Their Toxicity</a> |</nobr> <nobr><a title="1" href="https://digitalfire.com/hazard/1">Brown Stain</a> |</nobr> <nobr><a title="335" href="https://digitalfire.com/hazard/335">Cadmium Toxicity</a> |</nobr> <nobr><a title="343" href="https://digitalfire.com/hazard/343">Calcium Carbonate Toxicology</a> |</nobr> <nobr><a title="334" href="https://digitalfire.com/hazard/334">Carbon Monoxide Toxicity</a> |</nobr> <nobr><a title="353" href="https://digitalfire.com/hazard/353">Cesium Toxicology</a> |</nobr> <nobr><a title="330" href="https://digitalfire.com/hazard/330">Chromium Compounds Toxicology</a> |</nobr> <nobr><a title="146" href="https://digitalfire.com/hazard/146">Clay Toxicity</a> |</nobr> <nobr><a title="73" href="https://digitalfire.com/hazard/73">Cobalt Oxide and Carbonate</a> |</nobr> <nobr><a title="331" href="https://digitalfire.com/hazard/331">Cobalt Toxicology</a> |</nobr> <nobr><a title="329" href="https://digitalfire.com/hazard/329">Copper Compounds Toxicology</a> |</nobr> <nobr><a title="78" href="https://digitalfire.com/hazard/78">Copper Oxide and Carbonate</a> |</nobr> <nobr><a title="84" href="https://digitalfire.com/hazard/84">Cristobalite Toxicity</a> |</nobr> <nobr><a title="337" href="https://digitalfire.com/hazard/337">Cryolite and Ceramics</a> |</nobr> <nobr><a title="372" href="https://digitalfire.com/hazard/372">Dealing With Dust in Ceramics</a> |</nobr> <nobr><a title="351" href="https://digitalfire.com/hazard/351">Diatomaceous Earth Toxicology</a> |</nobr> <nobr><a title="323" href="https://digitalfire.com/hazard/323">Dioxins in Clays</a> |</nobr> <nobr><a title="95" href="https://digitalfire.com/hazard/95">Epsom Salts</a> |</nobr> <nobr><a title="348" href="https://digitalfire.com/hazard/348">Eye Injuries Due to Radiation</a> |</nobr> <nobr><a title="222" href="https://digitalfire.com/hazard/222">Feldspar</a> |</nobr> <nobr><a title="320" href="https://digitalfire.com/hazard/320">Fighting Micro-Organisms in Ceramics</a> |</nobr> <nobr><a title="108" href="https://digitalfire.com/hazard/108">Fluorine Gas</a> |</nobr> <nobr><a title="413" href="https://digitalfire.com/hazard/413">Fumes from gas kilns</a> |</nobr> <nobr><a title="354" href="https://digitalfire.com/hazard/354">Gallium Oxide Toxicology</a> |</nobr> <nobr><a title="342" href="https://digitalfire.com/hazard/342">Hafnium Oxide Toxicty</a> |</nobr> <nobr><a title="345" href="https://digitalfire.com/hazard/345">Hydrofluoric Acid Toxicity</a> |</nobr> <nobr><a title="350" href="https://digitalfire.com/hazard/350">Iron oxide and Hematite</a> |</nobr> <nobr><a title="169" href="https://digitalfire.com/hazard/169">Lead Chromate</a> |</nobr> <nobr><a title="368" href="https://digitalfire.com/hazard/368">Lead in Ceramic Glazes</a> |</nobr> <nobr><a title="328" href="https://digitalfire.com/hazard/328">Lead Toxicology</a> |</nobr> <nobr><a title="174" href="https://digitalfire.com/hazard/174">Lithium Carbonate Toxicity</a> |</nobr> <nobr><a title="349" href="https://digitalfire.com/hazard/349">Lithium Toxicology</a> |</nobr> <nobr><a title="322" href="https://digitalfire.com/hazard/322">Man-Made Vitreous Fibers (MMVF) Toxicology</a> |</nobr> <nobr><a title="410" href="https://digitalfire.com/hazard/410">Man-Made Vitreous Fibers Safety Update</a> |</nobr> <nobr><a title="406" href="https://digitalfire.com/hazard/406">Manganese and Parkinsons by Jane Watkins</a> |</nobr> <nobr><a title="187" href="https://digitalfire.com/hazard/187">Manganese in Clay Bodies</a> |</nobr> <nobr><a title="317" href="https://digitalfire.com/hazard/317">Manganese Inorganic Compounds Toxicology</a> |</nobr> <nobr><a title="409" href="https://digitalfire.com/hazard/409">Manganese Toxicity by Elke Blodgett</a> |</nobr> <nobr><a title="407" href="https://digitalfire.com/hazard/407">Manganese: Creativity and Illness by Dierdre O'Reilly</a> |</nobr> <nobr><a title="332" href="https://digitalfire.com/hazard/332">Molybdenum Compounds Toxicology</a> |</nobr> <nobr><a title="327" href="https://digitalfire.com/hazard/327">Nickel Compounds Toxicity</a> |</nobr> <nobr><a title="314" href="https://digitalfire.com/hazard/314">Niobium Oxide Toxicity</a> |</nobr> <nobr><a title="318" href="https://digitalfire.com/hazard/318">Occupational Dermatoses</a> |</nobr> <nobr><a title="370" href="https://digitalfire.com/hazard/370">Overview of Material Safety by Gavin Stairs</a> |</nobr> <nobr><a title="364" href="https://digitalfire.com/hazard/364">Paraffin Toxicology</a> |</nobr> <nobr><a title="216" href="https://digitalfire.com/hazard/216">Perlite Toxicity</a> |</nobr> <nobr><a title="238" href="https://digitalfire.com/hazard/238">Plant Ash Toxicity</a> |</nobr> <nobr><a title="346" href="https://digitalfire.com/hazard/346">Potassium Carbonate Toxicity</a> |</nobr> <nobr><a title="365" href="https://digitalfire.com/hazard/365">Pregnancy and Ceramics</a> |</nobr> <nobr><a title="355" href="https://digitalfire.com/hazard/355">Propane Toxicology</a> |</nobr> <nobr><a title="251" href="https://digitalfire.com/hazard/251">Quartz Toxicity</a> |</nobr> <nobr><a title="369" href="https://digitalfire.com/hazard/369">Quartz Toxicity on Clayart</a> |</nobr> <nobr><a title="336" href="https://digitalfire.com/hazard/336">Rare Earth Compounds Toxicity</a> |</nobr> <nobr><a title="366" href="https://digitalfire.com/hazard/366">Rubidium and Cesium Toxicology</a> |</nobr> <nobr><a title="356" href="https://digitalfire.com/hazard/356">Rutile Toxicology</a> |</nobr> <nobr><a title="324" href="https://digitalfire.com/hazard/324">Silicosis and Screening</a> |</nobr> <nobr><a title="357" href="https://digitalfire.com/hazard/357">Silver Compounds Toxicology</a> |</nobr> <nobr><a title="358" href="https://digitalfire.com/hazard/358">Sodium Azide Toxicology</a> |</nobr> <nobr><a title="359" href="https://digitalfire.com/hazard/359">Sodium Carbonate Toxicology</a> |</nobr> <nobr><a title="360" href="https://digitalfire.com/hazard/360">Sodium Silicate Powder Toxicology</a> |</nobr> <nobr><a title="315" href="https://digitalfire.com/hazard/315">Stannous Chloride Toxicity</a> |</nobr> <nobr><a title="316" href="https://digitalfire.com/hazard/316">Strontium Carbonate Toxicity Note</a> |</nobr> <nobr><a title="347" href="https://digitalfire.com/hazard/347">Sulfur Dioxide Toxicity</a> |</nobr> <nobr><a title="3" href="https://digitalfire.com/hazard/3">Talc Hazards Overview</a> |</nobr> <nobr><a title="361" href="https://digitalfire.com/hazard/361">Talc Toxicology</a> |</nobr> <nobr><a title="362" href="https://digitalfire.com/hazard/362">Thallium Oxide Toxicology</a> |</nobr> <nobr><a title="344" href="https://digitalfire.com/hazard/344"><button type="button" class="btn btn-dark">Thorium Dioxide Toxicity</button></a> |</nobr> <nobr><a title="338" href="https://digitalfire.com/hazard/338">Tin Inorganic Compounds</a> |</nobr> <nobr><a title="339" href="https://digitalfire.com/hazard/339">Titanium Dioxide Toxicology</a> |</nobr> <nobr><a title="313" href="https://digitalfire.com/hazard/313">Toxicological Assessment of Zeolites</a> |</nobr> <nobr><a title="363" href="https://digitalfire.com/hazard/363">Tungsten Compounds Toxicology</a> |</nobr> <nobr><a title="371" href="https://digitalfire.com/hazard/371">Understanding Acronyms on MSDS's</a> |</nobr> <nobr><a title="325" href="https://digitalfire.com/hazard/325">Uranium and Ceramics</a> |</nobr> <nobr><a title="319" href="https://digitalfire.com/hazard/319">Vanadium and Compounds Toxicology</a> |</nobr> <nobr><a title="411" href="https://digitalfire.com/hazard/411">Vermiculite</a> |</nobr> <nobr><a title="340" href="https://digitalfire.com/hazard/340">Zinc Compounds Toxicology</a> |</nobr> <nobr><a title="373" href="https://digitalfire.com/hazard/373">Zirconium Compounds Toxicity</a> |</nobr> <nobr><a title="234" href="https://digitalfire.com/hazard/234">Zirconium Encapsulated Stains Toxicity</a></nobr></div><h1>Thorium Dioxide Toxicity</h1>
+<p><DT><B><U><FONT SIZE="+1" COLOR="#004080">Identification and Uses <br />
+:</FONT></U></B> <br />
+    <br />
+<DD><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">CAS Number :1314-20-1</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">Thorium Dioxide is a heavy, white, <br />
+<a  href="https://digitalfire.com/glossary/glass+vs.+crystalline">crystalline</a> (sand-like) powder. </FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">It is used in :</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">-ceramics, </FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">-in nuclear fuels, </FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">-as a catalyst, </FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">-in electrodes for arc welding.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><B><U><FONT SIZE="+1" COLOR="#004080">Toxicology <br />
+:</FONT></U></B> <br />
+    <br />
+<DD><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">Thorium Dioxide emits alpha particles <br />
+which can be breathed in and swallowed.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><B><U><FONT COLOR="#004080">I-Acute Health Effects <br />
+:</FONT></U></B> <br />
+    <br />
+<DD><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">Exposure can reduce the ability of the <br />
+bone marrow to make white blood cells.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><B><U><FONT COLOR="#004080">II-Chronic Health Effects <br />
+:</FONT></U></B> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><B><FONT COLOR="#004080">A-Carcinogenesis :</FONT></B> <br />
+    <br />
+<DT><FONT COLOR="#004080">Thorium Dioxide is a carcinogen in <br />
+humans. It has been shown to cause  angiosarcoma, liver and kidney <br />
+tumors, lymphoma and other tumors of the blood system, and tumors <br />
+at the site of application.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><B><FONT COLOR="#004080">B-Reproductive Hazard :</FONT></B> <br />
+    <br />
+<DT><FONT COLOR="#004080">Thorium Dioxide has not been tested for <br />
+its ability to affect reproduction.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">Because Thorium Dioxide gives off very <br />
+dangerous radiation, it has the potential for causing reproductive <br />
+damage in humans.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><B><FONT COLOR="#004080">C-Other Long-Term Effects <br />
+:</FONT></B> <br />
+    <br />
+<DT><FONT COLOR="#004080">Overexposure can occur with no acute <br />
+symptoms.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">Low repeated exposures may scar the <br />
+lungs.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">After exposure, some Thorium Dioxide is <br />
+retained in the bones, lymph system, lungs and other body organs <br />
+for many years.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">Exposure may damage the liver and <br />
+kidneys.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><B><U><FONT SIZE="+1" COLOR="#004080">Medical Surveillance <br />
+:</FONT></U></B> <br />
+    <br />
+<DD><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><B><U><FONT COLOR="#004080">I-Clinical :</FONT></U></B> <br />
+    <br />
+<DD><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">Any evaluation should include a careful <br />
+history of past and present symptoms with a physical  <br />
+examination.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><B><U><FONT COLOR="#004080">II-Laboratory :</FONT></U></B> <br />
+    <br />
+<DD><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">Before beginning employment and at <br />
+regular times after that, the following are recommended:</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">-White blood cell count.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">-Lung function test.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">-Consider periodic chest x-ray for <br />
+persons with potentially high or repeated lower exposure.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">If symptoms develop or overexposure is <br />
+suspected, the following may be useful :</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">-Liver and kidney function tests.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">Medical tests that look for damage <br />
+already done are not a substitute for controlling exposure.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><B><U><FONT SIZE="+1" COLOR="#004080">Ways of Reducing <br />
+Exposure :</FONT></U></B> <br />
+    <br />
+<DD><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">I-Enclose operations and use local <br />
+exhaust ventilation at the site of chemical release. If local <br />
+exhaust ventilation or enclosure is not used, respirators should <br />
+be worn.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">II-A regulated, marked area should be <br />
+established where Thorium Dioxide is handled, used, or <br />
+stored.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">III-All processes involving Thorium <br />
+Dioxide should be mechanized, enclosed or automated.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">IV-When working with small quantities of <br />
+Thorium Dioxide, use in a glove box.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">V-Wear protective work clothing.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">VI-Wash thoroughly immediately after <br />
+exposure to Thorium Dioxide and at the end of the <br />
+workshift.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">VII-Post hazard and warning information <br />
+in the work area. In addition, as part of an ongoing education and <br />
+training effort, communicate all information on the health and <br />
+safety hazards of Thorium Dioxide to potentially exposed <br />
+workers.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><B><U><FONT SIZE="+1" COLOR="#004080">Workplace Controls and <br />
+Practices :</FONT></U></B> <br />
+    <br />
+<DD><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">Unless a less toxic chemical can be <br />
+substituted for a hazardous substance, </FONT><B><FONT <br />
+COLOR="#004080">engineering controls</FONT></B><FONT <br />
+COLOR="#004080"> are the most effective way of reducing exposure. <br />
+</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">The best protection is to enclose <br />
+operations and/or provide local exhaust ventilation at the site of <br />
+radiation release. Isolating operations can also reduce exposure. <br />
+Using respirators or protective equipment is less effective than <br />
+the controls mentioned above, but is sometimes necessary.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">In evaluating the controls present in <br />
+your workplace, consider:</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">-how hazardous the substance is, </FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">-how much of the substance is released <br />
+into the workplace and </FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">-whether harmful skin or eye contact <br />
+could occur. Special controls should be in place for highly toxic <br />
+chemicals or when significant skin, eye, or breathing exposures <br />
+are possible.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><B><U><FONT COLOR="#004080">I-Additional Recommended Controls <br />
+:</FONT></U></B> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">A-Automatically transfer Thorium Dioxide <br />
+from drums or other storage containers to process <br />
+containers.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">B-Specific engineering controls and <br />
+personnel monitoring are required according to local <br />
+legislation.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><B><U><FONT COLOR="#004080">II-Work practices :</FONT></U></B> <br />
+    <br />
+<DD><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">Good work practices can help to reduce <br />
+hazardous exposures. The following work practices are <br />
+recommended:</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">A-Workers whose clothing has been <br />
+contaminated by Thorium Dioxide should change into clean clothing <br />
+promptly.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">B-Do not take contaminated work clothes <br />
+home. Family members could be exposed.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">C-Contaminated work clothes should be <br />
+laundered by individuals who have been informed of the hazards of <br />
+exposure to Thorium Dioxide.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">D-If there is the possibility of skin <br />
+exposure, emergency shower facilities should be provided.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">E-On skin contact with Thorium Dioxide, <br />
+immediately wash or shower to remove the chemical. At the end of <br />
+the workshift, wash any areas of the body that may have contacted <br />
+Thorium Dioxide, whether or not known skin contact has <br />
+occurred.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">F-Do not eat, smoke, or drink where <br />
+Thorium Dioxide is handled, processed, or stored, since the <br />
+chemical can be swallowed. Wash hands carefully before eating or <br />
+smoking.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">G-Employees exposed to ionizing <br />
+radiation should be provided with personal monitoring equipment <br />
+such as film badges or pocket dosimeters.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">H-Use damp methods to control dust. Test <br />
+for trace levels of radioactivity after clean-up.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><B><U><FONT SIZE="+1" COLOR="#004080">Personal Protective <br />
+Equipment :</FONT></U></B> <br />
+    <br />
+<DD><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">Workplace controls are better than <br />
+personal protective equipment.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">However, for some jobs (such as outside <br />
+work, confined space entry, jobs done only once in a while, or <br />
+jobs done while workplace controls are being installed), personal <br />
+protective equipment may be appropriate</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">The following recommendations are only <br />
+guidelines and may not apply to every situation.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><B><U><FONT COLOR="#004080">I-Clothing :</FONT></U></B> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">A-Avoid skin contact with Thorium <br />
+Dioxide. Wear protective gloves and clothing. Safety equipment <br />
+suppliers/manufacturers can provide recommendations on the most <br />
+protective glove/clothing material for your operation.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">B-All protective clothing (suits, <br />
+gloves, footwear, headgear) should be clean, available each day, <br />
+and put on before work</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><B><U><FONT COLOR="#004080">II-Eye Protection :</FONT></U></B> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">-Wear dust-proof goggles and face shield <br />
+when working with powders or dust, unless full facepiece <br />
+respiratory protection is worn.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><B><U><FONT COLOR="#004080">III-Respiratory Protection <br />
+:</FONT></U></B> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><B><FONT COLOR="#004080">Improper use of respirators is <br />
+dangerous :</FONT></B> <br />
+    <br />
+<DT><FONT COLOR="#004080">Such equipment should only be used if <br />
+the employer has a written program that takes into account <br />
+workplace conditions, requirements for worker training, respirator <br />
+fit testing and</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">medical exams.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">Engineering controls must be effective <br />
+to ensure that exposure to Thorium Dioxide does not occur.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">At any exposure level, use an approved <br />
+supplied-air respirator with a full facepiece or use an approved <br />
+self-contained breathing apparatus with a full facepiece operated <br />
+in pressure-demand or other positive pressure mode.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><B><U><FONT SIZE="+1" COLOR="#004080">First Aid <br />
+:</FONT></U></B> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><B><U><FONT COLOR="#004080">I-Eye Contact :</FONT></U></B> <br />
+    <br />
+<DT><FONT COLOR="#004080">Immediately flush with large amounts of <br />
+water for at least 15 minutes, occasionally lifting upper and <br />
+lower lids.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><B><U><FONT COLOR="#004080">II-Skin Contact :</FONT></U></B> <br />
+    <br />
+<DT><FONT COLOR="#004080">Quickly remove contaminated clothing. <br />
+Immediately wash contaminated skin with soap and large amounts of <br />
+water</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><B><U><FONT COLOR="#004080">III-Breathing :</FONT></U></B> <br />
+    <br />
+<DT><FONT COLOR="#004080">Remove the person from exposure.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">Begin rescue breathing if breathing has <br />
+stopped and CPR if heart action has stopped.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">Transfer promptly to a medical <br />
+facility.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><B><U><FONT SIZE="+1" COLOR="#004080">Workplace Exposure <br />
+Limits :</FONT></U></B> <br />
+    <br />
+<DD><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">Exposure to radioactive materials is <br />
+regulated by local legislation.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">Thorium Dioxide is a carcinogen in <br />
+humans. There may be no safe level of exposure to a carcinogen, so <br />
+all contact should be reduced to the lowest possible level.</FONT> <br />
+    <br />
+<DT><FONT COLOR="#004080">&nbsp;</FONT> <br />
+    <br />
+<DT><I><FONT COLOR="#004080">References :</FONT></I> <br />
+    <br />
+<DT><I><FONT COLOR="#004080">  </FONT></I> <br />
+    <br />
+<DT><I><FONT COLOR="#004080">1-Occupational Medicine,Carl Zenz, <br />
+last edition.</FONT></I> <br />
+    <br />
+<DT><I><FONT COLOR="#004080">2-Clinical Environmental Health and <br />
+Toxic Exposures, Sullivan &amp; Krieger; last edition.</FONT></I> <br />
+    <br />
+<DT><I><FONT COLOR="#004080">3-Sax's Dangerous Properties of <br />
+Industrial Materials, Lewis C., last edition.</FONT></I> <br />
+    <br />
+<DT><I><FONT COLOR="#004080">4-Toxicologie Industrielle et <br />
+Intoxications Professionnelles, Lauwerys R.R. last <br />
+edition.</FONT></I> <br />
+    <br />
+<DT><I><FONT COLOR="#004080">5-Chemical Hazards of the Workplace, <br />
+Proctor &amp; Hughes, 4th edition</FONT></I></p>
+<hr><p>By Edouard Bastarache </p>
+<h2 style="font-style:italic; margin-top:40px;">Related Information</h2>
+
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/eba">Article by Edouard Bastarache</a>
+<br /><i>Edouard Bastarache is a well known doctor that has written many articles on the subject of <a  href="https://digitalfire.com/glossary/toxicity">toxicity</a> of ceramic materials and books on technical aspects of <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>. He writes in both English and French.</i>
+</td>
+</tr>
+</tbody></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

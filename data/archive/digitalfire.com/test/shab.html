@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg" temp="test">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Shrinkage/Absorption Test - SHAB</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="SHAB Shrinkage and absorption test procedure for plastic clay bodies and materials">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item active" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=test" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><table style="width:100%; margin-bottom:10px;"><tr><td style="vertical-align:middle;"><b style="color:blue;"><a name="nlsignup">Monthly Tech-Tip</b> <nobr>from Tony Hansen</nobr> <a href="/index.php">SignUp</a></td><td style="text-align:right; vertical-align:middle;"><p style="font-size:80%; text-align:center; border:thin solid grey; margin:0px; padding:3px 5px 3px 5px; background-color:#eeffee;"><b>No tracking</b>! <b>No ads</b>!</p></td><tr></table><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">Test Code-numbers</a> <a class="btn btn-primary"href="https://digitalfire.com/test/list" role="button" aria-expanded="false">All Tests</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><nobr><a title="94 - +44 and +63 Micron Residue" href="https://digitalfire.com/test/44mr">44MR</a> |</nobr> <nobr><a title="38 - Apparent Porosity" href="https://digitalfire.com/test/appo">APPO</a> |</nobr> <nobr><a title="85 - Average Particle Size (Microns)" href="https://digitalfire.com/test/avps">AVPS</a> |</nobr> <nobr><a title="42 - Apparent Viscosity (cps)" href="https://digitalfire.com/test/avsc">AVSC</a> |</nobr> <nobr><a title="36 - Bulk Density g/cc (Packed)" href="https://digitalfire.com/test/bdgc">BDGC</a> |</nobr> <nobr><a title="23 - Bulk Density lbs/cu. ft. (Packed)" href="https://digitalfire.com/test/bdlb">BDLB</a> |</nobr> <nobr><a title="73 - Borate LOI" href="https://digitalfire.com/test/bloi">BLOI</a> |</nobr> <nobr><a title="89 - Boiling Water:Ice Water Glaze Fit Test" href="https://digitalfire.com/test/bwiw">BWIW</a> |</nobr> <nobr><a title="90 - Carbon content" href="https://digitalfire.com/test/ccon">CCON</a> |</nobr> <nobr><a title="62 - Drying Factor/Water Content/Solubles" href="https://digitalfire.com/test/cdry">CDRY</a> |</nobr> <nobr><a title="25 - CEC (meq/100g)" href="https://digitalfire.com/test/cec">CEC</a> |</nobr> <nobr><a title="47 - Clay Water Content - Powder, Plastic" href="https://digitalfire.com/test/clwc">CLWC</a> |</nobr> <nobr><a title="99 - Compressive Strength" href="https://digitalfire.com/test/cmst">CMST</a> |</nobr> <nobr><a title="10 - Co-efficient of Linear Expansion" href="https://digitalfire.com/test/cole">COLE</a> |</nobr> <nobr><a title="64 - Cold Over Boiled Porosity" href="https://digitalfire.com/test/covb">COVB</a> |</nobr> <nobr><a title="63 - Clay, Silt, Sand Sedimentation Test" href="https://digitalfire.com/test/csss">CSSS</a> |</nobr> <nobr><a title="1 - Density (Specific Gravity)" href="https://digitalfire.com/test/dens">DENS</a> |</nobr> <nobr><a title="46 - Drying Factor" href="https://digitalfire.com/test/dfac">DFAC</a> |</nobr> <nobr><a title="77 - Deflocculation Demand" href="https://digitalfire.com/test/dfdm">DFDM</a> |</nobr> <nobr><a title="105 - Dielectric Strength" href="https://digitalfire.com/test/diel">DIEL</a> |</nobr> <nobr><a title="8 - Density, loose packed (lbs/cu fut)" href="https://digitalfire.com/test/dnlp">DNLP</a> |</nobr> <nobr><a title="19 - Dry Strength (kgf/cm2)" href="https://digitalfire.com/test/ds">DS</a> |</nobr> <nobr><a title="51 - Drying Shrinkage" href="https://digitalfire.com/test/dshr">DSHR</a> |</nobr> <nobr><a title="59 - Dry Strenth (Round Bars)" href="https://digitalfire.com/test/dsrn">DSRN</a> |</nobr> <nobr><a title="60 - Dry Strength (Square Bars)" href="https://digitalfire.com/test/dstr">DSTR</a> |</nobr> <nobr><a title="13 - Decomposition Temperature" href="https://digitalfire.com/test/dtmp">DTMP</a> |</nobr> <nobr><a title="112 - Engobe Body Compatibility Test" href="https://digitalfire.com/test/ebct">EBCT</a> |</nobr> <nobr><a title="97 - Elastic Modulus, 20 degrees C" href="https://digitalfire.com/test/em20">EM20</a> |</nobr> <nobr><a title="96 - Frit Fusibility Test" href="https://digitalfire.com/test/frfu">FRFU</a> |</nobr> <nobr><a title="65 - Fired Strength Round Bars" href="https://digitalfire.com/test/frrd">FRRD</a> |</nobr> <nobr><a title="102 - Fracture Toughness" href="https://digitalfire.com/test/frtg">FRTG</a> |</nobr> <nobr><a title="21 - Firing Shrinkage" href="https://digitalfire.com/test/fshr">FSHR</a> |</nobr> <nobr><a title="66 - Fired Strength Square Bars" href="https://digitalfire.com/test/fstr">FSTR</a> |</nobr> <nobr><a title="113 - Glaze Body Bond Test" href="https://digitalfire.com/test/gbbt">GBBT</a> |</nobr> <nobr><a title="110 - Glaze Melt Fluidity - Ball Test" href="https://digitalfire.com/test/gbmf">GBMF</a> |</nobr> <nobr><a title="27 - GE Brightness" href="https://digitalfire.com/test/gebr">GEBR</a> |</nobr> <nobr><a title="68 - Glaze Observations" href="https://digitalfire.com/test/glaz">GLAZ</a> |</nobr> <nobr><a title="58 - Glaze Melt Flow - Runway Test" href="https://digitalfire.com/test/glfl">GLFL</a> |</nobr> <nobr><a title="69 - Glaze Hardness" href="https://digitalfire.com/test/glhd">GLHD</a> |</nobr> <nobr><a title="70 - Glaze Leaching Test" href="https://digitalfire.com/test/glle">GLLE</a> |</nobr> <nobr><a title="14 - Frit Softening Point" href="https://digitalfire.com/test/gspt">GSPT</a> |</nobr> <nobr><a title="92 - Glass Transition Temperature" href="https://digitalfire.com/test/gttm">GTTM</a> |</nobr> <nobr><a title="100 - Hardness (Microindentation) Test" href="https://digitalfire.com/test/hdmi">HDMI</a> |</nobr> <nobr><a title="28 - Hegman Fineness" href="https://digitalfire.com/test/hegf">HEGF</a> |</nobr> <nobr><a title="91 - Heating Microscope Analysis for Frits" href="https://digitalfire.com/test/hma">HMA</a> |</nobr> <nobr><a title="95 - Heating Microscope Analysis" href="https://digitalfire.com/test/hman">HMAN</a> |</nobr> <nobr><a title="7 - Hardness (Moh)" href="https://digitalfire.com/test/hmoh">HMOH</a> |</nobr> <nobr><a title="88 - I.F.P. (celsius)" href="https://digitalfire.com/test/ifp">IFP</a> |</nobr> <nobr><a title="108 - 300F:Ice Water Crazing Test" href="https://digitalfire.com/test/iwct">IWCT</a> |</nobr> <nobr><a title="79 - % < 10 microns" href="https://digitalfire.com/test/l10m">L10M</a> |</nobr> <nobr><a title="81 - % < 1 micron" href="https://digitalfire.com/test/l1m">L1M</a> |</nobr> <nobr><a title="78 - % < 20 microns" href="https://digitalfire.com/test/l20m">L20M</a> |</nobr> <nobr><a title="80 - % < 2 microns" href="https://digitalfire.com/test/l2m">L2M</a> |</nobr> <nobr><a title="93 - % < 30 microns" href="https://digitalfire.com/test/l30m">L30M</a> |</nobr> <nobr><a title="17 - % < 5 microns" href="https://digitalfire.com/test/l5">L5</a> |</nobr> <nobr><a title="18 - % < 0.5 microns" href="https://digitalfire.com/test/l5m">L5M</a> |</nobr> <nobr><a title="49 - LOI/Density/Water Content" href="https://digitalfire.com/test/ldw">LDW</a> |</nobr> <nobr><a title="15 - LOI (100-1000C)" href="https://digitalfire.com/test/loi">LOI</a> |</nobr> <nobr><a title="30 - Liquid Limit" href="https://digitalfire.com/test/lqlm">LQLM</a> |</nobr> <nobr><a title="76 - Median Particle Size (Microns)" href="https://digitalfire.com/test/mdps">MDPS</a> |</nobr> <nobr><a title="57 - Frit Melting Range (C)" href="https://digitalfire.com/test/mlrg">MLRG</a> |</nobr> <nobr><a title="75 - Moisture Content - Powder" href="https://digitalfire.com/test/moip">MOIP</a> |</nobr> <nobr><a title="61 - Modulus of Rupture - Fired" href="https://digitalfire.com/test/mor">MOR</a> |</nobr> <nobr><a title="74 - Dry M.O.R. (50% Silica)" href="https://digitalfire.com/test/mor5">MOR5</a> |</nobr> <nobr><a title="12 - Modulus of Rupture - Dry" href="https://digitalfire.com/test/mord">MORD</a> |</nobr> <nobr><a title="5 - Oil Adsorption (Spatula)" href="https://digitalfire.com/test/olad">OLAD</a> |</nobr> <nobr><a title="107 - % Passing 200 Mesh Wet" href="https://digitalfire.com/test/p200">P200</a> |</nobr> <nobr><a title="32 - % Passing 325 Mesh Wet" href="https://digitalfire.com/test/p325">P325</a> |</nobr> <nobr><a title="71 - Pugged Body Properties Overview" href="https://digitalfire.com/test/pbpo">PBPO</a> |</nobr> <nobr><a title="11 - Pyrometric Cone Equivalent" href="https://digitalfire.com/test/pce">PCE</a> |</nobr> <nobr><a title="4 - pH (pugged clay)" href="https://digitalfire.com/test/phpg">pHPG</a> |</nobr> <nobr><a title="87 - pH for dry powder" href="https://digitalfire.com/test/phpw">pHPW</a> |</nobr> <nobr><a title="72 - Pyroplastic Deformation" href="https://digitalfire.com/test/ppd">PPD</a> |</nobr> <nobr><a title="98 - Poisson's Ratio" href="https://digitalfire.com/test/prsm">PRSM</a> |</nobr> <nobr><a title="6 - Particle Shape (1-7 microns)" href="https://digitalfire.com/test/pshp">PSHP</a> |</nobr> <nobr><a title="37 - Reheat Change" href="https://digitalfire.com/test/rc">RC</a> |</nobr> <nobr><a title="34 - Rheology of a Ceramic Slurry" href="https://digitalfire.com/test/rheo">RHEO</a> |</nobr> <nobr><a title="9 - Sieve Analysis Dry" href="https://digitalfire.com/test/sadr">SADR</a> |</nobr> <nobr><a title="16 - Surface Area (m2/gm)" href="https://digitalfire.com/test/samg">SAMG</a> |</nobr> <nobr><a title="84 - Simple Clay Evaluation" href="https://digitalfire.com/test/scle">SCLE</a> |</nobr> <nobr><a title="41 - Shrinkage/Absorption Test" href="https://digitalfire.com/test/41"><button type="button" class="btn btn-dark">SHAB</button></a> |</nobr> <nobr><a title="48 - Sieve Analysis 35-325 Wet" href="https://digitalfire.com/test/siev">SIEV</a> |</nobr> <nobr><a title="35 - Solubility" href="https://digitalfire.com/test/slby">SLBY</a> |</nobr> <nobr><a title="45 - Soluble Salts" href="https://digitalfire.com/test/solu">SOLU</a> |</nobr> <nobr><a title="104 - Specific Heat Capacity" href="https://digitalfire.com/test/sphc">SPHC</a> |</nobr> <nobr><a title="83 - Simple Shrinkage/Absorption" href="https://digitalfire.com/test/ssab">SSAB</a> |</nobr> <nobr><a title="24 - Sieve Analysis Wet" href="https://digitalfire.com/test/svwt">SVWT</a> |</nobr> <nobr><a title="82 - TGA" href="https://digitalfire.com/test/tga">TGA</a> |</nobr> <nobr><a title="103 - Thermal Conductivity, 20 degrees C" href="https://digitalfire.com/test/thco">THCO</a> |</nobr> <nobr><a title="101 - Tensile Strength, 25 degrees C" href="https://digitalfire.com/test/tnst">TNST</a> |</nobr> <nobr><a title="26 - Trace Elements (ppm)" href="https://digitalfire.com/test/trel">TREL</a> |</nobr> <nobr><a title="33 - Trace Minerals" href="https://digitalfire.com/test/trmn">TRMN</a> |</nobr> <nobr><a title="111 - Thermal Shock Failure" href="https://digitalfire.com/test/tsfl">TSFL</a> |</nobr> <nobr><a title="40 - Ultimate Particle Size Distribution" href="https://digitalfire.com/test/upsd">UPSD</a> |</nobr> <nobr><a title="20 - Water absorption" href="https://digitalfire.com/test/wabs">WABS</a> |</nobr> <nobr><a title="43 - Water of Plasticity" href="https://digitalfire.com/test/wopl">WOPL</a> |</nobr> <nobr><a title="50 - Whole Rock Analysis" href="https://digitalfire.com/test/wra">WRA</a> |</nobr> <nobr><a title="86 - Wet Sieve Residue" href="https://digitalfire.com/test/wsr">WSR</a> |</nobr> <nobr><a title="3 - Index of Refraction" href="https://digitalfire.com/test/xref">XREF</a></nobr></div><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><p style="clear:left"></p><h1>SHAB - Shrinkage/Absorption Test</h1>
+<p>The <a  href="https://digitalfire.com/test/shab">SHAB test</a> measures the shrinkage of a dried clay material and the shrinkage/porosities of its fired form across a range of temperatures. The data produced relates to its use in <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>. This test involves preparing a plastic clay sample, rolling and cutting bars, drying them, recording lengths, firing each at a different temperature, recording lengths and weights, boiling the bars in water and recording the final weights. This procedure assumes all data is recorded in a recipe record in a group account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a>.com. Insight-live calculates the shrinkage and absorption from the data and enables reporting and side-by-side comparisons. Because the data can span many temperatures, it can be plotted on an x-y chart to produce a dynamic picture of how the material develops (and fails) in the kiln.<br />
+<br />
+To get up and running quickly, browse the pictures below and watch the video.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Getting accurate firings in test kilns time after time.</h3>
+<br /><a alt="Chart of Orton cone temperatures" href="https://digitalfire.com/picture/1138"><img class="flexleft50" alt="Chart of Orton cone temperatures"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/bugmuzebeb.png" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1138">click here</a> to see it.</p>
+<p>The blue line on this graph is from the Orton cone chart for 108F/hr. But those are not the target temperatures for <a  href="https://digitalfire.com/picture/1293">test kiln</a> cone firings. I use the red line to program the controller for each cone. Where is that red line from? I made it. The self-supporting cones I put in every firing verify it, time after time, for thousands of firings. Only fine-tuning is needed to adjust the top temperature if a cone so indicates. This happens as elements degrade or when they are replaced. Should you use that red line? No. Use self-supporting cones to establish your target temperatures and make your own line.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Video: Making SHAB, DFAC, LDW clay body test bars</h3>
+<br /><a alt="Making clay test bars" href="https://digitalfire.com/picture/2749"><img class="flexleft50" alt="Making clay test bars"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/mtj2wppaxb.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2749">click here</a> to see it.</p>
+<p>One-minute video. It demonstrates how to make the test bars for measuring plastic <a  href="https://digitalfire.com/glossary/clay+body">clay body</a> (or clay material) drying and <a  href="https://digitalfire.com/glossary/firing+shrinkage">firing shrinkage</a>, fired absorption, a bar for measuring <a  href="https://digitalfire.com/glossary/water+content">water content</a> and loss-on-ignition and a disk for measuring <a  href="https://digitalfire.com/glossary/drying+performance">drying performance</a> and <a  href="https://digitalfire.com/glossary/soluble+salts">soluble salts</a> content. This method requires no expensive equipment and is within the reach of any technician.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Routine SHAB testing creates valuable historical drying and firing data</h3>
+<br /><a alt="SHAB test bars for casting" href="https://digitalfire.com/picture/3476"><img class="flexleft50" alt="SHAB test bars for casting"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/b4dvryhppc.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3476">click here</a> to see it.</p>
+<p>Suddenly, ware is coming out of your production kiln warped or cracked or off color. Unless the answer is obvious, the first action should be to compare its drying and firing test data with past runs. If you are doing that as a routine, then <a  href="https://digitalfire.com/test/shab">SHAB test</a> bars (and the test result data they bring) will already be available. These bars are tests of slip <a  href="https://digitalfire.com/glossary/casting+slip">casting bodies</a>, they can be made in a <a  href="https://digitalfire.com/material/1124">plaster</a> mold and length-marked as shown. That data is a <a  href="https://digitalfire.com/glossary/characterization">characterization</a> of the <a  href="https://digitalfire.com/glossary/clay+body">clay body</a>. The value of this kind of data-gathering becomes evident when a disaster happens (or better yet, is prevented). <a  href="https://digitalfire.com/glossary/clay+body">Clay bodies</a> have <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a>, dry performance, dry strength, fired density, <a  href="https://digitalfire.com/glossary/firing+shrinkage">fired shrinkage</a>, <a  href="https://digitalfire.com/glossary/fired+strength">fired strength</a>, etc. If you have historical data (accompanied by <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedules</a>, recipes, etc), you have an invaluable tool. Where does one gather the data? In spreadsheets? No, in a database. An account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a>.com is specifically intended for this.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Preparing clay test bars to measure plastic, dry and fired physical properties</h3>
+<br /><a alt="Preparing bars for the SHAB, LOI and DFAC tests" href="https://digitalfire.com/picture/2508"><img class="flexleft50" alt="Preparing bars for the SHAB, LOI and DFAC tests"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/jnps7aygc5.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2508">click here</a> to see it.</p>
+<p>This is being done for SHAB, <a  href="https://digitalfire.com/glossary/loi">LOI</a> and DFAC tests. The clay was <a  href="https://digitalfire.com/glossary/kneading+clay">wedged</a> thoroughly, rolled to 3/8 thickness (using the metal rods as gauges) and then cut to 4 1/4" by 1" bars. <a  href="https://digitalfire.com/glossary/code+numbering">Code numbers</a> and specimen numbers are stamped on each (these are needed to enter data into our account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a>). For example, notice that the bars have specimen numbers from 1 to 6. These will be fired at six different temperatures (for a low-temperature body, for example, we fire <a  href="https://digitalfire.com/glossary/low+temperature+glaze">cone 06</a>, 04, 03, 02, 01, 1, 2). The data measured from each, including the temperature, will be entered for each bar (specimen). The 12cm dia. disk is being cut from 3/16" thickness. Notice how these clay tears as cut, this is an indication of the low <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> of this <a  href="https://digitalfire.com/glossary/native+clay">native clay</a> material. And notice the greenish color, that is typical of <a  href="https://digitalfire.com/glossary/terra+cotta">terra cotta</a> clays.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Length marker for SHAB test bars</h3>
+<p style="margin-top:0px;"><b>Available</b> on the <a target="_blank" href="https://digitalfire.com/downloads/index.php?picture=3459">Downloads</a> page</p>
+<br /><a alt="SHAB test bar length marker" href="https://digitalfire.com/picture/3459"><img class="flexleft50" alt="SHAB test bar length marker"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/tests/za6kcqfl35.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3459">click here</a> to see it.</p>
+<p>Use this to make length marks in standard <a  href="https://digitalfire.com/test/shab">SHAB test</a> bars (for testing <a  href="https://digitalfire.com/glossary/clay+body">clay body</a> or clay material <a  href="https://digitalfire.com/glossary/drying+shrinkage">drying shrinkage</a>, <a  href="https://digitalfire.com/glossary/firing+shrinkage">firing shrinkage</a> and fired <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a>). This can be <a  href="https://digitalfire.com/glossary/3d-printing">3D printed</a>. The markers are 10cm apart (outside edges). Most printers can achieve this measurement accurately. To be sure check yours using a caliper, if it is not close to 10cm adjust using sand paper or reprint using an adjusted dimension.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Dried test bars stacked into an electric kiln for firing</h3>
+<br /><a href="https://digitalfire.com/picture/835"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/articles/dohcepiric.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/835">click here</a> to see it.</p>
+<p>These have already been measured to deduce <a  href="https://digitalfire.com/glossary/drying+shrinkage">drying shrinkage</a>. After firing they will be measured again to calculate the <a  href="https://digitalfire.com/glossary/firing+shrinkage">firing shrinkage</a>. Then they will be weighed, boiled in water and weighed again to determine the water absorption. <a  href="https://digitalfire.com/glossary/firing+shrinkage">Fired shrinkage</a> and absorption are good indicators of body <a  href="https://digitalfire.com/glossary/maturity">maturity</a>.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Fired clay test bars ready for measuring</h3>
+<br /><a href="https://digitalfire.com/picture/1072"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/wogzatilog.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1072">click here</a> to see it.</p>
+<p>SHAB (Shrinkage, Absorption) test bars ready to unload. These are measured for length after drying and firing and for weight after firing and boiling. This data is plugged into my account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">insight-live</a>.com and it calculates shrinkage and <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a> numbers. If you fire bars of a clay to a range of temperatures you can <a  href="https://digitalfire.com/glossary/characterization">characterize</a> key properties of a clay very effectively.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Boiled bars ready for weighing to calculate porosity</h3>
+<br /><a href="https://digitalfire.com/picture/1617"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/zydxulidyw.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1617">click here</a> to see it.</p>
+<p>The weight data from these fired test bars is being collected for the <a  href="https://digitalfire.com/test/shab">SHAB test</a> in <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a> (they have just been boiled for five hours and soaked for 19). Compiling this type of data for hundreds of simultaneous tests is possible because Insight-live takes care of all its organization.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Step 8: Measuring the clay test bars after drying</h3>
+<br /><a alt="Measuring the clay test specimens" href="https://digitalfire.com/picture/2890"><img class="flexleft50" alt="Measuring the clay test specimens"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/mwdnjhiffw.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/2890">click here</a> to see it.</p>
+<p>These test specimens dried overnight (this in itself is pertinent - quick drying indicates low levels of superfine particles e.g. <a  href="https://digitalfire.com/material/106">bentonite</a>). Here, I am measuring the length of the <a  href="https://digitalfire.com/test/shab">SHAB test</a> bars, weighing the <a  href="https://digitalfire.com/test/ldw">LDW test</a> sample and recording the crack pattern and <a  href="https://digitalfire.com/glossary/soluble+salts">soluble salts</a> on the <a  href="https://digitalfire.com/test/dfac">DFAC test</a> disk. All of this data plugs into the recipe I have allocated for this project in my account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a>.com, you can it here on the inset screenshot. Next I’ll set these on our staging shelf for firing in the <a  href="https://digitalfire.com/picture/1293">test kiln</a> (we accumulate test bars for 16 temperatures).</p>
+<p style="clear:left"></p>
+<h3 style="margin-bottom:0px; margin-top:30px;">Test bars from recent kiln firings</h3>
+<h4 style="color:#888888; margin-top:0px;">Here is how to enter the data into Insight-live</h4>
+<br /><a alt="Test bars for entry into Insight-live" href="https://digitalfire.com/picture/1330"><img class="flexleft50" alt="Test bars for entry into Insight-live"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/wakgerudib.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1330">click here</a> to see it.</p>
+<p>Multiple batches of fired test bars, organized by temperature, have already been weighed and measured (the weights and lengths are written on the sides of the bars). Each batch is accompanied by the cones from the firing in the <a  href="https://digitalfire.com/picture/1293">test kiln</a> (these influence how the temperature is recorded and adjustments to kiln <a  href="https://digitalfire.com/glossary/firing+schedule">firing schedules</a>). Since we are working on many runs, tests and projects at any given time, these tests pile up rapidly. And they generate a lot of <a  href="https://digitalfire.com/test/shab">SHAB test</a> data that needs to be input into your <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a>.com account promptly.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">A batch of fired clay test bars in the Plainsman Clays lab</h3>
+<br /><a href="https://digitalfire.com/picture/1238"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/cifvurujin.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1238">click here</a> to see it.</p>
+<p>A batch of fired test bars that have just been boiled and weighed, from these we get <a  href="https://digitalfire.com/glossary/drying+shrinkage">dry shrinkage</a>, <a  href="https://digitalfire.com/glossary/firing+shrinkage">fired shrinkage</a> and <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a>. Each pile is a different mix, fired to various temperatures. Test runs are on the left, production runs on the right. Each bar is stamped with a <a  href="https://digitalfire.com/glossary/code+numbering">code number</a> and specimen number (the different specimens are the different temperatures). The measurements have all been entered into our group account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">insight-live</a>.com. Now I have to lay out and photograph each pile and upload the picture into the code-numbered record. Upon doing so I compare color and tests results to make decisions on what to do next (documenting these in insight-live).</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">Fine tuning maturity of a buff stoneware: It is about the data</h3>
+<br /><a alt="Fired test bars to adjust a clay body" href="https://digitalfire.com/picture/3111"><img class="flexleft50" alt="Fired test bars to adjust a clay body"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/14m6wnytsj.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3111">click here</a> to see it.</p>
+<p>We are reformulating the <a  href="https://digitalfire.com/glossary/reduction+firing">cone 10R</a> <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> (the top mug) to have the variegated surface of the lower one. The top one is more <a  href="https://digitalfire.com/glossary/vitrification">vitrified</a> and thus has a more homogeneous grey color. While that makes it stronger it carries the danger of <a  href="https://digitalfire.com/trouble/bloating">bloating</a> with the materials we use and <a  href="https://digitalfire.com/glossary/particle+sizes">particle sizes</a> we grind (and warping). We measure degree-of-vitrification using the <a  href="https://digitalfire.com/test/shab">SHAB test</a>, that produces <a  href="https://digitalfire.com/glossary/firing+shrinkage">fired shrinkage</a> and <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a> data. The top mug has a porosity of 1.3% and the bottom one 2.5%. That higher porosity gives protection against bloating and the light/dark variegated aesthetic we also want. The nine test bars on the left each show their porosity/firing shrinkage and recipe (our materials have simple names like <a  href="https://plainsmanclays.ca/data/index.php?product=12899">A2</a>, <a  href="https://plainsmanclays.ca/data/index.php?product=12900">A3</a>, <a  href="https://plainsmanclays.ca/data/index.php?product=12950">3C</a>, they include ball clays, silts, stonewares). We made these nine mixes trying to find a combination that yields the desired porosity but also does not have more than 7.5% <a  href="https://digitalfire.com/glossary/drying+shrinkage">drying shrinkage</a> (to avoid <a  href="https://digitalfire.com/glossary/drying+crack">drying cracks</a>), is plastic enough for easy forming and does have too sandy of a texture. The second from the top is the best so far and has given clear direction for the next round of testing. These nine tests were fired at five temperatures producing 45 specimens to track and 180 measurements to make to get the final data (just for this SHAB test, others were done also). Our account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">Insight-live</a>.com makes it possible to track this plus 50 other projects on the go right now. And it makes it possible to make decisions based on data.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">3D design, printing and use of a casting slip test bar mold</h3>
+<p style="margin-top:0px;"><b>Available</b> on the <a target="_blank" href="https://digitalfire.com/downloads/index.php?picture=3425">Downloads</a> page</p>
+<br /><a alt="SHAB mold for casting clays" href="https://digitalfire.com/picture/3425"><img class="flexleft50" alt="SHAB mold for casting clays"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/xmxwbnbkzv.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3425">click here</a> to see it.</p>
+<p>This is for making test bars of <a  href="https://digitalfire.com/glossary/slip+casting">slip casting</a> clays bodies for use in the <a  href="https://digitalfire.com/test/shab">SHAB test</a> (to measure <a  href="https://digitalfire.com/glossary/drying+shrinkage">drying shrinkage</a>, <a  href="https://digitalfire.com/glossary/firing+shrinkage">firing shrinkage</a> and fired <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a>). I designed it in <a  href="https://digitalfire.com/picture/2453">Fusion 360</a> and <a  href="https://digitalfire.com/glossary/3d-printing">3D printed</a> the light-duty rails and <a  href="https://digitalfire.com/picture/3728">case mold</a>. I poured <a  href="https://digitalfire.com/material/1124">plaster</a> into that to make the two plaster working mold halves (top right). The funnels provide a reservoir so the bars be cast solid. This mold can produce a set of three bars in less than an hour.</p>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">COSORI Food Dehydrator as a lab/studio drier</h3>
+<br /><a href="https://digitalfire.com/picture/3383"><img class="flexleft50" loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/ajz5xmmemp.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/3383">click here</a> to see it.</p>
+<p>We use this to dry our <a  href="https://digitalfire.com/test/shab">SHAB test</a> samples and <a  href="https://digitalfire.com/test/dfac">DFAC test</a> samples. It has many racks, heats to 165F, has a timer and is well suited for the drying factor test (and drying all sorts of things). By adjusting the heat setting it is possible to tune it to give a slight crack on our best drying clay (all other results are thus in relation to that). This oven is available on Amazon and is inexpensive.</p>
+<p style="clear:left"></p>
+<h2>Variables</h2>
+<b>DSHR - Dry Shrinkage (C)</b><p style="margin-left:10px;">
+<p>IF(V1>0, 100-V1,"n/a")<br />
+This is the shrinkage due to drying only. Assuming 10 cm marks on the wet bar, drying shrinkage is simply 100 mm minus the dry length in mm.</p>
+</p>
+<b>FSHR - Fired Shrinkage (C)</b><p style="margin-left:10px;">
+<p>IF(V1>0 AND V2>0, (V1-V2)/V1*100, "n/a")<br />
+This is the fired component of total shrinkage. Note that dry+fired<br />
+shrinkage does not equal total shrinkage because fired shrinkage is based on the dry length not the original 10 cm.</p>
+</p>
+<b>ABS - Absorption (C)</b><p style="margin-left:10px;">
+<p>IF(V3>0 AND V4>0,((V4-V3)/V3*100),"n/a")<br />
+This is a measure of the clays fired maturity as interpreted from its pore space. The pore space is calculated from the increase in weight a bar experiences during boiling in water.</p>
+</p>
+<b>DLEN - Dry Length (V)</b><p style="margin-left:10px;">
+<p>The distance between the outer edges of two marks on the dried clay bar as measured with a set of calipers. These marks were pressed into the wet bar at exactly 10 cm apart on the outer edges.</p>
+</p>
+<b>FLEN - Fired Length (V)</b><p style="margin-left:10px;">
+<p>The length between two marks on the fired clay bar as measured with a set of calipers.</p>
+</p>
+<b>FWT - Fired Weight (V)</b><p style="margin-left:10px;">
+<p>The weight in grams of the clay bar after firing.</p>
+</p>
+<b>BWT - Boiled Weight (V)</b><p style="margin-left:10px;">
+<p>The weight in grams of the clay bar after boiling for 5 hours and soaking for 19 and being blotted on a towel.</p>
+</p>
+<b>CONE - Cone (V)</b><p style="margin-left:10px;">
+<p>The Orton cone number to which the bar was fired. Take the highest cone to show deformation and interpret it as follows:<br />
+<br />
+Position       Value<br />
+~~~~~~~~       ~~~~~<br />
+1 oclock        n-.4<br />
+2 oclock        n-.3    For example, if cone 6 is at 3 oclock, then the<br />
+3 oclock        n-.2    value is 6 minus .2 = 5.8.<br />
+4 oclock        n-.1<br />
+5 oclock        n<br />
+<br />
+If the guard cones shows deformation you must increase the figure<br />
+appropriately.</p>
+</p>
+<b>RDIA - Ring Diameter (V)</b><p style="margin-left:10px;">
+<p>Bullers Ring diameter</p>
+</p>
+<b>TEMP - Temperature (V)</b><p style="margin-left:10px;">
+<p>The temperature in celcius. This can be derived electronically or from a bullers ring.</p>
+</p>
+
+<h2>Procedure</h2>
+<p>1. <b>Shrinkage/Absorption/H2O</b></p>
+<p>This test is designed to derive shrinkage and absorption data by drying and firing clay test bars. This test does not account for LOI (use the LDW test for that). Results are very repeatable if your procedure is carried out consistently.</p>
+</p>
+<p>2. <b>Purpose of Test</b></p>
+<p>1 This test is designed to measure dry shrinkage, absorption and fired shrinkage properties. <br />
+<br />
+1.1 DRY SHRINKAGE<br />
+As a clay dries the removal of interparticle water causes the mass to tighten up and pack together resulting in shrinkage. Clays of fine particle size and thus high plasticity have high shrinkage. The benefits of plasticity often come at the cost of drying problems. That being said, high shrinkage clays almost always have higher dry strength, that often improves drying outcomes. Variation in drying shrinkage is an indicator of changes in a clay's plasticity (and particle size and mineralogy). Comparing the dry shrinkage of different types of clay is not necessarily an indicator of their comparative plasticity since fine particled silts are not plastic. Higher water content generally means greater dry shrinkage.<br />
+<br />
+For typical modelling stiffnesses dry shrinkage for non-plastic clays is around 5-6.0%. Plastic clays that require care in drying are usually above 6-7.0%. Casting bodies can be as low as 2%. A low drying shrinkage is important to successfully dry larger items or ware of uneven cross-section.<br />
+<br />
+Dry shrinkage is simply the percent change in length between wet and dry. The SHAB test provides the data for this property as follows:<br />
+<br />
+Wet length - dry length / wet length * 100<br />
+<br />
+or where 10 cm marks are stamped on the bar it is simply:<br />
+<br />
+100 - mm dry length<br />
+<br />
+There is some disagreement about this equation, some contend that the divisor should be the dry length. To resolve this consider: It is the wet clay that is shrinking, not the dry clay. It is thus logical that a 10cm wet test bar that shrinks to 9cm has shrunk 10%, for that to be the case we need to use the wet-length divisor formula.<br />
+<br />
+1.2 FIRED SHRINKAGE<br />
+As a clay fires, it shrinks and particles continue to pack together. At some point, they begin to break down and react with each other, fluxes begin to melt and flow, and mineral grains seed the development of more stable forms. The amount of shrinkage during firing is thus an indication of the degree to which the complex "maturing" process has proceeded.<br />
+<br />
+Fired shrinkage figures are valuable both in maintaining a clay body's fired properties and formulating bodies to have a good compromise between shrinkage and fired maturity. A body's fired shrinkage plotted against increasing temperature normally describes a graph that rises to a level plateau, then quickly drops off during expansion and melting. Porcelain has a very high fired shrinkage compared to stoneware clays which are in turn much higher than earthenwares.<br />
+<br />
+Fired shrinkage is the percent change in length or width of a test sample from dry to fired. The SHAB test provides dry and fired length data for the calculation of this property as follows:<br />
+<br />
+Fired length - dry length / fired length * 100<br />
+<br />
+As with the drying shrinkage equation, there is some disagreement about the divisor. The reasoning above also applies to this one.<br />
+<br />
+1.3 ABSORPTION<br />
+Absorption is an indirect indication of the pore space within the fired clay. Since pore space gradually closes up during the firing process, absorption indicates the extent to which the heat has developed the matrix, that is, the "maturity" of the body. The absorption value also indicates the degree to which pores are interconnected within the fired matrix.<br />
+<br />
+Stoneware clays most often do not reach zero pore space before bloating and melting. Large particles create more pore space than can be filled by fluxes and evolving mineral species. Functional ware can tolerate 1% or more pore space without leaking water. Wall tile makers require resistance to sagging during firing, so density is secondary. However, porcelain-type products require high strength and density, thus zero absorption is often targeted.<br />
+<br />
+This property is a measurement of the percentage increase in weight that a test bar experiences during a normal five-hour period in boiling water (followed by a 19-hour soak). The SHAB test definition provides weight data before and after boiling, so the absorption is calculated:<br />
+<br />
+Wet weight - dry weight / wet weight * 100<br />
+<br />
+As with the drying shrinkage equation, there is some disagreement about the divisor. The reasoning above also applies to this one.</p>
+</p>
+<p>3. <b>Scope</b></p>
+<p>Test bars are made from each production run and from each body or clay material tested for R&D or quality control work.</p>
+</p>
+<p>4. <b>Definitions</b></p>
+<p>SHAB - Shrinkage-Absorption<br />
+QC - Quality Control department</p>
+</p>
+<p>5. <b>Responsibilities</b></p>
+<p>Responsibilities are transferred between departments as the test proceeds. These are outlined in section 5.0.</p>
+</p>
+<p>6. <b>Procedure</b></p>
+<p>1. Create a Insight-live Record<br />
+1.1. Assign a code number.<br />
+<br />
+2. Take or Make the Sample (Pugmill Operator or Clay Mixer)<br />
+2.1. If the test is being done on a production material: Midway through the run take a slug of clay of representative stiffness. If the test is being done on a lab mix make sure that it has been prepared in a standard way (i.e. slurried and dewatered on a plaster batt and thoroughly kneaded) and is of the correct stiffness.<br />
+2.2. Put the slug in a plastic bag and mark the bag with the code number (along with the time and date the sample was taken).<br />
+<br />
+3. Make the Bars (QC)<br />
+3.1. Take approximately 500-800 grams of the pugged material and knead it thoroughly; change direction once midway through the process. Roll the kneaded lump into a cylindrical mass about twice as long as its diameter.<br />
+3.2. Place the lump on a canvas board (or similar absorbent surface) and flatten by hand to about 2cm thick. Straddle it with two 3/8" round metal rods. Using a rolling pin, thin it using enough restraint that it is easy to peel up. Rotate 90 degrees and repeat until the rolling pin runs on the metal rods.<br />
+3.3. Carefully lift the slab of clay from both ends and place it on a bar-board lengthwise. Trim the slab to the board width. Using the bar width gauge, cut bars for firing through a range of temperatures (e.g. cone 4-8, cone 7-10, cone 06-2).<br />
+3.4. If LDW or DFAC specimens are also being made place them on the free space at one end of the bar-board.<br />
+<br />
+4. Mark and Stamp the Bars<br />
+4.1. Refer to the Insight-live recipe record for the code number.<br />
+4.2. Prepare the stamp by setting it to stamp the code number along with a unique specimen number for each bar.<br />
+4.3. Press the stamp into the middle of the bars. Increment the specimen digit and repeat. It is not necessary to begin numbering the specimens at 1. If, for example, if bars are to be fired at cones 6-12, then numbering the specimens 6-12 is fine.<br />
+4.4. Clean and dry the length marker and dip each end into talc powder (as a releasing agent).<br />
+4.5. Press the length marker into the middle of each bar being careful to avoid smudging or deforming the impression by lateral movement, pressing too deeply, withdrawing too quickly or using insufficient talc.<br />
+<br />
+5. Dry the Bars<br />
+5.1. Within a few minutes of making the bars place them into an air-circulating drying chamber until thoroughly dry (use a setting and placement that enables minimum deformation).<br />
+5.2. When dry use a fettling knife to round the corners to remove any burrs or irregularities.<br />
+<br />
+6. Measure the Bars<br />
+6.1. Measure each bar using callipers capable of accuracy to 0.1 mm. Enter the measurement into Insight-live or use a ceramic pencil to write the length in mm on the backs or sides (to enter it later).<br />
+6.2. Where the cone number to which a bar should be fired differs from its specimen number write the intended firing cones onto the bars.<br />
+<br />
+7. Accumulate Dry Bars<br />
+7.1. As sets of bars are measured organize them, by temperature, in a holding area near the kiln.<br />
+<br />
+8. Fire the Bars<br />
+8.1. Position bars three abreast and stack them at an angle (rather than perpendicular), so that bar shrinkage is less likely to upset the stack.<br />
+8.3. Place a firing cone with the bars.<br />
+8.4. Fire the kiln so that it maintains an even rate of rise, slows down near the end and holds for a few minutes (e.g. the C6PLST schedule for cone 6). If the kiln contains bars which are made from heavily bentonitic or ball clay, add extra time to the first step.<br />
+8.5. Unload the Kiln<br />
+8.5.1. Take the bars and cone to the area where you will measure them and enter the data. <br />
+<br />
+9. Measure the Bars<br />
+9.1. Weigh each bar to the nearest hundredth of a gram and write the weight on the back.<br />
+9.2. Measure length marks to the nearest tenth of a mm and write that on the backs.<br />
+9.3. Enter the information into Insight-live using the Testdata Entry Dialog.<br />
+<br />
+10. Accumulate Fired Bars<br />
+10.1. As sets of bars are weighed, measured and recorded collect them in a fired bar holding area.<br />
+<br />
+11. Boil the Bars<br />
+11.1. Get the bars from the fired bar holding area and place them on edge in rows and perpendicular layers in a boiler.<br />
+11.2. Fill the boiler with distilled water.<br />
+11.3. Boil the bars in a steady but not violent manner for 5 hours, topping up the water periodically as it boils down.<br />
+11.4. Soak the bars for 19 hours.<br />
+<br />
+12. Weigh the Boiled Bars<br />
+12.1. Remove the bars in groups of 10 or 20 and blot them on a towel.<br />
+12.2. Weigh each bar and write the weight on the back.<br />
+12.3. Enter the information from the bars directly into Insight-live using the Testdata Entry Dialog.<br />
+<br />
+13. Accumulate Fired/Boiled Bars<br />
+13.1. As sets of bars are weighed and recorded collect them in a boiled-bar holding area. Organize them in stacks of common code number.<br />
+13.2. Allow the bars to dry to ready them for photos.<br />
+<br />
+14. Take Photos<br />
+14.1. Organize bars onto a white background (if bars are darker) and a darker background (if they are very white).<br />
+14.2. Take photos (where appropriate take side-by-side photos of a previous mix to make any changes in fired appearance more visibly obvious).<br />
+14.3. Crop the photos and upload them to their records in Insight-live.<br />
+<br />
+15. Record Notes<br />
+15.4. Review each set of fired bars and make notes and recommendations in the Insight-live record as needed.<br />
+<br />
+16. Workmanship<br />
+1. Clay Preparation<br />
+1.1. Be careful not to knead air into the material when preparing to make bars.<br />
+1.2. If the clay will not knead without severe splitting consider the addition of 1% or more white firing bentonite to augment its plasticity so bars are easier to make.<br />
+2. Making Bars<br />
+2.1. It is important to roll the clay the same way each time to get consistent and comparable results.<br />
+2.2. Use a dry canvas board and peel the clay up frequently during rolling to make sure it does not stick to the board (to avoid stretching the clay).<br />
+2.3. When cutting the bars be sure that the first cross-cut is done against the edge of the bar board. This cut will act as an accurate perpendicular reference for placing the width guide to cut the remaining bars.<br />
+2.4. Be sure that during all cuts the knife is held vertically to get a square cut. This is important to sit the bars on edge during firing.<br />
+2.5. When cutting the bars to width, flip the bar width guide end for end and upside down so that it does not become too wet and stick to the bars thus disturbing them as it is lifted off.<br />
+2.6. If the stamp does not produce a clean imprint press a little harder. If the clay lacks enough plasticity to make a readable imprint then write carefully with a needle tool.<br />
+2.7. All information should be written on the bars before the 10 cm length marks are impressed. The bar should not be moved or stressed in any way after the length marks are impressed.<br />
+3. Drying/Firing<br />
+3.1. The bars must not be subjected to excessive dry drafts or very high heat while drying to avoid warping them or building in stresses that will affect shrinkage.<br />
+3.2. It is important that bar edges be trimmed so that burrs and chips do not fall off during processing and throw out any weight measurements.<br />
+3.3. When bars are stacked in the dry-bar holding area be careful not to stack dark colored bars on top of light ones thereby discoloring them.<br />
+3.4. Do not fire the test bars by laying them flat on a kiln shelf (to avoid its heat-sinking effect).<br />
+3.5. It is important for the bars to be thoroughly dry before they are put into the kiln as some fine-grained clays will explode if fired too quickly.<br />
+3.6. The bars must be fired using a consistent rate of temperature rise. <br />
+3.7. The bars should be fired right next to a set of cones or rings if fired in a large kiln.</p>
+</p>
+<p>7. <b>Equipment/Tools Needed</b></p>
+<p>1. Equipment<br />
+1.1. Bar Making and Drying<br />
+1.1.1. Cutting wire.<br />
+1.1.2. Needle tool to write on wet or dry specimens.<br />
+1.1.3. Large wooden rolling pin and canvas-covered or absorbent wood rolling board.<br />
+1.1.4. Gauge for cutting bars to width made from a 25 mm (1 in) wide piece of wood 15 cm (6 in) long. The wood strip should be light and porous so it will not stick to the clay.<br />
+1.1.5. 3/8 inch (9.5mm) diameter rods to act as thickness gauges for rolling clay to correct thickness.<br />
+1.1.6. A rotary stamp capable of imprinting many digits of any letter or number.<br />
+1.1.7. A metal marking template. When pressed into a clay bar it will make two crisp impressions 4 mm square and 2 mm deep whose outer edges are exactly 10 cm apart. Make it accurate.<br />
+1.1.8. Bar-boards made from 1/4 inch plywood 115 mm (4.5 in) wide by 400 mm (16 in) long.<br />
+1.1.9. A cup of talc powder.<br />
+1.1.10. A narrow-bladed fettling knife.<br />
+1.1.11. Drying cabinet able to maintain a temperature of 80-100C, bring in outside air and circulate it within.<br />
+1.2. Measuring<br />
+1.2.1. Vernier callipers accurate to 0.1 mm.<br />
+1.2.2. Scale capable of 1/10 gram accuracy or better yet, 1/100 gram.<br />
+1.2.3. Ceramic pencil for writing on dried specimens.<br />
+1.2.4. Water boiler with timer. An electric slow cooker with an adjustable dial to fine-tune the temperature works best.<br />
+1.2.5. Computer equipped with access to an Insight-live group account.<br />
+1.4.1. A smartphone with a quality camera<br />
+1.3. Firing<br />
+1.3.1. Orton cones.<br />
+1.3.2. Test kiln with an electronic controller to enable ramp control and repeatability in firing.</p>
+</p>
+<p>8. <b>Revisions</b></p>
+<p>1 Initial Draft<br />
+2 Spelling and Grammer check and minor revisions.<br />
+3 Adjustment in data collection process due to better data entry facilities in the software.</p>
+</p>
+<h2 style="font-style:italic;">Related Information</h2>
+<h3>Videos</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td><img src="https://cdn.digitalfire.com/EnterData.jpg" style="width:200px;" /></td>
+<td>
+<a href="https://digitalfire.com/video/entering+testdata+into+insight-live">Entering TestData Into Insight-Live</a>
+<br /><i>How to enter <a  href="https://digitalfire.com/glossary/physical+testing">physical testing</a> results into your group account at <a  href="https://digitalfire.com/glossary/digitalfire+insight-live">insight-live</a>.com. We will enter data from shrinkage/absorption bars, the drying factor disk and an LOI/water content tester. </i>
+</td>
+</tr>
+<tr>
+<td><img src="https://cdn.digitalfire.com/MakeBars.jpg" style="width:200px;" /></td>
+<td>
+<a href="https://digitalfire.com/video/making+test+bars+for+the+shab%2c+ldw+and+dfac+tests">Making test bars for the SHAB, LDW and DFAC tests</a>
+<br /><i>We will make bars of a <a  href="https://digitalfire.com/glossary/clay+body">clay body</a> for the <a  href="https://digitalfire.com/test/shab">SHAB test</a> (for shrinkage and absorption), a specimen for weighing wet, dry and then fired (to get <a  href="https://digitalfire.com/glossary/water+content">water content</a> and <a  href="https://digitalfire.com/glossary/loi">LOI</a>) and a drying disk to measure <a  href="https://digitalfire.com/glossary/drying+performance">drying performance</a> and soluble salt content.</i>
+</td>
+</tr>
+</tbody></table>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/simple+physical+testing+of+clays">Simple Physical Testing of Clays</a>
+<br /><i>Learn to test your <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a> and clay materials and record the results in an organized way, understanding the purpose of each test and how to relate its results to changes that need to be made in process, recipe and materials.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/firing+clay+test+bars">Firing Clay Test Bars</a>
+<br /><i>Being able to make good consistent test bars and fire them in a consistent and proper way is a basic requirement of getting valid results for shrinkage and <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a> measurement.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/formulating+a+porcelain">Formulating a Porcelain</a>
+<br /><i>The principles behind formulating a <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> are quite simple. You just need to know the purpose of each material, a starting recipe and a testing regimen.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/how+to+find+and+test+your+own+native+clays">How to Find and Test Your Own Native Clays</a>
+<br /><i>Some of the key tests needed to really understand what a clay is and what it can be used for can be done with inexpensive equipment and simple procedures. These practical tests can give you a better picture than a data sheet full of numbers.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/formulating+a+body+using+clays+native+to+your+area">Formulating a body using clays native to your area</a>
+<br /><i>Being able to mix your own <a  href="https://digitalfire.com/glossary/clay+body">clay body</a> and glaze from native materials might seem ridiculous, yet Covid-19 taught us about the need for independence. </i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/setting+up+a+clay+testing+program+in+your+company+or+studio">Setting up a Clay Testing Program in Your Company or Studio</a>
+<br /><i>Set up a routine testing pipeline and start generating historical data that will enable your staff to understand your source materials and maintain, adjust and troubleshoot your <a  href="https://digitalfire.com/glossary/clay+body">clay body</a> recipes.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/dsrn">Dry Strenth (Round Bars)</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/fshr">Firing Shrinkage</a>
+<br /><i>Measure the amount a clay test bar shrinks as it is fired in a kiln</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/ldw">LOI/Density/Water Content</a>
+<br /><i>LDW <a  href="https://digitalfire.com/glossary/loi">LOI</a>, density and <a  href="https://digitalfire.com/glossary/water+content">water content</a> test procedure for plastic <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a> and porcelains</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/ppd">Pyroplastic Deformation</a>
+<br /><i>How to measure the tendency of a ceramic body to warp during firing.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/ssab">Simple Shrinkage/Absorption</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/wabs">Water absorption</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/dshr">Drying Shrinkage</a>
+<br /><i>Measure the amount a clay test bar shrinks as it dries</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/dfac">Drying Factor</a>
+<br /><i>The DFAC Drying Factor test visually displays a plastic clay's response to very uneven drying. It is beneficial to show the relative <a  href="https://digitalfire.com/glossary/drying+performance">drying performance</a> of different clays.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="https://digitalfire.com/project/troubles">Troubles</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="https://digitalfire.com/project/evaluating+a+clay%27s+suitability+for+use+in+pottery">Evaluating a clay's suitability for use in pottery</a>
+<br /><i>Would you like to be able to use your own found-clays in your production? Follow me as we evaluate a mystery clay sample provided by a potter who wants to do this.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="https://digitalfire.com/project/testing+a+new+load+of+ep+kaolin">Testing a New Load of EP Kaolin</a>
+<br /><i>Kaolins can vary in many ways. Yet they are the foundation of all <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> and light <a  href="https://digitalfire.com/glossary/stoneware">stoneware</a> <a  href="https://digitalfire.com/glossary/clay+body">clay body</a> recipes. It is vital to test each incoming shipment of material. Problematic brands can even require some testing on every pallet.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/kaolin">Kaolin</a>
+<br /><i>The purest of all clays in nature. Kaolins are used in porcelains and stonewares to impart whiteness, in glazes to supply <a  href="https://digitalfire.com/oxide/al2o3">Al2O3</a> and to suspend slurries.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Materials</td>
+<td>
+<a href="https://digitalfire.com/material/ball+clay">Ball Clay</a>
+<br /><i>A fine particled highly plastic <a  href="https://digitalfire.com/glossary/secondary+clay">secondary clay</a> used mainly to impart <a  href="https://digitalfire.com/glossary/plasticity">plasticity</a> to clay and <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> bodies and to suspend glaze, slips and <a  href="https://digitalfire.com/glossary/engobe">engobe</a> slurries.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/clay+body+porosity">Clay Body Porosity</a>
+<br /><i>In <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>, <a  href="https://digitalfire.com/glossary/clay+body+porosity">porosity</a> is considered an indication of density, and therefore strength and <a  href="https://digitalfire.com/glossary/glaze+durability">durability</a>. Porosity is measured by the weight increase when boiled in water.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/firing+shrinkage">Firing Shrinkage</a>
+<br /><i>During drying, clay particles draw together and shrinkage occurs. During firing the matrix densifies and shrinkage continues. More <a  href="https://digitalfire.com/glossary/vitreous">vitreous</a> bodies shrink more.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/porcelain">Porcelain</a>
+<br /><i>How do you make <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a>? There is a surprisingly simple logic to formulating them and to adjusting their working, drying, glazing and firing properties for different purposes.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/stoneware">Stoneware</a>
+<br /><i>To potters, stonewares are simply high temperature, non-white bodies fired to sufficient density to make <a  href="https://digitalfire.com/glossary/functional">functional</a> ware that is strong and durable.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/maturity">Maturity</a>
+<br /><i>A term used in the <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a> industry to signify the degree of <a  href="https://digitalfire.com/glossary/vitrification">vitrification</a> in a fired clay. <a  href="https://digitalfire.com/glossary/maturity">Mature</a> clays are dense and strong, immature ones porous and weak.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Typecodes</td>
+<td>
+<a href="https://digitalfire.com/typecode/bdt">Body Tests</a>
+<br /><i>Tests conducted on bodies made from materials, as opposed to the materials themselves.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/1301">http://www.astm.org/Standards/C373.htm</a>
+<br /><i>ASTM-C373 Water Absorption</i>
+<br /><i style="color:#888888;"></i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/3646">https://insight-live.com/insight/help/It+Starts+With+a+Lump+of+Clay-433.html</a>
+<br /><i>Entering test data data for <a  href="https://digitalfire.com/test/shab">SHAB test</a> bars</i>
+<br /><i style="color:#888888;">For a step-by-step example, open the sections for "Measuring the SHAB and LDW Bars" and "Entering data from a fired <a  href="https://digitalfire.com/test/shab">SHAB test</a> bar".</i>
+</td>
+</tr>
+</tbody></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.svg">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000000">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<title>Understanding Thermal Expansion in Ceramic Glazes</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<meta name="author" content="Tony Hansen">
+<meta name="description" content="Understanding thermal expansion is the key to dealing with crazing or shivering. There is a rich mans and poor mans way to fit glazes, the latter might be better.">
+<style>
+.flexinline { width: 50%; height: auto; clear:left; margin: 10px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexinline { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright50 { width: 50%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright50 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright33 { width: 33%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright33 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexright25 { width: 25%; height: auto; float: right; margin: 5px 0px 10px 10px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexright25 { width: 100%; height: auto; margin: 10px 10px 10px 10px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft50 { width: 50%; height: auto; float: left; margin: 5px 15px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft50 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: none; padding: none; } }
+.flexleft33 { width: 33%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft33 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.flexleft25 { width: 25%; height: auto; float: left; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; }
+@media (max-width: 640px) { .flexleft25 { width: 100%; height: auto; margin: 5px 10px 10px 0px; border: thin solid #dddddd; padding: 5px; } }
+.pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; padding: 5px; font-size:60%; font-style:italic;}
+@media (max-width: 640px) { .pictureseries { overflow:scroll; width:auto; height:200px; float:left; margin: 5px 10px 10px 0px; border: padding: 5px; font-size:60%; font-style:italic;} }
+.L2 { margin-left:0px; }
+.L3 { margin-left:20px; color:#222222; }
+.L4 { margin-left:40px; color:#444444; }
+.L5 { margin-left:60px; color:#666666; }
+.L6 { margin-left:60px; color:#888888; }
+h2 { color:#222222; }
+h3 { color:#444444; }
+h4 { color:#666666; }
+h5 { color:#888888; }
+
+</style>
+
+<meta name="google-site-verification" content="wquYW_n-3QEfIzDfV--8ElUewf7TIt04RGo55GfZySU" />
+<meta name="have-i-been-pwned-verification" value="9223dcee7de5c9622c2a2abcff4adc81">
+<script>
+function validateForm() {
+	var x = document.forms["emailform1"]["name1"].value;
+	var r = true;
+	if (x == "") { // alert("A name is required."); 
+		document.getElementById("name1").textContent="Name Required";
+		document.getElementById("name1").style.color="red";
+		// document.emailform1.name1.focus() ; # does not work, should be getelementbyid
+		r = false; 
+	} else {
+		document.getElementById("name1").textContent="Name";
+		document.getElementById("name1").style.color="black";
+	}
+	if (document.forms["emailform1"]["subject1"].value == "") { 
+		document.getElementById("subject1").textContent="Subject Required";
+		document.getElementById("subject1").style.color="red";
+		r = false; 
+	} else {
+		document.getElementById("subject1").textContent="Subject";
+		document.getElementById("subject1").style.color="black";
+	}			
+	if (document.forms["emailform1"]["msg1"].value == "") { 
+		document.getElementById("msg1").textContent="Message Required";
+		document.getElementById("msg1").style.color="red";
+		// alert("A message is required."); 
+		r = false; 
+	} else {
+		document.getElementById("msg1").textContent="Message";
+		document.getElementById("msg1").style.color="black";
+	}
+	var emailID = document.emailform1.email1.value;
+	atpos = emailID.indexOf("@");
+	dotpos = emailID.lastIndexOf(".");
+	if (atpos < 1 || ( dotpos - atpos < 2 )) {
+		document.getElementById("email1").textContent="Email Address Appears Invalid!";
+		document.getElementById("email1").style.color="red";
+		// alert("Your email address appears invalid.")
+		r = false;
+	} else {
+		document.getElementById("email1").textContent="Email Address";
+		document.getElementById("email1").style.color="black";
+	}
+	// Send the form
+	if (r == false) return false;
+	document.forms["emailform1"].submit();
+}
+</script>
+</head>
+<body>
+<p style="background-color:#ff9933; border-width:1px; padding:3px 10px 3px 10px; margin:0px 0px 3px 0px; font-size:80%; text-align:center;">
+May 2026: We are continuing a major code rewrite. Please contact us if you find issues. Thank you.</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a name="pagetop" class="navbar-brand" href="https://digitalfire.com/home"><img src="/4sight/images/ReferenceLibrary.svg" height="40" alt=""></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/oxide/list">Oxides</a></li>
+			<li class="nav-item"><a class="nav-link" href="/material/list">Materials</a></li>
+			<li class="nav-item"><a class="nav-link" href="/recipe/list">Recipes</a></li>
+			<li class="nav-item"><a class="nav-link" href="/glossary/list">Glossary</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item active" href="/article/list">Articles</a>
+					<a class="dropdown-item" href="/hazard/list">Hazards</a>
+					<a class="dropdown-item" href="/mineral/list">Minerals</a>
+					<a class="dropdown-item" href="/property/list">Properties</a>
+					<a class="dropdown-item" href="/schedule/list">Firing Schedules</a>
+					<a class="dropdown-item" href="/temperature/list">Temperatures</a>
+					<a class="dropdown-item" href="/trouble/list">Troubles</a>
+					<a class="dropdown-item" href="/test/list">Tests</a>
+					<a class="dropdown-item" href="/video/list">Media</a>
+					<a class="dropdown-item" href="/picture/list">Pictures</a>
+					<a class="dropdown-item" href="/typecode/list">Typecodes</a>
+					<a class="dropdown-item" href="/project/list">Projects</a>
+					<a class="dropdown-item" href="/consultants/list">Consultants</a>
+					<a class="dropdown-item" href="/schools/list">Schools</a>
+					<a class="dropdown-item" href="/stores/list">Stores</a>
+					<a class="dropdown-item" href="/potterytony/list">Don't Buy-A-Mug</a>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="https://digitalfire.com">https://digitalfire.com</a>
+					<a class="dropdown-item" href="https://insight-live.com">Insight-Live.com</a>
+					<a class="dropdown-item" href="https://digitalfire.com">Sign-Up</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="https://digitalfire.com/index.php?searcharea=article" accept-charset="UTF-8" method="post">
+		<input name="searchfor" title="Search from home to search in all areas" maxlength="20" class="form-control mr-sm-2" aria-label="Search" placeholder="Search" autocorrect="off" autocapitalize="off" type="search" value=""><button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchbutton">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="container"><p><a class="btn btn-primary" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">All Articles</a></p>
+<div class="collapse" id="collapse1" style="margin-bottom:15px;"><a title="388" href="https://digitalfire.com/article/388">A ChatBot gives jaw-dropping glaze recipe advice - Jan 2025</a><br /><a title="244" href="https://digitalfire.com/article/244">A Low Cost Tester of Glaze Melt Fluidity</a><br /><a title="361" href="https://digitalfire.com/article/361">A One-speed Lab or Studio Slurry Mixer</a><br /><a title="353" href="https://digitalfire.com/article/353">A Textbook Cone 6 Matte Glaze With Problems</a><br /><a title="199" href="https://digitalfire.com/article/199">Adjusting Glaze Expansion by Calculation to Solve Shivering</a><br /><a title="251" href="https://digitalfire.com/article/251">Alberta Slip, 20 Years of Substitution for Albany Slip</a><br /><a title="273" href="https://digitalfire.com/article/273">An Overview of Ceramic Stains</a><br /><a title="37" href="https://digitalfire.com/article/37">Are You in Control of Your Production Process?</a><br /><a title="12" href="https://digitalfire.com/article/12">Are Your Glazes Food Safe or are They Leachable?</a><br /><a title="143" href="https://digitalfire.com/article/143">Attack on Glass: Corrosion Attack Mechanisms</a><br /><a title="204" href="https://digitalfire.com/article/204">Ball Milling Glazes, Bodies, Engobes</a><br /><a title="345" href="https://digitalfire.com/article/345">Binders for Ceramic Bodies</a><br /><a title="4" href="https://digitalfire.com/article/4">Bringing Out the Big Guns in Craze Control: MgO (G1215U)</a><br /><a title="381" href="https://digitalfire.com/article/381">Can We Help You Fix a Specific Problem?</a><br /><a title="124" href="https://digitalfire.com/article/124">Ceramic Glazes Today</a><br /><a title="208" href="https://digitalfire.com/article/208">Ceramic Material Nomenclature</a><br /><a title="336" href="https://digitalfire.com/article/336">Ceramic Tile Clay Body Formulation</a><br /><a title="217" href="https://digitalfire.com/article/217">Changing Our View of Glazes</a><br /><a title="22" href="https://digitalfire.com/article/22">Chemistry vs. Matrix Blending to Create Glazes from Native Materials</a><br /><a title="209" href="https://digitalfire.com/article/209">Concentrate on One Good Glaze</a><br /><a title="115" href="https://digitalfire.com/article/115">Copper Red Glazes</a><br /><a title="271" href="https://digitalfire.com/article/271">Crazing and Bacteria: Is There a Hazard?</a><br /><a title="190" href="https://digitalfire.com/article/190">Crazing in Stoneware Glazes: Treating the Causes, Not the Symptoms</a><br /><a title="97" href="https://digitalfire.com/article/97">Creating a Non-Glaze Ceramic Slip or Engobe</a><br /><a title="195" href="https://digitalfire.com/article/195">Creating Your Own Budget Glaze</a><br /><a title="36" href="https://digitalfire.com/article/36">Crystal Glazes: Understanding the Process and Materials</a><br /><a title="324" href="https://digitalfire.com/article/324">Deflocculants: A Detailed Overview</a><br /><a title="32" href="https://digitalfire.com/article/32">Demonstrating Glaze Fit Issues to Students</a><br /><a title="334" href="https://digitalfire.com/article/334">Diagnosing a Casting Problem at a Sanitaryware Plant</a><br /><a title="196" href="https://digitalfire.com/article/196">Drying Ceramics Without Cracks</a><br /><a title="187" href="https://digitalfire.com/article/187">Duplicating Albany Slip</a><br /><a title="45" href="https://digitalfire.com/article/45">Duplicating AP Green Fireclay</a><br /><a title="197" href="https://digitalfire.com/article/197">Electric Hobby Kilns: What You Need to Know</a><br /><a title="39" href="https://digitalfire.com/article/39">Fighting the Glaze Dragon</a><br /><a title="214" href="https://digitalfire.com/article/214">Firing Clay Test Bars</a><br /><a title="200" href="https://digitalfire.com/article/200">Firing: What Happens to Ceramic Ware in a Firing Kiln</a><br /><a title="113" href="https://digitalfire.com/article/113">First You See It Then You Don't: Raku Glaze Stability</a><br /><a title="316" href="https://digitalfire.com/article/316">Fixing a glaze that does not stay in suspension</a><br /><a title="338" href="https://digitalfire.com/article/338">Formulating a body using clays native to your area</a><br /><a title="191" href="https://digitalfire.com/article/191">Formulating a Clear Glaze Compatible with Chrome-Tin Stains</a><br /><a title="282" href="https://digitalfire.com/article/282">Formulating a Porcelain</a><br /><a title="188" href="https://digitalfire.com/article/188">Formulating Ash and Native-Material Glazes</a><br /><a title="114" href="https://digitalfire.com/article/114">G1214M Cone 5-7 20x5 glossy transparent glaze</a><br /><a title="121" href="https://digitalfire.com/article/121">G1214W Cone 6 transparent glaze</a><br /><a title="122" href="https://digitalfire.com/article/122">G1214Z Cone 6 matte glaze</a><br /><a title="226" href="https://digitalfire.com/article/226">G1916M Cone 06-04 transparent glaze</a><br /><a title="203" href="https://digitalfire.com/article/203">Getting the Glaze Color You Want: Working With Stains</a><br /><a title="342" href="https://digitalfire.com/article/342">Glaze and Body Pigments and Stains in the Ceramic Tile Industry</a><br /><a title="189" href="https://digitalfire.com/article/189">Glaze Chemistry Basics - Formula, Analysis, Mole%, Unity </a><br /><a title="358" href="https://digitalfire.com/article/358">Glaze chemistry using a frit of approximate analysis</a><br /><a title="123" href="https://digitalfire.com/article/123">Glaze Recipes: Formulate and Make Your Own Instead</a><br /><a title="343" href="https://digitalfire.com/article/343">Glaze Types, Formulation and Application in the Tile Industry</a><br /><a title="181" href="https://digitalfire.com/article/181">Having Your Glaze Tested for Toxic Metal Release</a><br /><a title="364" href="https://digitalfire.com/article/364">High Gloss Glazes</a><br /><a title="384" href="https://digitalfire.com/article/384">Hire Us for a 3D Printing Project</a><br /><a title="136" href="https://digitalfire.com/article/136">How a Material Chemical Analysis is Done</a><br /><a title="235" href="https://digitalfire.com/article/235">How desktop INSIGHT Deals With Unity, LOI and Formula Weight</a><br /><a title="331" href="https://digitalfire.com/article/331">How to Find and Test Your Own Native Clays</a><br /><a title="26" href="https://digitalfire.com/article/26">I have always done it this way!</a><br /><a title="344" href="https://digitalfire.com/article/344">Inkjet Decoration of Ceramic Tiles</a><br /><a title="279" href="https://digitalfire.com/article/279">Is Your Fired Ware Safe?</a><br /><a title="311" href="https://digitalfire.com/article/311">Leaching Cone 6 Glaze Case Study</a><br /><a title="206" href="https://digitalfire.com/article/206">Limit Formulas and Target Formulas</a><br /><a title="133" href="https://digitalfire.com/article/133">Low Budget Testing of Ceramic Glazes</a><br /><a title="333" href="https://digitalfire.com/article/333">Make Your Own Ball Mill Stand</a><br /><a title="347" href="https://digitalfire.com/article/347">Making Glaze Testing Cones</a><br /><a title="341" href="https://digitalfire.com/article/341">Monoporosa or Single Fired Wall Tiles</a><br /><a title="325" href="https://digitalfire.com/article/325">Organic Matter in Clays: Detailed Overview</a><br /><a title="105" href="https://digitalfire.com/article/105">Outdoor Weather Resistant Ceramics</a><br /><a title="27" href="https://digitalfire.com/article/27">Painting Glazes Rather Than Dipping or Spraying</a><br /><a title="212" href="https://digitalfire.com/article/212">Particle Size Distribution of Ceramic Powders</a><br /><a title="339" href="https://digitalfire.com/article/339">Porcelain Tile, Vitrified Tile</a><br /><a title="20" href="https://digitalfire.com/article/20">Rationalizing Conflicting Opinions About Plasticity</a><br /><a title="332" href="https://digitalfire.com/article/332">Ravenscrag Slip is Born</a><br /><a title="247" href="https://digitalfire.com/article/247">Recylcing Scrap Clay</a><br /><a title="101" href="https://digitalfire.com/article/101">Reducing the Firing Temperature of a Glaze From Cone 10 to 6</a><br /><a title="329" href="https://digitalfire.com/article/329">Setting up a Clay Testing Program in Your Company or Studio</a><br /><a title="211" href="https://digitalfire.com/article/211">Simple Physical Testing of Clays</a><br /><a title="350" href="https://digitalfire.com/article/350">Single Fire Glazing</a><br /><a title="326" href="https://digitalfire.com/article/326">Soluble Salts in Minerals: Detailed Overview</a><br /><a title="28" href="https://digitalfire.com/article/28">Some Keys to Dealing With Firing Cracks</a><br /><a title="249" href="https://digitalfire.com/article/249">Stoneware Casting Body Recipes</a><br /><a title="194" href="https://digitalfire.com/article/194">Substituting Cornwall Stone</a><br /><a title="274" href="https://digitalfire.com/article/274">Super-Refined Terra Sigillata</a><br /><a title="340" href="https://digitalfire.com/article/340">The Chemistry, Physics and Manufacturing of Glaze Frits</a><br /><a title="202" href="https://digitalfire.com/article/202">The Effect of Glaze Fit on Fired Ware Strength</a><br /><a title="125" href="https://digitalfire.com/article/125">The Four Levels on Which to View Ceramic Glazes</a><br /><a title="207" href="https://digitalfire.com/article/207">The Majolica Earthenware Process</a><br /><a title="43" href="https://digitalfire.com/article/43">The Potter's Prayer</a><br /><a title="359" href="https://digitalfire.com/article/359">The Right Chemistry for a Cone 6 Magnesia Matte</a><br /><a title="33" href="https://digitalfire.com/article/33">The Trials of Being the Only Technical Person in the Club</a><br /><a title="107" href="https://digitalfire.com/article/107">The Whining Stops Here: A Realistic Look at Clay Bodies</a><br /><a title="134" href="https://digitalfire.com/article/134">Those Unlabelled Bags and Buckets</a><br /><a title="16" href="https://digitalfire.com/article/16">Tiles and Mosaics for Potters</a><br /><a title="308" href="https://digitalfire.com/article/308">Toxicity of Firebricks Used in Ovens</a><br /><a title="379" href="https://digitalfire.com/article/379">Trafficking in Glaze Recipes</a><br /><a title="216" href="https://digitalfire.com/article/216">Understanding Ceramic Materials</a><br /><a title="210" href="https://digitalfire.com/article/210">Understanding Ceramic Oxides</a><br /><a title="130" href="https://digitalfire.com/article/130">Understanding Glaze Slurry Properties</a><br /><a title="213" href="https://digitalfire.com/article/213">Understanding the Deflocculation Process in Slip Casting</a><br /><a title="132" href="https://digitalfire.com/article/132">Understanding the Terra Cotta Slip Casting Recipes In North America</a><br /><a title="198" href="https://digitalfire.com/article/198">Understanding Thermal Expansion in Ceramic Glazes</a><br /><a title="313" href="https://digitalfire.com/article/313">Unwanted Crystallization in a Cone 6 Glaze</a><br /><a title="389" href="https://digitalfire.com/article/389">Using Dextrin, Glycerine and CMC Gum together</a><br /><a title="135" href="https://digitalfire.com/article/135">Volcanic Ash</a><br /><a title="201" href="https://digitalfire.com/article/201">What Determines a Glaze's Firing Temperature?</a><br /><a title="111" href="https://digitalfire.com/article/111">What is a Mole, Checking Out the Mole</a><br /><a title="38" href="https://digitalfire.com/article/38">What is the Glaze Dragon?</a><br /><a title="98" href="https://digitalfire.com/article/98">Where do I start in understanding glazes?</a><br /><a title="215" href="https://digitalfire.com/article/215">Why Textbook Glazes Are So Difficult</a><br /><a title="239" href="https://digitalfire.com/article/239">Working with children</a></div><p style="clear:left"></p><h1>Understanding Thermal Expansion in Ceramic Glazes</h1>
+<h4 class="text-muted">Description</h4><p class="text-muted font-italic">Understanding thermal expansion is the key to dealing with crazing or shivering. There is a rich mans and poor mans way to fit glazes, the latter might be better.</p><h4>Article</h4>
+<p>Almost any fired ceramic object experiences expansion as it is heated and contraction as it is cooled. A typical piece of <a  href="https://digitalfire.com/glossary/functional">functional</a> ware is a two-part system in that body and glaze possess independent expansion characteristics. However the glaze is fixed to the underlying body and is therefore obliged to conform to the body's thermally induced size changes. Stresses are thus part of what we could call a 'glaze-body marriage'.</p>
+
+<p>To succeed a marriage needs two important things:</p>
+<ul>
+<li>Compatibility: In a body:glaze 'marriage' they must have compatible expansion curves (we will see what that means in a minute). A key fact to remember is that fired ceramic is strong under compression but very weak under tension. If a glaze is stretched onto the body at any time (even as a result of contraction due to quick surface cooling) it will likely form a network of cracks to relieve the stress. This is why having a glaze under slight compression is good.</li>
+
+<li>Firmly bonded: In most cases a significant reaction layer or <a  href="https://digitalfire.com/glossary/body+glaze+interface">interface</a> does bond them together. This buffer forms as the liquid glaze melt attacks the body, penetrating into it and forming intermediate compositions layered against the body. The temperature, soaking, <a  href="https://digitalfire.com/picture/761">cooling rate</a>, glaze and <a  href="https://digitalfire.com/glossary/glaze+chemistry">body chemistry</a>, and material <a  href="https://digitalfire.com/glossary/particle+sizes">particle sizes</a> all affect the development of the intermediate zones. On one extreme, <a  href="https://digitalfire.com/glossary/earthenware">earthenware</a> will have a poor interface while on the other, high temperature slow fired <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> will have a highly developed one. <a  href="https://digitalfire.com/glossary/frit">Fritted</a> glazes will typically soften over a longer period produce a better interface.</li>
+</ul>
+
+<p>Crazing (the fired glaze forms a network of crack lines) and <a  href="https://digitalfire.com/glossary/glaze+shivering">shivering</a> (the fired glaze flakes off at rims and edges) are among the most common problems glaze technicians have to deal with. Many manufacturers and individual potters suffer serious loss of product strength and compromised hygienic properties because of these. Unfortunately some do not even realize it.</p>
+
+<p>Glazes that have a higher expansion than the body by implication also contract more on cooling. This puts the glaze under tension, stretching it, sort of a "size 6 mug in a size 5 glaze" situation. If you would like to demonstrate some dramatic <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a>, mix <a  href="https://digitalfire.com/material/1070">nepheline syenite</a> and water and apply a thick layer to a test piece made from a typical cone 10 <a  href="https://digitalfire.com/glossary/clay+body">clay body</a> and fire. Tension can also occur where a normally compatible glaze is subjected to stretching by a moisture absorbing and expanding body (e.g. water reacts with alkaline or <a  href="https://digitalfire.com/glossary/alkaline+earths">alkaline earths</a> remaining uncombined in under fired bodies). However I will assume that your clay body is either <a  href="https://digitalfire.com/glossary/vitreous">vitreous</a> or contains additives to prevent this.</p>
+
+<p>Shivering is the opposite, a "size 6 mug in a size 7 glaze" situation where areas of the glaze unable to 'hang on' can actually flake off the fired ware. If you would like to see some pretty dramatic shivering, make a body composed of <a  href="https://digitalfire.com/material/80">ball clay</a> and <a  href="https://digitalfire.com/material/1245">silica</a> 50:50 and apply a typical cone 10 low-feldspar glaze.</p>
+
+<p>There are plenty of common misconceptions about how to deal with crazing problems, most tend to attack the symptoms instead of the real cause, <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> mismatch. It is not difficult to create a glaze:body marriage that survives the initial contraction test of cooling slowly in the kiln. The real trial is achieving a 'working fit' that ensures the glaze is under the correct amount of compression over the entire range of heat/cool cycles it will experience during many years use. You must create a two-part system that achieves a degree of compression in the glaze that is within the "interfacial layer's" ability to hold it comfortably over a long time. Thus, compressive stress actually becomes a contributing factor to the ability of the 'marriage' to stand up under thermal attack during use.</p>
+
+<h2>Rich Man's Way to Fit Glazes</h2>
+
+<p>If you can afford an instrument called a dilatometer, then you can take a broader view of thermal expansion. This device is the standard instrument used to measure thermal expansion of small test samples from room temperature to set point (for glazes) or an arbitrary temperature (for bodies). It is basically a small furnace in which a tiny bar made from the glaze or body is heated. It is positioned in a <a  href="https://digitalfire.com/glossary/refractory">refractory</a> tube against which a sensitive push-rod measuring probe rests (newer designs use lasers). Length changes during a fixed-rate heat-up from room temperature to the softening point of the glaze are recorded and plotted as a 'dilatometric curve'. </p>
+
+<div class="flexleft33"><img style="width:100%;" src="https://digitalfire.com/4sight/images/pictures/dilachar.gif"><p style="color:#888888; font-style:italic; font-size:80%; margin:4px 0px 5px 0px;">Simple dilatometric curve produced by a dilatometer</p></div>
+
+<p>Visualize a reversal of the dilatometric heat-up curve: On cooling, a molten glass solidifies at its "set point". From here, it is capable of accepting differential stress from the body to which it is attached. The total thermal expansion could be considered as the percentage increase in length of the bar at its 'set point'. However glazes have different set points so a more useful standard has evolved: divide the total expansion by the number of degrees taken to produce it (if the curve is fairly linear over the range this value is reliable). This produces a figure that represents the change in length per °C. By the time the mathematics are finished, the result for <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a> is a value in the 10<sup>-7</sup> decimal range. Thus an expansion of '7.0' is really 7.0 X 10<sup>-7</sup> in/in/°C (the length units are obviously arbitrary, it could be cm/cm/°C if you like).</p>
+
+<p>As already stated, the ideal glaze should have a slightly lower expansion than the body to put it under some compression. It is thus not difficult to imagine a technician superimposing the dilatometer curves for variations of a glaze on top of the one for the body to find one whose curve tracks a little lower than the body. How much lower? That would be determined by that company's experience with the type of glaze and body they use.</p>
+
+<p>It is important to realize that this method of controlling the expansion relationship between body and glaze is not practical for people who just want to make one test of a body and glaze in isolation and expect the results to be a definitive indication of fit. This method is only useful if done over a period of time in parallel with production to develop an understanding of the expansion relationship between body and glaze and how to rationalize and compare their curves (which can have different shapes by the way). In some ways, the poor man's way to doing this is actually better for most people.</p>
+
+<h2>Poor Man's Way to Fit Glazes</h2>
+<p>An interesting point is that although a dilatometer provides a graphic view of the history of thermal expansion for a glaze and body, the technician still has to decide what the proper spatial relationship between body and glaze curves should be. How do they do this? Other kinds of tests. They must subject ware to extreme thermal stresses and mechanical tests to try to induce crazing. Over the years a history of these test results and a record of how ware stands up over time produces the body of knowledge that enables them say where the line for a glaze should be in relation to a specific body. From that point on new glazes can be brought on-line based on dilatometric testing without the need for all the other tests.</p>
+
+<p>It may have already struck you that you can fit a glaze just fine without the use of a dilatometer. Industrial tests for <a  href="https://digitalfire.com/glossary/glaze+fit">glaze fit</a> are not nearly as complicated as most people might think. While dilatometric curves of body and glaze are nice to have, it is the "acid-test" of subjecting the body-glaze 'marriage' to stress that tells the real story. Typically, multiple specimens of glazed ware are repeatedly subjected to an atmosphere of steam at high pressure, heated in air or boiling water, and then quenched in ice water. It is important to standardize the test. Make sure that the ware is thoroughly heated and cooled throughout on each cycle and examined closely to record results. Some have been able to translate the failure point in their tests to the expected failure rate in the field. For bodies with an absorption, it is also important to realize that body expansion can occur if, and when, water is absorbed. So in the above tests, an important element is long exposure to heat and being sure the ware is thoroughly and completely cooled (some people will put ware in a freezer overnight to take it well below the temperature of ice water). Many have standardized on a 5 minute cycle ice-water boiling-water test. Others heat the ware hotter than boiling, 300F for example.</p>
+
+<p>A second valuable test is <a  href="https://digitalfire.com/glossary/fired+strength">fired strength</a>. The idea is to glaze and fire a sample bar of the body, then break multiple specimens in a device that records the necessary force for each. Calculations and subsequent averaging yield a strength figure that can be compared with the unglazed body's strength. In this way, you can create a profile comparing strength with formulation changes designed to vary the expansion of the glaze. While achieving a high strength is good, it is important that a glaze not be under too much compression, this might produce stronger ware out of the kiln but under continued use it may eventually fail.</p>
+
+<p>Another interesting observation you can make is a fracture test. Make a thin-walled vessel of the clay (as close to spherical as possible) and glaze it on the inside and fire. Then drop it on a concrete floor (cover your eyes). If the glaze is under compression the piece will almost explode into dozens of pieces, often with a popping sound. Glazed edges of shards will be razer-sharp.  If the glaze is crazing the piece should break with a dead thud with some grainy material produced by disintegration along break lines (because of craze-induced weakness). A vitreous piece with a fitted glaze should be strong and break into only a few pieces. Glazed edges on shards should follow the contour of the crack is if the body and glaze were one.</p>
+
+<h2>Using Calculation to Fit a Glaze</h2>
+
+<p>It might seem logical that we measure the thermal expansion of each of the materials used in a glaze recipe and then calculate the expansion additively based on the percentage of each. However the problem with calculating glaze expansion from the expansions of the raw materials is that those expansions are a product of the average <a  href="https://digitalfire.com/glossary/mineralogy">mineralogy</a> and crystal structure of the material particles rather than the overall <a  href="https://digitalfire.com/glossary/glaze+chemistry">chemistry</a>. The classic example of this is carbon. Graphite is a soft lubricating powder, diamond is the hardest material known. They have the same chemistry but different mineralogy. In ceramics the classic example is silica powder. It has a very high thermal expansion, particles of quartz are literally the 'kings of thermal expansion'. Fused silica (melted and then quickly solidified before it can crystallize) is the lowest (or one of the lowest) expansion ceramic materials known! How is that possible? Because quartz is a crystal, fused silica is a glass. Yet they have exactly the same chemistry! This story can be repeated for almost any other raw <a  href="https://digitalfire.com/glossary/ceramic+material">ceramic material</a>, they are almost all <a  href="https://digitalfire.com/glossary/glass+vs.+crystalline">crystalline</a>. Most materials are mixtures of minerals and even mixtures of different forms of the same mineral (and others).</p>
+
+<p>A fired glaze is a glass, it is not crystalline. Thus its expansion is a theoretical product of the contributions of the <a  href="https://digitalfire.com/glossary/ceramic+oxide">oxides</a> that its chemistry enumerates. Each recipe material contributes one or more oxides and the same oxide can be contributed from a number of materials in the recipe (<a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a> for example). Thus calculating a glazes expansion additively from the percentage of each oxide is practical (although there are caveats as you will see later). INSIGHT knows the expansion of each of the oxides from sets of common thermal expansion numbers of ceramic oxides built in to it (selectable by the user). It calculates the expansion of the glaze as a whole from the formula. Thus expansion is clear a formula level (as opposed to material level) property.</p>
+
+<p>We must be aware of the limitations of this to employ thermal expansion prediction effectively. Expansion calculations are not absolute, they are relative within a system (material or oxide). For example, if you have a <a  href="https://digitalfire.com/material/273">dolomite</a>, whiting, <a  href="https://digitalfire.com/material/310">feldspar</a>, <a  href="https://digitalfire.com/material/925">kaolin</a>, silica glaze and you try a bunch of minor variations, the calculated expansions will give you a fairly accurate indication of which variations have higher and lower expansions and to what degree. But if you make a major change to the oxide balance (perhaps moving toward a high <a  href="https://digitalfire.com/oxide/mgo">MgO</a> from a high <a  href="https://digitalfire.com/picture/1775">KNaO</a> content) while still using the same materials, the <a  href="https://digitalfire.com/glossary/calculated+thermal+expansion">calculated thermal expansion</a> difference between the two will often not accurately reflect the actual measured differences. Even more significantly, if <a  href="https://digitalfire.com/material/975">lithium carbonate</a>, for example, is introduced (or a <a  href="https://digitalfire.com/glossary/boron+frit">boron frit</a>, or zinc, for example) it is now a different system and different factors affecting the proximity of calculated and actual thermal expansion come into play. Likely you are employing many systems (which most people are) so there is good reason to think in relative terms. If a glaze is crazing, for example, reduce its thermal expansion and test rather than worrying so  much about how much its expansion matches an arbitrary absolute target. Often the degree to which a calculated expansion changes when you adjust the recipe is comparable to the degree to which the actual measured numbers would be different (within a system). There are other factors that affect the accuracy of thermal expansion prediction also:</p>
+<ul>
+<li>Some oxides, like <a  href="https://digitalfire.com/oxide/li2o">Li<sub>2</sub>O</a> do not impose their expansions in a linear fashion or in accordance with their proportion.</li>
+<li>The degree to which a glaze is completely melted determines the degree to which its expansion calculation is valid.</li>
+<li>Crystallization: A melt that freezes to a crystalline solid has a very different thermal expansion than when it freezes to a glass.</li>
+<li>Non melting particles: <a  href="https://digitalfire.com/material/1722">Zircon</a> imposes its expansion as a non-participant in the glass structure, this is very different than if it were to melt and participate in the glass chemistry. Alumina (<a  href="https://digitalfire.com/glossary/calcination">calcined</a> or hydrate) is a similar story.</li>
+<li>Oxides interact: The expansion contribution of one may be different depending on which other oxides are present.
+</ul>
+
+<p>Various mathematical techniques have been employed that produce good results within certain systems, but there is no universal method that works everywhere because there are so many variables in ceramics (the glass industry is much better at this, see below). Glazes often have <a  href="https://digitalfire.com/glossary/phase+separation">phase changes</a> (discontinuities in the glass structure), incomplete melting, crystal development and non-melting particles (like zircon). 
+
+Remember also that dilatometers have their own absolute vs. relative interpretation problems.</p>
+
+<p>The simple additive method of calculating expansion is the most common and has proven quite workable. Why? Different authorities disagree on absolute expansion but they generally agree comparatively (the degree to which an expansion will move up or downward with a given formula change is more predictable than what the absolute values will be). Also the differences between individual oxide expansions (within a given set of numbers) are so profound that calculations unquestionably give direction. So remember: Calculations produce relative, not absolute thermal expansion values. But isn't that what we need? If a glaze is crazing then its expansion needs to go down. Do we need an absolute number to represent the expansion of the glaze and clay? No. This is why calculated expansion is effective, oxides that increase or decrease it are well known. This is similar to driving with a broken speedometer and judging your speed according to surrounding traffic. 
+Little old ladies are likely driving below the limit, teenage men likely above. Different roads are like different <a  href="https://digitalfire.com/glossary/clay+body">clay bodies</a>.</p>
+
+<p>How much should you adjust expansion value to fix a crazing problem? If a glaze is crazing out of the kiln this is an indicator of a serious, not a minor problem. Thus, if the expansion of the crazing glaze calculates to 7.5, then try to move it to 7.0. After stress testing, then move it more or less. </p>
+
+<h2>Establishing Calculated Expansion Targets for Your Clay Bodies</h2>
+
+<p>Anyone who has done a lot of calculations on recipes they have tested on their own clay bodies soon learns to predict whether or not new ones will <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a>. However, remember that calculations are relative within 'systems', although a dolomite  matte may need to calculate to 7.0 to fit your body don't expect a highly fluid zinc lithia crystalline to work at the same calculated value.</p>
+
+<i>Consider an example of a silky matte cone 10 glaze.</i>
+
+<p><font face="Courier">Silky Matte<br>
+<a  href="https://digitalfire.com/material/253">CUSTER FELDSPAR</a>..... 33.0<br>
+DOLOMITE............ 23.0<br>
+<a  href="https://digitalfire.com/material/291">EPK</a> KAOLIN.......... 22.0<br>
+SILICA.............. 22.0<br>
+FORMULA & ANALYSIS<br>
+*CaO   .41  8.33%<br>
+*MgO   .41  5.90%<br>
+*K<sub>2</sub>O   .12  3.97%<br>
+*Na<sub>2</sub>O  .05  1.16%<br>
+*Fe<sub>2</sub>O<sub>3</sub> .00   .23%<br>
+*TiO2  .00   .09%<br>
+*P<sub>2</sub>O<sub>5</sub>  .00   .05%<br>
+Al<sub>2</sub>O<sub>3</sub>  .44 16.25%<br>
+SiO<sub>2</sub>  2.98 64.02%<br>
+COST/KG   .23<br>
+RATIO    6.70<br>
+EXPAN    6.45</font></p>
+
+<p>The company using it has found it to be successful with an ironware brown body at <i>cone 10 </i>reduction. Not only does it not craze but it considerably strengthens the ware. This is important because such bodies are usually fairly weak (iron bodies develop their characteristic warm color as a function of stopping the firing short of <a  href="https://digitalfire.com/glossary/vitrification">vitrification</a>). A glaze that fits poorly on such a clay can cut its strength quite dramatically whereas one that fits well can significantly increase strength. In the case of this company, they were producing ware that was tougher than others who used a stronger clay body but with a poorly fitted glaze. In fact, the strength difference in the ware was so great that simply breaking a mug of each made it obvious which was stronger. Since this glaze is known to function well, the calculated expansion of any other glaze using the same or a similar material suite and chemistry balance can be compared and fairly reliable fit predictions made.</p>
+
+<p>Although a dilatometer-equipped factory technician correlates strength and thermal stressing glaze fit tests to actual expansion curves, you can correlate to calculated numbers. This method is not quite as precise but it is more flexible in that it allows prediction of fit without having to make fired samples and measure them. Predictions become increasingly accurate with time and experience.</p>
+
+<h3>How expansion is calculated?</h3>
+
+<p>As already noted, it has been shown that thermal expansion is considered an additive property (with the limitations noted). This means that a knowledge of the expansion values of a glaze's constituent oxides makes it possible to calculate the expansion of the glaze as a whole by simple addition. The equation for a glazes calculated expansion, G, is:</p>
+
+<p align="left"> G = E<sub>a</sub> x P<sub>a</sub> + E<sub>b</sub> x P<sub>b</sub>
++ E<sub>c</sub> X P<sub>c</sub> etc.</p>
+
+<p>Where a, b, and c are oxides, E is the oxide expansion and P is the proportion of oxide in the glaze. For example, if a glaze consists of 50% oxide A, which has an expansion of 5, and 50% oxide B, which has an expansion of 10, then the expansion is:</p>
+
+<p> (.50 x 5) + (.50 x 10) = 7.5</p>
+
+<p>Remember, this is only an approximate way to deduce a glaze's expansion since other factors besides the oxide make-up are involved (especially interactions). The issue is further clouded by the fact that basic expansion data from different authorities can vary, use different units, and be intended for use with molar formulas or percentage analyses. There is, thus, the challenge of either averaging the data or accepting the set one feels is more applicable or credible. In actual practice, I have found this to be less of an impact than expected since there is good agreement on the oxides that typically comprise 90% of the glaze (e.g. the huge expansion contributions of <a  href="https://digitalfire.com/oxide/na2o">Na<sub>2</sub>O</a> and <a  href="https://digitalfire.com/oxide/k2o">K<sub>2</sub>O</a>, moderate <a  href="https://digitalfire.com/oxide/cao">CaO</a>, low MgO, <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a>, SiO<sub>2</sub>, <a  href="https://digitalfire.com/oxide/b2o3">B<sub>2</sub>O<sub>3</sub></a>).</p>
+
+<p>There are, of course, irregularities not yet accounted for. One interesting exercise is to page through the <a  href="https://digitalfire.com/glossary/frit">frits</a> at the <a  href="https://digitalfire.com/glossary/digitalfire+reference+library">Digitalfire Reference Library</a> and compare calculated expansion figures with the physical expansion values shown for many of them. For most the correlation is good, but for some there is a considerable discrepancy (B and Li containing frits are examples, this is understandable since these two oxides are known to have non-linear response to proportion). Like the drug industry, we must also consider interactions between oxides, this is not well understood.</p>
+
+<h2>The Art Glass Industry: An interesting parallel</h2>
+
+<p>The importance of knowing expansion is paramount to glass artists who cool their thick pieces in minutes instead of hours. Pieces of glass of different colors and chemistry are routinely joined and they must be expansion compatible to cool without cracking. The <a  href="https://digitalfire.com/picture/2813">supply chain</a> considers thermal expansion a fundamental piece of information that should never be separated from a glass or glass mix. 90-compatible, for example, refers to soda glass that has an expansion of 90 x 10-7. Built in stresses that cause failure over time are a great concern also and glass artists use hot/cold tests and special instruments to identify and deal with them. At the least, ceramic artists can take a lesson about the importance of thermal expansion. However, there are other factors. Glazes often have phase changes (discontinuities in the glass structure), incomplete melting, crystal development and non-melting particles (like zircon). Also, potters and ceramic production facilities use a much wider range of oxide and material systems that impose their own idiosyncrasies on thermal expansion prediction.</p>
+
+<h2>Thermal Expansion Numbers Provided with Frits</h2>
+<p>Frit companies normally publish expansion numbers with their frits. These may be derived by measurement in a dilatometer or by calculation. Various <a  href="https://digitalfire.com/glossary/frit">frit</a> companies have different ways of calculating (usually involving the standard additive process with exceptions). Ferro, likely pretty typical, calculates coefficient in degrees C using Hall factors if available and M & H factors otherwise.  The numbers are the <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">COE</a> x 10 -6. When they measure the thermal expansion of glazes or frits in the laboratory they log the expansion change between 0-450 degrees C using a 3 degree C per minute heating rate.</p><p style="clear:left"></p>
+<h2 style="font-style:italic;">Related Information</h2>
+<p style="clear:left"></p>
+
+<h3 style="margin-top:30px;">No crazing out of the kiln. But an ice-water test did this.</h3>
+<br /><a alt="Crazing mug" href="https://digitalfire.com/picture/1206"><img class="flexleft50" alt="Crazing mug"  loading="lazy" src="https://s3-us-west-2.amazonaws.com/reference/images/pictures/wyhlolufal.jpg" /></a><p style="margin-top:0px; padding-top:0px; font-style:italic; color:#888888; font-size:90%;">This picture has its own page with more detail, <a href="https://digitalfire.com/picture/1206">click here</a> to see it.</p>
+<p>The side of this white <a  href="https://digitalfire.com/glossary/porcelain">porcelain</a> test mug is glazed with varying thicknesses of V.C. 71 (a popular silky matte used by potters), then fired to <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a>. Out of the kiln, there was no <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a>, and it felt silky and wonderful. But after a 300F/icewater IWCT this happened (it was felt-pen marked and cleaned with acetone). The glaze was apparently elastic enough to handle the gradual cooling in the kiln. However, the recipe has 40% <a  href="https://digitalfire.com/material/310">feldspar</a> and low <a  href="https://digitalfire.com/oxide/al2o3">Al<sub>2</sub>O<sub>3</sub></a> and <a  href="https://digitalfire.com/oxide/sio2">SiO<sub>2</sub></a>, in a cone 6 glaze these are red flags for crazing.<br />
+<br />
+No matter what anyone tells you, <a  href="https://digitalfire.com/glossary/glaze+fit">glaze fit</a> can rarely be fixed by firing differently (that just delays it). If someone needs to cool their kiln slowly to prevent crazing it simply means the glaze does not fit - its needs to be adjusted to reduce its <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">co-efficient of thermal expansion</a>.</p>
+<p style="clear:left"></p>
+<h3>Links</h3><table>
+<table class="table table-bordered"><tbody>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/cole">Co-efficient of Linear Expansion</a>
+<br /><i>In <a  href="https://digitalfire.com/glossary/ceramics">ceramics</a>, glazes expand with increasing temperature. Being brittle materials, they must be expansion-compatible with the body they are on.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Tests</td>
+<td>
+<a href="https://digitalfire.com/test/iwct">300F:Ice Water Crazing Test</a>
+<br /><i>Ceramic glazes that <a  href="https://digitalfire.com/glossary/glaze+fit">do not fit</a> the body often do not <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a> until later. This progressively stresses the fit until failure point, thus giving it a score</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/bringing+out+the+big+guns+in+craze+control%3a+mgo+%28g1215u%29">Bringing Out the Big Guns in Craze Control: MgO (G1215U)</a>
+<br /><i><a  href="https://digitalfire.com/oxide/mgo">MgO</a> is the secret weapon of <a  href="https://digitalfire.com/trouble/glaze+crazing">craze</a> control. If your application can tolerate it you can create a <a  href="https://digitalfire.com/glossary/cone+6">cone 6</a> glaze of very low <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> that is very resistant to <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a>.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/crazing+in+stoneware+glazes%3a+treating+the+causes%2c+not+the+symptoms">Crazing in Stoneware Glazes: Treating the Causes, Not the Symptoms</a>
+<br /><i>Band-aid solutions to <a  href="https://digitalfire.com/trouble/glaze+crazing">crazing</a> are often recommended by authors, but these do not get at the root cause of the problem, a <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> mismatch between glaze and body.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Articles</td>
+<td>
+<a href="https://digitalfire.com/article/the+effect+of+glaze+fit+on+fired+ware+strength">The Effect of Glaze Fit on Fired Ware Strength</a>
+<br /><i>The fit between body and glaze is like a marriage, if is is strong the marriage can survive problems. Likewise ceramic ware with well fitting glaze is much stronger than you think it might be, and vice versa.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Projects</td>
+<td>
+<a href="https://digitalfire.com/project/tests">Tests</a>
+<br /><i></i>
+</td>
+</tr>
+<tr>
+<td scope="row">Troubles</td>
+<td>
+<a href="https://digitalfire.com/trouble/glaze+crazing">Glaze Crazing</a>
+<br /><i>Ask the right questions to analyse the real cause of <a  href="https://digitalfire.com/glossary/glaze+crazing">glaze crazing</a>. Do not just treat the symptoms, the real cause is <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> mismatch with the body.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Troubles</td>
+<td>
+<a href="https://digitalfire.com/trouble/glaze+shivering">Glaze Shivering</a>
+<br /><i>Ask the right questions to analyse the real cause of <a  href="https://digitalfire.com/glossary/glaze+shivering">glaze shivering</a>. Do not just treat the symptoms, the real cause is <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> mismatch with the body.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">Co-efficient of Thermal Expansion</a>
+<br /><i>The <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">co-efficient of thermal expansion</a> of ceramic bodies and glazes determines how well they fit each other and their ability to survive sudden heating and cooling without cracking.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">Glossary</td>
+<td>
+<a href="https://digitalfire.com/glossary/calculated+thermal+expansion">Calculated Thermal Expansion</a>
+<br /><i>The <a  href="https://digitalfire.com/glossary/co-efficient+of+thermal+expansion">thermal expansion</a> of a glaze can be predicted (relatively) and adjusted using simple <a  href="https://digitalfire.com/glossary/glaze+chemistry">glaze chemistry</a>. Body expansion cannot be calculated.</i>
+</td>
+</tr>
+<tr>
+<td scope="row">URLs</td>
+<td>
+<a href="https://digitalfire.com/url/3253">https://www.eieinstruments.com/tiles_&_ceramics_testing_instruments/autoclave_test/tiles-autoclave-crazing-test-autoclave-for-website</a>
+<br /><i>Tiles Autoclave - <a  href="https://digitalfire.com/trouble/glaze+crazing">Crazing</a> Test Autoclave</i>
+<br /><i style="color:#888888;">Compliance Standards: EN ISO 10545-11, ASTM C424, IS 13630 (Part-9)</i>
+</td>
+</tr>
+</tbody></table><table style="margin:30px 0px 30px 0px;"><tr><td style="vertical-align:middle; text-align:center; font-size:80%;"><img src="/images/PayPalDonate.png" style="height:66px; padding-right:20px;"><br /><a href="https://www.paypal.com/donate/?hosted_button_id=F8L3JX4BCCXJ6">PayPal</a></td><td style="background-color:#ddffdd; padding:10px; border:thin solid grey; font-size:90%;"><b>No</b> tracking, <b>No</b> ads, <b>No</b> paywall, <b>No</b> transient content!<br />Just organized, concise information constantly updated and improved.<br />Was this helpful? Consider supporting me.</td><tr></table><table style="margin-top:30px; padding-top:10px; padding-bottom:20px; border-top:thin solid grey; border-bottom:thin solid grey;"><tr><td style="padding-right:10px">By <i>Tony Hansen</i><br /><span style="font-size:80%; color:#888888;">Follow me on<br /><a title="Threads" href="https://www.threads.net/@tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/threads.jpg" style="width:20px;" border="0"></a> <a title="Facebook Insight-Live" href="https://www.facebook.com/insightlive" target="_blank"><img src="https://digitalfire.com/images/facebook.jpg" style="width:20px;" border="0"></a> <a title="LinkedIn" href="https://www.linkedin.com/in/tonywhansen/" target="_blank"><img src="https://digitalfire.com/images/linkedin.jpg" style="width:20px;" border="0"></a> <a title="Pinterest" href="https://www.pinterest.ca/tonywhansen" target="_blank"><img src="https://digitalfire.com/images/pinterest.jpg" style="width:20px;" border="0"></a> <a title="Instagram" href="https://instagram.com/tonyatdigitalfire" target="_blank"><img src="https://digitalfire.com/images/instagram.jpg" style="width:20px;" border="0"></a> <a title="Ko-Fi" href="https://ko-fi.com/tonyhansen#" target="_blank"><img src="https://digitalfire.com/images/ko-fi.jpg" style="width:20px;" border="0"></a> <a title="Twitter" href="https://x.com/digitalfiretony" target="_blank"><img src="https://digitalfire.com/images/twitter.jpg" style="width:20px;" border="0"></a></td><td><a href="https://tonyhansen.com/about"><img src="https://digitalfire.com/images/SignaturePhotoSmall.jpg" height="80"></a></td></tr></table><h3>Got a Question?</h3><p style="margin-bottom:30px;"><a name="kofi">Buy me a coffee and we can talk</a> <a target="_blank" href="https://ko-fi.com/tonyhansen"><img style="width:40px" src="https://digitalfire.com/images/ko-fi.svg"></a></p><p style="margin-bottom:30px;">&nbsp;</p>
+<p></p><p></p><hr>
+<img style="width:250px" src="/4sight/images/ReferenceLibrary.svg">
+<br />
+<a href="https://digitalfire.com">https://digitalfire.com</a>, All Rights Reserved
+<br /><a href="/w3c/privacypolicy.php">Privacy Policy</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>
