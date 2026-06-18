@@ -162,6 +162,8 @@ fn render_sidebar(collections: &[CollectionInfo], prefix: &str) -> String {
     }
     format!(r#"<nav class="sidebar">
 <a class="logo" href="{prefix}/">Potter</a>
+<input type="checkbox" id="nav-toggle" class="nav-toggle">
+<label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu">☰</label>
 <ul>{items}</ul>
 </nav>"#)
 }
@@ -175,7 +177,7 @@ fn render_home(collections: &[CollectionInfo], total: usize) -> String {
     }
     format!(r#"<div class="home">
 <h1>A modern, searchable ceramics reference</h1>
-<p class="lede">A preservation archive of the digitalfire glaze-chemistry library: materials, oxides, recipes, and glossary, rebuilt as fast static pages.</p>
+<p class="lede">A preservation of the Digitalfire glaze-chemistry library: materials, oxides, and more, in a simple reference format.</p>
 <p class="muted">{total} pages · {n} collections</p>
 <div class="grid">{tiles}</div>
 </div>"#, n = collections.len())

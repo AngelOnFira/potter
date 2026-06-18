@@ -135,6 +135,8 @@ fn Sidebar() -> impl IntoView {
     view! {
         <nav class="sidebar">
             <a class="logo" href="/">"Potter"</a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle"/>
+            <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu">"☰"</label>
             <ul>
                 {COLLECTIONS.iter().map(|(name, title)| view! {
                     <li><a href=format!("/{name}")>{*title}</a></li>
