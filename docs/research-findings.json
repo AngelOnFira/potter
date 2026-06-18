@@ -1,0 +1,572 @@
+[
+  {
+    "key": "wayback_mechanics",
+    "summary": "Internet Archive Wayback Machine APIs for bulk retrieval AND submission, verified live against digitalfire.com using only archive.org infrastructure (never hammering the live origin). KEY COVERAGE FINDING: digitalfire.com already has about 33928 unique archived HTML pages (CDX domain query with statuscode 200, mimetype text html, collapse urlkey), with captures from December 1996 to at least January 2026, and the zipnum index reports 46 pages for the full domain. This confirms Tony Hansen statement that the internet archive has everything, so the project should treat Wayback as the primary retrieval source. RETRIEVAL stack is the CDX Server API (enumerate captures with filtering, collapse dedup, resumeKey pagination), the id underscore raw modifier (returns the original unmodified page bytes), the Availability API (closest snapshot to a date), and Memento TimeMap and TimeGate. SUBMISSION stack is anonymous Save Page Now plus the authenticated SPN2 API (S3 keys, capture params, async job polling). CRITICAL: CDX tolerates about 60 requests per minute (1 per second), and ignoring HTTP 429 for over a minute triggers a one hour firewall level IP block that doubles on repeat, so the project must throttle to at most 1 CDX request per second with exponential backoff. Recommended tooling is waybackpack for bulk download and EDGI wayback for programmatic search plus memento fetch, with savepagenow or archivenow for any gap-fill submission before the June 26 2026 shutdown.",
+    "findings": [
+      {
+        "claim": "digitalfire.com already has about 33928 unique archived HTML pages, with captures from 1996 through at least January 2026.",
+        "detail": "Live CDX query with matchType domain, filter statuscode equals 200, filter mimetype equals text html, collapse urlkey, fl urlkey returned 33928 rows deduped by urlkey. Homepage captures go back to timestamp 19961222031515. The showNumPages parameter returned 45 for matchType host and 46 for matchType domain. The most recent capture observed in samples was timestamp 20260118163756. This confirms the project can rely on Wayback rather than re-crawling the live origin.",
+        "confidence": "high",
+        "sources": [
+          "https://github.com/internetarchive/wayback/blob/master/wayback-cdx-server/README.md"
+        ]
+      },
+      {
+        "claim": "CDX Server API endpoint and core parameters for enumerating captures.",
+        "detail": "Endpoint is web archive org slash cdx slash search slash cdx (https works too). Parameters are url (required); matchType of exact prefix host or domain (wildcards trailing star equals prefix, leading star dot equals domain); output equals json; fl equals a comma list of urlkey timestamp original mimetype statuscode digest length; from and to in yyyyMMddhhmmss of 1 to 14 digits; limit equals N or minus N for last N; offset equals M; gzip equals false; and fastLatest equals true. Filtering uses filter equals field then colon then a Java regex, with a leading bang to negate, for example filter statuscode equals 200 or filter mimetype equals text html or negating redirects. Collapse and dedup use collapse equals urlkey (one row per URL), collapse equals digest (drop adjacent identical content), or collapse equals timestamp with a digit count (6 for monthly, 8 for daily).",
+        "confidence": "high",
+        "sources": [
+          "https://github.com/internetarchive/wayback/blob/master/wayback-cdx-server/README.md"
+        ]
+      },
+      {
+        "claim": "CDX pagination uses resumeKey as the reliable mechanism; page, pageSize, and showNumPages use the zipnum index but are discouraged for completeness.",
+        "detail": "For resumeKey add showResumeKey equals true and a limit; when results remain the output ends with a blank line then a base64 token on its own line, and you continue by passing resumeKey equals that token with all other params unchanged. Verified live that a 3 row limited query returned an empty array then a base64 key. For page and pageSize, page is zero indexed, pageSize is the number of zipnum blocks per page (each block about 3000 items so pageSize of 1 yields 0 to 3000 results), showNumPages equals true returns the page count (46 for the digitalfire domain), and showPagedIndex equals true returns the raw secondary index. CAVEAT per the EDGI wayback docs the page and pageSize approach omits the most recent captures and behaves differently from resumeKey, so for an exhaustive snapshot prefer resumeKey or iterate by date windows with from and to.",
+        "confidence": "high",
+        "sources": [
+          "https://wayback.readthedocs.io/en/stable/usage.html",
+          "https://github.com/internetarchive/wayback/blob/master/wayback-cdx-server/README.md"
+        ]
+      },
+      {
+        "claim": "The id underscore timestamp modifier returns the original unmodified archived page; the plain form injects a toolbar and rewrites links and JS.",
+        "detail": "The format is web archive org slash web slash TIMESTAMP then id underscore then slash then the original URL. Verified live that the id underscore form of the 20240101023824 capture of the digitalfire homepage returned clean DOCTYPE HTML with no injection, while the plain form injects rewritten URLs of the js underscore form plus a toolbar. The modifiers are id underscore for raw identity (best for HTML CSS JS and image preservation), if underscore and im underscore for framed and raw image variants, and no suffix for the human viewer rewrite. Always use id underscore for preservation, and the 14 digit CDX timestamp plugs directly into this URL.",
+        "confidence": "high",
+        "sources": [
+          "https://skeptric.com/restoring-wayback-html/",
+          "https://archive.org/post/1044859/how-do-i-retrieve-the-original-form-of-a-page-from-the-wayback-machine"
+        ]
+      },
+      {
+        "claim": "Best capture selection means filter to statuscode 200, exclude redirects, dedupe by digest, then pick latest or nearest to a date.",
+        "detail": "A clean one capture per page manifest uses filter statuscode 200 plus collapse urlkey to get one row per URL. Because CDX is sorted by urlkey then timestamp, collapse keeps the first per group, so to get the latest per URL you fetch all rows per URL and sort by timestamp descending yourself. collapse digest removes adjacent identical content captures. Each row digest is a SHA1 of the payload which lets you skip re-downloading identical bytes. The Availability API is the simplest closest to date picker for a single URL.",
+        "confidence": "high",
+        "sources": [
+          "https://github.com/internetarchive/wayback/blob/master/wayback-cdx-server/README.md"
+        ]
+      },
+      {
+        "claim": "Availability API returns the single closest snapshot to a given timestamp for one URL.",
+        "detail": "Endpoint is archive org slash wayback slash available with url and timestamp params. Verified live that querying url digitalfire.com with timestamp 20240101 returned a closest snapshot with status 200, available true, the archived url for the 20240101023824 capture of the digitalfire homepage, and timestamp 20240101023824. This is for single URL lookups and not bulk enumeration (use CDX for that). Take the returned timestamp and build the id underscore URL for raw bytes.",
+        "confidence": "high",
+        "sources": [
+          "https://help.archive.org/help/using-the-wayback-machine/"
+        ]
+      },
+      {
+        "claim": "Memento TimeMap and TimeGate endpoints provide standardized capture enumeration and nearest datetime negotiation.",
+        "detail": "TimeMap is web archive org slash web slash timemap slash link slash URL (link format) or the timemap slash json slash URL form. Verified live that the link TimeMap for the digitalfire homepage returned rel original, rel timegate, rel first memento dated December 1996, and rel memento lines. TimeGate is web archive org slash web slash URL with an Accept Datetime header which returns a 302 to the nearest memento. A cross archive aggregator exists at timetravel mementoweb org which federates multiple archives, but the IA TimeMap is sufficient and faster for digitalfire.",
+        "confidence": "high",
+        "sources": [
+          "https://help.archive.org/help/using-the-wayback-machine/"
+        ]
+      },
+      {
+        "claim": "Save Page Now offers an anonymous endpoint plus an authenticated SPN2 API with S3 style keys.",
+        "detail": "Anonymous is GET or POST web archive org slash save slash URL. Authenticated SPN2 is POST web archive org slash save with an Authorization header of LOW then accesskey then colon then secret (keys from archive org slash account slash s3.php) and an Accept header of application json, with body url plus optional params capture_all equals 1 (save 4xx and 5xx), capture_outlinks equals 1 (max 100 per request), capture_screenshot equals 1, skip_first_archive equals 1, if_not_archived_within equals a timedelta like 30d (avoids redundant re-archiving), force_get equals 1, delay_wb_availability equals 1, js_behavior_timeout equals N (max 30 seconds), email_result equals 1, outlinks_availability equals 1, plus capture_cookie, target_username, and target_password. The response contains url and job_id.",
+        "confidence": "high",
+        "sources": [
+          "https://gist.github.com/regstuff/82e690db2f1d91ba59f6681c1abad6cf"
+        ]
+      },
+      {
+        "claim": "SPN2 job status polling, status values, and error codes.",
+        "detail": "Poll GET web archive org slash save slash status slash job_id with the same Authorization header. Status values are pending, success (returns timestamp, original_url, duration_sec, resources, and outlinks), and error (with a status_ext error code). Common error codes are invalid-url-syntax, invalid-host-resolution, not-found, no-access, blocked, too-many-requests, too-many-redirects (max 3), soft-time-limit-exceeded (45 seconds), user-session-limit, too-many-daily-captures, and filesize-limit (2GB max). Timing limits are 10 seconds connect, 50 seconds page capture, and a 2 minute total. There are also save slash status slash system for load and save slash status slash user for available session slots to gate concurrency.",
+        "confidence": "high",
+        "sources": [
+          "https://gist.github.com/regstuff/82e690db2f1d91ba59f6681c1abad6cf"
+        ]
+      },
+      {
+        "claim": "SPN2 rate limits and quotas give authenticated accounts far higher caps than anonymous.",
+        "detail": "Concurrent capture sessions are 12 for authenticated versus 6 for anonymous. Daily captures are 100000 for authenticated versus 4000 for anonymous. There is a max of 10 captures per URL per day and 100 outlinks per request. On HTTP 429 subsequent captures on that host get 10 to 20 second delays for about 60 seconds, and if over 20 concurrent captures hit the same host an artificial delay of about the concurrent number divided by 5 seconds is added. DISCREPANCY the savepagenow library docs cite a throughput of about 3 captures per minute anonymous and 6 per minute authenticated, which are practical sustainable per minute rates distinct from the SPN2 concurrent session and daily total caps. An authenticated account is essential for a 34k page job, paced via save status user and kept well under daily caps.",
+        "confidence": "medium",
+        "sources": [
+          "https://gist.github.com/regstuff/82e690db2f1d91ba59f6681c1abad6cf",
+          "https://palewi.re/docs/savepagenow/python.html"
+        ]
+      },
+      {
+        "claim": "CDX rate limit is about 60 requests per minute; ignoring 429 for over a minute causes a one hour firewall level IP block that doubles on repeat.",
+        "detail": "CDX allows about 60 requests per minute and exceeding returns HTTP 429. If a client keeps ignoring 429s for more than a minute the IP is blocked at the firewall for one hour with each subsequent violation doubling the block duration. The recommended polite rate is 1 CDX request per second with exponential backoff (sleep 2 then 4 then 8 then 16 seconds) on any 429, pausing all client instances. This is the single most important constraint for the bulk retrieval phase since a naive parallel crawler will get the project IP banned for hours.",
+        "confidence": "high",
+        "sources": [
+          "https://hackernoon.com/guide-to-handling-internet-archives-cdx-server-api-response-c469df5b81f4",
+          "https://blog.archive.org/2023/05/29/let-us-serve-you-but-dont-bring-us-down/"
+        ]
+      },
+      {
+        "claim": "waybackpack is the best off the shelf CLI for bulk downloading a domain full archive.",
+        "detail": "Install with pip install waybackpack. It downloads every or deduped capture for a URL or prefix organized by timestamp. Flags include from-date and to-date in yyyymmdd, collapse (for example timestamp 6 for max one per month passed straight to CDX), uniques-only (only first of duplicate files), raw (use the id underscore raw form rather than rewritten), list, delay in seconds (set this), delay-retry, max-retries, no-clobber, follow-redirects, user-agent (include a contact email), root, and progress. Latest is v0.6.4 from May 15 2024 with about 3.2k stars and active maintenance. The gotcha is no aggressive built in rate limiting so you must pass delay 1 and a descriptive user-agent.",
+        "confidence": "high",
+        "sources": [
+          "https://github.com/jsvine/waybackpack"
+        ]
+      },
+      {
+        "claim": "The EDGI wayback Python library is the most robust programmatic client (CDX search plus Memento fetch) with built in rate limiting.",
+        "detail": "Install with pip install wayback. WaybackClient search takes url, match_type of domain prefix or exact, from_date, to_date, filter_field, and collapse, and yields CdxRecord objects with url timestamp digest status_code mime_type and raw_url. WaybackClient get_memento with mode Mode.original fetches bytes, where Mode.original maps to the id underscore raw form and Mode.view is the rewritten human view. Built in adjustable rate limits default to about 1 search call per second (lowered from 1.5) and about 30 memento calls per second, both tunable. It is best for a controlled resumable bulk pull because it handles retries redirects and rate limiting correctly. Maintained by EDGI, Release 0.5.0 dated May 2026.",
+        "confidence": "high",
+        "sources": [
+          "https://github.com/edgi-govdata-archiving/wayback",
+          "https://wayback.readthedocs.io/en/stable/usage.html"
+        ]
+      },
+      {
+        "claim": "Other tooling includes waybackpy (all three APIs) and savepagenow and archivenow (submission).",
+        "detail": "waybackpy by akamhy is a CLI plus library wrapping the Save, Availability, and CDX APIs (classes WaybackMachineCDXServerAPI, WaybackMachineAvailabilityAPI, WaybackMachineSaveAPI), convenient but maintenance has slowed and is fine for ad hoc lookups. savepagenow by palewire and pastpages is a focused SPN wrapper with capture using authenticate true and capture_or_cache returning an archive url and a fresh boolean, auth via env vars SAVEPAGENOW_ACCESS_KEY and SAVEPAGENOW_SECRET_KEY, raising CachedPage when a recent capture exists and WaybackRuntimeError on 429 or blocked by robots. archivenow by oduwsdl pushes a resource to multiple archives at once (IA and archive.today and others) with CLI Python and server modes. For this project use waybackpack or EDGI wayback for retrieval and savepagenow or direct SPN2 with if_not_archived_within for gap fill submission before June 26 2026.",
+        "confidence": "high",
+        "sources": [
+          "https://pypi.org/project/waybackpy/",
+          "https://palewi.re/docs/savepagenow/python.html",
+          "https://github.com/oduwsdl/archivenow"
+        ]
+      },
+      {
+        "claim": "Throttling and backoff best practices protect both the Internet Archive and the digitalfire origin.",
+        "detail": "For the CDX phase use at most 1 request per second single threaded, and on a 429 sleep with exponential backoff (2 then 4 then 8 then 16 seconds, capped about 60) and pause all workers, never retrying immediately, to avoid the one hour firewall ban; prefer one big paginated resumeKey pull to build a complete manifest. For the retrieval phase fetch raw bytes from the id underscore form which hits only the archive and never digitalfire, at 1 to 2 requests per second with jitter and a descriptive user-agent including a contact email, deduping by CDX digest. For the submission phase, only for pages not yet archived, authenticate and use if_not_archived_within 30d so SPN no-ops fresh pages, poll the job id rather than blocking, watch save status user for free slots, and back off on too-many-requests. On ethics, Wayback already holds about 34k digitalfire pages so the live origin should receive essentially zero traffic, captures of any missing pages should be driven through SPN which crawls from the IA side sparingly, and you should never run a parallel direct crawler against digitalfire.com.",
+        "confidence": "high",
+        "sources": [
+          "https://blog.archive.org/2023/05/29/let-us-serve-you-but-dont-bring-us-down/",
+          "https://github.com/edgi-govdata-archiving/wayback/issues/137"
+        ]
+      }
+    ],
+    "recommendations": [
+      "RETRIEVAL plan (primary). Build one complete URL manifest with a single resumeKey paginated CDX pull using matchType domain, filter statuscode 200, filter mimetype text html, collapse urlkey, fl original timestamp digest, output json, showResumeKey true, and limit 20000, looping on resumeKey at no more than 1 request per second. Expect about 34k unique HTML pages plus separate manifests for images CSS and JS (drop the mimetype filter or filter to image and text css).",
+      "Fetch each page raw bytes from the id underscore form using the CDX timestamp (web archive org slash web slash TIMESTAMP id underscore slash the original URL). This never touches the live digitalfire origin. Dedupe by the CDX digest column to skip identical re-captures. Throttle to 1 to 2 requests per second with jitter and a user-agent containing a contact email.",
+      "Use waybackpack (with raw, uniques-only, delay 1, and a user-agent with email) or the EDGI wayback library (search plus get_memento with Mode.original) rather than a hand rolled crawler, since both implement correct rate limiting and the id underscore original retrieval mode. Reserve waybackpy for ad hoc lookups.",
+      "Implement mandatory 429 handling. On any 429 from CDX pause all workers and exponentially back off, and never ignore a 429 for over a minute or the IP gets a one hour doubling firewall ban. Keep CDX strictly single threaded at about 1 request per second.",
+      "SUBMISSION (gap fill only). For pages Wayback is missing, register an archive.org account, get S3 keys from archive org slash account slash s3.php, and POST to SPN2 with if_not_archived_within 30d and skip_first_archive 1, polling save status job id. This crawls from the IA side minimizing load on digitalfire. Stay well under the 100k per day authenticated cap and use save status user to gate concurrency. Given the June 26 2026 shutdown, prioritize high value pages found absent from the manifest.",
+      "Cross check completeness before the shutdown by diffing your CDX manifest against the site own sitemap or index if reachable via a single allowed live fetch, to identify never archived pages worth a one time SPN submission. Do not bulk crawl the live origin to do this."
+    ],
+    "openQuestions": [
+      "Exact total capture count including non 200 and non HTML assets (images CSS JS) for digitalfire.com. I measured 33928 unique 200 status HTML URLs, but the full asset manifest needed for a faithful offline mirror will be larger and should be enumerated separately.",
+      "Whether digitalfire most valuable dynamic pages (for example picturedesc.php and per material query string URLs) are fully captured or only partially, since query string URLs are often under archived and may be the main gap fill targets for SPN before June 26 2026.",
+      "Reconciling the anonymous SPN rate figures, since the SPN2 docs cite 6 concurrent sessions and 4000 daily for anonymous while savepagenow cites about 3 captures per minute anonymous. Confirm the sustainable per minute submission throughput for an authenticated account in practice.",
+      "Whether the project also wants to push captures to a second archive (archive.today via archivenow) for redundancy, since archive.today handles JS heavy and dynamic pages differently than the IA SPN."
+    ]
+  },
+  {
+    "key": "preservation_prior_art",
+    "summary": "Prior art for capturing and re-publishing a web knowledge base.",
+    "findings": [
+      {
+        "claim": "The digitalfire shutdown is driven by a rights/Terms-and-Conditions problem, not just server load.",
+        "detail": "Hansen said he no longer has authority to grant exemption to a T&C clause governing material he built the site from; compliance is beyond his means. Unlike MDN/Stack Exchange (CC-BY-SA), digitalfire has no stated open license. Make license/permission status a per-record field; get permission before public re-hosting; rely on the Internet Archive for preservation.",
+        "confidence": "high",
+        "sources": [
+          "https://community.ceramicartsdaily.org/topic/43991-digitalfire-kaboom"
+        ]
+      },
+      {
+        "claim": "The Digitalfire Reference Database is about 4,000-plus pages with 15,000-plus interlinks across well-defined content types.",
+        "detail": "Content types: Materials, Recipes, Minerals and Oxides, Glossary, Properties, Firing Schedules, Temperatures, Testing. URL patterns: /glossary/<slug>, /recipe/<id> (e.g. /recipe/g1214m), /material/, /test/. Heavy cross-linking means internal-link preservation and a stable slug-to-record mapping is critical.",
+        "confidence": "high",
+        "sources": [
+          "https://digitalfire.com/home/linkmaker"
+        ]
+      },
+      {
+        "claim": "Use the Wayback CDX API to enumerate every archived URL of the domain with collapse to dedup.",
+        "detail": "GET web.archive.org/cdx/search/cdx?url=digitalfire.com*&output=json&collapse=urlkey lists unique URLs; collapse=digest dedups captures. Default max 150,000 rows per query; use limit/page for pagination. Fetch raw bytes via web.archive.org/web/<timestamp>id_/<url> (id_ returns un-rewritten original bytes).",
+        "confidence": "high",
+        "sources": [
+          "https://archive.org/help/wayback_api.php",
+          "https://github.com/internetarchive/wayback/tree/master/wayback-cdx-server",
+          "https://smartial.net/how-to-use-the-cdx-api-to-list-all-captures-of-a-domain/"
+        ]
+      },
+      {
+        "claim": "WARC is the ISO-standard preservation container; WACZ is a packaged, indexed, lossless superset replayable in a browser.",
+        "detail": "WARC (ISO 28500, 2009) lacks indexes so browser replay is slow. WACZ wraps WARC plus a CDXJ index and datapackage metadata in a ZIP; conversion is lossless. Each WARC record carries WARC-Target-URI and WARC-Date. Keep one WARC/WACZ as the immutable provenance master.",
+        "confidence": "high",
+        "sources": [
+          "https://iipc.github.io/warc-specifications/specifications/warc-format/warc-1.0/",
+          "https://webrecorder.net/browsertrix/",
+          "https://dispatch.starlinglab.org/p/authenticated-web-archives-wacz-files"
+        ]
+      },
+      {
+        "claim": "Capture-tool selection: Browsertrix Crawler for a faithful JS-rendering master; wget --warc or grab-site for static crawls; Heritrix for web-scale; SingleFile/Scoop for single pages.",
+        "detail": "Browsertrix is Chromium in Docker, near-full fidelity, underpins Zimit. grab-site outputs WARC plus dynamic ignore patterns. Heritrix is about 2.4x faster than wget. SingleFile saves one self-contained HTML; Scoop is single-page WARC. ArchiveBox is an additive archive server. Digitalfire pages are largely static, so wget --warc over Wayback snapshots or trafilatura-over-CDX suffices; reserve Browsertrix for JS-heavy pages.",
+        "confidence": "high",
+        "sources": [
+          "https://github.com/iipc/awesome-web-archiving",
+          "https://github.com/archiveteam/grab-site",
+          "https://webrecorder.net/browsertrix/",
+          "https://docs.archivebox.io/dev/Web-Archiving-Community.html"
+        ]
+      },
+      {
+        "claim": "trafilatura (markdown output) is the best primary extraction tool with readability-lxml as automatic fallback; it preserves tables, links, images via flags.",
+        "detail": "extract with output_format markdown and include_tables/include_links/include_images. include_tables on by default; include_links/include_images experimental. Heuristic pipeline, single-digit ms/page, falls back to readability-lxml then jusText. Benchmarks: readability median F1 0.970, trafilatura mean 0.883, no significant difference. Supplement with BeautifulSoup/lxml and pandoc for oxide tables, recipe line-items, formulas.",
+        "confidence": "high",
+        "sources": [
+          "https://trafilatura.readthedocs.io/en/latest/corefunctions.html",
+          "https://trafilatura.readthedocs.io/en/latest/usage-python.html",
+          "https://trafilatura.readthedocs.io/en/latest/evaluation.html",
+          "https://www.contextractor.com/trafilatura/"
+        ]
+      },
+      {
+        "claim": "Three distinct routes to a ZIM for Kiwix: zimwriterfs (from local HTML dir), warc2zim (from WARC), zimit (automated from URL).",
+        "detail": "zimwriterfs needs welcome, favicon (48x48 PNG), language, title, description, creator, publisher; standalone repo ARCHIVED, now in openzim/zim-tools. warc2zim rewrites HTML/CSS/JS records using fuzzy URL rules from python-scraperlib. zimit runs Browsertrix then warc2zim in Docker. mwoffliner is MediaWiki-only. Why ZIM: studios/schools have poor internet; one ZIM in Kiwix gives the whole library offline with full-text search.",
+        "confidence": "high",
+        "sources": [
+          "https://github.com/openzim/zimwriterfs",
+          "https://manpages.ubuntu.com/manpages/focal/man1/zimwriterfs.1.html",
+          "https://github.com/openzim/warc2zim",
+          "https://github.com/openzim/zimit",
+          "https://www.kiwix.org/en/zim-tools-3-0-0-is-out/"
+        ]
+      },
+      {
+        "claim": "Hugo is the safest static generator at scale; Astro/Starlight and Docusaurus slow past about 1,000 pages. Pair with Pagefind for client-side search.",
+        "detail": "Hugo builds 10,000 pages in under a minute, rebuilds 50,000 in seconds; JS generators widen the gap past 1,000 pages. Pagefind runs after build, chunks the index so the browser downloads only relevant chunks (about 50KB vs about 600KB for Orama). Lunr/Orama/Fuse are monolithic. Stork is deprecated. Pagefind scales 10 to 10,000 pages; add Meilisearch/Typesense only for typo-tolerant faceted server search.",
+        "confidence": "high",
+        "sources": [
+          "https://github.com/Pagefind/pagefind",
+          "https://www.youngju.dev/blog/culture/2026-05-14-static-site-generators-2026-hugo-eleventy-astro-mkdocs-docusaurus-mintlify-starlight-comparison-deep-dive.en",
+          "https://dev.to/morinaga/static-site-search-for-astro-in-2026-why-i-picked-pagefind-over-algolia-and-lunr-pg1",
+          "https://sarthakmishra.com/blog/pagefind-astro"
+        ]
+      },
+      {
+        "claim": "Ship a queryable SQLite/DuckDB dump; sql.js-httpvfs queries a multi-hundred-MB DB directly from GitHub Pages without a server or full download.",
+        "detail": "sql.js-httpvfs uses HTTP Range requests to fetch only the SQLite B-tree pages a query needs; a key lookup on a 670 MB DB transfers about 1 KB. Works on any Range-supporting host. GitHub Pages gzip can break HEAD content-length; specify file length in config. DuckDB fts builds an inverted index like SQLite FTS5 and reads/writes SQLite via its sqlite extension. Enables power-user SQL like Stack Exchange Data Explorer.",
+        "confidence": "high",
+        "sources": [
+          "https://github.com/phiresky/sql.js-httpvfs",
+          "https://phiresky.github.io/blog/2021/hosting-sqlite-databases-on-github-pages/",
+          "https://duckdb.org/docs/current/core_extensions/full_text_search",
+          "https://duckdb.org/docs/current/core_extensions/sqlite"
+        ]
+      },
+      {
+        "claim": "Imitate MDN's data model: Markdown files with YAML front matter in a Git repo, one file per entity, hierarchical directories.",
+        "detail": "mdn/content stores prose as Markdown with a YAML front-matter block; directory hierarchy mirrors navigation; index.md declares the children tree. MDN ships three licenses (CC-BY-SA prose, CC0 code after 2010-08-20, MIT before). For digitalfire, front-matter carries title, slug, type, source_url, archived_url, archived_timestamp, license/permission, making provenance machine-readable and the corpus diffable/PR-able.",
+        "confidence": "high",
+        "sources": [
+          "https://github.com/mdn/content/blob/main/LICENSE.md",
+          "https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Attrib_copyright_license",
+          "https://deepwiki.com/github/docs/5.1-content-structure-and-frontmatter"
+        ]
+      },
+      {
+        "claim": "Imitate DevDocs's scraper architecture: scrape, then filter pipeline producing normalized HTML partials plus index JSON plus offline data JSON.",
+        "detail": "DevDocs uses Ruby UrlScraper/FileScraper following link rules, parsing with Nokogiri, applying HTML::Pipeline filters (one derives metadata). Output is normalized partials plus a search index JSON plus an offline data JSON; the app loads partials via XHR, stripping scripts/styles. Lesson: separate cleaning/normalization from index-building; the normalized intermediate feeds both the static site and the ZIM.",
+        "confidence": "high",
+        "sources": [
+          "https://github.com/freeCodeCamp/devdocs/blob/main/docs/scraper-reference.md",
+          "https://github.com/freeCodeCamp/devdocs"
+        ]
+      },
+      {
+        "claim": "Wikipedia and Stack Exchange dumps show the durable data-dump pattern but also the rights pitfall digitalfire faces.",
+        "detail": "Wikipedia dumps are compressed XML at dumps.wikimedia.org, monthly, mirrors invited. Stack Exchange dumps are per-site 7z/bzip2 XML (Posts, Users, Votes, Comments, Badges, Tags, PostHistory, PostLinks) on archive.org under CC-BY-SA 4.0. After April 2024 Stack Exchange restricted access behind registration, which critics said conflicts with the CC license. Digitalfire lacks any open license, so gate the dump until clearance and keep the WARC master separate.",
+        "confidence": "high",
+        "sources": [
+          "https://dumps.wikimedia.org/",
+          "https://archive.org/details/stackexchange",
+          "https://stackoverflow.blog/2014/01/23/stack-exchange-cc-data-now-hosted-by-the-internet-archive/",
+          "https://devclass.com/2024/07/30/stack-exchange-restricts-access-to-dump-of-user-contributed-data-as-critics-complain-license-permits-reuse-for-any-purpose/"
+        ]
+      },
+      {
+        "claim": "Attach provenance using WARC-native fields plus a Dublin Core metadata layer on every derived record.",
+        "detail": "WARC records WARC-Target-URI and WARC-Date per record. For derived rows add Dublin Core: dc:source, dcterms:created, dcterms:provenance, dcterms:rights and dcterms:rightsHolder (Hansen/Digitalfire), dcterms:license. Qualified DC defines Provenance and RightsHolder refinements. Store in YAML front matter, DB columns, and ZIM metadata so provenance travels into every output.",
+        "confidence": "high",
+        "sources": [
+          "https://iipc.github.io/warc-specifications/specifications/warc-format/warc-1.0/",
+          "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/",
+          "https://www.dublincore.org/specifications/dublin-core/usageguide/"
+        ]
+      }
+    ],
+    "recommendations": [
+      "RESOLVE RIGHTS FIRST: contact Hansen for written permission and a license (ideally CC-BY-SA/CC-BY); until granted, scope as PRESERVATION with an immutable Wayback/WARC master and a private license-gated derived dataset. Make license/permission status required on every record.",
+      "Adopt the pipeline: CAPTURE via Wayback CDX (collapse=urlkey) plus wget --warc/Browsertrix for a WARC/WACZ master; EXTRACT with trafilatura (markdown, tables/links/images) plus readability-lxml fallback plus BeautifulSoup/pandoc for domain tables; STRUCTURE one Markdown+front-matter file per entity (type, slug, source_url, archived_url, archived_timestamp, license_status) in Git plus SQLite FTS5; PUBLISH Hugo+Pagefind on GitHub Pages, a ZIM via warc2zim/zimwriterfs for Kiwix, and a sql.js-httpvfs SQLite dump.",
+      "Pick Hugo+Pagefind as the default static stack: Hugo de-risks build time at any page count, Pagefind's chunked index keeps client search fast and bandwidth-light. Use Astro/Starlight or Docusaurus only if docs UX justifies the build-time cost; add Meilisearch/Typesense only for typo-tolerant faceted search.",
+      "Produce ZIM explicitly for the ceramics audience: studios/schools often have poor internet, and one ZIM in Kiwix (or kiwix-serve on a LAN, plus the Android app) delivers the whole library offline with built-in search. Build it from the same normalized HTML you publish so site and ZIM stay content-identical.",
+      "Bake provenance in from the start: copy WARC-Target-URI/WARC-Date into Dublin Core fields on every record, into front matter, DB columns, and ZIM metadata. Keep the WARC/WACZ master immutable and versioned so extractions can be re-run and audited.",
+      "Imitate DevDocs's separation of concerns: a per-page filter chain emitting normalized partials plus index JSON plus offline-data JSON, distinct from index-building; that single intermediate feeds the static site, the ZIM, and the SQLite/DuckDB export without re-scraping."
+    ],
+    "openQuestions": [
+      "What does the Terms-and-Conditions clause cover: embedded third-party material, the Insight-Live data, or all of it? This determines what is safe to re-publish vs preserve-only.",
+      "Will Hansen grant an explicit open license (e.g. CC-BY-SA) or scoped permission? This decides private archive vs public open dataset.",
+      "What is the true total URL count and content-type breakdown of the FULL digitalfire.com domain per the CDX index, versus the 4,000-plus Reference Database figure?",
+      "How complete and recent is the Internet Archive's coverage (dynamic pages, images, cross-references), and are there gaps needing a one-time high-fidelity capture before June 26, 2026?",
+      "Are the recipe/material tables (oxide analyses, UMF/Seger formulas, firing schedules) structured consistently enough for typed-column extraction, or do they need per-template parsing rules?",
+      "Does any embedded imagery (material photos, test tiles) carry separate copyright requiring independent tracking and licensing?"
+    ]
+  },
+  {
+    "key": "rights_legal",
+    "summary": "Digitalfire.com (the Digitalfire Ceramic Reference Library) is scheduled to shut down June 26, 2026. The stated reason, in Tony Hansen's own words on the digitalfire.com/home notice, is: \"I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years.\" He notes Insight-live.com's general operation is unaffected, and that \"the internet archive has everything\" (asking people to stop bulk-downloading the overloaded origin).\n\nThe legal/rights picture is the single most important and most uncertain part of this preservation project. The shutdown is a RIGHTS problem, not a hosting/cost problem: a take-down obligation arising from the Insight-Live Terms and Conditions. The Insight-Live T&C (insight-live.com/w3c/termsandconditions.php) say the operator does NOT own user-entered Content (\"We do not own any data, information or material ('Content') that your employees and staff enter into your account\"), that users grant only a limited operational license (\"you grant us permission to access, copy, distribute, store, transmit, reformat, display...\"), explicitly prohibit automated access (\"...to spam, phish, pharm, pretext, spider, crawl, or scrape\"), and state IP non-transfer (\"This Agreement does not transfer to you any intellectual property owned by Digitalfire Corporation or third-parties...\"). The reference library was \"built from\" material in an Insight-Live account, so an unknown but possibly significant fraction of the public content originated as third-party/user-contributed Content that Tony does NOT own and can no longer license out. That is almost certainly why he cannot comply by editing the site and why he frames it as losing the \"authority to grant exemption.\"\n\nFor the preservation project this is decisive: making digitalfire content \"open source\" requires HOLDING or being GRANTED the relevant rights, which neither this project nor (apparently) Tony himself fully holds for all of it. Mirroring Wayback captures to a public GitHub repo would republish that same content under the project's name \u2014 converting passive archival (Internet Archive, which has its own legal posture and DMCA process) into active redistribution by an identifiable party, with no license and against an explicit anti-scrape clause. The factual ceramic data (material analyses, recipes, melting points) is largely uncopyrightable in the US, but the SELECTION, ARRANGEMENT, prose explanations, and images are protected as a compilation and as individual works; the US has NO sui generis database right, so the compilation-copyright and per-work copyright are the operative risks. The GoFundMe (\"Help save digitalfire!\", organizer Tony Hansen, $16,000 goal, ~$10,711 raised, 145 donors) is explicitly about hiring help to SAVE/MIGRATE the site to Tony's control, NOT about open-sourcing or releasing it freely. Tony has NOT publicly stated any preference for third-party preservation, mirroring, or open-sourcing beyond pointing to the Internet Archive. Recommendation: engage Tony directly before publishing any full text/images; ship only index/metadata/links now; never touch the live origin.",
+    "findings": [
+      {
+        "claim": "Digitalfire.com will shut down June 26, 2026 due to a take-down obligation under the Insight-Live Terms and Conditions, not cost or hosting.",
+        "detail": "Verbatim from the digitalfire.com/home notice (captured via one allowed live fetch): \"Digitalfire will shut down on June 26. I no longer have the authority to grant exemption to a section in the Terms and Conditions of using material in the Insight-Live account from which I built the source material. While there are ways to comply with the take-down order, they are beyond my means because of how complex and large the site has become in the past 35+ years.\" He adds \"Insight-live.com general operation is not affected by this.\" This frames the closure as a RIGHTS/licensing compliance problem ('authority to grant exemption', 'take-down order'), which is the central fact for any preservation/legal strategy.",
+        "confidence": "high",
+        "sources": [
+          "https://digitalfire.com/home",
+          "https://community.ceramicartsdaily.org/topic/43991-digitalfire-kaboom"
+        ]
+      },
+      {
+        "claim": "The Insight-Live T&C state that the operator does NOT own user-entered content; users retain ownership and grant only a limited operational license.",
+        "detail": "User Content section, verbatim: \"We do not own any data, information or material ('Content') that your employees and staff enter into your account in the course of using the Service. You shall have sole responsibility for the accuracy, quality, integrity, legality, reliability, appropriateness, and intellectual property ownership or right to use of all submitted Content.\" The license granted to the operator is limited/operational: \"you grant us permission to access, copy, distribute, store, transmit, reformat, display...\" (for purposes of delivering the service). IMPLICATION: because the reference library was 'built from' material in an Insight-Live account, content contributed by other account users belongs to THOSE users; Tony cannot license it onward, and re-hosting it would require each owner's permission.",
+        "confidence": "high",
+        "sources": [
+          "https://insight-live.com/w3c/termsandconditions.php"
+        ]
+      },
+      {
+        "claim": "The Insight-Live T&C contain an explicit anti-spider/anti-scrape prohibition.",
+        "detail": "Prohibited Uses section, verbatim fragment: \"You are prohibited from using the Website or its Content...to spam, phish, pharm, pretext, spider, crawl, or scrape.\" This is a contractual (not just robots.txt) prohibition on automated collection. Relevant because (a) it reinforces the ethics constraint not to bulk-fetch, and (b) any mirror assembled by crawling/scraping the live origin or even systematically pulling Wayback would run against the spirit of this clause and Tony's explicit request to stop downloading.",
+        "confidence": "high",
+        "sources": [
+          "https://insight-live.com/w3c/termsandconditions.php"
+        ]
+      },
+      {
+        "claim": "The Insight-Live/Digitalfire T&C state intellectual property is NOT transferred and remains with Digitalfire Corporation or third parties.",
+        "detail": "Intellectual Property Rights section, verbatim: \"This Agreement does not transfer to you any intellectual property owned by Digitalfire Corporation or third-parties, and all rights, titles, and interests in and to such property will remain (as between the parties) solely with Digitalfire Corporation. All trademarks, service marks, graphics and logos used in connection with our Website or Services, are trademarks or registered trademarks of Digitalfire Corporation or Digitalfire Corporation licensors.\" IMPLICATION: 'Digitalfire' is a trademark of Digitalfire Corporation; a mirror must not present itself as Digitalfire or use its marks/logos. Two distinct rights-holders appear in the clause itself: Digitalfire Corporation AND 'third-parties' \u2014 confirming mixed ownership of the source material.",
+        "confidence": "high",
+        "sources": [
+          "https://insight-live.com/w3c/termsandconditions.php"
+        ]
+      },
+      {
+        "claim": "Tony Hansen is the founder/owner of Digitalfire Corporation and author of all three products (Insight software, the Reference Library, and Insight-Live).",
+        "detail": "Tony Hansen began INSIGHT in 1978-79 (Plainsman Clays, Alberta), the online Digitalfire Reference Library took shape in 2000, and Insight-live.com went live in 2013. He is described as 'the author of Digitalfire Insight, Digitalfire Reference Library and Insight-Live.com.' INFERENCE (medium): much of the prose/original authorship of the reference library is plausibly Tony's own copyright, which he COULD in principle license/open-source \u2014 but the shutdown notice's wording ('material in the Insight-Live account from which I built the source material' + 'no longer have authority to grant exemption') indicates the corpus is entangled with content he does NOT solely control. No public record of Insight-Live being sold/acquired was found, so the lost 'authority' likely refers to obligations toward other Insight-Live account holders / contributors rather than a change of corporate ownership.",
+        "confidence": "medium",
+        "sources": [
+          "https://digitalfire.com/about.php",
+          "https://tonyhansen.com/about",
+          "https://digitalfire.com/glossary/tony+hansen"
+        ]
+      },
+      {
+        "claim": "The GoFundMe is about SAVING/MIGRATING the site to Tony's control \u2014 NOT about open-sourcing or freely releasing the content.",
+        "detail": "Campaign 'Help save digitalfire!', organizer Tony Hansen, goal $16,000, raised ~$10,711 from 145 donors (as of mid-June 2026). Description: ~5,000 pages / 27,000 interlinks over 36 years; donations go 'directly to Hansen to be used at his discretion in an effort to save or migrate DigitalFire.com.' It contains NO statement about open-sourcing, no license grant, and no statement inviting third-party mirrors. IMPLICATION: Tony's expressed intent is preservation under his own stewardship/migration (possibly to tonyhansen.com / school.tonyhansen.com), which is materially different from a community open-source release and should not be conflated with permission to mirror.",
+        "confidence": "high",
+        "sources": [
+          "https://www.gofundme.com/f/help-save-digitalfire"
+        ]
+      },
+      {
+        "claim": "Tony has NOT publicly stated support for third-party preservation, mirroring, or open-sourcing; his only preservation comment is pointing users to the Internet Archive.",
+        "detail": "Across the digitalfire notice, the GoFundMe, his Threads/Instagram (@tonyatdigitalfire, recent posts 06/02-06/08/26 are about glaze technique, not the shutdown), and the Ceramic Arts Daily 'DigitalFire - kaboom.' thread, the only preservation statement attributable to him is that 'the internet archive has everything' coupled with a request to stop bulk-downloading the overloaded server. There is NO public grant of permission to re-host, no CC license, and no open-source offer. Treat any 'he wants it preserved' as INFERENCE, not fact \u2014 and note the difference between 'preserved (by IA / by me)' and 'open for anyone to mirror/relicense'.",
+        "confidence": "medium",
+        "sources": [
+          "https://digitalfire.com/home",
+          "https://www.threads.com/@tonyatdigitalfire",
+          "https://community.ceramicartsdaily.org/topic/43991-digitalfire-kaboom"
+        ]
+      },
+      {
+        "claim": "Under US law the raw ceramic FACTS/data are largely uncopyrightable, but the selection/arrangement (compilation), prose, and images ARE protected \u2014 and the US has no sui generis database right.",
+        "detail": "US law: facts and data are not copyrightable (Feist); a database/compilation is protected only to the extent its SELECTION and ARRANGEMENT are minimally creative, and that protection is 'thin'. Original prose explanations, articles, glossary write-ups, and photographs/diagrams each carry their own copyright. The US has NOT adopted the EU sui generis database right (repeatedly proposed, never enacted), so there is no separate 'investment-based' database right to worry about for US re-hosting \u2014 only (a) compilation copyright in selection/arrangement and (b) per-work copyright in prose/images, plus (c) the Insight-Live contract terms. PRACTICAL READ: extracting and re-presenting the underlying factual data (e.g., material oxide analyses) in a NEW arrangement is far lower-risk than verbatim mirroring of pages, prose, and images.",
+        "confidence": "high",
+        "sources": [
+          "https://www.copyright.gov/reports/db4.pdf",
+          "https://en.wikipedia.org/wiki/Database_right",
+          "https://en.wikipedia.org/wiki/Copyright_in_compilation",
+          "https://libraries.emory.edu/research/copyright/copyright-data"
+        ]
+      },
+      {
+        "claim": "Making the content 'open source' requires HOLDING or being GRANTED the rights; this project does not hold them, and Tony likely cannot grant them for the whole corpus.",
+        "detail": "A Creative Commons or open-source license is a grant FROM the copyright owner; you cannot license what you do not own (Creative Commons FAQ: a licensor must hold the rights, or the license is void). Because the corpus is mixed (Tony's own authorship + third-party/user Content under Insight-Live T&C + possibly third-party material referenced over 35 years), even Tony cannot unilaterally CC-license the entire site \u2014 which is precisely the 'authority' he says he has lost. For the project: (a) you cannot open-source the mirror yourself; (b) any legitimate open release would need Tony to license the portions HE owns and to clear or exclude the rest. CC0/CC-BY on a republished mirror without that chain of grants would be a false license.",
+        "confidence": "high",
+        "sources": [
+          "https://creativecommons.org/faq/",
+          "https://creativecommons.org/share-your-work/cclicenses/",
+          "https://en.wikipedia.org/wiki/Creative_Commons_license"
+        ]
+      },
+      {
+        "claim": "Mirroring Wayback captures to a public GitHub repo is materially riskier than relying on the Internet Archive itself.",
+        "detail": "The Internet Archive holds captures under its own legal posture (library/archival purpose, robots/DMCA takedown workflow, single non-commercial archive). Copying those captures into a GitHub repo creates a NEW act of reproduction and distribution by an identifiable party (the project), under no license, against an explicit anti-scrape clause and a known active take-down situation, and using the 'Digitalfire' trademark. That converts passive archival into active redistribution and exposes the project (and GitHub, via DMCA) to takedown by Digitalfire Corporation or any third-party rights-holder. The fact that 'IA has it' is a reason to LINK to IA, not a license to re-host. INFERENCE (high): a public verbatim mirror would likely draw a DMCA/cease-and-desist given Tony was forced into a take-down himself.",
+        "confidence": "medium",
+        "sources": [
+          "https://digitalfire.com/home",
+          "https://insight-live.com/w3c/termsandconditions.php"
+        ]
+      },
+      {
+        "claim": "There is no evidence Insight-Live was sold/acquired; the lost 'authority' most plausibly stems from contractual obligations to other Insight-Live account holders/contributors.",
+        "detail": "Searches for an insight-live.com sale/acquisition/ownership change (2024-2026) returned only unrelated companies (Insight Enterprises, Insight Partners, etc.). Combined with the T&C clause that user Content belongs to users, the most consistent reading is: the reference library was assembled inside an Insight-Live account that also holds content owned by other users / governed by terms Tony cannot override, and a take-down was triggered over that material. This is INFERENCE, not a confirmed fact \u2014 the exact trigger (a specific contributor, a third-party rights claim, or an internal policy) is not public. Worth asking Tony directly.",
+        "confidence": "low",
+        "sources": [
+          "https://insight-live.com/w3c/termsandconditions.php",
+          "https://digitalfire.com/home"
+        ]
+      }
+    ],
+    "recommendations": [
+      "Engage Tony Hansen directly and FIRST, before publishing any full text or images. He is reachable via the GoFundMe (organizer contact), Instagram/Threads @tonyatdigitalfire, Facebook tony.hansen.3990, and likely email via tonyhansen.com. Lead with support for HIS migration goal (donate / offer technical help to the GoFundMe effort), not with 'we are mirroring your site.' Ask three concrete questions: (1) which portions of the content does he personally own and could license; (2) is there content he is contractually barred from releasing (the Insight-Live T&C material); (3) would he endorse a links/metadata index that drives traffic to his future migrated home.",
+      "Publish NOW only low-risk, non-infringing material: an INDEX/catalog of page titles, URLs, material/recipe identifiers, and corresponding Wayback snapshot links; a metadata schema; and link-outs to the Internet Archive. This preserves discoverability (the 'card catalog') without redistributing copyrighted prose/images and without a false license.",
+      "Do NOT publish a verbatim full-content mirror (pages, prose, photographs) to GitHub or any public host without an explicit written license from Tony for the portions he owns AND clearance/exclusion of third-party content. Treat CC0/CC-BY on any republished corpus as off-limits until a documented chain of rights exists \u2014 you cannot license what you do not hold.",
+      "If you preserve underlying FACTUAL data (material oxide analyses, recipe numbers, melting/expansion values) for a tool or database, extract and RE-ARRANGE it in your own original structure rather than copying digitalfire's page layout/selection/prose. Facts are uncopyrightable in the US and there is no US sui generis database right; this is the lowest-risk path to keeping the knowledge usable. Still attribute Digitalfire/Tony Hansen.",
+      "Honor the operational constraints absolutely: never crawl or bulk-fetch the live digitalfire.com origin (the owner says it is overloaded and the T&C forbid spider/crawl/scrape); use the Internet Archive Wayback/CDX for any content inspection; do not use the 'Digitalfire' name or logos in a way that implies endorsement or that you ARE Digitalfire (it is a Digitalfire Corporation trademark).",
+      "Document a takedown/clearance policy for the project: a clear DMCA/contact process, a statement that content is archived for preservation and will be removed on owner request, and a per-item provenance/rights field (owner unknown vs Tony vs third-party). This both reduces risk and makes it easy to later upgrade specific items to a real license if Tony grants one.",
+      "Keep FACTS vs INFERENCES separated in any public-facing writeup of the situation, and cite Tony's own words for the shutdown reason rather than paraphrasing, to avoid mischaracterizing a sensitive legal dispute that is not yours."
+    ],
+    "openQuestions": [
+      "What EXACTLY triggered the take-down? The notice says Tony lost 'authority to grant exemption to a section in the Terms and Conditions' \u2014 is this a specific third-party contributor's claim, a policy of a co-owner/partner in Insight-Live, or something else? Not public.",
+      "What fraction of the digitalfire reference library is Tony's own original authorship (which he could license) versus third-party/user-contributed Content under the Insight-Live T&C (which he cannot)? Unknown and decisive for any open-source plan.",
+      "Has Digitalfire Corporation's status changed (dissolution, partner, investor) such that Tony as an individual no longer controls the corporate IP? No public record found; worth confirming with Tony.",
+      "Does Tony WANT third-party preservation/mirroring at all, or does he prefer everything funnel to his own migrated site (tonyhansen.com / school.tonyhansen.com)? His public statements only point to the Internet Archive and his own migration; his stance on community mirrors is unstated.",
+      "Is there any existing copyright/Terms-of-Use notice on digitalfire.com pages themselves (e.g., 'All Rights Reserved' footer) that would govern the public reference pages specifically, as distinct from the Insight-Live T&C? Not confirmed; could not verify without further fetching the origin (avoided per ethics constraint).",
+      "What is the Internet Archive's current coverage and quality of digitalfire (how many of the ~5,000 pages, including images and the 27,000 interlinks, are actually captured and replayable)? Needs CDX enumeration via a path that can reach web.archive.org (WebFetch to archive.org was blocked in this environment).",
+      "Would Tony accept the GoFundMe surplus/help being directed toward a properly-licensed, hosted preservation rather than only a migration \u2014 i.e., is there a path where he licenses his portions to a nonprofit archive?"
+    ]
+  },
+  {
+    "key": "content_structure",
+    "summary": "digitalfire.com is a densely interlinked wiki for ceramics/glaze chemistry by Tony Hansen (Plainsman Clays). See findings for the per-collection map and priorities.",
+    "findings": [
+      {
+        "claim": "~22 typed collections via sitemapindex.xml; material is by far the largest; several collections lack sitemaps and need CDX.",
+        "detail": "sitemapindex.xml (lastmod 2025-03-01) enumerates sitemap-oxide, -material, -recipe, -glossary, -article, -hazard, -mineral, -property, -schedule, -temperature, -trouble, -test, -video, -picture, -typecode, -project, -url, -consultants, -schools, -stores, -potterytony, plus sitemapmisc. Counts: material ~2834, picture ~2693, glossary ~349, article ~110, oxide 109, mineral 109, test 100, hazard 92, recipe 79, temperature 73, video 65, schedule 29, trouble 28, property 14. typecode/project/url/consultants/schools/stores/potterytony returned 0 in their dedicated sitemaps yet have many live pages (confirmed via CDX). URL patterns: /oxide/NUM, /material/SLUG (e.g. /material/%23149+clay), /recipe/NUM, /glossary/term, /article/NUM.",
+        "confidence": "high",
+        "sources": [
+          "https://web.archive.org/web/20250313000000id_/https://digitalfire.com/sitemapindex.xml"
+        ]
+      },
+      {
+        "claim": "Functionally a wiki: every page has a TYPED Related Information/Links cross-reference block; material/recipe pages are highly table-structured (convert to JSON).",
+        "detail": "Cross-links: oxide/11 (Carbon) to Materials; recipe/1 (GR6-B) to Recipes/Schedules/Typecodes/Pictures; property/1 to Oxides (Cr2O3)/Materials (Fluorspar, Magnesite, Bone Ash)/Glossary; typecode/10 to material Alberta Slip and recipes. Material chemistry table /material/%23149+clay: Al2O3 29.87/1.00, SiO2 54.05/3.07, Fe2O3 0.89/0.02, LOI 10.39 (weight-pct Analysis / Unity Formula). Recipe recipe/1 GR6-B batch: Ravenscrag Slip 80, Ferro Frit 3134 20, Cobalt Oxide 3, Rutile 3, Titanium Dioxide 3, plus Variations and a master-recipe pointer. Every page also embeds the full inline A-Z index of its collection (boilerplate to strip, but a free member list for crawling).",
+        "confidence": "high",
+        "sources": [
+          "https://web.archive.org/web/20250313125330id_/https://digitalfire.com/material/%23149+clay"
+        ]
+      },
+      {
+        "claim": "Authored prose (glossary ~349, article ~110, trouble ~28) is the irreplaceable long-form content; potterytony ~340 is unique worked-examples; consultants/schools/stores/url are thin directories.",
+        "detail": "glossary terms are definition essays (Glaze Chemistry, Eutectic, Stull Chart, Unity Formula, Thixotropy). articles include Glaze Chemistry Basics, Are Your Glazes Food Safe or Leachable, The Four Levels on Which to View Ceramic Glazes, Fighting the Glaze Dragon, Copper Red Glazes; article/113 is Raku Glaze Stability by Tom Buck (Ceramic Review #159, 1996), multi-thousand-word with embedded recipe tables. trouble/1 Glaze Crawling is ~1500 words of diagnostic Q and A plus remediation. potterytony/2275 is a Zero3 fritware mug with full provenance: Serial AJ24137, Run L3924C, Firing Schedule C04PLTP, Cone 03, Glaze G2931K, Clay Body L3924C, cross-linked into recipes/materials/schedules. consultants/1079 is a worldwide ceramic-consultant directory listing (name/company/location/contact) - low unique value, partly stale.",
+        "confidence": "high",
+        "sources": [
+          "https://web.archive.org/web/20240620124519id_/https://digitalfire.com/article/113"
+        ]
+      }
+    ],
+    "recommendations": [
+      "Rank preservation highest-first: material (~2834 chemistry tables), glossary (~349 essays), article (~110 essays), recipe (~79), trouble (~28), then oxide 109 + mineral 109 + hazard 92 (chemistry/safety reference).",
+      "Second tier (preserve for cross-reference-graph integrity): property 14, schedule 29, temperature 73, test 100, typecode, project, plus potterytony/Buy-A-Mug ~340 as a unique worked-example dataset.",
+      "Lowest priority / can skip: consultants, schools, stores, url, misc - directory and link listings, low unique value, partly stale.",
+      "Drive the crawl from the Wayback CDX API (cdx/search/cdx?url=digitalfire.com/COLLECTION/*&collapse=urlkey&filter=statuscode:200&output=json), NOT sitemaps alone - consultants/schools/stores/url/typecode/project/potterytony have empty dedicated sitemaps; cross-check CDX against each collection inline A-Z index.",
+      "Convert by type: JSON for oxide/material/recipe/property/schedule/typecode (oxide analysis + unity formula, recipe batch lists, property-to-oxide maps); Markdown for glossary/article/trouble/hazard preserving inline cross-links so the wiki graph survives; strip the repeated nav + full-collection-index boilerplate.",
+      "Capture picture/video binaries separately and rewrite inline image references on material/recipe/trouble pages (those embed defect photos with real diagnostic value).",
+      "Use the most recent good Wayback snapshots (broad crawl ~2025-03-13; sitemap lastmod 2025-03-01) as the canonical capture."
+    ],
+    "openQuestions": [
+      "Exact totals for the sitemap-less collections (consultants, schools, stores, url, typecode, project, potterytony) need a full CDX enumeration per collection; sampled but not counted.",
+      "How complete Wayback coverage is for the ~2834 material and ~2693 picture pages (does every inline-index member have a 200 snapshot?) - needs a CDX-count vs inline-index reconciliation.",
+      "Whether picture/video binary files (the actual images/videos, not the caption HTML) are reliably archived in Wayback or need separate capture before June 26 2026.",
+      "Contents of misc (sitemapmisc.xml) and url were not sampled in full - misc may hold home/about/help pages and the indexes for the sitemap-less collections.",
+      "Whether any material/recipe data is rendered via JavaScript (the Desktop Insight XML export showed XML not functional) and would be lost in a static HTML capture."
+    ]
+  },
+  {
+    "key": "existing_efforts",
+    "findings": [
+      {
+        "claim": "A complete 1.7 GB full-site archive of digitalfire.com was uploaded to Internet Archive on June 17, 2026 (TODAY) by Akil Harris (akil.harris@gmail.com), and includes a torrent for redistribution.",
+        "detail": "Item: https://archive.org/details/digitalfire-archive (identifier 'digitalfire-archive', mediatype 'data', collection opensource_media). Contents: digitalfire-archive.zip = 1,800,394,238 bytes (1.7 GB) containing 22,179 files (md5 a2fb0e7920eed972db414b0cb0c931f1, sha1 4a58577f03de156917296879c171ae3207918b1b). A torrent is provided: btih c528fa3387bc283c6b7e964f534ee54a48c594dc, trackers http://bt1.archive.org:6969/announce + bt2, webseeds via https://archive.org/download/digitalfire-archive/ and ia600105/ia800105.us.archive.org. publicdate 2026-06-17 17:57:10 UTC; already malware-checked/curated by validator@archive.org. Subjects: 'digitalfire','digital fire'. This is the single most complete existing snapshot and is torrent-distributable, so it directly answers the owner's 'internet archive has everything' and gives the project a non-origin-hammering download path. Metadata API: https://archive.org/metadata/digitalfire-archive",
+        "confidence": "high",
+        "sources": [
+          "https://archive.org/details/digitalfire-archive",
+          "https://archive.org/metadata/digitalfire-archive",
+          "https://archive.org/advancedsearch.php?q=digitalfire&output=json"
+        ]
+      },
+      {
+        "claim": "The most advanced structured-dataset effort is the GitHub repo millandr121/digitalfire: ~3,100+ extracted records (materials, oxides, minerals, recipes, temperatures) as JSON, plus a React/Vite glaze-calculator app and a Wayback-first scraping pipeline with CI automation. It appears to be a Claude Code-driven project.",
+        "detail": "Repo: https://github.com/millandr121/digitalfire (active branch 'claude/clever-einstein-e4qvvf', also has 'main'; default branch is the claude/ one; pushed 2026-06-18T02:54:48Z; ~328 KB). Datasets under app/public/data/: materials.json (~2,237 records, 411 tagged wayback), oxides.json (~375; 288 wayback), minerals.json (~216; 215 wayback), recipes.json (~218; 61 wayback), temperatures.json (~72; 71 wayback). Each record tagged source='digitalfire.com' or 'digitalfire.com (wayback)'. Materials carry full oxide analyses (oxide, analysis_pct, formula, tolerance), oxide_weight, formula_weight; recipes carry material+amount+percent (e.g. G2896 'Ravenscrag Plum Red Cone 6'). Scripts: digitalfire_wayback.py (CDX-based audit/fill, ethics-friendly), digitalfire_extract_drive.py (pulls archived HTML from a shared Google Drive), digitalfire_scrape_insight.py (public Insight-Live shares linked from /recipe/list \u2014 explicitly framed as factual, non-copyright data), digitalfire_scrape_live.py (targets only sections where archived HTML was incomplete). CI: .github/workflows/wayback-fill.yml (workflow_dispatch, audits missing pages via CDX then fills from Wayback, commits back). This is the best repo to coordinate with / fork \u2014 it already has clean JSON for recipes/materials/oxides.",
+        "confidence": "high",
+        "sources": [
+          "https://github.com/millandr121/digitalfire",
+          "https://api.github.com/repos/millandr121/digitalfire",
+          "https://api.github.com/repos/millandr121/digitalfire/git/trees/HEAD?recursive=1"
+        ]
+      },
+      {
+        "claim": "A shared public Google Drive folder holds archived digitalfire HTML and is the upstream source for the millandr121 extraction pipeline \u2014 a likely community coordination artifact.",
+        "detail": "Folder ID 11uHARZFhcvMAXjBjAc7BZ2xKd7EcqN0h (https://drive.google.com/drive/folders/11uHARZFhcvMAXjBjAc7BZ2xKd7EcqN0h returns HTTP 200, i.e. publicly accessible). digitalfire_extract_drive.py expects subfolders named oxide/material/mineral/recipe/temperature and fetches HTML from there via the Drive v3 API. This is where bulk-downloaded HTML was deposited so contributors don't re-hit the origin; worth requesting access / mirroring to archive.org as a WARC.",
+        "confidence": "high",
+        "sources": [
+          "https://github.com/millandr121/digitalfire",
+          "https://drive.google.com/drive/folders/11uHARZFhcvMAXjBjAc7BZ2xKd7EcqN0h"
+        ]
+      },
+      {
+        "claim": "Wayback Machine coverage of digitalfire.com is substantial: roughly 43,000 unique archived URLs across 6 subdomains, dating back to 1996.",
+        "detail": "CDX API (http://web.archive.org/cdx/search/cdx?url=digitalfire.com&matchType=domain&collapse=urlkey) returns ~43,205 unique urlkeys. Earliest capture 1996-12-22. Subdomain split: main digitalfire.com ~41,251; store.digitalfire.com ~1,524; backup.digitalfire.com ~393; cdn.digitalfire.com ~35; books & sww 1 each. Main-site content sections by URL count: 4sight ~10,068, material ~7,065, picture ~5,564, cgi-local ~4,460, url ~3,600 (redirect shortener), supplier ~986, glossary ~820, schools ~654, education ~602, typecode ~504, insight ~448, oxide ~304, article ~272, recipe ~190, hazard ~197, mineral ~221, video ~150. Raw archived pages are fetchable without hitting origin via https://web.archive.org/web/<ts>id_/https://digitalfire.com/<path>. So 'the internet archive has everything' is largely true at the URL level, though individual captures vary in completeness (the millandr121 datasets show some sections were incomplete in Wayback and needed Drive/live fill).",
+        "confidence": "high",
+        "sources": [
+          "http://web.archive.org/cdx/search/cdx?url=digitalfire.com&matchType=domain&collapse=urlkey&output=json&limit=5"
+        ]
+      },
+      {
+        "claim": "Two additional GitHub repos were created TODAY as placeholders but currently contain no content.",
+        "detail": "Ashassins/digitalfire ('Clone of digitalfire.com', created 2026-06-17T01:37:16Z, size 0, empty) and akilspots/digitalfire ('an archive of digitalfire', created 2026-06-17T14:34:42Z, size 0, empty). akilspots is almost certainly Akil Harris, the same person who uploaded the 1.7 GB archive.org item \u2014 so the GitHub repo is likely a staging spot for that archive. Both have no README/files yet; worth watching/contacting rather than duplicating. Other 'digitalfire' GitHub repos (Lucaszw, acionescu cellular-automata, themsquared, Rnzi, Ahmad-Bilal009) are unrelated to the ceramics site.",
+        "confidence": "high",
+        "sources": [
+          "https://api.github.com/repos/Ashassins/digitalfire",
+          "https://api.github.com/repos/akilspots/digitalfire",
+          "https://api.github.com/search/repositories?q=digitalfire"
+        ]
+      },
+      {
+        "claim": "OpenGlaze (KyaniteLabs/openglaze) is an existing open-source glaze tool that credits Digitalfire for oxide data and UMF methodology, but does NOT mirror or import the digitalfire dataset.",
+        "detail": "https://github.com/KyaniteLabs/openglaze acknowledges 'Digitalfire for oxide data and UMF methodology' and ships its own ceramics-foundation/ data (30+ materials, 19 oxides, firing schedules, UMF targets, YAML recipes). Digitalfire import is only on the roadmap; no preservation/archive of digitalfire content. Useful as a downstream consumer/validator of a clean dataset, not as a mirror.",
+        "confidence": "high",
+        "sources": [
+          "https://github.com/KyaniteLabs/openglaze"
+        ]
+      },
+      {
+        "claim": "Glazy (glazy.org) + derekphilipau/glazy-data is the established open ceramics recipe ecosystem and a natural long-term home / cross-reference for preserved digitalfire data, but it is an independent corpus, not a digitalfire mirror.",
+        "detail": "Glazy is a free open-source (Laravel/Bootstrap) glaze database; public data licensed CC BY-NC-SA 4.0. Its dataset repo https://github.com/derekphilipau/glazy-data (15 stars, updated 2026-05-31) ships glazy_20260531.yaml.gz plus CSVs and legacy databases (John Sankey, Linda Arbuckle GlazeChem, Louis Katz Hyperglaze). Glazy was seeded from those legacy DBs, not from digitalfire. It demonstrates the 'continue the tradition of making recipes publicly available' model and is the most credible institution to coordinate with for hosting preserved digitalfire recipes/materials.",
+        "confidence": "high",
+        "sources": [
+          "https://github.com/derekphilipau/glazy-data",
+          "https://help.glazy.org/about",
+          "https://www.derekau.net/blog/2016/01/10/glazy-open-source-ceramics-recipes-library"
+        ]
+      },
+      {
+        "claim": "The shutdown trigger is a Terms & Conditions / takedown issue around Insight-Live source material, not funding \u2014 and no GoFundMe or formal 'save digitalfire' campaign could be found.",
+        "detail": "Per the Ceramic Arts Daily community thread title 'DigitalFire - kaboom' and search summaries: digitalfire.com shuts down June 26 (2026); Tony Hansen says he no longer has authority to grant a T&C exemption for material in the Insight-Live account the site was built from, and complying with the takedown for a 35+ year, very large site is beyond his means; insight-live.com operation itself is unaffected. He asked people to stop bulk-downloading because the server is overloaded and 'the internet archive has everything.' No GoFundMe, no Kiwix/ZIM, and no torrent/magnet other than the archive.org one surfaced. The Ceramic Arts Daily thread (https://community.ceramicartsdaily.org/topic/43991-digitalfire-kaboom) is the main known discussion hub but returned HTTP 403 to automated fetch \u2014 recommend a human read it for volunteer names. Tony Hansen also posts at https://www.facebook.com/tonyatdigitalfire/posts.",
+        "confidence": "medium",
+        "sources": [
+          "https://community.ceramicartsdaily.org/topic/43991-digitalfire-kaboom",
+          "https://www.facebook.com/tonyatdigitalfire/posts",
+          "https://digitalfire.com/glossary/tony+hansen"
+        ]
+      }
+    ],
+    "summary": "There is already a meaningful, very-fresh preservation effort underway \u2014 most of it created in the last 24-48 hours \u2014 and our project should plug into it rather than start from scratch.\n\nThe single most important asset is an Internet Archive item, archive.org/details/digitalfire-archive, uploaded TODAY (2026-06-17 17:57 UTC) by Akil Harris: a 1.7 GB ZIP containing 22,179 files (a full-site clone of digitalfire.com), distributed via torrent (btih c528fa3387bc283c6b7e964f534ee54a48c594dc) with archive.org webseeds. This is a complete, redistributable, origin-friendly snapshot and is the obvious base layer for the whole project. The same person (GitHub: akilspots) created an empty placeholder repo 'akilspots/digitalfire', and another contributor created empty 'Ashassins/digitalfire' ('Clone of digitalfire.com') \u2014 both today, both still empty.\n\nThe most advanced *structured* effort is GitHub repo millandr121/digitalfire (branch claude/clever-einstein-e4qvvf), which already contains ~3,100 cleaned JSON records \u2014 ~2,237 materials with full oxide analyses, 375 oxides, 216 minerals, 218 recipes (ingredient lists with amounts/percents), 72 firing-temperature events \u2014 plus a React/Vite glaze-calculator UI and a Wayback-first scraping pipeline (digitalfire_wayback.py uses the CDX API for audit/fill, with a GitHub Action that automates gap-filling from Wayback). Records are provenance-tagged ('digitalfire.com' vs 'digitalfire.com (wayback)'). Its upstream HTML lives in a public shared Google Drive folder (ID 11uHARZFhcvMAXjBjAc7BZ2xKd7EcqN0h), which exists specifically so contributors don't re-hit the live origin. This is the repo to fork/coordinate with for a structured dataset.\n\nOn scale: the Wayback Machine has ~43,205 unique archived URLs for digitalfire.com across 6 subdomains (main, store, backup, cdn, books, sww), going back to 1996, heavily weighted toward the 4sight (~10k), material (~7k), and picture (~5.5k) sections \u2014 so 'the internet archive has everything' is broadly true at the URL level, and raw pages are retrievable via the web/...id_/ form without touching the origin.\n\nSurrounding ecosystem: OpenGlaze (KyaniteLabs/openglaze) credits Digitalfire's oxide/UMF methodology but is not a mirror; Glazy (glazy.org + derekphilipau/glazy-data, CC BY-NC-SA) is the established open ceramics-recipe corpus and the natural long-term institutional home/cross-reference, but it is an independent dataset (seeded from Sankey/Arbuckle/Katz, not digitalfire). The shutdown cause is an Insight-Live Terms-&-Conditions takedown issue (not money); no GoFundMe or Kiwix ZIM was found. The main human discussion hub is the Ceramic Arts Daily 'DigitalFire - kaboom' thread (403 to automated fetch \u2014 a human should read it for volunteer names) and Tony Hansen's Facebook.",
+    "recommendations": [
+      "Adopt archive.org/details/digitalfire-archive as the canonical raw snapshot. Download it via the TORRENT (btih c528fa3387bc283c6b7e964f534ee54a48c594dc) or archive.org webseeds, never from the live origin. Verify against md5 a2fb0e7920eed972db414b0cb0c931f1. This satisfies the owner's 'stop downloading, IA has everything' request.",
+      "Contact / coordinate with the two principal contributors before doing any extraction: Akil Harris (akil.harris@gmail.com / GitHub akilspots) who made the IA upload, and millandr121 (GitHub) who built the structured pipeline. Open an issue on github.com/millandr121/digitalfire offering to contribute rather than spinning up a parallel scraper.",
+      "Fork github.com/millandr121/digitalfire and build on its JSON (materials/oxides/minerals/recipes/temperatures) and its Wayback CDX audit/fill pipeline (digitalfire_wayback.py + .github/workflows/wayback-fill.yml). It already encodes the ethics-correct approach (Wayback + shared Drive first, live only for gaps).",
+      "Request access to / mirror the shared Google Drive folder (ID 11uHARZFhcvMAXjBjAc7BZ2xKd7EcqN0h) of archived HTML, and consider re-uploading it to archive.org as a proper WARC so the corpus has a durable, IA-hosted home independent of one person's Drive.",
+      "Treat ~43,205 Wayback unique URLs as the completeness target. Use the CDX API to diff which of those URLs are NOT represented in the 22,179-file IA ZIP, and fill gaps from Wayback id_ snapshots only \u2014 do not crawl the origin.",
+      "For long-term hosting/discoverability of preserved recipes/materials, coordinate with Glazy (Derek Au / derekphilipau/glazy-data) and optionally OpenGlaze, which can consume a clean dataset; align on licensing (Glazy uses CC BY-NC-SA 4.0; note digitalfire's Insight-Live T&C is the reason for shutdown, so keep extraction to factual chemistry data \u2014 oxide analyses, recipe ingredient amounts \u2014 which the existing scripts explicitly argue is non-copyrightable factual data).",
+      "Have a human read the Ceramic Arts Daily thread 'DigitalFire - kaboom' (community.ceramicartsdaily.org/topic/43991) and Tony Hansen's Facebook (facebook.com/tonyatdigitalfire) to capture volunteer names and any coordination channel the automated 403/search could not reach."
+    ],
+    "openQuestions": [
+      "Will Akil Harris (akilspots) and the empty Ashassins/digitalfire repo be populated with the full clone, and is the 1.7 GB IA ZIP a true full-site mirror (HTML+images+CSS) or HTML-only? The 22,179 files vs ~43,205 Wayback URLs suggests it may be partial \u2014 needs a manifest diff.",
+      "Who is millandr121, and is their pipeline coordinated with Akil Harris or an independent parallel effort? (millandr121 account created 2026-03-26, 6 repos, no profile info.)",
+      "What exactly is in the shared Google Drive folder, how complete is it per section, and will the owner keep it public after June 26?",
+      "Does Tony Hansen / Insight-Live's Terms & Conditions permit redistribution of the factual chemistry data (recipes, material oxide analyses) the structured efforts are extracting, given the takedown is specifically about Insight-Live-sourced material? Legal/licensing clarity is needed before broad republication.",
+      "Is there a coordinated volunteer channel (Discord, mailing list, private thread) that the public web/search/CDX did not surface? The Ceramic Arts Daily thread (403) and Facebook are the likely places to find it.",
+      "Are the ~5,564 'picture' URLs and other image/binary assets included in the IA archive and the Drive folder, or only text/HTML? Images (Stull charts, test tiles, micrographs) are a large part of the site's value."
+    ]
+  }
+]

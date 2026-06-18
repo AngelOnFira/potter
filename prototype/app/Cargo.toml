@@ -1,0 +1,44 @@
+[package]
+name = "clay-app"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+clay-ir = { path = "../crates/ir" }
+
+leptos = { version = "0.8" }
+leptos_router = { version = "0.8" }
+leptos_meta = { version = "0.8" }
+leptos_axum = { version = "0.8", optional = true }
+
+axum = { version = "0.8", optional = true }
+tokio = { version = "1", features = ["rt-multi-thread"], optional = true }
+tower-http = { version = "0.6", features = ["fs", "compression-gzip"], optional = true }
+console_error_panic_hook = { version = "0.1", optional = true }
+wasm-bindgen = { version = "=0.2.115", optional = true }
+
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", optional = true }
+tantivy = { version = "0.26", optional = true }
+once_cell = { version = "1", optional = true }
+
+[features]
+hydrate = ["leptos/hydrate", "dep:console_error_panic_hook", "dep:wasm-bindgen"]
+ssr = [
+    "dep:axum",
+    "dep:tokio",
+    "dep:leptos_axum",
+    "dep:tower-http",
+    "dep:serde_json",
+    "dep:tantivy",
+    "dep:once_cell",
+    "leptos/ssr",
+    "leptos_meta/ssr",
+    "leptos_router/ssr",
+]
+
+[package.metadata.cargo-machete]
+ignored = ["clay-ir"]

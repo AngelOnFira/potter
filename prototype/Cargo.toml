@@ -1,0 +1,31 @@
+[workspace]
+resolver = "2"
+members = ["crates/ir", "crates/extract", "app"]
+
+# Size-optimized profile for the WASM (hydrate) bundle, used by cargo-leptos.
+[profile.wasm-release]
+inherits = "release"
+opt-level = 'z'
+lto = true
+codegen-units = 1
+panic = "abort"
+
+# cargo-leptos configuration (workspace form). Paths are relative to this file.
+[[workspace.metadata.leptos]]
+name = "clay-app"
+output-name = "clay-app"
+bin-package = "clay-app"
+lib-package = "clay-app"
+site-root = "target/site"
+site-pkg-dir = "pkg"
+style-file = "app/style/main.scss"
+assets-dir = "app/public"
+site-addr = "127.0.0.1:8788"
+reload-port = 8789
+browserquery = "defaults"
+env = "DEV"
+bin-features = ["ssr"]
+bin-default-features = false
+lib-features = ["hydrate"]
+lib-default-features = false
+lib-profile-release = "wasm-release"

@@ -1,0 +1,26 @@
+# clay-knowledge prototype — task runner
+# Run from the prototype/ directory.
+
+# default: show available recipes
+default:
+    @just --list
+
+# 1. Convert archived digitalfire HTML -> IR (writes data/ir/pages.jsonl). Run once.
+extract src="../data/digitalfire-archive" out="data/ir":
+    cargo run -p clay-extract --release -- {{src}} {{out}}
+
+# 2. Run the dev server with hot reload on http://127.0.0.1:3000
+dev:
+    cargo leptos watch
+
+# Build a release bundle (server binary + wasm + css)
+build:
+    cargo leptos build --release
+
+# Serve the release build on http://127.0.0.1:3000
+serve:
+    cargo leptos serve --release
+
+# Fast server-side type check
+check:
+    cargo check -p clay-app --no-default-features --features ssr
