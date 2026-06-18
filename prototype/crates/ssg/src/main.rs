@@ -162,9 +162,8 @@ fn render_sidebar(collections: &[CollectionInfo], prefix: &str) -> String {
         items.push_str(&format!("<li><a href=\"{prefix}/{}\">{}</a></li>", c.name, esc(&c.title)));
     }
     format!(r#"<nav class="sidebar">
-<a class="logo" href="{prefix}/">clay<span>knowledge</span></a>
+<a class="logo" href="{prefix}/">Potter</a>
 <ul>{items}</ul>
-<div class="sidebar-foot"><span>static archive</span><span>data: Wayback / digitalfire.com</span></div>
 </nav>"#)
 }
 
@@ -262,7 +261,7 @@ fn render_chem(c: &Chemistry) -> String {
     s.push_str(&format!("<p class=\"chem-meta\">{}{}</p>",
         c.oxide_weight.map(|w| format!("Oxide weight {w:.2}")).unwrap_or_default(),
         c.formula_weight.map(|w| format!(" \u{00b7} Formula weight {w:.2}")).unwrap_or_default()));
-    s.push_str("<p class=\"chem-src\">Structured data via <a href=\"https://github.com/millandr121/digitalfire\" target=\"_blank\" rel=\"noopener\">millandr121/digitalfire</a></p></section>");
+    s.push_str("</section>");
     s
 }
 

@@ -134,16 +134,12 @@ pub fn App() -> impl IntoView {
 fn Sidebar() -> impl IntoView {
     view! {
         <nav class="sidebar">
-            <a class="logo" href="/">"clay"<span>"knowledge"</span></a>
+            <a class="logo" href="/">"Potter"</a>
             <ul>
                 {COLLECTIONS.iter().map(|(name, title)| view! {
                     <li><a href=format!("/{name}")>{*title}</a></li>
                 }).collect_view()}
             </ul>
-            <div class="sidebar-foot">
-                <span>"prototype"</span>
-                <span>"data: Wayback / digitalfire.com"</span>
-            </div>
         </nav>
     }
 }
@@ -400,10 +396,6 @@ fn PageView() -> impl IntoView {
                                         <p class="chem-meta">
                                             {ow.map(|w| format!("Oxide weight {w:.2}"))}
                                             {fw.map(|w| format!(" \u{00b7} Formula weight {w:.2}"))}
-                                        </p>
-                                        <p class="chem-src">
-                                            "Structured data via "
-                                            <a href="https://github.com/millandr121/digitalfire" target="_blank" rel="noopener">"millandr121/digitalfire"</a>
                                         </p>
                                     </section>
                                 }
