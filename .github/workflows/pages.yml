@@ -1,0 +1,56 @@
+name: Deploy static site to GitHub Pages
+
+# Builds the static site from prototype/data/web (committed) and deploys it.
+# Works for a project page (served at /<repo>/) via the BASE_URL below; for a
+# user/org page or custom domain served at root, BASE_URL="/" also works.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "prototype/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    defaults:
+      run:
+        working-directory: prototype
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: prototype
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Render static site + search index
+        env:
+          # served at https://<user>.github.io/<repo>/ — set base accordingly
+          BASE_URL: "/${{ github.event.repository.name }}/"
+        run: |
+          cargo run -p clay-ssg --release
+          npx -y pagefind@latest --site site
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: prototype/site
+      - id: deploy
+        uses: actions/deploy-pages@v4

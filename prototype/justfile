@@ -5,22 +5,32 @@
 default:
     @just --list
 
-# 1. Convert archived digitalfire HTML -> IR (writes data/ir/pages.jsonl). Run once.
-extract src="../data/digitalfire-archive" out="data/ir":
-    cargo run -p clay-extract --release -- {{src}} {{out}}
-
-# 2. Run the dev server with hot reload on http://127.0.0.1:3000
+# ── dev server (Leptos SSR + hydration + tantivy search) ──────────────────────
 dev:
     cargo leptos watch
 
-# Build a release bundle (server binary + wasm + css)
-build:
-    cargo leptos build --release
-
-# Serve the release build on http://127.0.0.1:3000
-serve:
-    cargo leptos serve --release
-
-# Fast server-side type check
+# fast server-side type check
 check:
     cargo check -p clay-app --no-default-features --features ssr
+
+# ── static-site pipeline (-> site/, deployable to GitHub Pages) ───────────────
+
+# 1. extract IR from the archived site (needs ../data/digitalfire-archive)
+extract src="../data/digitalfire-archive" out="data/ir":
+    cargo run -p clay-extract --release -- {{src}} {{out}}
+
+# 2. web-optimize + rename + remap images (-> data/web/, the committed content)
+images:
+    cargo run -p clay-images --release -- data/ir ../data/digitalfire-archive/media data/web
+
+# 3. render the static site from data/web + 4. build the Pagefind search index
+site:
+    cargo run -p clay-ssg --release
+    npx -y pagefind@latest --site site
+
+# full pipeline from the ground-truth archive (extract -> images -> site)
+static: extract images site
+
+# preview the built static site
+serve-static port="8790":
+    python3 -m http.server {{port}} --directory site

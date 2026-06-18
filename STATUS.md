@@ -53,6 +53,14 @@ All verified on the running server (http://127.0.0.1:8788).
   recurrences of the base material and compute the first variation, noting "N of M
   ingredients resolved". Verified chemically (e.g. `/recipe/bory1`: fluxes sum to 1.0).
   Turns the prototype from a reference into a glaze-chemistry *tool*.
+- **Static site for GitHub Pages** — backend no longer required for deploy. New
+  stages: **`clay-images`** (resize ≤1200px + rename to `N.ext` + remap refs;
+  640 MB → 272 MB) → **`clay-ssg`** (one static `index.html` per route + collection/
+  home pages + ~2,500 alias redirects; direct templating, shared CSS, no hydration
+  cruft) → **Pagefind** (client-side search; 4,075 pages indexed). `site/` is fully
+  static; verified locally (routes 200, chem/Stull intact, images + search load,
+  aliases redirect). Tracked input: `prototype/data/web/`; deploy via
+  `.github/workflows/pages.yml` (`BASE_URL=/<repo>/`). **Whole site → GitHub Pages: yes.**
 
 **Current pipeline:** `clay-extract` now also de-dupes, remaps links, and attaches
 chemistry; run `just extract` then `just dev`. New inputs: `prototype/data/chem/`

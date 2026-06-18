@@ -28,6 +28,34 @@ Requires `cargo-leptos` (`cargo install cargo-leptos`) and the `wasm32-unknown-u
 target. The archived site must be extracted at `../data/digitalfire-archive`
 (the 1.8 GB `digitalfire-archive.zip` from archive.org, unzipped).
 
+## Static site (GitHub Pages)
+
+The Leptos dev server is for development; the **deployable artifact is a fully
+static site** — no backend needed. Pipeline:
+
+```
+ground truth ─clay-extract→ data/ir ─clay-images→ data/web ─clay-ssg→ site/ ─pagefind→ search
+              (HTML→IR)              (resize+rename+        (static HTML)   (client-side index)
+                                      remap refs)
+```
+
+```bash
+just static          # full: extract -> images -> ssg -> pagefind  (needs the archive)
+just site            # rebuild site/ from the committed data/web (fast; no archive needed)
+just serve-static    # preview at http://127.0.0.1:8790
+```
+
+- **`data/web/`** (committed) holds the web-ready content: images resized to ≤1200px
+  and renamed `N.ext` (640 MB → 272 MB), with an `img_map.json` (new ↔ old) and the
+  IR with every image reference remapped.
+- **`clay-ssg`** renders one `index.html` per route (clean URLs), collection pages,
+  the home page, and ~2,500 alias redirect stubs (old numeric-id URLs → canonical
+  slugs), plus a Pagefind search box. Output is self-contained static HTML/CSS/img.
+- **Pagefind** builds a chunked client-side search index (no server).
+- Deploy: [`.github/workflows/pages.yml`](../.github/workflows/pages.yml) builds the
+  site (with `BASE_URL=/<repo>/` for a project page) and publishes it to GitHub Pages.
+  `site/` is git-ignored (regenerated in CI / locally); `data/web/` is the tracked input.
+
 ## Layout
 
 | Path | What |
