@@ -51,6 +51,10 @@ fn main() -> Result<()> {
     fs::create_dir_all(&out)?;
     fs::write(out.join("styles.css"), &css)?;
     if favicon.exists() { fs::copy(&favicon, out.join("favicon.svg"))?; }
+    // GitHub Pages custom domain (e.g. potter.forest-anderson.ca)
+    if let Ok(cname) = std::env::var("SITE_CNAME") {
+        if !cname.trim().is_empty() { fs::write(out.join("CNAME"), format!("{}\n", cname.trim()))?; }
+    }
 
     // ---- copy images ----
     let img_src = web.join("img");

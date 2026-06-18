@@ -46,8 +46,9 @@ jobs:
 
       - name: Render static site + search index
         env:
-          # served at https://<user>.github.io/<repo>/ — set base accordingly
-          BASE_URL: "/${{ github.event.repository.name }}/"
+          # custom domain served at root
+          BASE_URL: "/"
+          SITE_CNAME: "potter.forest-anderson.ca"
         run: |
           cargo run -p clay-ssg --release
           npx -y pagefind@latest --site site
