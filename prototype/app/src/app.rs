@@ -203,8 +203,8 @@ fn Home() -> impl IntoView {
         <div class="home">
             <h1>"A modern, searchable ceramics reference"</h1>
             <p class="lede">
-                "A preservation prototype of the digitalfire glaze-chemistry library: \
-                 materials, oxides, recipes, and glossary, rebuilt as fast static pages."
+                "A preservation of the Digitalfire glaze-chemistry library: \
+                 materials, oxides, and more, in a simple reference format."
             </p>
             <Suspense fallback=move || view! { <p class="muted">"Loading…"</p> }>
                 {move || data.get().map(|res| match res {
